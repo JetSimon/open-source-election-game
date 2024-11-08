@@ -4,6 +4,7 @@ const testScenario: ScenarioModel = {
     candidates: [
         {
             id: "A",
+            color: "#FF0000",
             firstName: "Test",
             lastName: "Testerson",
             party: "Party A",
@@ -21,6 +22,7 @@ const testScenario: ScenarioModel = {
         },
         {
             id: "B",
+            color: "#0000FF",
             firstName: "Testy",
             lastName: "Testoski",
             party: "Party B",

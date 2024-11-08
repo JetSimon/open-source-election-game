@@ -3,7 +3,10 @@ import Engine from './engine/Engine';
 import { useState } from 'react';
 import testScenario from './scenarios/TestScenario';
 import AnswerModel from './models/AnswerModel';
-import Answer from './components/Answer';
+import QuestionView from './views/QuestionView';
+
+import MapView from './views/MapView';
+import testMap from './scenarios/TestMap.svg';
 
 const engine = new Engine();
 engine.loadScenario(testScenario);
@@ -43,20 +46,8 @@ function App() {
 
   return (
     <>
-
-      <div>
-        <h2>Question {currentQuestionIndex + 1}/{engine.getNumberOfQuestions()}</h2>
-
-        <p>{currentQuestion.description}</p>
-        <div>
-          {currentQuestion.answers.map((answerModel) => <Answer answerId={currentQuestion.answers.indexOf(answerModel).toString()} key={currentQuestion.answers.indexOf(answerModel)} answerModel={answerModel} selectedAnswer={selectedAnswer} setSelectedAnswer={setSelectedAnswer}></Answer>)}
-        </div>
-
-        <button onClick={submitAnswer}>Okay</button>
-      </div>
-
-      <textarea value={engine.getStateOpinionsString()}></textarea>
-
+      <QuestionView currentQuestionIndex={currentQuestionIndex} engine={engine} currentQuestion={currentQuestion} submitAnswer={submitAnswer} selectedAnswer={selectedAnswer} setSelectedAnswer={setSelectedAnswer}></QuestionView>
+      <MapView engine={engine} mapUrl={testMap}></MapView>
     </>
   );
 }

@@ -45,6 +45,10 @@ class Engine {
         return output;
     }
 
+    getStateOpinionString(stateId: string) {
+        return this.scenarioController.getStateControllerByStateId(stateId).getOpinionString();
+    }
+
     applyAnswer(selectedAnswer: AnswerModel | null) {
         if (selectedAnswer == null) {
             console.error("Tried to apply a null AnswerModel!");

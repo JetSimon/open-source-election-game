@@ -3,6 +3,8 @@ import { sumNumberArray } from "../../utils/ArrayUtils";
 import IssueScores from "../IssueScores";
 import ScenarioController from "./ScenarioController";
 import CandidateController from "./CandidateController";
+import Engine from "../Engine";
+import { hexToRgb, rgbToHex } from "../../utils/ColorUtils";
 
 class StateController {
     model: StateModel;
@@ -73,6 +75,19 @@ class StateController {
         }
     }
 
+    getHighestCandidate(engine: Engine): CandidateController | null {
+        let highestCandidate: CandidateController | null = null;
+        let highestCandidateOpinion = 0;
+        for (const candidate of this.opinions.keys()) {
+            const opinion = this.getOpinionForCandidate(candidate);
+            if (opinion > highestCandidateOpinion) {
+                highestCandidate = engine.scenarioController.getCandidateByCandidateId(candidate);
+                highestCandidateOpinion = opinion;
+            }
+        }
+        return highestCandidate;
+    }
+
     getOpinionString() {
         let output = this.model.name + " opinions: \n";
         for (const candidateId of this.opinions.keys()) {
@@ -83,6 +98,23 @@ class StateController {
 
     printOpinion() {
         console.log(this.getOpinionString());
+    }
+
+    getStateColor(engine: Engine): string {
+        const highestCandidate = this.getHighestCandidate(engine);
+        if (highestCandidate == null) {
+            console.error("Could not get state colour. Highest candidate was null");
+            return "#000000";
+        }
+
+        const highestCandidateOpinion = this.getOpinionForCandidate(highestCandidate.getId());
+        const candidateColorRgb = hexToRgb(highestCandidate.model.color);
+
+        for (let i = 0; i < candidateColorRgb.length; i++) {
+            candidateColorRgb[i] = 255 * (1 - highestCandidateOpinion) + candidateColorRgb[i] * highestCandidateOpinion;
+        }
+
+        return rgbToHex(candidateColorRgb[0], candidateColorRgb[1], candidateColorRgb[2]);
     }
 }
 

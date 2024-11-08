@@ -36,6 +36,10 @@ class ScenarioController {
         return this.model.issues;
     }
 
+    getStates() {
+        return this.stateControllers;
+    }
+
     getGlobalModifierForCandidate(candidateId: string) {
         const modifier = this.globalModifiers.get(candidateId);
         if (modifier == undefined) {
