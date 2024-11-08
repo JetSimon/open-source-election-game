@@ -33,7 +33,7 @@ function MapView(props: MapViewProps) {
         return () => {
             clearInterval(mapUpdate);
         };
-    }, []);
+    }, [engine]);
 
     function onMouseMove(e) {
         const hoverId = e.target.id;
