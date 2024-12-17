@@ -12,8 +12,6 @@ const engine = new Engine();
 engine.loadScenario(testScenario);
 engine.updateStates();
 
-engine.printStateOpinions();
-
 function App() {
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(engine.currentQuestionIndex);
@@ -28,7 +26,6 @@ function App() {
 
     alert("Feedback: " + selectedAnswer.feedback);
     engine.applyAnswer(selectedAnswer);
-    engine.printStateOpinions();
     engine.nextQuestion();
     setCurrentQuestionIndex(engine.currentQuestionIndex);
 
@@ -46,6 +43,7 @@ function App() {
 
   return (
     <>
+    <h1>OSEG</h1>
       <QuestionView currentQuestionIndex={currentQuestionIndex} engine={engine} currentQuestion={currentQuestion} submitAnswer={submitAnswer} selectedAnswer={selectedAnswer} setSelectedAnswer={setSelectedAnswer}></QuestionView>
       <MapView engine={engine} mapUrl={testMap}></MapView>
     </>

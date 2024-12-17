@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import Engine from "../engine/Engine";
 import "external-svg-loader";
+import StateController from "../engine/controllers/StateController";
+import StatePoll from "../components/StatePoll";
+import "./MapView.css"
 
 interface MapViewProps {
   engine: Engine;
@@ -10,9 +13,7 @@ interface MapViewProps {
 function MapView(props: MapViewProps) {
   const { engine, mapUrl } = props;
   const mapRef = useRef<SVGSVGElement>(null);
-  const [stateInfoString, setStateInfoString] = useState(
-    "Hover over a state to see"
-  );
+  const [currentState, setCurrentState] = useState<StateController | null>(null);
 
   useEffect(() => {
     function updateMapColors() {
@@ -25,22 +26,23 @@ function MapView(props: MapViewProps) {
         ) as SVGPathElement;
         if (statePath == null) {
           console.error(
-            "No state on map found with id",
+            "No state on map found with abbr",
             stateController.model.abbr
           );
           continue;
         }
 
-        statePath.style.fill = stateController.getStateColor(engine);
+        statePath.style.fill = stateController.getStateColor(engine, (currentState != null && currentState.model.id == stateController.model.id));
       }
+      
     }
 
-    const mapUpdate = setInterval(updateMapColors, 100);
+    const mapUpdate = setInterval(updateMapColors, 25);
 
     return () => {
       clearInterval(mapUpdate);
     };
-  }, [engine]);
+  }, [engine, currentState]);
 
   function onMouseMove(e : React.MouseEvent) {
 
@@ -51,13 +53,14 @@ function MapView(props: MapViewProps) {
     const hoverId = (e.target as SVGPathElement).id;
     if (hoverId != "") {
       const id = engine.getStateIdFromAbbr(hoverId);
-      setStateInfoString(engine.getStateOpinionString(id));
+      setCurrentState(engine.scenarioController.getStateControllerByStateId(id));
     }
   }
 
   return (
-    <>
+    <div className="MapView">
       <svg
+        className="Map"
         ref={mapRef}
         data-src={mapUrl}
         data-unique-ids="disabled"
@@ -72,8 +75,8 @@ function MapView(props: MapViewProps) {
         }}
       />
 
-      <p>{stateInfoString}</p>
-    </>
+      <StatePoll engine={engine} stateController={currentState}></StatePoll>
+    </div>
   );
 }
 

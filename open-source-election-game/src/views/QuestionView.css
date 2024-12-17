@@ -1,0 +1,12 @@
+.QuestionView {
+    margin: 16px;
+}
+
+.QuestionDescription {
+    border: solid 1px black;
+    padding: 8px;
+}
+
+.ConfirmAnswerButton {
+
+}

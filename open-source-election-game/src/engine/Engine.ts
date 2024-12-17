@@ -44,8 +44,12 @@ class Engine {
         return output;
     }
 
-    getStateOpinionString(stateId: number) {
+    getStateOpinionString(stateId: number) : string {
         return this.scenarioController.getStateControllerByStateId(stateId).getOpinionString();
+    }
+
+    getStateOpinionData(stateId: number) : Map<number, number> {
+        return this.scenarioController.getStateControllerByStateId(stateId).opinions;
     }
 
     applyAnswer(selectedAnswer: AnswerModel | null) {
@@ -91,6 +95,10 @@ class Engine {
         }
 
         return arr[0].id;
+    }
+
+    getCandidateByCandidateId(id:number) {
+        return this.scenarioController.getCandidateByCandidateId(id);
     }
 }
 

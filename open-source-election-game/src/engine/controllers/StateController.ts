@@ -109,7 +109,7 @@ class StateController {
         console.log(this.getOpinionString());
     }
 
-    getStateColor(engine: Engine): string {
+    getStateColor(engine: Engine, isHovered : boolean): string {
         const highestCandidate = this.getHighestCandidate(engine);
         if (highestCandidate == null) {
             console.error("Could not get state colour. Highest candidate was null");
@@ -121,6 +121,12 @@ class StateController {
 
         for (let i = 0; i < candidateColorRgb.length; i++) {
             candidateColorRgb[i] = 255 * (1 - highestCandidateOpinion) + candidateColorRgb[i] * highestCandidateOpinion;
+        }
+
+        if(isHovered) {
+            for (let i = 0; i < candidateColorRgb.length; i++) {
+                candidateColorRgb[i] *= 0.85 + (Math.sin(Date.now() / 200) * 0.05)
+            }
         }
 
         return rgbToHex(candidateColorRgb[0], candidateColorRgb[1], candidateColorRgb[2]);
