@@ -32,7 +32,7 @@ function StatePoll(props : StatePollProps) {
                     // Remap from -1 to 1 -> 0 -> (issue stance length - 1)
                     const remappedIssueScore = Math.round(((issueScore + 1) / 2) * (issue.stances.length - 1));
                     const stance = issue.stances[remappedIssueScore];
-                    return <p className="StatePollValue" key={issue.id}><span style={{fontWeight:"bold"}}>{issue.name}</span> - {stance}</p>
+                    return <div className="StatePollValue" key={issue.id}><span style={{fontWeight:"bold"}}>{issue.name}</span> - {stance}</div>
                 })}
             </div>
         </div>

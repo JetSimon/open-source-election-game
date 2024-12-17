@@ -3,6 +3,7 @@ import AnswerModel from "../models/AnswerModel";
 import ScenarioModel from "../models/ScenarioModel";
 import CandidateController from "./controllers/CandidateController";
 import ScenarioController from "./controllers/ScenarioController";
+import FinalResultsModel from "../models/FinalResultsModel";
 
 const fromTct = (x : number) => 2*x; // We are importing scenarios from TCT rn, sometimes we may need to multiply effects by this to have it apply here
 
@@ -103,7 +104,8 @@ class Engine {
     }
 
     isGameOver() {
-        return this.currentQuestionIndex >= this.scenarioController.getNumberOfQuestions();
+        return true;
+        //return this.currentQuestionIndex >= this.scenarioController.getNumberOfQuestions();
     }
 
     getStateIdFromAbbr(abbr: string): number {
@@ -117,6 +119,32 @@ class Engine {
 
     getCandidateByCandidateId(id:number) {
         return this.scenarioController.getCandidateByCandidateId(id);
+    }
+
+    getFinalResults() : FinalResultsModel {
+
+        const popularVotes = new Map<number, number>();
+        const electoralVotes = new Map<number, number>();
+
+        for(const candidate of this.scenarioController.getCandidates()) {
+            let totalPopularVotes = 0;
+            let totalElectoralVotes = 0;
+            for(const stateController of this.scenarioController.stateControllers) {
+                totalPopularVotes += stateController.getOpinionForCandidate(candidate.getId()) * stateController.model.popularVotes;
+
+                if(stateController.getHighestCandidate(this) == candidate) {
+                    totalElectoralVotes += stateController.model.electoralVotes;
+                }
+            }
+            totalPopularVotes = Math.round(totalPopularVotes);
+            popularVotes.set(candidate.getId(), totalPopularVotes);
+            electoralVotes.set(candidate.getId(), totalElectoralVotes);
+        }
+
+        return {
+            "popularVotes" : popularVotes,
+            "electoralVotes" : electoralVotes
+        }
     }
 }
 

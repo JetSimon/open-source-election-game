@@ -9,6 +9,8 @@ import BottomBanner from './components/BottomBanner';
 import MapView from './views/MapView';
 import testMap from './scenarios/TestMap.svg';
 
+import EndingView from './views/EndingView';
+
 const engine = new Engine();
 engine.loadScenario(testScenario);
 engine.updateStates();
@@ -46,7 +48,12 @@ function App() {
   return (
     <div className="App">
       <h2>OSEG</h2>
-      <QuestionView currentQuestionIndex={currentQuestionIndex} engine={engine} currentQuestion={currentQuestion} submitAnswer={submitAnswer} selectedAnswer={selectedAnswer} setSelectedAnswer={setSelectedAnswer}></QuestionView>
+      {
+        engine.isGameOver() ? 
+        <EndingView engine={engine}></EndingView>
+        :
+        <QuestionView currentQuestionIndex={currentQuestionIndex} engine={engine} currentQuestion={currentQuestion} submitAnswer={submitAnswer} selectedAnswer={selectedAnswer} setSelectedAnswer={setSelectedAnswer}></QuestionView>
+      }
       <MapView engine={engine} mapUrl={testMap}></MapView>
       <BottomBanner engine={engine}></BottomBanner>
     </div>
