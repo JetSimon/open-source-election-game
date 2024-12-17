@@ -6,6 +6,12 @@ import CandidateController from "./CandidateController";
 import Engine from "../Engine";
 import { hexToRgb, rgbToHex } from "../../utils/ColorUtils";
 
+const RNG = 0.025;
+
+function getRngMultiplier() {
+    return 1.0 + ((Math.random() - 0.5) * 2) * RNG;
+}
+
 class StateController {
     model: StateModel;
     opinions: Map<number, number>;
@@ -89,6 +95,7 @@ class StateController {
             newOpinion = 1.0 - newOpinion; // Because we calculate distance between issues
             newOpinion *= this.getCandidateStateModifier(candidate.getId());
             newOpinion *= scenario.getGlobalModifierForCandidate(candidate.getId());
+            newOpinion *= getRngMultiplier();
             this.opinions.set(candidate.getId(), newOpinion);
         }
 

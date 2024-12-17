@@ -2165,7 +2165,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4199,
                             "description": "This is a necessary step against the overreach and abuse of power of the Executive branch.",
-                            "feedback": "The problem is, this idea was clearly targeted at Andrew Jackson, and Democrats in general. You're really taking the Whig position here.",
+                            "feedback": "This is in line with the opinion of many Whigs.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -2179,13 +2179,13 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4200,
                             "description": "I don't support an Amendment on this issue, but I will personally promise not to run for reelection.",
-                            "feedback": "This is a good way to finesse this issue. It has the added advantage, since you were a dark horse candidate, of uniting the factions of your party.",
+                            "feedback": "This is in line with the opinion of many Whigs.",
                             "answerEffects": []
                         },
                         {
                             "id": 4201,
                             "description": "I don't think that this is a necessary step, at this time.",
-                            "feedback": "This is the party line, but after a bitter nomination fight, some are disappointed that your success would preempt their 1848 campaigns.",
+                            "feedback": "The Whig Party supports a one-term limit for the President, with Jackson fresh in mind. Harrison pledged he would follow this guideline during his campaign....",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -2213,7 +2213,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4195,
                             "description": "I stand for a national bank, broadly similar to the late Second Bank of the United States.",
-                            "feedback": "Are you out of your mind? A national bank is anathema to the Democratic Party.",
+                            "feedback": "",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -2234,7 +2234,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4196,
                             "description": "I stand for a national bank or an independent Treasury -- whichever can gain the most support. I would require any national bank to maintain a branch in every state.",
-                            "feedback": "Are you out of your mind? A national bank is anathema to the Democratic Party.",
+                            "feedback": "Many are surprised to hear you hedge your position on the bank issue.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -2262,7 +2262,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4197,
                             "description": "I will never support a national bank, but I do advocate an independent Treasury, so that federal funds won't be tied up in local speculations.",
-                            "feedback": "The independent Treasury idea has broad support in the party, and also shows that Democrats are trying to do something after the 1837 crisis.",
+                            "feedback": "This is a little out of step with Whig ideology.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -2283,7 +2283,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4198,
                             "description": "I support our current free banking system, and I see no need for the Treasury to insulate its operations from the state-chartered banks.",
-                            "feedback": "There's nothing wrong with defending the current system, which is the Democratic system in large part.",
+                            "feedback": "This is a little out of step with Whig ideology.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -2528,7 +2528,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4188,
                             "description": "We stand steadfast in support of this tariff. It is one of the few positive accomplishments of Mr. Tyler's so-called Presidency.",
-                            "feedback": "This puts you outside of the party mainstream, to say the least. Hopefully it will help in a couple of the Northern states.",
+                            "feedback": "",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -2598,7 +2598,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4189,
                             "description": "The primary purpose of our tariffs should be revenue. But should a small amount of protection <em>incidentally</em> occur from our tariff policy, that is acceptable.",
-                            "feedback": "This answer satisfies the Southern wing of the party while providing some concession to Northern Democrats in states like New York.",
+                            "feedback": "This is a little out of step with Whig ideology.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -2619,7 +2619,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4190,
                             "description": "We should avoid taking a strong position on this tariff. There are men in our party who stand on both sides of the issue.",
-                            "feedback": "While true, people are getting the idea that you are dancing around a hot issue.",
+                            "feedback": "This is a little out of step with Whig ideology.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -2640,7 +2640,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4191,
                             "description": "We must rescind this tariff and replace it with something much lower. I support free trade and low tariffs.",
-                            "feedback": "This is certainly the party line on the tariff issue.",
+                            "feedback": "This is a little out of step with Whig ideology.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -2731,7 +2731,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4192,
                             "description": "This is one of the key objectives of our current tariff policy, and I would support a strong infrastructure program as President.",
-                            "feedback": "Support for a federal infrastructure program is quite limited within your party.",
+                            "feedback": "",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -2759,7 +2759,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4193,
                             "description": "Only a very limited amount, for the most compelling projects. Otherwise the tariff should be for revenue purposes only.",
-                            "feedback": "This answer satisfies the Southern wing of the party while providing some concession to Northern Democrats in states like New York.",
+                            "feedback": "This is a little out of step with Whig ideology.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -2780,7 +2780,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4194,
                             "description": "I don't believe that it is constitutional or advisable for the federal government to undertake an internal improvements program.",
-                            "feedback": "This is certainly the party line on the tariff issue.",
+                            "feedback": "This is a little out of step with Whig ideology.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -3444,7 +3444,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4213,
                             "description": "I support our current naturalization laws as they stand.",
-                            "feedback": "This is probably the best stance to take, particularly if you care to win a state like New York or Pennsylvania.",
+                            "feedback": "",
                             "answerEffects": []
                         },
                         {
@@ -3471,7 +3471,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4215,
                             "description": "Our current laws are in need of great revision, in light of the troubles we have had with recent immigrants.",
-                            "feedback": "Immigration restriction is more of a Whig position, and it does you little good to advocate for it.",
+                            "feedback": "Nativism appears to be on the rise, but you are probably better off, on the whole, taking a more moderate tack.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -3506,7 +3506,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4228,
                             "description": "We need to be just as aggressive on this issue as we are anywhere else. “Fifty-four Forty or Fight!”",
-                            "feedback": "This is a rallying cry that can certainly help your party in the North and West.",
+                            "feedback": "This is a good way to rally Northern support.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -3625,7 +3625,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4229,
                             "description": "We need to negotiate a permanent agreement with Great Britain that grants some of all of the Oregon Territory to the United States.",
-                            "feedback": "There's no reason to equivocate on the Oregon issue. People want aggressive action there.",
+                            "feedback": "",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -3744,7 +3744,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4230,
                             "description": "I would support any agreement, as long as the United States keeps the land that is south and east of the Colombia River.",
-                            "feedback": "There's no reason to equivocate on the Oregon issue. People want aggressive action there.",
+                            "feedback": "",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -3870,7 +3870,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4205,
                             "description": "I am against the annexation of Texas. And just to show that this does derive from sectional prejudice, I am also against expansion into Oregon or other regions.",
-                            "feedback": "People are wondering if they are reading your words correctly. Annexation was supposed to be the primary issue of your campaign.",
+                            "feedback": "",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -3975,7 +3975,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4237,
                             "description": "Oregon is a different issue than that of Texas. In Oregon we have an existing, legitimate claim.",
-                            "feedback": "This is a strange aside to take, but one that is unlikely to make much of an impression.",
+                            "feedback": "This is a good way to rally Northern support.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "State",
@@ -4087,7 +4087,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4216,
                             "description": "I support a national bank, and one clear argument for the bank is the total chaos we've had with our currency since 1837.",
-                            "feedback": "A national bank is anathema to most Democrats.",
+                            "feedback": "",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -4213,7 +4213,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4218,
                             "description": "I support an independent Treasury, but not one that would disseminate a national currency.",
-                            "feedback": "There's nothing wrong with taking this position.",
+                            "feedback": "",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -4227,7 +4227,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4219,
                             "description": "Our current system is more democratic than any alternative that could be devised. Let the private banks issue currency in line with their own strength and prosperity.",
-                            "feedback": "There's nothing wrong with taking this position.",
+                            "feedback": "Henry Clay takes the Democratic line?",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -4255,7 +4255,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4224,
                             "description": "The independent Treasury is a halfway measure, designed to cover for the disaster that was the war against the Second Bank of the United States.",
-                            "feedback": "What is the idea behind this outburst? The Bank War was, perhaps, Andrew Jackson's central initiative as President.",
+                            "feedback": "",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -4276,7 +4276,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4225,
                             "description": "I would prefer a national bank, but I would be willing to sign a bill which created an independent Treasury.",
-                            "feedback": "A national bank is anathema to most Democrats.",
+                            "feedback": "",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -4297,7 +4297,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4226,
                             "description": "The creation of an independent Treasury will be one of the key initiatives of my Presidency.",
-                            "feedback": "This is a good position to run a campaign on.",
+                            "feedback": "Supporters are surprised and upset to hear you take a new position on the bank issue.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -4311,7 +4311,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4227,
                             "description": "I support our current banking system, and would not support any ill-conceived attempts to centralize our finances.",
-                            "feedback": "There's nothing wrong with taking this position.",
+                            "feedback": "Supporters are surprised and upset to hear you take a new position on the bank issue.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -4339,7 +4339,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4220,
                             "description": "I believe this letter to be disingenuous at best. Further expansion will reopen the debate on slavery rather than suppress it.",
-                            "feedback": "Better to just ignore this letter.",
+                            "feedback": "Probably best to ignore this letter.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -4430,7 +4430,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4211,
                             "description": "We will frame Texas as an issue of national pride and national expansion. I rebuke the idea of Calhoun that this is purely a Southern enterprise.",
-                            "feedback": "This is probably the best stance to take.",
+                            "feedback": "This is probably your best choice. It's just unfortunate that the Democrats continue to demagogue the public on this issue, rather than address the failures of their banking policy.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -4444,7 +4444,7 @@ const testScenario: ScenarioModel = {
                         {
                             "id": 4212,
                             "description": "I disagree with John Calhoun across the board, which leads to my opposition to the annexation of Texas.",
-                            "feedback": "People are wondering if they are reading your words correctly. Annexation was supposed to be the primary issue of your campaign.",
+                            "feedback": "",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
