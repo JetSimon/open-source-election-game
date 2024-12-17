@@ -9,7 +9,7 @@ interface MapViewProps {
 
 function MapView(props: MapViewProps) {
   const { engine, mapUrl } = props;
-  const mapRef = useRef(null);
+  const mapRef = useRef<SVGSVGElement>(null);
   const [stateInfoString, setStateInfoString] = useState(
     "Hover over a state to see"
   );
@@ -22,7 +22,7 @@ function MapView(props: MapViewProps) {
       for (const stateController of engine.scenarioController.getStates()) {
         const statePath = mapRef.current.getElementById(
           stateController.model.abbr
-        );
+        ) as SVGPathElement;
         if (statePath == null) {
           console.error(
             "No state on map found with id",
@@ -42,8 +42,13 @@ function MapView(props: MapViewProps) {
     };
   }, [engine]);
 
-  function onMouseMove(e) {
-    const hoverId = e.target.id;
+  function onMouseMove(e : React.MouseEvent) {
+
+    if(e.target == null) {
+      return;
+    }
+
+    const hoverId = (e.target as SVGPathElement).id;
     if (hoverId != "") {
       const id = engine.getStateIdFromAbbr(hoverId);
       setStateInfoString(engine.getStateOpinionString(id));
