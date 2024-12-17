@@ -104,8 +104,7 @@ class Engine {
     }
 
     isGameOver() {
-        return true;
-        //return this.currentQuestionIndex >= this.scenarioController.getNumberOfQuestions();
+        return this.currentQuestionIndex >= this.scenarioController.getNumberOfQuestions();
     }
 
     getStateIdFromAbbr(abbr: string): number {
