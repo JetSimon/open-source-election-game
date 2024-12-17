@@ -1,17 +1,33 @@
 import AnswerEffectType from "../models/AnswerEffectType";
 import AnswerModel from "../models/AnswerModel";
 import ScenarioModel from "../models/ScenarioModel";
+import CandidateController from "./controllers/CandidateController";
 import ScenarioController from "./controllers/ScenarioController";
 
 const MAGIC_TCT_MULTIPLIER = 1; // We are importing scenarios from TCT rn, sometimes we may need to multiply effects by this to have it apply here
 
 class Engine {
+    sideIndex = 0;
     currentQuestionIndex = 0;
     scenarioController: ScenarioController = new ScenarioController();
 
     loadScenario(newScenario: ScenarioModel) {
         this.currentQuestionIndex = 0;
-        this.scenarioController.loadScenario(newScenario, 0); // TODO: Load more than the first side
+        this.sideIndex = 0; // TODO: Load more than the first side
+        this.scenarioController.loadScenario(newScenario, this.sideIndex); 
+    }
+
+    getSide() {
+        return this.scenarioController.model.scenarioSides[this.sideIndex];
+    }
+
+    getPlayerCandidateController() : CandidateController {
+        const playerCans = this.scenarioController.getCandidates().filter((x) => x.getId() == this.getSide().playerId);
+        if(playerCans.length > 0) {
+            return playerCans[0];
+        }
+        console.error("Could not get player candidate!");
+        return this.scenarioController.getCandidates()[0];
     }
 
     getCurrentQuestion() {

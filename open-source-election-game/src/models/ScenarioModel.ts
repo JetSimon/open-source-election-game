@@ -4,6 +4,7 @@ import Issue from "./Issue";
 import QuestionModel from "./QuestionModel";
 
 interface ScenarioSideModel {
+    playerId: number;
     questions: QuestionModel[];
 }
 

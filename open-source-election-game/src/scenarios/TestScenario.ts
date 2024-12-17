@@ -1701,6 +1701,7 @@ const testScenario: ScenarioModel = {
     ],
     "scenarioSides": [
         {
+            "playerId": 132, 
             "questions": [
                 {
                     "id": 623,

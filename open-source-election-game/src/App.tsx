@@ -5,6 +5,7 @@ import testScenario from './scenarios/TestScenario';
 import AnswerModel from './models/AnswerModel';
 import QuestionView from './views/QuestionView';
 
+import BottomBanner from './components/BottomBanner';
 import MapView from './views/MapView';
 import testMap from './scenarios/TestMap.svg';
 
@@ -46,6 +47,7 @@ function App() {
       <h2>OSEG</h2>
       <QuestionView currentQuestionIndex={currentQuestionIndex} engine={engine} currentQuestion={currentQuestion} submitAnswer={submitAnswer} selectedAnswer={selectedAnswer} setSelectedAnswer={setSelectedAnswer}></QuestionView>
       <MapView engine={engine} mapUrl={testMap}></MapView>
+      <BottomBanner engine={engine}></BottomBanner>
     </div>
   );
 }
