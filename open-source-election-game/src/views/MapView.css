@@ -1,6 +1,7 @@
 .MapView {
     display: flex;
     gap: 5%;
+    height: 33%;
 }
 
 .Map {
@@ -19,9 +20,21 @@
 .StatePollValueList {
     display: flex;
     flex-direction: column;
+    text-align: left;
+    margin:auto;
 }
 
 .StatePollValue {
     padding: 0px;
     margin: 0px;
+}
+
+.PollDot {
+    border-radius: 100%;
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+    margin: auto;
+    margin-right: 4px;
+    border: solid 1px rgba(0,0,0,0.25);
 }

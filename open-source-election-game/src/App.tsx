@@ -42,11 +42,11 @@ function App() {
   }
 
   return (
-    <>
-    <h1>OSEG</h1>
+    <div className="App">
+    <h2>OSEG</h2>
       <QuestionView currentQuestionIndex={currentQuestionIndex} engine={engine} currentQuestion={currentQuestion} submitAnswer={submitAnswer} selectedAnswer={selectedAnswer} setSelectedAnswer={setSelectedAnswer}></QuestionView>
       <MapView engine={engine} mapUrl={testMap}></MapView>
-    </>
+    </div>
   );
 }
 

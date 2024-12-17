@@ -21,7 +21,8 @@ function StatePoll(props : StatePollProps) {
             <div className="StatePollValueList">
                 {Array.from(stateController.opinions).sort((a, b) => b[1] - a[1]).map(([candidateId, opinion]) => {
                     const candidate = engine.getCandidateByCandidateId(candidateId);
-                    return <p className="StatePollValue" key={candidate.model.id}><span style={{fontWeight:"bold"}}>{candidate.model.lastName}</span> - {(opinion * 100).toFixed(2)}%</p>
+                    const color = candidate.model.color;
+                    return <p className="StatePollValue" key={candidate.model.id}><div style={{backgroundColor:color}} className="PollDot"></div><span style={{fontWeight:"bold"}}>{candidate.model.lastName}</span> - {(opinion * 100).toFixed(2)}%</p>
                 })}
             </div>
             <h3>Issue Stances</h3>

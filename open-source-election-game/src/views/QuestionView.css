@@ -1,5 +1,7 @@
 .QuestionView {
     margin: 16px;
+    height: 33%;
+    display: flex;
 }
 
 .QuestionDescription {
