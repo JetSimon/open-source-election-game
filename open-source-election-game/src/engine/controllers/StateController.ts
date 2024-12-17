@@ -71,17 +71,21 @@ class StateController {
             for (const issue of scenario.getIssues()) {
                 const candidateWeight = ((candidate.issueScores.getIssueScoreForIssue(issue.id) + 1) / 2) * candidate.issueScores.getWeightForIssue(issue.id);
                 const stateWeight = ((this.issueScores.getIssueScoreForIssue(issue.id) + 1) / 2) * this.issueScores.getWeightForIssue(issue.id);
-                const differenceOfWeight = (candidateWeight - stateWeight) * Math.abs(candidateWeight - stateWeight);
+                const differenceOfWeight = Math.pow(Math.abs(candidateWeight - stateWeight), 2);
                 opinion += differenceOfWeight;            
             }
 
             this.opinions.set(candidate.getId(), opinion);
         }
 
-        let totalOpinion = sumNumberArray(Array.from(this.opinions.values()));
+        const opinions = Array.from(this.opinions.values()).sort();
+        const minOpinion = opinions[0];
+        const maxOpinion = opinions[opinions.length - 1];
+        let totalOpinion = sumNumberArray(opinions);
         const candidates = scenario.getCandidates();
         for (const candidate of candidates) {
-            let newOpinion = totalOpinion == 0 ? 1.0 / candidates.length : this.getOpinionForCandidate(candidate.getId()) / totalOpinion;
+            const normed = (this.getOpinionForCandidate(candidate.getId()) - minOpinion) / maxOpinion;
+            let newOpinion = totalOpinion == 0 ? 1.0 / candidates.length : normed;
             newOpinion = 1.0 - newOpinion; // Because we calculate distance between issues
             newOpinion *= this.getCandidateStateModifier(candidate.getId());
             newOpinion *= scenario.getGlobalModifierForCandidate(candidate.getId());
