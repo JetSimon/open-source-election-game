@@ -71,11 +71,9 @@ class StateController {
             for (const issue of scenario.getIssues()) {
                 const candidateWeight = ((candidate.issueScores.getIssueScoreForIssue(issue.id) + 1) / 2) * candidate.issueScores.getWeightForIssue(issue.id);
                 const stateWeight = ((this.issueScores.getIssueScoreForIssue(issue.id) + 1) / 2) * this.issueScores.getWeightForIssue(issue.id);
-                const differenceOfWeight = Math.sqrt(Math.abs(candidateWeight - stateWeight));
+                const differenceOfWeight = (candidateWeight - stateWeight) * Math.abs(candidateWeight - stateWeight);
                 opinion += differenceOfWeight;            
             }
-
-            opinion = Math.max(0, opinion);
 
             this.opinions.set(candidate.getId(), opinion);
         }
