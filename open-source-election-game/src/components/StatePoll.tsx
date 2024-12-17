@@ -16,11 +16,22 @@ function StatePoll(props : StatePollProps) {
 
     return (
         <div className="StatePoll">
-            <h3>{stateController.model.name}</h3>
+            <h2>{stateController.model.name}</h2>
+            <h3>Polls</h3>
             <div className="StatePollValueList">
                 {Array.from(stateController.opinions).sort((a, b) => b[1] - a[1]).map(([candidateId, opinion]) => {
                     const candidate = engine.getCandidateByCandidateId(candidateId);
                     return <p className="StatePollValue" key={candidate.model.id}><span style={{fontWeight:"bold"}}>{candidate.model.lastName}</span> - {(opinion * 100).toFixed(2)}%</p>
+                })}
+            </div>
+            <h3>Issue Stances</h3>
+            <div className="StatePollValueList">
+                {engine.scenarioController.getIssues().map((issue) => {
+                    const issueScore = stateController.issueScores.getIssueScoreForIssue(issue.id);
+                    // Remap from -1 to 1 -> 0 -> (issue stance length - 1)
+                    const remappedIssueScore = Math.round(((issueScore + 1) / 2) * (issue.stances.length - 1));
+                    const stance = issue.stances[remappedIssueScore];
+                    return <p className="StatePollValue" key={issue.id}><span style={{fontWeight:"bold"}}>{issue.name}</span> - {stance}</p>
                 })}
             </div>
         </div>
