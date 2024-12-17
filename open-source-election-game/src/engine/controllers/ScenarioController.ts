@@ -68,7 +68,7 @@ class ScenarioController {
     }
 
     changeCandidateGlobalModifier(candidateId: number, amount: number) {
-        this.globalModifiers.set(candidateId, this.getGlobalModifierForCandidate(candidateId) + amount);
+        this.globalModifiers.set(candidateId, Math.max(0, this.getGlobalModifierForCandidate(candidateId) + amount));
     }
 
     getStateControllerByStateId(stateId: number) {

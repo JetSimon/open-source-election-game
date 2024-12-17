@@ -3,6 +3,8 @@ import AnswerModel from "../models/AnswerModel";
 import ScenarioModel from "../models/ScenarioModel";
 import ScenarioController from "./controllers/ScenarioController";
 
+const MAGIC_TCT_MULTIPLIER = 1; // We are importing scenarios from TCT rn, sometimes we may need to multiply effects by this to have it apply here
+
 class Engine {
     currentQuestionIndex = 0;
     scenarioController: ScenarioController = new ScenarioController();
@@ -62,13 +64,13 @@ class Engine {
             try {
                 const answerEffectType: AnswerEffectType = AnswerEffectType[answerEffect.answerEffectType as keyof typeof AnswerEffectType];
                 if (answerEffectType == AnswerEffectType.Global) {
-                    this.scenarioController.changeCandidateGlobalModifier(answerEffect.candidateId, answerEffect.amount);
+                    this.scenarioController.changeCandidateGlobalModifier(answerEffect.candidateId, answerEffect.amount * MAGIC_TCT_MULTIPLIER);
                 }
                 else if (answerEffectType == AnswerEffectType.Issue) {
-                    this.scenarioController.getCandidateByCandidateId(answerEffect.candidateId).changeIssueScore(answerEffect.issueId, answerEffect.amount);
+                    this.scenarioController.getCandidateByCandidateId(answerEffect.candidateId).changeIssueScore(answerEffect.issueId, MAGIC_TCT_MULTIPLIER * answerEffect.amount);
                 }
                 else if (answerEffectType == AnswerEffectType.State) {
-                    this.scenarioController.getStateControllerByStateId(answerEffect.stateId).changeCandidateStateModifier(answerEffect.candidateId, answerEffect.amount);
+                    this.scenarioController.getStateControllerByStateId(answerEffect.stateId).changeCandidateStateModifier(answerEffect.candidateId, MAGIC_TCT_MULTIPLIER *  answerEffect.amount);
                 }
             }
             catch (e) {
