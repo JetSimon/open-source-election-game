@@ -24,7 +24,7 @@ function App() {
       return;
     }
 
-    alert("Feedback: " + selectedAnswer.feedback);
+    //alert("Feedback: " + selectedAnswer.feedback);
     engine.applyAnswer(selectedAnswer);
     engine.nextQuestion();
     setCurrentQuestionIndex(engine.currentQuestionIndex);
