@@ -6,7 +6,7 @@ import ScenarioController from "./controllers/ScenarioController";
 import FinalResultsModel from "../models/FinalResultsModel";
 import EndingModel from "../models/EndingModel";
 
-const fromTct = (x : number) => 2*x; // We are importing scenarios from TCT rn, sometimes we may need to multiply effects by this to have it apply here
+const fromTct = (x : number) => 5*x; // We are importing scenarios from TCT rn, sometimes we may need to multiply effects by this to have it apply here
 
 class Engine {
     sideIndex = 0;
