@@ -4,8 +4,20 @@
     height: 33%;
 }
 
+@media only screen and (max-width: 600px) {
+    .MapView {
+      flex-direction: column;
+    }
+
+    .StatePoll {
+        margin:auto;
+        width: 100%!important;
+    }
+}
+
 .Map {
     outline: solid 1px black;
+    width: 100%;
 }
 
 .StatePoll {
