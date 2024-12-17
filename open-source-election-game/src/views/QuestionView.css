@@ -1,5 +1,6 @@
 .QuestionView {
-    margin: 16px;
+    margin: auto;
+    padding: 16px;
     height: 33%;
     display: flex;
 }
