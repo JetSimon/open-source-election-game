@@ -55,16 +55,22 @@ class Engine {
         }
 
         for (const answerEffect of selectedAnswer.answerEffects) {
-            const answerEffectType: AnswerEffectType = AnswerEffectType[answerEffect.answerEffectType as keyof typeof AnswerEffectType];
-            if (answerEffectType == AnswerEffectType.Global) {
-                this.scenarioController.changeCandidateGlobalModifier(answerEffect.candidateId, answerEffect.amount);
+            try {
+                const answerEffectType: AnswerEffectType = AnswerEffectType[answerEffect.answerEffectType as keyof typeof AnswerEffectType];
+                if (answerEffectType == AnswerEffectType.Global) {
+                    this.scenarioController.changeCandidateGlobalModifier(answerEffect.candidateId, answerEffect.amount);
+                }
+                else if (answerEffectType == AnswerEffectType.Issue) {
+                    this.scenarioController.getCandidateByCandidateId(answerEffect.candidateId).changeIssueScore(answerEffect.issueId, answerEffect.amount);
+                }
+                else if (answerEffectType == AnswerEffectType.State) {
+                    this.scenarioController.getStateControllerByStateId(answerEffect.stateId).changeCandidateStateModifier(answerEffect.candidateId, answerEffect.amount);
+                }
             }
-            else if (answerEffectType == AnswerEffectType.Issue) {
-                this.scenarioController.getCandidateByCandidateId(answerEffect.candidateId).changeIssueScore(answerEffect.issueId, answerEffect.amount);
+            catch (e) {
+                console.error("Error while trying to apply answer effect", e, "\neffect:", JSON.stringify(answerEffect));
             }
-            else if (answerEffectType == AnswerEffectType.State) {
-                this.scenarioController.getStateControllerByStateId(answerEffect.stateId).changeCandidateStateModifier(answerEffect.candidateId, answerEffect.amount);
-            }
+
         }
 
         this.updateStates();
@@ -76,6 +82,15 @@ class Engine {
 
     isGameOver() {
         return this.currentQuestionIndex >= this.scenarioController.getNumberOfQuestions();
+    }
+
+    getStateIdFromAbbr(abbr: string): number {
+        const arr = this.scenarioController.model.states.filter((x) => x.abbr == abbr);
+        if (arr.length == 0) {
+            return -1;
+        }
+
+        return arr[0].id;
     }
 }
 

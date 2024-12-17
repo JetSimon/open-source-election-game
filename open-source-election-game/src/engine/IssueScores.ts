@@ -6,21 +6,35 @@ class IssueScores {
     constructor(issueScoresArray: IssueScore[]) {
         this.issueScores = new Map<number, IssueScore>();
         for (const issueScore of issueScoresArray) {
-            if (issueScore.weight < -1 || issueScore.weight > 1) {
+            if (issueScore.issueScore < -1 || issueScore.issueScore > 1) {
                 console.error("Issue score for issue with id", issueScore.issueId, "is not betweene [-1, 1]!");
             }
             this.issueScores.set(issueScore.issueId, issueScore);
         }
     }
 
+    hasIssue(issueId: number) {
+        return this.issueScores.has(issueId);
+    }
+
     getWeightForIssue(issueId: number): number {
         const weight = this.issueScores.get(issueId)?.weight;
         if (weight == null) {
-            console.error("No issue score found with id: ", issueId);
+            console.error("No issue score or maybe weight found for id: ", issueId);
             return 0;
         }
 
         return weight;
+    }
+
+    getIssueScoreForIssue(issueId: number): number {
+        const issueScore = this.issueScores.get(issueId)?.issueScore;
+        if (issueScore == null) {
+            console.error("No issue score or maybe issue score amount found for id: ", issueId);
+            return 0;
+        }
+
+        return issueScore;
     }
 
     changeWeightForIssue(issueId: number, amount: number) {

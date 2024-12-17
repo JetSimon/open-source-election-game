@@ -4313,6 +4313,6 @@ const testScenario: ScenarioModel = {
             ]
         }
     ]
-}
+};
 
 export default testScenario;

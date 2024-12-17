@@ -23,12 +23,27 @@ class ScenarioController {
 
     loadScenario(model: ScenarioModel, sideIndex: number) {
         this.model = model;
-        this.candidateControllers = model.candidates.map((candidateModel) => new CandidateController(candidateModel));
+
+        this.candidateControllers = model.candidates.filter((candidateModel) => !candidateModel.runningMate).map((candidateModel) => new CandidateController(candidateModel));
+        const toRemove = new Set();
+        for (const candidateController of this.getCandidates()) {
+            for (const issue of model.issues) {
+                if (!candidateController.issueScores.hasIssue(issue.id)) {
+                    console.error("Candidate with id", candidateController.getId(), "doesn't have an issue score for issue with id", issue.id, "going to remove them for now");
+                    toRemove.add(candidateController.getId());
+                    break;
+                }
+            }
+        }
+        this.candidateControllers = this.candidateControllers.filter((x) => !toRemove.has(x.getId()));
+        for (const candidateController of this.getCandidates()) {
+            this.globalModifiers.set(candidateController.getId(), 1);
+        }
+
         this.stateControllers = model.states.map((stateModel) => new StateController(this, stateModel));
         this.questions = model.scenarioSides[sideIndex].questions;
-        for (const candidateController of this.getCandidates()) {
-            this.globalModifiers.set(candidateController.getId(), 0);
-        }
+
+
     }
 
     getCandidates() {

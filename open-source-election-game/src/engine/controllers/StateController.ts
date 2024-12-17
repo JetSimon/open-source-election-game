@@ -27,7 +27,7 @@ class StateController {
     addCandidates(candidates: CandidateController[]) {
         for (const candidate of candidates) {
             this.opinions.set(candidate.getId(), 0);
-            this.stateModifiers.set(candidate.getId(), 0);
+            this.stateModifiers.set(candidate.getId(), 1);
         }
     }
 
@@ -50,28 +50,37 @@ class StateController {
     }
 
     changeCandidateStateModifier(candidateId: number, amount: number) {
-        this.stateModifiers.set(candidateId, this.getCandidateStateModifier(candidateId) + amount);
+        this.stateModifiers.set(candidateId, Math.max(0, this.getCandidateStateModifier(candidateId) + amount));
     }
 
     update(scenario: ScenarioController) {
         for (const candidate of scenario.getCandidates()) {
+
+            if (candidate.model.runningMate) {
+                continue;
+            }
+
             let opinion = 0;
             for (const issue of scenario.getIssues()) {
-                const candidateWeight = (candidate.issueScores.getWeightForIssue(issue.id) + 1) / 2;
-                const stateWeight = (this.issueScores.getWeightForIssue(issue.id) + 1) / 2;
+                const candidateWeight = ((candidate.issueScores.getIssueScoreForIssue(issue.id) + 1) / 2) * candidate.issueScores.getWeightForIssue(issue.id);
+                const stateWeight = ((this.issueScores.getIssueScoreForIssue(issue.id) + 1) / 2) * this.issueScores.getWeightForIssue(issue.id);
                 const differenceOfWeight = Math.sqrt(Math.abs(candidateWeight - stateWeight));
                 opinion += differenceOfWeight;
             }
-            opinion += this.getCandidateStateModifier(candidate.getId());
-            opinion += scenario.getGlobalModifierForCandidate(candidate.getId());
+
+            opinion *= this.getCandidateStateModifier(candidate.getId());
+            opinion *= scenario.getGlobalModifierForCandidate(candidate.getId());
+
+            opinion = Math.max(0, opinion);
+
             this.opinions.set(candidate.getId(), opinion);
         }
 
         const totalOpinion = sumNumberArray(Array.from(this.opinions.values()));
-        console.log(totalOpinion);
-
-        for (const candidate of scenario.getCandidates()) {
-            this.opinions.set(candidate.getId(), this.getOpinionForCandidate(candidate.getId()) / totalOpinion);
+        const candidates = scenario.getCandidates();
+        for (const candidate of candidates) {
+            const newOpinion = totalOpinion == 0 ? 1.0 / candidates.length : this.getOpinionForCandidate(candidate.getId()) / totalOpinion;
+            this.opinions.set(candidate.getId(), newOpinion);
         }
     }
 
@@ -91,7 +100,7 @@ class StateController {
     getOpinionString() {
         let output = this.model.name + " opinions: \n";
         for (const candidateId of this.opinions.keys()) {
-            output += candidateId + " - " + this.getOpinionForCandidate(candidateId);
+            output += candidateId + " - " + this.getOpinionForCandidate(candidateId) + " | ";
         }
         return output;
     }
