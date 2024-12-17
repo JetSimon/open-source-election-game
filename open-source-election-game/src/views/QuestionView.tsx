@@ -25,7 +25,7 @@ function QuestionView(props: QuestionViewProps) {
                     {currentQuestion.answers.map((answerModel) => <Answer answerId={currentQuestion.answers.indexOf(answerModel).toString()} key={currentQuestion.answers.indexOf(answerModel)} answerModel={answerModel} selectedAnswer={selectedAnswer} setSelectedAnswer={setSelectedAnswer}></Answer>)}
                 </div>
 
-                <button className="ConfirmAnswerButton" onClick={submitAnswer}>Okay</button>
+                <button disabled={selectedAnswer == null} className="ConfirmAnswerButton" onClick={submitAnswer}>Okay</button>
             </div>
         </div>
     );
