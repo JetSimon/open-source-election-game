@@ -77,7 +77,7 @@ class StateController {
             for (const issue of scenario.getIssues()) {
                 const candidateWeight = ((candidate.issueScores.getIssueScoreForIssue(issue.id) + 1) / 2) * candidate.issueScores.getWeightForIssue(issue.id);
                 const stateWeight = ((this.issueScores.getIssueScoreForIssue(issue.id) + 1) / 2) * this.issueScores.getWeightForIssue(issue.id);
-                const differenceOfWeight = Math.pow(Math.abs(candidateWeight - stateWeight), 2);
+                const differenceOfWeight = Math.pow(Math.abs(candidateWeight - stateWeight), 0.5);
                 opinion += differenceOfWeight;            
             }
 
@@ -138,7 +138,9 @@ class StateController {
             return "#000000";
         }
 
-        const highestCandidateOpinion = this.getOpinionForCandidate(highestCandidate.getId());
+        let highestCandidateOpinion = this.getOpinionForCandidate(highestCandidate.getId());
+        highestCandidateOpinion = Math.pow(Math.abs(highestCandidateOpinion - 0.5), 0.25);
+        
         const candidateColorRgb = hexToRgb(highestCandidate.model.color);
 
         for (let i = 0; i < candidateColorRgb.length; i++) {

@@ -21,9 +21,9 @@ function FinalResults(props : FinalResultsProps) {
 
     return engine.scenarioController.getCandidates().sort((x, y) => (getEv(y) - getEv(x)) || (getPv(y) - getPv(x))).map((candidate) => {
         return (
-        <div key={candidate.model.id}>
-            <p>{candidate.model.firstName} {candidate.model.lastName} | PV: {getPv(candidate)} | EV: {getEv(candidate)}</p>
-        </div>
+            <div key={candidate.model.id}>
+                <p>{candidate.model.firstName} {candidate.model.lastName} | PV: {getPv(candidate)} | EV: {getEv(candidate)}</p>
+            </div>
         )
     });
 }

@@ -4,6 +4,7 @@ import ScenarioModel from "../models/ScenarioModel";
 import CandidateController from "./controllers/CandidateController";
 import ScenarioController from "./controllers/ScenarioController";
 import FinalResultsModel from "../models/FinalResultsModel";
+import EndingModel from "../models/EndingModel";
 
 const fromTct = (x : number) => 2*x; // We are importing scenarios from TCT rn, sometimes we may need to multiply effects by this to have it apply here
 
@@ -143,6 +144,39 @@ class Engine {
         return {
             "popularVotes" : popularVotes,
             "electoralVotes" : electoralVotes
+        }
+    }
+
+    getTotalPopularVotes() {
+        let total = 0;
+        for(const stateController of this.scenarioController.getStates()) {
+            total += stateController.model.popularVotes;
+        }
+        return total;
+    }
+
+    getTotalElectoralVotes() {
+        let total = 0;
+        for(const stateController of this.scenarioController.getStates()) {
+            total += stateController.model.electoralVotes;
+        }
+        return total;
+    }
+
+    // TODO: Have ending models stored in ScenarioSideModel instead, and you get them based on conditionals evaluated from there
+    getEnding() : EndingModel {
+        const results = this.getFinalResults();
+        let thisPlayerEv = results.electoralVotes.get(this.getPlayerCandidateController().getId());
+        if(thisPlayerEv == undefined) thisPlayerEv = 0;
+        const playerWon = thisPlayerEv >= Math.floor(this.getTotalElectoralVotes() / 2);
+
+        return {
+            slides : [
+                {
+                    imageUrl: "https://placehold.co/512x512",
+                    endingText: playerWon ? "YOU WON BLA BLA BLA" : "YOU LOST BLA BLA BLA"
+                }
+            ]
         }
     }
 }

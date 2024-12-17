@@ -3,6 +3,7 @@ import StateController from "./StateController";
 import CandidateController from "./CandidateController";
 import IssueScores from "../IssueScores";
 import QuestionModel from "../../models/QuestionModel";
+import { shuffleArray } from "../../utils/ArrayUtils";
 
 class ScenarioController {
     model: ScenarioModel = this.makeEmptyScenarioModel();
@@ -42,8 +43,10 @@ class ScenarioController {
 
         this.stateControllers = model.states.map((stateModel) => new StateController(this, stateModel));
         this.questions = model.scenarioSides[sideIndex].questions;
-
-
+        
+        for(let i = 0; i < this.questions.length; i++) {
+            shuffleArray(this.questions[i].answers);
+        }
     }
 
     getCandidates() {

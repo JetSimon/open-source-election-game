@@ -11,6 +11,8 @@ import testMap from './scenarios/TestMap.svg';
 
 import EndingView from './views/EndingView';
 
+let autoplayHandle : undefined | number = undefined;
+
 const engine = new Engine();
 engine.loadScenario(testScenario);
 engine.updateStates();
@@ -21,13 +23,41 @@ function App() {
   const [currentQuestion, setCurrentQuestion] = useState(engine.getCurrentQuestion());
   const [selectedAnswer, setSelectedAnswer] = useState<AnswerModel | null>(null);
 
-  function submitAnswer() {
+  function autoplay() {
+    if(engine.isGameOver()) {
+      clearInterval(autoplayHandle);
+      return;
+    }
+
+    const answer = currentQuestion?.answers[0];
+    if(answer != undefined) {
+      setSelectedAnswer(answer);
+      if(selectedAnswer != null)
+      submitAnswer(false);
+    }
+    else {
+      console.error("Answer undefined")
+    }
+  }
+
+  function startAutoplay() {
+    if(autoplayHandle) {
+      clearInterval(autoplayHandle);
+    }
+
+    autoplayHandle = setInterval(autoplay, 50);
+  }
+
+  function submitAnswer(showFeedback = true) {
     if (selectedAnswer == null) {
       alert("You must select an answer!");
       return;
     }
 
-    alert("Feedback: " + selectedAnswer.feedback);
+    if(showFeedback) {
+      alert("Feedback: " + selectedAnswer.feedback);
+    }
+   
     engine.applyAnswer(selectedAnswer);
     setSelectedAnswer(null);
     engine.nextQuestion();
@@ -48,6 +78,7 @@ function App() {
   return (
     <div className="App">
       <h2>OSEG</h2>
+      <button onClick={startAutoplay}>Autoplay (PRESS TWICE)</button>
       {
         engine.isGameOver() ? 
         <EndingView engine={engine}></EndingView>
