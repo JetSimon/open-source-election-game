@@ -1,5 +1,4 @@
 import AnswerEffectType from "../models/AnswerEffectType";
-import AnswerEffect from "../models/AnswerEffectModel";
 import AnswerModel from "../models/AnswerModel";
 import ScenarioModel from "../models/ScenarioModel";
 import ScenarioController from "./controllers/ScenarioController";
@@ -10,19 +9,19 @@ class Engine {
 
     loadScenario(newScenario: ScenarioModel) {
         this.currentQuestionIndex = 0;
-        this.scenarioController.loadScenario(newScenario);
+        this.scenarioController.loadScenario(newScenario, 0); // TODO: Load more than the first side
     }
 
     getCurrentQuestion() {
-        if (this.currentQuestionIndex < 0 || this.currentQuestionIndex >= this.scenarioController.model.questions.length) {
+        if (this.currentQuestionIndex < 0 || this.currentQuestionIndex >= this.scenarioController.getNumberOfQuestions()) {
             return null;
         }
 
-        return this.scenarioController.model.questions[this.currentQuestionIndex];
+        return this.scenarioController.questions[this.currentQuestionIndex];
     }
 
     getNumberOfQuestions() {
-        return this.scenarioController.model.questions.length;
+        return this.scenarioController.getNumberOfQuestions();
     }
 
     updateStates() {
@@ -45,7 +44,7 @@ class Engine {
         return output;
     }
 
-    getStateOpinionString(stateId: string) {
+    getStateOpinionString(stateId: number) {
         return this.scenarioController.getStateControllerByStateId(stateId).getOpinionString();
     }
 
@@ -61,10 +60,10 @@ class Engine {
                 this.scenarioController.changeCandidateGlobalModifier(answerEffect.candidateId, answerEffect.amount);
             }
             else if (answerEffectType == AnswerEffectType.Issue) {
-                this.scenarioController.getCandidateByCandidateId(answerEffect.candidateId).changeIssueScore(answerEffect.targetId, answerEffect.amount);
+                this.scenarioController.getCandidateByCandidateId(answerEffect.candidateId).changeIssueScore(answerEffect.issueId, answerEffect.amount);
             }
             else if (answerEffectType == AnswerEffectType.State) {
-                this.scenarioController.getStateControllerByStateId(answerEffect.targetId).changeCandidateStateModifier(answerEffect.candidateId, answerEffect.amount);
+                this.scenarioController.getStateControllerByStateId(answerEffect.stateId).changeCandidateStateModifier(answerEffect.candidateId, answerEffect.amount);
             }
         }
 
@@ -76,7 +75,7 @@ class Engine {
     }
 
     isGameOver() {
-        return this.currentQuestionIndex >= this.scenarioController.model.questions.length;
+        return this.currentQuestionIndex >= this.scenarioController.getNumberOfQuestions();
     }
 }
 

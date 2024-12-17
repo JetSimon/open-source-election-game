@@ -14,7 +14,7 @@ class CandidateController {
         return this.model.id;
     }
 
-    changeIssueScore(issueScoreId: string, amount: number) {
+    changeIssueScore(issueScoreId: number, amount: number) {
         this.issueScores.changeWeightForIssue(issueScoreId, amount);
     }
 }

@@ -1,10 +1,10 @@
 import IssueScore from "../models/IssueScore";
 
 class IssueScores {
-    issueScores: Map<string, IssueScore>;
+    issueScores: Map<number, IssueScore>;
 
     constructor(issueScoresArray: IssueScore[]) {
-        this.issueScores = new Map<string, IssueScore>();
+        this.issueScores = new Map<number, IssueScore>();
         for (const issueScore of issueScoresArray) {
             if (issueScore.weight < -1 || issueScore.weight > 1) {
                 console.error("Issue score for issue with id", issueScore.issueId, "is not betweene [-1, 1]!");
@@ -13,7 +13,7 @@ class IssueScores {
         }
     }
 
-    getWeightForIssue(issueId: string): number {
+    getWeightForIssue(issueId: number): number {
         const weight = this.issueScores.get(issueId)?.weight;
         if (weight == null) {
             console.error("No issue score found with id: ", issueId);
@@ -23,7 +23,7 @@ class IssueScores {
         return weight;
     }
 
-    changeWeightForIssue(issueId: string, amount: number) {
+    changeWeightForIssue(issueId: number, amount: number) {
         const issueScore = this.issueScores.get(issueId);
 
         if (issueScore == undefined) {

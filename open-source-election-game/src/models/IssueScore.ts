@@ -1,5 +1,6 @@
 interface IssueScore {
-    issueId: string;
+    issueId: number;
+    issueScore: number;
     weight: number;
 }
 

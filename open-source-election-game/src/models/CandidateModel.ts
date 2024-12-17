@@ -1,13 +1,15 @@
 import IssueScore from "./IssueScore";
 
 interface CandidateModel {
-    id: string;
+    id: number;
     firstName: string;
     lastName: string;
     party: string;
-    homeStateId: string;
-    issueScores: IssueScore[];
+    homeState: string;
     color: string;
+    runningMate: boolean;
+    isPlayable: boolean;
+    issueScores: IssueScore[];
 }
 
 export default CandidateModel;

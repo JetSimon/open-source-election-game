@@ -1,9 +1,11 @@
 import IssueScore from "./IssueScore";
 
 interface StateModel {
-    id: string,
+    id: number,
     name: string,
-    population: number;
+    abbr: string,
+    electoralVotes: number,
+    popularVotes: number;
     baseIssueScores: IssueScore[];
 }
 

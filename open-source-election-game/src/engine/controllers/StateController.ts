@@ -8,15 +8,15 @@ import { hexToRgb, rgbToHex } from "../../utils/ColorUtils";
 
 class StateController {
     model: StateModel;
-    opinions: Map<string, number>;
-    stateModifiers: Map<string, number>;
+    opinions: Map<number, number>;
+    stateModifiers: Map<number, number>;
     issueScores: IssueScores;
 
     constructor(scenario: ScenarioController, model: StateModel) {
         this.model = model;
         this.issueScores = new IssueScores(this.model.baseIssueScores);
-        this.opinions = new Map<string, number>();
-        this.stateModifiers = new Map<string, number>();
+        this.opinions = new Map<number, number>();
+        this.stateModifiers = new Map<number, number>();
         this.addCandidates(scenario.getCandidates());
     }
 
@@ -31,7 +31,7 @@ class StateController {
         }
     }
 
-    getOpinionForCandidate(candidateId: string): number {
+    getOpinionForCandidate(candidateId: number): number {
         const opinion: number | undefined = this.opinions.get(candidateId);
         if (opinion == undefined) {
             console.error("State with id", this.model.id, " invalid candidate id of", candidateId);
@@ -40,7 +40,7 @@ class StateController {
         return opinion;
     }
 
-    getCandidateStateModifier(candidateId: string): number {
+    getCandidateStateModifier(candidateId: number): number {
         const modifier: number | undefined = this.stateModifiers.get(candidateId);
         if (modifier == undefined) {
             console.error("State with id", this.model.id, " invalid candidate id of", candidateId);
@@ -49,7 +49,7 @@ class StateController {
         return modifier;
     }
 
-    changeCandidateStateModifier(candidateId: string, amount: number) {
+    changeCandidateStateModifier(candidateId: number, amount: number) {
         this.stateModifiers.set(candidateId, this.getCandidateStateModifier(candidateId) + amount);
     }
 
