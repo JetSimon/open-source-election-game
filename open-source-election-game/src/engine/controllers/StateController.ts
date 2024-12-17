@@ -26,8 +26,15 @@ class StateController {
 
     addCandidates(candidates: CandidateController[]) {
         for (const candidate of candidates) {
+
+            let stateModifier = 1;
+            const mods = this.model.baseCandidateStateModifiers.filter((x) => x.candidateId == candidate.getId());
+            if(mods.length > 0) {
+                stateModifier = mods[0].amount;
+            }
+
             this.opinions.set(candidate.getId(), 0);
-            this.stateModifiers.set(candidate.getId(), 1);
+            this.stateModifiers.set(candidate.getId(), stateModifier);
         }
     }
 
@@ -65,19 +72,25 @@ class StateController {
                 const candidateWeight = ((candidate.issueScores.getIssueScoreForIssue(issue.id) + 1) / 2) * candidate.issueScores.getWeightForIssue(issue.id);
                 const stateWeight = ((this.issueScores.getIssueScoreForIssue(issue.id) + 1) / 2) * this.issueScores.getWeightForIssue(issue.id);
                 const differenceOfWeight = Math.sqrt(Math.abs(candidateWeight - stateWeight));
-                opinion += differenceOfWeight;
+                opinion += differenceOfWeight;            
             }
-
-            opinion *= this.getCandidateStateModifier(candidate.getId());
-            opinion *= scenario.getGlobalModifierForCandidate(candidate.getId());
 
             opinion = Math.max(0, opinion);
 
             this.opinions.set(candidate.getId(), opinion);
         }
 
-        const totalOpinion = sumNumberArray(Array.from(this.opinions.values()));
+        let totalOpinion = sumNumberArray(Array.from(this.opinions.values()));
         const candidates = scenario.getCandidates();
+        for (const candidate of candidates) {
+            let newOpinion = totalOpinion == 0 ? 1.0 / candidates.length : this.getOpinionForCandidate(candidate.getId()) / totalOpinion;
+            newOpinion = 1.0 - newOpinion; // Because we calculate distance between issues
+            newOpinion *= this.getCandidateStateModifier(candidate.getId());
+            newOpinion *= scenario.getGlobalModifierForCandidate(candidate.getId());
+            this.opinions.set(candidate.getId(), newOpinion);
+        }
+
+        totalOpinion = sumNumberArray(Array.from(this.opinions.values()));
         for (const candidate of candidates) {
             const newOpinion = totalOpinion == 0 ? 1.0 / candidates.length : this.getOpinionForCandidate(candidate.getId()) / totalOpinion;
             this.opinions.set(candidate.getId(), newOpinion);

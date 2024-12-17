@@ -1,4 +1,5 @@
 import IssueScore from "./IssueScore";
+import BaseCandidateStateModifier from "./BaseCandidateStateModifier";
 
 interface StateModel {
     id: number,
@@ -7,6 +8,7 @@ interface StateModel {
     electoralVotes: number,
     popularVotes: number;
     baseIssueScores: IssueScore[];
+    baseCandidateStateModifiers: BaseCandidateStateModifier[];
 }
 
 export default StateModel;

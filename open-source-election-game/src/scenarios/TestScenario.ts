@@ -261,6 +261,24 @@ const testScenario: ScenarioModel = {
                     "issueScore": -0.6,
                     "weight": 1
                 }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
+                }
             ]
         },
         {
@@ -294,6 +312,24 @@ const testScenario: ScenarioModel = {
                     "issueId": 51,
                     "issueScore": -0.6,
                     "weight": 1
+                }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
                 }
             ]
         },
@@ -329,6 +365,24 @@ const testScenario: ScenarioModel = {
                     "issueScore": 0.5,
                     "weight": 1
                 }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
+                }
             ]
         },
         {
@@ -362,6 +416,24 @@ const testScenario: ScenarioModel = {
                     "issueId": 51,
                     "issueScore": -0.45,
                     "weight": 1
+                }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
                 }
             ]
         },
@@ -397,6 +469,24 @@ const testScenario: ScenarioModel = {
                     "issueScore": -0.6,
                     "weight": 1
                 }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
+                }
             ]
         },
         {
@@ -430,6 +520,24 @@ const testScenario: ScenarioModel = {
                     "issueId": 51,
                     "issueScore": 0.25,
                     "weight": 1
+                }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
                 }
             ]
         },
@@ -465,6 +573,24 @@ const testScenario: ScenarioModel = {
                     "issueScore": 0.25,
                     "weight": 1
                 }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
+                }
             ]
         },
         {
@@ -498,6 +624,24 @@ const testScenario: ScenarioModel = {
                     "issueId": 51,
                     "issueScore": -0.45,
                     "weight": 1
+                }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
                 }
             ]
         },
@@ -533,6 +677,24 @@ const testScenario: ScenarioModel = {
                     "issueScore": -0.6,
                     "weight": 1
                 }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
+                }
             ]
         },
         {
@@ -566,6 +728,24 @@ const testScenario: ScenarioModel = {
                     "issueId": 51,
                     "issueScore": 0.5,
                     "weight": 1
+                }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
                 }
             ]
         },
@@ -601,6 +781,24 @@ const testScenario: ScenarioModel = {
                     "issueScore": -0.45,
                     "weight": 1
                 }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
+                }
             ]
         },
         {
@@ -634,6 +832,24 @@ const testScenario: ScenarioModel = {
                     "issueId": 51,
                     "issueScore": 0.5,
                     "weight": 1
+                }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
                 }
             ]
         },
@@ -669,6 +885,24 @@ const testScenario: ScenarioModel = {
                     "issueScore": 0.5,
                     "weight": 1
                 }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
+                }
             ]
         },
         {
@@ -702,6 +936,24 @@ const testScenario: ScenarioModel = {
                     "issueId": 51,
                     "issueScore": -0.6,
                     "weight": 1
+                }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
                 }
             ]
         },
@@ -737,6 +989,24 @@ const testScenario: ScenarioModel = {
                     "issueScore": -0.45,
                     "weight": 1
                 }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
+                }
             ]
         },
         {
@@ -770,6 +1040,24 @@ const testScenario: ScenarioModel = {
                     "issueId": 51,
                     "issueScore": 0.5,
                     "weight": 1
+                }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
                 }
             ]
         },
@@ -805,6 +1093,24 @@ const testScenario: ScenarioModel = {
                     "issueScore": 0.25,
                     "weight": 1
                 }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
+                }
             ]
         },
         {
@@ -838,6 +1144,24 @@ const testScenario: ScenarioModel = {
                     "issueId": 51,
                     "issueScore": 0.125,
                     "weight": 1
+                }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
                 }
             ]
         },
@@ -873,6 +1197,24 @@ const testScenario: ScenarioModel = {
                     "issueScore": -0.6,
                     "weight": 1
                 }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
+                }
             ]
         },
         {
@@ -906,6 +1248,24 @@ const testScenario: ScenarioModel = {
                     "issueId": 51,
                     "issueScore": 0.25,
                     "weight": 1
+                }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
                 }
             ]
         },
@@ -941,6 +1301,24 @@ const testScenario: ScenarioModel = {
                     "issueScore": 0.125,
                     "weight": 1
                 }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
+                }
             ]
         },
         {
@@ -974,6 +1352,24 @@ const testScenario: ScenarioModel = {
                     "issueId": 51,
                     "issueScore": 0.5,
                     "weight": 1
+                }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
                 }
             ]
         },
@@ -1009,6 +1405,24 @@ const testScenario: ScenarioModel = {
                     "issueScore": -0.6,
                     "weight": 1
                 }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
+                }
             ]
         },
         {
@@ -1042,6 +1456,24 @@ const testScenario: ScenarioModel = {
                     "issueId": 51,
                     "issueScore": -0.45,
                     "weight": 1
+                }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
                 }
             ]
         },
@@ -1077,6 +1509,24 @@ const testScenario: ScenarioModel = {
                     "issueScore": 0.5,
                     "weight": 1
                 }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
+                }
             ]
         },
         {
@@ -1110,6 +1560,24 @@ const testScenario: ScenarioModel = {
                     "issueId": 51,
                     "issueScore": -0.45,
                     "weight": 1
+                }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 132,
+                    "amount": 1.2113
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0
+                },
+                {
+                    "candidateId": 134,
+                    "amount": 0.1
                 }
             ]
         }
