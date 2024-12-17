@@ -11,7 +11,9 @@ function EndingView(props: EndingViewProps) {
     const { engine } = props;
     const [endingSlideIndex, setEndingSlideIndex] = useState(0);
 
+
     if (engine == null) {
+        setEndingSlideIndex(-1);
         return <div>ERROR ENGINE NULL</div>;
     }
 
