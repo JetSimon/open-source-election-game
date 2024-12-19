@@ -10,6 +10,7 @@ import MapView from './views/MapView';
 import testMap from './scenarios/TestMap.svg';
 
 import EndingView from './views/EndingView';
+import PopupBox from './components/PopupBox';
 
 let autoplayHandle : undefined | number = undefined;
 
@@ -22,6 +23,9 @@ function App() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(engine.currentQuestionIndex);
   const [currentQuestion, setCurrentQuestion] = useState(engine.getCurrentQuestion());
   const [selectedAnswer, setSelectedAnswer] = useState<AnswerModel | null>(null);
+
+  const [feedbackText, setFeedbackText] = useState("");
+  const [showingFeedbackBox, setShowingFeedbackBox] = useState(false);
 
   function autoplay() {
     if(engine.isGameOver()) {
@@ -55,7 +59,8 @@ function App() {
     }
 
     if(showFeedback) {
-      alert("Feedback: " + selectedAnswer.feedback);
+      setFeedbackText(selectedAnswer.feedback);
+      setShowingFeedbackBox(true);
     }
    
     engine.applyAnswer(selectedAnswer);
@@ -87,6 +92,7 @@ function App() {
       }
       <MapView engine={engine} mapUrl={testMap}></MapView>
       <BottomBanner engine={engine}></BottomBanner>
+      <PopupBox title="Feedback" body={feedbackText} buttonText="Okay" isShowing={showingFeedbackBox} setIsShowing={setShowingFeedbackBox}></PopupBox>
     </div>
   );
 }

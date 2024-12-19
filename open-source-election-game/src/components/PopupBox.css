@@ -1,0 +1,29 @@
+.PopupBox {
+    position: fixed;
+    margin:auto;
+    width: 25%;
+    left: 37%;
+    top: 25%;
+    background-color: white;
+    border: black 1px solid;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+    .PopupBox {
+        width: 75%!important;
+        left: 8%!important;
+    }
+}
+
+
+.PopupBoxBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.5;
+    width: 100vw;
+    height: 100vh;
+}
