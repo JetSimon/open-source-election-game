@@ -18,7 +18,10 @@ class ScenarioController {
             candidates: [],
             states: [],
             issues: [],
-            scenarioSides: []
+            scenarioSides: [],
+            scenarioDescription: "",
+            scenarioName: "",
+            scenarioImageUrl: ""
         };
     }
 
