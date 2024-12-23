@@ -35,7 +35,9 @@
                     "issueScore": -0.55,
                     "weight": 1
                 }
-            ]
+            ],
+            "description": "<p>James K. Polk won the Democratic nomination as a dark horse candidate, after Martin Van Buren was rejected for being soft on the Texas issue. He is a former Speaker of the House, and also served as Governor of Tennessee. Polk's support is strongest in the South, but he must hold some Northern states to win. To do this, he could exploit the Oregon issue, fond memories of Andrew Jackson, and the emerging Catholic vote. Note that John Tyler has yet to formally renounce his independent bid.</p>",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/james-k-polk-1844.jpg"
         },
         {
             "id": 132,
@@ -72,7 +74,9 @@
                     "issueScore": 0,
                     "weight": 1
                 }
-            ]
+            ],
+            "description": "<p>Henry Clay runs in a Presidential election for the third time, and begins as the favorite against Polk. He must quickly define a position on Texas. It will be difficult to do so without alienating some bloc of the Whigs.</p><p>Clay would prefer to keep slavery and expansion on the back-burner, and advance his own issues like tariffs, internal improvements, and a national currency. Can he find redemption from his political defeats to Andrew Jackson, and finally break into the White House?</p>",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/henry-clay-1844.jpg"
         },
         {
             "id": 133,
@@ -109,7 +113,9 @@
                     "issueScore": 0.75,
                     "weight": 1
                 }
-            ]
+            ],
+            "description": "'",
+            "imageUrl": "'"
         },
         {
             "id": 134,
@@ -146,7 +152,9 @@
                     "issueScore": -0.6,
                     "weight": 1
                 }
-            ]
+            ],
+            "description": "'",
+            "imageUrl": "'"
         },
         {
             "id": 135,
@@ -157,7 +165,9 @@
             "color": "#0000FF",
             "runningMate": true,
             "isPlayable": false,
-            "issueScores": []
+            "issueScores": [],
+            "description": "'",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/george-dallas-1844.jpg"
         },
         {
             "id": 136,
@@ -168,7 +178,9 @@
             "color": "#0000FF",
             "runningMate": true,
             "isPlayable": false,
-            "issueScores": []
+            "issueScores": [],
+            "description": "'",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/levi-woodbury-1844.jpg"
         },
         {
             "id": 137,
@@ -179,7 +191,9 @@
             "color": "#F0C862",
             "runningMate": true,
             "isPlayable": false,
-            "issueScores": []
+            "issueScores": [],
+            "description": "'",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/theodore-frelinghuysen-1844.jpg"
         },
         {
             "id": 138,
@@ -190,7 +204,9 @@
             "color": "#F0C862",
             "runningMate": true,
             "isPlayable": false,
-            "issueScores": []
+            "issueScores": [],
+            "description": "'",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/john-sergeant-1844.jpg"
         },
         {
             "id": 139,
@@ -201,7 +217,9 @@
             "color": "#F0C862",
             "runningMate": true,
             "isPlayable": false,
-            "issueScores": []
+            "issueScores": [],
+            "description": "'",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/millard-fillmore-1844.jpg"
         },
         {
             "id": 140,
@@ -212,7 +230,9 @@
             "color": "#FFFF00",
             "runningMate": false,
             "isPlayable": false,
-            "issueScores": []
+            "issueScores": [],
+            "description": "'",
+            "imageUrl": "'"
         },
         {
             "id": 141,
@@ -223,7 +243,9 @@
             "color": "#00C100",
             "runningMate": false,
             "isPlayable": false,
-            "issueScores": []
+            "issueScores": [],
+            "description": "'",
+            "imageUrl": "'"
         }
     ],
     "states": [
@@ -1699,7 +1721,7 @@
     ],
     "scenarioSides": [
         {
-            "playerId": 132, 
+            "playerId": 132,
             "questions": [
                 {
                     "id": 623,
