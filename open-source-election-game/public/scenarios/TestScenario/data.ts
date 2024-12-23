@@ -1,6 +1,4 @@
-import ScenarioModel from "../../models/ScenarioModel"
-
-const testScenario: ScenarioModel = {
+{
     "candidates": [
         {
             "id": 131,
@@ -4782,6 +4780,4 @@ const testScenario: ScenarioModel = {
             ]
         }
     ]
-};
-
-export default testScenario;
+}

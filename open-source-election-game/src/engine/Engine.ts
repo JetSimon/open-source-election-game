@@ -5,6 +5,7 @@ import CandidateController from "./controllers/CandidateController";
 import ScenarioController from "./controllers/ScenarioController";
 import FinalResultsModel from "../models/FinalResultsModel";
 import EndingModel from "../models/EndingModel";
+import QuestionModel from "../models/QuestionModel";
 
 const fromTct = (x: number) => 2 * x; // We are importing scenarios from TCT rn, sometimes we may need to multiply effects by this to have it apply here
 
@@ -15,11 +16,14 @@ enum GameState {
 }
 
 class Engine {
+    mapString : string = "";
     gameState = GameState.Uninitialized;
     sideIndex = 0;
     currentQuestionIndex = 0;
     scenarioController: ScenarioController = new ScenarioController();
     currentScenario: ScenarioModel | null = null;
+
+    counters : Map<string, number> = new Map();
 
     createEnding : null | ((engine : Engine, results : FinalResultsModel) => EndingModel) = null;
     onAnswerPicked : null | ((engine : Engine, answerPicked : AnswerModel) => void) = null;
@@ -180,22 +184,6 @@ class Engine {
         };
     }
 
-    getTotalPopularVotes() {
-        let total = 0;
-        for (const stateController of this.scenarioController.getStates()) {
-            total += stateController.model.popularVotes;
-        }
-        return total;
-    }
-
-    getTotalElectoralVotes() {
-        let total = 0;
-        for (const stateController of this.scenarioController.getStates()) {
-            total += stateController.model.electoralVotes;
-        }
-        return total;
-    }
-
     getEnding(): EndingModel {
         if(this.createEnding == null) {
             return {
@@ -215,6 +203,41 @@ class Engine {
 
         return new Set<number>(this.currentScenario.scenarioSides.map((side) => side.playerId));
     }
+
+    // UTILS FOR CYOA
+    insertNewQuestionNext(question : QuestionModel) {
+        this.scenarioController.questions.splice(this.currentQuestionIndex + 1, 0, question);
+    }
+
+    removeQuestionById(questionId : number) {
+        this.scenarioController.questions = this.scenarioController.questions.filter((x) => x.id != questionId);
+    }
+
+    // UTILS FOR ENDINGS
+    getTotalPopularVotes() {
+        let total = 0;
+        for (const stateController of this.scenarioController.getStates()) {
+            total += stateController.model.popularVotes;
+        }
+        return total;
+    }
+
+    getTotalElectoralVotes() {
+        let total = 0;
+        for (const stateController of this.scenarioController.getStates()) {
+            total += stateController.model.electoralVotes;
+        }
+        return total;
+    }
+
+    getPlayerPv(results : FinalResultsModel) {
+        return results.popularVotes.get(this.getPlayerCandidateController().getId());
+    }
+
+    getPlayerEv(results : FinalResultsModel) {
+        return results.electoralVotes.get(this.getPlayerCandidateController().getId());
+    }
+    
 }
 
 export { Engine, GameState };

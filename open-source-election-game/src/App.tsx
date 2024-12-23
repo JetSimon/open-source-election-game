@@ -1,24 +1,35 @@
 import "./App.css";
 import { Engine, GameState } from "./engine/Engine";
 
-import { useState } from "react";
-
-import testScenario from "./scenarios/TestScenario/TestScenario";
-import testMap from "./scenarios/TestScenario/TestMap.svg";
-
+import { useState, useEffect } from "react";
 import CandidateSelectionView from "./views/CandidateSelectionView";
 import GameView from "./views/GameView";
 
-import { onAnswerPicked, createEnding } from "./scenarios/TestScenario/logic";
-
 const engine = new Engine();
 
-engine.createEnding = createEnding;
-engine.onAnswerPicked = onAnswerPicked;
-engine.loadScenario(testScenario);
+const MOD_FOLDER = "TestScenario"
 
 function App() {
   const [gameState, setGameState] = useState(engine.gameState);
+
+  useEffect(() => {
+    async function loadScenario() {
+      const data = await fetch("./scenarios/" + MOD_FOLDER + "/data.ts");
+      const dataJson = await data.json();
+      const map : string = "./scenarios/" + MOD_FOLDER + "/map.svg"
+      
+      const logicUrl : string = window.location + "scenarios/" + MOD_FOLDER + "/logic.js";
+      console.log(logicUrl)
+      const {createEnding, onAnswerPicked} = await import(logicUrl);
+      engine.createEnding = createEnding;
+      engine.onAnswerPicked = onAnswerPicked;
+
+      engine.mapString = map;
+      engine.loadScenario(dataJson);
+      setGameState(engine.gameState);
+    }
+    loadScenario();
+  }, []);
 
   function getViewFromGameState() {
     if (gameState == GameState.Uninitialized) {
@@ -35,7 +46,7 @@ function App() {
     }
 
     if (gameState == GameState.Election) {
-      return <GameView mapUrl={testMap} engine={engine}></GameView>;
+      return <GameView mapUrl={engine.mapString} engine={engine}></GameView>;
     }
   }
 
