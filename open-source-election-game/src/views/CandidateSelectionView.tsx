@@ -52,6 +52,7 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
 
   return (
     <div className="CandidateSelectionList">
+    <h2>Choose your Candidate</h2>
       {getCandidatesWithSides().map((candidate) => {
         return (
           <div key={candidate.getId() + "-holder"}>
