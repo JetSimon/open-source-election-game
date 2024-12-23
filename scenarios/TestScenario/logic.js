@@ -1,11 +1,23 @@
 let testVar = 0;
 
 function createEnding(engine, results) {
+
+    if(engine.playerWonEv(results)) {
+        return {
+            slides: [
+                {
+                    imageUrl: "https://placehold.co/250x250",
+                    endingText: "You win electorally speaking!"
+                }
+            ]
+        }
+    }
+    
     return {
         slides: [
             {
                 imageUrl: "https://placehold.co/250x250",
-                endingText: "Did it work?"
+                endingText: "You lose electorally speaking!"
             }
         ]
     }
