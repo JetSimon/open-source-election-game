@@ -50,33 +50,28 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
     setGameState(engine.gameState);
   }
 
+  const selectedCandidateController : CandidateController = engine.getCandidateByCandidateId(selectedCandidate);
+
   return (
-    <div className="CandidateSelectionList">
+    <div className="CandidateSelection">
     <h2>Choose your Candidate</h2>
-      {getCandidatesWithSides().map((candidate) => {
-        return (
-          <div key={candidate.getId() + "-holder"}>
-            <input
-              id={candidate.getId().toString()}
-              checked={selectedCandidate == candidate.getId()}
-              key={candidate.getId() + "-button"}
-              value={candidate.getId()}
-              type="radio"
-              onChange={() => setSelectedCandidate(candidate.getId())}
-            ></input>
-            <label
-              key={candidate.getId() + "-label"}
-              style={{
-                fontWeight:
-                  selectedCandidate == candidate.getId() ? "bold" : "",
-              }}
-              htmlFor={candidate.getId().toString()}
-            >
-              {candidate.getFullName()}
-            </label>
-          </div>
-        );
-      })}
+    <div className="CandidateSelectionBox">
+      <label className="LabelText" htmlFor="candidate">Candidate: </label>
+      <select id="candidate" onChange={(e) => setSelectedCandidate(Number.parseInt(e.target.value))}>
+        {
+          getCandidatesWithSides().map((candidate) => {
+            return <option value={candidate.getId()} key={candidate.getId()}>{candidate.getFullName()}</option>
+          })
+        }
+      </select>
+      <div className="CandidateInfoArea">
+        <img src={selectedCandidateController.model.imageUrl}></img>
+        <div className="CandidateDescription" dangerouslySetInnerHTML={{__html:selectedCandidateController.model.description}}>
+        </div>
+      </div>
+    </div>
+    
+      
       <button onClick={startGame}>Start</button>
     </div>
   );

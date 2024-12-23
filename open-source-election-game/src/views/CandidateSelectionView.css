@@ -1,0 +1,46 @@
+.CandidateSelectionBox {
+    border: 1px solid black;
+    padding: 16px;
+    margin: auto;
+    width: 75%;
+}
+
+.CandidateInfoArea {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .CandidateSelectionBox {
+        width: 90%!important;
+    }
+
+    .CandidateInfoArea {
+        flex-direction: column;
+    }
+
+    .CandidateDescription {
+        text-align: center!important;
+    }
+
+}
+
+.CandidateInfoArea > img {
+    margin:auto;
+}
+
+.CandidateDescription {
+    text-align: left;
+    height: 100%;
+}
+
+.CandidateDescription > p {
+    margin-top:0px!important;
+}
+
+
+.LabelText {
+    font-weight: bolder;
+}

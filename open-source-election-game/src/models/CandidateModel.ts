@@ -10,6 +10,8 @@ interface CandidateModel {
     runningMate: boolean;
     isPlayable: boolean;
     issueScores: IssueScore[];
+    description: string;
+    imageUrl: string;
 }
 
 export default CandidateModel;

@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div className="App">
-      <h2>OSEG</h2>
+      <h1>OSEG</h1>
       {getViewFromGameState()}
     </div>
   );
