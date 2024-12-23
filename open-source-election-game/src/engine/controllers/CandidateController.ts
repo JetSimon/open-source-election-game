@@ -10,6 +10,10 @@ class CandidateController {
         this.issueScores = new IssueScores(this.model.issueScores);
     }
 
+    getFullName() {
+        return this.model.firstName + " " + this.model.lastName;
+    }
+
     getId() {
         return this.model.id;
     }

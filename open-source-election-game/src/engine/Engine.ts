@@ -6,26 +6,52 @@ import ScenarioController from "./controllers/ScenarioController";
 import FinalResultsModel from "../models/FinalResultsModel";
 import EndingModel from "../models/EndingModel";
 
-const fromTct = (x : number) => 2*x; // We are importing scenarios from TCT rn, sometimes we may need to multiply effects by this to have it apply here
+const fromTct = (x: number) => 2 * x; // We are importing scenarios from TCT rn, sometimes we may need to multiply effects by this to have it apply here
+
+enum GameState {
+    Uninitialized,
+    CandidateSelection,
+    Election
+}
 
 class Engine {
+    gameState = GameState.Uninitialized;
     sideIndex = 0;
     currentQuestionIndex = 0;
     scenarioController: ScenarioController = new ScenarioController();
+    currentScenario: ScenarioModel | null = null;
 
     loadScenario(newScenario: ScenarioModel) {
         this.currentQuestionIndex = 0;
-        this.sideIndex = 0; // TODO: Load more than the first side
-        this.scenarioController.loadScenario(newScenario, this.sideIndex); 
+        this.scenarioController.loadScenario(newScenario, 0);
+        this.currentScenario = newScenario;
+        this.gameState = GameState.CandidateSelection;
+    }
+
+    setScenarioSide(newSideIndex: number) {
+        if (this.currentScenario == null) {
+            console.error("Cannot side current scenario side, current scenario is null");
+            return;
+        }
+
+        if (newSideIndex == -1) {
+            console.error("Provided side index was -1");
+            return;
+        }
+
+        this.sideIndex = newSideIndex;
+        this.scenarioController.loadScenario(this.currentScenario, this.sideIndex);
+        this.gameState = GameState.Election;
+        this.updateStates();
     }
 
     getSide() {
         return this.scenarioController.model.scenarioSides[this.sideIndex];
     }
 
-    getPlayerCandidateController() : CandidateController {
+    getPlayerCandidateController(): CandidateController {
         const playerCans = this.scenarioController.getCandidates().filter((x) => x.getId() == this.getSide().playerId);
-        if(playerCans.length > 0) {
+        if (playerCans.length > 0) {
             return playerCans[0];
         }
         console.error("Could not get player candidate!");
@@ -64,11 +90,11 @@ class Engine {
         return output;
     }
 
-    getStateOpinionString(stateId: number) : string {
+    getStateOpinionString(stateId: number): string {
         return this.scenarioController.getStateControllerByStateId(stateId).getOpinionString();
     }
 
-    getStateOpinionData(stateId: number) : Map<number, number> {
+    getStateOpinionData(stateId: number): Map<number, number> {
         return this.scenarioController.getStateControllerByStateId(stateId).opinions;
     }
 
@@ -117,22 +143,22 @@ class Engine {
         return arr[0].id;
     }
 
-    getCandidateByCandidateId(id:number) {
+    getCandidateByCandidateId(id: number) {
         return this.scenarioController.getCandidateByCandidateId(id);
     }
 
-    getFinalResults() : FinalResultsModel {
+    getFinalResults(): FinalResultsModel {
 
         const popularVotes = new Map<number, number>();
         const electoralVotes = new Map<number, number>();
 
-        for(const candidate of this.scenarioController.getCandidates()) {
+        for (const candidate of this.scenarioController.getCandidates()) {
             let totalPopularVotes = 0;
             let totalElectoralVotes = 0;
-            for(const stateController of this.scenarioController.stateControllers) {
+            for (const stateController of this.scenarioController.stateControllers) {
                 totalPopularVotes += stateController.getOpinionForCandidate(candidate.getId()) * stateController.model.popularVotes;
 
-                if(stateController.getHighestCandidate(this) == candidate) {
+                if (stateController.getHighestCandidate(this) == candidate) {
                     totalElectoralVotes += stateController.model.electoralVotes;
                 }
             }
@@ -142,14 +168,14 @@ class Engine {
         }
 
         return {
-            "popularVotes" : popularVotes,
-            "electoralVotes" : electoralVotes
-        }
+            "popularVotes": popularVotes,
+            "electoralVotes": electoralVotes
+        };
     }
 
     getTotalPopularVotes() {
         let total = 0;
-        for(const stateController of this.scenarioController.getStates()) {
+        for (const stateController of this.scenarioController.getStates()) {
             total += stateController.model.popularVotes;
         }
         return total;
@@ -157,28 +183,36 @@ class Engine {
 
     getTotalElectoralVotes() {
         let total = 0;
-        for(const stateController of this.scenarioController.getStates()) {
+        for (const stateController of this.scenarioController.getStates()) {
             total += stateController.model.electoralVotes;
         }
         return total;
     }
 
     // TODO: Have ending models stored in ScenarioSideModel instead, and you get them based on conditionals evaluated from there
-    getEnding() : EndingModel {
+    getEnding(): EndingModel {
         const results = this.getFinalResults();
         let thisPlayerEv = results.electoralVotes.get(this.getPlayerCandidateController().getId());
-        if(thisPlayerEv == undefined) thisPlayerEv = 0;
+        if (thisPlayerEv == undefined) thisPlayerEv = 0;
         const playerWon = thisPlayerEv >= Math.floor(this.getTotalElectoralVotes() / 2);
 
         return {
-            slides : [
+            slides: [
                 {
                     imageUrl: "https://placehold.co/512x512",
                     endingText: playerWon ? "YOU WON BLA BLA BLA" : "YOU LOST BLA BLA BLA"
                 }
             ]
+        };
+    }
+
+    getSetOfIdsOfCandidatesWithSides() {
+        if (this.currentScenario == null) {
+            return new Set<number>();;
         }
+
+        return new Set<number>(this.currentScenario.scenarioSides.map((side) => side.playerId));
     }
 }
 
-export default Engine;
+export { Engine, GameState };
