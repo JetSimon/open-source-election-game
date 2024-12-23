@@ -8,6 +8,14 @@ function createEnding(engine, results) {
                 {
                     imageUrl: "https://placehold.co/250x250",
                     endingText: "You win electorally speaking!"
+                },
+                {
+                    imageUrl: "https://placehold.co/250x250",
+                    endingText: "Slide 2!"
+                },
+                {
+                    imageUrl: "https://placehold.co/250x250",
+                    endingText: "Slide 3 :3"
                 }
             ]
         }
@@ -18,6 +26,14 @@ function createEnding(engine, results) {
             {
                 imageUrl: "https://placehold.co/250x250",
                 endingText: "You lose electorally speaking!"
+            },
+            {
+                imageUrl: "https://placehold.co/250x250",
+                endingText: "Slide 2!"
+            },
+            {
+                imageUrl: "https://placehold.co/250x250",
+                endingText: "Slide 3 :3"
             }
         ]
     }
