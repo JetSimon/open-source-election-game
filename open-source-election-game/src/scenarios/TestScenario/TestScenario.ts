@@ -1,4 +1,4 @@
-import ScenarioModel from "../models/ScenarioModel";
+import ScenarioModel from "../../models/ScenarioModel"
 
 const testScenario: ScenarioModel = {
     "candidates": [

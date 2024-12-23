@@ -21,6 +21,9 @@ class Engine {
     scenarioController: ScenarioController = new ScenarioController();
     currentScenario: ScenarioModel | null = null;
 
+    createEnding : null | ((engine : Engine, results : FinalResultsModel) => EndingModel) = null;
+    onAnswerPicked : null | ((engine : Engine, answerPicked : AnswerModel) => void) = null;
+
     loadScenario(newScenario: ScenarioModel) {
         this.currentQuestionIndex = 0;
         this.scenarioController.loadScenario(newScenario, 0);
@@ -124,6 +127,10 @@ class Engine {
         }
 
         this.updateStates();
+
+        if(this.onAnswerPicked != null) {
+            this.onAnswerPicked(this, selectedAnswer);
+        }
     }
 
     nextQuestion() {
@@ -189,21 +196,16 @@ class Engine {
         return total;
     }
 
-    // TODO: Have ending models stored in ScenarioSideModel instead, and you get them based on conditionals evaluated from there
     getEnding(): EndingModel {
-        const results = this.getFinalResults();
-        let thisPlayerEv = results.electoralVotes.get(this.getPlayerCandidateController().getId());
-        if (thisPlayerEv == undefined) thisPlayerEv = 0;
-        const playerWon = thisPlayerEv >= Math.floor(this.getTotalElectoralVotes() / 2);
-
-        return {
-            slides: [
-                {
-                    imageUrl: "https://placehold.co/512x512",
-                    endingText: playerWon ? "YOU WON BLA BLA BLA" : "YOU LOST BLA BLA BLA"
-                }
-            ]
-        };
+        if(this.createEnding == null) {
+            return {
+                slides: [{
+                    imageUrl: "",
+                    endingText: "createEnding is null. Make sure to override createEnding in logic.tsx"
+                }]
+            }
+        }
+        return this.createEnding(this, this.getFinalResults());
     }
 
     getSetOfIdsOfCandidatesWithSides() {

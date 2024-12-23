@@ -3,13 +3,18 @@ import { Engine, GameState } from "./engine/Engine";
 
 import { useState } from "react";
 
-import testScenario from "./scenarios/TestScenario";
-import testMap from "./scenarios/TestMap.svg";
+import testScenario from "./scenarios/TestScenario/TestScenario";
+import testMap from "./scenarios/TestScenario/TestMap.svg";
 
 import CandidateSelectionView from "./views/CandidateSelectionView";
 import GameView from "./views/GameView";
 
+import { onAnswerPicked, createEnding } from "./scenarios/TestScenario/logic";
+
 const engine = new Engine();
+
+engine.createEnding = createEnding;
+engine.onAnswerPicked = onAnswerPicked;
 engine.loadScenario(testScenario);
 
 function App() {
