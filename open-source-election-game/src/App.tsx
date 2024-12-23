@@ -19,7 +19,7 @@ function App() {
       const map : string = "./scenarios/" + MOD_FOLDER + "/map.svg"
       
       const logicUrl : string = window.location + "scenarios/" + MOD_FOLDER + "/logic.js";
-      const {createEnding, onAnswerPicked} = await import(logicUrl);
+      const {createEnding, onAnswerPicked} = await import(/* @vite-ignore */logicUrl);
       engine.createEnding = createEnding;
       engine.onAnswerPicked = onAnswerPicked;
 
