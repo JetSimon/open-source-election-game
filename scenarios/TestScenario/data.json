@@ -1,4 +1,7 @@
 {
+    "scenarioName": "TCT Rip Off",
+    "scenarioDescription": "<p>This is a straight up copy of the Dan Bryan scenario for testing purposes!</p><p>This is the election description. One day this won't all be on one screen but that day is not today!</p>",
+    "scenarioImageUrl": "https://placecats.com/210/240",
     "candidates": [
         {
             "id": 131,
