@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     async function loadScenario() {
-      const data = await fetch("./scenarios/" + MOD_FOLDER + "/data.ts");
+      const data = await fetch("./scenarios/" + MOD_FOLDER + "/data.json");
       const dataJson = await data.json();
       const map : string = "./scenarios/" + MOD_FOLDER + "/map.svg"
       
