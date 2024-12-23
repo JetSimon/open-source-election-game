@@ -1,0 +1,27 @@
+.EndingView {
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.EndingSlides {
+    border: 1px solid black;
+}
+
+.EndingSlide {
+    display: flex;
+    padding: 16px;
+    gap: 16px;
+}
+
+.EndingButtons {
+    display: flex;
+    margin: auto;
+    gap: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+    .EndingSlide {
+        flex-direction: column;
+    }
+}

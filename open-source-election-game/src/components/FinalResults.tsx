@@ -1,5 +1,6 @@
 import CandidateController from "../engine/controllers/CandidateController";
 import { Engine } from "../engine/Engine";
+import "./FinalResults.css"
 
 interface FinalResultsProps {
   engine: Engine;
@@ -19,7 +20,7 @@ function FinalResults(props: FinalResultsProps) {
     return pv == undefined ? -1 : pv;
   }
 
-  return engine.scenarioController
+  return (<div className="FinalResults">{engine.scenarioController
     .getCandidates()
     .sort((x, y) => getEv(y) - getEv(x) || getPv(y) - getPv(x))
     .map((candidate) => {
@@ -31,7 +32,7 @@ function FinalResults(props: FinalResultsProps) {
           </p>
         </div>
       );
-    });
+    })}</div>);
 }
 
 export default FinalResults;
