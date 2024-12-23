@@ -1,0 +1,46 @@
+.ElectionSelectionBox {
+    border: 1px solid black;
+    padding: 16px;
+    margin: auto;
+    width: 75%;
+}
+
+.ElectionInfoArea {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .ElectionSelectionBox {
+        width: 90%!important;
+    }
+
+    .ElectionInfoArea {
+        flex-direction: column;
+    }
+
+    .ElectionDescription {
+        text-align: center!important;
+    }
+
+}
+
+.ElectionInfoArea > img {
+    margin:auto;
+}
+
+.ElectionDescription {
+    text-align: left;
+    height: 100%;
+}
+
+.ElectionDescription > p {
+    margin-top:0px!important;
+}
+
+
+.LabelText {
+    font-weight: bolder;
+}

@@ -9,6 +9,9 @@ interface ScenarioSideModel {
 }
 
 interface ScenarioModel {
+    scenarioName: string;
+    scenarioDescription: string;
+    scenarioImageUrl: string;
     candidates: CandidateModel[];
     states: StateModel[];
     issues: Issue[];
