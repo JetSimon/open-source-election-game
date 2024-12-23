@@ -231,13 +231,24 @@ class Engine {
     }
 
     getPlayerPv(results : FinalResultsModel) {
-        return results.popularVotes.get(this.getPlayerCandidateController().getId());
+        return results.popularVotes.get(this.getPlayerCandidateController().getId()) ?? 0;
     }
 
     getPlayerEv(results : FinalResultsModel) {
-        return results.electoralVotes.get(this.getPlayerCandidateController().getId());
+        return results.electoralVotes.get(this.getPlayerCandidateController().getId()) ?? 0;
     }
-    
+
+    playerWonPv(results : FinalResultsModel) {
+        return this.getPlayerPv(results) > this.getTotalPopularVotes() / 2;
+    }
+
+    playerWonEv(results : FinalResultsModel) {
+        return this.getPlayerEv(results) > this.getTotalElectoralVotes() / 2;
+    }
+
+    playerEvAtLeast(results : FinalResultsModel, amount : number) {
+        return this.getPlayerEv(results) >= amount;
+    }
 }
 
 export { Engine, GameState };
