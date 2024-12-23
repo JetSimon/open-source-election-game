@@ -12,7 +12,7 @@ function createEnding(engine, results) {
 }
 
 function onAnswerPicked(engine, answerPicked) {
-    testVar++;
+    /*testVar++;
     engine.insertNewQuestionNext({
         "id": 888,
         "description": "Inserted",
@@ -26,7 +26,7 @@ function onAnswerPicked(engine, answerPicked) {
             }
         ],
         "keepInPlaceIfQuestionsShuffled": false
-    })
+    })*/
 }
 
 export {createEnding, onAnswerPicked}
