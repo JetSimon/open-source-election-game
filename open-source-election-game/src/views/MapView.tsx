@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import Engine from "../engine/Engine";
+import { Engine } from "../engine/Engine";
 import "external-svg-loader";
 import StateController from "../engine/controllers/StateController";
 import StatePoll from "../components/StatePoll";
-import "./MapView.css"
+import "./MapView.css";
 
 interface MapViewProps {
   engine: Engine;
@@ -13,7 +13,9 @@ interface MapViewProps {
 function MapView(props: MapViewProps) {
   const { engine, mapUrl } = props;
   const mapRef = useRef<SVGSVGElement>(null);
-  const [currentState, setCurrentState] = useState<StateController | null>(null);
+  const [currentState, setCurrentState] = useState<StateController | null>(
+    null
+  );
 
   useEffect(() => {
     function updateMapColors() {
@@ -32,9 +34,12 @@ function MapView(props: MapViewProps) {
           continue;
         }
 
-        statePath.style.fill = stateController.getStateColor(engine, (currentState != null && currentState.model.id == stateController.model.id));
+        statePath.style.fill = stateController.getStateColor(
+          engine,
+          currentState != null &&
+            currentState.model.id == stateController.model.id
+        );
       }
-      
     }
 
     const mapUpdate = setInterval(updateMapColors, 25);
@@ -44,16 +49,17 @@ function MapView(props: MapViewProps) {
     };
   }, [engine, currentState]);
 
-  function onMouseMove(e : React.MouseEvent) {
-
-    if(e.target == null) {
+  function onMouseMove(e: React.MouseEvent) {
+    if (e.target == null) {
       return;
     }
 
     const hoverId = (e.target as SVGPathElement).id;
     if (hoverId != "") {
       const id = engine.getStateIdFromAbbr(hoverId);
-      setCurrentState(engine.scenarioController.getStateControllerByStateId(id));
+      setCurrentState(
+        engine.scenarioController.getStateControllerByStateId(id)
+      );
     }
   }
 

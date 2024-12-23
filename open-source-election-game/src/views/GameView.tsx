@@ -5,7 +5,7 @@ import EndingView from "./EndingView";
 import PopupBox from "../components/PopupBox";
 import MapView from "./MapView";
 import BottomBanner from "../components/BottomBanner";
-import Engine from "../engine/Engine";
+import { Engine } from "../engine/Engine";
 import AnswerModel from "../models/AnswerModel";
 
 interface GameViewProps {

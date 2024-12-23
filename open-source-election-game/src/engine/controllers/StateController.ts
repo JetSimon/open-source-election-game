@@ -3,7 +3,7 @@ import { sumNumberArray } from "../../utils/ArrayUtils";
 import IssueScores from "../IssueScores";
 import ScenarioController from "./ScenarioController";
 import CandidateController from "./CandidateController";
-import Engine from "../Engine";
+import { Engine } from "../Engine";
 import { hexToRgb, rgbToHex } from "../../utils/ColorUtils";
 
 const RNG = 0.025;
@@ -35,7 +35,7 @@ class StateController {
 
             let stateModifier = 1;
             const mods = this.model.baseCandidateStateModifiers.filter((x) => x.candidateId == candidate.getId());
-            if(mods.length > 0) {
+            if (mods.length > 0) {
                 stateModifier = mods[0].amount;
             }
 
@@ -78,7 +78,7 @@ class StateController {
                 const candidateWeight = ((candidate.issueScores.getIssueScoreForIssue(issue.id) + 1) / 2) * candidate.issueScores.getWeightForIssue(issue.id);
                 const stateWeight = ((this.issueScores.getIssueScoreForIssue(issue.id) + 1) / 2) * this.issueScores.getWeightForIssue(issue.id);
                 const differenceOfWeight = Math.pow(Math.abs(candidateWeight - stateWeight), 0.5);
-                opinion += differenceOfWeight;            
+                opinion += differenceOfWeight;
             }
 
             this.opinions.set(candidate.getId(), opinion);
@@ -131,7 +131,7 @@ class StateController {
         console.log(this.getOpinionString());
     }
 
-    getStateColor(engine: Engine, isHovered : boolean): string {
+    getStateColor(engine: Engine, isHovered: boolean): string {
         const highestCandidate = this.getHighestCandidate(engine);
         if (highestCandidate == null) {
             console.error("Could not get state colour. Highest candidate was null");
@@ -140,16 +140,16 @@ class StateController {
 
         let highestCandidateOpinion = this.getOpinionForCandidate(highestCandidate.getId());
         highestCandidateOpinion = Math.pow(Math.abs(highestCandidateOpinion - 0.5), 0.25);
-        
+
         const candidateColorRgb = hexToRgb(highestCandidate.model.color);
 
         for (let i = 0; i < candidateColorRgb.length; i++) {
             candidateColorRgb[i] = 255 * (1 - highestCandidateOpinion) + candidateColorRgb[i] * highestCandidateOpinion;
         }
 
-        if(isHovered) {
+        if (isHovered) {
             for (let i = 0; i < candidateColorRgb.length; i++) {
-                candidateColorRgb[i] *= 0.85 + (Math.sin(Date.now() / 200) * 0.05)
+                candidateColorRgb[i] *= 0.85 + (Math.sin(Date.now() / 200) * 0.05);
             }
         }
 
