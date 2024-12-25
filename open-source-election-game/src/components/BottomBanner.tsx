@@ -15,8 +15,8 @@ function BottomBanner(props: BottomBannerProps) {
     <div className="BottomBanner">
       <img src={playerCandidate.model.imageUrl}></img>
       <div className="BannerNames">
-        <h1>{playerCandidate.model.lastName}</h1>
-        <h1>{runningMateModel.lastName}</h1>
+        <p>{playerCandidate.model.lastName}</p>
+        <p>{runningMateModel.lastName}</p>
       </div>
       <img src={runningMateModel.imageUrl}></img>
     </div>

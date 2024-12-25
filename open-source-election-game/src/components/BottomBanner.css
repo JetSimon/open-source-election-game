@@ -1,11 +1,28 @@
 .BottomBanner {
     border: 1px solid black;
     width: 100%;
-    margin-top: 16px;
     display: flex;
     gap: 5%;
+    max-width: 90%;
+    margin: auto;
+    margin-top: 16px;
 }
 
 .BannerNames {
+    margin: auto;
     width: 100%;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .BannerNames {
+        font-size: small!important;
+        height: 100%;
+    }
+
+    .BottomBanner > img {
+        height: 10vh;
+    }
 }
