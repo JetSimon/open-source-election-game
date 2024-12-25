@@ -28,6 +28,8 @@ class Engine {
 
     counters : Map<string, number> = new Map();
 
+    waitingToPickState : boolean = false;
+
     createEnding : null | ((engine : Engine, results : FinalResultsModel) => EndingModel) = null;
     onAnswerPicked : null | ((engine : Engine, answerPicked : AnswerModel) => void) = null;
 
@@ -138,11 +140,13 @@ class Engine {
     }
 
     getStateOpinionString(stateId: number): string {
-        return this.scenarioController.getStateControllerByStateId(stateId).getOpinionString();
+        const state = this.scenarioController.getStateControllerByStateId(stateId);
+        return state != null ? state.getOpinionString() : "";
     }
 
     getStateOpinionData(stateId: number): Map<number, number> {
-        return this.scenarioController.getStateControllerByStateId(stateId).opinions;
+        const state = this.scenarioController.getStateControllerByStateId(stateId);
+        return state != null ? state.opinions : new Map();
     }
 
     applyAnswer(selectedAnswer: AnswerModel | null) {
@@ -161,7 +165,13 @@ class Engine {
                     this.scenarioController.getCandidateByCandidateId(answerEffect.candidateId).changeIssueScore(answerEffect.issueId, fromTct(answerEffect.amount));
                 }
                 else if (answerEffectType == AnswerEffectType.State) {
-                    this.scenarioController.getStateControllerByStateId(answerEffect.stateId).changeCandidateStateModifier(answerEffect.candidateId, fromTct(answerEffect.amount));
+                    const state = this.scenarioController.getStateControllerByStateId(answerEffect.stateId);
+                    if(state != null) {
+                        state.changeCandidateStateModifier(answerEffect.candidateId, fromTct(answerEffect.amount));
+                    }
+                    else {
+                        console.error("When trying to apply effects, state not found with id", answerEffect.stateId);
+                    }
                 }
             }
             catch (e) {

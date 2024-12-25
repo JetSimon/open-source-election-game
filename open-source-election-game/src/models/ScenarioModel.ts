@@ -9,6 +9,7 @@ interface ScenarioSideModel {
 }
 
 interface ScenarioModel {
+    hasStateVisits: boolean;
     scenarioName: string;
     scenarioDescription: string;
     scenarioImageUrl: string;

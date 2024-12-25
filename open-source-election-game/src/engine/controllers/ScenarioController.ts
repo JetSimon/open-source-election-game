@@ -15,6 +15,7 @@ class ScenarioController {
 
     makeEmptyScenarioModel(): ScenarioModel {
         return {
+            hasStateVisits: false,
             candidates: [],
             states: [],
             issues: [],
@@ -77,8 +78,12 @@ class ScenarioController {
         this.globalModifiers.set(candidateId, Math.max(0, this.getGlobalModifierForCandidate(candidateId) + amount));
     }
 
-    getStateControllerByStateId(stateId: number) {
-        return this.stateControllers.filter((state) => state.getId() == stateId)[0];
+    getStateControllerByStateId(stateId: number) : StateController | null {
+        const controllers = this.stateControllers.filter((state) => state.getId() == stateId);
+        if(controllers.length > 0) {
+            return controllers[0];
+        }
+        return null;
     }
 
     getCandidateByCandidateId(candidateId: number) {

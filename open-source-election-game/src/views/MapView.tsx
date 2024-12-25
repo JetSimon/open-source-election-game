@@ -8,10 +8,11 @@ import "./MapView.css";
 interface MapViewProps {
   engine: Engine;
   mapUrl: string;
+  onStateClicked : ((state : StateController) => void) | null;
 }
 
 function MapView(props: MapViewProps) {
-  const { engine, mapUrl } = props;
+  const { engine, mapUrl, onStateClicked } = props;
   const mapRef = useRef<SVGSVGElement>(null);
   const [currentState, setCurrentState] = useState<StateController | null>(
     null
@@ -63,6 +64,21 @@ function MapView(props: MapViewProps) {
     }
   }
 
+  function onClick(e: React.MouseEvent) {
+    if (e.target == null) {
+      return;
+    }
+
+    const clickId = (e.target as SVGPathElement).id;
+    const state : StateController | null = engine.scenarioController.getStateControllerByStateId(engine.getStateIdFromAbbr(clickId));
+    if(state != null && onStateClicked != null) {
+      onStateClicked(state);
+    }
+    else {
+      console.log("Clicked map SVG but path id didn't get a valid state. Path id:", clickId);
+    }
+  }
+
   return (
     <div className="MapView">
       <svg
@@ -72,6 +88,7 @@ function MapView(props: MapViewProps) {
         data-unique-ids="disabled"
         data-js="enabled"
         onMouseMove={onMouseMove}
+        onClick={onClick}
         fill="currentColor"
         width="800px"
         height="500px"

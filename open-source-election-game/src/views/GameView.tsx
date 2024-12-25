@@ -7,6 +7,7 @@ import MapView from "./MapView";
 import BottomBanner from "../components/BottomBanner";
 import { Engine } from "../engine/Engine";
 import AnswerModel from "../models/AnswerModel";
+import StateController from "../engine/controllers/StateController";
 
 interface GameViewProps {
   engine: Engine;
@@ -27,6 +28,7 @@ function GameView(props: GameViewProps) {
   const [selectedAnswer, setSelectedAnswer] = useState<AnswerModel | null>(
     null
   );
+  const [showMap, setShowMap] = useState(false);
 
   const [feedbackText, setFeedbackText] = useState("");
   const [showingFeedbackBox, setShowingFeedbackBox] = useState(false);
@@ -52,6 +54,9 @@ function GameView(props: GameViewProps) {
     }
 
     autoplayHandle = setInterval(autoplay, 50);
+    if(engine.currentScenario) {
+      engine.currentScenario.hasStateVisits = false;
+    }
   }
 
   function submitAnswer(showFeedback = true) {
@@ -75,7 +80,24 @@ function GameView(props: GameViewProps) {
       return;
     }
 
+    if(engine.currentScenario != null && engine.currentScenario.hasStateVisits) {
+      setShowMap(true);
+      engine.waitingToPickState = true;
+    }
+    
     setCurrentQuestion(engine.getCurrentQuestion());
+  }
+
+  function onStateClicked(state : StateController) {
+
+    if(!engine.waitingToPickState) {
+      return;
+    }
+
+    engine.waitingToPickState = false;
+    // Apply state visit bonus
+    state.changeCandidateStateModifier(engine.getPlayerCandidateController().getId(), 0.01);
+    setShowMap(false);
   }
 
   if (currentQuestion == null) {
@@ -84,10 +106,18 @@ function GameView(props: GameViewProps) {
 
   return (
     <>
-      <button onClick={startAutoplay}>Autoplay (PRESS TWICE)</button>
+      {!engine.isGameOver() && !engine.waitingToPickState && <button onClick={startAutoplay}>Autoplay (PRESS TWICE)</button>}
       {engine.isGameOver() ? (
+        <>
         <EndingView engine={engine}></EndingView>
-      ) : (
+        <MapView onStateClicked={null} engine={engine} mapUrl={mapUrl}></MapView>
+        </>
+      ) :
+      (
+        engine.waitingToPickState || showMap ?
+        <MapView onStateClicked={onStateClicked} engine={engine} mapUrl={mapUrl}></MapView>
+        :
+        (
         <QuestionView
           currentQuestionIndex={currentQuestionIndex}
           engine={engine}
@@ -96,8 +126,10 @@ function GameView(props: GameViewProps) {
           selectedAnswer={selectedAnswer}
           setSelectedAnswer={setSelectedAnswer}
         ></QuestionView>
+        )
       )}
-      <MapView engine={engine} mapUrl={mapUrl}></MapView>
+      {!engine.isGameOver() && !engine.waitingToPickState && <button onClick={() => setShowMap(!showMap)}>{showMap ? "Hide Map" : "Show Map"}</button>}
+      {!engine.isGameOver() && engine.waitingToPickState && <p>Choose a state to visit</p>}
       <BottomBanner engine={engine}></BottomBanner>
       <PopupBox
         title="Feedback"
