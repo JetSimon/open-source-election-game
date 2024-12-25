@@ -21,7 +21,7 @@ function StatePoll(props: StatePollProps) {
         {Array.from(stateController.opinions)
           .sort((a, b) => b[1] - a[1])
           .map(([candidateId, opinion]) => {
-            const candidate = engine.getCandidateByCandidateId(candidateId);
+            const candidate = engine.getCandidateControllerByCandidateId(candidateId);
             const color = candidate.model.color;
             return (
               <p className="StatePollValue" key={candidate.model.id}>

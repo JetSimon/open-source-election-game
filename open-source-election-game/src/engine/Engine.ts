@@ -6,6 +6,7 @@ import ScenarioController from "./controllers/ScenarioController";
 import FinalResultsModel from "../models/FinalResultsModel";
 import EndingModel from "../models/EndingModel";
 import QuestionModel from "../models/QuestionModel";
+import CandidateModel from "../models/CandidateModel";
 
 const fromTct = (x: number) => 2 * x; // We are importing scenarios from TCT rn, sometimes we may need to multiply effects by this to have it apply here
 
@@ -23,6 +24,8 @@ class Engine {
     scenarioController: ScenarioController = new ScenarioController();
     currentScenario: ScenarioModel | null = null;
 
+    runningMateId : number;
+
     counters : Map<string, number> = new Map();
 
     createEnding : null | ((engine : Engine, results : FinalResultsModel) => EndingModel) = null;
@@ -33,9 +36,10 @@ class Engine {
         this.scenarioController.loadScenario(newScenario, 0);
         this.currentScenario = newScenario;
         this.gameState = GameState.CandidateSelection;
+        this.runningMateId = -1;
     }
 
-    setScenarioSide(newSideIndex: number) {
+    setScenarioSide(newSideIndex: number, runningMateId : number) {
         if (this.currentScenario == null) {
             console.error("Cannot side current scenario side, current scenario is null");
             return;
@@ -46,6 +50,7 @@ class Engine {
             return;
         }
 
+        this.runningMateId = runningMateId;
         this.sideIndex = newSideIndex;
         this.scenarioController.loadScenario(this.currentScenario, this.sideIndex);
         this.gameState = GameState.Election;
@@ -55,6 +60,23 @@ class Engine {
     getSide() {
         return this.scenarioController.model.scenarioSides[this.sideIndex];
     }
+    
+    makeEmptyCandidateModel() : CandidateModel {
+        return {
+            id: -1,
+            firstName: "missing",
+            lastName: "no",
+            party: "error",
+            homeState: "error",
+            color: "#000000",
+            runningMate: false,
+            isPlayable: false,
+            issueScores: [],
+            description: "this is the empty candidate model to return when errors happen",
+            imageUrl: "",
+            runningMateIds: []
+        }
+    }
 
     getPlayerCandidateController(): CandidateController {
         const playerCans = this.scenarioController.getCandidates().filter((x) => x.getId() == this.getSide().playerId);
@@ -62,7 +84,25 @@ class Engine {
             return playerCans[0];
         }
         console.error("Could not get player candidate!");
-        return this.scenarioController.getCandidates()[0];
+        return new CandidateController(this.makeEmptyCandidateModel());
+    }
+
+    getPlayerRunningMateModel(): CandidateModel {
+        return this.getCandidateModelById(this.runningMateId);
+    }
+
+    getCandidateModelById(candidateId : number): CandidateModel {
+        if(this.currentScenario == null) {
+            console.error("Current scenario is null, cannot get running mate!");
+            return this.makeEmptyCandidateModel();
+        }
+
+        const playerCans = this.currentScenario.candidates.filter((x) => x.id == candidateId);
+        if (playerCans.length > 0) {
+            return playerCans[0];
+        }
+        console.error("Could not get candidate model with id", candidateId);
+        return this.makeEmptyCandidateModel();
     }
 
     getCurrentQuestion() {
@@ -154,7 +194,7 @@ class Engine {
         return arr[0].id;
     }
 
-    getCandidateByCandidateId(id: number) {
+    getCandidateControllerByCandidateId(id: number) {
         return this.scenarioController.getCandidateByCandidateId(id);
     }
 

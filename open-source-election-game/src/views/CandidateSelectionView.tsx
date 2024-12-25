@@ -1,12 +1,13 @@
 import { Engine, GameState } from "../engine/Engine";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./CandidateSelectionView.css";
 import CandidateController from "../engine/controllers/CandidateController";
+import CandidateModel from "../models/CandidateModel";
 
 interface CandidateSelectionViewProps {
   engine: Engine;
   setGameState: (state: GameState) => void;
-  setSelectingCandidate : (value : boolean) => void;
+  setSelectingCandidate: (value: boolean) => void;
 }
 
 function CandidateSelectionView(props: CandidateSelectionViewProps) {
@@ -15,6 +16,15 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
   const [selectedCandidate, setSelectedCandidate] = useState<number>(
     firstCandidateWithSideId()
   );
+
+  const [selectedRunningMate, setSelectedRunningMate] = useState<number>(
+    firstRunningMateWithSideId()
+  );
+
+  useEffect(() => {
+    const candidate = engine.getCandidateControllerByCandidateId(selectedCandidate);
+    setSelectedRunningMate(candidate.model.runningMateIds[0]);
+  }, [selectedCandidate, engine]);
 
   function getCandidatesWithSides(): CandidateController[] {
     const candidates: CandidateController[] = [];
@@ -35,6 +45,26 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
     return candidates;
   }
 
+  function getRunningMatesForCandidate(candidateId: number) {
+    if (engine.currentScenario == null) {
+      return [];
+    }
+
+    const currentCandidate = engine.getCandidateControllerByCandidateId(candidateId);
+    const runningMates = new Set(currentCandidate.model.runningMateIds);
+
+    return engine.currentScenario.candidates.filter((x) => runningMates.has(x.id));
+  }
+
+  function firstRunningMateWithSideId(): number {
+    const runningMates = getRunningMatesForCandidate(selectedCandidate);
+    if (runningMates.length == 0) {
+      return -1;
+    }
+    return runningMates[0].id;
+  }
+
+
   function firstCandidateWithSideId() {
     const candidates = getCandidatesWithSides();
     return candidates.length == 0 ? -1 : candidates[0].getId();
@@ -47,30 +77,50 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
 
     const sides = engine.currentScenario.scenarioSides;
     const sideIndex = sides.map((x) => x.playerId).indexOf(selectedCandidate);
-    engine.setScenarioSide(sideIndex);
+    engine.setScenarioSide(sideIndex, selectedRunningMate);
     setGameState(engine.gameState);
   }
 
-  const selectedCandidateController : CandidateController = engine.getCandidateByCandidateId(selectedCandidate);
+  const selectedCandidateController: CandidateController = engine.getCandidateControllerByCandidateId(selectedCandidate);
+  const runningMateModel: CandidateModel = engine.getCandidateModelById(selectedRunningMate);
 
   return (
     <div className="CandidateSelection">
-    <h2>Choose your Candidate</h2>
-    <div className="CandidateSelectionBox">
-      <label className="LabelText" htmlFor="candidate">Candidate: </label>
-      <select id="candidate" onChange={(e) => setSelectedCandidate(Number.parseInt(e.target.value))}>
-        {
-          getCandidatesWithSides().map((candidate) => {
-            return <option value={candidate.getId()} key={candidate.getId()}>{candidate.getFullName()}</option>
-          })
-        }
-      </select>
-      <div className="CandidateInfoArea">
-        <img src={selectedCandidateController.model.imageUrl}></img>
-        <div className="CandidateDescription" dangerouslySetInnerHTML={{__html:selectedCandidateController.model.description}}>
+      <h2>Choose your Candidate</h2>
+      <div className="CandidateSelectionBox">
+        <label className="LabelText" htmlFor="candidate">Candidate: </label>
+        <select id="candidate" onChange={(e) => setSelectedCandidate(Number.parseInt(e.target.value))}>
+          {
+            getCandidatesWithSides().map((candidate) => {
+              return <option value={candidate.getId()} key={candidate.getId()}>{candidate.getFullName()}</option>;
+            })
+          }
+        </select>
+        <div className="CandidateInfoArea">
+          <img src={selectedCandidateController.model.imageUrl}></img>
+          <div className="CandidateDescription" dangerouslySetInnerHTML={{ __html: selectedCandidateController.model.description }}>
+          </div>
         </div>
       </div>
-    </div>
+      <h2>Choose your Running Mate</h2>
+      <div className="CandidateSelectionBox">
+        <label className="LabelText" htmlFor="runningMate">Running Mate: </label>
+        {
+          getRunningMatesForCandidate(selectedCandidate).length > 0 &&
+          <select id="runningMate" onChange={(e) => setSelectedRunningMate(Number.parseInt(e.target.value))}>
+            {
+              getRunningMatesForCandidate(selectedCandidate).map((candidate) => {
+                return <option value={candidate.id} key={candidate.id}>{candidate.firstName + " " + candidate.lastName}</option>;
+              })
+            }
+          </select>
+        }
+        <div className="CandidateInfoArea">
+          <img src={runningMateModel.imageUrl}></img>
+          <div className="CandidateDescription" dangerouslySetInnerHTML={{ __html: runningMateModel.description }}>
+          </div>
+        </div>
+      </div>
       <button onClick={() => setSelectingCandidate(false)}>Prev</button>
       <button onClick={startGame}>Start</button>
     </div>

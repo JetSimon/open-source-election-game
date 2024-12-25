@@ -12,6 +12,7 @@ interface CandidateModel {
     issueScores: IssueScore[];
     description: string;
     imageUrl: string;
+    runningMateIds: number[];
 }
 
 export default CandidateModel;
