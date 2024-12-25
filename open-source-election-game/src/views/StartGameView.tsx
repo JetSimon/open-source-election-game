@@ -1,29 +1,30 @@
 import { Engine } from "../engine/Engine";
-import "./StartGameView.css";
+import { GameState } from "../engine/Engine";
+import ElectionDescriptionView from "./ElectionDescriptionView";
+import CandidateSelectionView from "./CandidateSelectionView";
+import { useState } from "react";
 
-interface StartGameViewProps {
-  engine: Engine;
+interface StartGameProps {
+    engine : Engine;
+    setGameState: (state: GameState) => void;
 }
 
-function StartGameView(props: StartGameViewProps) {
-  const { engine } = props;
+function StartGameView(props : StartGameProps) {
+    const {engine, setGameState} = props;
 
-  if(engine.currentScenario == null) {
-    return <p>Error: Current scenario is null!</p>
-  }
+    const [selectingCandidate, setSelectingCandidate] = useState(false);
 
-  return (
-    <div className="ElectionSelection">
-    <h2>{engine.currentScenario.scenarioName}</h2>
-    <div className="ElectionSelectionBox">
-      <div className="ElectionInfoArea">
-        <img src={engine.currentScenario.scenarioImageUrl}></img>
-        <div className="ElectionDescription" dangerouslySetInnerHTML={{__html:engine.currentScenario.scenarioDescription}}>
-        </div>
-      </div>
-    </div>
-    </div>
-  );
+    return (
+        !selectingCandidate
+        ?
+        <ElectionDescriptionView setSelectingCandidate={setSelectingCandidate} engine={engine}></ElectionDescriptionView>
+        :
+        <CandidateSelectionView
+          setSelectingCandidate={setSelectingCandidate}
+          setGameState={setGameState}
+          engine={engine}
+        ></CandidateSelectionView>
+    )
 }
 
-export default StartGameView;
+export default StartGameView

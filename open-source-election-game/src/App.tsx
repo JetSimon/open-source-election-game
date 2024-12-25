@@ -2,9 +2,8 @@ import "./App.css";
 import { Engine, GameState } from "./engine/Engine";
 
 import { useState, useEffect } from "react";
-import CandidateSelectionView from "./views/CandidateSelectionView";
-import GameView from "./views/GameView";
 import StartGameView from "./views/StartGameView";
+import GameView from "./views/GameView";
 
 const engine = new Engine();
 
@@ -38,13 +37,7 @@ function App() {
 
     if (gameState == GameState.CandidateSelection) {
       return (
-        <>
-        <StartGameView engine={engine}></StartGameView>
-        <CandidateSelectionView
-          setGameState={setGameState}
-          engine={engine}
-        ></CandidateSelectionView>
-        </>
+        <StartGameView engine={engine} setGameState={setGameState}></StartGameView>
       );
     }
 

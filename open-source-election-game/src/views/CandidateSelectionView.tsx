@@ -6,10 +6,11 @@ import CandidateController from "../engine/controllers/CandidateController";
 interface CandidateSelectionViewProps {
   engine: Engine;
   setGameState: (state: GameState) => void;
+  setSelectingCandidate : (value : boolean) => void;
 }
 
 function CandidateSelectionView(props: CandidateSelectionViewProps) {
-  const { engine, setGameState } = props;
+  const { engine, setGameState, setSelectingCandidate } = props;
 
   const [selectedCandidate, setSelectedCandidate] = useState<number>(
     firstCandidateWithSideId()
@@ -70,8 +71,7 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
         </div>
       </div>
     </div>
-    
-      
+      <button onClick={() => setSelectingCandidate(false)}>Prev</button>
       <button onClick={startGame}>Start</button>
     </div>
   );
