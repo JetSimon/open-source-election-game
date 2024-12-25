@@ -4,6 +4,7 @@
     "scenarioImageUrl": "https://placecats.com/210/240",
     "candidates": [
         {
+            "runningMateIds" : [],
             "id": 131,
             "firstName": "James K.",
             "lastName": "Polk",
@@ -43,6 +44,7 @@
             "imageUrl": "https://www.jetsimon.com/public/static/images/james-k-polk-1844.jpg"
         },
         {
+            "runningMateIds" : [137, 138, 139],
             "id": 132,
             "firstName": "Henry",
             "lastName": "Clay",
@@ -82,6 +84,7 @@
             "imageUrl": "https://www.jetsimon.com/public/static/images/henry-clay-1844.jpg"
         },
         {
+            "runningMateIds" : [],
             "id": 133,
             "firstName": "James",
             "lastName": "Birney",
@@ -121,6 +124,7 @@
             "imageUrl": "'"
         },
         {
+            "runningMateIds" : [],
             "id": 134,
             "firstName": "John",
             "lastName": "Tyler",
@@ -160,6 +164,7 @@
             "imageUrl": "'"
         },
         {
+            "runningMateIds" : [],
             "id": 135,
             "firstName": "George",
             "lastName": "Dallas",
@@ -173,6 +178,7 @@
             "imageUrl": "https://www.jetsimon.com/public/static/images/george-dallas-1844.jpg"
         },
         {
+            "runningMateIds" : [],
             "id": 136,
             "firstName": "Levi",
             "lastName": "Woodbury",
@@ -186,6 +192,7 @@
             "imageUrl": "https://www.jetsimon.com/public/static/images/levi-woodbury-1844.jpg"
         },
         {
+            "runningMateIds" : [],
             "id": 137,
             "firstName": "Theodore",
             "lastName": "Frelinghuysen",
@@ -195,10 +202,11 @@
             "runningMate": true,
             "isPlayable": false,
             "issueScores": [],
-            "description": "'",
+            "description": "<p>This is a description</p>",
             "imageUrl": "https://www.jetsimon.com/public/static/images/theodore-frelinghuysen-1844.jpg"
         },
         {
+            "runningMateIds" : [],
             "id": 138,
             "firstName": "John",
             "lastName": "Sergeant",
@@ -208,10 +216,11 @@
             "runningMate": true,
             "isPlayable": false,
             "issueScores": [],
-            "description": "'",
+            "description": "<p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p>",
             "imageUrl": "https://www.jetsimon.com/public/static/images/john-sergeant-1844.jpg"
         },
         {
+            "runningMateIds" : [],
             "id": 139,
             "firstName": "Millard",
             "lastName": "Fillmore",
@@ -221,10 +230,11 @@
             "runningMate": true,
             "isPlayable": false,
             "issueScores": [],
-            "description": "'",
+            "description": "<p>This is a description</p>",
             "imageUrl": "https://www.jetsimon.com/public/static/images/millard-fillmore-1844.jpg"
         },
         {
+            "runningMateIds" : [],
             "id": 140,
             "firstName": "Thomas",
             "lastName": "Morris",
@@ -238,6 +248,7 @@
             "imageUrl": "'"
         },
         {
+            "runningMateIds" : [],
             "id": 141,
             "firstName": "John C.",
             "lastName": "Calhoun",
