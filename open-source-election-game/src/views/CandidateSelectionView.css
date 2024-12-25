@@ -23,6 +23,7 @@
 
     .CandidateDescription {
         text-align: center!important;
+        margin:auto;
     }
 
 }
