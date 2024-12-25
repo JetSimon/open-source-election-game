@@ -24,7 +24,7 @@ class Engine {
     scenarioController: ScenarioController = new ScenarioController();
     currentScenario: ScenarioModel | null = null;
 
-    runningMateId : number;
+    runningMateId : number = -1;
 
     counters : Map<string, number> = new Map();
 
