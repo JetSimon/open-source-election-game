@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./CandidateSelectionView.css";
 import CandidateController from "../engine/controllers/CandidateController";
 import CandidateModel from "../models/CandidateModel";
+import CandidateInfoArea from "../components/CandidateInfoArea";
 
 interface CandidateSelectionViewProps {
   engine: Engine;
@@ -96,11 +97,7 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
             })
           }
         </select>
-        <div className="CandidateInfoArea">
-          <img src={selectedCandidateController.model.imageUrl}></img>
-          <div className="CandidateDescription" dangerouslySetInnerHTML={{ __html: selectedCandidateController.model.description }}>
-          </div>
-        </div>
+        <CandidateInfoArea candidate={selectedCandidateController.model}></CandidateInfoArea>
       </div>
       <h2>Choose your Running Mate</h2>
       <div className="CandidateSelectionBox">
@@ -115,11 +112,7 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
             }
           </select>
         }
-        <div className="CandidateInfoArea">
-          <img src={runningMateModel.imageUrl}></img>
-          <div className="CandidateDescription" dangerouslySetInnerHTML={{ __html: runningMateModel.description }}>
-          </div>
-        </div>
+        <CandidateInfoArea candidate={runningMateModel}></CandidateInfoArea>
       </div>
       <button onClick={() => setSelectingCandidate(false)}>Prev</button>
       <button onClick={startGame}>Start</button>
