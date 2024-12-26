@@ -7,8 +7,40 @@ import { editor } from 'monaco-editor';
 
 const engine = new Engine();
 
+function makeEmptyScenarioModel(): ScenarioModel {
+    return {
+        hasStateVisits: false,
+        scenarioName: "",
+        scenarioDescription: "",
+        scenarioImageUrl: "",
+        candidates: [],
+        states: [],
+        issues: [],
+        scenarioSides: []
+    };
+}
+
+function getMissingKeys(scenarioModel: ScenarioModel): string[] {
+    const requiredKeys = new Set(Object.keys(makeEmptyScenarioModel()).map((x) => x.toString()));
+    const missingKeys: string[] = [];
+
+    console.log(requiredKeys);
+
+    for (const key of Object.keys(scenarioModel)) {
+        if (!requiredKeys.has(key.toString())) {
+            missingKeys.push(key.toString());
+        }
+    }
+
+    return missingKeys;
+}
+
 function OsegEditor() {
+
+    const [errorWithDataJson, setErrorWithDataJson] = useState<string>("");
     const [data, setData] = useState<ScenarioModel | null>(null);
+    const [dataString, setDataString] = useState<string>("")
+
     const [logic, setLogic] = useState<string>("");
     const [mapUrl, setMapUrl] = useState<string>("");
 
@@ -16,6 +48,29 @@ function OsegEditor() {
     function onLogicChanged(value: string | undefined, _ev: editor.IModelContentChangedEvent) {
         if (value != undefined) {
             setLogic(value);
+        }
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    function onDataChanged(value: string | undefined, _ev: editor.IModelContentChangedEvent) {
+        if (value != undefined) {
+            setDataString(value);
+            try {
+                const parsed = JSON.parse(value) as ScenarioModel;
+
+                const missingKeys = getMissingKeys(parsed);
+                if(missingKeys.length > 0) {
+                    throw new Error("ScenarioModel is missing keys: " + missingKeys.join(", "))
+                }
+
+                setData(parsed);
+                setErrorWithDataJson("");
+            }
+            catch (e) {
+                if (e instanceof Error) {
+                    setErrorWithDataJson(e.message);
+                }
+            }
         }
     }
 
@@ -38,6 +93,7 @@ function OsegEditor() {
 
     useEffect(() => {
         if (data != null) {
+            setDataString(JSON.stringify(data, null, 4));
             engine.mapUrl = mapUrl;
             engine.loadScenario(data, true);
         }
@@ -49,6 +105,16 @@ function OsegEditor() {
 
     return (
         <>
+            <h2>Scenario Data JSON</h2>
+            {errorWithDataJson != "" && <div>JSON Error: {errorWithDataJson}</div>}
+            <Editor
+                height="512px"
+                language="json"
+                theme="vs-dark"
+                value={dataString}
+                onChange={onDataChanged}
+            ></Editor>
+            <h2>Logic Code</h2>
             <Editor
                 height="512px"
                 language="javascript"
