@@ -23,7 +23,7 @@ function App() {
       engine.createEnding = createEnding;
       engine.onAnswerPicked = onAnswerPicked;
 
-      engine.mapString = map;
+      engine.mapUrl = map;
       engine.loadScenario(dataJson);
       setGameState(engine.gameState);
     }
@@ -42,7 +42,7 @@ function App() {
     }
 
     if (gameState == GameState.Election) {
-      return <GameView mapUrl={engine.mapString} engine={engine}></GameView>;
+      return <GameView mapUrl={engine.mapUrl} engine={engine}></GameView>;
     }
   }
 
