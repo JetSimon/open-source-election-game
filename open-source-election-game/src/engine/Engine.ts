@@ -33,12 +33,17 @@ class Engine {
     createEnding : null | ((engine : Engine, results : FinalResultsModel) => EndingModel) = null;
     onAnswerPicked : null | ((engine : Engine, answerPicked : AnswerModel) => void) = null;
 
-    loadScenario(newScenario: ScenarioModel) {
+    loadScenario(newScenario: ScenarioModel, asObserver = false) {
         this.currentQuestionIndex = 0;
         this.scenarioController.loadScenario(newScenario, 0);
         this.currentScenario = newScenario;
         this.gameState = GameState.CandidateSelection;
         this.runningMateId = -1;
+
+        if(asObserver) {
+            this.updateStates();
+            this.gameState = GameState.Election;
+        }
     }
 
     setScenarioSide(newSideIndex: number, runningMateId : number) {

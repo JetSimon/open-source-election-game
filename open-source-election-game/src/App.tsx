@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import StartGameView from "./views/StartGameView";
 import GameView from "./views/GameView";
 
+import OsegEditor from "./editor/OsegEditor";
+
 const engine = new Engine();
 
 const MOD_FOLDER = "TestScenario"
@@ -45,6 +47,10 @@ function App() {
       return <GameView mapUrl={engine.mapUrl} engine={engine}></GameView>;
     }
   }
+
+  return (
+    <OsegEditor></OsegEditor>
+  )
 
   return (
     <div className="App">
