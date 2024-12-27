@@ -4,7 +4,7 @@ import Game from "./Game";
 import OsegEditor from "./editor/OsegEditor";
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   Link
