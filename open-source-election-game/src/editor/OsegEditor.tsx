@@ -41,6 +41,9 @@ function OsegEditor() {
         setData(defaultDataJson);
         setLogic(defaultLogicText);
         setMapUrl(defaultMapUrl);
+
+        const stringifiedData = JSON.stringify(defaultDataJson, null, 4);
+        setDataString(stringifiedData);
     }
 
     useEffect(() => {
@@ -49,8 +52,9 @@ function OsegEditor() {
 
     useEffect(() => {
         if (data != null) {
-            setDataString(JSON.stringify(data, null, 4));
             engine.mapUrl = mapUrl;
+
+            // Load scenario as observer (aka we don't assume the player is playing as anyone, just for previewing)
             engine.loadScenario(data, true);
         }
     }, [data, mapUrl]);
@@ -60,7 +64,7 @@ function OsegEditor() {
     }
 
     return (
-        <>
+        <div>
             <h2>OSEG Editor</h2>
             <PanelGroup direction="horizontal" id="group">
             <Panel className="Panel" id="left-panel">
@@ -75,7 +79,7 @@ function OsegEditor() {
                 <button onClick={() => downloadString(dataString, "data.json")}>Download data.json</button>
                 <button onClick={() => downloadString(logic, "logic.js")}>Download logic.js</button>
             </div>
-        </>
+        </div>
     );
 }
 
