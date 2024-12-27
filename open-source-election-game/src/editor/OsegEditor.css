@@ -13,6 +13,7 @@
 
 .Panel {
     padding: 16px;
+    overflow-y: auto;
 }
 
 .DownloadButtons {
