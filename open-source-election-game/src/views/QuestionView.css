@@ -1,8 +1,8 @@
 .QuestionView {
     margin: auto;
     padding: 16px;
-    height: 33%;
     display: flex;
+    overflow-y: auto;
 }
 
 .QuestionDescription {
@@ -12,4 +12,15 @@
 
 .ConfirmAnswerButton {
 
+}
+
+.Answer {
+    margin-bottom: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+    .QuestionView {
+        font-size: small;
+    }
+    
 }

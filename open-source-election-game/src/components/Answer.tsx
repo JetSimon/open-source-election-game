@@ -21,7 +21,7 @@ function Answer(props: AnswerProps) {
     }
 
     return (
-        <div>
+        <div className="Answer">
             <input id={answerId} onChange={handleOnChange} checked={isSelected()} type="radio"></input>
             <label style={{ "fontWeight": isSelected() ? "bold" : "" }} htmlFor={answerId}>{answerModel.description}</label>
         </div>

@@ -105,13 +105,13 @@ function GameView(props: GameViewProps) {
   }
 
   return (
-    <>
-      {!engine.isGameOver() && !engine.waitingToPickState && <button onClick={startAutoplay}>Autoplay (PRESS TWICE)</button>}
+    <div className="GameView">
+      {!engine.isGameOver() && !engine.waitingToPickState && !showMap && <button onClick={startAutoplay}>Autoplay (PRESS TWICE)</button>}
       {engine.isGameOver() ? (
-        <>
+        <div>
         <EndingView engine={engine}></EndingView>
         <MapView onStateClicked={null} engine={engine} mapUrl={mapUrl}></MapView>
-        </>
+        </div>
       ) :
       (
         engine.waitingToPickState || showMap ?
@@ -138,7 +138,7 @@ function GameView(props: GameViewProps) {
         isShowing={showingFeedbackBox}
         setIsShowing={setShowingFeedbackBox}
       ></PopupBox>
-    </>
+    </div>
   );
 }
 

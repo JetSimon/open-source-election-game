@@ -1,0 +1,19 @@
+.EnumNavBar {
+    display: flex;
+    margin: auto;
+    place-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid black;
+    padding: 4px;
+    flex-wrap: wrap;
+}
+
+.EnumNavBar > button {
+    border: 1px solid black;
+}
+
+.EnumNavBar > button:disabled {
+    background-color: grey;
+    color: white;
+}

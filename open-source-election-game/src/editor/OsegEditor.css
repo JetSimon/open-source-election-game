@@ -1,0 +1,26 @@
+.SplitEditorArea {
+    display: flex;
+    gap: 8px;
+}
+
+.ResizeHandle {
+    width: 4px;
+    background-color: grey;
+    margin-left: 2px;
+    margin-right: 2px;
+    border: 1px solid black;
+}
+
+.Panel {
+    padding: 16px;
+}
+
+.DownloadButtons {
+    margin: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    place-items: center;
+    justify-content: center;
+    
+}

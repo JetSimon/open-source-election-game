@@ -1,17 +1,20 @@
 .MapView {
     display: flex;
     gap: 5%;
-    height: 33%;
 }
 
 @media only screen and (max-width: 600px) {
     .MapView {
       flex-direction: column;
+      place-items: center;
+      justify-content: center;
     }
 
     .StatePoll {
         margin:auto;
         width: 100%!important;
+        padding: 0px!important;
+        margin-top: 1px;
     }
 }
 
