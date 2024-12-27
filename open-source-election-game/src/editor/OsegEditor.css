@@ -25,3 +25,11 @@
     justify-content: center;
     
 }
+
+.MapSettings {
+    margin: 8px;
+}
+
+.MapSettings > label {
+    margin-right: 8px;
+}

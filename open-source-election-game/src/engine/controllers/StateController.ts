@@ -6,12 +6,6 @@ import CandidateController from "./CandidateController";
 import { Engine } from "../Engine";
 import { hexToRgb, rgbToHex } from "../../utils/ColorUtils";
 
-const RNG = 0.025;
-
-function getRngMultiplier() {
-    return 1.0 + ((Math.random() - 0.5) * 2) * RNG;
-}
-
 class StateController {
     model: StateModel;
     opinions: Map<number, number>;
@@ -66,7 +60,7 @@ class StateController {
         this.stateModifiers.set(candidateId, Math.max(0, this.getCandidateStateModifier(candidateId) + amount));
     }
 
-    update(scenario: ScenarioController) {
+    update(scenario: ScenarioController, rng : number) {
         for (const candidate of scenario.getCandidates()) {
 
             if (candidate.model.runningMate) {
@@ -95,7 +89,7 @@ class StateController {
             newOpinion = 1.0 - newOpinion; // Because we calculate distance between issues
             newOpinion *= this.getCandidateStateModifier(candidate.getId());
             newOpinion *= scenario.getGlobalModifierForCandidate(candidate.getId());
-            newOpinion *= getRngMultiplier();
+            newOpinion *= this.getRngMultiplier(rng);
             this.opinions.set(candidate.getId(), newOpinion);
         }
 
@@ -104,6 +98,10 @@ class StateController {
             const newOpinion = totalOpinion == 0 ? 1.0 / candidates.length : this.getOpinionForCandidate(candidate.getId()) / totalOpinion;
             this.opinions.set(candidate.getId(), newOpinion);
         }
+    }
+
+    getRngMultiplier(rng : number) {
+        return 1.0 + ((Math.random() - 0.5) * 2) * rng;
     }
 
     getHighestCandidate(engine: Engine): CandidateController | null {

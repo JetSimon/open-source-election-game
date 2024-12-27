@@ -17,13 +17,15 @@ interface OsegLeftPanelProps {
     setData : (data : ScenarioModel | null) => void;
     setLogic : (s : string) => void;
     setDataString : (s : string) => void;
-    dataString : string;
+    setMapUrl : (url : string) => void;
     logic : string;
+    dataString : string;
+    mapUrl : string;
 }
 
 function OsegLeftPanel(props : OsegLeftPanelProps) {
 
-    const { setData, setLogic, setDataString, dataString, logic } = props;
+    const { setData, setLogic, setDataString, dataString, logic, mapUrl, setMapUrl } = props;
 
     const [errorWithDataJson, setErrorWithDataJson] = useState<string>("");
     const [leftNavBar, setLeftNevBar] = useState<LeftNavBar>(LeftNavBar.Data);
@@ -61,6 +63,10 @@ function OsegLeftPanel(props : OsegLeftPanelProps) {
             return (
                 <div>
                     <h2>Scenario Data JSON</h2>
+                    <div className="MapSettings">
+                        <label htmlFor="svgUrlInput">SVG Url:</label>
+                        <input id="svgUrlInput" value={mapUrl} onChange={(e) => setMapUrl(e.target.value)}></input>
+                    </div>
                     {errorWithDataJson != "" && <div>JSON Error: {errorWithDataJson}</div>}
                     <Editor
                         height="512px"

@@ -33,6 +33,9 @@ class Engine {
     createEnding : null | ((engine : Engine, results : FinalResultsModel) => EndingModel) = null;
     onAnswerPicked : null | ((engine : Engine, answerPicked : AnswerModel) => void) = null;
 
+    rng : number = 0.025;
+    useRng : boolean = true;
+
     loadScenario(newScenario: ScenarioModel, asObserver = false) {
         this.currentQuestionIndex = 0;
         this.scenarioController.loadScenario(newScenario, 0);
@@ -126,7 +129,7 @@ class Engine {
 
     updateStates() {
         for (const stateController of this.scenarioController.stateControllers) {
-            stateController.update(this.scenarioController);
+            stateController.update(this.scenarioController, this.getRngRange());
         }
     }
 
@@ -303,6 +306,11 @@ class Engine {
 
     playerEvAtLeast(results : FinalResultsModel, amount : number) {
         return this.getPlayerEv(results) >= amount;
+    }
+
+    // Returns range for RNG. So if value returned in 0.01, then you would += (0.01 / 2) to state polls
+    getRngRange() {
+        return this.useRng ? this.rng : 0;
     }
 }
 

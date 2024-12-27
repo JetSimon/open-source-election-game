@@ -3,6 +3,8 @@
     padding: 16px;
     display: flex;
     overflow-y: auto;
+    place-items: center;
+    justify-content: center;
 }
 
 .QuestionDescription {

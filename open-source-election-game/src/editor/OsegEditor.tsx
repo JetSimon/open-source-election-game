@@ -7,6 +7,7 @@ import OsegRightPanel from "./OsegRightPanel";
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 
 const engine = new Engine();
+engine.useRng = false;
 
 function downloadString(s : string, fileName : string) {
     const element = document.createElement('a');
@@ -63,7 +64,7 @@ function OsegEditor() {
             <h2>OSEG Editor</h2>
             <PanelGroup direction="horizontal" id="group">
             <Panel className="Panel" id="left-panel">
-                <OsegLeftPanel setData={setData} setLogic={setLogic} setDataString={setDataString} dataString={dataString} logic={logic}></OsegLeftPanel>
+                <OsegLeftPanel mapUrl={mapUrl} setMapUrl={setMapUrl} setData={setData} setLogic={setLogic} setDataString={setDataString} dataString={dataString} logic={logic}></OsegLeftPanel>
             </Panel>
             <PanelResizeHandle className="ResizeHandle" id="resize-handle" />
             <Panel className="Panel" id="right-panel">

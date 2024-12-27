@@ -36,6 +36,7 @@ function OsegRightPanel(props: OsegRightPanelProps) {
                 <div>
                     <h2>Starting Margins</h2>
                     <MapView engine={engine} mapUrl={mapUrl} onStateClicked={null}></MapView>
+                    <p>Note: starting margins may be slightly different in game due to RNG</p>
                 </div>
             );
         }
