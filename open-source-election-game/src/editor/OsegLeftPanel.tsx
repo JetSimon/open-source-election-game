@@ -44,7 +44,6 @@ function OsegLeftPanel(props : OsegLeftPanelProps) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     function onDataChanged(value: string | undefined, _ev: editor.IModelContentChangedEvent) {
         if (value != undefined) {
-            setDataString(value);
             try {
                 const parsed = JSON.parse(value) as ScenarioModel;
                 setData(parsed);
@@ -55,6 +54,8 @@ function OsegLeftPanel(props : OsegLeftPanelProps) {
                     setErrorWithDataJson(e.message);
                 }
             }
+
+            setDataString(value);
         }
     }
 
@@ -67,7 +68,7 @@ function OsegLeftPanel(props : OsegLeftPanelProps) {
                         <label htmlFor="svgUrlInput">SVG Url:</label>
                         <input id="svgUrlInput" value={mapUrl} onChange={(e) => setMapUrl(e.target.value)}></input>
                     </div>
-                    {errorWithDataJson != "" && <div>JSON Error: {errorWithDataJson}</div>}
+                    {errorWithDataJson != "" && <div className="JsonError"><span style={{fontWeight:"bold"}}>JSON Error: </span>{errorWithDataJson}</div>}
                     <Editor
                         height="512px"
                         language="json"

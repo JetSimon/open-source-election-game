@@ -33,3 +33,10 @@
 .MapSettings > label {
     margin-right: 8px;
 }
+
+.JsonError {
+    border: #c93535 1px solid;
+    margin: 8px auto;
+    color: #c93535;
+    background-color: #f5dddd;;
+}

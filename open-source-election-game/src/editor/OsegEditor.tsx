@@ -1,13 +1,9 @@
-import { Engine } from "../engine/Engine";
 import { useState, useEffect } from "react";
 import ScenarioModel from "../models/ScenarioModel";
 import "./OsegEditor.css";
 import OsegLeftPanel from "./OsegLeftPanel";
 import OsegRightPanel from "./OsegRightPanel";
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
-
-const engine = new Engine();
-engine.useRng = false;
 
 function downloadString(s : string, fileName : string) {
     const element = document.createElement('a');
@@ -50,15 +46,6 @@ function OsegEditor() {
         loadDefaultData();
     }, []);
 
-    useEffect(() => {
-        if (data != null) {
-            engine.mapUrl = mapUrl;
-
-            // Load scenario as observer (aka we don't assume the player is playing as anyone, just for previewing)
-            engine.loadScenario(data, true);
-        }
-    }, [data, mapUrl]);
-
     if (data == null || mapUrl == "") {
         return <h1>Loading default data, map</h1>;
     }
@@ -72,7 +59,7 @@ function OsegEditor() {
             </Panel>
             <PanelResizeHandle className="ResizeHandle" id="resize-handle" />
             <Panel className="Panel" id="right-panel">
-                <OsegRightPanel engine={engine} mapUrl={mapUrl}></OsegRightPanel>
+                <OsegRightPanel data={data} mapUrl={mapUrl}></OsegRightPanel>
             </Panel>
             </PanelGroup>
             <div className="DownloadButtons">
