@@ -43,6 +43,7 @@ class Engine {
         this.gameState = GameState.CandidateSelection;
         this.runningMateId = -1;
 
+
         if(asObserver) {
             this.updateStates();
             this.gameState = GameState.Election;

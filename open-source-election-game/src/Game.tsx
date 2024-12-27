@@ -10,7 +10,9 @@ const MOD_FOLDER = "TestScenario";
 import "./Game.css"
 
 function Game() {
+
     const [gameState, setGameState] = useState(engine.gameState);
+    const [theme, setTheme] = useState(engine.scenarioController.makeEmptyTheme());
 
     useEffect(() => {
         async function loadScenario() {
@@ -26,6 +28,7 @@ function Game() {
             engine.mapUrl = map;
             engine.loadScenario(dataJson);
             setGameState(engine.gameState);
+            setTheme(engine.scenarioController.theme);
         }
         loadScenario();
     }, []);
@@ -37,17 +40,20 @@ function Game() {
 
         if (gameState == GameState.CandidateSelection) {
             return (
-                <StartGameView engine={engine} setGameState={setGameState}></StartGameView>
+                <StartGameView theme={theme} engine={engine} setGameState={setGameState}></StartGameView>
             );
         }
 
         if (gameState == GameState.Election) {
-            return <GameView mapUrl={engine.mapUrl} engine={engine}></GameView>;
+            return <GameView theme={theme} mapUrl={engine.mapUrl} engine={engine}></GameView>;
         }
     }
 
+    const backgroundUrl = "url('" + theme.backgroundImageUrl + "')";
+    console.log(theme)
+
     return (
-        <div className="Game">
+        <div style={{backgroundColor:theme.backgroundColor, backgroundImage:backgroundUrl}} className="Game">
             {getViewFromGameState()}
         </div>
     );

@@ -1,13 +1,15 @@
 import CandidateController from "../engine/controllers/CandidateController";
 import { Engine } from "../engine/Engine";
 import "./FinalResults.css";
+import ThemeModel from "../models/ThemeModel";
 
 interface FinalResultsProps {
   engine: Engine;
+  theme: ThemeModel;
 }
 
 function FinalResults(props: FinalResultsProps) {
-  const { engine } = props;
+  const { engine, theme } = props;
   const results = engine.getFinalResults();
 
   function getEv(candidate: CandidateController): number {
@@ -20,7 +22,7 @@ function FinalResults(props: FinalResultsProps) {
     return pv == undefined ? -1 : pv;
   }
 
-  return (<div className="FinalResults">
+  return (<div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="FinalResults">
     <h2>Final Numbers</h2>{engine.scenarioController
       .getCandidates()
       .sort((x, y) => getEv(y) - getEv(x) || getPv(y) - getPv(x))

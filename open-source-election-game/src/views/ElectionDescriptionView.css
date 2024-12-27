@@ -1,3 +1,7 @@
+.ElectionSelection {
+    min-height: 100vh;
+}
+
 .ElectionSelectionBox {
     border: 1px solid black;
     padding: 16px;

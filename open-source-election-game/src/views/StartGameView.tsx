@@ -3,23 +3,26 @@ import { GameState } from "../engine/Engine";
 import ElectionDescriptionView from "./ElectionDescriptionView";
 import CandidateSelectionView from "./CandidateSelectionView";
 import { useState } from "react";
+import ThemeModel from "../models/ThemeModel";
 
 interface StartGameProps {
     engine : Engine;
     setGameState: (state: GameState) => void;
+    theme : ThemeModel;
 }
 
 function StartGameView(props : StartGameProps) {
-    const {engine, setGameState} = props;
+    const {engine, setGameState, theme} = props;
 
     const [selectingCandidate, setSelectingCandidate] = useState(false);
 
     return (
         !selectingCandidate
         ?
-        <ElectionDescriptionView setSelectingCandidate={setSelectingCandidate} engine={engine}></ElectionDescriptionView>
+        <ElectionDescriptionView theme={theme} setSelectingCandidate={setSelectingCandidate} engine={engine}></ElectionDescriptionView>
         :
         <CandidateSelectionView
+          theme={theme}
           setSelectingCandidate={setSelectingCandidate}
           setGameState={setGameState}
           engine={engine}

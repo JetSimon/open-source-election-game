@@ -2,6 +2,7 @@ import CandidateModel from "./CandidateModel";
 import StateModel from "./StateModel";
 import Issue from "./Issue";
 import QuestionModel from "./QuestionModel";
+import ThemeModel from "./ThemeModel";
 
 interface ScenarioSideModel {
     playerId: number;
@@ -9,6 +10,7 @@ interface ScenarioSideModel {
 }
 
 interface ScenarioModel {
+    theme : ThemeModel;
     hasStateVisits: boolean;
     scenarioName: string;
     scenarioDescription: string;

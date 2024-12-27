@@ -3,7 +3,7 @@ import QuestionModel from "../models/QuestionModel";
 import Answer from "../components/Answer";
 import AnswerModel from "../models/AnswerModel";
 import "./QuestionView.css";
-
+import ThemeModel from "../models/ThemeModel";
 interface QuestionViewProps {
   currentQuestionIndex: number;
   engine: Engine;
@@ -11,6 +11,7 @@ interface QuestionViewProps {
   submitAnswer: () => void;
   selectedAnswer: AnswerModel | null;
   setSelectedAnswer: (answer: AnswerModel) => void;
+  theme : ThemeModel;
 }
 
 function QuestionView(props: QuestionViewProps) {
@@ -21,6 +22,7 @@ function QuestionView(props: QuestionViewProps) {
     submitAnswer,
     selectedAnswer,
     setSelectedAnswer,
+    theme
   } = props;
   return (
     <div className="QuestionView">
@@ -29,8 +31,8 @@ function QuestionView(props: QuestionViewProps) {
           Question {currentQuestionIndex + 1}/{engine.getNumberOfQuestions()}
         </h2>
 
-        <p className="QuestionDescription">{currentQuestion.description}</p>
-        <div>
+        <p style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}} className="QuestionDescription">{currentQuestion.description}</p>
+        <div className="AnswerHolder" style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}}>
           {currentQuestion.answers.map((answerModel) => (
             <Answer
               answerId={currentQuestion.answers.indexOf(answerModel).toString()}
@@ -40,15 +42,15 @@ function QuestionView(props: QuestionViewProps) {
               setSelectedAnswer={setSelectedAnswer}
             ></Answer>
           ))}
-        </div>
-
-        <button
+            <button style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}}
           disabled={selectedAnswer == null}
           className="ConfirmAnswerButton"
           onClick={submitAnswer}
         >
           Okay
         </button>
+        </div>
+
       </div>
     </div>
   );

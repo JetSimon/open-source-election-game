@@ -18,17 +18,17 @@ function App() {
             OSEG
           </h2>
           <div>
-            <Link to="/">Game</Link>
+            <Link to="/open-source-election-game/">Game</Link>
           </div>
           <div>
-            <Link to="/editor">Editor</Link>
+            <Link to="/open-source-election-game/editor">Editor</Link>
           </div>
         </div>
 
         <Routes>
-          <Route path="/" element={<Game></Game>}>
+          <Route path="/open-source-election-game" element={<Game></Game>}>
           </Route>
-          <Route path="/editor" element={<OsegEditor></OsegEditor>}>
+          <Route path="/open-source-election-game/editor" element={<OsegEditor></OsegEditor>}>
           </Route>
         </Routes>
       </div>

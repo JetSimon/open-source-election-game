@@ -4,6 +4,7 @@ import CandidateController from "./CandidateController";
 import IssueScores from "../IssueScores";
 import QuestionModel from "../../models/QuestionModel";
 import { shuffleArray } from "../../utils/ArrayUtils";
+import ThemeModel from "../../models/ThemeModel";
 
 class ScenarioController {
     model: ScenarioModel = this.makeEmptyScenarioModel();
@@ -12,9 +13,25 @@ class ScenarioController {
     issueScores: IssueScores = new IssueScores([]);
     globalModifiers: Map<number, number> = new Map<number, number>();
     questions: QuestionModel[] = [];
+    theme: ThemeModel = this.makeEmptyTheme();
+
+    makeEmptyTheme(): ThemeModel {
+        return {
+            backgroundImageUrl: "",
+            backgroundColor: "#000000",
+            headerImageUrl: "",
+            primaryGameWindowColor: "#000000",
+            secondaryGameWindowColor: "#000000",
+            primaryGameWindowTextColor: "#000000",
+            secondaryGameWindowTextColor: "#000000",
+            bottomBannerBackgroundColor: "#000000",
+            bottomBannerTextColor: "#000000"
+        };
+    }
 
     makeEmptyScenarioModel(): ScenarioModel {
         return {
+            theme: this.makeEmptyTheme(),
             hasStateVisits: false,
             candidates: [],
             states: [],
@@ -28,7 +45,7 @@ class ScenarioController {
 
     loadScenario(model: ScenarioModel, sideIndex: number) {
         this.model = model;
-
+        this.theme = model.theme;
         this.candidateControllers = model.candidates.filter((candidateModel) => !candidateModel.runningMate).map((candidateModel) => new CandidateController(candidateModel));
         const toRemove = new Set();
         for (const candidateController of this.getCandidates()) {
@@ -47,8 +64,8 @@ class ScenarioController {
 
         this.stateControllers = model.states.map((stateModel) => new StateController(this, stateModel));
         this.questions = model.scenarioSides[sideIndex].questions;
-        
-        for(let i = 0; i < this.questions.length; i++) {
+
+        for (let i = 0; i < this.questions.length; i++) {
             shuffleArray(this.questions[i].answers);
         }
     }
@@ -78,9 +95,9 @@ class ScenarioController {
         this.globalModifiers.set(candidateId, Math.max(0, this.getGlobalModifierForCandidate(candidateId) + amount));
     }
 
-    getStateControllerByStateId(stateId: number) : StateController | null {
+    getStateControllerByStateId(stateId: number): StateController | null {
         const controllers = this.stateControllers.filter((state) => state.getId() == stateId);
-        if(controllers.length > 0) {
+        if (controllers.length > 0) {
             return controllers[0];
         }
         return null;

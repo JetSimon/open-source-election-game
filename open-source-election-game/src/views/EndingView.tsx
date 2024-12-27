@@ -2,15 +2,16 @@ import { Engine } from "../engine/Engine";
 import FinalResults from "../components/FinalResults";
 import EndingModel from "../models/EndingModel";
 import { useState } from "react";
-
+import ThemeModel from "../models/ThemeModel";
 import "./EndingView.css"
 
 interface EndingViewProps {
   engine: Engine;
+  theme : ThemeModel;
 }
 
 function EndingView(props: EndingViewProps) {
-  const { engine } = props;
+  const { engine, theme } = props;
   const [endingSlideIndex, setEndingSlideIndex] = useState(0);
 
   if (engine == null) {
@@ -35,7 +36,7 @@ function EndingView(props: EndingViewProps) {
 
   return (
     <div className="EndingView">
-      <div className="EndingSlides">
+      <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="EndingSlides">
         <h2>Final Results</h2>
         <div className="EndingSlide">
           <img src={endingSlide.imageUrl}></img>
@@ -47,7 +48,7 @@ function EndingView(props: EndingViewProps) {
         {endingSlides.length > 1 && <button disabled={endingSlideIndex <= 0} onClick={() => changeEndingSlideIndex(-1)}>Prev</button>}
         {endingSlides.length > 1 && <button disabled={endingSlideIndex >= endingSlides.length - 1} onClick={() => changeEndingSlideIndex(+1)}>Next</button>}
       </div>
-      <FinalResults engine={engine}></FinalResults>
+      <FinalResults theme={theme} engine={engine}></FinalResults>
     </div>
   );
 }

@@ -1,20 +1,22 @@
 import StateController from "../engine/controllers/StateController";
 import { Engine } from "../engine/Engine";
+import ThemeModel from "../models/ThemeModel";
 
 interface StatePollProps {
   engine: Engine | null;
   stateController: StateController | null;
+  theme : ThemeModel;
 }
 
 function StatePoll(props: StatePollProps) {
-  const { stateController, engine } = props;
+  const { stateController, engine, theme } = props;
 
   if (engine == null || stateController == null) {
-    return <div className="StatePoll">Hover over a state see polling</div>;
+    return <div className="StatePoll" style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}}>Hover over a state see polling</div>;
   }
 
   return (
-    <div className="StatePoll">
+    <div className="StatePoll" style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}}>
       <h2>{stateController.model.name}</h2>
       <h3>Polls</h3>
       <div className="StatePollValueList">

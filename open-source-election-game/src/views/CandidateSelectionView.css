@@ -1,3 +1,7 @@
+.CandidateSelection {
+    min-height: 100vh;
+}
+
 .CandidateSelectionBox {
     border: 1px solid black;
     padding: 16px;

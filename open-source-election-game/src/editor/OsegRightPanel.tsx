@@ -59,7 +59,7 @@ function OsegRightPanel(props: OsegRightPanelProps) {
             return (
                 <div>
                     <h2>Starting Margins</h2>
-                    <MapView engine={engine} mapUrl={mapUrl} onStateClicked={null}></MapView>
+                    <MapView theme={engine.scenarioController.theme} engine={engine} mapUrl={mapUrl} onStateClicked={null}></MapView>
                     <p>Note: starting margins may be slightly different in game due to RNG</p>
                 </div>
             );
@@ -67,13 +67,13 @@ function OsegRightPanel(props: OsegRightPanelProps) {
         else if (rightNavBar == RightNavBar.Election) {
             return (
                 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                <ElectionDescriptionView setSelectingCandidate={(_x: boolean) => { }} engine={engine}></ElectionDescriptionView>
+                <ElectionDescriptionView theme={engine.scenarioController.theme} setSelectingCandidate={(_x: boolean) => { }} engine={engine}></ElectionDescriptionView>
             );
         }
         else if (rightNavBar == RightNavBar.Candidates) {
             return (
                 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                <CandidateSelectionView setGameState={(_x: GameState) => { }} setSelectingCandidate={(_x: boolean) => { }} engine={engine}></CandidateSelectionView>
+                <CandidateSelectionView theme={engine.scenarioController.theme} setGameState={(_x: GameState) => { }} setSelectingCandidate={(_x: boolean) => { }} engine={engine}></CandidateSelectionView>
             );
         }
     }

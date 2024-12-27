@@ -4,15 +4,16 @@ import "./CandidateSelectionView.css";
 import CandidateController from "../engine/controllers/CandidateController";
 import CandidateModel from "../models/CandidateModel";
 import CandidateInfoArea from "../components/CandidateInfoArea";
-
+import ThemeModel from "../models/ThemeModel";
 interface CandidateSelectionViewProps {
   engine: Engine;
   setGameState: (state: GameState) => void;
   setSelectingCandidate: (value: boolean) => void;
+  theme : ThemeModel;
 }
 
 function CandidateSelectionView(props: CandidateSelectionViewProps) {
-  const { engine, setGameState, setSelectingCandidate } = props;
+  const { engine, setGameState, setSelectingCandidate, theme } = props;
 
   const [selectedCandidate, setSelectedCandidate] = useState<number>(
     firstCandidateWithSideId()
@@ -88,7 +89,7 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
   return (
     <div className="CandidateSelection">
       <h2>Choose your Candidate</h2>
-      <div className="CandidateSelectionBox">
+      <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="CandidateSelectionBox">
         <label className="LabelText" htmlFor="candidate">Candidate: </label>
         <select id="candidate" onChange={(e) => setSelectedCandidate(Number.parseInt(e.target.value))}>
           {
@@ -100,7 +101,7 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
         <CandidateInfoArea candidate={selectedCandidateController.model}></CandidateInfoArea>
       </div>
       <h2>Choose your Running Mate</h2>
-      <div className="CandidateSelectionBox">
+      <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="CandidateSelectionBox">
         <label className="LabelText" htmlFor="runningMate">Running Mate: </label>
         {
           getRunningMatesForCandidate(selectedCandidate).length > 0 &&

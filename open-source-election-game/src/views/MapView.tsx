@@ -4,15 +4,17 @@ import "external-svg-loader";
 import StateController from "../engine/controllers/StateController";
 import StatePoll from "../components/StatePoll";
 import "./MapView.css";
+import ThemeModel from "../models/ThemeModel";
 
 interface MapViewProps {
   engine: Engine;
   mapUrl: string;
   onStateClicked : ((state : StateController) => void) | null;
+  theme : ThemeModel;
 }
 
 function MapView(props: MapViewProps) {
-  const { engine, mapUrl, onStateClicked } = props;
+  const { engine, mapUrl, onStateClicked, theme } = props;
   const mapRef = useRef<SVGSVGElement>(null);
   const [currentState, setCurrentState] = useState<StateController | null>(
     null
@@ -98,7 +100,7 @@ function MapView(props: MapViewProps) {
         }}
       />
 
-      <StatePoll engine={engine} stateController={currentState}></StatePoll>
+      <StatePoll theme={theme} engine={engine} stateController={currentState}></StatePoll>
     </div>
   );
 }

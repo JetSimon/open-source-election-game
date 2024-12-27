@@ -8,16 +8,18 @@ import BottomBanner from "../components/BottomBanner";
 import { Engine } from "../engine/Engine";
 import AnswerModel from "../models/AnswerModel";
 import StateController from "../engine/controllers/StateController";
+import ThemeModel from "../models/ThemeModel";
 
 interface GameViewProps {
   engine: Engine;
   mapUrl: string;
+  theme: ThemeModel;
 }
 
 let autoplayHandle: undefined | number = undefined;
 
 function GameView(props: GameViewProps) {
-  const { engine, mapUrl } = props;
+  const { engine, mapUrl, theme } = props;
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(
     engine.currentQuestionIndex
@@ -108,14 +110,14 @@ function GameView(props: GameViewProps) {
     <div className="GameView">
       {!engine.isGameOver() && !engine.waitingToPickState && !showMap && <button onClick={startAutoplay}>Autoplay (PRESS TWICE)</button>}
       {engine.isGameOver() ? (
-        <div>
-        <EndingView engine={engine}></EndingView>
-        <MapView onStateClicked={null} engine={engine} mapUrl={mapUrl}></MapView>
+        <div className="EndingViewHolder">
+        <EndingView theme={theme} engine={engine}></EndingView>
+        <MapView theme={theme} onStateClicked={null} engine={engine} mapUrl={mapUrl}></MapView>
         </div>
       ) :
       (
         engine.waitingToPickState || showMap ?
-        <MapView onStateClicked={onStateClicked} engine={engine} mapUrl={mapUrl}></MapView>
+        <MapView theme={theme} onStateClicked={onStateClicked} engine={engine} mapUrl={mapUrl}></MapView>
         :
         (
         <QuestionView
@@ -125,12 +127,13 @@ function GameView(props: GameViewProps) {
           submitAnswer={submitAnswer}
           selectedAnswer={selectedAnswer}
           setSelectedAnswer={setSelectedAnswer}
+          theme={theme}
         ></QuestionView>
         )
       )}
-      {!engine.isGameOver() && !engine.waitingToPickState && <button onClick={() => setShowMap(!showMap)}>{showMap ? "Hide Map" : "Show Map"}</button>}
-      {!engine.isGameOver() && engine.waitingToPickState && <p>Choose a state to visit</p>}
-      <BottomBanner engine={engine}></BottomBanner>
+      {!engine.isGameOver() && !engine.waitingToPickState && <button style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}} onClick={() => setShowMap(!showMap)}>{showMap ? "Hide Map" : "Show Map"}</button>}
+      {!engine.isGameOver() && engine.waitingToPickState && <p style={{color:theme.primaryGameWindowTextColor}}>Choose a state to visit</p>}
+      <BottomBanner theme={theme} engine={engine}></BottomBanner>
       <PopupBox
         title="Feedback"
         body={feedbackText}

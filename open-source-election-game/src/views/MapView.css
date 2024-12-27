@@ -21,6 +21,7 @@
 .Map {
     outline: solid 1px black;
     width: 100%;
+    background-color: white;
 }
 
 .StatePoll {

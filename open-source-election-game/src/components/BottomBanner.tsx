@@ -1,18 +1,20 @@
 import { Engine } from "../engine/Engine";
+import ThemeModel from "../models/ThemeModel";
 import "./BottomBanner.css";
 
 interface BottomBannerProps {
   engine: Engine;
+  theme: ThemeModel;
 }
 
 function BottomBanner(props: BottomBannerProps) {
-  const { engine } = props;
+  const { engine, theme } = props;
 
   const playerCandidate = engine.getPlayerCandidateController();
   const runningMateModel = engine.getPlayerRunningMateModel();
 
   return (
-    <div className="BottomBanner">
+    <div style={{color:theme.bottomBannerTextColor, backgroundColor:theme.bottomBannerBackgroundColor}} className="BottomBanner">
       <img src={playerCandidate.model.imageUrl}></img>
       <div className="BannerNames">
         <p>{playerCandidate.model.lastName}</p>
