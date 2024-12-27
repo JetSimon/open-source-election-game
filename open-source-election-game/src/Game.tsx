@@ -5,33 +5,38 @@ import StartGameView from "./views/StartGameView";
 import GameView from "./views/GameView";
 
 const engine = new Engine();
-const MOD_FOLDER = "TestScenario";
+
+import ScenarioModel from "./models/ScenarioModel";
 
 import "./Game.css"
 
-function Game() {
+interface GameProps {
+    injectedData : ScenarioModel;
+    injectedLogic : string;
+    injectedMapUrl : string;
+}
 
+function Game(props : GameProps) {
+
+    const {injectedData, injectedLogic, injectedMapUrl} = props;
     const [gameState, setGameState] = useState(engine.gameState);
     const [theme, setTheme] = useState(engine.scenarioController.makeEmptyTheme());
 
     useEffect(() => {
-        async function loadScenario() {
-            const data = await fetch("./scenarios/" + MOD_FOLDER + "/data.json");
-            const dataJson = await data.json();
-            const map: string = "./scenarios/" + MOD_FOLDER + "/map.svg";
-
-            const logicUrl: string = window.location + "scenarios/" + MOD_FOLDER + "/logic.js";
-            const { createEnding, onAnswerPicked } = await import(/* @vite-ignore */logicUrl);
+        async function loadInjectedData() {
+            const encodedLogic = encodeURIComponent(injectedLogic);
+            const logicDataUri = 'data:text/javascript;charset=utf-8,' + encodedLogic;
+            const {createEnding, onAnswerPicked} = await import(/* @vite-ignore */logicDataUri);
             engine.createEnding = createEnding;
             engine.onAnswerPicked = onAnswerPicked;
-
-            engine.mapUrl = map;
-            engine.loadScenario(dataJson);
+            engine.mapUrl = injectedMapUrl;
+            engine.loadScenario(injectedData);
             setGameState(engine.gameState);
             setTheme(engine.scenarioController.theme);
         }
-        loadScenario();
-    }, []);
+
+        loadInjectedData();
+    }, [injectedData, injectedLogic, injectedMapUrl]);
 
     function getViewFromGameState() {
         if (gameState == GameState.Uninitialized) {

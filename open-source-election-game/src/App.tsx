@@ -1,6 +1,6 @@
 import "./App.css";
 
-import Game from "./Game";
+import ScenarioLoader from "./ScenarioLoader";
 import OsegEditor from "./editor/OsegEditor";
 
 import {
@@ -8,7 +8,6 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
 
 function App() {
   return (
@@ -26,7 +25,7 @@ function App() {
         </div>
 
         <Routes>
-          <Route path="/open-source-election-game" element={<Game></Game>}>
+          <Route path="/open-source-election-game" element={<ScenarioLoader></ScenarioLoader>}>
           </Route>
           <Route path="/open-source-election-game/editor" element={<OsegEditor></OsegEditor>}>
           </Route>
