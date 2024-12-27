@@ -1,7 +1,7 @@
 {
     "theme": {
         "backgroundImageUrl": "",
-        "headerImageUrl": "",
+        "headerImageUrl": "./img/genericBanner.png",
         "backgroundColor": "#FFFFFF",
         "primaryGameWindowColor": "#FFFFFF",
         "secondaryGameWindowColor": "#F5F5F5",
