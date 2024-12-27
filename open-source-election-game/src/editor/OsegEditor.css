@@ -40,3 +40,25 @@
     color: #c93535;
     background-color: #f5dddd;;
 }
+
+.GreenButton {
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border: solid 1px darkgreen;
+}
+
+.GreenButton:hover {
+    background-color: darkgreen;
+}
+
+.RedButton {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border: solid 1px darkred;
+}
+
+.RedButton:hover {
+    background-color: darkred;
+}
