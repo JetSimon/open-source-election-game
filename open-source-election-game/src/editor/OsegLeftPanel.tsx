@@ -98,7 +98,7 @@ function OsegLeftPanel(props : OsegLeftPanelProps) {
 
     return (
         <div className="OsegPanel">
-            <EnumNavBar enumValueAsString={LeftNavBar[leftNavBar].toString()} setEnumFromString={setLeftNavBarFromString} enumKeys={leftNavBarValues} ></EnumNavBar>
+            <EnumNavBar description="Edit" enumValueAsString={LeftNavBar[leftNavBar].toString()} setEnumFromString={setLeftNavBarFromString} enumKeys={leftNavBarValues} ></EnumNavBar>
             {getEditorArea()}
         </div>
     )

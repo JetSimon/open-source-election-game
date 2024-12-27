@@ -80,7 +80,7 @@ function OsegRightPanel(props: OsegRightPanelProps) {
 
     return (
         <div className="OsegPanel">
-            <EnumNavBar enumValueAsString={RightNavBar[rightNavBar].toString()} setEnumFromString={setRightNavBarFromString} enumKeys={rightNavBarValues} ></EnumNavBar>
+            <EnumNavBar description="Preview" enumValueAsString={RightNavBar[rightNavBar].toString()} setEnumFromString={setRightNavBarFromString} enumKeys={rightNavBarValues} ></EnumNavBar>
             {getEditorArea()}
         </div>
     );

@@ -7,6 +7,7 @@
     border: 1px solid black;
     padding: 4px;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .EnumNavBar > button {
@@ -16,4 +17,13 @@
 .EnumNavBar > button:disabled {
     background-color: grey;
     color: white;
+}
+
+.EnumNavBar > label {
+    text-align: left;
+    position: absolute;
+    top:-20px;
+    left:0px;
+    font-size: small;
+    color: grey;
 }
