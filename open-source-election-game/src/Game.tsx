@@ -50,10 +50,10 @@ function Game() {
     }
 
     const backgroundUrl = "url('" + theme.backgroundImageUrl + "')";
-    console.log(theme)
 
     return (
         <div style={{backgroundColor:theme.backgroundColor, backgroundImage:backgroundUrl}} className="Game">
+            <img className="TopBanner" src={theme.headerImageUrl}></img>
             {getViewFromGameState()}
         </div>
     );

@@ -14,9 +14,9 @@ function App() {
   return (
       <div className="App">
         <div className="HeaderNav">
-          <h2 className="Logo">
+          <a href="./" className="Logo">
             OSEG
-          </h2>
+          </a>
           <div>
             <Link to="/open-source-election-game/">Game</Link>
           </div>

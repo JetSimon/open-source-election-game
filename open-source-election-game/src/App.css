@@ -39,4 +39,6 @@ html, body, .App, #root {
 .Logo {
   position: absolute;
   left: 8px;
+  font-size: x-large;
+  font-weight: bold;
 }
