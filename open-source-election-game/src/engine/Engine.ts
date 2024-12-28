@@ -17,7 +17,6 @@ enum GameState {
 }
 
 class Engine {
-    mapUrl : string = "";
     gameState = GameState.Uninitialized;
     sideIndex = 0;
     currentQuestionIndex = 0;

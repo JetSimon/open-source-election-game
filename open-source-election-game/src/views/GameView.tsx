@@ -12,14 +12,14 @@ import ThemeModel from "../models/ThemeModel";
 
 interface GameViewProps {
   engine: Engine;
-  mapUrl: string;
+  mapSvg: string;
   theme: ThemeModel;
 }
 
 let autoplayHandle: undefined | number = undefined;
 
 function GameView(props: GameViewProps) {
-  const { engine, mapUrl, theme } = props;
+  const { engine, mapSvg, theme } = props;
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(
     engine.currentQuestionIndex
@@ -112,12 +112,12 @@ function GameView(props: GameViewProps) {
       {engine.isGameOver() ? (
         <div className="EndingViewHolder">
         <EndingView theme={theme} engine={engine}></EndingView>
-        <MapView theme={theme} onStateClicked={null} engine={engine} mapUrl={mapUrl}></MapView>
+        <MapView theme={theme} onStateClicked={null} engine={engine} mapSvg={mapSvg}></MapView>
         </div>
       ) :
       (
         engine.waitingToPickState || showMap ?
-        <MapView theme={theme} onStateClicked={onStateClicked} engine={engine} mapUrl={mapUrl}></MapView>
+        <MapView theme={theme} onStateClicked={onStateClicked} engine={engine} mapSvg={mapSvg}></MapView>
         :
         (
         <QuestionView

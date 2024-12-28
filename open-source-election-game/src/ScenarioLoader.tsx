@@ -10,7 +10,7 @@ function ScenarioLoader() {
     const [currentModName, setCurrentModName] = useState("");
     const [data, setData] = useState<ScenarioModel | null>(null);
     const [logic, setLogic] = useState<string>("");
-    const [mapUrl, setMapUrl] = useState<string>("");
+    const [mapSvg, setMapSvg] = useState<string>("");
 
     const [dataString, setDataString] = useState<string>("");
     const [loadingCustomScenario, setLoadingCustomScenario] = useState(false);
@@ -23,14 +23,16 @@ function ScenarioLoader() {
       async function loadScenarioFromUrl(modFolderName : string) {
         const dataRes = await fetch("./scenarios/" + modFolderName + "/data.json");
         const dataJson = await dataRes.json();
-        const map: string = "./scenarios/" + modFolderName + "/map.svg";
+
+        const mapRes = await fetch("./scenarios/" + modFolderName + "/map.svg");
+        const map: string = await mapRes.text();
       
         const logicRes = await fetch("./scenarios/" + modFolderName + "/logic.js");
         const logicText = await logicRes.text();
         
         setData(dataJson);
         setLogic(logicText);
-        setMapUrl(map);
+        setMapSvg(map);
       }
       loadScenarioFromUrl(currentModName);
     }, [currentModName]);
@@ -40,7 +42,7 @@ function ScenarioLoader() {
             const customData = JSON.parse(dataString) as ScenarioModel;
             setData(customData);
             setLogic(logic);
-            setMapUrl(mapUrl);
+            setMapSvg(mapSvg);
             setLoadingCustomScenario(true);
         }
         catch(e) {
@@ -62,8 +64,8 @@ function ScenarioLoader() {
                     <label htmlFor="logic">logic.js</label>
                     <textarea rows={8}  onChange={(e) => setLogic(e.target.value)} value={logic} id="logic"></textarea>
 
-                    <label htmlFor="map">map.svg url</label>
-                    <input type="text" onChange={(e) => setMapUrl(e.target.value)} value={mapUrl} id="map"></input>
+                    <label htmlFor="map">map.svg</label>
+                    <textarea rows={8} onChange={(e) => setMapSvg(e.target.value)} value={mapSvg} id="map"></textarea>
 
                     <button onClick={loadCustomScenario} className="GreenButton">Go</button>
                 </div>
@@ -75,7 +77,7 @@ function ScenarioLoader() {
         return <p>Error: Injected data is null</p>
     }
 
-    return <Game injectedData={data} injectedLogic={logic} injectedMapUrl={mapUrl}></Game>
+    return <Game injectedData={data} injectedLogic={logic} injectedMapSvg={mapSvg}></Game>
 }
 
 export default ScenarioLoader;

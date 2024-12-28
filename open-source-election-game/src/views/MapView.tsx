@@ -8,19 +8,17 @@ import ThemeModel from "../models/ThemeModel";
 
 interface MapViewProps {
   engine: Engine;
-  mapUrl: string;
   onStateClicked : ((state : StateController) => void) | null;
   theme : ThemeModel;
+  mapSvg : string;
 }
 
 function MapView(props: MapViewProps) {
-  const { engine, mapUrl, onStateClicked, theme } = props;
+  const { engine, onStateClicked, theme, mapSvg } = props;
   const mapRef = useRef<SVGSVGElement>(null);
   const [currentState, setCurrentState] = useState<StateController | null>(
     null
   );
-
-  console.log(mapUrl)
 
   useEffect(() => {
     function updateMapColors() {
@@ -52,7 +50,7 @@ function MapView(props: MapViewProps) {
     return () => {
       clearInterval(mapUpdate);
     };
-  }, [engine, currentState, mapUrl]);
+  }, [engine, currentState, mapSvg]);
 
   function onMouseMove(e: React.MouseEvent) {
     if (e.target == null) {
@@ -83,12 +81,14 @@ function MapView(props: MapViewProps) {
     }
   }
 
+  const mapUri = "data:image/svg+xml," + encodeURIComponent(mapSvg); 
+
   return (
     <div className="MapView">
       <svg
         className="Map"
         ref={mapRef}
-        data-src={mapUrl}
+        data-src={mapUri}
         data-unique-ids="disabled"
         data-js="enabled"
         onMouseMove={onMouseMove}

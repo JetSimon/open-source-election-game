@@ -6,7 +6,8 @@ import ScenarioModel from "../models/ScenarioModel";
 
 enum LeftNavBar {
     Data,
-    Logic
+    Logic,
+    Map
 }
 
 const leftNavBarValues = Object.keys(LeftNavBar).filter((item) => {
@@ -14,18 +15,18 @@ const leftNavBarValues = Object.keys(LeftNavBar).filter((item) => {
 });
 
 interface OsegLeftPanelProps {
-    setData : (data : ScenarioModel | null) => void;
-    setLogic : (s : string) => void;
-    setDataString : (s : string) => void;
-    setMapUrl : (url : string) => void;
-    logic : string;
-    dataString : string;
-    mapUrl : string;
+    setData: (data: ScenarioModel | null) => void;
+    setLogic: (s: string) => void;
+    setDataString: (s: string) => void;
+    setMapSvg: (url: string) => void;
+    logic: string;
+    dataString: string;
+    mapSvg: string;
 }
 
-function OsegLeftPanel(props : OsegLeftPanelProps) {
+function OsegLeftPanel(props: OsegLeftPanelProps) {
 
-    const { setData, setLogic, setDataString, dataString, logic, mapUrl, setMapUrl } = props;
+    const { setData, setLogic, setDataString, dataString, logic, mapSvg, setMapSvg } = props;
 
     const [errorWithDataJson, setErrorWithDataJson] = useState<string>("");
     const [leftNavBar, setLeftNevBar] = useState<LeftNavBar>(LeftNavBar.Data);
@@ -59,16 +60,19 @@ function OsegLeftPanel(props : OsegLeftPanelProps) {
         }
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    function onMapSvgChanged(value: string | undefined, _ev: editor.IModelContentChangedEvent) {
+        if (value != undefined) {
+            setMapSvg(value);
+        }
+    }
+
     function getEditorArea() {
         if (leftNavBar == LeftNavBar.Data) {
             return (
                 <div>
                     <h2>Scenario Data JSON</h2>
-                    <div className="MapSettings">
-                        <label htmlFor="svgUrlInput">SVG Url:</label>
-                        <input id="svgUrlInput" value={mapUrl} onChange={(e) => setMapUrl(e.target.value)}></input>
-                    </div>
-                    {errorWithDataJson != "" && <div className="JsonError"><span style={{fontWeight:"bold"}}>JSON Error: </span>{errorWithDataJson}</div>}
+                    {errorWithDataJson != "" && <div className="JsonError"><span style={{ fontWeight: "bold" }}>JSON Error: </span>{errorWithDataJson}</div>}
                     <Editor
                         height="512px"
                         language="json"
@@ -93,6 +97,21 @@ function OsegLeftPanel(props : OsegLeftPanelProps) {
                 </div>
             );
         }
+        else if (leftNavBar == LeftNavBar.Map) {
+            return (
+                <div>
+                    <h2>Map Svg</h2>
+                    <Editor
+                        height="512px"
+                        language="html"
+                        theme="vs-dark"
+                        value={mapSvg}
+                        onChange={onMapSvgChanged}
+                    ></Editor>
+                    <p>Note: Ensure all path ids correspond to a state abbreviation in Data</p>
+                </div>
+            );
+        }
     }
 
 
@@ -101,7 +120,7 @@ function OsegLeftPanel(props : OsegLeftPanelProps) {
             <EnumNavBar description="Edit" enumValueAsString={LeftNavBar[leftNavBar].toString()} setEnumFromString={setLeftNavBarFromString} enumKeys={leftNavBarValues} ></EnumNavBar>
             {getEditorArea()}
         </div>
-    )
+    );
 }
 
 export default OsegLeftPanel;

@@ -17,7 +17,7 @@ const rightNavBarValues = Object.keys(RightNavBar).filter((item) => {
 });
 
 interface OsegRightPanelProps {
-    mapUrl: string;
+    mapSvg: string;
     data : ScenarioModel;
 }
 
@@ -25,7 +25,7 @@ const engine = new Engine();
 engine.useRng = false;
 
 function OsegRightPanel(props: OsegRightPanelProps) {
-    const { mapUrl, data } = props;
+    const { mapSvg, data } = props;
     const [rightNavBar, setRightNavBar] = useState<RightNavBar>(RightNavBar.Map);
 
     // Using this to make sure that the candidate information updates as you type in the editor
@@ -38,8 +38,6 @@ function OsegRightPanel(props: OsegRightPanelProps) {
 
     useEffect(() => {
         if (data != null) {
-            engine.mapUrl = mapUrl;
-
             // Load scenario as observer (aka we don't assume the player is playing as anyone, just for previewing)
             engine.loadScenario(data, true);
 
@@ -51,7 +49,7 @@ function OsegRightPanel(props: OsegRightPanelProps) {
                 clearTimeout(handle);
             }
         }
-    }, [data, mapUrl]);
+    }, [data, mapSvg]);
 
     function getEditorArea() {
 
@@ -59,7 +57,7 @@ function OsegRightPanel(props: OsegRightPanelProps) {
             return (
                 <div>
                     <h2>Starting Margins</h2>
-                    <MapView theme={engine.scenarioController.theme} engine={engine} mapUrl={mapUrl} onStateClicked={null}></MapView>
+                    <MapView theme={engine.scenarioController.theme} engine={engine} mapSvg={mapSvg} onStateClicked={null}></MapView>
                     <p>Note: starting margins may be slightly different in game due to RNG</p>
                 </div>
             );

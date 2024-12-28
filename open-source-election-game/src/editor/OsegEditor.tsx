@@ -55,7 +55,7 @@ function OsegEditor() {
     const [dataString, setDataString] = useState<string>("");
 
     const [logic, setLogic] = useState<string>("");
-    const [mapUrl, setMapUrl] = useState<string>("");
+    const [mapSvg, setMapSvg] = useState<string>("");
 
     const [isPlaying, setIsPlaying] = useState(false);
 
@@ -65,14 +65,16 @@ function OsegEditor() {
     async function loadDefaultData() {
         const defaultData = await fetch("./editor/templates/default/data.json");
         const defaultDataJson = await defaultData.json();
-        const defaultMapUrl: string = "./editor/templates/default/map.svg";
+
+        const mapSvgRes = await fetch("./editor/templates/default/map.svg");
+        const defaultMapSvg: string = await mapSvgRes.text();
 
         const defaultLogic = await fetch("./editor/templates/default/logic.js");
         const defaultLogicText = await defaultLogic.text();
 
         setData(defaultDataJson);
         setLogic(defaultLogicText);
-        setMapUrl(defaultMapUrl);
+        setMapSvg(defaultMapSvg);
 
         const stringifiedData = JSON.stringify(defaultDataJson, null, 4);
         setDataString(stringifiedData);
@@ -82,7 +84,7 @@ function OsegEditor() {
         console.log("Saved")
         localStorage.setItem("editorLogic", logic);
         localStorage.setItem("editorData", dataString);
-        localStorage.setItem("editorMapUrl", mapUrl);
+        localStorage.setItem("editorMapSvg", mapSvg);
         setLastSaved(Date.now());
     }
 
@@ -90,9 +92,9 @@ function OsegEditor() {
         try {
             const autosaveLogic = localStorage.getItem("editorLogic");
             const autosaveData = localStorage.getItem("editorData");
-            const autosaveMapUrl = localStorage.getItem("editorMapUrl");
+            const autosaveMapSvg = localStorage.getItem("editorMapSvg");
     
-            if(autosaveData == null || autosaveLogic == null || autosaveMapUrl == null) {
+            if(autosaveData == null || autosaveLogic == null || autosaveMapSvg == null) {
                 throw new Error("Did not have autosave data to load!");
             }
 
@@ -104,7 +106,7 @@ function OsegEditor() {
             }
             
             setLogic(autosaveLogic);
-            setMapUrl(autosaveMapUrl);
+            setMapSvg(autosaveMapSvg);
             setDataString(autosaveData);
         }
         catch(e) {
@@ -135,9 +137,9 @@ function OsegEditor() {
             try {
                 const autosaveLogic = localStorage.getItem("editorLogic");
                 const autosaveData = localStorage.getItem("editorData");
-                const autosaveMapUrl = localStorage.getItem("editorMapUrl");
+                const autosaveMapSvg = localStorage.getItem("editorMapSvg");
         
-                if(autosaveData == null || autosaveLogic == null || autosaveMapUrl == null) {
+                if(autosaveData == null || autosaveLogic == null || autosaveMapSvg == null) {
                     throw new Error("Did not have autosave data to load!");
                 }
     
@@ -149,7 +151,7 @@ function OsegEditor() {
                 }
                 
                 setLogic(autosaveLogic);
-                setMapUrl(autosaveMapUrl);
+                setMapSvg(autosaveMapSvg);
                 setDataString(autosaveData);
             }
             catch(e) {
@@ -184,7 +186,7 @@ function OsegEditor() {
         return (
             <div>
                 <button className="RedButton" onClick={() => setIsPlaying(false)}>Stop Playing</button>
-                <Game injectedData={data} injectedLogic={logic} injectedMapUrl={mapUrl}></Game>
+                <Game injectedData={data} injectedLogic={logic} injectedMapSvg={mapSvg}></Game>
             </div>
         )
     }
@@ -203,11 +205,11 @@ function OsegEditor() {
             {lastSaved != -1 && <p className="LastSaved">Last saved: {new Date(lastSaved).toTimeString()}</p>}
             <PanelGroup direction="horizontal" id="group">
             <Panel className="Panel" id="left-panel">
-                <OsegLeftPanel mapUrl={mapUrl} setMapUrl={setMapUrl} setData={setData} setLogic={setLogic} setDataString={setDataString} dataString={dataString} logic={logic}></OsegLeftPanel>
+                <OsegLeftPanel mapSvg={mapSvg} setMapSvg={setMapSvg} setData={setData} setLogic={setLogic} setDataString={setDataString} dataString={dataString} logic={logic}></OsegLeftPanel>
             </Panel>
             <PanelResizeHandle className="ResizeHandle" id="resize-handle" />
             <Panel className="Panel" id="right-panel">
-                <OsegRightPanel data={data} mapUrl={mapUrl}></OsegRightPanel>
+                <OsegRightPanel data={data} mapSvg={mapSvg}></OsegRightPanel>
             </Panel>
             </PanelGroup>
         </div>

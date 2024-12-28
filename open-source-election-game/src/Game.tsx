@@ -13,12 +13,12 @@ import "./Game.css"
 interface GameProps {
     injectedData : ScenarioModel;
     injectedLogic : string;
-    injectedMapUrl : string;
+    injectedMapSvg : string;
 }
 
 function Game(props : GameProps) {
 
-    const {injectedData, injectedLogic, injectedMapUrl} = props;
+    const {injectedData, injectedLogic, injectedMapSvg} = props;
     const [gameState, setGameState] = useState(engine.gameState);
     const [theme, setTheme] = useState(engine.scenarioController.makeEmptyTheme());
 
@@ -29,14 +29,13 @@ function Game(props : GameProps) {
             const {createEnding, onAnswerPicked} = await import(/* @vite-ignore */logicDataUri);
             engine.createEnding = createEnding;
             engine.onAnswerPicked = onAnswerPicked;
-            engine.mapUrl = injectedMapUrl;
             engine.loadScenario(injectedData);
             setGameState(engine.gameState);
             setTheme(engine.scenarioController.theme);
         }
 
         loadInjectedData();
-    }, [injectedData, injectedLogic, injectedMapUrl]);
+    }, [injectedData, injectedLogic, injectedMapSvg]);
 
     function getViewFromGameState() {
         if (gameState == GameState.Uninitialized) {
@@ -50,7 +49,7 @@ function Game(props : GameProps) {
         }
 
         if (gameState == GameState.Election) {
-            return <GameView theme={theme} mapUrl={engine.mapUrl} engine={engine}></GameView>;
+            return <GameView theme={theme} mapSvg={injectedMapSvg}  engine={engine}></GameView>;
         }
     }
 
