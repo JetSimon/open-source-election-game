@@ -59,7 +59,7 @@ function OsegEditor() {
 
     const [isPlaying, setIsPlaying] = useState(false);
 
-    const [autosave/*, setAutosave*/] = useState<boolean>(getAutosaveFromStorage());
+    const [autosave/*, setAutosave*/] = useState(false);//useState<boolean>(getAutosaveFromStorage());
     const [lastSaved, setLastSaved] = useState<number>(-1);
 
     async function loadDefaultData() {
