@@ -49,7 +49,7 @@
 }
 
 .GreenButton:hover {
-    background-color: darkgreen;
+    background-color: darkgreen!important;
 }
 
 .RedButton {
@@ -60,5 +60,32 @@
 }
 
 .RedButton:hover {
-    background-color: darkred;
+    background-color: darkred!important;
+}
+
+.Toolbar {
+    display: flex;
+    margin: auto;
+    gap: 8px;
+    place-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 12px;
+}
+
+.Toolbar > button {
+   margin: 0px 0px;
+   border: 1px grey solid;
+}
+
+.Toolbar > button:hover {
+    background-color: gainsboro;
+}
+
+.LastSaved {
+    font-style: italic;
+    color: grey;
+    font-size: x-small;
+    margin: -5px 0px;
+    margin-bottom: 5px;
 }

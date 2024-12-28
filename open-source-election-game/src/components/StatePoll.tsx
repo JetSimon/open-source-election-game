@@ -26,7 +26,7 @@ function StatePoll(props: StatePollProps) {
             const candidate = engine.getCandidateControllerByCandidateId(candidateId);
             const color = candidate.model.color;
             return (
-              <p className="StatePollValue" key={candidate.model.id}>
+              <div className="StatePollValue" key={candidate.model.id}>
                 <div
                   style={{ backgroundColor: color }}
                   className="PollDot"
@@ -35,7 +35,7 @@ function StatePoll(props: StatePollProps) {
                   {candidate.model.lastName}
                 </span>{" "}
                 - {(opinion * 100).toFixed(2)}%
-              </p>
+              </div>
             );
           })}
       </div>
