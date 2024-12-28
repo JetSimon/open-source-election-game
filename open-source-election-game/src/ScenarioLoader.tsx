@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Game from "./Game";
 import "./ScenarioLoader.css";
 
-const scenarioNames = ["TestScenario"];
+const scenarioNames = ["TestScenario", "1980 For Common Sense"];
 
 function ScenarioLoader() {
 

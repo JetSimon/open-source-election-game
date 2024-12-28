@@ -88,7 +88,7 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
 
   return (
     <div className="CandidateSelection">
-      <h2>Choose your Candidate</h2>
+      <h2 style={{color:theme.primaryGameWindowTextColor}}>Choose your Candidate</h2>
       <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="CandidateSelectionBox">
         <label className="LabelText" htmlFor="candidate">Candidate: </label>
         <select id="candidate" onChange={(e) => setSelectedCandidate(Number.parseInt(e.target.value))}>
@@ -100,7 +100,7 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
         </select>
         <CandidateInfoArea candidate={selectedCandidateController.model}></CandidateInfoArea>
       </div>
-      <h2>Choose your Running Mate</h2>
+      <h2 style={{color:theme.primaryGameWindowTextColor}}>Choose your Running Mate</h2>
       <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="CandidateSelectionBox">
         <label className="LabelText" htmlFor="runningMate">Running Mate: </label>
         {

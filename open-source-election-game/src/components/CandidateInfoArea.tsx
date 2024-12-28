@@ -11,8 +11,8 @@ function CandidateInfoArea(props : CandidateInfoAreaProps) {
           <img src={candidate.imageUrl}></img>
           <div className="CandidateDescription" >
             <div><span className="CandidateFact">Name: </span>{candidate.firstName} {candidate.lastName}</div>
-            <div><span className="CandidateFact">Party: </span>{candidate.party}</div>
-            <div><span className="CandidateFact">State: </span>{candidate.homeState}</div>
+            {candidate.party != "" && <div><span className="CandidateFact">Party: </span>{candidate.party}</div>}
+            {candidate.homeState != "" && <div><span className="CandidateFact">State: </span>{candidate.homeState}</div>}
             <div dangerouslySetInnerHTML={{ __html: candidate.description }}>
           </div>
           </div>

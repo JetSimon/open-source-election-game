@@ -20,6 +20,8 @@ function MapView(props: MapViewProps) {
     null
   );
 
+  console.log(mapUrl)
+
   useEffect(() => {
     function updateMapColors() {
       if (mapRef == null || mapRef.current == null) {
@@ -50,7 +52,7 @@ function MapView(props: MapViewProps) {
     return () => {
       clearInterval(mapUpdate);
     };
-  }, [engine, currentState]);
+  }, [engine, currentState, mapUrl]);
 
   function onMouseMove(e: React.MouseEvent) {
     if (e.target == null) {

@@ -23,3 +23,7 @@
 button {
     margin: 8px;
 }
+
+.TopBanner {
+    max-height: 25vh;
+}
