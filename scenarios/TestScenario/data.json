@@ -1,4 +1,5 @@
 {
+    "credits" : "by Dan Bryan, adapted by Jet",
     "theme": {
         "backgroundImageUrl": "",
         "headerImageUrl": "./img/genericBanner.png",
