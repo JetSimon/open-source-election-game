@@ -8,6 +8,7 @@ interface ThemeModel {
     secondaryGameWindowTextColor : string;
     bottomBannerBackgroundColor : string;
     bottomBannerTextColor : string;
+    advisorImage : string;
 }
 
 export default ThemeModel;

@@ -16,7 +16,8 @@ const errorScenario : ScenarioModel = {
         primaryGameWindowTextColor: "",
         secondaryGameWindowTextColor: "",
         bottomBannerBackgroundColor: "",
-        bottomBannerTextColor: ""
+        bottomBannerTextColor: "",
+        advisorImage: ""
     },
     hasStateVisits: false,
     scenarioName: "Error with data.json",

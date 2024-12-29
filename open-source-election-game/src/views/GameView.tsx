@@ -143,6 +143,7 @@ function GameView(props: GameViewProps) {
         buttonText="Okay"
         isShowing={showingFeedbackBox}
         setIsShowing={setShowingFeedbackBox}
+        image={theme.advisorImage}
       ></PopupBox>
     </div>
   );
