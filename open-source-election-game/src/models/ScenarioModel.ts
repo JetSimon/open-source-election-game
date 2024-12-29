@@ -19,6 +19,7 @@ interface ScenarioModel {
     states: StateModel[];
     issues: Issue[];
     scenarioSides: ScenarioSideModel[];
+    credits: string;
 }
 
 export default ScenarioModel;

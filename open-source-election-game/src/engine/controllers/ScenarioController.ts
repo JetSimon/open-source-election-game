@@ -40,7 +40,8 @@ class ScenarioController {
             scenarioSides: [],
             scenarioDescription: "",
             scenarioName: "",
-            scenarioImageUrl: ""
+            scenarioImageUrl: "",
+            credits: ""
         };
     }
 

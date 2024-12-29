@@ -1,0 +1,50 @@
+.ScenarioBox {
+    max-width: 256px;
+    border: rgb(132, 170, 183) solid 2px;
+    border-radius: 16px;
+    background-color: lightblue;
+    margin: 16px;
+}
+
+.ScenarioBoxImageHolder {
+    width: 90%;
+    height: 128px;
+    overflow: clip;
+    margin: auto;
+}
+
+.ScenarioBoxImageHolder > img {
+    width: 100%;
+}
+
+.ScenarioBoxDesc {
+    margin: 8px;
+    overflow-y: scroll;
+    height: 128px;
+    background-color: rgb(202, 238, 250);
+    border-radius: 16px;
+}
+
+.ScenarioBoxDesc > p {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.ScenarioBox > button {
+    width: 80%;
+}
+
+.ScenarioName {
+    margin-top: 8px;
+    margin-bottom: 0px;
+}
+
+.ScenarioCredits {
+    padding: 0px;
+    margin: 0px;
+    font-size: x-small;
+    font-style: italic;
+    margin-bottom: 8px;
+}

@@ -2,6 +2,7 @@ import ScenarioModel from "./models/ScenarioModel";
 import { useEffect, useState } from "react";
 import Game from "./Game";
 import "./ScenarioLoader.css";
+import ScenarioBox from "./components/ScenarioBox";
 
 const scenarioNames = ["TestScenario", "1980 For Common Sense"];
 
@@ -14,7 +15,26 @@ function ScenarioLoader() {
 
     const [dataString, setDataString] = useState<string>("");
     const [loadingCustomScenario, setLoadingCustomScenario] = useState(false);
+
+    const [scenarios, setScenarios] = useState<Map<string, ScenarioModel>>(new Map());
   
+    useEffect(() => {
+        async function loadScenarios() {
+
+            const newScenarios = new Map<string, ScenarioModel>();
+
+            for(const scenarioName of scenarioNames) {
+                const modelRes = await fetch("./scenarios/" + scenarioName + "/data.json");
+                const model : ScenarioModel = await modelRes.json();
+                newScenarios.set(scenarioName, model);
+            }
+
+            setScenarios(newScenarios);
+        }
+
+        loadScenarios();
+    }, []);
+
     useEffect(() => {
       if(currentModName == "") {
         return;
@@ -53,8 +73,15 @@ function ScenarioLoader() {
     if(currentModName == "" && !loadingCustomScenario) {
         return (
             <div>
-                <h2>Pick a Scenario From These Buttons</h2>
-                {scenarioNames.map((scenarioName) => <button onClick={() => setCurrentModName(scenarioName)}>{scenarioName}</button>)}
+                <h2>Try OSEG, Pick a Demo Scenario</h2>
+                <div className="ScenarioBoxHolder">
+                {
+                    Array.from(scenarios).map(([scenarioName, model]) => {
+                        return <ScenarioBox model={model} onClickPlay={() => setCurrentModName(scenarioName)}></ScenarioBox>
+                    })
+                }
+                 </div>
+
                 <h2>Or Paste a Custom Scenario</h2>
 
                 <div className="CustomArea">

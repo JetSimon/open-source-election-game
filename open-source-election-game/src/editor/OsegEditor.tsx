@@ -29,7 +29,8 @@ const errorScenario : ScenarioModel = {
     scenarioSides: [{
         playerId: 0,
         questions: []
-    }]
+    }],
+    credits : ""
 }
 
 function getAutosaveFromStorage() {
