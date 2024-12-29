@@ -1,12 +1,9 @@
-import { Engine } from "../engine/Engine";
 import QuestionModel from "../models/QuestionModel";
 import Answer from "../components/Answer";
 import AnswerModel from "../models/AnswerModel";
 import "./QuestionView.css";
 import ThemeModel from "../models/ThemeModel";
 interface QuestionViewProps {
-  currentQuestionIndex: number;
-  engine: Engine;
   currentQuestion: QuestionModel;
   submitAnswer: () => void;
   selectedAnswer: AnswerModel | null;
@@ -17,22 +14,16 @@ interface QuestionViewProps {
 function QuestionView(props: QuestionViewProps) {
   const {
     currentQuestion,
-    currentQuestionIndex,
-    engine,
     submitAnswer,
     selectedAnswer,
     setSelectedAnswer,
     theme
   } = props;
   return (
-    <div className="QuestionView">
+    <div style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}}  className="QuestionView">
       <div>
-        <h2>
-          Question {currentQuestionIndex + 1}/{engine.getNumberOfQuestions()}
-        </h2>
-
-        <p style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}} className="QuestionDescription">{currentQuestion.description}</p>
-        <div className="AnswerHolder" style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}}>
+        <p style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="QuestionDescription">{currentQuestion.description}</p>
+        <div className="AnswerHolder">
           {currentQuestion.answers.map((answerModel) => (
             <Answer
               answerId={currentQuestion.answers.indexOf(answerModel).toString()}
@@ -42,7 +33,7 @@ function QuestionView(props: QuestionViewProps) {
               setSelectedAnswer={setSelectedAnswer}
             ></Answer>
           ))}
-            <button style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}}
+            <button style={{backgroundColor:theme.primaryGameWindowColor, color:theme.secondaryGameWindowTextColor}}
           disabled={selectedAnswer == null}
           className="ConfirmAnswerButton"
           onClick={submitAnswer}

@@ -3,7 +3,7 @@
 }
 
 .ElectionSelectionBox {
-    border: 1px solid black;
+    border-style: double;
     padding: 16px;
     margin: auto;
     width: 75%;
@@ -34,6 +34,7 @@
 
 .ElectionInfoArea > img {
     margin:auto;
+    border-style: double;
 }
 
 .ElectionDescription {

@@ -198,7 +198,7 @@ function OsegEditor() {
                 <button onClick={() => exportFiles()}>Export</button>
                 <button onClick={() => save()}>Save</button>
                 <button onClick={() => load()}>Load</button>
-                <button onClick={() => loadDefaultData()}>Load Default</button>
+                <button className="RedButton" onClick={() => loadDefaultData()}>Load Default</button>
                 {/*<button className={autosave ? "GreenButton" : "RedButton"} onClick={() => toggleAutosave()}>Autosave ({autosave ? "On" : "Off"})</button>*/}
                 <button className="GreenButton" onClick={() => setIsPlaying(true)}>Start Playing</button>
             </div>

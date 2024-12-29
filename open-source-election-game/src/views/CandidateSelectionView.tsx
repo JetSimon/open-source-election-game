@@ -115,8 +115,8 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
         }
         <CandidateInfoArea candidate={runningMateModel}></CandidateInfoArea>
       </div>
-      <button onClick={() => setSelectingCandidate(false)}>Prev</button>
-      <button onClick={startGame}>Start</button>
+      <button style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} onClick={() => setSelectingCandidate(false)}>Prev</button>
+      <button style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} onClick={startGame}>Start</button>
     </div>
   );
 }

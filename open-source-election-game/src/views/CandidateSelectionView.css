@@ -3,7 +3,7 @@
 }
 
 .CandidateSelectionBox {
-    border: 1px solid black;
+    border-style: double;
     padding: 16px;
     margin: auto;
     width: 75%;
@@ -35,6 +35,7 @@
 .CandidateInfoArea > img {
     margin:auto;
     max-height: 30vh;
+    border-style: double;
 }
 
 .CandidateDescription {

@@ -16,7 +16,7 @@ function ElectionDescriptionView(props: ElectionDescriptionViewProps) {
 
   return (
     <div className="ElectionSelection">
-    <h2>{engine.currentScenario.scenarioName}</h2>
+    <h2 style={{color:theme.primaryGameWindowTextColor}} >{engine.currentScenario.scenarioName}</h2>
     <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="ElectionSelectionBox">
       <div className="ElectionInfoArea">
         <img src={engine.currentScenario.scenarioImageUrl}></img>
@@ -24,7 +24,7 @@ function ElectionDescriptionView(props: ElectionDescriptionViewProps) {
         </div>
       </div>
     </div>
-    <button onClick={() => setSelectingCandidate(true)}>Next</button>
+    <button style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} onClick={() => setSelectingCandidate(true)}>Next</button>
     </div>
   );
 }

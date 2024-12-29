@@ -8,6 +8,8 @@ interface StatePollProps {
   theme : ThemeModel;
 }
 
+const numberFormatter = Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 });
+
 function StatePoll(props: StatePollProps) {
   const { stateController, engine, theme } = props;
 
@@ -40,7 +42,7 @@ function StatePoll(props: StatePollProps) {
           })}
       </div>
       <h3>Issue Stances</h3>
-      <div className="StatePollValueList">
+      <div className="StateIssues StatePollValueList">
         {engine.scenarioController.getIssues().map((issue) => {
           const issueScore = stateController.issueScores.getIssueScoreForIssue(
             issue.id
@@ -51,12 +53,16 @@ function StatePoll(props: StatePollProps) {
           );
           const stance = issue.stances[remappedIssueScore];
           return (
-            <div className="StatePollValue" key={issue.id}>
+            <div className="StateIssue StatePollValue" key={issue.id}>
               <span style={{ fontWeight: "bold" }}>{issue.name}</span> -{" "}
               {stance}
             </div>
           );
         })}
+      </div>
+      <div className="EvPvInfo">
+      <div>Electoral Votes: {numberFormatter.format(stateController.model.electoralVotes)}</div>
+      <div>Popular Votes: {numberFormatter.format(stateController.model.popularVotes)}</div>
       </div>
     </div>
   );

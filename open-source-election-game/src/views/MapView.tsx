@@ -60,9 +60,11 @@ function MapView(props: MapViewProps) {
     const hoverId = (e.target as SVGPathElement).id;
     if (hoverId != "") {
       const id = engine.getStateIdFromAbbr(hoverId);
-      setCurrentState(
-        engine.scenarioController.getStateControllerByStateId(id)
-      );
+      const state = engine.scenarioController.getStateControllerByStateId(id);
+
+      if(state != null) {
+        setCurrentState(state);
+      }
     }
   }
 

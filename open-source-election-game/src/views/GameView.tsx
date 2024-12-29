@@ -106,9 +106,10 @@ function GameView(props: GameViewProps) {
     return <p>Current question is null</p>;
   }
 
+  const questionString = engine.isGameOver() ? "" : "Question " + (currentQuestionIndex + 1) + "/" + engine.getNumberOfQuestions();
+
   return (
     <div className="GameView">
-      {!engine.isGameOver() && !engine.waitingToPickState && !showMap && <button onClick={startAutoplay}>Autoplay (PRESS TWICE)</button>}
       {engine.isGameOver() ? (
         <div className="EndingViewHolder">
         <EndingView theme={theme} engine={engine}></EndingView>
@@ -121,8 +122,6 @@ function GameView(props: GameViewProps) {
         :
         (
         <QuestionView
-          currentQuestionIndex={currentQuestionIndex}
-          engine={engine}
           currentQuestion={currentQuestion}
           submitAnswer={submitAnswer}
           selectedAnswer={selectedAnswer}
@@ -131,8 +130,12 @@ function GameView(props: GameViewProps) {
         ></QuestionView>
         )
       )}
+      <div className="BottomButtons">
       {!engine.isGameOver() && !engine.waitingToPickState && <button style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}} onClick={() => setShowMap(!showMap)}>{showMap ? "Hide Map" : "Show Map"}</button>}
-      {!engine.isGameOver() && engine.waitingToPickState && <p style={{color:theme.primaryGameWindowTextColor}}>Choose a state to visit</p>}
+      {!engine.isGameOver() && !engine.waitingToPickState && !showMap && <button onClick={startAutoplay}>Autoplay (PRESS TWICE)</button>}
+      </div>
+      {!engine.isGameOver() && engine.waitingToPickState && <p className="ChooseState" style={{color:theme.primaryGameWindowTextColor}}>Click on a state to visit</p>}
+      <h3 style={{color:theme.primaryGameWindowTextColor}}>{questionString}</h3>
       <BottomBanner theme={theme} engine={engine}></BottomBanner>
       <PopupBox
         title="Feedback"

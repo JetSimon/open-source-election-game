@@ -14,9 +14,9 @@ function BottomBanner(props: BottomBannerProps) {
   const runningMateModel = engine.getPlayerRunningMateModel();
 
   return (
-    <div style={{color:theme.bottomBannerTextColor, backgroundColor:theme.bottomBannerBackgroundColor}} className="BottomBanner">
+    <div className="BottomBanner">
       <img src={playerCandidate.model.imageUrl}></img>
-      <div className="BannerNames">
+      <div style={{color:theme.bottomBannerTextColor, backgroundColor:theme.bottomBannerBackgroundColor}} className="BannerNames">
         <p>{playerCandidate.model.lastName}</p>
         <p>{runningMateModel.lastName}</p>
       </div>

@@ -5,15 +5,13 @@
     overflow-y: auto;
     place-items: top;
     justify-content: center;
+    border-style: double;
+    margin-bottom: 16px;
 }
 
 .QuestionDescription {
-    border: solid 1px black;
+    border-style: double;
     padding: 8px;
-}
-
-.ConfirmAnswerButton {
-
 }
 
 .Answer {
@@ -30,5 +28,4 @@
 .AnswerHolder {
     padding: 8px;
     padding-top: 16px;
-    border: 1px solid black;
 }

@@ -1,5 +1,4 @@
 .BottomBanner {
-    border: 1px solid black;
     width: 100%;
     display: flex;
     gap: 5%;
@@ -9,9 +8,11 @@
 
 .BottomBanner > img {
     max-height: 20vh;
+    border-style: double;
 }
 
 .BannerNames {
+    border-style: double;
     margin: auto;
     width: 100%;
     font-weight: bolder;
