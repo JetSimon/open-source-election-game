@@ -6628,7 +6628,8 @@
         "primaryGameWindowTextColor": "#FFFFFF",
         "secondaryGameWindowTextColor": "#FFFFFF",
         "bottomBannerBackgroundColor": "#FFFFFF",
-        "bottomBannerTextColor": "#000000"
+        "bottomBannerTextColor": "#000000",
+        "advisorImage": "https://i.imgur.com/Io0dZ5g.png"
     },
     "hasStateVisits": true,
     "scenarioName": "1980: For Common Sense",
