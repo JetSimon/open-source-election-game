@@ -35,6 +35,11 @@ function GameView(props: GameViewProps) {
   const [feedbackText, setFeedbackText] = useState("");
   const [showingFeedbackBox, setShowingFeedbackBox] = useState(false);
 
+  function showFeedbackPopup(body : string) {
+    setFeedbackText(body);
+    setShowingFeedbackBox(true);
+  }
+
   function autoplay() {
     if (engine.isGameOver()) {
       clearInterval(autoplayHandle);
@@ -67,9 +72,8 @@ function GameView(props: GameViewProps) {
       return;
     }
 
-    if (showFeedback) {
-      setFeedbackText(selectedAnswer.feedback);
-      setShowingFeedbackBox(true);
+    if (showFeedback && selectedAnswer.feedback != "") {
+      showFeedbackPopup(selectedAnswer.feedback);
     }
 
     engine.applyAnswer(selectedAnswer);

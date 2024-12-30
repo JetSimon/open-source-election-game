@@ -1,5 +1,8 @@
 import IssueScore from "./models/IssueScore";
 
+/**
+ * A data structure that handles holding issue scores. The underlaying DS is a map that maps an issue ID to an IssueScore (see models/IssueScore)
+ */
 class IssueScores {
     issueScores: Map<number, IssueScore>;
 

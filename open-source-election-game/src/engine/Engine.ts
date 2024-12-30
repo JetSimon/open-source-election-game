@@ -8,34 +8,82 @@ import EndingModel from "./models/EndingModel";
 import QuestionModel from "./models/QuestionModel";
 import CandidateModel from "./models/CandidateModel";
 
-const fromTct = (x: number) => 2 * x; // We are importing scenarios from TCT rn, sometimes we may need to multiply effects by this to have it apply here
+const tuningMultiplier = (x: number) => 2 * x;
 
+/**
+ * Controls which part of the game the player is in
+ */
 enum GameState {
     Uninitialized,
     CandidateSelection,
     Election
 }
 
+/**
+ * The main engine that runs the logic for the game. Should be entirely separate from the View and should have no knowledge of how the player is using it.
+ */
 class Engine {
     gameState = GameState.Uninitialized;
+
+    /**
+     * Index of current side
+     */
     sideIndex = 0;
+
+    /**
+     * Index of current question
+     */
     currentQuestionIndex = 0;
+
     scenarioController: ScenarioController = new ScenarioController();
+
+    /**
+     * Currently loaded ScenarioModel
+     */
     currentScenario: ScenarioModel | null = null;
 
+    /**
+     * Id of the player's running mate. -1 if unset.
+     */
     runningMateId : number = -1;
 
+    /**
+     * TODO: Any variable in counters will be shown on screen. Only supports number variables.
+     * https://github.com/JetSimon/open-source-election-game/issues/38
+     */
     counters : Map<string, number> = new Map();
 
+    /**
+     * Is the player currently waiting to pick a state before moving on to the next question?
+     */
     waitingToPickState : boolean = false;
 
+    /**
+     * Called when the game ends and ending slides/results are calculated. Is set from the method of the same name in a scenario's logic.js
+     */
     createEnding : null | ((engine : Engine, results : FinalResultsModel) => EndingModel) = null;
+
+    /**
+     * Called when the an answer is chosen. Is set from the method of the same name in a scenario's logic.js. Used for CYOA purposes.
+     */
     onAnswerPicked : null | ((engine : Engine, answerPicked : AnswerModel) => void) = null;
+
+    /**
+     * To be hooked into from a host site to know when an achievement is unlocked.
+     */
     onAchievementUnlocked : null | ((scenarioController : ScenarioController, achievementName : string) => void) = null;
 
+    /**
+     * Range of RNG.
+     */
     rng : number = 0.025;
     useRng : boolean = true;
 
+    /**
+     * Loads a ScenarioModel into the engine
+     * @param newScenario The ScenarioModel to load
+     * @param asObserver If this is true, then the margins are also loaded and the GameState is set to Election. Used for when you want to view the map without actually playing the game
+     */
     loadScenario(newScenario: ScenarioModel, asObserver = false) {
         this.currentQuestionIndex = 0;
         this.scenarioController.loadScenario(newScenario, 0);
@@ -43,13 +91,18 @@ class Engine {
         this.gameState = GameState.CandidateSelection;
         this.runningMateId = -1;
 
-
         if(asObserver) {
             this.updateStates();
             this.gameState = GameState.Election;
         }
     }
 
+    /**
+     * Finalizes loading the scenario after loadScenario is called. Sets which candidate is the player and who their running mate is.
+     * @param newSideIndex Used to lookup a side in the ScenarioModel's scenarioSides. Loads that sides questions into the game.
+     * @param runningMateId The id of the running mate of the player.
+     * @returns 
+     */
     setScenarioSide(newSideIndex: number, runningMateId : number) {
         if (this.currentScenario == null) {
             console.error("Cannot side current scenario side, current scenario is null");
@@ -68,10 +121,14 @@ class Engine {
         this.updateStates();
     }
 
-    getSide() {
+    getCurrentSide() {
         return this.scenarioController.model.scenarioSides[this.sideIndex];
     }
     
+    /**
+     * @category Utility
+     * @returns 
+     */
     makeEmptyCandidateModel() : CandidateModel {
         return {
             id: -1,
@@ -89,8 +146,12 @@ class Engine {
         }
     }
 
+    /**
+     * @category Utility
+     * @returns 
+     */
     getPlayerCandidateController(): CandidateController {
-        const playerCans = this.scenarioController.getCandidates().filter((x) => x.getId() == this.getSide().playerId);
+        const playerCans = this.scenarioController.getCandidates().filter((x) => x.getId() == this.getCurrentSide().playerId);
         if (playerCans.length > 0) {
             return playerCans[0];
         }
@@ -98,10 +159,19 @@ class Engine {
         return new CandidateController(this.makeEmptyCandidateModel());
     }
 
+    /**
+     * @category Utility
+     * @returns 
+     */
     getPlayerRunningMateModel(): CandidateModel {
         return this.getCandidateModelById(this.runningMateId);
     }
 
+    /**
+     * @category Utility
+     * @param candidateId 
+     * @returns 
+     */
     getCandidateModelById(candidateId : number): CandidateModel {
         if(this.currentScenario == null) {
             console.error("Current scenario is null, cannot get running mate!");
@@ -116,7 +186,11 @@ class Engine {
         return this.makeEmptyCandidateModel();
     }
 
-    getCurrentQuestion() {
+    /**
+     * @category Utility
+     * @returns Returns the QuestionModel of the current question, if the currentQuestionIndex is invalid, returns null
+     */
+    getCurrentQuestion() : QuestionModel | null {
         if (this.currentQuestionIndex < 0 || this.currentQuestionIndex >= this.scenarioController.getNumberOfQuestions()) {
             return null;
         }
@@ -124,20 +198,28 @@ class Engine {
         return this.scenarioController.questions[this.currentQuestionIndex];
     }
 
+    /**
+     * 
+     * @returns The number of questions in this scenario, includes questions added with CYOA
+     */
     getNumberOfQuestions() {
         return this.scenarioController.getNumberOfQuestions();
     }
 
+    /**
+     * Updates the polling in each state. Used for example after the player chooses a question and those margins need to be updated.
+     */
     updateStates() {
         for (const stateController of this.scenarioController.stateControllers) {
             stateController.update(this.scenarioController, this.getRngRange());
         }
     }
 
-    printStateOpinions() {
-        console.log(this.getStateOpinionsString());
-    }
-
+    /**
+     * 
+     * @returns Returns a string of the opinions of each state for each candidate
+     * @category Debug
+     */
     getStateOpinionsString() {
         let output = "";
 
@@ -148,16 +230,31 @@ class Engine {
         return output;
     }
 
+    /**
+     * @category Debug
+     * @param stateId 
+     * @returns 
+     */
     getStateOpinionString(stateId: number): string {
         const state = this.scenarioController.getStateControllerByStateId(stateId);
         return state != null ? state.getOpinionString() : "";
     }
 
+    /**
+     * @category Debug
+     * @param stateId 
+     * @returns 
+     */
     getStateOpinionData(stateId: number): Map<number, number> {
         const state = this.scenarioController.getStateControllerByStateId(stateId);
         return state != null ? state.opinions : new Map();
     }
 
+    /**
+     * Applies all the answer effects of an AnswerModel and then updates each state in the scenario
+     * @param selectedAnswer The answer to apply
+     * @returns 
+     */
     applyAnswer(selectedAnswer: AnswerModel | null) {
         if (selectedAnswer == null) {
             console.error("Tried to apply a null AnswerModel!");
@@ -168,15 +265,15 @@ class Engine {
             try {
                 const answerEffectType: AnswerEffectType = AnswerEffectType[answerEffect.answerEffectType as keyof typeof AnswerEffectType];
                 if (answerEffectType == AnswerEffectType.Global) {
-                    this.scenarioController.changeCandidateGlobalModifier(answerEffect.candidateId, fromTct(answerEffect.amount));
+                    this.scenarioController.changeCandidateGlobalModifier(answerEffect.candidateId, tuningMultiplier(answerEffect.amount));
                 }
                 else if (answerEffectType == AnswerEffectType.Issue) {
-                    this.scenarioController.getCandidateByCandidateId(answerEffect.candidateId).changeIssueScore(answerEffect.issueId, fromTct(answerEffect.amount));
+                    this.scenarioController.getCandidateByCandidateId(answerEffect.candidateId).changeIssueScore(answerEffect.issueId, tuningMultiplier(answerEffect.amount));
                 }
                 else if (answerEffectType == AnswerEffectType.State) {
                     const state = this.scenarioController.getStateControllerByStateId(answerEffect.stateId);
                     if(state != null) {
-                        state.changeCandidateStateModifier(answerEffect.candidateId, fromTct(answerEffect.amount));
+                        state.changeCandidateStateModifier(answerEffect.candidateId, tuningMultiplier(answerEffect.amount));
                     }
                     else {
                         console.error("When trying to apply effects, state not found with id", answerEffect.stateId);
@@ -196,10 +293,17 @@ class Engine {
         }
     }
 
+    /**
+     * Increments currentQuestionIndex by one
+     */
     nextQuestion() {
         this.currentQuestionIndex++;
     }
 
+    /**
+     * 
+     * @returns Returns true if the currentQuestionIndex >= number of questions in the scenario
+     */
     isGameOver() {
         return this.currentQuestionIndex >= this.scenarioController.getNumberOfQuestions();
     }
@@ -217,6 +321,10 @@ class Engine {
         return this.scenarioController.getCandidateByCandidateId(id);
     }
 
+    /**
+     * 
+     * @returns Returns a FinalResultsModel for the final results of a game
+     */
     getFinalResults(): FinalResultsModel {
 
         const popularVotes = new Map<number, number>();
@@ -243,6 +351,10 @@ class Engine {
         };
     }
 
+    /**
+     * Called when calculating the results of a game, returns an EndingModel to create slides out of
+     * @returns 
+     */
     getEnding(): EndingModel {
         if(this.createEnding == null) {
             return {
@@ -255,7 +367,11 @@ class Engine {
         return this.createEnding(this, this.getFinalResults());
     }
 
-    getSetOfIdsOfCandidatesWithSides() {
+    /**
+     * 
+     * @returns Returns a Set of ids for candidates who have valid sides in the current ScenarioModel
+     */
+    getSetOfIdsOfCandidatesWithSides() : Set<number> {
         if (this.currentScenario == null) {
             return new Set<number>();;
         }
@@ -263,16 +379,64 @@ class Engine {
         return new Set<number>(this.currentScenario.scenarioSides.map((side) => side.playerId));
     }
 
-    // UTILS FOR CYOA
-    insertNewQuestionNext(question : QuestionModel) {
-        this.scenarioController.questions.splice(this.currentQuestionIndex + 1, 0, question);
+    /**
+     * 
+     * @returns Returns range for RNG. So if value returned in 0.01, then you would += (0.01 / 2) to state polls
+     */
+    getRngRange() {
+        return this.useRng ? this.rng : 0;
     }
 
+    /**
+     * Calls the onAchievementUnlocked method with the achievementName and the current ScenarioController. The Engine does not handle the logic of if an achivement is already unlocked, or storing achievements. That is left to the host site.
+     * @param achievementName 
+     */
+    unlockAchievement(achievementName : string) {
+        if(this.onAchievementUnlocked != null) {
+            this.onAchievementUnlocked(this.scenarioController, achievementName);
+        }
+        else {
+            console.warn("Did not unlock achievement with name '" + achievementName + "' because onAchievementUnlocked is null");
+        }
+    }
+
+    // UTILS FOR CYOA
+
+    /**
+     * 
+     * @param question The question to insert
+     * @param index The index before the question you want to insert. For example if you are on index 3 and you want to insert a question at index 6, put index 5
+     * @category CYOA Utility Functions
+     */
+    insertNewQuestionAfterIndex(question : QuestionModel, index : number) {
+        this.scenarioController.questions.splice(index + 1, 0, question);
+    }
+
+    /**
+     * Inserts question as the next question the player will see
+     * @param question The question to insert
+     * @category CYOA Utility Functions
+     */
+    insertNewQuestionNext(question : QuestionModel) {
+        this.insertNewQuestionAfterIndex(question, this.currentQuestionIndex);
+    }
+
+    /**
+     * Removes question from the list of questions.
+     * @param questionId The id of the question to remove
+     * @category CYOA Utility Functions
+     */
     removeQuestionById(questionId : number) {
         this.scenarioController.questions = this.scenarioController.questions.filter((x) => x.id != questionId);
     }
 
     // UTILS FOR ENDINGS
+
+    /**
+     * 
+     * @returns Total number of popular votes for the scenario
+     * @category Ending Utility Functions
+     */
     getTotalPopularVotes() {
         let total = 0;
         for (const stateController of this.scenarioController.getStates()) {
@@ -281,6 +445,11 @@ class Engine {
         return total;
     }
 
+    /**
+     * 
+     * @returns Total number of electoral votes for the scenario
+     * @category Ending Utility Functions
+     */
     getTotalElectoralVotes() {
         let total = 0;
         for (const stateController of this.scenarioController.getStates()) {
@@ -289,38 +458,55 @@ class Engine {
         return total;
     }
 
+    /**
+     * 
+     * @param results The results of the election
+     * @returns The player candidate's number of popular votes, if player candidate is undefined then returns 0
+     * @category Ending Utility Functions
+     */
     getPlayerPv(results : FinalResultsModel) {
         return results.popularVotes.get(this.getPlayerCandidateController().getId()) ?? 0;
     }
 
+    /**
+     * 
+     * @param results The results of the election
+     * @returns The player candidate's number of electoral votes, if player candidate is undefined then returns 0
+     * @category Ending Utility Functions
+     */
     getPlayerEv(results : FinalResultsModel) {
         return results.electoralVotes.get(this.getPlayerCandidateController().getId()) ?? 0;
     }
 
+    
+    /**
+     * 
+     * @param results The results of the election
+     * @returns Did the player get >= half the total popular votes?
+     * @category Ending Utility Functions
+     */
     playerWonPv(results : FinalResultsModel) {
         return this.getPlayerPv(results) > this.getTotalPopularVotes() / 2;
     }
 
+    /**
+     * 
+     * @param results The results of the election
+     * @returns Did the player get a majority (> 1/2) of the total electoral votes?
+     * @category Ending Utility Functions
+     */
     playerWonEv(results : FinalResultsModel) {
         return this.getPlayerEv(results) > this.getTotalElectoralVotes() / 2;
     }
-
+    
+    /**
+     * 
+     * @param results The results of the election
+     * @returns Was the player's # of electoral votes >= amount?
+     * @category Ending Utility Functions
+     */
     playerEvAtLeast(results : FinalResultsModel, amount : number) {
         return this.getPlayerEv(results) >= amount;
-    }
-
-    // Returns range for RNG. So if value returned in 0.01, then you would += (0.01 / 2) to state polls
-    getRngRange() {
-        return this.useRng ? this.rng : 0;
-    }
-
-    unlockAchievement(achievementName : string) {
-        if(this.onAchievementUnlocked != null) {
-            this.onAchievementUnlocked(this.scenarioController, achievementName);
-        }
-        else {
-            console.warn("Did not unlock achievement with name '" + achievementName + "' because onAchievementUnlocked is null");
-        }
     }
 }
 
