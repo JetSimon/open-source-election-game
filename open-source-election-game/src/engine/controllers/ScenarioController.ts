@@ -46,12 +46,12 @@ class ScenarioController {
     }
 
     loadScenario(model: ScenarioModel, sideIndex: number) {
-        this.model = model;
-        this.theme = model.theme;
-        this.candidateControllers = model.candidates.filter((candidateModel) => !candidateModel.runningMate).map((candidateModel) => new CandidateController(candidateModel));
+        this.model = JSON.parse(JSON.stringify(model));
+        this.theme = this.model.theme;
+        this.candidateControllers = this.model.candidates.filter((candidateModel) => !candidateModel.runningMate).map((candidateModel) => new CandidateController(candidateModel));
         const toRemove = new Set();
         for (const candidateController of this.getCandidates()) {
-            for (const issue of model.issues) {
+            for (const issue of this.model.issues) {
                 if (!candidateController.issueScores.hasIssue(issue.id)) {
                     console.warn("Candidate with id", candidateController.getId(), "doesn't have an issue score for issue with id", issue.id, "going to remove them for now");
                     toRemove.add(candidateController.getId());
@@ -64,8 +64,8 @@ class ScenarioController {
             this.globalModifiers.set(candidateController.getId(), 1);
         }
 
-        this.stateControllers = model.states.map((stateModel) => new StateController(this, stateModel));
-        this.questions = model.scenarioSides[sideIndex].questions;
+        this.stateControllers = this.model.states.map((stateModel) => new StateController(this, stateModel));
+        this.questions = this.model.scenarioSides[sideIndex].questions;
 
         for (let i = 0; i < this.questions.length; i++) {
             shuffleArray(this.questions[i].answers);

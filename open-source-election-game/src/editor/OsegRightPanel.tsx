@@ -5,12 +5,14 @@ import { useState, useEffect } from "react";
 import ElectionDescriptionView from "../game/views/ElectionDescriptionView";
 import CandidateSelectionView from "../game/views/CandidateSelectionView";
 import ScenarioModel from "../engine/models/ScenarioModel";
+import OsegSimulator from "./OsegSimulator";
 
 enum RightNavBar {
     Map,
     Election,
     Candidates,
-}
+    Simulator
+}   
 
 const rightNavBarValues = Object.keys(RightNavBar).filter((item) => {
     return isNaN(Number(item));
@@ -18,6 +20,7 @@ const rightNavBarValues = Object.keys(RightNavBar).filter((item) => {
 
 interface OsegRightPanelProps {
     mapSvg: string;
+    logic : string;
     data : ScenarioModel;
 }
 
@@ -25,7 +28,7 @@ const engine = new Engine();
 engine.useRng = false;
 
 function OsegRightPanel(props: OsegRightPanelProps) {
-    const { mapSvg, data } = props;
+    const { mapSvg, data, logic } = props;
     const [rightNavBar, setRightNavBar] = useState<RightNavBar>(RightNavBar.Map);
 
     // Using this to make sure that the candidate information updates as you type in the editor
@@ -72,6 +75,11 @@ function OsegRightPanel(props: OsegRightPanelProps) {
             return (
                 // eslint-disable-next-line @typescript-eslint/no-unused-vars
                 <CandidateSelectionView theme={engine.scenarioController.theme} setGameState={(_x: GameState) => { }} setSelectingCandidate={(_x: boolean) => { }} engine={engine}></CandidateSelectionView>
+            );
+        }
+        else if (rightNavBar == RightNavBar.Simulator) {
+            return (
+                <OsegSimulator theme={engine.scenarioController.theme} data={data} logic={logic} ></OsegSimulator>
             );
         }
     }

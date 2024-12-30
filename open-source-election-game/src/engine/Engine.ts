@@ -9,7 +9,7 @@ import QuestionModel from "./models/QuestionModel";
 import CandidateModel from "./models/CandidateModel";
 import ThemeModel from "./models/ThemeModel";
 
-const tuningMultiplier = (x: number) => 2 * x;
+const tuningMultiplier = (x: number) => 1 * x;
 
 /**
  * Controls which part of the game the player is in
@@ -374,7 +374,10 @@ class Engine {
 
         return {
             "popularVotes": popularVotes,
-            "electoralVotes": electoralVotes
+            "electoralVotes": electoralVotes,
+            "candidates":this.scenarioController.getCandidates(),
+            "totalElectoralVotes": this.getTotalElectoralVotes(),
+            "totalPopularVotes": this.getTotalPopularVotes()
         };
     }
 

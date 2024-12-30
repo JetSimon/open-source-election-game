@@ -32,7 +32,7 @@ function EndingView(props: EndingViewProps) {
       return (
         <>
           <EndingSlides theme={theme} engine={engine}></EndingSlides>
-          <FinalResults theme={theme} engine={engine}></FinalResults>
+          <FinalResults theme={theme} results={engine.getFinalResults()}></FinalResults>
         </>
       );
     }
@@ -40,7 +40,7 @@ function EndingView(props: EndingViewProps) {
       return <MapView theme={theme} onStateClicked={null} engine={engine} mapSvg={mapSvg}></MapView>;
     }
     else if (currentTab == EndingTab.Results) {
-      return <FinalResults theme={theme} engine={engine}></FinalResults>;
+      return <FinalResults theme={theme} results={engine.getFinalResults()}></FinalResults>;
     }
   }
 

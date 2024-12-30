@@ -1,0 +1,209 @@
+import { useState, useEffect } from "react";
+import ScenarioModel from "../engine/models/ScenarioModel";
+import "./OsegSimulator.css";
+import FinalResultsModel from "../engine/models/FinalResultsModel";
+import FinalResults from "../game/components/FinalResults";
+import ThemeModel from "../engine/models/ThemeModel";
+import { Engine } from "../engine/Engine";
+import CandidateModel from "../engine/models/CandidateModel";
+
+interface OsegSimulatorProps {
+    data: ScenarioModel;
+    logic: string;
+    theme: ThemeModel;
+}
+
+const numberOfSimulations = 500;
+
+function OsegSimulator(props: OsegSimulatorProps) {
+
+    const [isSimulating, setIsSimulating] = useState(false);
+
+    const [ allResults, setAllResults ] = useState<FinalResultsModel[]>([]);
+    const [ allResultsIndex, setAllResultsIndex ] = useState(0);
+
+    const [ averageResult, setAverageResult ] = useState<FinalResultsModel | null>(null);
+    const [ bestResult, setBestResult ] = useState<FinalResultsModel | null>(null);
+    const [ worstResult, setWorstResult ] = useState<FinalResultsModel | null>(null);
+
+    const { data, logic, theme } = props;
+
+    const [selectedCandidate, setSelectedCandidate] = useState<number>(-1);
+
+    const [selectedRunningMate, setSelectedRunningMate] = useState<number>(-1);
+
+    useEffect(() => {
+
+        const cans = getCandidatesWithSides();
+        const can = cans.length > 0 ? cans[0].id : -1;
+
+        const mates = getRunningMatesForCandidate(can);
+        const mate = mates.length > 0 ? mates[0].id : -1;
+
+        setSelectedCandidate(can);
+        setSelectedRunningMate(mate);
+    }, [])
+
+    function getCandidatesWithSides(): CandidateModel[] {
+        const candidates: CandidateModel[] = [];
+
+        const candidatesWithSides: Set<number> = new Set(data.scenarioSides.map((x) => x.playerId));
+
+        for (const candidate of data.candidates) {
+            if (candidatesWithSides.has(candidate.id)) {
+                candidates.push(candidate);
+            }
+        }
+
+        return candidates;
+    }
+
+    function getAllResults() {
+        return (
+            <div>
+                <h2>Result {allResultsIndex + 1}/{allResults.length}</h2>
+                <FinalResults results={allResults[allResultsIndex]} theme={theme}></FinalResults>
+                <div>
+                    <button disabled={allResultsIndex <= 0} onClick={() => setAllResultsIndex(allResultsIndex - 1)}>Prev</button>
+                    <button disabled={allResultsIndex >= allResults.length - 1} onClick={() => setAllResultsIndex(allResultsIndex + 1)}>Next</button>
+                </div>
+            </div>
+        )
+    }
+
+    function getRunningMatesForCandidate(candidateId: number) {
+        const currentCandidate = data.candidates.filter((x) => x.id == candidateId)[0];
+
+        if(currentCandidate == undefined || currentCandidate == null) {
+            return [];
+        }
+
+        const runningMates = new Set(currentCandidate.runningMateIds);
+
+        return data.candidates.filter((x) => runningMates.has(x.id));
+    }
+
+    async function simulateResults() {
+        setIsSimulating(true);
+        const sides = data.scenarioSides;
+        const sideIndex = sides.map((x) => x.playerId).indexOf(selectedCandidate);
+
+        const allResultsRun = [];
+
+        const averageResult : FinalResultsModel = {
+            popularVotes: new Map(),
+            electoralVotes: new Map(),
+            candidates: [],
+            totalPopularVotes: 0,
+            totalElectoralVotes: 0
+        }
+
+        for(const candidate of averageResult.candidates) {
+            averageResult.popularVotes.set(candidate.getId(), 0);
+            averageResult.electoralVotes.set(candidate.getId(), 0);
+        }
+
+        const encodedLogic = encodeURIComponent(logic);
+        const logicDataUri = 'data:text/javascript;charset=utf-8,' + encodedLogic;
+
+        for (let i = 0; i < numberOfSimulations; i++) {
+            const tempEngine = new Engine();
+
+            const {createEnding, onAnswerPicked} = await import(/* @vite-ignore */logicDataUri);
+            tempEngine.createEnding = createEnding;
+            tempEngine.onAnswerPicked = onAnswerPicked;
+
+            tempEngine.loadScenario(data);
+            tempEngine.setScenarioSide(sideIndex, selectedRunningMate);
+
+            while(!tempEngine.isGameOver()) {
+                const question = tempEngine.getCurrentQuestion();
+                if(question == null) break;
+                const answer = question.answers[Math.floor(question.answers.length * Math.random())]
+                tempEngine.applyAnswer(answer);
+                tempEngine.nextQuestion();
+            }
+
+            const result = tempEngine.getFinalResults();
+
+            if(i == 0) {
+                averageResult.candidates = result.candidates;
+                averageResult.totalElectoralVotes = result.totalElectoralVotes;
+                averageResult.totalPopularVotes = result.totalPopularVotes;
+            }
+
+            for(const candidate of result.candidates) {
+                
+                const id = candidate.getId();
+
+                const pv : number = result.popularVotes.get(id) ?? 0;
+                const ev : number = result.electoralVotes.get(id) ?? 0;
+                const totalPv : number = averageResult.popularVotes.get(id) ?? 0;
+                const totalEv : number = averageResult.electoralVotes.get(id) ?? 0;
+
+                averageResult.popularVotes.set(id, totalPv + (pv / numberOfSimulations));
+                averageResult.electoralVotes.set(id, totalEv + (ev / numberOfSimulations));
+            }
+
+            allResultsRun.push(result);
+        }
+
+        setAllResultsIndex(0);
+        setAllResults(allResultsRun);
+        setAverageResult(averageResult);
+
+        const sortedResults = allResultsRun.sort((a, b) => {
+            const apv = a.popularVotes.get(selectedCandidate) ?? 0;
+            const aev = a.electoralVotes.get(selectedCandidate) ?? 0;
+            const bpv = b.popularVotes.get(selectedCandidate) ?? 0;
+            const bev = b.electoralVotes.get(selectedCandidate) ?? 0;
+
+            return aev - bev || apv - bpv;
+        })
+
+        setBestResult(sortedResults[sortedResults.length - 1]);
+        setWorstResult(sortedResults[0]);
+        setIsSimulating(false);
+    }
+
+    if(isSimulating) {
+        return <p>Simulating...</p>
+    }
+
+    return (
+        <div>
+            <label className="LabelText" htmlFor="candidate">Candidate: </label>
+            <select id="candidate" onChange={(e) => setSelectedCandidate(Number.parseInt(e.target.value))}>
+                {
+                    getCandidatesWithSides().map((candidate) => {
+                        return <option value={candidate.id} key={candidate.id}>{candidate.firstName} {candidate.lastName}</option>;
+                    })
+                }
+            </select>
+            <label className="LabelText" htmlFor="runningMate">Running Mate: </label>
+            {
+                getRunningMatesForCandidate(selectedCandidate).length > 0 &&
+                <select id="runningMate" onChange={(e) => setSelectedRunningMate(Number.parseInt(e.target.value))}>
+                    {
+                        getRunningMatesForCandidate(selectedCandidate).map((candidate) => {
+                            return <option value={candidate.id} key={candidate.id}>{candidate.firstName + " " + candidate.lastName}</option>;
+                        })
+                    }
+                </select>
+            }
+
+            
+            {averageResult != null && <div><h2>Average Result</h2><FinalResults results={averageResult} theme={theme}></FinalResults></div>}
+
+            {bestResult != null && <div><h2>Best Result</h2><FinalResults results={bestResult} theme={theme}></FinalResults></div>}
+
+            {worstResult != null && <div><h2>Worst Result</h2><FinalResults results={worstResult} theme={theme}></FinalResults></div>}
+            
+            {allResults.length > 0 && getAllResults()}
+
+            <button onClick={() => simulateResults()}>Simulate {numberOfSimulations} Times</button>
+        </div>
+    );
+}
+
+export default OsegSimulator;

@@ -1,18 +1,17 @@
 import CandidateController from "../../engine/controllers/CandidateController";
-import { Engine } from "../../engine/Engine";
 import "./FinalResults.css";
 import ThemeModel from "../../engine/models/ThemeModel";
+import FinalResultsModel from "../../engine/models/FinalResultsModel";
 
 interface FinalResultsProps {
-  engine: Engine;
+  results : FinalResultsModel;
   theme: ThemeModel;
 }
 
 const numberFormatter = Intl.NumberFormat();
 
 function FinalResults(props: FinalResultsProps) {
-  const { engine, theme } = props;
-  const results = engine.getFinalResults();
+  const { results, theme } = props;
 
   function getEv(candidate: CandidateController): number {
     const ev = results.electoralVotes.get(candidate.getId());
@@ -36,8 +35,7 @@ function FinalResults(props: FinalResultsProps) {
         </tr>
       </thead>
       <tbody>
-        {engine.scenarioController
-          .getCandidates()
+        {results.candidates
           .sort((x, y) => getEv(y) - getEv(x) || getPv(y) - getPv(x))
           .map((candidate) => {
             const color = candidate.model.color;
@@ -46,7 +44,7 @@ function FinalResults(props: FinalResultsProps) {
                 <td><span style={{ backgroundColor: color }} className="PollDot"></span> {candidate.getFullName()}</td>
                 <td>{numberFormatter.format(getEv(candidate))}</td>
                 <td>{numberFormatter.format(getPv(candidate))}</td>
-                <td>{(getPv(candidate) / engine.getTotalPopularVotes() * 100).toFixed(2)}%</td>
+                <td>{(getPv(candidate) / results.totalPopularVotes * 100).toFixed(2)}%</td>
               </tr>
             );
           })}
