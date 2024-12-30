@@ -1,24 +1,24 @@
 {
-    "credits" : "by Dan Bryan, adapted by Jet",
+    "credits": "by Dan Bryan, adapted by Jet",
     "theme": {
         "backgroundImageUrl": "",
         "headerImageUrl": "./img/genericBanner.png",
         "backgroundColor": "#FFFFFF",
         "primaryGameWindowColor": "#FFFFFF",
         "secondaryGameWindowColor": "#F5F5F5",
-        "bottomBannerBackgroundColor" : "#FFFFFF",
-        "bottomBannerTextColor" : "#000000",
-        "primaryGameWindowTextColor" : "#000000",
-        "secondaryGameWindowTextColor" : "#000000",
+        "bottomBannerBackgroundColor": "#FFFFFF",
+        "bottomBannerTextColor": "#000000",
+        "primaryGameWindowTextColor": "#000000",
+        "secondaryGameWindowTextColor": "#000000",
         "advisorImage": "https://i.imgur.com/Io0dZ5g.png"
     },
-    "hasStateVisits" : true,
+    "hasStateVisits": true,
     "scenarioName": "TCT Rip Off",
     "scenarioDescription": "<p>This is a straight up copy of the Dan Bryan scenario for testing purposes!</p><p>This is the election description. One day this won't all be on one screen but that day is not today!</p>",
     "scenarioImageUrl": "https://placecats.com/210/240",
     "candidates": [
         {
-            "runningMateIds" : [],
+            "runningMateIds": [],
             "id": 131,
             "firstName": "James K.",
             "lastName": "Polk",
@@ -58,7 +58,11 @@
             "imageUrl": "https://www.jetsimon.com/public/static/images/james-k-polk-1844.jpg"
         },
         {
-            "runningMateIds" : [137, 138, 139],
+            "runningMateIds": [
+                137,
+                138,
+                139
+            ],
             "id": 132,
             "firstName": "Henry",
             "lastName": "Clay",
@@ -98,7 +102,7 @@
             "imageUrl": "https://www.jetsimon.com/public/static/images/henry-clay-1844.jpg"
         },
         {
-            "runningMateIds" : [],
+            "runningMateIds": [],
             "id": 133,
             "firstName": "James",
             "lastName": "Birney",
@@ -138,7 +142,7 @@
             "imageUrl": "'"
         },
         {
-            "runningMateIds" : [],
+            "runningMateIds": [],
             "id": 134,
             "firstName": "John",
             "lastName": "Tyler",
@@ -178,7 +182,7 @@
             "imageUrl": "'"
         },
         {
-            "runningMateIds" : [],
+            "runningMateIds": [],
             "id": 135,
             "firstName": "George",
             "lastName": "Dallas",
@@ -192,7 +196,7 @@
             "imageUrl": "https://www.jetsimon.com/public/static/images/george-dallas-1844.jpg"
         },
         {
-            "runningMateIds" : [],
+            "runningMateIds": [],
             "id": 136,
             "firstName": "Levi",
             "lastName": "Woodbury",
@@ -206,7 +210,7 @@
             "imageUrl": "https://www.jetsimon.com/public/static/images/levi-woodbury-1844.jpg"
         },
         {
-            "runningMateIds" : [],
+            "runningMateIds": [],
             "id": 137,
             "firstName": "Theodore",
             "lastName": "Frelinghuysen",
@@ -220,7 +224,7 @@
             "imageUrl": "https://www.jetsimon.com/public/static/images/theodore-frelinghuysen-1844.jpg"
         },
         {
-            "runningMateIds" : [],
+            "runningMateIds": [],
             "id": 138,
             "firstName": "John",
             "lastName": "Sergeant",
@@ -234,7 +238,7 @@
             "imageUrl": "https://www.jetsimon.com/public/static/images/john-sergeant-1844.jpg"
         },
         {
-            "runningMateIds" : [],
+            "runningMateIds": [],
             "id": 139,
             "firstName": "Millard",
             "lastName": "Fillmore",
@@ -248,7 +252,7 @@
             "imageUrl": "https://www.jetsimon.com/public/static/images/millard-fillmore-1844.jpg"
         },
         {
-            "runningMateIds" : [],
+            "runningMateIds": [],
             "id": 140,
             "firstName": "Thomas",
             "lastName": "Morris",
@@ -262,7 +266,7 @@
             "imageUrl": "'"
         },
         {
-            "runningMateIds" : [],
+            "runningMateIds": [],
             "id": 141,
             "firstName": "John C.",
             "lastName": "Calhoun",
