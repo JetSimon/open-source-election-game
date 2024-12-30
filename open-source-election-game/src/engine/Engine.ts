@@ -7,6 +7,7 @@ import FinalResultsModel from "./models/FinalResultsModel";
 import EndingModel from "./models/EndingModel";
 import QuestionModel from "./models/QuestionModel";
 import CandidateModel from "./models/CandidateModel";
+import ThemeModel from "./models/ThemeModel";
 
 const tuningMultiplier = (x: number) => 2 * x;
 
@@ -276,7 +277,14 @@ class Engine {
                     this.scenarioController.changeCandidateGlobalModifier(answerEffect.candidateId, tuningMultiplier(answerEffect.amount));
                 }
                 else if (answerEffectType == AnswerEffectType.Issue) {
-                    this.scenarioController.getCandidateByCandidateId(answerEffect.candidateId).changeIssueScore(answerEffect.issueId, tuningMultiplier(answerEffect.amount));
+                    const candidate = this.scenarioController.getCandidateByCandidateId(answerEffect.candidateId);
+                    if(candidate != undefined && candidate != null) {
+                        candidate.changeIssueScore(answerEffect.issueId, tuningMultiplier(answerEffect.amount));
+                    }
+                    else {
+                        this.getPlayerCandidateController().changeIssueScore(answerEffect.issueId, tuningMultiplier(answerEffect.amount));
+                    }
+                    
                 }
                 else if (answerEffectType == AnswerEffectType.State) {
                     const state = this.scenarioController.getStateControllerByStateId(answerEffect.stateId);
@@ -422,6 +430,25 @@ class Engine {
     }
 
     // UTILS FOR CYOA
+
+    setNewPlayerCandidateImage(url : string) {
+        const playerIndex = this.scenarioController.candidateControllers.indexOf(this.getPlayerCandidateController());
+        
+        if(playerIndex == -1) {
+            console.error("While trying to set new candidate image, could not get player candidate index")
+            return;
+        }
+
+        this.scenarioController.candidateControllers[playerIndex].model.imageUrl = url;
+    }
+
+    /**
+     * @category CYOA Utility Functions
+     * @param newTheme 
+     */
+    setNewTheme(newTheme : ThemeModel) {
+        this.scenarioController.theme = newTheme;
+    }
 
     /**
      * 

@@ -77,7 +77,7 @@ function ScenarioLoader() {
                 <div className="ScenarioBoxHolder">
                 {
                     Array.from(scenarios).map(([scenarioName, model]) => {
-                        return <ScenarioBox model={model} onClickPlay={() => setCurrentModName(scenarioName)}></ScenarioBox>
+                        return <ScenarioBox key={scenarioName} model={model} onClickPlay={() => setCurrentModName(scenarioName)}></ScenarioBox>
                     })
                 }
                  </div>

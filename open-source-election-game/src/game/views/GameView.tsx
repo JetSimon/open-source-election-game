@@ -16,6 +16,7 @@ interface GameViewProps {
   theme: ThemeModel;
 }
 
+let showFeedback = true;
 let autoplayHandle: undefined | number = undefined;
 
 function GameView(props: GameViewProps) {
@@ -46,12 +47,20 @@ function GameView(props: GameViewProps) {
       return;
     }
 
-    const answer = currentQuestion?.answers[0];
-    if (answer != undefined) {
-      setSelectedAnswer(answer);
-      if (selectedAnswer != null) submitAnswer(false);
-    } else {
-      console.error("Answer undefined");
+    const answer = document.getElementsByClassName("Answer")[0];
+    if(!answer) {
+      return;
+    }
+
+    if(answer.firstChild)
+    {
+      const radioButton = answer.firstChild as HTMLInputElement;
+      radioButton.click();
+
+      const confirmButton = document.getElementsByClassName("ConfirmAnswerButton")[0] as HTMLButtonElement;
+      if(confirmButton) {
+        confirmButton.click();
+      }
     }
   }
 
@@ -60,13 +69,14 @@ function GameView(props: GameViewProps) {
       clearInterval(autoplayHandle);
     }
 
-    autoplayHandle = setInterval(autoplay, 50);
+    showFeedback = false;
+    autoplayHandle = setInterval(autoplay, 25);
     if(engine.currentScenario) {
       engine.currentScenario.hasStateVisits = false;
     }
   }
 
-  function submitAnswer(showFeedback = true) {
+  function submitAnswer() {
     if (selectedAnswer == null) {
       alert("You must select an answer!");
       return;
@@ -135,7 +145,7 @@ function GameView(props: GameViewProps) {
       )}
       <div className="BottomButtons">
       {!engine.isGameOver() && !engine.waitingToPickState && <button style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}} onClick={() => setShowMap(!showMap)}>{showMap ? "Hide Map" : "Show Map"}</button>}
-      {!engine.isGameOver() && !engine.waitingToPickState && !showMap && <button onClick={startAutoplay}>Autoplay (PRESS TWICE)</button>}
+      {!engine.isGameOver() && !engine.waitingToPickState && !showMap && <button onClick={startAutoplay}>Autoplay</button>}
       </div>
       {!engine.isGameOver() && engine.waitingToPickState && <p className="ChooseState" style={{color:theme.primaryGameWindowTextColor}}>Click on a state to visit</p>}
       <h3 style={{color:theme.primaryGameWindowTextColor}}>{questionString}</h3>
