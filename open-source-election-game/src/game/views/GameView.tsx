@@ -14,13 +14,14 @@ interface GameViewProps {
   engine: Engine;
   mapSvg: string;
   theme: ThemeModel;
+  setTheme: (theme : ThemeModel) => void;
 }
 
 let showFeedback = true;
 let autoplayHandle: undefined | number = undefined;
 
 function GameView(props: GameViewProps) {
-  const { engine, mapSvg, theme } = props;
+  const { engine, mapSvg, theme, setTheme } = props;
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(
     engine.currentQuestionIndex
@@ -90,6 +91,8 @@ function GameView(props: GameViewProps) {
     setSelectedAnswer(null);
     engine.nextQuestion();
     setCurrentQuestionIndex(engine.currentQuestionIndex);
+
+    setTheme(engine.scenarioController.theme);
 
     if (engine.isGameOver()) {
       alert("Game over!");

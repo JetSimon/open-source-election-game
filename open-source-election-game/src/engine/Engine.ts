@@ -431,6 +431,12 @@ class Engine {
 
     // UTILS FOR CYOA
 
+    /**
+     * Sets new image for player candidate from url
+     * @category CYOA Utility Functions
+     * @param url 
+     * @returns 
+     */
     setNewPlayerCandidateImage(url : string) {
         const playerIndex = this.scenarioController.candidateControllers.indexOf(this.getPlayerCandidateController());
         
@@ -440,6 +446,45 @@ class Engine {
         }
 
         this.scenarioController.candidateControllers[playerIndex].model.imageUrl = url;
+    }
+
+    /**
+     * Sets new name for player candidate
+     * @param firstName 
+     * @param lastName 
+     * @returns 
+     * @category CYOA Utility Functions
+     */
+    setNewPlayerCandidateName(firstName : string, lastName : string) {
+        const playerIndex = this.scenarioController.candidateControllers.indexOf(this.getPlayerCandidateController());
+        
+        if(playerIndex == -1) {
+            console.error("While trying to set new candidate name, could not get player candidate index")
+            return;
+        }
+
+        this.scenarioController.candidateControllers[playerIndex].model.firstName = firstName;
+        this.scenarioController.candidateControllers[playerIndex].model.lastName = lastName;
+    }
+
+    /**
+     * Sets new image for running mate (shown on banner)
+     * @category CYOA Utility Functions
+     * @param url
+     */
+    setNewRunningMateImage(url : string) {
+        this.getPlayerRunningMateModel().imageUrl = url;
+    }
+
+    /**
+     * Sets new name for running mate (shown on banner)
+     * @param firstName 
+     * @param lastName 
+     * @category CYOA Utility Functions
+     */
+    setNewRunningMateName(firstName : string, lastName : string) {
+        this.getPlayerRunningMateModel().firstName = firstName;
+        this.getPlayerRunningMateModel().lastName = lastName;
     }
 
     /**

@@ -92,6 +92,13 @@ function onAnswerPicked(engine, answerPicked) {
     if ((ans == 4224 || ans == 4225 || ans == 4226 || ans == 4227)) {
         engine.setNewPlayerCandidateImage("https://i.imgur.com/rvcKjPE.png");
     }
+
+    /*
+    engine.setNewPlayerCandidateImage("https://i.imgur.com/rvcKjPE.png");
+    engine.setNewRunningMateImage("https://i.imgur.com/rvcKjPE.png");
+    engine.setNewPlayerCandidateName("Test", "Test");
+    engine.setNewRunningMateName("test", "test");
+    */
 }
 
 export { createEnding, onAnswerPicked }

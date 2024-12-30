@@ -49,7 +49,7 @@ function Game(props : GameProps) {
         }
 
         if (gameState == GameState.Election) {
-            return <GameView theme={theme} mapSvg={injectedMapSvg}  engine={engine}></GameView>;
+            return <GameView setTheme={setTheme} theme={theme} mapSvg={injectedMapSvg}  engine={engine}></GameView>;
         }
     }
 

@@ -61,8 +61,8 @@ function StatePoll(props: StatePollProps) {
         })}
       </div>
       <div className="EvPvInfo">
-      <div>Electoral Votes: {numberFormatter.format(stateController.model.electoralVotes)}</div>
-      <div>Popular Votes: {numberFormatter.format(stateController.model.popularVotes)}</div>
+      {stateController.model.electoralVotes > 0 && <div>Electoral Votes: {numberFormatter.format(stateController.model.electoralVotes)}</div>}
+      {stateController.model.popularVotes > 0 && <div>Popular Votes: {numberFormatter.format(stateController.model.popularVotes)}</div>}
       </div>
     </div>
   );
