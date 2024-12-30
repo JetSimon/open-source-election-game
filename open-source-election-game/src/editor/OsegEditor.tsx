@@ -211,7 +211,7 @@ function OsegEditor() {
             </Panel>
             <PanelResizeHandle className="ResizeHandle" id="resize-handle" />
             <Panel className="Panel" id="right-panel">
-                <OsegRightPanel data={data} mapSvg={mapSvg}></OsegRightPanel>
+                <OsegRightPanel logic={logic} data={data} mapSvg={mapSvg}></OsegRightPanel>
             </Panel>
             </PanelGroup>
         </div>
