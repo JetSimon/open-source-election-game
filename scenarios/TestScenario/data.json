@@ -18,6 +18,7 @@
     "scenarioImageUrl": "https://placecats.com/210/240",
     "candidates": [
         {
+            "startingGlobalMultiplier": 1,
             "runningMateIds": [],
             "id": 131,
             "firstName": "James K.",
@@ -58,6 +59,7 @@
             "imageUrl": "https://www.jetsimon.com/public/static/images/james-k-polk-1844.jpg"
         },
         {
+            "startingGlobalMultiplier": 1,
             "runningMateIds": [
                 137,
                 138,
@@ -102,6 +104,7 @@
             "imageUrl": "https://www.jetsimon.com/public/static/images/henry-clay-1844.jpg"
         },
         {
+            "startingGlobalMultiplier": 1,
             "runningMateIds": [],
             "id": 133,
             "firstName": "James",
@@ -142,6 +145,7 @@
             "imageUrl": "'"
         },
         {
+            "startingGlobalMultiplier": 1,
             "runningMateIds": [],
             "id": 134,
             "firstName": "John",
@@ -182,6 +186,7 @@
             "imageUrl": "'"
         },
         {
+            "startingGlobalMultiplier": 1,
             "runningMateIds": [],
             "id": 135,
             "firstName": "George",
@@ -196,6 +201,7 @@
             "imageUrl": "https://www.jetsimon.com/public/static/images/george-dallas-1844.jpg"
         },
         {
+            "startingGlobalMultiplier": 1,
             "runningMateIds": [],
             "id": 136,
             "firstName": "Levi",
@@ -210,6 +216,7 @@
             "imageUrl": "https://www.jetsimon.com/public/static/images/levi-woodbury-1844.jpg"
         },
         {
+            "startingGlobalMultiplier": 1,
             "runningMateIds": [],
             "id": 137,
             "firstName": "Theodore",
@@ -224,6 +231,7 @@
             "imageUrl": "https://www.jetsimon.com/public/static/images/theodore-frelinghuysen-1844.jpg"
         },
         {
+            "startingGlobalMultiplier": 1,
             "runningMateIds": [],
             "id": 138,
             "firstName": "John",
@@ -238,6 +246,7 @@
             "imageUrl": "https://www.jetsimon.com/public/static/images/john-sergeant-1844.jpg"
         },
         {
+            "startingGlobalMultiplier": 1,
             "runningMateIds": [],
             "id": 139,
             "firstName": "Millard",
@@ -252,6 +261,7 @@
             "imageUrl": "https://www.jetsimon.com/public/static/images/millard-fillmore-1844.jpg"
         },
         {
+            "startingGlobalMultiplier": 1,
             "runningMateIds": [],
             "id": 140,
             "firstName": "Thomas",
@@ -266,6 +276,7 @@
             "imageUrl": "'"
         },
         {
+            "startingGlobalMultiplier": 1,
             "runningMateIds": [],
             "id": 141,
             "firstName": "John C.",

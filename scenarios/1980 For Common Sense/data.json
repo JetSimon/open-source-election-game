@@ -2,6 +2,7 @@
     "credits": "by Komnothun",
     "candidates": [
         {
+            "startingGlobalMultiplier": 2.5,
             "runningMateIds": [16064],
             "id": 131,
             "firstName": "George",
@@ -42,6 +43,7 @@
             "imageUrl": "https://i.imgur.com/LfeAufi.png"
         },
         {
+            "startingGlobalMultiplier": 1,
             "runningMateIds": [],
             "id": 133,
             "firstName": "Wayne",
@@ -82,6 +84,7 @@
             "imageUrl": "https://cdn.discordapp.com/attachments/543656386299428864/1204525657636474982/graaahhh.png?ex=65d50cef&is=65c297ef&hm=6890784b16af6512b9eebcb06ffa9c92e66cf26b49327128ce4bd2feb45349a4&"
         },
         {
+            "startingGlobalMultiplier": 1,
             "runningMateIds": [],
             "id": 132,
             "firstName": "James",
@@ -122,6 +125,7 @@
             "imageUrl": "https://i.imgur.com/eNWbCIZ.png"
         },
         {
+            "startingGlobalMultiplier": 1,
             "runningMateIds": [],
             "id": 16064,
             "firstName": "The McGovern",
@@ -136,6 +140,7 @@
             "homeState": ""
         },
         {
+            "startingGlobalMultiplier": 1,
             "runningMateIds": [],
             "id": 16136,
             "firstName": "",
