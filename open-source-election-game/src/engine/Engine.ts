@@ -388,7 +388,8 @@ class Engine {
             return {
                 slides: [{
                     imageUrl: "",
-                    endingText: "createEnding is null. Make sure to override createEnding in logic.tsx"
+                    endingText: "createEnding is null. Make sure to override createEnding in logic.tsx",
+                    endingHeader: "Error!"
                 }]
             }
         }
@@ -591,17 +592,18 @@ class Engine {
     /**
      * 
      * @param results The results of the election
-     * @returns Did the player get >= half the total popular votes?
+     * @returns Did the player have the most PV (note not > 50%, just the most)
      * @category Ending Utility Functions
      */
     playerWonPv(results : FinalResultsModel) {
-        return this.getPlayerPv(results) > this.getTotalPopularVotes() / 2;
+        const mostPv = Math.max(...Array.from(results.popularVotes.values()));
+        return this.getPlayerPv(results) == mostPv;
     }
 
     /**
      * 
      * @param results The results of the election
-     * @returns Did the player get a majority (> 1/2) of the total electoral votes?
+     * @returns Is player EV > total EV / 2
      * @category Ending Utility Functions
      */
     playerWonEv(results : FinalResultsModel) {
@@ -616,6 +618,17 @@ class Engine {
      */
     playerEvAtLeast(results : FinalResultsModel, amount : number) {
         return this.getPlayerEv(results) >= amount;
+    }
+
+    /**
+     * 
+     * @param results  The results of the election
+     * @returns The ratio of PV the player got (range [0, 1])
+     * @category Ending Utility Functions
+     */
+    getPlayerPvPercentage(results : FinalResultsModel) {
+        const pv = results.popularVotes.get(this.getPlayerCandidateController().getId()) ?? 0;
+        return pv / this.getTotalPopularVotes();
     }
 }
 

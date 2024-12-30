@@ -1,39 +1,96 @@
-let testVar = 0;
-
 function createEnding(engine, results) {
 
-    if (engine.playerWonEv(results)) {
+    const playerPvPercentage = engine.getPlayerPvPercentage(results); 
+    const playerWonPv = engine.playerWonPv(results);
+
+    // Player did not win, but got between 39 and 40 percent
+    // The ! before playerWonPv means not. Read it as "the player did not win pv"
+    if (!playerWonPv && playerPvPercentage >= 0.39 && playerPvPercentage < 0.40) {
         return {
             slides: [
                 {
-                    imageUrl: "https://placehold.co/250x250",
-                    endingText: "You win electorally speaking!"
+                    imageUrl: "https://i.imgur.com/ZfyH9EP.png",
+                    endingText: "<p>The first thing I noticed about George McGovern was his penchant for looking to the top-right corner of the room as he thought of the word he wanted to use. Once you get to know him, you start to pick up on his little tics and mannerisms. When he's about to say something he believes to be witty or snarky, his eyebrows preemptively raise and a smile tugs against the rounded corners of his cheeks. When I met him, McGovern was not making any sort of face. His mouth sagged, but didn't frown. He was looking at me, but he wasn't seeing me. He was making a non-face. In two days time, he'd be grinning and shaking hands- campaigning- yet again, though this time not for any office.</p><p>He said nothing while waiting for me to begin the interview. He would fold his hands over his lap, look around the room for any excitement, unfold his hands to scratch at his nose, refold them again, and the cycle would continue. I did not sense impatience, but I figured it was probably time to begin.</p>",
+                    endingHeader: "Vote Your Conscience"
                 },
                 {
-                    imageUrl: "https://placehold.co/250x250",
-                    endingText: "Slide 2!"
+                    imageUrl: "https://i.imgur.com/ZfyH9EP.png",
+                    endingText: "<p><q>What is Americans for Common Sense?</q> I ventured. I didn't feel the need to do any introductions. This was the main event.<br><br><q>We are an organization that seeks to meet head-on the dangerous marriage of political zealots and religious extremists who impose their beliefs on America.</q> McGovern stated matter of factly, offering no more information than what he deemed necessary.<br><br><q>Why common sense?</q> I countered.<br><br><q>I believe it's something sorely needed. The single-issue interest groups are distorting the conversation mak-</q><br><br><q>And how is this different from organizations like, say, NCPAC?</q> I interrupted.</p>",
+                    endingHeader: "Vote Your Conscience"
                 },
                 {
-                    imageUrl: "https://placehold.co/250x250",
-                    endingText: "Slide 3 :3"
+                    imageUrl: "https://i.imgur.com/ZfyH9EP.png",
+                    endingText: "<p>McGovern's mouth stopped moving as soon as mine moved. When I finished, he concluded his thought by using my question, <q>A group like NCPAC or Young Americans for Freedom blatantly seek to distort the conversation through misdirection, exaggeration, and narrowing discussion onto one topic where they feel confident they can win. The goal of Americans for Common Sense is to speak the truth and to give candidates an ally against these super-groups</q><br><br><q>Candidates like yourself last year?</q><br><br>A slight smile indicative of recollecting a bygone time, <q>I suppose you could say that, yes.</q><br><br><q>I understand your time is focused on this organization you've founded, but the burning question, to me at least, is if 1980 was the last chance for people to vote for you?</q></p>",
+                    endingHeader: "Vote Your Conscience"
+                },
+                {
+                    imageUrl: "https://i.imgur.com/ZfyH9EP.png",
+                    endingText: "<p>The question made him pause, and off went his eyes to the right-hand corner of the room, as if there was a thesaurus for him to refer to. <q>We are probably ten to twelve years behind where the conservatives are. My focus at this time is on finding coordinators for every state, full-time organizers in the big cities, and to build a million person strong mailing list.</q> He paused for a second, but only a second, as he loaded his zinger, <q>Those are the only votes I'm looking for at this time.</q><br><br>I grinned, enjoying our rapport, <q>That sounds like a non-answer.</q> He offered only a shrug. <q>Let me put it this way,</q> I continued, <q>which state is your top priority right now?</q><br><br>Up went his eyebrows and on crept the smile, <q>Iowa.</q><br><br>Hank Dylan in <em>Rolling Stone</em> magazine. For Common Sense published 2/25/81.</p>",
+                    endingHeader: "Vote Your Conscience"
+                }
+            ]
+        }
+    }
+    
+    // Any loss below 39%. Note that the more specific loss was specified above.
+    if (!playerWonPv && playerPvPercentage < 0.39) { 
+        return {
+            slides: [
+                {
+                    imageUrl: "https://2.bp.blogspot.com/-xqPFt_N7f7I/UJHT7xXDqEI/AAAAAAAAASc/QD4FolM0yqo/s1600/georgeteresa.jpg",
+                    endingText: "<p>The cost of politics is not measured is money spent, miles driven, or words said. No, the price is time. All hard work requires tremendous effort and you burden it because you think that because you try hard enough or believe so strongly, you are certain to win. It can be so taxing that you lie awake at night with the hateful words of others swirling in your head like raging waters. It can be so intoxicating that you neglect anything that doesn't further your goal of winning. The price of politics is self-destruction.</p><p>Eleanor was the most hurt by the campaign. Of course, you could spur a temper too, but Elanor could just never adjust to the very public stripping away of your life and soul, the concerted national effort to defame you as a murderer and traitor. It's too much. She needs you. The children need you. And you will heed their call for their father to come home. Retiring peacefully to the Great Smoky Mountains of Tennessee, you pursue a modest lifestyle of reading, lounging, and bouncing grandkids on your knee. America does not see much more McGovern, but you belong to no one but your family.</p>",
+                    endingHeader: "I wasn't about to change, so they got rid of me. Okay, that's the system."
                 }
             ]
         }
     }
 
+    // Any loss >= 40%. 
+    if (!playerWonPv && playerPvPercentage >= 0.40) { 
+        return {
+            slides: [
+                {
+                    imageUrl: "https://i.imgur.com/Z4KR7JE.png",
+                    endingText: "<p>You've been no stranger to national embarrassment and suffocating loss, but, to your surprise, the pain is magnified by how you've narrowed the result down. Instead of a mid-low 30's wipe out, you managed to outperform expectations. This campaign was unlike any other you endured. The vitriol, the conspiracy, the hopeless-- it's certainly a new day in America. Yet, you fought to see that sun rise. Tumultuous as it was, when they record the history of this time- the end of the age of the liberal Democrats- they will chronicle your strength to continue in the face of impossible odds.</p><p>James Abdnor will go on to serve a single, largely unremarkable, term in the Senate; only to one day be replaced by a man the Rapid City Journal will call, <q>the McGovern of his generation.</q> You will contest higher office once more to no avail. But your service is not over. You will go on to serve in the administrations of Democratic and Republican presidents alike, continuing your lifelong struggle to end hunger. Long after you're gone, many will look at your life and surmise you to be a failure. But, in your heart, you've never failed.<p>",
+                    endingHeader: "<q>Abdnor won't win without a helluva fight. I haven't been in politics this long to peter out now.</q>"
+                }
+            ]
+        }
+    }
+
+    // Won PV without majority
+    if(playerWonPv && playerPvPercentage < 0.50) {
+        return {
+            slides: [
+                {
+                    imageUrl: "https://i.imgur.com/GIK8vLW.png",
+                    endingText: "<p>They never do learn do they? You can't always count on George McGovern to win, but you'd be a fool to bet against his ability to defy the odds. The combined forces of the New Right could not unseat you; vindicated are all of your perceived weaknesses that you know to be strengths. Battle-scarred, bloody, and bruised, you emerge from the wreckage on November 5th, alive-- unlike most other Democrats.</p><p>In your fourth and final term, you will be a strident opponent of the Reagan administration at just about every avenue. The Freshman Class of 1981, boisterous and eager to finally operate the levers of power, will endure your orations on the necessity of SALT II and normalizing relations with Cuba. As one of the last survivors of a dying breed, the uptick in media appearances and requests for interviews is noticeable; Terry Dolan and NCPAC may find they like this outcome better than the alternative. Sure, they're a vote down in the Senate, but you are a juicy target for fundraising materials. The Reverend Jesse Jackson will suggest you'd make an apt Secretary of State. Of course, the Jackson administration will never come to be, but you will continue to serve as a national icon for liberalism until your passing.<p>",
+                    endingHeader: "<q>It wouldn't be the first time that I was that far behind and won. They always overdo the attack, and I always work pretty hard in a campaign.</q>"
+                }
+            ]
+        }
+    }
+    
+    // Won PV without majority
+    if(playerWonPv && playerPvPercentage >= 0.50) {
+        return {
+            slides: [
+                {
+                    imageUrl: "https://i.imgur.com/RtimAmh.png",
+                    endingText: "<p>Thirty years ago, you built the South Dakota Democratic Party out of rubble into marble; what once barely contested a third of all races state-wide is now an invigorated machine able to slay Goliath. The alliance of national conservative interest groups with all their might, men, and money could not defeat you nor could they strip you of your composure.</p><p>Emboldened by the breadth of your implausible victory, you resolve to use this final term to redouble your efforts towards completing your life's work: achieving peace between nations and vanquishing want for food. With Senator Church one of many casualties of the Reagan Revolution, you're second in line for chairmanship of the Foreign Relations Committee where you will passionately advocate for lifting economic restrictions on Cuba and for humanitarian relief in Africa. You will make your second entrance into the presidential primaries in 1988. Although Governor Dukakis will emerge the victor, only he and the Reverend Jesse Jackson place before you. You will serve with distinction in the Clinton administration as UN Ambassador, informal advisor, and liberal icon.<p>",
+                    endingHeader: "The Politics of Hope"
+                }
+            ]
+        }
+    }
+
+    // Fallback ending just in case :)
     return {
         slides: [
             {
-                imageUrl: "https://placehold.co/250x250",
-                endingText: "You lose electorally speaking!"
-            },
-            {
-                imageUrl: "https://placehold.co/250x250",
-                endingText: "Slide 2!"
-            },
-            {
-                imageUrl: "https://placehold.co/250x250",
-                endingText: "Slide 3 :3"
+                imageUrl: "https://i.imgur.com/RtimAmh.png",
+                endingText: "This ending shouldn't be possible",
+                endingHeader: "Error"
             }
         ]
     }

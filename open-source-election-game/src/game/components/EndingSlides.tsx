@@ -31,10 +31,10 @@ function EndingSlides(props: EndingSlidesProps) {
 
     return (
         <div style={{ backgroundColor: theme.primaryGameWindowColor, color: theme.primaryGameWindowTextColor }} className="EndingSlides">
-            <h2>Final Results</h2>
+            <h2 dangerouslySetInnerHTML={{__html:endingSlide.endingHeader}}></h2>
             <div className="EndingSlide">
                 <img className="EndingSlideImage" src={endingSlide.imageUrl}></img>
-                <div className="EndingSlideDescription">{endingSlide.endingText}</div>
+                <div className="EndingSlideDescription" dangerouslySetInnerHTML={{__html:endingSlide.endingText}}></div>
             </div>
             <div className="EndingSlideControlLine"></div>
             {endingSlides.length > 1 && <div>{endingSlideIndex + 1}/{endingSlides.length}</div>}
