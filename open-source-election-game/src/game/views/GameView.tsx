@@ -112,8 +112,7 @@ function GameView(props: GameViewProps) {
     <div className="GameView">
       {engine.isGameOver() ? (
         <div className="EndingViewHolder">
-        <EndingView theme={theme} engine={engine}></EndingView>
-        <MapView theme={theme} onStateClicked={null} engine={engine} mapSvg={mapSvg}></MapView>
+        <EndingView theme={theme} engine={engine} mapSvg={mapSvg}></EndingView>
         </div>
       ) :
       (

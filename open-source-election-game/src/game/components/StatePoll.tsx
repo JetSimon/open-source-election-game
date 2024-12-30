@@ -8,7 +8,7 @@ interface StatePollProps {
   theme : ThemeModel;
 }
 
-const numberFormatter = Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 });
+const numberFormatter = Intl.NumberFormat();
 
 function StatePoll(props: StatePollProps) {
   const { stateController, engine, theme } = props;
