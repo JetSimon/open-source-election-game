@@ -27,5 +27,6 @@
 }
 
 .ResultsTable tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: rgba(0, 0, 0, 0.132);
+    background-blend-mode:overlay;
 }

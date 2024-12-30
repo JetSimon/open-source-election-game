@@ -432,6 +432,22 @@ class Engine {
     // UTILS FOR CYOA
 
     /**
+     * @category CYOA Utility Functions
+     * @param url 
+     */
+    setNewBackgroundImage(url : string) {
+        this.scenarioController.theme.backgroundImageUrl = url;
+    }
+
+    /**
+     * @category CYOA Utility Functions
+     * @param url 
+     */
+    setNewHeaderImage(url : string) {
+        this.scenarioController.theme.headerImageUrl = url;
+    }
+
+    /**
      * Sets new image for player candidate from url
      * @category CYOA Utility Functions
      * @param url 

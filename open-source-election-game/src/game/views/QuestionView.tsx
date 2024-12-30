@@ -22,7 +22,7 @@ function QuestionView(props: QuestionViewProps) {
   return (
     <div style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}}  className="QuestionView">
       <div>
-        <p style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="QuestionDescription">{currentQuestion.description}</p>
+        <p style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="QuestionDescription" dangerouslySetInnerHTML={{__html:currentQuestion.description}}></p>
         <div className="AnswerHolder">
           {currentQuestion.answers.map((answerModel) => (
             <Answer
