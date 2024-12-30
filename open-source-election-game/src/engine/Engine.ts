@@ -31,6 +31,7 @@ class Engine {
 
     createEnding : null | ((engine : Engine, results : FinalResultsModel) => EndingModel) = null;
     onAnswerPicked : null | ((engine : Engine, answerPicked : AnswerModel) => void) = null;
+    onAchievementUnlocked : null | ((scenarioController : ScenarioController, achievementName : string) => void) = null;
 
     rng : number = 0.025;
     useRng : boolean = true;
@@ -311,6 +312,15 @@ class Engine {
     // Returns range for RNG. So if value returned in 0.01, then you would += (0.01 / 2) to state polls
     getRngRange() {
         return this.useRng ? this.rng : 0;
+    }
+
+    unlockAchievement(achievementName : string) {
+        if(this.onAchievementUnlocked != null) {
+            this.onAchievementUnlocked(this.scenarioController, achievementName);
+        }
+        else {
+            console.warn("Did not unlock achievement with name '" + achievementName + "' because onAchievementUnlocked is null");
+        }
     }
 }
 

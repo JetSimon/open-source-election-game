@@ -53,7 +53,7 @@ class ScenarioController {
         for (const candidateController of this.getCandidates()) {
             for (const issue of model.issues) {
                 if (!candidateController.issueScores.hasIssue(issue.id)) {
-                    console.error("Candidate with id", candidateController.getId(), "doesn't have an issue score for issue with id", issue.id, "going to remove them for now");
+                    console.warn("Candidate with id", candidateController.getId(), "doesn't have an issue score for issue with id", issue.id, "going to remove them for now");
                     toRemove.add(candidateController.getId());
                     break;
                 }
