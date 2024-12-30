@@ -205,7 +205,7 @@ class Engine {
     }
 
     /**
-     * @categor Utility
+     * @category Utility
      * @returns The number of questions in this scenario, includes questions added with CYOA
      */
     getNumberOfQuestions() {
@@ -213,8 +213,8 @@ class Engine {
     }
 
     /**
-     * @category Core
      * Updates the polling in each state. Used for example after the player chooses a question and those margins need to be updated.
+     * @category Core
      */
     updateStates() {
         for (const stateController of this.scenarioController.stateControllers) {
