@@ -1,12 +1,12 @@
-import AnswerEffectType from "../models/AnswerEffectType";
-import AnswerModel from "../models/AnswerModel";
-import ScenarioModel from "../models/ScenarioModel";
+import AnswerEffectType from "./models/AnswerEffectType";
+import AnswerModel from "./models/AnswerModel";
+import ScenarioModel from "./models/ScenarioModel";
 import CandidateController from "./controllers/CandidateController";
 import ScenarioController from "./controllers/ScenarioController";
-import FinalResultsModel from "../models/FinalResultsModel";
-import EndingModel from "../models/EndingModel";
-import QuestionModel from "../models/QuestionModel";
-import CandidateModel from "../models/CandidateModel";
+import FinalResultsModel from "./models/FinalResultsModel";
+import EndingModel from "./models/EndingModel";
+import QuestionModel from "./models/QuestionModel";
+import CandidateModel from "./models/CandidateModel";
 
 const fromTct = (x: number) => 2 * x; // We are importing scenarios from TCT rn, sometimes we may need to multiply effects by this to have it apply here
 

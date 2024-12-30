@@ -6,9 +6,7 @@
 
 # Data Differences/Similarities to TCT
 
-Currently this game just loads the scenario hardcoded at ```src/scenarios/TestScenario.ts```
-
-The scenario schema is very similar to a combined code 1 and 2 of the TCT engine.
+The ScenarioModel schema is very similar to a combined code 1 and 2 of the TCT engine.
 
 ```
 interface ScenarioModel {
@@ -19,15 +17,21 @@ interface ScenarioModel {
 }
 ```
 
-Note that currently the election information isn't part of the ScenarioModel, but it will be in the future (see Issues)
+Note that instead of having an array of IssueScores/AnswerFeedback/etc like in TCT (an artifact of how everything was stored in a database in TCT), the associated state and candidate issue scores (as well as things like question answers, effects, etc) are just part of the CandidateModel and StateModel json. See the ```src/engine/models/``` folder for a better idea of how the data is laid out.
 
-Also note that instead of having an array of IssueScores like in TCT (an artifact of how everything was stored in a database in TCT), the associated state and candidate issue scores (as well as things like question answers, effects, etc) are just part of the CandidateModel and StateModel json. See the ```src/models/``` folder for a better idea of how the data is laid out.
+In total, you need 3 files to define a scenario:
+
+1. The scenario model is stored in a file called data.json. 
+
+2. The logic for cyoa and endings is stored in a file called logic.js.
+
+3. The map svg for each scenario is stored in a file called map.svg. Note that each state in data.json needs a corresponding path in the map.svg where the id of the path is the abbreviation of the staate.
 
 # Engine, View, Models
 
-I am trying to keep the engine stuff separate from the "view" (aka the frontend website). So technically the backend could be plugged into anything. All that/the game logic lives in the ```src/engine``` folder. The view part is in the ```src/views``` folder, but we could also have a /components folder in the future.
+I am trying to keep the engine stuff separate from the "view" (aka the frontend website). So technically the backend could be plugged into anything. All that/the game logic lives in the ```src/engine``` folder. The views for the game, that aren't needed to function technically but are needed to interact with it are in ```src/game```. The ```src/website``` folder contains frontend code for the website that isn't strictly needed to play the game. The ```src/editor``` folder contains the frontend code for the scenario editor page. Note that the editor folder depends on the engine and game folders.
 
-The ```src/models``` folder contains models for data structures. Models are the basic unchanging data of the engine. Look up the MVC design pattern.
+The ```src/engine/models``` folder contains the interfaces for the basic data structures of the game/scenarios.
 
 # More About the Engine
 

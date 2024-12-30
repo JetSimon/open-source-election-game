@@ -1,8 +1,8 @@
-import { Engine } from "../engine/Engine";
+import { Engine } from "../../engine/Engine";
 import FinalResults from "../components/FinalResults";
-import EndingModel from "../models/EndingModel";
+import EndingModel from "../../engine/models/EndingModel";
 import { useState } from "react";
-import ThemeModel from "../models/ThemeModel";
+import ThemeModel from "../../engine/models/ThemeModel";
 import "./EndingView.css"
 
 interface EndingViewProps {

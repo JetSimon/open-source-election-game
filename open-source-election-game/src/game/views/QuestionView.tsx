@@ -1,8 +1,8 @@
-import QuestionModel from "../models/QuestionModel";
+import QuestionModel from "../../engine/models/QuestionModel";
 import Answer from "../components/Answer";
-import AnswerModel from "../models/AnswerModel";
+import AnswerModel from "../../engine/models/AnswerModel";
 import "./QuestionView.css";
-import ThemeModel from "../models/ThemeModel";
+import ThemeModel from "../../engine/models/ThemeModel";
 interface QuestionViewProps {
   currentQuestion: QuestionModel;
   submitAnswer: () => void;

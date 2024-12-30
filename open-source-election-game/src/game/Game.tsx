@@ -1,4 +1,4 @@
-import { Engine, GameState } from "./engine/Engine";
+import { Engine, GameState } from "../engine/Engine";
 
 import { useState, useEffect } from "react";
 import StartGameView from "./views/StartGameView";
@@ -6,7 +6,7 @@ import GameView from "./views/GameView";
 
 const engine = new Engine();
 
-import ScenarioModel from "./models/ScenarioModel";
+import ScenarioModel from "../engine/models/ScenarioModel";
 
 import "./Game.css"
 

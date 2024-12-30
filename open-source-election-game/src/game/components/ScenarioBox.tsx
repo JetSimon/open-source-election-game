@@ -1,4 +1,4 @@
-import ScenarioModel from "../models/ScenarioModel";
+import ScenarioModel from "../../engine/models/ScenarioModel";
 import "./ScenarioBox.css";
 
 interface ScenarioBoxProps {

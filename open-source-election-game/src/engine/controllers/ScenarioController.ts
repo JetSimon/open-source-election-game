@@ -1,10 +1,10 @@
-import ScenarioModel from "../../models/ScenarioModel";
+import ScenarioModel from "../models/ScenarioModel";
 import StateController from "./StateController";
 import CandidateController from "./CandidateController";
 import IssueScores from "../IssueScores";
-import QuestionModel from "../../models/QuestionModel";
+import QuestionModel from "../models/QuestionModel";
 import { shuffleArray } from "../../utils/ArrayUtils";
-import ThemeModel from "../../models/ThemeModel";
+import ThemeModel from "../models/ThemeModel";
 
 class ScenarioController {
     model: ScenarioModel = this.makeEmptyScenarioModel();

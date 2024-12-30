@@ -1,4 +1,4 @@
-import IssueScore from "../models/IssueScore";
+import IssueScore from "./models/IssueScore";
 
 class IssueScores {
     issueScores: Map<number, IssueScore>;

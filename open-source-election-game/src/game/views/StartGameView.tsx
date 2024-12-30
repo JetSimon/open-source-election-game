@@ -1,9 +1,9 @@
-import { Engine } from "../engine/Engine";
-import { GameState } from "../engine/Engine";
+import { Engine } from "../../engine/Engine";
+import { GameState } from "../../engine/Engine";
 import ElectionDescriptionView from "./ElectionDescriptionView";
 import CandidateSelectionView from "./CandidateSelectionView";
 import { useState } from "react";
-import ThemeModel from "../models/ThemeModel";
+import ThemeModel from "../../engine/models/ThemeModel";
 
 interface StartGameProps {
     engine : Engine;

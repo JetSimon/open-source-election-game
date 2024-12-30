@@ -1,6 +1,6 @@
-import { Engine } from "../engine/Engine";
+import { Engine } from "../../engine/Engine";
 import "./ElectionDescriptionView.css";
-import ThemeModel from "../models/ThemeModel";
+import ThemeModel from "../../engine/models/ThemeModel";
 interface ElectionDescriptionViewProps {
   engine: Engine;
   setSelectingCandidate : (value : boolean) => void;

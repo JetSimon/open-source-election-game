@@ -1,4 +1,4 @@
-import CandidateModel from "../models/CandidateModel";
+import CandidateModel from "../../engine/models/CandidateModel";
 
 interface CandidateInfoAreaProps {
     candidate : CandidateModel;

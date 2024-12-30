@@ -1,6 +1,6 @@
-import StateController from "../engine/controllers/StateController";
-import { Engine } from "../engine/Engine";
-import ThemeModel from "../models/ThemeModel";
+import StateController from "../../engine/controllers/StateController";
+import { Engine } from "../../engine/Engine";
+import ThemeModel from "../../engine/models/ThemeModel";
 
 interface StatePollProps {
   engine: Engine | null;

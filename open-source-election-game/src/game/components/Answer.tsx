@@ -1,4 +1,4 @@
-import AnswerModel from "../models/AnswerModel";
+import AnswerModel from "../../engine/models/AnswerModel";
 
 interface AnswerProps {
     answerId: string;

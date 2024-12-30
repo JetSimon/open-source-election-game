@@ -1,10 +1,10 @@
-import MapView from "../views/MapView";
+import MapView from "../game/views/MapView";
 import { Engine, GameState } from "../engine/Engine";
-import EnumNavBar from "../components/EnumNavBar";
+import EnumNavBar from "./components/EnumNavBar";
 import { useState, useEffect } from "react";
-import ElectionDescriptionView from "../views/ElectionDescriptionView";
-import CandidateSelectionView from "../views/CandidateSelectionView";
-import ScenarioModel from "../models/ScenarioModel";
+import ElectionDescriptionView from "../game/views/ElectionDescriptionView";
+import CandidateSelectionView from "../game/views/CandidateSelectionView";
+import ScenarioModel from "../engine/models/ScenarioModel";
 
 enum RightNavBar {
     Map,

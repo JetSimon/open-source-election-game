@@ -5,10 +5,10 @@ import EndingView from "./EndingView";
 import PopupBox from "../components/PopupBox";
 import MapView from "./MapView";
 import BottomBanner from "../components/BottomBanner";
-import { Engine } from "../engine/Engine";
-import AnswerModel from "../models/AnswerModel";
-import StateController from "../engine/controllers/StateController";
-import ThemeModel from "../models/ThemeModel";
+import { Engine } from "../../engine/Engine";
+import AnswerModel from "../../engine/models/AnswerModel";
+import StateController from "../../engine/controllers/StateController";
+import ThemeModel from "../../engine/models/ThemeModel";
 
 interface GameViewProps {
   engine: Engine;

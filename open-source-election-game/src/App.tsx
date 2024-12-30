@@ -1,6 +1,6 @@
 import "./App.css";
 
-import ScenarioLoader from "./ScenarioLoader";
+import ScenarioLoader from "./website/ScenarioLoader";
 import OsegEditor from "./editor/OsegEditor";
 
 import {

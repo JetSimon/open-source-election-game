@@ -1,4 +1,4 @@
-import CandidateModel from "../../models/CandidateModel";
+import CandidateModel from "../models/CandidateModel";
 import IssueScores from "../IssueScores";
 
 class CandidateController {

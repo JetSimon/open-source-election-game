@@ -1,4 +1,4 @@
-import StateModel from "../../models/StateModel";
+import StateModel from "../models/StateModel";
 import { sumNumberArray } from "../../utils/ArrayUtils";
 import IssueScores from "../IssueScores";
 import ScenarioController from "./ScenarioController";

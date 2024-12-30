@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import ScenarioModel from "../models/ScenarioModel";
+import ScenarioModel from "../engine/models/ScenarioModel";
 import "./OsegEditor.css";
 import OsegLeftPanel from "./OsegLeftPanel";
 import OsegRightPanel from "./OsegRightPanel";
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
-import Game from "../Game";
+import Game from "../game/Game";
 
 const errorScenario : ScenarioModel = {
     theme: {

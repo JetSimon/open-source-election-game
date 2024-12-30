@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { Engine } from "../engine/Engine";
+import { Engine } from "../../engine/Engine";
 import "external-svg-loader";
-import StateController from "../engine/controllers/StateController";
+import StateController from "../../engine/controllers/StateController";
 import StatePoll from "../components/StatePoll";
 import "./MapView.css";
-import ThemeModel from "../models/ThemeModel";
+import ThemeModel from "../../engine/models/ThemeModel";
 
 interface MapViewProps {
   engine: Engine;
