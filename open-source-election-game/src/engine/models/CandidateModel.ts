@@ -13,6 +13,7 @@ interface CandidateModel {
     description: string;
     imageUrl: string;
     runningMateIds: number[];
+    startingGlobalMultiplier: number;
 }
 
 export default CandidateModel;

@@ -61,7 +61,7 @@ class ScenarioController {
         }
         this.candidateControllers = this.candidateControllers.filter((x) => !toRemove.has(x.getId()));
         for (const candidateController of this.getCandidates()) {
-            this.globalModifiers.set(candidateController.getId(), 1);
+            this.globalModifiers.set(candidateController.getId(), candidateController.model.startingGlobalMultiplier);
         }
 
         this.stateControllers = this.model.states.map((stateModel) => new StateController(this, stateModel));

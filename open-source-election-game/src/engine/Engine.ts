@@ -150,7 +150,8 @@ class Engine {
             issueScores: [],
             description: "this is the empty candidate model to return when errors happen",
             imageUrl: "",
-            runningMateIds: []
+            runningMateIds: [],
+            startingGlobalMultiplier: 0,
         }
     }
 
