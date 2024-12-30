@@ -46,7 +46,7 @@ class ScenarioController {
     }
 
     loadScenario(model: ScenarioModel, sideIndex: number) {
-        this.model = JSON.parse(JSON.stringify(model));
+        this.model = model;
         this.theme = this.model.theme;
         this.candidateControllers = this.model.candidates.filter((candidateModel) => !candidateModel.runningMate).map((candidateModel) => new CandidateController(candidateModel));
         const toRemove = new Set();

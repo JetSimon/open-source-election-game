@@ -87,6 +87,7 @@ class Engine {
      * @param asObserver If this is true, then the margins are also loaded and the GameState is set to Election. Used for when you want to view the map without actually playing the game
      */
     loadScenario(newScenario: ScenarioModel, asObserver = false) {
+        newScenario = JSON.parse(JSON.stringify(newScenario));
         this.currentQuestionIndex = 0;
         this.scenarioController.loadScenario(newScenario, 0);
         this.currentScenario = newScenario;
