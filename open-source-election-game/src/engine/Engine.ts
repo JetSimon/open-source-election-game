@@ -81,6 +81,7 @@ class Engine {
 
     /**
      * Loads a ScenarioModel into the engine
+     * @category Core
      * @param newScenario The ScenarioModel to load
      * @param asObserver If this is true, then the margins are also loaded and the GameState is set to Election. Used for when you want to view the map without actually playing the game
      */
@@ -99,6 +100,7 @@ class Engine {
 
     /**
      * Finalizes loading the scenario after loadScenario is called. Sets which candidate is the player and who their running mate is.
+     * @category Core
      * @param newSideIndex Used to lookup a side in the ScenarioModel's scenarioSides. Loads that sides questions into the game.
      * @param runningMateId The id of the running mate of the player.
      * @returns 
@@ -121,6 +123,10 @@ class Engine {
         this.updateStates();
     }
 
+    /**
+     * @category Utility
+     * @returns 
+     */
     getCurrentSide() {
         return this.scenarioController.model.scenarioSides[this.sideIndex];
     }
@@ -199,7 +205,7 @@ class Engine {
     }
 
     /**
-     * 
+     * @categor Utility
      * @returns The number of questions in this scenario, includes questions added with CYOA
      */
     getNumberOfQuestions() {
@@ -207,6 +213,7 @@ class Engine {
     }
 
     /**
+     * @category Core
      * Updates the polling in each state. Used for example after the player chooses a question and those margins need to be updated.
      */
     updateStates() {
@@ -252,6 +259,7 @@ class Engine {
 
     /**
      * Applies all the answer effects of an AnswerModel and then updates each state in the scenario
+     * @category Core
      * @param selectedAnswer The answer to apply
      * @returns 
      */
@@ -295,19 +303,25 @@ class Engine {
 
     /**
      * Increments currentQuestionIndex by one
+     * @category Utility
      */
     nextQuestion() {
         this.currentQuestionIndex++;
     }
 
     /**
-     * 
+     * @category Utility
      * @returns Returns true if the currentQuestionIndex >= number of questions in the scenario
      */
     isGameOver() {
         return this.currentQuestionIndex >= this.scenarioController.getNumberOfQuestions();
     }
 
+    /**
+     * @category Utility
+     * @param abbr The abbreviation for the state as defined in data.json
+     * @returns The id of the state as defined in data.json
+     */
     getStateIdFromAbbr(abbr: string): number {
         const arr = this.scenarioController.model.states.filter((x) => x.abbr == abbr);
         if (arr.length == 0) {
@@ -317,12 +331,17 @@ class Engine {
         return arr[0].id;
     }
 
+    /**
+     * @category Utility
+     * @param id 
+     * @returns 
+     */
     getCandidateControllerByCandidateId(id: number) {
         return this.scenarioController.getCandidateByCandidateId(id);
     }
 
     /**
-     * 
+     * @category Core
      * @returns Returns a FinalResultsModel for the final results of a game
      */
     getFinalResults(): FinalResultsModel {
@@ -353,6 +372,7 @@ class Engine {
 
     /**
      * Called when calculating the results of a game, returns an EndingModel to create slides out of
+     * @category Core
      * @returns 
      */
     getEnding(): EndingModel {
@@ -368,7 +388,7 @@ class Engine {
     }
 
     /**
-     * 
+     * @category Utility
      * @returns Returns a Set of ids for candidates who have valid sides in the current ScenarioModel
      */
     getSetOfIdsOfCandidatesWithSides() : Set<number> {
@@ -380,7 +400,7 @@ class Engine {
     }
 
     /**
-     * 
+     * @category Utility
      * @returns Returns range for RNG. So if value returned in 0.01, then you would += (0.01 / 2) to state polls
      */
     getRngRange() {
@@ -389,6 +409,7 @@ class Engine {
 
     /**
      * Calls the onAchievementUnlocked method with the achievementName and the current ScenarioController. The Engine does not handle the logic of if an achivement is already unlocked, or storing achievements. That is left to the host site.
+     * @category Core
      * @param achievementName 
      */
     unlockAchievement(achievementName : string) {
