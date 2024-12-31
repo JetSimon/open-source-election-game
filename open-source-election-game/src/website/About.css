@@ -8,6 +8,10 @@
     text-align: center;
 }
 
+.About li {
+    margin: 16px;
+}
+
 @media only screen and (max-width: 600px) {
     .About {
         width: 90%;
