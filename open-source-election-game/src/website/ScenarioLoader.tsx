@@ -12,6 +12,7 @@ function ScenarioLoader() {
     const [data, setData] = useState<ScenarioModel | null>(null);
     const [logic, setLogic] = useState<string>("");
     const [mapSvg, setMapSvg] = useState<string>("");
+    const [customCss, setCustomCss] = useState<string>("");
 
     const [dataString, setDataString] = useState<string>("");
     const [loadingCustomScenario, setLoadingCustomScenario] = useState(false);
@@ -49,10 +50,14 @@ function ScenarioLoader() {
       
         const logicRes = await fetch("./scenarios/" + modFolderName + "/logic.js");
         const logicText = await logicRes.text();
+
+        const cssRes = await fetch("./scenarios/" + modFolderName + "/style.css");
+        const cssText = await cssRes.text();
         
         setData(dataJson);
         setLogic(logicText);
         setMapSvg(map);
+        setCustomCss(cssText);
       }
       loadScenarioFromUrl(currentModName);
     }, [currentModName]);
@@ -63,6 +68,7 @@ function ScenarioLoader() {
             setData(customData);
             setLogic(logic);
             setMapSvg(mapSvg);
+            setCustomCss(customCss);
             setLoadingCustomScenario(true);
         }
         catch(e) {
@@ -94,6 +100,10 @@ function ScenarioLoader() {
                     <label htmlFor="map">map.svg</label>
                     <textarea rows={8} onChange={(e) => setMapSvg(e.target.value)} value={mapSvg} id="map"></textarea>
 
+                    
+                    <label htmlFor="css">style.css</label>
+                    <textarea rows={8} onChange={(e) => setCustomCss(e.target.value)} value={customCss} id="css"></textarea>
+
                     <button onClick={loadCustomScenario} className="GreenButton">Go</button>
                 </div>
             </div>
@@ -104,7 +114,7 @@ function ScenarioLoader() {
         return <p>Error: Injected data is null</p>
     }
 
-    return <Game injectedData={data} injectedLogic={logic} injectedMapSvg={mapSvg}></Game>
+    return <Game injectedCss={customCss} injectedData={data} injectedLogic={logic} injectedMapSvg={mapSvg}></Game>
 }
 
 export default ScenarioLoader;

@@ -7,7 +7,8 @@ import ScenarioModel from "../engine/models/ScenarioModel";
 enum LeftNavBar {
     Data,
     Logic,
-    Map
+    Map,
+    CSS
 }
 
 const leftNavBarValues = Object.keys(LeftNavBar).filter((item) => {
@@ -19,14 +20,16 @@ interface OsegLeftPanelProps {
     setLogic: (s: string) => void;
     setDataString: (s: string) => void;
     setMapSvg: (url: string) => void;
+    setCustomCss: (url: string) => void;
     logic: string;
     dataString: string;
     mapSvg: string;
+    customCss: string;
 }
 
 function OsegLeftPanel(props: OsegLeftPanelProps) {
 
-    const { setData, setLogic, setDataString, dataString, logic, mapSvg, setMapSvg } = props;
+    const { setData, setLogic, setDataString, dataString, logic, mapSvg, setMapSvg, customCss, setCustomCss} = props;
 
     const [errorWithDataJson, setErrorWithDataJson] = useState<string>("");
     const [leftNavBar, setLeftNevBar] = useState<LeftNavBar>(LeftNavBar.Data);
@@ -64,6 +67,13 @@ function OsegLeftPanel(props: OsegLeftPanelProps) {
     function onMapSvgChanged(value: string | undefined, _ev: editor.IModelContentChangedEvent) {
         if (value != undefined) {
             setMapSvg(value);
+        }
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    function onCustomCssChanged(value: string | undefined, _ev: editor.IModelContentChangedEvent) {
+        if (value != undefined) {
+            setCustomCss(value);
         }
     }
 
@@ -109,6 +119,20 @@ function OsegLeftPanel(props: OsegLeftPanelProps) {
                         onChange={onMapSvgChanged}
                     ></Editor>
                     <p>Note: Ensure all path ids correspond to a state abbreviation in Data</p>
+                </div>
+            );
+        }
+        else if (leftNavBar == LeftNavBar.CSS) {
+            return (
+                <div>
+                    <h2>CSS</h2>
+                    <Editor
+                        height="512px"
+                        language="css"
+                        theme="vs-dark"
+                        value={customCss}
+                        onChange={onCustomCssChanged}
+                    ></Editor>
                 </div>
             );
         }

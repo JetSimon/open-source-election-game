@@ -15,13 +15,15 @@ interface GameProps {
     injectedData : ScenarioModel;
     injectedLogic : string;
     injectedMapSvg : string;
+    injectedCss : string;
 }
 
 function Game(props : GameProps) {
 
-    const {injectedData, injectedLogic, injectedMapSvg} = props;
+    const {injectedData, injectedLogic, injectedMapSvg, injectedCss} = props;
     const [gameState, setGameState] = useState(engine.gameState);
     const [theme, setTheme] = useState(engine.scenarioController.makeEmptyTheme());
+    const [stylePath, setStylePath] = useState("");
 
     useEffect(() => {
         async function loadInjectedData() {
@@ -33,10 +35,14 @@ function Game(props : GameProps) {
             engine.loadScenario(injectedData);
             setGameState(engine.gameState);
             setTheme(engine.scenarioController.theme);
+
+            const encodedStyle = encodeURIComponent(injectedCss);
+            const styleUri = 'data:text/css;charset=utf-8,' + encodedStyle;
+            setStylePath(styleUri);
         }
 
         loadInjectedData();
-    }, [injectedData, injectedLogic, injectedMapSvg]);
+    }, [injectedData, injectedLogic, injectedMapSvg, injectedCss]);
 
     function getViewFromGameState() {
         if (gameState == GameState.Uninitialized) {
@@ -57,11 +63,14 @@ function Game(props : GameProps) {
     const backgroundUrl = "url('" + theme.backgroundImageUrl + "')";
 
     return (
+        <>
+        <link rel="stylesheet" type="text/css" href={stylePath} />
         <div style={{backgroundColor:theme.backgroundColor, backgroundImage:backgroundUrl}} className="Game">
             <img className="TopBanner" src={theme.headerImageUrl}></img>
             <QuoteHeader engine={engine} theme={theme}></QuoteHeader>
             {getViewFromGameState()}
         </div>
+        </>
     );
 }
 

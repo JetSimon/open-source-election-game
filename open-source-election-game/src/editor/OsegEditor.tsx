@@ -34,11 +34,6 @@ const errorScenario : ScenarioModel = {
     credits : ""
 }
 
-function getAutosaveFromStorage() {
-    const localStorageAutosave = localStorage.getItem("editorAutosave");
-    return localStorageAutosave != null && localStorageAutosave == "on";
-}
-
 function downloadString(s : string, fileName : string) {
     const element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(s));
@@ -60,9 +55,10 @@ function OsegEditor() {
     const [logic, setLogic] = useState<string>("");
     const [mapSvg, setMapSvg] = useState<string>("");
 
+    const [customCss, setCustomCss] = useState<string>("");
+
     const [isPlaying, setIsPlaying] = useState(false);
 
-    const [autosave/*, setAutosave*/] = useState(false);//useState<boolean>(getAutosaveFromStorage());
     const [lastSaved, setLastSaved] = useState<number>(-1);
 
     async function loadDefaultData() {
@@ -75,9 +71,13 @@ function OsegEditor() {
         const defaultLogic = await fetch("./editor/templates/default/logic.js");
         const defaultLogicText = await defaultLogic.text();
 
+        const defaultCss = await fetch("./editor/templates/default/style.css");
+        const defaultCssText = await defaultCss.text();
+
         setData(defaultDataJson);
         setLogic(defaultLogicText);
         setMapSvg(defaultMapSvg);
+        setCustomCss(defaultCssText);
 
         const stringifiedData = JSON.stringify(defaultDataJson, null, 4);
         setDataString(stringifiedData);
@@ -88,6 +88,7 @@ function OsegEditor() {
         localStorage.setItem("editorLogic", logic);
         localStorage.setItem("editorData", dataString);
         localStorage.setItem("editorMapSvg", mapSvg);
+        localStorage.setItem("editorCss", customCss);
         setLastSaved(Date.now());
     }
 
@@ -96,8 +97,9 @@ function OsegEditor() {
             const autosaveLogic = localStorage.getItem("editorLogic");
             const autosaveData = localStorage.getItem("editorData");
             const autosaveMapSvg = localStorage.getItem("editorMapSvg");
+            const autosaveCss = localStorage.getItem("editorCss");
     
-            if(autosaveData == null || autosaveLogic == null || autosaveMapSvg == null) {
+            if(autosaveData == null || autosaveLogic == null || autosaveMapSvg == null || autosaveCss == null) {
                 throw new Error("Did not have autosave data to load!");
             }
 
@@ -111,6 +113,7 @@ function OsegEditor() {
             setLogic(autosaveLogic);
             setMapSvg(autosaveMapSvg);
             setDataString(autosaveData);
+            setCustomCss(autosaveCss);
         }
         catch(e) {
             alert("Could not load saved data: " + e);
@@ -122,58 +125,8 @@ function OsegEditor() {
         setAutosave(!autosave);
     }*/
 
-    useEffect(() => {
-        localStorage.setItem("editorAutosave", autosave ? "on" : "off");
-    }, [autosave])
-
     useEffect(() =>{
-        async function saveAutosave() {
-            if(!getAutosaveFromStorage()) {
-                return;
-            }
-            await save();
-        }    
-
-        const saveHandle = setInterval(saveAutosave, 10 * 1000);
-
-        async function loadAutosaveData() {
-            try {
-                const autosaveLogic = localStorage.getItem("editorLogic");
-                const autosaveData = localStorage.getItem("editorData");
-                const autosaveMapSvg = localStorage.getItem("editorMapSvg");
-        
-                if(autosaveData == null || autosaveLogic == null || autosaveMapSvg == null) {
-                    throw new Error("Did not have autosave data to load!");
-                }
-    
-                if(autosaveData != "") {
-                    setData(JSON.parse(autosaveData) as ScenarioModel);
-                }
-                else {
-                    setData(errorScenario);
-                }
-                
-                setLogic(autosaveLogic);
-                setMapSvg(autosaveMapSvg);
-                setDataString(autosaveData);
-            }
-            catch(e) {
-                console.error("Failed to load autosave data:", e);
-                await loadDefaultData();
-            }
-        }
-
-        if(autosave) {
-            loadAutosaveData();
-        }
-        else {
-            loadDefaultData();
-        }
-
-        return () => {
-            clearInterval(saveHandle);
-        };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        loadDefaultData();
     }, [])
 
     function exportFiles() {
@@ -189,7 +142,7 @@ function OsegEditor() {
         return (
             <div>
                 <button className="RedButton" onClick={() => setIsPlaying(false)}>Stop Playing</button>
-                <Game injectedData={data} injectedLogic={logic} injectedMapSvg={mapSvg}></Game>
+                <Game injectedCss={customCss} injectedData={data} injectedLogic={logic} injectedMapSvg={mapSvg}></Game>
             </div>
         )
     }
@@ -202,13 +155,12 @@ function OsegEditor() {
                 <button onClick={() => save()}>Save</button>
                 <button onClick={() => load()}>Load</button>
                 <button className="RedButton" onClick={() => loadDefaultData()}>Load Default</button>
-                {/*<button className={autosave ? "GreenButton" : "RedButton"} onClick={() => toggleAutosave()}>Autosave ({autosave ? "On" : "Off"})</button>*/}
                 <button className="GreenButton" onClick={() => setIsPlaying(true)}>Start Playing</button>
             </div>
             {lastSaved != -1 && <p className="LastSaved">Last saved: {new Date(lastSaved).toTimeString()}</p>}
             <PanelGroup direction="horizontal" id="group">
             <Panel className="Panel" id="left-panel">
-                <OsegLeftPanel mapSvg={mapSvg} setMapSvg={setMapSvg} setData={setData} setLogic={setLogic} setDataString={setDataString} dataString={dataString} logic={logic}></OsegLeftPanel>
+                <OsegLeftPanel customCss={customCss} setCustomCss={setCustomCss} mapSvg={mapSvg} setMapSvg={setMapSvg} setData={setData} setLogic={setLogic} setDataString={setDataString} dataString={dataString} logic={logic}></OsegLeftPanel>
             </Panel>
             <PanelResizeHandle className="ResizeHandle" id="resize-handle" />
             <Panel className="Panel" id="right-panel">
