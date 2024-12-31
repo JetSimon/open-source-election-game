@@ -1,0 +1,19 @@
+.About {
+    width: 50%;
+    margin: auto;
+    text-align: left;
+}
+
+.About > h1, .About > h2 {
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .About {
+        width: 90%;
+    }
+}
+
+.AboutBold {
+    font-weight: bold;
+}
