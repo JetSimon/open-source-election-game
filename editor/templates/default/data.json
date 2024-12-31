@@ -10,7 +10,8 @@
         "bottomBannerTextColor": "#000000",
         "primaryGameWindowTextColor": "#000000",
         "secondaryGameWindowTextColor": "#000000",
-        "advisorImage": "https://i.imgur.com/Io0dZ5g.png"
+        "advisorImage": "https://i.imgur.com/Io0dZ5g.png",
+        "quote" : ""
     },
     "hasStateVisits": true,
     "scenarioName": "TCT Rip Off",
