@@ -137,7 +137,7 @@ class StateController {
         }
 
         let highestCandidateOpinion = this.getOpinionForCandidate(highestCandidate.getId());
-        highestCandidateOpinion = Math.pow(Math.abs(highestCandidateOpinion - 0.5), 0.25);
+        highestCandidateOpinion = Math.pow(Math.abs(highestCandidateOpinion - 0.5), 0.10);
 
         const candidateColorRgb = hexToRgb(highestCandidate.model.color);
 
