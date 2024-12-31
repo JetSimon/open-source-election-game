@@ -292,6 +292,19 @@ function onAnswerPicked(engine, answerPicked) {
         engine.insertNewQuestionNext(question);
     }
 
+    // Change theme back after the Talmadge question
+    if((ans == 4171 || ans == 4172 || ans == 4173 || ans == 16433 || ans == 16572 || ans == 16571 || ans == 16570 )){
+        engine.setNewBackgroundImage("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8PDxUPDw8VDw8PDw8PFQ8PDxUPDw8PFRUWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLi0BCgoKDQ0NDg0NDysZFRkrKysrKys3LSsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQIH/8QAGhABAQEAAwEAAAAAAAAAAAAAAAERodHwYf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A4sioAigIAAACCgIAAAAAAogKAAABgQABYApAAMAAAQABAAAARQBAAAAFARQAAAF0BAUEFAMABc+cAAAgGgAgpAQVAAAAARUUAQBQ0AAAAAAAWAAqEBoQAAARUAAARUAAAAAAAoAIKAAABoAAAqKACgYAAAAACUAAAEAgAAAAAAAAAAAuIALiAKigAACgFFQAEAAARUAAADBFABABVABAAAAFEUAAFExQAAAAEVAAAAQAAABAAAAVQAQVAFBAFAAFBBZAAAFQAAQAAAABAQAAAAAFANAAABdARQABQRUUFEAAAEAAABFQAAABAAAAUAAAABQA1FAAAVFBcEwAAARUAAARUBUAAACgAAAAAAAAAoUABQRQBQAQVAQAAABFQAAAAAAAAAAAAFEAUAAAFEUGhMARFAQVAAAEUBAAAAAAAAAAAAUAEVFAABTABc9oCiAICFAEFAQAAAAQFBAUEBQAUQAVFAAAVLSAqoAuqzooIqIAACAAKgAAAIAoYAigAAAAKIAoAGAAqsqCgAlABlaAIoARKABEAItAEVAFQAUQBqJOgBSIAKAAgCxQBQFH/9k=");
+        engine.setNewHeaderImage("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Flag_of_South_Dakota_%281963%E2%80%931992%29.svg/2560px-Flag_of_South_Dakota_%281963%E2%80%931992%29.svg.png");
+
+        engine.setNewPlayerCandidateImage("https://i.imgur.com/doCp5DY.png");
+        engine.setNewPlayerCandidateName("", "McGovern");
+
+        engine.setNewRunningMateImage("https://i.imgur.com/P88o71J.png");
+        engine.setNewRunningMateName("", "For Senate");
+
+    }
+
     // If the answer picked is one of the ones with this id, change the candidate image
     if ((ans == 4224 || ans == 4225 || ans == 4226 || ans == 4227)) {
         engine.setNewPlayerCandidateImage("https://i.imgur.com/rvcKjPE.png");

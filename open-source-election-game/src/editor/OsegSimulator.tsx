@@ -192,6 +192,7 @@ function OsegSimulator(props: OsegSimulatorProps) {
                 </select>
             }
 
+            <button onClick={() => simulateResults()}>Simulate {numberOfSimulations} Times</button>
             
             {averageResult != null && <div><h2>Average Result</h2><FinalResults results={averageResult} theme={theme}></FinalResults></div>}
 
@@ -200,8 +201,6 @@ function OsegSimulator(props: OsegSimulatorProps) {
             {worstResult != null && <div><h2>Worst Result</h2><FinalResults results={worstResult} theme={theme}></FinalResults></div>}
             
             {allResults.length > 0 && getAllResults()}
-
-            <button onClick={() => simulateResults()}>Simulate {numberOfSimulations} Times</button>
         </div>
     );
 }

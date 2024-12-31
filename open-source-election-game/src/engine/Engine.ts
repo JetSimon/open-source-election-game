@@ -9,7 +9,8 @@ import QuestionModel from "./models/QuestionModel";
 import CandidateModel from "./models/CandidateModel";
 import ThemeModel from "./models/ThemeModel";
 
-const tuningMultiplier = (x: number) => 1 * x;
+// Just used when debugging/trying to see if more extreme answers help more
+const tuningMultiplier = (x: number) => Math.pow(x, 3);
 
 /**
  * Controls which part of the game the player is in
@@ -273,25 +274,29 @@ class Engine {
         }
 
         for (const answerEffect of selectedAnswer.answerEffects) {
+
+            let answerAmount = answerEffect.amount;
+            answerAmount = tuningMultiplier(answerAmount);
+
             try {
                 const answerEffectType: AnswerEffectType = AnswerEffectType[answerEffect.answerEffectType as keyof typeof AnswerEffectType];
                 if (answerEffectType == AnswerEffectType.Global) {
-                    this.scenarioController.changeCandidateGlobalModifier(answerEffect.candidateId, tuningMultiplier(answerEffect.amount));
+                    this.scenarioController.changeCandidateGlobalModifier(answerEffect.candidateId, answerAmount);
                 }
                 else if (answerEffectType == AnswerEffectType.Issue) {
                     const candidate = this.scenarioController.getCandidateByCandidateId(answerEffect.candidateId);
                     if(candidate != undefined && candidate != null) {
-                        candidate.changeIssueScore(answerEffect.issueId, tuningMultiplier(answerEffect.amount));
+                        candidate.changeIssueScore(answerEffect.issueId, answerAmount);
                     }
                     else {
-                        this.getPlayerCandidateController().changeIssueScore(answerEffect.issueId, tuningMultiplier(answerEffect.amount));
+                        this.getPlayerCandidateController().changeIssueScore(answerEffect.issueId, answerAmount);
                     }
                     
                 }
                 else if (answerEffectType == AnswerEffectType.State) {
                     const state = this.scenarioController.getStateControllerByStateId(answerEffect.stateId);
                     if(state != null) {
-                        state.changeCandidateStateModifier(answerEffect.candidateId, tuningMultiplier(answerEffect.amount));
+                        state.changeCandidateStateModifier(answerEffect.candidateId, answerAmount);
                     }
                     else {
                         console.error("When trying to apply effects, state not found with id", answerEffect.stateId);

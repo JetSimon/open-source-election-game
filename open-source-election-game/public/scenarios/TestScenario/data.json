@@ -18,7 +18,7 @@
     "scenarioImageUrl": "https://placecats.com/210/240",
     "candidates": [
         {
-            "startingGlobalMultiplier": 1,
+            "startingGlobalMultiplier": 1.4,
             "runningMateIds": [],
             "id": 131,
             "firstName": "James K.",
