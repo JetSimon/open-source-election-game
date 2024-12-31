@@ -31,6 +31,10 @@ function About() {
                 </ul>
             </p>
 
+            <h2>"This Site Doesn't Have As Many Features As CTS/NCT/etc!!!"</h2>
+
+            <p>Yeah, this site is more of a demo site for the OSEG engine itself. I'm working on my own site that uses OSEG that will have more features like achivements, more scenarios, etc. My dream is to have a website with accounts and easy user submitted scenarios.</p>
+
             <h2>Some Images</h2>
 
             <div className="AboutImage">
