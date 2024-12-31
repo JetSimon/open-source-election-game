@@ -1,5 +1,7 @@
 import "./About.css"
 
+import aboutEditor from "../assets/about-editor.png";
+
 function About() {
     return (
         <div className="About">
@@ -14,6 +16,7 @@ function About() {
         
             <h2>Why Do I Care As a Player?</h2>
             <p>You will be able to play more complex election scenarios! OSEG allows creators direct access to the source code, which makes it much easier to add complex systems. OSEG was also built from the ground up with the idea of custom endings and CYOA in mind. The data is much more organized and easier to edit.</p>
+            <p>Additionally, OSEG has been built with mobile in mind. This means the game plays/looks good on mobile!</p>
 
             <h2>Why Do I Care as a Modder?</h2>
             <p>
@@ -27,6 +30,14 @@ function About() {
                     <li><span className="AboutBold">Simulate 500 games at once and see the results!</span> In the OSEG editor there is a tab called Simulation and it gives you the average, best, and worst results after playing automatically 500 times. This makes balancing a breeze.</li>
                 </ul>
             </p>
+
+            <h2>Some Images</h2>
+
+            <div className="AboutImage">
+                <img src={aboutEditor}></img>
+                <p>A picture of the OSEG editor with integrated coding and live map view!</p>
+            </div>
+            
 
         </div>
     )

@@ -17,3 +17,24 @@
 .AboutBold {
     font-weight: bold;
 }
+
+.AboutImage {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    margin: 16px;
+}
+
+.AboutImage > p {
+    font-size: small;
+    margin:0;
+    padding: 0;
+    text-align: center;
+    color: grey;
+    font-style: italic;
+}
+
+.AboutImage > img {
+    width: 75%;
+    margin: auto;
+}
