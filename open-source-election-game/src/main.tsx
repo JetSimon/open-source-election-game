@@ -6,25 +6,25 @@ import ScenarioLoader from "./website/ScenarioLoader";
 import OsegEditor from "./editor/OsegEditor";
 
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider
 } from 'react-router-dom';
 import Layout from './Layout.tsx';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     element: <Layout></Layout>,
     children: [
       {
-        path: "/open-source-election-game",
+        path: "/",
         element: <ScenarioLoader></ScenarioLoader>
       },
       {
-        path: "/open-source-election-game/editor",
+        path: "/editor",
         element: <OsegEditor></OsegEditor>
       },
       {
-        path: "/open-source-election-game/about",
+        path: "/about",
         element: <About></About>
       }
     ]

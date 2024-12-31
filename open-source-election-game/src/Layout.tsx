@@ -9,16 +9,16 @@ function Layout() {
         OSEG
         </a>
         <div>
-        <Link to="/open-source-election-game/about">About</Link>
+        <Link to="/about">About</Link>
         </div>
         <div>
-        <Link to="/open-source-election-game/">Game</Link>
+        <Link to="/">Game</Link>
         </div>
         <div>
-        <Link to="/open-source-election-game/editor">Editor</Link>
+        <Link to="/editor">Editor</Link>
         </div>
         <div>
-        <a href="/open-source-election-game/doc">Doc</a>
+        <a href="/doc">Doc</a>
         </div>
         <div>
         <a href="https://github.com/JetSimon/open-source-election-game">Source Code</a>
