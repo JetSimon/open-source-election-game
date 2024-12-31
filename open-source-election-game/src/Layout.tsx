@@ -18,7 +18,7 @@ function Layout() {
         <Link to="/editor">Editor</Link>
         </div>
         <div>
-        <a href="/doc">Doc</a>
+        <a href="/open-source-election-game/doc">Doc</a>
         </div>
         <div>
         <a href="https://github.com/JetSimon/open-source-election-game">Source Code</a>
