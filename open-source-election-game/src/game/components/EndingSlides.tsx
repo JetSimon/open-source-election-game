@@ -31,7 +31,7 @@ function EndingSlides(props: EndingSlidesProps) {
 
     return (
         <div style={{ backgroundColor: theme.primaryGameWindowColor, color: theme.primaryGameWindowTextColor }} className="EndingSlides">
-            <h2 dangerouslySetInnerHTML={{__html:endingSlide.endingHeader}}></h2>
+            <h2 className="EndingSlideHeader">{endingSlide.endingHeader}</h2>
             <div className="EndingSlide">
                 <img className="EndingSlideImage" src={endingSlide.imageUrl}></img>
                 <div className="EndingSlideDescription" dangerouslySetInnerHTML={{__html:endingSlide.endingText}}></div>

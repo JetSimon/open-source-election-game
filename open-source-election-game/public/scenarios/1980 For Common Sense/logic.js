@@ -15,17 +15,17 @@ function createEnding(engine, results) {
                 },
                 {
                     imageUrl: "https://i.imgur.com/ZfyH9EP.png",
-                    endingText: "<p><q>What is Americans for Common Sense?</q> I ventured. I didn't feel the need to do any introductions. This was the main event.<br><br><q>We are an organization that seeks to meet head-on the dangerous marriage of political zealots and religious extremists who impose their beliefs on America.</q> McGovern stated matter of factly, offering no more information than what he deemed necessary.<br><br><q>Why common sense?</q> I countered.<br><br><q>I believe it's something sorely needed. The single-issue interest groups are distorting the conversation mak-</q><br><br><q>And how is this different from organizations like, say, NCPAC?</q> I interrupted.</p>",
+                    endingText: "<p>\"What is Americans for Common Sense?\" I ventured. I didn't feel the need to do any introductions. This was the main event.<br><br>\"We are an organization that seeks to meet head-on the dangerous marriage of political zealots and religious extremists who impose their beliefs on America.\" McGovern stated matter of factly, offering no more information than what he deemed necessary.<br><br>\"Why common sense?\" I countered.<br><br>\"I believe it's something sorely needed. The single-issue interest groups are distorting the conversation mak-\"<br><br>\"And how is this different from organizations like, say, NCPAC?\" I interrupted.</p>",
                     endingHeader: "Vote Your Conscience"
                 },
                 {
                     imageUrl: "https://i.imgur.com/ZfyH9EP.png",
-                    endingText: "<p>McGovern's mouth stopped moving as soon as mine moved. When I finished, he concluded his thought by using my question, <q>A group like NCPAC or Young Americans for Freedom blatantly seek to distort the conversation through misdirection, exaggeration, and narrowing discussion onto one topic where they feel confident they can win. The goal of Americans for Common Sense is to speak the truth and to give candidates an ally against these super-groups</q><br><br><q>Candidates like yourself last year?</q><br><br>A slight smile indicative of recollecting a bygone time, <q>I suppose you could say that, yes.</q><br><br><q>I understand your time is focused on this organization you've founded, but the burning question, to me at least, is if 1980 was the last chance for people to vote for you?</q></p>",
+                    endingText: "<p>McGovern's mouth stopped moving as soon as mine moved. When I finished, he concluded his thought by using my question, \"A group like NCPAC or Young Americans for Freedom blatantly seek to distort the conversation through misdirection, exaggeration, and narrowing discussion onto one topic where they feel confident they can win. The goal of Americans for Common Sense is to speak the truth and to give candidates an ally against these super-groups\"<br><br>\"Candidates like yourself last year?\"<br><br>A slight smile indicative of recollecting a bygone time, \"I suppose you could say that, yes.\"<br><br>\"I understand your time is focused on this organization you've founded, but the burning question, to me at least, is if 1980 was the last chance for people to vote for you?\"</p>",
                     endingHeader: "Vote Your Conscience"
                 },
                 {
                     imageUrl: "https://i.imgur.com/ZfyH9EP.png",
-                    endingText: "<p>The question made him pause, and off went his eyes to the right-hand corner of the room, as if there was a thesaurus for him to refer to. <q>We are probably ten to twelve years behind where the conservatives are. My focus at this time is on finding coordinators for every state, full-time organizers in the big cities, and to build a million person strong mailing list.</q> He paused for a second, but only a second, as he loaded his zinger, <q>Those are the only votes I'm looking for at this time.</q><br><br>I grinned, enjoying our rapport, <q>That sounds like a non-answer.</q> He offered only a shrug. <q>Let me put it this way,</q> I continued, <q>which state is your top priority right now?</q><br><br>Up went his eyebrows and on crept the smile, <q>Iowa.</q><br><br>Hank Dylan in <em>Rolling Stone</em> magazine. For Common Sense published 2/25/81.</p>",
+                    endingText: "<p>The question made him pause, and off went his eyes to the right-hand corner of the room, as if there was a thesaurus for him to refer to. \"We are probably ten to twelve years behind where the conservatives are. My focus at this time is on finding coordinators for every state, full-time organizers in the big cities, and to build a million person strong mailing list.\" He paused for a second, but only a second, as he loaded his zinger, \"Those are the only votes I'm looking for at this time.\"<br><br>I grinned, enjoying our rapport, \"That sounds like a non-answer.\" He offered only a shrug. \"Let me put it this way,\" I continued, \"which state is your top priority right now?\"<br><br>Up went his eyebrows and on crept the smile, \"Iowa.\"<br><br>Hank Dylan in <em>Rolling Stone</em> magazine. For Common Sense published 2/25/81.</p>",
                     endingHeader: "Vote Your Conscience"
                 }
             ]
@@ -51,8 +51,8 @@ function createEnding(engine, results) {
             slides: [
                 {
                     imageUrl: "https://i.imgur.com/Z4KR7JE.png",
-                    endingText: "<p>You've been no stranger to national embarrassment and suffocating loss, but, to your surprise, the pain is magnified by how you've narrowed the result down. Instead of a mid-low 30's wipe out, you managed to outperform expectations. This campaign was unlike any other you endured. The vitriol, the conspiracy, the hopeless-- it's certainly a new day in America. Yet, you fought to see that sun rise. Tumultuous as it was, when they record the history of this time- the end of the age of the liberal Democrats- they will chronicle your strength to continue in the face of impossible odds.</p><p>James Abdnor will go on to serve a single, largely unremarkable, term in the Senate; only to one day be replaced by a man the Rapid City Journal will call, <q>the McGovern of his generation.</q> You will contest higher office once more to no avail. But your service is not over. You will go on to serve in the administrations of Democratic and Republican presidents alike, continuing your lifelong struggle to end hunger. Long after you're gone, many will look at your life and surmise you to be a failure. But, in your heart, you've never failed.<p>",
-                    endingHeader: "<q>Abdnor won't win without a helluva fight. I haven't been in politics this long to peter out now.</q>"
+                    endingText: "<p>You've been no stranger to national embarrassment and suffocating loss, but, to your surprise, the pain is magnified by how you've narrowed the result down. Instead of a mid-low 30's wipe out, you managed to outperform expectations. This campaign was unlike any other you endured. The vitriol, the conspiracy, the hopeless-- it's certainly a new day in America. Yet, you fought to see that sun rise. Tumultuous as it was, when they record the history of this time- the end of the age of the liberal Democrats- they will chronicle your strength to continue in the face of impossible odds.</p><p>James Abdnor will go on to serve a single, largely unremarkable, term in the Senate; only to one day be replaced by a man the Rapid City Journal will call, \"the McGovern of his generation.\" You will contest higher office once more to no avail. But your service is not over. You will go on to serve in the administrations of Democratic and Republican presidents alike, continuing your lifelong struggle to end hunger. Long after you're gone, many will look at your life and surmise you to be a failure. But, in your heart, you've never failed.<p>",
+                    endingHeader: "\"Abdnor won't win without a helluva fight. I haven't been in politics this long to peter out now.\""
                 }
             ]
         }
@@ -65,7 +65,7 @@ function createEnding(engine, results) {
                 {
                     imageUrl: "https://i.imgur.com/GIK8vLW.png",
                     endingText: "<p>They never do learn do they? You can't always count on George McGovern to win, but you'd be a fool to bet against his ability to defy the odds. The combined forces of the New Right could not unseat you; vindicated are all of your perceived weaknesses that you know to be strengths. Battle-scarred, bloody, and bruised, you emerge from the wreckage on November 5th, alive-- unlike most other Democrats.</p><p>In your fourth and final term, you will be a strident opponent of the Reagan administration at just about every avenue. The Freshman Class of 1981, boisterous and eager to finally operate the levers of power, will endure your orations on the necessity of SALT II and normalizing relations with Cuba. As one of the last survivors of a dying breed, the uptick in media appearances and requests for interviews is noticeable; Terry Dolan and NCPAC may find they like this outcome better than the alternative. Sure, they're a vote down in the Senate, but you are a juicy target for fundraising materials. The Reverend Jesse Jackson will suggest you'd make an apt Secretary of State. Of course, the Jackson administration will never come to be, but you will continue to serve as a national icon for liberalism until your passing.<p>",
-                    endingHeader: "<q>It wouldn't be the first time that I was that far behind and won. They always overdo the attack, and I always work pretty hard in a campaign.</q>"
+                    endingHeader: "\"It wouldn't be the first time that I was that far behind and won. They always overdo the attack, and I always work pretty hard in a campaign.\""
                 }
             ]
         }
@@ -116,7 +116,7 @@ function onAnswerPicked(engine, answerPicked) {
         $(".container")[0].style.backgroundColor = "#FFBF00" 
         $("#game_window")[0].style.borderColor = "#FFBF00" 
         quotes = [
-            "<em><q>The problem with trying to leave politics is that once it gets in your blood, it can be like a narcotic.</q></em>"
+            "<em>\"The problem with trying to leave politics is that once it gets in your blood, it can be like a narcotic.\"</em>"
         ]
         customquote = quotes[Math.floor((Math.random() * quotes.length))
         ]
@@ -204,7 +204,7 @@ function onAnswerPicked(engine, answerPicked) {
                 {
                     "id": 4205,
                     "description": "There's really nothing more myself or anyone else can do at this point to coax Representative Abdnor onto the debate stage. A man pursuing the office of Senator cannot be one who ducks challenges; debates allow the people of this state to hear the candidates articulate their positions, but also to see them as men and get a feel for their character. The public must be aware of his refusal, and the best way to do that is in speeches and advertisements. ",
-                    "feedback": "<q>Only two politicians have ever refused to debate George McGovern--</q> the full-page newspaper advertisement reads, <q>Richard Nixon and Jim Abdnor.</q>",
+                    "feedback": "\"Only two politicians have ever refused to debate George McGovern--\" the full-page newspaper advertisement reads, \"Richard Nixon and Jim Abdnor.\"",
                     "answerEffects": [
                         {
                             "answerEffectType": "Global",

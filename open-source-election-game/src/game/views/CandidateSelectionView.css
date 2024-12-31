@@ -18,7 +18,7 @@
 @media only screen and (max-width: 600px) {
 
     .CandidateSelectionBox {
-        width: 90%!important;
+        width: 80%!important;
     }
 
     .CandidateInfoArea {
@@ -28,6 +28,10 @@
     .CandidateDescription {
         text-align: center!important;
         margin:auto;
+    }
+
+    .ElectionSelectionBox {
+        width: 80%!important;
     }
 
 }

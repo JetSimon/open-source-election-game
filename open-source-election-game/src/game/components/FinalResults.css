@@ -16,7 +16,6 @@
     border-collapse: collapse;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 400px;
     text-align: left;
     border: solid 1px #dddddd;
 }
@@ -29,4 +28,11 @@
 .ResultsTable tbody tr:nth-of-type(even) {
     background-color: rgba(0, 0, 0, 0.132);
     background-blend-mode:overlay;
+}
+
+@media only screen and (max-width: 600px) {
+    .ResultsTable {
+        font-size: xx-small;
+
+    }
 }

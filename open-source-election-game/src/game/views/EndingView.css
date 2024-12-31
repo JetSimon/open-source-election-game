@@ -26,6 +26,16 @@
     .EndingSlide {
         flex-direction: column;
     }
+
+    .EndingSlideHeader {
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: large!important;
+    }
+
+    .EndingSlideDescription {
+        margin: auto;
+    }
 }
 
 .EndingSlideImage {

@@ -18,7 +18,7 @@
 @media only screen and (max-width: 600px) {
 
     .ElectionSelectionBox {
-        width: 90%!important;
+        width: 80%!important;
     }
 
     .ElectionInfoArea {
@@ -29,6 +29,10 @@
         text-align: center!important;
         margin:auto;
     }
+
+    .ElectionInfoArea > img {
+        max-width: 80%;
+    }    
 
 }
 
