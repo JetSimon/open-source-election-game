@@ -1,5 +1,6 @@
 .CandidateSelection {
     min-height: 100vh;
+    max-width: 75%;
 }
 
 .CandidateSelectionBox {
@@ -17,6 +18,11 @@
 
 @media only screen and (max-width: 600px) {
 
+    .CandidateSelection {
+        font-size: small;
+        max-width: auto!important;
+    }
+
     .CandidateSelectionBox {
         width: 80%!important;
     }
@@ -28,6 +34,11 @@
     .CandidateDescription {
         text-align: center!important;
         margin:auto;
+        width: 100%!important;
+    }
+
+    .CandidateInfoArea > img {
+        width: 50%;
     }
 
 }

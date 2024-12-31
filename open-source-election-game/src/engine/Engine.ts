@@ -444,6 +444,22 @@ class Engine {
 
     /**
      * @category CYOA Utility Functions
+     * @param quote 
+     */
+    setScenarioName(scenarioName : string) {
+        this.scenarioController.model.scenarioName = scenarioName;
+    }
+
+    /**
+     * @category CYOA Utility Functions
+     * @param quote 
+     */
+    setQuote(quote : string) {
+        this.scenarioController.theme.quote = quote;
+    }
+
+    /**
+     * @category CYOA Utility Functions
      * @param url 
      */
     setNewBackgroundImage(url : string) {

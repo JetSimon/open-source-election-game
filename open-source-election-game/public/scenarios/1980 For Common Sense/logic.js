@@ -110,17 +110,13 @@ function onAnswerPicked(engine, answerPicked) {
         engine.setNewRunningMateImage("https://i.imgur.com/cKRqhiK.jpeg");
         engine.setNewRunningMateName("", "For ?");
 
+        engine.setQuote("\"The problem with trying to leave politics is that once it gets in your blood, it can be like a narcotic.\"");
+        engine.setScenarioName("The Devil Went Down to Georgia");
         /*
         nct_stuff.themes[nct_stuff.selectedTheme].coloring_window = "#A52A2A" 
         nct_stuff.themes[nct_stuff.selectedTheme].coloring_title = "#A9A9A9" 
         $(".container")[0].style.backgroundColor = "#FFBF00" 
         $("#game_window")[0].style.borderColor = "#FFBF00" 
-        quotes = [
-            "<em>\"The problem with trying to leave politics is that once it gets in your blood, it can be like a narcotic.\"</em>"
-        ]
-        customquote = quotes[Math.floor((Math.random() * quotes.length))
-        ]
-        corrr=`\n<h2>The Devil Went Down to Georgia</h2><font id='wittyquote' size='3' color='white'><em>`+customquote+`</em></font>`
         */
     }
 
@@ -134,6 +130,9 @@ function onAnswerPicked(engine, answerPicked) {
 
         engine.setNewRunningMateImage("https://studentorgs.kentlaw.iit.edu/fba/wp-content/uploads/sites/7/2019/07/FBA-seal.png");
         engine.setNewRunningMateName("", "Esquire");
+
+        engine.setScenarioName("NCPAC vs. McGovern et al.");
+        engine.setQuote("\"From political intimidation and conspiracy trials to the Constitution and the Bill of Rights, come home, America!\"");
 
         const question = {
             "id": 16569,
@@ -303,6 +302,8 @@ function onAnswerPicked(engine, answerPicked) {
         engine.setNewRunningMateImage("https://i.imgur.com/P88o71J.png");
         engine.setNewRunningMateName("", "For Senate");
 
+        engine.setScenarioName("1980: For Common Senese");
+        engine.setQuote("\"Even friends will admit McGovern commands the support of a majority of his constituents for only one day every six years.\"")
     }
 
     // If the answer picked is one of the ones with this id, change the candidate image

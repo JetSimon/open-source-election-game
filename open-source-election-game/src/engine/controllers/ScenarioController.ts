@@ -26,7 +26,8 @@ class ScenarioController {
             secondaryGameWindowTextColor: "#000000",
             bottomBannerBackgroundColor: "#000000",
             bottomBannerTextColor: "#000000",
-            advisorImage: ""
+            advisorImage: "",
+            quote: ""
         };
     }
 

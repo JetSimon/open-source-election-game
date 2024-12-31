@@ -9,6 +9,7 @@ const engine = new Engine();
 import ScenarioModel from "../engine/models/ScenarioModel";
 
 import "./Game.css"
+import QuoteHeader from "./components/QuoteHeader";
 
 interface GameProps {
     injectedData : ScenarioModel;
@@ -58,6 +59,7 @@ function Game(props : GameProps) {
     return (
         <div style={{backgroundColor:theme.backgroundColor, backgroundImage:backgroundUrl}} className="Game">
             <img className="TopBanner" src={theme.headerImageUrl}></img>
+            <QuoteHeader engine={engine} theme={theme}></QuoteHeader>
             {getViewFromGameState()}
         </div>
     );

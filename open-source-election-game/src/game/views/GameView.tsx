@@ -92,7 +92,8 @@ function GameView(props: GameViewProps) {
     engine.nextQuestion();
     setCurrentQuestionIndex(engine.currentQuestionIndex);
 
-    setTheme(engine.scenarioController.theme);
+    // Force theme to update after a question is answered
+    setTheme(JSON.parse(JSON.stringify(engine.scenarioController.theme)));
 
     if (engine.isGameOver()) {
       alert("Game over!");

@@ -1,5 +1,6 @@
 .ElectionSelection {
     min-height: 100vh;
+    max-width: 75%;
 }
 
 .ElectionSelectionBox {
@@ -17,6 +18,11 @@
 
 @media only screen and (max-width: 600px) {
 
+    .ElectionSelection {
+        font-size: small;
+        max-width: auto!important;
+    }
+
     .ElectionSelectionBox {
         width: 80%!important;
     }
@@ -27,6 +33,7 @@
 
     .ElectionDescription {
         text-align: center!important;
+        width: 100%!important;
         margin:auto;
     }
 

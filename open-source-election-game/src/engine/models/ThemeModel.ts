@@ -9,6 +9,7 @@ interface ThemeModel {
     bottomBannerBackgroundColor : string;
     bottomBannerTextColor : string;
     advisorImage : string;
+    quote : string;
 }
 
 export default ThemeModel;
