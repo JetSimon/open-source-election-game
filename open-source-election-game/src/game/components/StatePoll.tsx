@@ -53,7 +53,7 @@ function StatePoll(props: StatePollProps) {
             issue.id
           );
           // Remap from -1 to 1 -> 0 -> (issue stance length - 1)
-          const remappedIssueScore = Math.round(
+          const remappedIssueScore = Math.floor(
             ((issueScore + 1) / 2) * (issue.stances.length - 1)
           );
           const stance = issue.stances[remappedIssueScore];
