@@ -43,6 +43,16 @@ html, body, .App, #root {
   font-weight: bold;
 }
 
+@media only screen and (max-width: 600px) {
+  .Logo {
+    display: none;
+  }
+
+  .HeaderNav {
+    font-size: small;
+  }
+}
+
 button {
   border: 1px solid rgb(24, 23, 23);
 }
