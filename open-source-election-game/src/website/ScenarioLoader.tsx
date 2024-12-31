@@ -4,7 +4,7 @@ import Game from "../game/Game";
 import "./ScenarioLoader.css";
 import ScenarioBox from "../game/components/ScenarioBox";
 
-const scenarioNames = ["TestScenario", "1980 For Common Sense"];
+const scenarioNames = ["1932", "1980 For Common Sense"];
 
 function ScenarioLoader() {
 
