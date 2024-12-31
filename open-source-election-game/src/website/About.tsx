@@ -1,11 +1,16 @@
 import "./About.css"
 
 import aboutEditor from "../assets/about-editor.png";
+import gore from "../assets/gore.jpg";
 
 function About() {
     return (
         <div className="About">
             <h1>About</h1>
+
+            <div className="AboutImage">
+                <img src={gore}></img>
+            </div>
 
             <h2>What is OSEG?</h2>
             <p>OSEG (Open Source Election Game) is an open source game engine heavily inspired by the browswer based game "The Campaign Trail" (or, TCT) originally made by Jet Simon (the person writing this).</p>
