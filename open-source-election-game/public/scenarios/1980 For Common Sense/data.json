@@ -2,7 +2,7 @@
     "credits": "by Komnothun",
     "candidates": [
         {
-            "startingGlobalMultiplier": 1.7,
+            "startingGlobalMultiplier": 2.0,
             "runningMateIds": [16064],
             "id": 131,
             "firstName": "George",
