@@ -115,12 +115,15 @@ function OsegSimulator(props: OsegSimulatorProps) {
 
             tempEngine.loadScenario(data);
             tempEngine.setScenarioSide(sideIndex, selectedRunningMate);
+            const candidateId = tempEngine.getPlayerCandidateController().getId();
 
             while(!tempEngine.isGameOver()) {
                 const question = tempEngine.getCurrentQuestion();
                 if(question == null) break;
                 const answer = question.answers[Math.floor(question.answers.length * Math.random())]
                 tempEngine.applyAnswer(answer);
+                const states = tempEngine.scenarioController.getStates();
+                states[Math.floor(Math.random() * states.length)].applyVisitBonus(candidateId);
                 tempEngine.nextQuestion();
             }
 

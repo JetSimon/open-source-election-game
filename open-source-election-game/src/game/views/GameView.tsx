@@ -115,8 +115,7 @@ function GameView(props: GameViewProps) {
     }
 
     engine.waitingToPickState = false;
-    // Apply state visit bonus
-    state.changeCandidateStateModifier(engine.getPlayerCandidateController().getId(), 0.01);
+    state.applyVisitBonus(engine.getPlayerCandidateController().getId());
     setShowMap(false);
   }
 

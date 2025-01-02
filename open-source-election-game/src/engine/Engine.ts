@@ -10,7 +10,7 @@ import CandidateModel from "./models/CandidateModel";
 import ThemeModel from "./models/ThemeModel";
 
 // Just used when debugging/trying to see if more extreme answers help more
-const tuningMultiplier = (x: number) => Math.pow(x, 3);
+const tuningMultiplier = (x: number) => x;//Math.pow(x, 3);
 
 /**
  * Controls which part of the game the player is in

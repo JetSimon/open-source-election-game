@@ -5,6 +5,7 @@ import ScenarioController from "./ScenarioController";
 import CandidateController from "./CandidateController";
 import { Engine } from "../Engine";
 import { hexToRgb, rgbToHex } from "../../utils/ColorUtils";
+import { lerp } from "../../utils/MathUtils";
 
 class StateController {
     model: StateModel;
@@ -22,6 +23,10 @@ class StateController {
 
     getId() {
         return this.model.id;
+    }
+
+    applyVisitBonus(candidateId : number) {
+        this.changeCandidateStateModifier(candidateId, 0.01);
     }
 
     addCandidates(candidates: CandidateController[]) {
@@ -69,31 +74,27 @@ class StateController {
 
             let opinion = 0;
             for (const issue of scenario.getIssues()) {
-                const candidateWeight = ((candidate.issueScores.getIssueScoreForIssue(issue.id) + 1) / 2) * candidate.issueScores.getWeightForIssue(issue.id);
-                const stateWeight = ((this.issueScores.getIssueScoreForIssue(issue.id) + 1) / 2) * this.issueScores.getWeightForIssue(issue.id);
-                const differenceOfWeight = Math.pow(Math.abs(candidateWeight - stateWeight), 2);
-                opinion -= differenceOfWeight;
+                let candidateScore = candidate.issueScores.getIssueScoreForIssue(issue.id);
+                candidateScore = candidateScore * Math.abs(candidateScore);
+
+                let stateScore = this.issueScores.getIssueScoreForIssue(issue.id);
+                stateScore = stateScore * Math.abs(stateScore);
+                const stateWeight = this.issueScores.getWeightForIssue(issue.id);
+                
+                opinion += 1.225 - Math.abs((candidateScore - stateScore) * stateWeight);
             }
+
+            opinion *= this.getCandidateStateModifier(candidate.getId());
+            opinion *= scenario.getGlobalModifierForCandidate(candidate.getId());
+            opinion *= this.getRngMultiplier(rng);
+
+            opinion = Math.max(0, opinion);
 
             this.opinions.set(candidate.getId(), opinion);
         }
 
-        const opinions = Array.from(this.opinions.values()).sort();
-        const minOpinion = opinions[0];
-        const maxOpinion = opinions[opinions.length - 1];
-        let totalOpinion = sumNumberArray(opinions);
         const candidates = scenario.getCandidates();
-        for (const candidate of candidates) {
-            const normed = (this.getOpinionForCandidate(candidate.getId()) - minOpinion) / maxOpinion;
-            let newOpinion = totalOpinion == 0 ? 1.0 / candidates.length : normed;
-            newOpinion = 1.0 - newOpinion; // Because we calculate distance between issues
-            newOpinion *= this.getCandidateStateModifier(candidate.getId());
-            newOpinion *= scenario.getGlobalModifierForCandidate(candidate.getId());
-            newOpinion *= this.getRngMultiplier(rng);
-            this.opinions.set(candidate.getId(), newOpinion);
-        }
-
-        totalOpinion = sumNumberArray(Array.from(this.opinions.values()));
+        const totalOpinion = sumNumberArray(Array.from(this.opinions.values()));
         for (const candidate of candidates) {
             const newOpinion = totalOpinion == 0 ? 1.0 / candidates.length : this.getOpinionForCandidate(candidate.getId()) / totalOpinion;
             this.opinions.set(candidate.getId(), newOpinion);
@@ -136,21 +137,25 @@ class StateController {
             return "#000000";
         }
 
-        let highestCandidateOpinion = this.getOpinionForCandidate(highestCandidate.getId());
-        highestCandidateOpinion = Math.pow(Math.abs(highestCandidateOpinion - 0.5), 0.10);
+        const highestCandidateOpinion = this.getOpinionForCandidate(highestCandidate.getId());
+        const allOpinions = Array.from(this.opinions.values()).sort();
+        const secondHighestOpinion = allOpinions[allOpinions.length - 2];
 
         const candidateColorRgb = hexToRgb(highestCandidate.model.color);
+        
+        let majorityAmount = highestCandidateOpinion - secondHighestOpinion;
+        majorityAmount = Math.max(0.01, majorityAmount);
+        majorityAmount /= 0.1;
+        majorityAmount = Math.min(majorityAmount, 1.0);
 
         for (let i = 0; i < candidateColorRgb.length; i++) {
-            candidateColorRgb[i] = 255 * (1 - highestCandidateOpinion) + candidateColorRgb[i] * highestCandidateOpinion;
-        }
-
-        if (isHovered) {
-            for (let i = 0; i < candidateColorRgb.length; i++) {
+            candidateColorRgb[i] = lerp(candidateColorRgb[i], 255, majorityAmount);
+            if (isHovered) {
                 candidateColorRgb[i] *= 0.85 + (Math.sin(Date.now() / 200) * 0.05);
+                console.log(majorityAmount)
             }
         }
-
+        
         return rgbToHex(candidateColorRgb[0], candidateColorRgb[1], candidateColorRgb[2]);
     }
 }
