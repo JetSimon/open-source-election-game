@@ -7,6 +7,8 @@ import { Engine } from "../Engine";
 import { hexToRgb, rgbToHex } from "../../utils/ColorUtils";
 import { lerp } from "../../utils/MathUtils";
 
+const RUNNING_MATE_WEIGHT = 3;
+
 class StateController {
     model: StateModel;
     opinions: Map<number, number>;
@@ -65,7 +67,7 @@ class StateController {
         this.stateModifiers.set(candidateId, Math.max(0, this.getCandidateStateModifier(candidateId) + amount));
     }
 
-    update(scenario: ScenarioController, rng : number) {
+    update(scenario: ScenarioController, rng : number, runningMateMap : Map<number, number>) {
         for (const candidate of scenario.getCandidates()) {
 
             if (candidate.model.runningMate) {
@@ -82,6 +84,30 @@ class StateController {
                 const stateWeight = this.issueScores.getWeightForIssue(issue.id);
                 
                 opinion += 1.225 - Math.abs((candidateScore - stateScore) * stateWeight);
+
+                const candidateId = candidate.getId();
+                const runningMateId = runningMateMap.get(candidateId);
+                if(runningMateId != undefined) {
+                    const runningMate = scenario.getRunningMateControllerById(runningMateId);
+
+                    if(runningMate == undefined) {
+                        console.warn("Game thinks that candidate with id " + candidateId + " has running mate with id " + runningMateId + " but controller was not found");
+                        continue;
+                    }
+
+                    if(!runningMate.issueScores.hasIssue(issue.id)) {
+                        continue;
+                    }
+
+                    let mateScore = runningMate.issueScores.getIssueScoreForIssue(issue.id);
+                    mateScore = mateScore * Math.abs(mateScore);
+
+                    let stateScore = this.issueScores.getIssueScoreForIssue(issue.id);
+                    stateScore = stateScore * Math.abs(stateScore);
+                    const stateWeight = this.issueScores.getWeightForIssue(issue.id);
+                    
+                    opinion += RUNNING_MATE_WEIGHT * (1.225 - Math.abs((mateScore - stateScore) * stateWeight));
+                }
             }
 
             opinion *= this.getCandidateStateModifier(candidate.getId());
@@ -144,7 +170,7 @@ class StateController {
         const candidateColorRgb = hexToRgb(highestCandidate.model.color);
         
         let majorityAmount = highestCandidateOpinion - secondHighestOpinion;
-        majorityAmount = Math.max(0.01, majorityAmount);
+        majorityAmount = Math.max(0.015, majorityAmount);
         majorityAmount /= 0.1;
         majorityAmount = Math.min(majorityAmount, 1.0);
 

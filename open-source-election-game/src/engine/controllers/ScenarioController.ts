@@ -10,6 +10,7 @@ class ScenarioController {
     model: ScenarioModel = this.makeEmptyScenarioModel();
     stateControllers: StateController[] = [];
     candidateControllers: CandidateController[] = [];
+    runningMateControllers : CandidateController[] = [];
     issueScores: IssueScores = new IssueScores([]);
     globalModifiers: Map<number, number> = new Map<number, number>();
     questions: QuestionModel[] = [];
@@ -50,6 +51,8 @@ class ScenarioController {
         this.model = model;
         this.theme = this.model.theme;
         this.candidateControllers = this.model.candidates.filter((candidateModel) => !candidateModel.runningMate).map((candidateModel) => new CandidateController(candidateModel));
+        this.runningMateControllers = this.model.candidates.filter((candidateModel) => candidateModel.runningMate).map((candidateModel) => new CandidateController(candidateModel));
+        
         const toRemove = new Set();
         for (const candidateController of this.getCandidates()) {
             for (const issue of this.model.issues) {
@@ -116,6 +119,10 @@ class ScenarioController {
 
     getQuestions() {
         return this.questions;
+    }
+
+    getRunningMateControllerById(id : number) : CandidateController | undefined {
+        return this.runningMateControllers.filter((mate) => mate.getId() == id)[0];
     }
 }
 

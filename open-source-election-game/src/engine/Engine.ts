@@ -222,7 +222,20 @@ class Engine {
      */
     updateStates() {
         for (const stateController of this.scenarioController.stateControllers) {
-            stateController.update(this.scenarioController, this.getRngRange());
+
+            const runningMateMap = new Map();
+
+            const playerController = this.getPlayerCandidateController();
+            runningMateMap.set(playerController.getId(), this.runningMateId);
+            for(const candidate of this.scenarioController.getCandidates()) {
+                if(candidate != playerController) {
+                    if(candidate.model.runningMateIds.length > 0) {
+                        runningMateMap.set(candidate.getId(), candidate.model.runningMateIds[0]);
+                    }
+                }
+            }
+
+            stateController.update(this.scenarioController, this.getRngRange(), runningMateMap);
         }
     }
 
