@@ -96,11 +96,9 @@ function MapView(props: MapViewProps) {
         onMouseMove={onMouseMove}
         onClick={onClick}
         fill="currentColor"
-        width="800px"
-        height="500px"
         style={{
           color: "red",
-          stroke: "black",
+          stroke: "black"
         }}
       />
 
