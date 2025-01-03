@@ -175,7 +175,7 @@ class StateController {
         majorityAmount = Math.min(majorityAmount, 1.0);
 
         for (let i = 0; i < candidateColorRgb.length; i++) {
-            candidateColorRgb[i] = lerp(candidateColorRgb[i], 255, majorityAmount);
+            candidateColorRgb[i] = lerp(255, candidateColorRgb[i], majorityAmount);
             if (isHovered) {
                 candidateColorRgb[i] *= 0.85 + (Math.sin(Date.now() / 200) * 0.05);
                 console.log(majorityAmount)

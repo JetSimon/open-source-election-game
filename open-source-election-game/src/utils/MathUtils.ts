@@ -1,5 +1,5 @@
-function lerp(a : number, b : number, t : number) {
-    return (t * a) + ((1.0 - t) * b);
+function lerp(start : number, end : number, t : number) {
+    return (t * end) + ((1.0 - t) * start);
 }
 
 export {lerp};
