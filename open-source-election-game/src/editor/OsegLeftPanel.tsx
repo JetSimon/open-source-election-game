@@ -3,12 +3,17 @@ import { Editor } from "@monaco-editor/react";
 import { editor } from 'monaco-editor';
 import EnumNavBar from "./components/EnumNavBar";
 import ScenarioModel from "../engine/models/ScenarioModel";
+import StateModel from "../engine/models/StateModel";
+import { BulkStateFunction } from "./bulkMapComponents/BulkStateFunction";
+import AdjustCandidateStateModifier from "./bulkMapComponents/AdjustCandidateStateModifier";
+import AdjustStateIssueScore from "./bulkMapComponents/AdjustStateIssueScore";
 
 enum LeftNavBar {
     Data,
     Logic,
     Map,
-    CSS
+    CSS,
+    BulkMap
 }
 
 const leftNavBarValues = Object.keys(LeftNavBar).filter((item) => {
@@ -21,15 +26,17 @@ interface OsegLeftPanelProps {
     setDataString: (s: string) => void;
     setMapSvg: (url: string) => void;
     setCustomCss: (url: string) => void;
+    data : ScenarioModel;
     logic: string;
     dataString: string;
     mapSvg: string;
     customCss: string;
+    setBulkStateFunction : (f : BulkStateFunction) => void;
 }
 
 function OsegLeftPanel(props: OsegLeftPanelProps) {
 
-    const { setData, setLogic, setDataString, dataString, logic, mapSvg, setMapSvg, customCss, setCustomCss} = props;
+    const { data, setData, setLogic, setDataString, dataString, logic, mapSvg, setMapSvg, customCss, setCustomCss, setBulkStateFunction} = props;
 
     const [errorWithDataJson, setErrorWithDataJson] = useState<string>("");
     const [leftNavBar, setLeftNevBar] = useState<LeftNavBar>(LeftNavBar.Data);
@@ -136,8 +143,22 @@ function OsegLeftPanel(props: OsegLeftPanelProps) {
                 </div>
             );
         }
+        else if(leftNavBar == LeftNavBar.BulkMap) {
+            return (
+                <div>
+                    <p>Select a bulk tool to use by pressing Use, and then click on the Map on the states you want to apply this change to.</p>
+                    <button style={{backgroundColor:"lightgrey", width:"95%"}} onClick={() => setBulkStateFunction(doNothing)}>Select No Tool</button>
+                    <div className="BulkToolHolder">
+                        <AdjustCandidateStateModifier data={data} setBulkStateFunction={setBulkStateFunction}></AdjustCandidateStateModifier>
+                        <AdjustStateIssueScore data={data} setBulkStateFunction={setBulkStateFunction}></AdjustStateIssueScore>
+                    </div>
+                </div>
+            )
+        }
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    function doNothing(_s : StateModel) {}
 
     return (
         <div className="OsegPanel">

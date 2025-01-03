@@ -6,6 +6,7 @@ import ElectionDescriptionView from "../game/views/ElectionDescriptionView";
 import CandidateSelectionView from "../game/views/CandidateSelectionView";
 import ScenarioModel from "../engine/models/ScenarioModel";
 import OsegSimulator from "./OsegSimulator";
+import StateController from "../engine/controllers/StateController";
 
 enum RightNavBar {
     Map,
@@ -22,13 +23,14 @@ interface OsegRightPanelProps {
     mapSvg: string;
     logic : string;
     data : ScenarioModel;
+    onStateClicked : ((c : StateController) => void) | null;
 }
 
 const engine = new Engine();
 engine.useRng = false;
 
 function OsegRightPanel(props: OsegRightPanelProps) {
-    const { mapSvg, data, logic } = props;
+    const { mapSvg, data, logic, onStateClicked } = props;
     const [rightNavBar, setRightNavBar] = useState<RightNavBar>(RightNavBar.Map);
 
     // Using this to make sure that the candidate information updates as you type in the editor
@@ -60,7 +62,7 @@ function OsegRightPanel(props: OsegRightPanelProps) {
             return (
                 <div>
                     <h2>Starting Margins</h2>
-                    <MapView theme={engine.scenarioController.theme} engine={engine} mapSvg={mapSvg} onStateClicked={null}></MapView>
+                    <MapView theme={engine.scenarioController.theme} engine={engine} mapSvg={mapSvg} onStateClicked={onStateClicked}></MapView>
                     <p>Note: starting margins may be slightly different in game due to RNG</p>
                 </div>
             );

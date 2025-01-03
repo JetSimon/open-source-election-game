@@ -1,0 +1,22 @@
+.BulkStateFunction {
+    display: flex;
+    flex-direction: column;
+    border: 1px black solid;
+    border-radius: 8px;
+    padding: 8px;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.BulkStateFunctionDesc {
+    font-size: x-small;
+    color: grey;
+    margin: -6px;
+}
+
+.BulkToolHolder {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    max-height: 75vh;
+}

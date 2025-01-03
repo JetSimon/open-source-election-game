@@ -5,6 +5,9 @@ import OsegLeftPanel from "./OsegLeftPanel";
 import OsegRightPanel from "./OsegRightPanel";
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 import Game from "../game/Game";
+import StateModel from "../engine/models/StateModel";
+import StateController from "../engine/controllers/StateController";
+import { BulkStateFunction } from "./bulkMapComponents/BulkStateFunction";
 
 const errorScenario : ScenarioModel = {
     theme: {
@@ -45,6 +48,12 @@ function downloadString(s : string, fileName : string) {
     element.click();
 
     document.body.removeChild(element);
+}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+let bulkStateFunction : BulkStateFunction = (_stateModel : StateModel) => {};
+function setBulkStateFunction(f : BulkStateFunction) {
+    bulkStateFunction = f;
 }
 
 function OsegEditor() {
@@ -90,6 +99,18 @@ function OsegEditor() {
         localStorage.setItem("editorMapSvg", mapSvg);
         localStorage.setItem("editorCss", customCss);
         setLastSaved(Date.now());
+    }
+
+    function onStateClicked(stateController : StateController) {
+        if(data == null) {
+            return;
+        }
+
+        const stateModel = data.states.filter((x) => x.id == stateController.getId())[0];
+        bulkStateFunction(stateModel);
+        const newDataString = JSON.stringify(data, null, 4);
+        setData(JSON.parse(newDataString));
+        setDataString(newDataString);
     }
 
     async function load() {
@@ -160,11 +181,11 @@ function OsegEditor() {
             {lastSaved != -1 && <p className="LastSaved">Last saved: {new Date(lastSaved).toTimeString()}</p>}
             <PanelGroup direction="horizontal" id="group">
             <Panel className="Panel" id="left-panel">
-                <OsegLeftPanel customCss={customCss} setCustomCss={setCustomCss} mapSvg={mapSvg} setMapSvg={setMapSvg} setData={setData} setLogic={setLogic} setDataString={setDataString} dataString={dataString} logic={logic}></OsegLeftPanel>
+                <OsegLeftPanel data={data} setBulkStateFunction={setBulkStateFunction} customCss={customCss} setCustomCss={setCustomCss} mapSvg={mapSvg} setMapSvg={setMapSvg} setData={setData} setLogic={setLogic} setDataString={setDataString} dataString={dataString} logic={logic}></OsegLeftPanel>
             </Panel>
             <PanelResizeHandle className="ResizeHandle" id="resize-handle" />
             <Panel className="Panel" id="right-panel">
-                <OsegRightPanel logic={logic} data={data} mapSvg={mapSvg}></OsegRightPanel>
+                <OsegRightPanel logic={logic} data={data} mapSvg={mapSvg} onStateClicked={onStateClicked}></OsegRightPanel>
             </Panel>
             </PanelGroup>
         </div>
