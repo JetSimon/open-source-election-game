@@ -57,8 +57,8 @@ class StateController {
     getCandidateStateModifier(candidateId: number): number {
         const modifier: number | undefined = this.stateModifiers.get(candidateId);
         if (modifier == undefined) {
-            console.error("State with id", this.model.id, " invalid candidate id of", candidateId);
-            return 0;
+            console.warn("State with id", this.model.id, " invalid candidate id of", candidateId);
+            return 1;
         }
         return modifier;
     }
@@ -106,7 +106,7 @@ class StateController {
                     stateScore = stateScore * Math.abs(stateScore);
                     const stateWeight = this.issueScores.getWeightForIssue(issue.id);
                     
-                    opinion += RUNNING_MATE_WEIGHT * (1.225 - Math.abs((mateScore - stateScore) * stateWeight));
+                    opinion += this.getCandidateStateModifier(runningMateId) * RUNNING_MATE_WEIGHT * (1.225 - Math.abs((mateScore - stateScore) * stateWeight));
                 }
             }
 
