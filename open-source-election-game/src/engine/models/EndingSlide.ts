@@ -4,8 +4,4 @@ interface EndingSlide {
     endingText : string;
 }
 
-interface EndingModel {
-    slides : EndingSlide[];
-}
-
-export default EndingModel;
+export default EndingSlide;

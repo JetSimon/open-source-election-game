@@ -458,7 +458,7 @@ class Engine {
 
     /**
      * @category CYOA Utility Functions
-     * @param quote 
+     * @param scenarioName 
      */
     setScenarioName(scenarioName : string) {
         this.scenarioController.model.scenarioName = scenarioName;

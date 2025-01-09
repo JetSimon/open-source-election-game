@@ -1,14 +1,9 @@
 import CandidateModel from "./CandidateModel";
 import StateModel from "./StateModel";
 import Issue from "./Issue";
-import QuestionModel from "./QuestionModel";
+import ScenarioSideModel from "./ScenarioSideModel";
 import ThemeModel from "./ThemeModel";
 import SongModel from "./SongModel";
-
-interface ScenarioSideModel {
-    playerId: number;
-    questions: QuestionModel[];
-}
 
 interface ScenarioModel {
     theme : ThemeModel;
