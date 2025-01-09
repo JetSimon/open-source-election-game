@@ -82,3 +82,8 @@
     margin: 16px;
     font-weight: bold;
 }
+
+.IssueDiv {
+    position: relative;
+    display: inline-block;
+}

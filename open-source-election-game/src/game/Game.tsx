@@ -38,7 +38,9 @@ function Game(props : GameProps) {
             engine.loadScenario(injectedData);
             setGameState(engine.gameState);
             setTheme(engine.scenarioController.theme);
-            setMusic(engine.scenarioController.model.music);
+
+            const mus = JSON.stringify(injectedData.music)
+            setMusic(JSON.parse(mus));
 
             const encodedStyle = encodeURIComponent(injectedCss);
             const styleUri = 'data:text/css;charset=utf-8,' + encodedStyle;

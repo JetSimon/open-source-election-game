@@ -149,8 +149,8 @@
                     "weight": 1
                 }
             ],
-            "description": "'",
-            "imageUrl": "'"
+            "description": "",
+            "imageUrl": ""
         },
         {
             "startingGlobalMultiplier": 1,
@@ -190,8 +190,8 @@
                     "weight": 1
                 }
             ],
-            "description": "'",
-            "imageUrl": "'"
+            "description": "",
+            "imageUrl": ""
         },
         {
             "startingGlobalMultiplier": 1,
@@ -205,7 +205,7 @@
             "runningMate": true,
             "isPlayable": false,
             "issueScores": [],
-            "description": "'",
+            "description": "",
             "imageUrl": "https://www.jetsimon.com/public/static/images/george-dallas-1844.jpg"
         },
         {
@@ -220,7 +220,7 @@
             "runningMate": true,
             "isPlayable": false,
             "issueScores": [],
-            "description": "'",
+            "description": "",
             "imageUrl": "https://www.jetsimon.com/public/static/images/levi-woodbury-1844.jpg"
         },
         {
@@ -280,8 +280,8 @@
             "runningMate": false,
             "isPlayable": false,
             "issueScores": [],
-            "description": "'",
-            "imageUrl": "'"
+            "description": "",
+            "imageUrl": ""
         },
         {
             "startingGlobalMultiplier": 1,
@@ -295,8 +295,8 @@
             "runningMate": false,
             "isPlayable": false,
             "issueScores": [],
-            "description": "'",
-            "imageUrl": "'"
+            "description": "",
+            "imageUrl": ""
         }
     ],
     "states": [
@@ -1657,7 +1657,7 @@
         {
             "id": 47,
             "name": "Annexation",
-            "description": "'",
+            "description": "",
             "stances": [
                 "Supports",
                 "Supports",
@@ -1680,7 +1680,7 @@
         {
             "id": 48,
             "name": "Tariffs",
-            "description": "'",
+            "description": "",
             "stances": [
                 "Opposes",
                 "Opposes",
@@ -1703,7 +1703,7 @@
         {
             "id": 49,
             "name": "Immigration",
-            "description": "'",
+            "description": "",
             "stances": [
                 "Nativist",
                 "Nativist",
@@ -1726,7 +1726,7 @@
         {
             "id": 50,
             "name": "Internal Improvements",
-            "description": "'",
+            "description": "",
             "stances": [
                 "Opposes",
                 "Opposes",
@@ -1749,7 +1749,7 @@
         {
             "id": 51,
             "name": "Slavery",
-            "description": "'",
+            "description": "",
             "stances": [
                 "Supports",
                 "Supports",

@@ -1,6 +1,7 @@
 import StateController from "../../engine/controllers/StateController";
 import { Engine } from "../../engine/Engine";
 import ThemeModel from "../../engine/models/ThemeModel";
+import "./Tooltip.css";
 
 interface StatePollProps {
   engine: Engine | null;
@@ -57,10 +58,11 @@ function StatePoll(props: StatePollProps) {
             ((issueScore + 1) / 2) * (issue.stances.length - 1)
           );
           const stance = issue.stances[remappedIssueScore];
+          const stanceDescription = issue.stanceDescriptions[remappedIssueScore];
+
           return (
             <div className="StateIssue StatePollValue" key={issue.id}>
-              <span style={{ fontWeight: "bold" }}>{issue.name}</span> -{" "}
-              {stance}
+              <div className={issue.description == "" ? "IssueDiv" : "IssueDiv Tooltip"} style={{ fontWeight: "bold" }}>{issue.name}{issue.description != "" && <span className="TooltipText">{issue.description}</span>}</div> - {" "} <div className={stanceDescription == "" ? "IssueDiv" : "IssueDiv Tooltip"}>{stance}{stanceDescription != "" && <span className="TooltipText">{stanceDescription}</span>}</div>
             </div>
           );
         })}
