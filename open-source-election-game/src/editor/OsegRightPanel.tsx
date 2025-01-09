@@ -1,12 +1,12 @@
-import MapView from "../game/views/MapView";
-import { Engine, GameState } from "../engine/Engine";
+import MapView from "../oseg/game/views/MapView";
+import { Engine, GameState } from "../oseg/engine/Engine";
 import EnumNavBar from "./components/EnumNavBar";
 import { useState, useEffect } from "react";
-import ElectionDescriptionView from "../game/views/ElectionDescriptionView";
-import CandidateSelectionView from "../game/views/CandidateSelectionView";
-import ScenarioModel from "../engine/models/ScenarioModel";
+import ElectionDescriptionView from "../oseg/game/views/ElectionDescriptionView";
+import CandidateSelectionView from "../oseg/game/views/CandidateSelectionView";
+import ScenarioModel from "../oseg/engine/models/ScenarioModel";
 import OsegSimulator from "./OsegSimulator";
-import StateController from "../engine/controllers/StateController";
+import StateController from "../oseg/engine/controllers/StateController";
 
 enum RightNavBar {
     Map,

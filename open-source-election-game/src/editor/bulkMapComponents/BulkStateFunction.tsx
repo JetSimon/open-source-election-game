@@ -1,4 +1,4 @@
-import StateModel from "../../engine/models/StateModel";
+import StateModel from "../../oseg/engine/models/StateModel";
 
 type BulkStateFunction = ((s : StateModel) => void);
 

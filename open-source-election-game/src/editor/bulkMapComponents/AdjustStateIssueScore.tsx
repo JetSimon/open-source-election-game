@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import BulkStateFunctionProps from "./BulkStateFunctionProps";
-import StateModel from "../../engine/models/StateModel";
-import IssueScore from "../../engine/models/IssueScore";
+import StateModel from "../../oseg/engine/models/StateModel";
+import IssueScore from "../../oseg/engine/models/IssueScore";
 import "./BulkStateFunction.css";
 let issueScoreUsedInFunction = 0;
 let selectedIssueIdUsedInFunction = -1;

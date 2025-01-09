@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import ScenarioModel from "../engine/models/ScenarioModel";
+import ScenarioModel from "../oseg/engine/models/ScenarioModel";
 import "./OsegSimulator.css";
-import FinalResultsModel from "../engine/models/FinalResultsModel";
-import FinalResults from "../game/components/FinalResults";
-import ThemeModel from "../engine/models/ThemeModel";
-import { Engine } from "../engine/Engine";
-import CandidateModel from "../engine/models/CandidateModel";
+import FinalResultsModel from "../oseg/engine/models/FinalResultsModel";
+import FinalResults from "../oseg/game/components/FinalResults";
+import ThemeModel from "../oseg/engine/models/ThemeModel";
+import { Engine } from "../oseg/engine/Engine";
+import CandidateModel from "../oseg/engine/models/CandidateModel";
 import Histogram from "./components/Histogram";
 
 interface OsegSimulatorProps {

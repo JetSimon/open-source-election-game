@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import ScenarioModel from "../engine/models/ScenarioModel";
+import ScenarioModel from "../oseg/engine/models/ScenarioModel";
 import "./OsegEditor.css";
 import OsegLeftPanel from "./OsegLeftPanel";
 import OsegRightPanel from "./OsegRightPanel";
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
-import Game from "../game/Game";
-import StateModel from "../engine/models/StateModel";
-import StateController from "../engine/controllers/StateController";
+import Game from "../oseg/game/Game";
+import StateModel from "../oseg/engine/models/StateModel";
+import StateController from "../oseg/engine/controllers/StateController";
 import { BulkStateFunction } from "./bulkMapComponents/BulkStateFunction";
 
 const errorScenario : ScenarioModel = {
