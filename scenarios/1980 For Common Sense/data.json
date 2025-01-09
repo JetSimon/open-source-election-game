@@ -2,7 +2,7 @@
     "credits": "by Komnothun",
     "candidates": [
         {
-            "startingGlobalMultiplier": 1.63,
+            "startingGlobalMultiplier": 1.10,
             "runningMateIds": [16064],
             "id": 131,
             "firstName": "George",
@@ -244,11 +244,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.029
                 }
             ]
         },
@@ -292,18 +292,18 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.04
                 }
             ]
         },
         {
             "id": 15686,
             "name": "Fall River",
-            "abbr": "Fall River",
+            "abbr": "Fall_River",
             "electoralVotes": 0,
             "popularVotes": 4090,
             "baseIssueScores": [
@@ -340,11 +340,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1.1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.01
                 }
             ]
         },
@@ -384,15 +384,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 2.099
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 0.9
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.03
                 }
             ]
         },
@@ -436,11 +436,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 0.95
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.009
                 }
             ]
         },
@@ -484,11 +484,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.016
                 }
             ]
         },
@@ -532,11 +532,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.035
                 }
             ]
         },
@@ -580,11 +580,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1.1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.075
                 }
             ]
         },
@@ -624,15 +624,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.08
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.054
                 }
             ]
         },
@@ -676,11 +676,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1.28
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.09
                 }
             ]
         },
@@ -724,11 +724,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1.14
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.09
                 }
             ]
         },
@@ -768,11 +768,11 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.19
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 0.8
                 },
                 {
                     "candidateId": 133,
@@ -816,22 +816,22 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 0.9
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.02
                 }
             ]
         },
         {
             "id": 15752,
             "name": "Charles Mix",
-            "abbr": "Charles Mix",
+            "abbr": "Charles_Mix",
             "electoralVotes": 0,
             "popularVotes": 4638,
             "baseIssueScores": [
@@ -864,11 +864,11 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.2
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
@@ -879,7 +879,7 @@
         {
             "id": 15758,
             "name": "Bon Homme",
-            "abbr": "Bon Homme",
+            "abbr": "Bon_Homme",
             "electoralVotes": 0,
             "popularVotes": 4144,
             "baseIssueScores": [
@@ -916,11 +916,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.019
                 }
             ]
         },
@@ -964,11 +964,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1.09
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.01
                 }
             ]
         },
@@ -1008,15 +1008,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.5
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.04
                 }
             ]
         },
@@ -1056,15 +1056,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.5
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.12
                 }
             ]
         },
@@ -1108,11 +1108,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.02
                 }
             ]
         },
@@ -1152,15 +1152,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 0.9
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.03
                 }
             ]
         },
@@ -1200,15 +1200,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.5
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.03
                 }
             ]
         },
@@ -1248,15 +1248,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
-                },
-                {
-                    "candidateId": 132,
                     "amount": 1.4
                 },
                 {
+                    "candidateId": 132,
+                    "amount": 1
+                },
+                {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.038
                 }
             ]
         },
@@ -1296,15 +1296,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.25
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.07
                 }
             ]
         },
@@ -1348,11 +1348,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.001
                 }
             ]
         },
@@ -1396,11 +1396,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1.5
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.055
                 }
             ]
         },
@@ -1444,11 +1444,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1.7
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.03
                 }
             ]
         },
@@ -1488,15 +1488,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.05
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.037
                 }
             ]
         },
@@ -1540,11 +1540,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1.5
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.12
                 }
             ]
         },
@@ -1584,15 +1584,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 0.75
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 2
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.07
                 }
             ]
         },
@@ -1636,11 +1636,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.01
                 }
             ]
         },
@@ -1688,7 +1688,7 @@
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.08
                 }
             ]
         },
@@ -1732,11 +1732,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1.7
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.03
                 }
             ]
         },
@@ -1776,15 +1776,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.7
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.082
                 }
             ]
         },
@@ -1828,11 +1828,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1.1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.06
                 }
             ]
         },
@@ -1872,15 +1872,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.28
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.089
                 }
             ]
         },
@@ -1924,11 +1924,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1.5
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.15
                 }
             ]
         },
@@ -1972,11 +1972,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1.6
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.14
                 }
             ]
         },
@@ -2016,15 +2016,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.12
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.1
                 }
             ]
         },
@@ -2068,11 +2068,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1.2
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.097
                 }
             ]
         },
@@ -2112,15 +2112,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.2
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 0.9
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.13
                 }
             ]
         },
@@ -2160,11 +2160,11 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.46
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
@@ -2208,11 +2208,11 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.13
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
@@ -2256,15 +2256,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.05
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.09
                 }
             ]
         },
@@ -2304,15 +2304,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.72
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.01
                 }
             ]
         },
@@ -2352,15 +2352,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.18
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.03
                 }
             ]
         },
@@ -2400,15 +2400,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.2
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.037
                 }
             ]
         },
@@ -2448,15 +2448,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.32
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.025
                 }
             ]
         },
@@ -2496,11 +2496,11 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.49
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
@@ -2548,11 +2548,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.072
                 }
             ]
         },
@@ -2592,15 +2592,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.3
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1.1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.25
                 }
             ]
         },
@@ -2640,15 +2640,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.45
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1.5
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.23
                 }
             ]
         },
@@ -2688,15 +2688,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.9
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.049
                 }
             ]
         },
@@ -2736,15 +2736,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.25
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.04
                 }
             ]
         },
@@ -2784,15 +2784,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.27
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.07
                 }
             ]
         },
@@ -2832,15 +2832,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.1
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.03
                 }
             ]
         },
@@ -2880,15 +2880,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.02
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.06
                 }
             ]
         },
@@ -2928,15 +2928,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.39
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 0.78
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.04
                 }
             ]
         },
@@ -2976,15 +2976,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.38
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 0.8
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.029
                 }
             ]
         },
@@ -3024,15 +3024,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.3
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.025
                 }
             ]
         },
@@ -3076,11 +3076,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.049
                 }
             ]
         },
@@ -3124,11 +3124,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.019
                 }
             ]
         },
@@ -3172,11 +3172,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1.03
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.04
                 }
             ]
         },
@@ -3220,11 +3220,11 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1.5
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.01
                 }
             ]
         },
@@ -3264,15 +3264,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 0.58
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.014
                 }
             ]
         },
@@ -3312,15 +3312,15 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 131,
-                    "amount": 1
+                    "amount": 1.5
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.4
+                    "amount": 1
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0.05
+                    "amount": 0.075
                 }
             ]
         }
