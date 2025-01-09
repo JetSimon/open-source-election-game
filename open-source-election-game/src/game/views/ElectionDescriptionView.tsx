@@ -16,7 +16,7 @@ function ElectionDescriptionView(props: ElectionDescriptionViewProps) {
 
   return (
     <div className="ElectionSelection">
-    <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="ElectionSelectionBox">
+    <div className="ElectionSelectionBox">
       <div className="ElectionInfoArea">
         <img src={engine.currentScenario.scenarioImageUrl}></img>
         <div className="ElectionDescription" dangerouslySetInnerHTML={{__html:engine.currentScenario.scenarioDescription}}>

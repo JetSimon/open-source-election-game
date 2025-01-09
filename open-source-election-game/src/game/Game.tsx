@@ -10,6 +10,8 @@ import ScenarioModel from "../engine/models/ScenarioModel";
 
 import "./Game.css"
 import QuoteHeader from "./components/QuoteHeader";
+import MusicPlayer from "./components/MusicPlayer";
+import SongModel from "../engine/models/SongModel";
 
 interface GameProps {
     injectedData : ScenarioModel;
@@ -24,6 +26,7 @@ function Game(props : GameProps) {
     const [gameState, setGameState] = useState(engine.gameState);
     const [theme, setTheme] = useState(engine.scenarioController.makeEmptyTheme());
     const [stylePath, setStylePath] = useState("");
+    const [music, setMusic] = useState<SongModel[]>([]);
 
     useEffect(() => {
         async function loadInjectedData() {
@@ -35,6 +38,7 @@ function Game(props : GameProps) {
             engine.loadScenario(injectedData);
             setGameState(engine.gameState);
             setTheme(engine.scenarioController.theme);
+            setMusic(engine.scenarioController.model.music);
 
             const encodedStyle = encodeURIComponent(injectedCss);
             const styleUri = 'data:text/css;charset=utf-8,' + encodedStyle;
@@ -43,6 +47,21 @@ function Game(props : GameProps) {
 
         loadInjectedData();
     }, [injectedData, injectedLogic, injectedMapSvg, injectedCss]);
+
+    function refreshThemeAndMusic() {
+        // Force theme to update after a question is answered
+        setTheme(JSON.parse(JSON.stringify(engine.scenarioController.theme)));
+
+        // Force music update
+        if(engine.currentScenario != null) {
+            const oldMusic = JSON.stringify(music);
+            const newMusic = JSON.stringify(engine.currentScenario.music);
+
+            if(oldMusic != newMusic) {
+                setMusic(JSON.parse(newMusic));
+            }
+        }
+    }
 
     function getViewFromGameState() {
         if (gameState == GameState.Uninitialized) {
@@ -56,7 +75,7 @@ function Game(props : GameProps) {
         }
 
         if (gameState == GameState.Election) {
-            return <GameView setTheme={setTheme} theme={theme} mapSvg={injectedMapSvg}  engine={engine}></GameView>;
+            return <GameView refreshThemeAndMusic={refreshThemeAndMusic} theme={theme} mapSvg={injectedMapSvg} engine={engine}></GameView>;
         }
     }
 
@@ -69,6 +88,7 @@ function Game(props : GameProps) {
             <img className="TopBanner" src={theme.headerImageUrl}></img>
             <QuoteHeader engine={engine} theme={theme}></QuoteHeader>
             {getViewFromGameState()}
+            <MusicPlayer songs={music}></MusicPlayer>
         </div>
         </>
     );

@@ -3,6 +3,7 @@ import StateModel from "./StateModel";
 import Issue from "./Issue";
 import QuestionModel from "./QuestionModel";
 import ThemeModel from "./ThemeModel";
+import SongModel from "./SongModel";
 
 interface ScenarioSideModel {
     playerId: number;
@@ -20,6 +21,7 @@ interface ScenarioModel {
     issues: Issue[];
     scenarioSides: ScenarioSideModel[];
     credits: string;
+    music : SongModel[];
 }
 
 export default ScenarioModel;

@@ -1,0 +1,21 @@
+.MusicPlayer {
+    display: flex;
+    border: 1px solid black;
+    height: 25%;
+    margin: 32px;
+}
+
+.MusicPlayerImage {
+    height: 125px;
+}
+
+.MusicPlayerMenu {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.MusicPlayerButtons {
+    display: flex;
+    justify-items: end;
+}

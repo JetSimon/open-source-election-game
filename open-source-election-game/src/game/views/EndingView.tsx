@@ -23,6 +23,10 @@ function EndingView(props: EndingViewProps) {
   const [currentTab, setCurrentTab] = useState<EndingTab>(EndingTab.EndingSlides);
   const { engine, theme, mapSvg } = props;
 
+  const [finalResults] = useState(() => {
+    return engine.getFinalResults();
+  });
+
   if (engine == null) {
     return <div>ERROR ENGINE NULL</div>;
   }
@@ -32,7 +36,7 @@ function EndingView(props: EndingViewProps) {
       return (
         <>
           <EndingSlides theme={theme} engine={engine}></EndingSlides>
-          <FinalResults theme={theme} results={engine.getFinalResults()}></FinalResults>
+          <FinalResults theme={theme} results={finalResults}></FinalResults>
         </>
       );
     }
@@ -40,7 +44,7 @@ function EndingView(props: EndingViewProps) {
       return <MapView theme={theme} onStateClicked={null} engine={engine} mapSvg={mapSvg}></MapView>;
     }
     else if (currentTab == EndingTab.Results) {
-      return <FinalResults theme={theme} results={engine.getFinalResults()}></FinalResults>;
+      return <FinalResults theme={theme} results={finalResults}></FinalResults>;
     }
   }
 

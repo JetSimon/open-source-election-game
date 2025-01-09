@@ -8,6 +8,7 @@ import EndingModel from "./models/EndingModel";
 import QuestionModel from "./models/QuestionModel";
 import CandidateModel from "./models/CandidateModel";
 import ThemeModel from "./models/ThemeModel";
+import SongModel from "./models/SongModel";
 
 // Just used when debugging/trying to see if more extreme answers help more
 const tuningMultiplier = (x: number) => 4 * x;//Math.pow(x, 3);
@@ -668,6 +669,28 @@ class Engine {
     getPlayerPvPercentage(results : FinalResultsModel) {
         const pv = results.popularVotes.get(this.getPlayerCandidateController().getId()) ?? 0;
         return pv / this.getTotalPopularVotes();
+    }
+
+    /**
+     * Set a new music playlist. Good to use for song switches for endings.
+     * @param music 
+     * @category Ending Utility Functions
+     */
+    setNewMusic(music : SongModel[]) {
+        if(this.currentScenario != null) {
+            this.currentScenario.music = music;
+        }
+    }
+
+    /**
+     * Add a song to the music playlist
+     * @param song 
+     * @category Ending Utility Functions
+     */
+    addNewSong(song : SongModel) {
+        if(this.currentScenario != null) {
+            this.currentScenario.music.push(song);
+        }
     }
 }
 
