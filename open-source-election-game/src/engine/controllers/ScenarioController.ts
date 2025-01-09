@@ -43,7 +43,8 @@ class ScenarioController {
             scenarioDescription: "",
             scenarioName: "",
             scenarioImageUrl: "",
-            credits: ""
+            credits: "",
+            music : []
         };
     }
 

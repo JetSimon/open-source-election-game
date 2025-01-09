@@ -34,7 +34,8 @@ const errorScenario : ScenarioModel = {
         playerId: 0,
         questions: []
     }],
-    credits : ""
+    credits : "",
+    music: []
 }
 
 function downloadString(s : string, fileName : string) {
