@@ -1,4 +1,11 @@
 {
+    "music": [
+        {
+            "url": "https://jetsimon.com/groglow/beat.wav",
+            "displayName": "Test - Test",
+            "imageUrl": "https://placecats.com/500/500"
+        }
+    ],
     "credits": "by Dan Bryan, adapted by Jet",
     "theme": {
         "backgroundImageUrl": "",

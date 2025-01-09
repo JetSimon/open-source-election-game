@@ -2,6 +2,14 @@ let testVar = 0;
 
 function createEnding(engine, results) {
 
+    engine.setNewMusic([
+        {
+            "url": "https://jetsimon.com/groglow/beat2.wav",
+            "displayName": "Test 2 - Test 2",
+            "imageUrl": "https://placecats.com/500/500"
+        }
+    ]);
+
     if(engine.playerWonEv(results)) {
         return {
             slides: [
@@ -61,6 +69,12 @@ function onAnswerPicked(engine, answerPicked) {
         ],
         "keepInPlaceIfQuestionsShuffled": false
     })*/
+
+        engine.addNewSong({
+            "url": "https://jetsimon.com/groglow/beat2.wav",
+            "displayName": "Test 2 - Test 2",
+            "imageUrl": "https://placecats.com/500/500"
+        })
 }
 
 export {createEnding, onAnswerPicked}
