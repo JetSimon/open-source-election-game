@@ -6,6 +6,7 @@ import FinalResults from "../game/components/FinalResults";
 import ThemeModel from "../engine/models/ThemeModel";
 import { Engine } from "../engine/Engine";
 import CandidateModel from "../engine/models/CandidateModel";
+import Histogram from "./components/Histogram";
 
 interface OsegSimulatorProps {
     data: ScenarioModel;
@@ -25,6 +26,7 @@ function OsegSimulator(props: OsegSimulatorProps) {
     const [ averageResult, setAverageResult ] = useState<FinalResultsModel | null>(null);
     const [ bestResult, setBestResult ] = useState<FinalResultsModel | null>(null);
     const [ worstResult, setWorstResult ] = useState<FinalResultsModel | null>(null);
+    const [ histogram, setHistogram ] = useState<number[]>([]);
 
     const { data, logic, theme } = props;
 
@@ -106,6 +108,11 @@ function OsegSimulator(props: OsegSimulatorProps) {
         const encodedLogic = encodeURIComponent(logic);
         const logicDataUri = 'data:text/javascript;charset=utf-8,' + encodedLogic;
 
+        const tempHistogram : number[] = [];
+        for(let i = 0; i < 20; i++) {
+            tempHistogram.push(0);
+        }
+
         for (let i = 0; i < numberOfSimulations; i++) {
             const tempEngine = new Engine();
 
@@ -148,12 +155,17 @@ function OsegSimulator(props: OsegSimulatorProps) {
                 averageResult.electoralVotes.set(id, totalEv + (ev / numberOfSimulations));
             }
 
+            const playerPvPercent = (result.popularVotes.get(candidateId) ?? 0) / result.totalPopularVotes;
+            const index = Math.floor((playerPvPercent / 1.0) * 20);
+            tempHistogram[index] += 1;
+
             allResultsRun.push(result);
         }
 
         setAllResultsIndex(0);
         setAllResults(allResultsRun);
         setAverageResult(averageResult);
+        setHistogram(tempHistogram);
 
         const sortedResults = allResultsRun.sort((a, b) => {
             const apv = a.popularVotes.get(selectedCandidate) ?? 0;
@@ -196,6 +208,8 @@ function OsegSimulator(props: OsegSimulatorProps) {
             }
 
             <button onClick={() => simulateResults()}>Simulate {numberOfSimulations} Times</button>
+
+            {histogram.length > 0 && <div><h2>Histogram</h2><Histogram counts={histogram}></Histogram></div>}
             
             {averageResult != null && <div><h2>Average Result</h2><FinalResults results={averageResult} theme={theme}></FinalResults></div>}
 

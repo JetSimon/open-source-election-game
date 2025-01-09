@@ -1,0 +1,26 @@
+.Histogram {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+}
+
+.HistogramEntry {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.HistogramBar {
+ background-color: lightblue;
+ border: 1px solid black;
+ width:100%;
+ box-sizing: border-box;
+}
+
+.HistogramLabel {
+    border: 1px solid black;
+    font-size: 6px;
+    padding: 2px;
+}

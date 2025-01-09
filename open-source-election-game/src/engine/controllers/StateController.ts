@@ -28,7 +28,7 @@ class StateController {
     }
 
     applyVisitBonus(candidateId : number) {
-        this.changeCandidateStateModifier(candidateId, 0.01);
+        this.changeCandidateStateModifier(candidateId, 0.02);
     }
 
     addCandidates(candidates: CandidateController[]) {
