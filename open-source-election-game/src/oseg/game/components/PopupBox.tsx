@@ -15,7 +15,7 @@ function PopupBox(props : PopupBoxProps) {
     const {title, body, buttonText, isShowing, setIsShowing, image, theme} = props;
     return (
         <>
-        <div className="PopupBoxBackground" style={isShowing ? {backgroundColor : theme.primaryGameWindowColor} : {display : "none"}}></div>
+        <div className="PopupBoxBackground" style={isShowing ? {} : {display : "none"}}></div>
         <div className="PopupBox" style={isShowing ? {backgroundColor : theme.primaryGameWindowColor, color : theme.primaryGameWindowTextColor}  : {display : "none"}}>
             <h2>{title}</h2>
             {image != "" && <img src={image} className="PopupImage"></img>}
