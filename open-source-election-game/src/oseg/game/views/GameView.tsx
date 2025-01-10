@@ -18,7 +18,7 @@ interface GameViewProps {
 }
 
 let showFeedback = true;
-let autoplayHandle: undefined | number = undefined;
+let autoplayHandle: undefined | ReturnType<typeof setInterval> = undefined;
 
 function GameView(props: GameViewProps) {
   const { engine, mapSvg, theme, refreshThemeAndMusic } = props;
