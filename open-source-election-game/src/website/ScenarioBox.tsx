@@ -1,4 +1,4 @@
-import ScenarioModel from "../../engine/models/ScenarioModel";
+import ScenarioModel from "../oseg/engine/models/ScenarioModel";
 import "./ScenarioBox.css";
 
 interface ScenarioBoxProps {
