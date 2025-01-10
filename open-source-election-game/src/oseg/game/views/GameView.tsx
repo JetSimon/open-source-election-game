@@ -156,6 +156,7 @@ function GameView(props: GameViewProps) {
       <h3 style={{color:theme.primaryGameWindowTextColor}}>{questionString}</h3>
       <BottomBanner theme={theme} engine={engine}></BottomBanner>
       <PopupBox
+        theme={theme}
         title="Feedback"
         body={feedbackText}
         buttonText="Okay"

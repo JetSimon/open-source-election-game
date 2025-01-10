@@ -1,3 +1,4 @@
+import ThemeModel from "../../engine/models/ThemeModel";
 import "./PopupBox.css"
 
 interface PopupBoxProps {
@@ -7,14 +8,15 @@ interface PopupBoxProps {
     isShowing : boolean;
     image: string;
     setIsShowing: (isShowing : boolean) => void;
+    theme : ThemeModel;
 }
 
 function PopupBox(props : PopupBoxProps) {
-    const {title, body, buttonText, isShowing, setIsShowing, image} = props;
+    const {title, body, buttonText, isShowing, setIsShowing, image, theme} = props;
     return (
         <>
-        <div className="PopupBoxBackground" style={isShowing ? {} : {display : "none"}}></div>
-        <div className="PopupBox" style={isShowing ? {} : {display : "none"}}>
+        <div className="PopupBoxBackground" style={isShowing ? {backgroundColor : theme.primaryGameWindowColor} : {display : "none"}}></div>
+        <div className="PopupBox" style={isShowing ? {backgroundColor : theme.primaryGameWindowColor, color : theme.primaryGameWindowTextColor}  : {display : "none"}}>
             <h2>{title}</h2>
             {image != "" && <img src={image} className="PopupImage"></img>}
             <div dangerouslySetInnerHTML={{__html: body}}></div>
