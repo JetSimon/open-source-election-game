@@ -9,10 +9,11 @@ interface StartGameProps {
     engine : Engine;
     setGameState: (state: GameState) => void;
     theme : ThemeModel;
+    onStartButtonPressed : (() => void) | null;
 }
 
 function StartGameView(props : StartGameProps) {
-    const {engine, setGameState, theme} = props;
+    const {engine, setGameState, theme, onStartButtonPressed} = props;
 
     const [selectingCandidate, setSelectingCandidate] = useState(false);
 
@@ -26,6 +27,7 @@ function StartGameView(props : StartGameProps) {
           setSelectingCandidate={setSelectingCandidate}
           setGameState={setGameState}
           engine={engine}
+          onStartButtonPressed={onStartButtonPressed}
         ></CandidateSelectionView>
     )
 }

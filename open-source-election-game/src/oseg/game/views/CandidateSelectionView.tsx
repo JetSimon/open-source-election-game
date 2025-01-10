@@ -10,10 +10,11 @@ interface CandidateSelectionViewProps {
   setGameState: (state: GameState) => void;
   setSelectingCandidate: (value: boolean) => void;
   theme : ThemeModel;
+  onStartButtonPressed : (() => void) | null;
 }
 
 function CandidateSelectionView(props: CandidateSelectionViewProps) {
-  const { engine, setGameState, setSelectingCandidate, theme } = props;
+  const { engine, setGameState, setSelectingCandidate, theme, onStartButtonPressed } = props;
 
   const [selectedCandidate, setSelectedCandidate] = useState<number>(
     firstCandidateWithSideId()
@@ -81,6 +82,7 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
     const sideIndex = sides.map((x) => x.playerId).indexOf(selectedCandidate);
     engine.setScenarioSide(sideIndex, selectedRunningMate);
     setGameState(engine.gameState);
+    if(onStartButtonPressed != null) onStartButtonPressed()
   }
 
   const selectedCandidateController: CandidateController = engine.getCandidateControllerByCandidateId(selectedCandidate);

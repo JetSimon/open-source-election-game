@@ -114,7 +114,7 @@ function ScenarioLoader() {
         return <p>Error: Injected data is null</p>
     }
 
-    return <Game injectedCss={customCss} injectedData={data} injectedLogic={logic} injectedMapSvg={mapSvg}></Game>
+    return <Game onStartButtonPressed={null} injectedCss={customCss} injectedData={data} injectedLogic={logic} injectedMapSvg={mapSvg}></Game>
 }
 
 export default ScenarioLoader;

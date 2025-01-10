@@ -76,7 +76,7 @@ function OsegRightPanel(props: OsegRightPanelProps) {
         else if (rightNavBar == RightNavBar.Candidates) {
             return (
                 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                <CandidateSelectionView theme={engine.scenarioController.theme} setGameState={(_x: GameState) => { }} setSelectingCandidate={(_x: boolean) => { }} engine={engine}></CandidateSelectionView>
+                <CandidateSelectionView onStartButtonPressed={null} theme={engine.scenarioController.theme} setGameState={(_x: GameState) => { }} setSelectingCandidate={(_x: boolean) => { }} engine={engine}></CandidateSelectionView>
             );
         }
         else if (rightNavBar == RightNavBar.Simulator) {

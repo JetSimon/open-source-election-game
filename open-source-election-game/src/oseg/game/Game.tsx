@@ -18,11 +18,12 @@ interface GameProps {
     injectedLogic : string;
     injectedMapSvg : string;
     injectedCss : string;
+    onStartButtonPressed : (() => void) | null;
 }
 
 function Game(props : GameProps) {
 
-    const {injectedData, injectedLogic, injectedMapSvg, injectedCss} = props;
+    const {injectedData, injectedLogic, injectedMapSvg, injectedCss, onStartButtonPressed} = props;
     const [gameState, setGameState] = useState(engine.gameState);
     const [theme, setTheme] = useState(engine.scenarioController.makeEmptyTheme());
     const [stylePath, setStylePath] = useState("");
@@ -72,7 +73,7 @@ function Game(props : GameProps) {
 
         if (gameState == GameState.CandidateSelection) {
             return (
-                <StartGameView theme={theme} engine={engine} setGameState={setGameState}></StartGameView>
+                <StartGameView onStartButtonPressed={onStartButtonPressed} theme={theme} engine={engine} setGameState={setGameState}></StartGameView>
             );
         }
 

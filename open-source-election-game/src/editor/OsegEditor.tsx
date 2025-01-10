@@ -164,7 +164,7 @@ function OsegEditor() {
         return (
             <div>
                 <button className="RedButton" onClick={() => setIsPlaying(false)}>Stop Playing</button>
-                <Game injectedCss={customCss} injectedData={data} injectedLogic={logic} injectedMapSvg={mapSvg}></Game>
+                <Game onStartButtonPressed={null} injectedCss={customCss} injectedData={data} injectedLogic={logic} injectedMapSvg={mapSvg}></Game>
             </div>
         )
     }
