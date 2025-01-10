@@ -19,7 +19,7 @@ function PopupBox(props : PopupBoxProps) {
         <div className="PopupBox" style={isShowing ? {backgroundColor : theme.primaryGameWindowColor, color : theme.primaryGameWindowTextColor}  : {display : "none"}}>
             <h2>{title}</h2>
             {image != "" && <img src={image} className="PopupImage"></img>}
-            <div dangerouslySetInnerHTML={{__html: body}}></div>
+            <div className="PopupBoxDesc" dangerouslySetInnerHTML={{__html: body}}></div>
             <button onClick={() => setIsShowing(false)}>{buttonText}</button>
         </div>
         </>

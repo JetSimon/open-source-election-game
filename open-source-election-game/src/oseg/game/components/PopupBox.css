@@ -14,7 +14,15 @@
     .PopupBox {
         width: 75%!important;
         left: 8%!important;
+        top: 10%;
+        max-height: 90vh!important;
+        overflow-y: scroll;
     }
+}
+
+.PopupBoxDesc {
+    max-height: 50vh;
+    overflow-y: scroll;
 }
 
 
