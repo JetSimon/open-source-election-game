@@ -72,16 +72,16 @@ function OsegEditor() {
     const [lastSaved, setLastSaved] = useState<number>(-1);
 
     async function loadDefaultData() {
-        const defaultData = await fetch("./scenarios/TestScenario/data.json");
+        const defaultData = await fetch("./scenarios/1980 For Common Sense/data.json");
         const defaultDataJson = await defaultData.json();
 
-        const mapSvgRes = await fetch("./scenarios/TestScenario/map.svg");
+        const mapSvgRes = await fetch("./scenarios/1980 For Common Sense/map.svg");
         const defaultMapSvg: string = await mapSvgRes.text();
 
-        const defaultLogic = await fetch("./scenarios/TestScenario/logic.js");
+        const defaultLogic = await fetch("./scenarios/1980 For Common Sense/logic.js");
         const defaultLogicText = await defaultLogic.text();
 
-        const defaultCss = await fetch("./scenarios/TestScenario/style.css");
+        const defaultCss = await fetch("./scenarios/1980 For Common Sense/style.css");
         const defaultCssText = await defaultCss.text();
 
         setData(defaultDataJson);
@@ -164,7 +164,7 @@ function OsegEditor() {
         return (
             <div>
                 <button className="RedButton" onClick={() => setIsPlaying(false)}>Stop Playing</button>
-                <Game onStartButtonPressed={null} injectedCss={customCss} injectedData={data} injectedLogic={logic} injectedMapSvg={mapSvg}></Game>
+                <Game onGameOver={(score) => console.log(JSON.stringify(score))} onStartButtonPressed={null} injectedCss={customCss} injectedData={data} injectedLogic={logic} injectedMapSvg={mapSvg}></Game>
             </div>
         )
     }

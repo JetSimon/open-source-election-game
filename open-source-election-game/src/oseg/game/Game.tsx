@@ -12,6 +12,7 @@ import "./Game.css"
 import QuoteHeader from "./components/QuoteHeader";
 import MusicPlayer from "./components/MusicPlayer";
 import SongModel from "../engine/models/SongModel";
+import HighscoreSubmissionModel from "../engine/models/HighscoreSubmissionModel";
 
 interface GameProps {
     injectedData : ScenarioModel;
@@ -19,11 +20,12 @@ interface GameProps {
     injectedMapSvg : string;
     injectedCss : string;
     onStartButtonPressed : (() => void) | null;
+    onGameOver : ((m : HighscoreSubmissionModel) => void) | null;
 }
 
 function Game(props : GameProps) {
 
-    const {injectedData, injectedLogic, injectedMapSvg, injectedCss, onStartButtonPressed} = props;
+    const {injectedData, injectedLogic, injectedMapSvg, injectedCss, onStartButtonPressed, onGameOver} = props;
     const [gameState, setGameState] = useState(engine.gameState);
     const [theme, setTheme] = useState(engine.scenarioController.makeEmptyTheme());
     const [stylePath, setStylePath] = useState("");
@@ -78,7 +80,7 @@ function Game(props : GameProps) {
         }
 
         if (gameState == GameState.Election) {
-            return <GameView refreshThemeAndMusic={refreshThemeAndMusic} theme={theme} mapSvg={injectedMapSvg} engine={engine}></GameView>;
+            return <GameView onGameOver={onGameOver} refreshThemeAndMusic={refreshThemeAndMusic} theme={theme} mapSvg={injectedMapSvg} engine={engine}></GameView>;
         }
     }
 

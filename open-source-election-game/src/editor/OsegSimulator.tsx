@@ -130,7 +130,7 @@ function OsegSimulator(props: OsegSimulatorProps) {
                 const answer = question.answers[Math.floor(question.answers.length * Math.random())]
                 tempEngine.applyAnswer(answer);
                 const states = tempEngine.scenarioController.getStates();
-                states[Math.floor(Math.random() * states.length)].applyVisitBonus(candidateId);
+                states[Math.floor(Math.random() * states.length)].visit(candidateId, tempEngine);
                 tempEngine.nextQuestion();
             }
 

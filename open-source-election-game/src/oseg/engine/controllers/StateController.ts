@@ -27,8 +27,9 @@ class StateController {
         return this.model.id;
     }
 
-    applyVisitBonus(candidateId : number) {
+    visit(candidateId : number, engine : Engine) {
         this.changeCandidateStateModifier(candidateId, 0.02);
+        engine.visits.push(this.model.id);
     }
 
     addCandidates(candidates: CandidateController[]) {

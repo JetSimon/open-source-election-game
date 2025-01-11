@@ -9,19 +9,21 @@ import { Engine } from "../../engine/Engine";
 import AnswerModel from "../../engine/models/AnswerModel";
 import StateController from "../../engine/controllers/StateController";
 import ThemeModel from "../../engine/models/ThemeModel";
+import HighscoreSubmissionModel from "../../engine/models/HighscoreSubmissionModel";
 
 interface GameViewProps {
   engine: Engine;
   mapSvg: string;
   theme: ThemeModel;
   refreshThemeAndMusic : () => void;
+  onGameOver : ((m : HighscoreSubmissionModel) => void) | null;
 }
 
 let showFeedback = true;
 let autoplayHandle: undefined | ReturnType<typeof setInterval> = undefined;
 
 function GameView(props: GameViewProps) {
-  const { engine, mapSvg, theme, refreshThemeAndMusic } = props;
+  const { engine, mapSvg, theme, refreshThemeAndMusic, onGameOver } = props;
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(
     engine.currentQuestionIndex
@@ -94,6 +96,18 @@ function GameView(props: GameViewProps) {
 
     if (engine.isGameOver()) {
       engine.getEnding();
+
+      if(onGameOver != null) {
+        const highscoreModel : HighscoreSubmissionModel = {
+          candidate: engine.getPlayerCandidateController().getId(),
+          runningMate: engine.getPlayerRunningMateModel().id,
+          answers: engine.getAnswers(),
+          visits: engine.getVisits(),
+          seed: engine.getSeed()
+        }
+        onGameOver(highscoreModel);
+      }
+
       refreshThemeAndMusic();
       alert("Game over!");
       return;
@@ -117,7 +131,7 @@ function GameView(props: GameViewProps) {
     }
 
     engine.waitingToPickState = false;
-    state.applyVisitBonus(engine.getPlayerCandidateController().getId());
+    state.visit(engine.getPlayerCandidateController().getId(), engine);
     setShowMap(false);
   }
 

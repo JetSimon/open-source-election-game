@@ -82,12 +82,28 @@ class Engine {
      */
     rng : number = 0.025;
     useRng : boolean = true;
-    seed : Seed = makeSeed("TEST")//makeSeed(Date.now().toString());
-    random = seededRandom(this.seed);
+    seed = Date.now().toString();
+    randomState : Seed = makeSeed(this.seed);
+    random = seededRandom(this.randomState);
 
-    setSeed(newSeed : Seed) {
-        this.seed = newSeed;
-        this.random = seededRandom(this.seed);
+    answers : number[] = [];
+    visits : number[] = [];
+
+    setSeed(seed : string) {
+        this.seed = seed;
+        this.randomState = makeSeed(this.seed);
+        this.random = seededRandom(this.randomState);
+    }
+
+    getSeed(): string {
+        return this.seed;
+    }
+
+    getVisits(): number[] {
+        return this.visits;
+    }
+    getAnswers(): number[] {
+        return this.answers;
     }
 
     /**
@@ -127,6 +143,9 @@ class Engine {
             console.error("Provided side index was -1");
             return;
         }
+
+        this.answers = [];
+        this.visits = [];
 
         this.runningMateId = runningMateId;
         this.sideIndex = newSideIndex;
@@ -294,6 +313,8 @@ class Engine {
             console.error("Tried to apply a null AnswerModel!");
             return;
         }
+
+        this.answers.push(selectedAnswer.id);
 
         for (const answerEffect of selectedAnswer.answerEffects) {
 
