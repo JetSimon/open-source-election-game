@@ -89,6 +89,8 @@ class Engine {
     answers : number[] = [];
     visits : number[] = [];
 
+    logToConsole: boolean = true;
+
     setSeed(seed : string) {
         this.seed = seed;
         this.randomState = makeSeed(this.seed);
@@ -479,7 +481,9 @@ class Engine {
             this.onAchievementUnlocked(this.scenarioController, achievementName);
         }
         else {
-            console.warn("Did not unlock achievement with name '" + achievementName + "' because onAchievementUnlocked is null");
+            if(this.logToConsole) {
+                console.warn("Did not unlock achievement with name '" + achievementName + "' because onAchievementUnlocked is null");
+            }
         }
     }
 

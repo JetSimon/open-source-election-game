@@ -97,7 +97,6 @@ class StateController {
                     const runningMate = scenario.getRunningMateControllerById(runningMateId);
 
                     if(runningMate == undefined) {
-                        console.warn("Game thinks that candidate with id " + candidateId + " has running mate with id " + runningMateId + " but controller was not found");
                         continue;
                     }
 
@@ -180,7 +179,6 @@ class StateController {
             candidateColorRgb[i] = lerp(255, candidateColorRgb[i], majorityAmount);
             if (isHovered) {
                 candidateColorRgb[i] *= 0.85 + (Math.sin(Date.now() / 200) * 0.05);
-                console.log(majorityAmount)
             }
         }
         
