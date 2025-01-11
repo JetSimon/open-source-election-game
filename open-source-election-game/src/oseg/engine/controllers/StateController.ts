@@ -67,7 +67,12 @@ class StateController {
         this.stateModifiers.set(candidateId, Math.max(0, this.getCandidateStateModifier(candidateId) + amount));
     }
 
-    update(scenario: ScenarioController, rng : number, runningMateMap : Map<number, number>) {
+    update(scenario: ScenarioController, rng : number, runningMateMap : Map<number, number>, randomGenerator : () => number) {
+
+        function getRngMultiplier(rng : number) {
+            return 1.0 + ((randomGenerator() - 0.5) * 2) * rng;
+        }
+
         for (const candidate of scenario.getCandidates()) {
 
             if (candidate.model.runningMate) {
@@ -112,7 +117,7 @@ class StateController {
 
             opinion *= this.getCandidateStateModifier(candidate.getId());
             opinion *= scenario.getGlobalModifierForCandidate(candidate.getId());
-            opinion *= this.getRngMultiplier(rng);
+            opinion *= getRngMultiplier(rng);
 
             opinion = Math.max(0, opinion);
 
@@ -125,10 +130,6 @@ class StateController {
             const newOpinion = totalOpinion == 0 ? 1.0 / candidates.length : this.getOpinionForCandidate(candidate.getId()) / totalOpinion;
             this.opinions.set(candidate.getId(), newOpinion);
         }
-    }
-
-    getRngMultiplier(rng : number) {
-        return 1.0 + ((Math.random() - 0.5) * 2) * rng;
     }
 
     getHighestCandidate(engine: Engine): CandidateController | null {

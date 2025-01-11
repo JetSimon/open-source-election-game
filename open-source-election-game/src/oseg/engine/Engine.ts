@@ -9,6 +9,7 @@ import QuestionModel from "./models/QuestionModel";
 import CandidateModel from "./models/CandidateModel";
 import ThemeModel from "./models/ThemeModel";
 import SongModel from "./models/SongModel";
+import { makeSeed, Seed, seededRandom } from "../utils/MathUtils";
 
 // Just used when debugging/trying to see if more extreme answers help more
 const tuningMultiplier = (x: number) => 4 * x;//Math.pow(x, 3);
@@ -81,6 +82,13 @@ class Engine {
      */
     rng : number = 0.025;
     useRng : boolean = true;
+    seed : Seed = makeSeed("TEST")//makeSeed(Date.now().toString());
+    random = seededRandom(this.seed);
+
+    setSeed(newSeed : Seed) {
+        this.seed = newSeed;
+        this.random = seededRandom(this.seed);
+    }
 
     /**
      * Loads a ScenarioModel into the engine
@@ -236,7 +244,7 @@ class Engine {
                 }
             }
 
-            stateController.update(this.scenarioController, this.getRngRange(), runningMateMap);
+            stateController.update(this.scenarioController, this.getRngRange(), runningMateMap, this.random);
         }
     }
 
