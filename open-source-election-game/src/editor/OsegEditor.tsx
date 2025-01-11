@@ -72,16 +72,16 @@ function OsegEditor() {
     const [lastSaved, setLastSaved] = useState<number>(-1);
 
     async function loadDefaultData() {
-        const defaultData = await fetch("./scenarios/1980 For Common Sense/data.json");
+        const defaultData = await fetch("./scenarios/1848b/data.json");
         const defaultDataJson = await defaultData.json();
 
-        const mapSvgRes = await fetch("./scenarios/1980 For Common Sense/map.svg");
+        const mapSvgRes = await fetch("./scenarios/1848b/map.svg");
         const defaultMapSvg: string = await mapSvgRes.text();
 
-        const defaultLogic = await fetch("./scenarios/1980 For Common Sense/logic.js");
+        const defaultLogic = await fetch("./scenarios/1848b/logic.js");
         const defaultLogicText = await defaultLogic.text();
 
-        const defaultCss = await fetch("./scenarios/1980 For Common Sense/style.css");
+        const defaultCss = await fetch("./scenarios/1848b/style.css");
         const defaultCssText = await defaultCss.text();
 
         setData(defaultDataJson);
