@@ -9,7 +9,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "(npm run build) && (npx typedoc --entryPointStrategy Expand src/engine)",
+    "predeploy": "(npm run build) && (npx typedoc --entryPointStrategy Expand src/oseg/engine)",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
