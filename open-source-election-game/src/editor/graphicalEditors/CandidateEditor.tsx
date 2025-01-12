@@ -182,8 +182,8 @@ function CandidateEditor(props: CandidateEditorProps) {
             <GenericEditorInput
                 defaultValue={candidate.color}
                 onChange={(e) => updateFieldAndUpdateData<string>("color", e.target.value)}
-                label={"Hex Color"}
-                type={"text"}
+                label={"Color"}
+                type={"color"}
             />
 
             <GenericEditorTextArea

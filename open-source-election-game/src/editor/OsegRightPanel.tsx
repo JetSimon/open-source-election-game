@@ -1,5 +1,5 @@
 import MapView from "../oseg/game/views/MapView";
-import { Engine, GameState } from "../oseg/engine/Engine";
+import { Engine } from "../oseg/engine/Engine";
 import EnumNavBar from "./components/EnumNavBar";
 import { useState, useEffect } from "react";
 import ElectionDescriptionView from "../oseg/game/views/ElectionDescriptionView";
@@ -7,6 +7,8 @@ import CandidateSelectionView from "../oseg/game/views/CandidateSelectionView";
 import ScenarioModel from "../oseg/engine/models/ScenarioModel";
 import OsegSimulator from "./OsegSimulator";
 import StateController from "../oseg/engine/controllers/StateController";
+import QuoteHeader from "../oseg/game/components/QuoteHeader";
+import MusicPlayer from "../oseg/game/components/MusicPlayer";
 
 enum RightNavBar {
     Map,
@@ -67,16 +69,22 @@ function OsegRightPanel(props: OsegRightPanelProps) {
                 </div>
             );
         }
-        else if (rightNavBar == RightNavBar.Election) {
+        else if (rightNavBar == RightNavBar.Election || rightNavBar == RightNavBar.Candidates) {
+            const theme = engine.scenarioController.theme;
+            const backgroundImage = "url('" + theme.backgroundImageUrl +  "')" 
             return (
-                // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                <ElectionDescriptionView theme={engine.scenarioController.theme} setSelectingCandidate={(_x: boolean) => { }} engine={engine}></ElectionDescriptionView>
-            );
-        }
-        else if (rightNavBar == RightNavBar.Candidates) {
-            return (
-                // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                <CandidateSelectionView onStartButtonPressed={null} theme={engine.scenarioController.theme} setGameState={(_x: GameState) => { }} setSelectingCandidate={(_x: boolean) => { }} engine={engine}></CandidateSelectionView>
+                <div style={{backgroundColor:theme.backgroundColor, backgroundImage:backgroundImage}} className="Game">
+                <img className="TopBanner" src={theme.headerImageUrl}></img>
+                <QuoteHeader engine={engine} theme={theme}></QuoteHeader>
+                {
+                    rightNavBar == RightNavBar.Election ?
+                    <ElectionDescriptionView theme={engine.scenarioController.theme} setSelectingCandidate={() => { }} engine={engine}></ElectionDescriptionView>
+                    :
+                    <CandidateSelectionView onStartButtonPressed={null} theme={engine.scenarioController.theme} setGameState={() => { }} setSelectingCandidate={() => { }} engine={engine}></CandidateSelectionView>
+                }
+               
+                <MusicPlayer songs={engine.scenarioController.model.music}></MusicPlayer>
+                </div>
             );
         }
         else if (rightNavBar == RightNavBar.Simulator) {

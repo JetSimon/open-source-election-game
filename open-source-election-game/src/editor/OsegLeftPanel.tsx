@@ -10,6 +10,7 @@ import AdjustStateIssueScore from "./bulkMapComponents/AdjustStateIssueScore";
 import CandidateEditor from "./graphicalEditors/CandidateEditor";
 import IssuesEditor from "./graphicalEditors/IssuesEditor";
 import QuestionsEditor from "./graphicalEditors/QuestionsEditor";
+import ScenarioDetailsEditor from "./graphicalEditors/ScenarioDetailsEditor";
 
 enum LeftNavBar {
     DataJson,
@@ -19,7 +20,8 @@ enum LeftNavBar {
     MarginTools,
     Candidates,
     Issues,
-    Questions
+    Questions,
+    ScenarioDetails
 }
 
 const leftNavBarValues = Object.keys(LeftNavBar).filter((item) => {
@@ -175,6 +177,9 @@ function OsegLeftPanel(props: OsegLeftPanelProps) {
         }
         else if(leftNavBar == LeftNavBar.Questions) {
             return <QuestionsEditor data={data} setData={setData}></QuestionsEditor>
+        }
+        else if(leftNavBar == LeftNavBar.ScenarioDetails) {
+            return <ScenarioDetailsEditor data={data} setData={setData}></ScenarioDetailsEditor>
         }
     }
 

@@ -54,6 +54,11 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
     }
 
     const currentCandidate = engine.getCandidateControllerByCandidateId(candidateId);
+
+    if(currentCandidate == undefined) {
+      return [];
+    }
+
     const runningMates = new Set(currentCandidate.model.runningMateIds);
 
     return engine.currentScenario.candidates.filter((x) => runningMates.has(x.id));
@@ -86,6 +91,11 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
   }
 
   const selectedCandidateController: CandidateController = engine.getCandidateControllerByCandidateId(selectedCandidate);
+
+  if(selectedCandidateController == undefined) {
+    return <p>Selected candidate controller is undefined</p>
+  }
+
   const runningMateModel: CandidateModel = engine.getCandidateModelById(selectedRunningMate);
 
   return (

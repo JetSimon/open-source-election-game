@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ScenarioModel from "../oseg/engine/models/ScenarioModel";
 import "./OsegSimulator.css";
 import FinalResultsModel from "../oseg/engine/models/FinalResultsModel";
@@ -30,21 +30,15 @@ function OsegSimulator(props: OsegSimulatorProps) {
 
     const { data, logic, theme } = props;
 
-    const [selectedCandidate, setSelectedCandidate] = useState<number>(-1);
-
-    const [selectedRunningMate, setSelectedRunningMate] = useState<number>(-1);
-
-    useEffect(() => {
-
+    const [selectedCandidate, setSelectedCandidate] = useState<number>(() => {
         const cans = getCandidatesWithSides();
-        const can = cans.length > 0 ? cans[0].id : -1;
+        return cans.length > 0 ? cans[0].id : -1;
+    });
 
-        const mates = getRunningMatesForCandidate(can);
-        const mate = mates.length > 0 ? mates[0].id : -1;
-
-        setSelectedCandidate(can);
-        setSelectedRunningMate(mate);
-    }, [])
+    const [selectedRunningMate, setSelectedRunningMate] = useState<number>(() => {
+        const mates = getRunningMatesForCandidate(selectedCandidate);
+        return mates.length > 0 ? mates[0].id : -1;
+    }); 
 
     function getCandidatesWithSides(): CandidateModel[] {
         const candidates: CandidateModel[] = [];

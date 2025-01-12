@@ -162,3 +162,13 @@ label {
 .OsegLeftPanel select, .Toolbar select {
     padding: 0.6em 1.2em;
 }
+
+.SongEditor {
+    border: 1px solid rgba(0,0,0,0.24);
+    padding: 8px;
+    margin: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    place-items: center;
+    gap: 4px;
+}
