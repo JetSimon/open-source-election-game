@@ -7,7 +7,7 @@ function getAllPathIdsInSvg(svg : string) : string[] {
         return [];
     }
 
-    const ids = [];
+    const ids : string[] = [];
 
     for(const path of paths) {
         const idMatches = path.match(idRegex);
