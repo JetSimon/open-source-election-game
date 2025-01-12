@@ -182,7 +182,7 @@ function OsegLeftPanel(props: OsegLeftPanelProps) {
     function doNothing(_s : StateModel) {}
 
     return (
-        <div className="OsegPanel">
+        <div className="OsegLeftPanel OsegPanel">
             <EnumNavBar description="Edit" enumValueAsString={LeftNavBar[leftNavBar].toString()} setEnumFromString={setLeftNavBarFromString} enumKeys={leftNavBarValues} ></EnumNavBar>
             {getEditorArea()}
         </div>
