@@ -130,6 +130,11 @@ function GameView(props: GameViewProps) {
       return;
     }
 
+    if(!window.confirm("Are you sure you want to visit " + state.model.name + "?"))
+    {
+      return;
+    }
+
     engine.waitingToPickState = false;
     state.visit(engine.getPlayerCandidateController().getId(), engine);
     setShowMap(false);
