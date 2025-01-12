@@ -1,0 +1,29 @@
+.AnswerEffectsHolder {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.AnswerEffectEditor button {
+    padding: 5px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    display: flex;
+    place-items: center;
+    font-size: small;
+}
+
+.AnswerEffectEditor {
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.169);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin: 4px;
+    padding: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    place-items: center;
+    gap: 4px
+}
+
+.AnswerEffectEditor > div {
+    font-size: xx-small;
+}

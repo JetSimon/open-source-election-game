@@ -2,16 +2,19 @@ import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
 import GenericEditorTextArea from "../components/GenericEditorTextArea";
 import AnswerModel from "../../oseg/engine/models/AnswerModel";
 import AnswerEffectEditor from "./AnswerEffectEditor";
+import QuestionModel from "../../oseg/engine/models/QuestionModel";
+import "./AnswerEditor.css"
 
 interface AnswerEditorProps {
     data : ScenarioModel;
     setData : (data : ScenarioModel) => void;
     answer : AnswerModel;
+    associatedQuestion: QuestionModel;
 }
 
 function AnswerEditor(props : AnswerEditorProps) {
 
-    const {data, setData, answer} = props;
+    const {data, setData, answer, associatedQuestion} = props;
 
     function updateFieldAndUpdateData<T>(field: string, newValue: T) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -20,10 +23,29 @@ function AnswerEditor(props : AnswerEditorProps) {
         setData(JSON.parse(JSON.stringify(data)));
     }
 
+    function deleteAnswer() {
+        associatedQuestion.answers.filter((x) => x != answer);
+        setData(JSON.parse(JSON.stringify(data)));
+    }
+
+    function addAnswerEffect() {
+        answer.answerEffects.push({
+            answerEffectType: "Global",
+            candidateId: data.candidates[0]?.id ?? 0,
+            issueId: data.issues[0]?.id ?? 0,
+            stateId: data.states[0]?.id ?? 0,
+            amount: 0
+        })
+        setData(JSON.parse(JSON.stringify(data)));
+    }
+
     return (
-        <div style={{margin: "8px", padding: "8px", borderBottom:"1px solid rgba(0,0,0,0.4)"}}>
+        <div className="AnswerEditor">
+
             <p style={{fontWeight:"bold"}}>Id: {answer.id}</p>
             
+            <button className="RedButton" onClick={deleteAnswer}>Delete</button>
+
             <GenericEditorTextArea
                 defaultValue={answer.description}
                 onChange={(e) => updateFieldAndUpdateData<string>("description", e.target.value)}
@@ -36,10 +58,14 @@ function AnswerEditor(props : AnswerEditorProps) {
                 label={"Feedback"}
             />
             
-            <div>
-                <h3>Answer Effects</h3>
-                {answer.answerEffects.map(answerEffect => <AnswerEffectEditor setData={setData} data={data} answerEffect={answerEffect} associatedAnswer={answer}></AnswerEffectEditor>)}
-            </div>
+            <details>
+                <summary>Answer Effects</summary>
+                <div className="AnswerEffectsHolder">
+                    {answer.answerEffects.map(answerEffect => <AnswerEffectEditor setData={setData} data={data} answerEffect={answerEffect} associatedAnswer={answer}></AnswerEffectEditor>)}
+                    <button onClick={addAnswerEffect} title="Add answer effect" className="GreenButton" style={{borderRadius:"100%", aspectRatio:"1/1"}}>+</button>
+                </div>
+            </details>
+           
         </div>
     )
 }

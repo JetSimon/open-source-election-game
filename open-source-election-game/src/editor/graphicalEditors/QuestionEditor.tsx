@@ -3,7 +3,7 @@ import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
 import GenericEditorCheckbox from "../components/GenericEditorCheckbox";
 import GenericEditorTextArea from "../components/GenericEditorTextArea";
 import AnswerEditor from "./AnswerEditor";
-
+import "./QuestionEditor.css"
 interface QuestionEditorProps {
     data : ScenarioModel;
     setData : (data : ScenarioModel) => void;
@@ -22,12 +22,42 @@ function QuestionEditor(props : QuestionEditorProps) {
         setData(JSON.parse(JSON.stringify(data)));
     }
 
+    function getHighestAnswerId() {
+        if(data.scenarioSides.length == 0 || data.scenarioSides[0].questions.length == 0) {
+            return Math.round(Math.random() * 565464);
+        }
+        
+        let highest = 0;
+
+        for(const side of data.scenarioSides) {
+            for(const question of side.questions) {
+                for(const answer of question.answers) {
+                    highest = Math.max(highest, answer.id);
+                }
+            }
+        }
+
+        return highest;
+    }
+    
+    function addAnswer() {
+        const id = getHighestAnswerId() + 1;
+        question.answers.push({
+            id: id,
+            description: "Answer description here",
+            feedback: "Answer feedback here, leave blank for none",
+            answerEffects: []
+        });
+        setData(JSON.parse(JSON.stringify(data)));
+    }
+
     return (
         <div>
             <h2>Question Editor</h2>
 
             <h3>Question {questionIndex + 1}.</h3>
 
+            <div className="QuestionArea">
             <p style={{fontWeight:"bold"}}>Id: {question.id}</p>
             
             <GenericEditorTextArea
@@ -37,12 +67,15 @@ function QuestionEditor(props : QuestionEditorProps) {
             />
             
             <GenericEditorCheckbox label={"Keep In Place if Questions Shuffled?"} defaultValue={question.keepInPlaceIfQuestionsShuffled} onChange={(e) => updateFieldAndUpdateData("keepInPlaceIfQuestionsShuffled", e.target.checked)}></GenericEditorCheckbox>
+            </div>
+            
         
             <h3>Answers</h3>
             <div>
-                {question.answers.map((answer) => <AnswerEditor setData={setData} data={data} answer={answer}></AnswerEditor>)}
+                {question.answers.map((answer) => <AnswerEditor associatedQuestion={question} setData={setData} data={data} answer={answer}></AnswerEditor>)}
+                <button onClick={addAnswer} className="GreenButton">Add Answer</button>
             </div>
-        
+
         </div>
     )
 }

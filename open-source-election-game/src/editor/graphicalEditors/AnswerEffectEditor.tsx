@@ -35,14 +35,16 @@ function AnswerEffectEditor(props: AnswerEffectEditorProps) {
     }
 
     return (
-        <div className="AnswerEffectEditor" style={{ margin: "8px", padding: "8px", borderBottom: "1px solid rgba(0,0,0,0.4)" }}>
+        <div className="AnswerEffectEditor">
 
-            <button className="RedButton" onClick={deleteAnswerEffect}>X</button>
 
+            <div>
             <label>Answer Effect Type: </label>
             <select onChange={(e) => updateFieldAndUpdateData<string>("answerEffectType", e.target.value)} value={answerEffect.answerEffectType}>
                 {answerEffectTypes.map((effectType) => <option key={effectType} value={effectType}>{effectType}</option>)}
             </select>
+            </div>
+           
 
             {
                 <div>
@@ -70,7 +72,14 @@ function AnswerEffectEditor(props: AnswerEffectEditorProps) {
                     </select>
                 </div>
             }
+
+            <div>
             <GenericEditorInput label={"Amount: "} type={"number"} defaultValue={answerEffect.amount} onChange={(e) => updateFieldAndUpdateData("amount", Number(e.target.value))}></GenericEditorInput>
+            </div>
+
+            <button className="RedButton" onClick={deleteAnswerEffect}>X</button>
+
+            
         </div>
     );
 }
