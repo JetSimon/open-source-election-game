@@ -15,6 +15,7 @@ import { getAllPathIdsInSvg } from "../oseg/utils/SvgUtils";
 import EditorWarningBox from "./components/EditorWarningBox";
 import IssueScore from "../oseg/engine/models/IssueScore";
 import BaseCandidateStateModifier from "../oseg/engine/models/BaseCandidateStateModifier";
+import StateEditor from "./graphicalEditors/StateEditor";
 
 enum LeftNavBar {
     DataJson,
@@ -25,7 +26,8 @@ enum LeftNavBar {
     Candidates,
     Issues,
     Questions,
-    ScenarioDetails
+    ScenarioDetails,
+    States
 }
 
 const leftNavBarValues = Object.keys(LeftNavBar).filter((item) => {
@@ -251,6 +253,9 @@ function OsegLeftPanel(props: OsegLeftPanelProps) {
         }
         else if(leftNavBar == LeftNavBar.ScenarioDetails) {
             return <ScenarioDetailsEditor data={data} setData={setData}></ScenarioDetailsEditor>
+        }
+        else if(leftNavBar == LeftNavBar.States) {
+            return <StateEditor data={data} setData={setData}></StateEditor>
         }
     }
 

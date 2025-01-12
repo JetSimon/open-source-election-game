@@ -172,3 +172,11 @@ label {
     place-items: center;
     gap: 4px;
 }
+
+.EditorNote {
+    font-size: small;
+    color: grey;
+    font-weight: italic;
+    margin: 8px;
+    padding: 0px;
+}
