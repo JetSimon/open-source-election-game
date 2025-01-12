@@ -8,8 +8,8 @@
             "party": "Democrat",
             "homeState": "Michigan",
             "color": "#0671B0",
-            "runningMate": false,
-            "isPlayable": false,
+            
+            
             "issueScores": [
                 {
                     "issueId": 6,
@@ -49,8 +49,8 @@
             "party": "Whig",
             "homeState": "Kentucky",
             "color": "#f0c862",
-            "runningMate": false,
-            "isPlayable": true,
+            
+            
             "issueScores": [
                 {
                     "issueId": 6,
@@ -90,8 +90,8 @@
             "party": "Southern Democrat",
             "homeState": "Kentucky",
             "color": "#FFFF00",
-            "runningMate": false,
-            "isPlayable": false,
+            
+            
             "issueScores": [],
             "description": "<p>John C. Breckinridge is the Southern answer to Stephen Douglas as Democrat nominee. Like Douglas, Breckinridge has little chance of winning the election outright. He does have a good chance of winning all or most of the Southern states, though.</p><p>As an ardent pro-slavery candidate (a \"Fire-Eater\"), it is Breckenridge's job to defend the <em>Dred Scott</em> decision and represent the slaveholding interests in any House negotiations that would ensue after a deadlocked Electoral College.</p>",
             "imageUrl": "/static/images/john-c-breckenridge-1860.jpg",
@@ -105,8 +105,8 @@
             "party": "Democratic",
             "homeState": "New York",
             "color": "#00C100",
-            "runningMate": false,
-            "isPlayable": false,
+            
+            
             "issueScores": [
                 {
                     "issueId": 6,
@@ -146,8 +146,8 @@
             "party": "Whig",
             "homeState": "New York",
             "color": "#FF0000",
-            "runningMate": true,
-            "isPlayable": false,
+            
+            
             "issueScores": [],
             "description": "<p>Fillmore was the favorite at the convention and is a resident New Yorker - a key state in any election. Importantly, Fillmore has been a moderate on the slavery issue, which is especially contentious this election cycle, and generally aligns with you on domestic policy besides. Although Fillmore did not actually back you at the convention and is less than enthusiastic about your prospects for victory, his presence on the ticket would certainly do you some good in the North.</p>",
             "imageUrl": "https://i.imgur.com/eepT77p.png",
@@ -161,8 +161,8 @@
             "party": "Democrat",
             "homeState": "Georgia",
             "color": "#0000FF",
-            "runningMate": true,
-            "isPlayable": false,
+            
+            
             "issueScores": [],
             "description": "<p>Herschel Johnson is a former Governor of Georgia with a stated opposition to the Fire-Eaters and talk of secession. He is one of the last leading Democrats of the South to have not bolted to the Southern Democrat splinter party. Unfortunately, it is not very likely that Johnson's presence will help Douglas compete with Breckenridge or Bell in the South.</p>",
             "imageUrl": "/static/images/herschel-johnson-1860.jpg",
@@ -176,8 +176,8 @@
             "party": "Southern Democrat",
             "homeState": "Oregon",
             "color": "#FFFF00",
-            "runningMate": true,
-            "isPlayable": false,
+            
+            
             "issueScores": [],
             "description": "<p>Joseph Lane is the first Governor of Oregon and a supporter of slavery, in spite of that state's free-soil status. His original home state is North Carolina. He agrees with Breckinridge on all major issues, and gives him a chance to pick up a few electoral votes in a place very distant from the Deep South.</p>",
             "imageUrl": "/static/images/joseph-lane-1860.jpg",
@@ -191,8 +191,8 @@
             "party": "Constitutional Union",
             "homeState": "Massachusetts",
             "color": "#00C100",
-            "runningMate": true,
-            "isPlayable": false,
+            
+            
             "issueScores": [],
             "description": "<p>Edward Everett is nearing the end of an illustrious political career that includes time served in the House, Senate, as Governor of Massachusetts, Secretary of State, and as President of Harvard. Long known as a conservative, Everett hopes to provide regional balance to the Constitutional Union ticket, and to have the same moderating effect on northern abolitionists that Bell hopes to have on southern fire-eaters.</p>",
             "imageUrl": "/static/images/edward-everett-1860.jpg",
@@ -206,8 +206,8 @@
             "party": "Whig",
             "homeState": "Massachusetts",
             "color": "#FF0000",
-            "runningMate": true,
-            "isPlayable": false,
+            
+            
             "issueScores": [],
             "description": "<p>Abbott Lawrence is a fair bit more ideologically aligned with Clayite policies like internal improvements than others, being a vocal supporter of railroad construction. Out of all the vice-presidential candidates, he's surely the happiest to work with you in 1848. Additionally, despite being a Massachusetts native, Lawrence is dubbed a 'Cotton Whig' for his heavy moderation on slavery, which could help marginally in the South. On the other hand, though, Lawrence is quite well off and would do little to help shake Clay’s well-known reputation as a career politician.<p>",
             "imageUrl": "https://i.imgur.com/YT4GP6p.png",
@@ -221,8 +221,8 @@
             "party": "Whig",
             "homeState": "Ohio",
             "color": "#FF0000",
-            "runningMate": true,
-            "isPlayable": false,
+            
+            
             "issueScores": [],
             "description": "<p>Ewing is a diehard Whig who served under the short-lived Harrison administration. Importantly, he resigned upon the maverick Tyler's repeal of the Banking Act, making him both an experienced pick and well liked by the party. Ewing carries little baggage other than his fondness for Catholicism, despite his official birth as a Presbyterian - unfortunately for him, rumors of a secret Catholic president do not sit well for many Southern and Whig voters. Your advanced age will only heighten those worries. His selection would certainly lead to the religion issue becoming another salient against the ticket.</p>",
             "imageUrl": "https://i.imgur.com/8OfOXVT.png",
@@ -236,8 +236,8 @@
             "party": "Democrat",
             "homeState": "Kentucky",
             "color": "#0000FF",
-            "runningMate": true,
-            "isPlayable": false,
+            
+            
             "issueScores": [],
             "description": "<p>James Guthrie served as Secretary of the Treasury under Franklin Pierce, and paid off most of the federal debt during that term. He is a slaveholder and states' rights advocate, but a bitter opponent of secession. His selection would allow Douglas to run with a Southerner who is still somewhat connected to the national political scene. Guthrie has also long advocated internal improvements and owns a railroad, which could attract some limited crossover support from former Whigs.</p>",
             "imageUrl": "/static/images/james-guthrie-1860.jpg",
@@ -251,8 +251,8 @@
             "party": "Democrat",
             "homeState": "New York",
             "color": "#0000FF",
-            "runningMate": true,
-            "isPlayable": false,
+            
+            
             "issueScores": [],
             "description": "<p>Horatio Seymour has served as Governor of New York and is influential in that state's politics. By selecting him, Douglas would be running with an all-northern ticket, but he could gain valuable votes in the nation's largest state. Seymour has been associated with the \"Hunker\" faction of New York Democrats, who favor internal improvements and oppose agitation on the slavery issue. It would take some cajoling and possibly more for Seymour to accept the nomination.</p>",
             "imageUrl": "/static/images/horatio-seymour-1860.jpg",

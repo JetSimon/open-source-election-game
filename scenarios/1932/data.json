@@ -8,7 +8,7 @@
             "party": "Democrat",
             "homeState": "New York",
             "color": "#4D4C99",
-            "isPlayable": true,
+            
             "issueScores": [
                 {
                     "issueId": 100,
@@ -43,14 +43,14 @@
             "runningMate": false
         },
         {
-            "runningMate": false,
+            
             "id": 200,
             "firstName": "Herbert",
             "lastName": "Hoover",
             "party": "Republican",
             "homeState": "California",
             "color": "#C9566A",
-            "isPlayable": true,
+            
             "issueScores": [
                 {
                     "issueId": 100,
@@ -84,14 +84,14 @@
             "startingGlobalMultiplier": 1
         },
         {
-            "runningMate": false,
+            
             "id": 202,
             "firstName": "Norman",
             "lastName": "Thomas",
             "party": "Union",
             "homeState": "North Dakota",
             "color": "#CC7A98",
-            "isPlayable": false,
+            
             "issueScores": [
                 {
                     "issueId": 100,
@@ -125,14 +125,14 @@
             "startingGlobalMultiplier": 1
         },
         {
-            "runningMate": false,
+            
             "id": 203,
             "firstName": "Other",
             "lastName": "Candidates",
             "party": "Independent",
             "homeState": "Hell",
             "color": "#F2C679",
-            "isPlayable": false,
+            
             "issueScores": [
                 {
                     "issueId": 100,
@@ -166,14 +166,14 @@
             "startingGlobalMultiplier": 1
         },
         {
-            "runningMate": true,
+            
             "id": 6,
             "firstName": "Charles",
             "lastName": "Curtis",
             "party": "Republican",
             "homeState": "Kansas",
             "color": "#FF0000",
-            "isPlayable": false,
+            
             "issueScores": [],
             "description": "<p>The Vice President, Charles Curtis, is a son of Kansas and the very soil of America. Born of humble stock and carrying the proud blood of the Kaw Nation, he has risen to the highest echelons of power through grit, determination, and an abiding faith in the possibilities of this great land. A master of Senate chambers and the architect of legislative compromise, he is, for the establishment, the epitome of steadfast experience and continuity.</p><p>But alas, time spares no man. Curtis’s health falters, weakened by cardiovascular troubles. Furthermore, his time as Vice President has been criticized as lacking in vigor, with detractors claiming he has not made a decisive mark on the administration.</p>",
             "imageUrl": "https://itsastronomical.com/assets/1932/curtis.png",
@@ -181,14 +181,14 @@
             "startingGlobalMultiplier": 1
         },
         {
-            "runningMate": true,
+            
             "id": 7,
             "firstName": "James",
             "lastName": "Harbord",
             "party": "Republican",
             "homeState": "New York",
             "color": "#FF0000",
-            "isPlayable": false,
+            
             "issueScores": [],
             "description": "'",
             "imageUrl": "https://itsastronomical.com/assets/1932/harbord.png",
@@ -196,14 +196,14 @@
             "startingGlobalMultiplier": 1
         },
         {
-            "runningMate": true,
+            
             "id": 8,
             "firstName": "Hiram",
             "lastName": "Bingham",
             "party": "Republican",
             "homeState": "Connecticut",
             "color": "#FF0000",
-            "isPlayable": false,
+            
             "issueScores": [],
             "description": "'",
             "imageUrl": "https://itsastronomical.com/assets/1932/bingham.png",
@@ -211,14 +211,14 @@
             "startingGlobalMultiplier": 1
         },
         {
-            "runningMate": true,
+            
             "id": 9,
             "firstName": "Hanford",
             "lastName": "MacNider",
             "party": "Republican",
             "homeState": "Kansas",
             "color": "#FF0000",
-            "isPlayable": false,
+            
             "issueScores": [],
             "description": "'",
             "imageUrl": "https://itsastronomical.com/assets/1932/macnider.png",
@@ -226,14 +226,14 @@
             "startingGlobalMultiplier": 1
         },
         {
-            "runningMate": true,
+            
             "id": 205,
             "firstName": "William",
             "lastName": "Borah",
             "party": "Republican",
             "homeState": "Idaho",
             "color": "#FF0000",
-            "isPlayable": false,
+            
             "issueScores": [],
             "description": "'",
             "imageUrl": "https://itsastronomical.com/assets/1932/Borah.png",
@@ -241,14 +241,14 @@
             "startingGlobalMultiplier": 1
         },
         {
-            "runningMate": true,
+            
             "id": 207,
             "firstName": "Arthur",
             "lastName": "Vandenberg",
             "party": "Republican",
             "homeState": "Michigan",
             "color": "#FF0000",
-            "isPlayable": false,
+            
             "issueScores": [],
             "description": "'",
             "imageUrl": "https://itsastronomical.com/assets/1932/Vandenberg.png",
@@ -256,14 +256,14 @@
             "startingGlobalMultiplier": 1
         },
         {
-            "runningMate": true,
+            
             "id": 1,
             "firstName": "John",
             "lastName": "Garner",
             "party": "Democrat",
             "homeState": "Texas",
             "color": "#0000FF",
-            "isPlayable": false,
+            
             "issueScores": [],
             "description": "<p>There is a steadiness, a surety, a plain-spoken quality to John Nance Garner that calls to mind the enduring spirit of the American frontier. ‘Cactus Jack,’ as he’s known, embodies the grit and gristle of his beloved Texas, and it is no exaggeration to say that his years as Speaker of the House have been a bulwark. He knows how to wrangle a vote, how to bridge a divide, and how to move the machinery of Congress forward, often against the stiffest resistance.</p><p>But his ideological frustrations tend toward a conservatism that may not align with the bold experimentation that these times demand. Where we see the necessity of broad, federal action, Garner may hesitate.</p>",
             "imageUrl": "https://itsastronomical.com/assets/1932/garner.png",
@@ -271,14 +271,14 @@
             "startingGlobalMultiplier": 1
         },
         {
-            "runningMate": true,
+            
             "id": 2,
             "firstName": "William Gibbs",
             "lastName": "McAdoo",
             "party": "Democrat",
             "homeState": "California",
             "color": "#0000FF",
-            "isPlayable": false,
+            
             "issueScores": [],
             "description": "'",
             "imageUrl": "https://itsastronomical.com/assets/1932/mcadoo.png",
@@ -286,14 +286,14 @@
             "startingGlobalMultiplier": 1
         },
         {
-            "runningMate": true,
+            
             "id": 3,
             "firstName": "Carter",
             "lastName": "Glass",
             "party": "Democrat",
             "homeState": "Virginia",
             "color": "#0000FF",
-            "isPlayable": false,
+            
             "issueScores": [],
             "description": "'",
             "imageUrl": "https://itsastronomical.com/assets/1932/glass.png",
@@ -301,14 +301,14 @@
             "startingGlobalMultiplier": 1
         },
         {
-            "runningMate": true,
+            
             "id": 4,
             "firstName": "Cordell",
             "lastName": "Hull",
             "party": "Democrat",
             "homeState": "Tennessee",
             "color": "#0000FF",
-            "isPlayable": false,
+            
             "issueScores": [],
             "description": "'",
             "imageUrl": "https://itsastronomical.com/assets/1932/hull.png",
@@ -316,14 +316,14 @@
             "startingGlobalMultiplier": 1
         },
         {
-            "runningMate": true,
+            
             "id": 5,
             "firstName": "Albert",
             "lastName": "Ritchie",
             "party": "Democrat",
             "homeState": "Maryland",
             "color": "#0000FF",
-            "isPlayable": false,
+            
             "issueScores": [],
             "description": "'",
             "imageUrl": "https://itsastronomical.com/assets/1932/ritchie.png",
@@ -331,14 +331,14 @@
             "startingGlobalMultiplier": 1
         },
         {
-            "runningMate": true,
+            
             "id": 210,
             "firstName": "Henry",
             "lastName": "Wallace",
             "party": "Democrat",
             "homeState": "Iowa",
             "color": "#0000FF",
-            "isPlayable": false,
+            
             "issueScores": [],
             "description": "'",
             "imageUrl": "https://itsastronomical.com/assets/1932/Wallace.png",
@@ -346,14 +346,14 @@
             "startingGlobalMultiplier": 1
         },
         {
-            "runningMate": true,
+            
             "id": 214,
             "firstName": "James",
             "lastName": "Maurer",
             "party": "Socialist",
             "homeState": "Pennsylvania",
             "color": "#00C100",
-            "isPlayable": false,
+            
             "issueScores": [],
             "description": "'",
             "imageUrl": "'",
@@ -361,14 +361,14 @@
             "startingGlobalMultiplier": 1
         },
         {
-            "runningMate": true,
+            
             "id": 215,
             "firstName": "Other",
             "lastName": "Running Mates",
             "party": "Independent",
             "homeState": "Illinois",
             "color": "#FFFF00",
-            "isPlayable": false,
+            
             "issueScores": [],
             "description": "'",
             "imageUrl": "'",
