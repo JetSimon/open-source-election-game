@@ -24,7 +24,7 @@ function AnswerEditor(props : AnswerEditorProps) {
     }
 
     function deleteAnswer() {
-        associatedQuestion.answers.filter((x) => x != answer);
+        associatedQuestion.answers = associatedQuestion.answers.filter((x) => x != answer);
         setData(JSON.parse(JSON.stringify(data)));
     }
 
