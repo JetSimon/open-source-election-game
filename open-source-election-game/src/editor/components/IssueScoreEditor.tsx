@@ -44,14 +44,16 @@ function IssueScoreEditor(props : IssueScoreEditorProps) {
         <h4>{linkedIssue.name}</h4>
         <div className="IssueScoreEditorSlider">
             <label>State Issue Score</label>
+            <span> ({issueScore.issueScore}) ({stance})</span>
+            <br></br>
             <input step="0.01" type="range" min="-1" max="1" defaultValue={issueScore.issueScore} onChange={(e) => setIssueScore(Number(e.target.value))}></input>
-            <span>({issueScore.issueScore}) ({stance})</span>
         </div>
         
         <div className="IssueScoreEditorSlider">
             <label>State Issue Weight</label>
+            <span> ({issueScore.weight})</span>
+            <br></br>
             <input step="0.01" type="range" min="0" max="1" defaultValue={issueScore.weight} onChange={(e) => setIssueWeight(Number(e.target.value))}></input>
-            <span>({issueScore.weight})</span>
         </div>
     </div>
     )

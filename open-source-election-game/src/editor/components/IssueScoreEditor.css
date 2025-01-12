@@ -1,6 +1,5 @@
 .IssueScoreEditorSlider {
     width: 100%;
-    display: inline-flex;
     margin:auto;
     place-content: center;
 }
