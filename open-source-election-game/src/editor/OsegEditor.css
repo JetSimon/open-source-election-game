@@ -159,6 +159,6 @@ label {
     font-weight: bold;
 }
 
-.OsegLeftPanel select {
+.OsegLeftPanel select, .Toolbar select {
     padding: 0.6em 1.2em;
 }

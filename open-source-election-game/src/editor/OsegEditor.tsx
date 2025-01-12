@@ -57,6 +57,11 @@ function setBulkStateFunction(f : BulkStateFunction) {
     bulkStateFunction = f;
 }
 
+const templateNames = [
+    "1848b",
+    "1980 For Common Sense"
+];
+
 function OsegEditor() {
 
     const [data, setData] = useState<ScenarioModel | null>(null);
@@ -71,17 +76,19 @@ function OsegEditor() {
 
     const [lastSaved, setLastSaved] = useState<number>(-1);
 
-    async function loadDefaultData() {
-        const defaultData = await fetch("./scenarios/1848b/data.json");
+    const [currentTemplateName, setCurrentTemplateName] = useState(templateNames[0]);
+
+    async function loadTemplate(templateName : string) {
+        const defaultData = await fetch("./scenarios/" + templateName + "/data.json");
         const defaultDataJson = await defaultData.json();
 
-        const mapSvgRes = await fetch("./scenarios/1848b/map.svg");
+        const mapSvgRes = await fetch("./scenarios/" + templateName + "/map.svg");
         const defaultMapSvg: string = await mapSvgRes.text();
 
-        const defaultLogic = await fetch("./scenarios/1848b/logic.js");
+        const defaultLogic = await fetch("./scenarios/" + templateName + "/logic.js");
         const defaultLogicText = await defaultLogic.text();
 
-        const defaultCss = await fetch("./scenarios/1848b/style.css");
+        const defaultCss = await fetch("./scenarios/" + templateName + "/style.css");
         const defaultCssText = await defaultCss.text();
 
         setData(defaultDataJson);
@@ -91,6 +98,10 @@ function OsegEditor() {
 
         const stringifiedData = JSON.stringify(defaultDataJson, null, 4);
         setDataString(stringifiedData);
+    }
+
+    async function loadDefaultData() {
+        loadTemplate(templateNames[0]);
     }
 
     function save() {
@@ -176,8 +187,12 @@ function OsegEditor() {
                 <button onClick={() => exportFiles()}>Export</button>
                 <button onClick={() => save()}>Save</button>
                 <button onClick={() => load()}>Load</button>
-                <button className="RedButton" onClick={() => loadDefaultData()}>Load Default</button>
                 <button className="GreenButton" onClick={() => setIsPlaying(true)}>Start Playing</button>
+                <label>Templates: </label>
+                <select value={currentTemplateName} onChange={(e) => setCurrentTemplateName(e.target.value)}>
+                    {templateNames.map((templateName) => <option value={templateName} key={templateName}>{templateName}</option>)}
+                </select>
+                <button className="RedButton" onClick={() => {if(window.confirm("Are you sure you want to load a new template? Any unsaved data will be lost.")) loadTemplate(currentTemplateName)}}>Load Template</button>
             </div>
             {lastSaved != -1 && <p className="LastSaved">Last saved: {new Date(lastSaved).toTimeString()}</p>}
             <PanelGroup direction="horizontal" id="group">
