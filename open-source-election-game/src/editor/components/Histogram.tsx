@@ -25,7 +25,7 @@ function Histogram(props : HistogramProps) {
                 const max = min + binRange;
                 const height = (n / total) * 100;
                 return (
-                    <div className="HistogramEntry">
+                    <div title={"Happened " + n + " time(s) (" + (n / total * 100).toFixed(2) + "%)"} className="HistogramEntry">
                         <div className="HistogramBar" style={{"height": height + "px"}}></div>
                         <div style={n == 0 ? {backgroundColor:"grey", color:"white"} :{}} className="HistogramLabel">{min.toFixed(2)}% - {max.toFixed(2)}%</div>
                     </div>

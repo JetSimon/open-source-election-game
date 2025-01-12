@@ -117,7 +117,7 @@ class Engine {
     loadScenario(newScenario: ScenarioModel, asObserver = false) {
         newScenario = JSON.parse(JSON.stringify(newScenario));
         this.currentQuestionIndex = 0;
-        this.scenarioController.loadScenario(newScenario, 0);
+        this.scenarioController.loadScenario(this, newScenario, 0);
         this.currentScenario = newScenario;
         this.gameState = GameState.CandidateSelection;
         this.runningMateId = -1;
@@ -151,7 +151,7 @@ class Engine {
 
         this.runningMateId = runningMateId;
         this.sideIndex = newSideIndex;
-        this.scenarioController.loadScenario(this.currentScenario, this.sideIndex);
+        this.scenarioController.loadScenario(this, this.currentScenario, this.sideIndex);
         this.gameState = GameState.Election;
         this.updateStates();
     }
@@ -176,8 +176,6 @@ class Engine {
             party: "error",
             homeState: "error",
             color: "#000000",
-            runningMate: false,
-            isPlayable: false,
             issueScores: [],
             description: "this is the empty candidate model to return when errors happen",
             imageUrl: "",
@@ -265,7 +263,7 @@ class Engine {
                 }
             }
 
-            stateController.update(this.scenarioController, this.getRngRange(), runningMateMap, this.random);
+            stateController.update(this, this.getRngRange(), runningMateMap);
         }
     }
 
@@ -346,6 +344,9 @@ class Engine {
                     else {
                         console.error("When trying to apply effects, state not found with id", answerEffect.stateId);
                     }
+                }
+                else {
+                    console.error("Got unknown AnswerEffect type", answerEffectType)
                 }
             }
             catch (e) {

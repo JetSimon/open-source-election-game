@@ -5,6 +5,7 @@ import IssueScores from "../IssueScores";
 import QuestionModel from "../models/QuestionModel";
 import { shuffleArray } from "../../utils/ArrayUtils";
 import ThemeModel from "../models/ThemeModel";
+import { Engine } from "../Engine";
 
 class ScenarioController {
     model: ScenarioModel = this.makeEmptyScenarioModel();
@@ -48,11 +49,33 @@ class ScenarioController {
         };
     }
 
-    loadScenario(model: ScenarioModel, sideIndex: number) {
+    isCandidateRunningMate(engine : Engine, candidateId : number) {
+
+        if(engine.getPlayerCandidateController().getId() == candidateId) {
+            return false;
+        }
+
+        if(engine.getPlayerRunningMateModel().id == candidateId) {
+            return true;
+        }
+       
+        for(const candidate of engine.scenarioController.model.candidates) {
+            for(const mateId of candidate.runningMateIds) {
+                if(mateId == candidateId) {
+                    return true;
+                }
+            }
+        }
+        
+        return false;
+    }
+
+    loadScenario(engine : Engine, model: ScenarioModel, sideIndex: number) {
         this.model = model;
         this.theme = this.model.theme;
-        this.candidateControllers = this.model.candidates.filter((candidateModel) => !candidateModel.runningMate).map((candidateModel) => new CandidateController(candidateModel));
-        this.runningMateControllers = this.model.candidates.filter((candidateModel) => candidateModel.runningMate).map((candidateModel) => new CandidateController(candidateModel));
+
+        this.candidateControllers = this.model.candidates.filter((candidateModel) => !this.isCandidateRunningMate(engine, candidateModel.id)).map((candidateModel) => new CandidateController(candidateModel));
+        this.runningMateControllers = this.model.candidates.filter((candidateModel) => this.isCandidateRunningMate(engine, candidateModel.id)).map((candidateModel) => new CandidateController(candidateModel));
         
         const toRemove = new Set();
         for (const candidateController of this.getCandidates()) {

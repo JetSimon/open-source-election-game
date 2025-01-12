@@ -68,15 +68,17 @@ class StateController {
         this.stateModifiers.set(candidateId, Math.max(0, this.getCandidateStateModifier(candidateId) + amount));
     }
 
-    update(scenario: ScenarioController, rng : number, runningMateMap : Map<number, number>, randomGenerator : () => number) {
+    update(engine : Engine, rng : number, runningMateMap : Map<number, number>) {
+
+        const scenario = engine.scenarioController;
 
         function getRngMultiplier(rng : number) {
-            return 1.0 + ((randomGenerator() - 0.5) * 2) * rng;
+            return 1.0 + ((engine.random() - 0.5) * 2) * rng;
         }
 
         for (const candidate of scenario.getCandidates()) {
 
-            if (candidate.model.runningMate) {
+            if (candidate.isRunningMate(engine)) {
                 continue;
             }
 

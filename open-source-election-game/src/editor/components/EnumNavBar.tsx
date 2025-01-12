@@ -9,6 +9,9 @@ interface EnumNavBarProps {
 
 function EnumNavBar(props: EnumNavBarProps) {
     const { enumValueAsString, setEnumFromString, enumKeys, description } = props;
+    
+    const makeName = (s : string) => s.replace(/([A-Z])/g, ' $1').trim();
+ 
     return (
 
         <div id="navbar" className="EnumNavBar">
@@ -16,7 +19,7 @@ function EnumNavBar(props: EnumNavBarProps) {
             {
                 enumKeys.map((key: string) => {
                     const selected = enumValueAsString == key;
-                    return <button disabled={selected} key={key} onClick={() => setEnumFromString(key)}>{key}</button>;
+                    return <button disabled={selected} key={key} onClick={() => setEnumFromString(key)}>{makeName(key)}</button>;
                 })
             }
 

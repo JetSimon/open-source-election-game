@@ -1,9 +1,12 @@
 import CandidateModel from "../models/CandidateModel";
 import IssueScores from "../IssueScores";
+import { Engine } from "../Engine";
 
 class CandidateController {
     model: CandidateModel;
     issueScores: IssueScores;
+
+    cachedIsRunningMate : boolean | undefined = undefined;
 
     constructor(model: CandidateModel) {
         this.model = model;
@@ -20,6 +23,14 @@ class CandidateController {
 
     changeIssueScore(issueScoreId: number, amount: number) {
         this.issueScores.changeWeightForIssue(issueScoreId, amount);
+    }
+
+    isRunningMate(engine : Engine) {
+        if(this.cachedIsRunningMate != undefined) {
+            return this.cachedIsRunningMate;
+        }
+        this.cachedIsRunningMate = engine.scenarioController.isCandidateRunningMate(engine, this.getId());
+        return this.cachedIsRunningMate;
     }
 }
 

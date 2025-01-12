@@ -13,7 +13,8 @@
 
 .Panel {
     padding: 16px;
-    overflow-y: auto;
+    overflow-y: scroll!important;
+    max-height: 100vh;
 }
 
 .DownloadButtons {
@@ -88,4 +89,51 @@
     font-size: x-small;
     margin: -5px 0px;
     margin-bottom: 5px;
+}
+
+.GenericEditorComponent {
+
+}
+
+.GenericEditorComponent label {
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.EditorWarningBox {
+    background-color: rgba(255, 255, 0, 0.279);
+    border: rgba(184, 135, 11, 0.669) 1px solid;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    place-items: center;
+    text-align: center;
+    margin: 8px auto;
+    font-size: small;
+}
+
+.EditorStance {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.628);
+    padding: 8px;
+    margin: 8px;
+}
+
+.EditorToggleChecked {
+    background-color: green;
+    color: white;
+    opacity: 0.9;
+    transition: all 0.1s ease-in-out;
+}
+
+.EditorToggleChecked:hover {
+    opacity: 1.0;
+}
+
+.EditorToggleUnchecked {
+    
+}
+
+label {
+    font-weight: bold;
 }

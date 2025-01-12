@@ -7,8 +7,6 @@ interface CandidateModel {
     party: string;
     homeState: string;
     color: string;
-    runningMate: boolean;
-    isPlayable: boolean;
     issueScores: IssueScore[];
     description: string;
     imageUrl: string;

@@ -34,8 +34,8 @@
             "party": "Democrat",
             "homeState": "Tennessee",
             "color": "#0000FF",
-            "runningMate": false,
-            "isPlayable": true,
+            
+            
             "issueScores": [
                 {
                     "issueId": 47,
@@ -79,8 +79,8 @@
             "party": "Whig",
             "homeState": "Kentucky",
             "color": "#F0C862",
-            "runningMate": false,
-            "isPlayable": true,
+            
+            
             "issueScores": [
                 {
                     "issueId": 47,
@@ -120,8 +120,8 @@
             "party": "Liberty",
             "homeState": "Michigan",
             "color": "#FFFF00",
-            "runningMate": false,
-            "isPlayable": false,
+            
+            
             "issueScores": [
                 {
                     "issueId": 47,
@@ -161,8 +161,8 @@
             "party": "Independent",
             "homeState": "Virginia",
             "color": "#00C100",
-            "runningMate": false,
-            "isPlayable": false,
+            
+            
             "issueScores": [
                 {
                     "issueId": 47,
@@ -202,8 +202,8 @@
             "party": "Democrat",
             "homeState": "Pennsylvania",
             "color": "#0000FF",
-            "runningMate": true,
-            "isPlayable": false,
+            
+            
             "issueScores": [],
             "description": "",
             "imageUrl": "https://www.jetsimon.com/public/static/images/george-dallas-1844.jpg"
@@ -217,8 +217,8 @@
             "party": "Democrat",
             "homeState": "New Hampshire",
             "color": "#0000FF",
-            "runningMate": true,
-            "isPlayable": false,
+            
+            
             "issueScores": [],
             "description": "",
             "imageUrl": "https://www.jetsimon.com/public/static/images/levi-woodbury-1844.jpg"
@@ -232,8 +232,8 @@
             "party": "Whig",
             "homeState": "New Jersey",
             "color": "#F0C862",
-            "runningMate": true,
-            "isPlayable": false,
+            
+            
             "issueScores": [],
             "description": "<p>This is a description</p>",
             "imageUrl": "https://www.jetsimon.com/public/static/images/theodore-frelinghuysen-1844.jpg"
@@ -247,8 +247,8 @@
             "party": "Whig",
             "homeState": "Pennsylvania",
             "color": "#F0C862",
-            "runningMate": true,
-            "isPlayable": false,
+            
+            
             "issueScores": [],
             "description": "<p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p>",
             "imageUrl": "https://www.jetsimon.com/public/static/images/john-sergeant-1844.jpg"
@@ -262,8 +262,8 @@
             "party": "Whig",
             "homeState": "New York",
             "color": "#F0C862",
-            "runningMate": true,
-            "isPlayable": false,
+            
+            
             "issueScores": [],
             "description": "<p>This is a description</p>",
             "imageUrl": "https://www.jetsimon.com/public/static/images/millard-fillmore-1844.jpg"
@@ -277,8 +277,8 @@
             "party": "Liberty",
             "homeState": "Ohio",
             "color": "#FFFF00",
-            "runningMate": false,
-            "isPlayable": false,
+            
+            
             "issueScores": [],
             "description": "",
             "imageUrl": ""
@@ -292,8 +292,8 @@
             "party": "Independent",
             "homeState": "South Carolina",
             "color": "#00C100",
-            "runningMate": false,
-            "isPlayable": false,
+            
+            
             "issueScores": [],
             "description": "",
             "imageUrl": ""
