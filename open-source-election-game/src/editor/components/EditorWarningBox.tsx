@@ -3,17 +3,18 @@ interface EditorWarningBoxProps {
     header : string;
     body : string;
     buttonText : string;
+    destructiveAction : boolean;
 }
 
 function EditorWarningBox(props : EditorWarningBoxProps) {
 
-    const {onClick, header, body, buttonText} = props;
+    const {onClick, header, body, buttonText, destructiveAction} = props;
 
     return (
         <div className="EditorWarningBox">
                 <h3>⚠️ {header} ⚠️</h3>
                 <p>{body}</p>
-                <button className="GreenButton" onClick={onClick}>{buttonText}</button>
+                <button className={destructiveAction ? "RedButton" : "GreenButton"} onClick={onClick}>{buttonText}</button>
         </div>
     )
 }

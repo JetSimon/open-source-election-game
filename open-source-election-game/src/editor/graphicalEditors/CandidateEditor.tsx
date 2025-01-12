@@ -146,7 +146,7 @@ function CandidateEditor(props: CandidateEditorProps) {
             <h3>Candidate Info</h3>
 
             {!isPlayable &&
-            <EditorWarningBox buttonText={"Create ScenarioSide for " + candidate.firstName + " " + candidate.lastName} onClick={createSide} header={"No ScenarioSide Defined"} body={"This candidate will not be playable without a ScenarioSide defined. Would you like to create a ScenarioSide for this candidate? You don't need to create one if they are only a running mate."} ></EditorWarningBox>
+            <EditorWarningBox destructiveAction={false} buttonText={"Create ScenarioSide for " + candidate.firstName + " " + candidate.lastName} onClick={createSide} header={"No ScenarioSide Defined"} body={"This candidate will not be playable without a ScenarioSide defined. Would you like to create a ScenarioSide for this candidate? You don't need to create one if they are only a running mate."} ></EditorWarningBox>
             }
 
             <div style={{ fontWeight: "bold" }}>Id: {candidate.id}</div>
@@ -219,7 +219,7 @@ function CandidateEditor(props: CandidateEditorProps) {
             <div>
                 {candidate.issueScores.sort().map((x) => <IssueScoreEditor data={data} setData={setData} issueScore={x}></IssueScoreEditor>)}
             </div>
-            {isMissingIssueScores && <EditorWarningBox buttonText="Create Missing IssueScores" onClick={addMissingIssueScores} header={"Not All IssueScores Defined"} body={"This candidate doesn't have all issue scores defined, this means they won't work in game. If they are a running mate this is fine. If not create some."} ></EditorWarningBox>}
+            {isMissingIssueScores && <EditorWarningBox destructiveAction={false} buttonText="Create Missing IssueScores" onClick={addMissingIssueScores} header={"Not All IssueScores Defined"} body={"This candidate doesn't have all issue scores defined, this means they won't work in game. If they are a running mate this is fine. If not create some."} ></EditorWarningBox>}
         </div>
     );
 }

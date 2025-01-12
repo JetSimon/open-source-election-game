@@ -11,6 +11,10 @@ import CandidateEditor from "./graphicalEditors/CandidateEditor";
 import IssuesEditor from "./graphicalEditors/IssuesEditor";
 import QuestionsEditor from "./graphicalEditors/QuestionsEditor";
 import ScenarioDetailsEditor from "./graphicalEditors/ScenarioDetailsEditor";
+import { getAllPathIdsInSvg } from "../oseg/utils/SvgUtils";
+import EditorWarningBox from "./components/EditorWarningBox";
+import IssueScore from "../oseg/engine/models/IssueScore";
+import BaseCandidateStateModifier from "../oseg/engine/models/BaseCandidateStateModifier";
 
 enum LeftNavBar {
     DataJson,
@@ -129,6 +133,35 @@ function OsegLeftPanel(props: OsegLeftPanelProps) {
             );
         }
         else if (leftNavBar == LeftNavBar.MapSvg) {
+
+            const pathIdSet = new Set(getAllPathIdsInSvg(mapSvg));
+            const modelStateAbbrSet = new Set(data.states.map((x) => x.abbr));
+
+            const pathsWithoutStatesDefined : string[] = [];
+            const statesWithoutPathsDefined = new Set<StateModel>();
+
+            for(const pathId of pathIdSet) {
+                if(!modelStateAbbrSet.has(pathId)) {
+                    pathsWithoutStatesDefined.push(pathId);
+                }
+            }
+
+            for(const state of data.states) {
+                if(!pathIdSet.has(state.abbr)) {
+                    statesWithoutPathsDefined.add(state);
+                }
+            }
+
+            function getHighestStateId() {
+                if(data.states.length == 0) {
+                    return Math.round(Math.random() * 231255);
+                }
+                return Math.max(...data.states.map((x) => x.id));
+            }
+
+            const anyPathsWithoutStates = pathsWithoutStatesDefined.length > 0;
+            const anyStatesWithoutPaths = statesWithoutPathsDefined.size > 0;
+
             return (
                 <div>
                     <h2>Map Svg</h2>
@@ -140,6 +173,44 @@ function OsegLeftPanel(props: OsegLeftPanelProps) {
                         onChange={onMapSvgChanged}
                     ></Editor>
                     <p>Note: Ensure all path ids correspond to a state abbreviation in Data</p>
+
+                    {anyPathsWithoutStates && <EditorWarningBox destructiveAction={false} onClick={() => {
+                        for(const pathId of pathsWithoutStatesDefined) {
+                            const newState : StateModel = {
+                                id: getHighestStateId() + 1,
+                                name: pathId,
+                                abbr: pathId,
+                                electoralVotes: 0,
+                                popularVotes: 0,
+                                baseIssueScores: data.issues.map((issue) => {
+                                    const issueScore : IssueScore = {
+                                        issueId: issue.id,
+                                        issueScore: 0,
+                                        weight: 1
+                                    }
+                                    return issueScore;
+                                }),
+                                baseCandidateStateModifiers: data.candidates.map((candidate) => {
+                                    const candidateMod : BaseCandidateStateModifier = {
+                                        candidateId: candidate.id,
+                                        amount: 1
+                                    }
+                                    return candidateMod;
+                                })
+                            }
+                            data.states.push(newState);
+                        }
+                        setData(JSON.parse(JSON.stringify(data)));
+                        setMapSvg(mapSvg);
+                    }} header={"Paths Without States"} body={"The following paths in this svg do not have states defined in data: " + pathsWithoutStatesDefined.toString() + ". Would you like to automatically add them all?"} buttonText={"Add Missing States"}></EditorWarningBox>
+                }
+                    {anyStatesWithoutPaths && <EditorWarningBox destructiveAction={true} onClick={() => {
+                        data.states = data.states.filter((x) => !statesWithoutPathsDefined.has(x))
+                        setData(JSON.parse(JSON.stringify(data)));
+                        setMapSvg(mapSvg);
+                    }} header={"States Without Paths"} body={"The following states in data do not have paths in this svg: " + Array.from(statesWithoutPathsDefined).map((state : StateModel) => state.name).toString() + ". Would you like to delete them?"} buttonText={"Delete Missing States"}></EditorWarningBox>
+                }
+
                 </div>
             );
         }
