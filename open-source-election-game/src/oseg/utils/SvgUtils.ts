@@ -15,7 +15,9 @@ function getAllPathIdsInSvg(svg : string) : string[] {
             continue;
         }
         const id = idMatches[0].split("\"")[1].replace("\"", "");
-        ids.push(id);
+        if(id != undefined) {
+            ids.push(id);
+        }
     }
 
     return ids;
