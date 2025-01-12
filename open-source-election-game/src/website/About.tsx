@@ -39,7 +39,7 @@ function About() {
 
             <h2>"This Site Doesn't Have As Many Features As CTS/NCT/etc!!!"</h2>
 
-            <p>Yeah, this site is more of a demo site for the OSEG engine itself. I'm working on my own site that uses OSEG that will have more features like achivements, more scenarios, etc. My dream is to have a website with accounts and easy user submitted scenarios.</p>
+            <p>This is the demo site for OSEG. Where people can try it out and use our web-based editor to make their own scenarios. To play scenarios, save your highscore, and leave reviews try <a href="https://thecommunitytrail.com/">The Community Trail</a></p>
 
             <h2>Some Images</h2>
 
