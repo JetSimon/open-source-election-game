@@ -62,7 +62,7 @@ function AnswerEditor(props : AnswerEditorProps) {
                 <summary>Answer Effects</summary>
                 <div className="AnswerEffectsHolder">
                     {answer.answerEffects.map(answerEffect => <AnswerEffectEditor setData={setData} data={data} answerEffect={answerEffect} associatedAnswer={answer}></AnswerEffectEditor>)}
-                    <button onClick={addAnswerEffect} title="Add answer effect" className="GreenButton" style={{borderRadius:"100%", aspectRatio:"1/1"}}>+</button>
+                    <button onClick={addAnswerEffect} title="Add answer effect" className="CircleButton GreenButton" style={{borderRadius:"100%", aspectRatio:"1/1"}}>+</button>
                 </div>
             </details>
            

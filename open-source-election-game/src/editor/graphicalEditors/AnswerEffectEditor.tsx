@@ -34,6 +34,19 @@ function AnswerEffectEditor(props: AnswerEffectEditorProps) {
         setData(JSON.parse(JSON.stringify(data)))
     }
 
+    function cloneAnswerEffect() {
+        const clone : AnswerEffectModel = {
+            answerEffectType: answerEffect.answerEffectType,
+            candidateId: answerEffect.candidateId,
+            issueId: answerEffect.issueId,
+            stateId: answerEffect.stateId,
+            amount: answerEffect.amount
+        }
+
+        associatedAnswer.answerEffects.push(clone);
+        setData(JSON.parse(JSON.stringify(data)))
+    }
+
     return (
         <div className="AnswerEffectEditor">
 
@@ -77,8 +90,8 @@ function AnswerEffectEditor(props: AnswerEffectEditorProps) {
             <GenericEditorInput label={"Amount: "} type={"number"} defaultValue={answerEffect.amount} onChange={(e) => updateFieldAndUpdateData("amount", Number(e.target.value))}></GenericEditorInput>
             </div>
 
-            <button className="RedButton" onClick={deleteAnswerEffect}>X</button>
-
+            <button title="Delete answer effect" className="CircleButton RedButton" onClick={deleteAnswerEffect}>X</button>
+            <button title="Clone answer effect" className="CircleButton BlueButton" onClick={cloneAnswerEffect}>📄</button>
             
         </div>
     );

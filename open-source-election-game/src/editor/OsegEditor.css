@@ -53,6 +53,17 @@
     background-color: darkgreen!important;
 }
 
+.BlueButton {
+    background-color: rgb(47, 47, 255);
+    color: white;
+    font-weight: bold;
+    border: solid 1px darkblue;
+}
+
+.BlueButton:hover {
+    background-color: darkblue!important;
+}
+
 .RedButton {
     background-color: red;
     color: white;
@@ -62,6 +73,16 @@
 
 .RedButton:hover {
     background-color: darkred!important;
+}
+
+.CircleButton {
+    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    font-size: small!important;
 }
 
 .Toolbar {
