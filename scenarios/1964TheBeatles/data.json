@@ -25,7 +25,7 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": 0.65,
+                    "issueScore": 0.15,
                     "weight": 1
                 },
                 {
@@ -34,9 +34,11 @@
                     "weight": 1
                 }
             ],
-            "description": "",
+            "description": "John Lennon, Paul McCartney, George Harrison, and Richard \"Ringo Starr\" Starkey are The Beatles. The hottest band out of Liverpool and kings of the Mersey Beat. Do they have what it takes to make it in America?",
             "imageUrl": "https://jetsimon.com/cts-media/public/1964Beatles_init_3.png",
-            "runningMateIds": [],
+            "runningMateIds": [
+                108
+            ],
             "startingGlobalMultiplier": 1
         },
         {
@@ -49,7 +51,7 @@
             "issueScores": [
                 {
                     "issueId": 37,
-                    "issueScore": -0.5,
+                    "issueScore": -0.48,
                     "weight": 1
                 },
                 {
@@ -64,7 +66,7 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": 0.1,
+                    "issueScore": -0.2,
                     "weight": 1
                 },
                 {
@@ -116,7 +118,7 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": -0.7,
+                    "issueScore": 0.94,
                     "weight": 1
                 },
                 {
@@ -149,7 +151,7 @@
             "id": 283,
             "name": "Alabama",
             "abbr": "AL",
-            "electoralVotes": 5,
+            "electoralVotes": 0,
             "popularVotes": 564473,
             "baseIssueScores": [
                 {
@@ -159,8 +161,8 @@
                 },
                 {
                     "issueId": 38,
-                    "issueScore": -0.9,
-                    "weight": 1
+                    "issueScore": -0.35,
+                    "weight": 0.93
                 },
                 {
                     "issueId": 39,
@@ -169,8 +171,8 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": -0.7,
-                    "weight": 1
+                    "issueScore": 0.64,
+                    "weight": 0.93
                 },
                 {
                     "issueId": 41,
@@ -197,7 +199,7 @@
             "id": 284,
             "name": "Alaska",
             "abbr": "AK",
-            "electoralVotes": 3,
+            "electoralVotes": 0,
             "popularVotes": 60762,
             "baseIssueScores": [
                 {
@@ -245,7 +247,7 @@
             "id": 285,
             "name": "Arizona",
             "abbr": "AZ",
-            "electoralVotes": 4,
+            "electoralVotes": 0,
             "popularVotes": 398491,
             "baseIssueScores": [
                 {
@@ -293,7 +295,7 @@
             "id": 286,
             "name": "Arkansas",
             "abbr": "AR",
-            "electoralVotes": 8,
+            "electoralVotes": 0,
             "popularVotes": 428509,
             "baseIssueScores": [
                 {
@@ -313,7 +315,7 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": -0.7,
+                    "issueScore": 0.93,
                     "weight": 1
                 },
                 {
@@ -341,7 +343,7 @@
             "id": 287,
             "name": "California",
             "abbr": "CA",
-            "electoralVotes": 32,
+            "electoralVotes": 0,
             "popularVotes": 6506578,
             "baseIssueScores": [
                 {
@@ -361,7 +363,7 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": -0.013798294,
+                    "issueScore": -1,
                     "weight": 1
                 },
                 {
@@ -377,7 +379,7 @@
                 },
                 {
                     "candidateId": 106,
-                    "amount": 0.9587
+                    "amount": 1.4
                 },
                 {
                     "candidateId": 107,
@@ -389,7 +391,7 @@
             "id": 288,
             "name": "Colorado",
             "abbr": "CO",
-            "electoralVotes": 6,
+            "electoralVotes": 0,
             "popularVotes": 736246,
             "baseIssueScores": [
                 {
@@ -409,8 +411,8 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": -0.2441229656,
-                    "weight": 1
+                    "issueScore": 0.64,
+                    "weight": 0.93
                 },
                 {
                     "issueId": 41,
@@ -437,7 +439,7 @@
             "id": 289,
             "name": "Connecticut",
             "abbr": "CT",
-            "electoralVotes": 8,
+            "electoralVotes": 0,
             "popularVotes": 1222883,
             "baseIssueScores": [
                 {
@@ -485,7 +487,7 @@
             "id": 290,
             "name": "Delaware",
             "abbr": "DE",
-            "electoralVotes": 3,
+            "electoralVotes": 0,
             "popularVotes": 196683,
             "baseIssueScores": [
                 {
@@ -517,7 +519,7 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 105,
-                    "amount": 1
+                    "amount": 1.4
                 },
                 {
                     "candidateId": 106,
@@ -533,7 +535,7 @@
             "id": 291,
             "name": "Florida",
             "abbr": "FL",
-            "electoralVotes": 10,
+            "electoralVotes": 0,
             "popularVotes": 1544176,
             "baseIssueScores": [
                 {
@@ -543,8 +545,8 @@
                 },
                 {
                     "issueId": 38,
-                    "issueScore": -0.7,
-                    "weight": 1
+                    "issueScore": -0.35,
+                    "weight": 0.93
                 },
                 {
                     "issueId": 39,
@@ -553,7 +555,7 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": -0.0755,
+                    "issueScore": 0.93,
                     "weight": 1
                 },
                 {
@@ -573,7 +575,7 @@
                 },
                 {
                     "candidateId": 107,
-                    "amount": 0.6
+                    "amount": 1.4
                 }
             ]
         },
@@ -581,7 +583,7 @@
             "id": 292,
             "name": "Georgia",
             "abbr": "GA",
-            "electoralVotes": 12,
+            "electoralVotes": 0,
             "popularVotes": 733349,
             "baseIssueScores": [
                 {
@@ -591,8 +593,8 @@
                 },
                 {
                     "issueId": 38,
-                    "issueScore": -0.7,
-                    "weight": 1
+                    "issueScore": -0.35,
+                    "weight": 0.93
                 },
                 {
                     "issueId": 39,
@@ -601,7 +603,7 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": -0.6,
+                    "issueScore": 0.93,
                     "weight": 1
                 },
                 {
@@ -621,7 +623,7 @@
                 },
                 {
                     "candidateId": 107,
-                    "amount": 0.6
+                    "amount": 1.4
                 }
             ]
         },
@@ -629,7 +631,7 @@
             "id": 293,
             "name": "Hawaii",
             "abbr": "HI",
-            "electoralVotes": 3,
+            "electoralVotes": 0,
             "popularVotes": 184705,
             "baseIssueScores": [
                 {
@@ -677,7 +679,7 @@
             "id": 294,
             "name": "Idaho",
             "abbr": "ID",
-            "electoralVotes": 4,
+            "electoralVotes": 0,
             "popularVotes": 300450,
             "baseIssueScores": [
                 {
@@ -725,7 +727,7 @@
             "id": 295,
             "name": "Illinois",
             "abbr": "IL",
-            "electoralVotes": 27,
+            "electoralVotes": 0,
             "popularVotes": 2757409,
             "baseIssueScores": [
                 {
@@ -773,7 +775,7 @@
             "id": 296,
             "name": "Indiana",
             "abbr": "IN",
-            "electoralVotes": 13,
+            "electoralVotes": 0,
             "popularVotes": 2135360,
             "baseIssueScores": [
                 {
@@ -821,7 +823,7 @@
             "id": 297,
             "name": "Iowa",
             "abbr": "IA",
-            "electoralVotes": 10,
+            "electoralVotes": 0,
             "popularVotes": 1273810,
             "baseIssueScores": [
                 {
@@ -869,7 +871,7 @@
             "id": 298,
             "name": "Kansas",
             "abbr": "KS",
-            "electoralVotes": 8,
+            "electoralVotes": 0,
             "popularVotes": 928825,
             "baseIssueScores": [
                 {
@@ -889,8 +891,8 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": -0.5361627323,
-                    "weight": 1
+                    "issueScore": 0.64,
+                    "weight": 0.93
                 },
                 {
                     "issueId": 41,
@@ -917,7 +919,7 @@
             "id": 299,
             "name": "Kentucky",
             "abbr": "KY",
-            "electoralVotes": 10,
+            "electoralVotes": 0,
             "popularVotes": 1124462,
             "baseIssueScores": [
                 {
@@ -965,7 +967,7 @@
             "id": 300,
             "name": "Louisiana",
             "abbr": "LA",
-            "electoralVotes": 10,
+            "electoralVotes": 0,
             "popularVotes": 807891,
             "baseIssueScores": [
                 {
@@ -975,8 +977,8 @@
                 },
                 {
                     "issueId": 38,
-                    "issueScore": -0.85,
-                    "weight": 1
+                    "issueScore": -0.35,
+                    "weight": 0.93
                 },
                 {
                     "issueId": 39,
@@ -985,8 +987,8 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": 0.69073535,
-                    "weight": 1
+                    "issueScore": 0.64,
+                    "weight": 0.93
                 },
                 {
                     "issueId": 41,
@@ -1005,7 +1007,7 @@
                 },
                 {
                     "candidateId": 107,
-                    "amount": 1
+                    "amount": 1.4
                 }
             ]
         },
@@ -1013,7 +1015,7 @@
             "id": 301,
             "name": "Maine",
             "abbr": "ME",
-            "electoralVotes": 5,
+            "electoralVotes": 0,
             "popularVotes": 421773,
             "baseIssueScores": [
                 {
@@ -1061,7 +1063,7 @@
             "id": 302,
             "name": "Maryland",
             "abbr": "MD",
-            "electoralVotes": 9,
+            "electoralVotes": 0,
             "popularVotes": 1055349,
             "baseIssueScores": [
                 {
@@ -1109,7 +1111,7 @@
             "id": 303,
             "name": "Massachusetts",
             "abbr": "MA",
-            "electoralVotes": 16,
+            "electoralVotes": 0,
             "popularVotes": 2469480,
             "baseIssueScores": [
                 {
@@ -1157,7 +1159,7 @@
             "id": 304,
             "name": "Michigan",
             "abbr": "MI",
-            "electoralVotes": 20,
+            "electoralVotes": 0,
             "popularVotes": 3318097,
             "baseIssueScores": [
                 {
@@ -1205,7 +1207,7 @@
             "id": 305,
             "name": "Minnesota",
             "abbr": "MN",
-            "electoralVotes": 11,
+            "electoralVotes": 0,
             "popularVotes": 1541887,
             "baseIssueScores": [
                 {
@@ -1253,7 +1255,7 @@
             "id": 306,
             "name": "Mississippi",
             "abbr": "MS",
-            "electoralVotes": 8,
+            "electoralVotes": 0,
             "popularVotes": 298171,
             "baseIssueScores": [
                 {
@@ -1263,8 +1265,8 @@
                 },
                 {
                     "issueId": 38,
-                    "issueScore": -0.9,
-                    "weight": 1
+                    "issueScore": -0.35,
+                    "weight": 0.93
                 },
                 {
                     "issueId": 39,
@@ -1273,8 +1275,8 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": -0.7,
-                    "weight": 1
+                    "issueScore": 0.64,
+                    "weight": 0.93
                 },
                 {
                     "issueId": 41,
@@ -1301,7 +1303,7 @@
             "id": 307,
             "name": "Missouri",
             "abbr": "MO",
-            "electoralVotes": 13,
+            "electoralVotes": 0,
             "popularVotes": 1934422,
             "baseIssueScores": [
                 {
@@ -1349,7 +1351,7 @@
             "id": 308,
             "name": "Montana",
             "abbr": "MT",
-            "electoralVotes": 4,
+            "electoralVotes": 0,
             "popularVotes": 277579,
             "baseIssueScores": [
                 {
@@ -1397,7 +1399,7 @@
             "id": 309,
             "name": "Nebraska",
             "abbr": "NE",
-            "electoralVotes": 6,
+            "electoralVotes": 0,
             "popularVotes": 613095,
             "baseIssueScores": [
                 {
@@ -1445,7 +1447,7 @@
             "id": 310,
             "name": "Nevada",
             "abbr": "NV",
-            "electoralVotes": 3,
+            "electoralVotes": 0,
             "popularVotes": 107267,
             "baseIssueScores": [
                 {
@@ -1493,7 +1495,7 @@
             "id": 311,
             "name": "New Hampshire",
             "abbr": "NH",
-            "electoralVotes": 4,
+            "electoralVotes": 0,
             "popularVotes": 295761,
             "baseIssueScores": [
                 {
@@ -1541,7 +1543,7 @@
             "id": 312,
             "name": "New Jersey",
             "abbr": "NJ",
-            "electoralVotes": 16,
+            "electoralVotes": 0,
             "popularVotes": 2773111,
             "baseIssueScores": [
                 {
@@ -1573,7 +1575,7 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 105,
-                    "amount": 1
+                    "amount": 1.4
                 },
                 {
                     "candidateId": 106,
@@ -1589,7 +1591,7 @@
             "id": 313,
             "name": "New Mexico",
             "abbr": "NM",
-            "electoralVotes": 4,
+            "electoralVotes": 0,
             "popularVotes": 311107,
             "baseIssueScores": [
                 {
@@ -1609,8 +1611,8 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": 0.65,
-                    "weight": 1
+                    "issueScore": 0.64,
+                    "weight": 0.93
                 },
                 {
                     "issueId": 41,
@@ -1637,7 +1639,7 @@
             "id": 314,
             "name": "New York",
             "abbr": "NY",
-            "electoralVotes": 45,
+            "electoralVotes": 0,
             "popularVotes": 7291079,
             "baseIssueScores": [
                 {
@@ -1685,7 +1687,7 @@
             "id": 315,
             "name": "North Carolina",
             "abbr": "NC",
-            "electoralVotes": 14,
+            "electoralVotes": 0,
             "popularVotes": 1368556,
             "baseIssueScores": [
                 {
@@ -1705,7 +1707,7 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": 0.1055,
+                    "issueScore": 0.93,
                     "weight": 1
                 },
                 {
@@ -1733,7 +1735,7 @@
             "id": 316,
             "name": "North Dakota",
             "abbr": "ND",
-            "electoralVotes": 4,
+            "electoralVotes": 0,
             "popularVotes": 278431,
             "baseIssueScores": [
                 {
@@ -1781,7 +1783,7 @@
             "id": 317,
             "name": "Ohio",
             "abbr": "OH",
-            "electoralVotes": 25,
+            "electoralVotes": 0,
             "popularVotes": 4161859,
             "baseIssueScores": [
                 {
@@ -1829,7 +1831,7 @@
             "id": 318,
             "name": "Oklahoma",
             "abbr": "OK",
-            "electoralVotes": 8,
+            "electoralVotes": 0,
             "popularVotes": 903150,
             "baseIssueScores": [
                 {
@@ -1849,8 +1851,8 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": -0.7,
-                    "weight": 1
+                    "issueScore": 0.64,
+                    "weight": 0.93
                 },
                 {
                     "issueId": 41,
@@ -1877,7 +1879,7 @@
             "id": 319,
             "name": "Oregon",
             "abbr": "OR",
-            "electoralVotes": 6,
+            "electoralVotes": 0,
             "popularVotes": 776421,
             "baseIssueScores": [
                 {
@@ -1897,7 +1899,7 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": -0.1311573889,
+                    "issueScore": -1,
                     "weight": 1
                 },
                 {
@@ -1913,7 +1915,7 @@
                 },
                 {
                     "candidateId": 106,
-                    "amount": 1.0237
+                    "amount": 1.4
                 },
                 {
                     "candidateId": 107,
@@ -1925,7 +1927,7 @@
             "id": 320,
             "name": "Pennsylvania",
             "abbr": "PA",
-            "electoralVotes": 32,
+            "electoralVotes": 0,
             "popularVotes": 5006541,
             "baseIssueScores": [
                 {
@@ -1957,7 +1959,7 @@
             "baseCandidateStateModifiers": [
                 {
                     "candidateId": 105,
-                    "amount": 1
+                    "amount": 1.4
                 },
                 {
                     "candidateId": 106,
@@ -1973,7 +1975,7 @@
             "id": 321,
             "name": "Rhode Island",
             "abbr": "RI",
-            "electoralVotes": 4,
+            "electoralVotes": 0,
             "popularVotes": 405535,
             "baseIssueScores": [
                 {
@@ -2021,7 +2023,7 @@
             "id": 322,
             "name": "South Carolina",
             "abbr": "SC",
-            "electoralVotes": 8,
+            "electoralVotes": 0,
             "popularVotes": 386688,
             "baseIssueScores": [
                 {
@@ -2031,8 +2033,8 @@
                 },
                 {
                     "issueId": 38,
-                    "issueScore": -0.85,
-                    "weight": 1
+                    "issueScore": -0.35,
+                    "weight": 0.93
                 },
                 {
                     "issueId": 39,
@@ -2041,7 +2043,7 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": -0.7,
+                    "issueScore": 0.93,
                     "weight": 1
                 },
                 {
@@ -2069,7 +2071,7 @@
             "id": 323,
             "name": "South Dakota",
             "abbr": "SD",
-            "electoralVotes": 4,
+            "electoralVotes": 0,
             "popularVotes": 306487,
             "baseIssueScores": [
                 {
@@ -2117,7 +2119,7 @@
             "id": 324,
             "name": "Tennessee",
             "abbr": "TN",
-            "electoralVotes": 11,
+            "electoralVotes": 0,
             "popularVotes": 1051792,
             "baseIssueScores": [
                 {
@@ -2137,7 +2139,7 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": -0.7,
+                    "issueScore": 0.93,
                     "weight": 1
                 },
                 {
@@ -2165,7 +2167,7 @@
             "id": 325,
             "name": "Texas",
             "abbr": "TX",
-            "electoralVotes": 24,
+            "electoralVotes": 0,
             "popularVotes": 2311084,
             "baseIssueScores": [
                 {
@@ -2175,8 +2177,8 @@
                 },
                 {
                     "issueId": 38,
-                    "issueScore": -0.7,
-                    "weight": 1
+                    "issueScore": -0.35,
+                    "weight": 0.93
                 },
                 {
                     "issueId": 39,
@@ -2185,8 +2187,8 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": 0.0504846527,
-                    "weight": 1
+                    "issueScore": 0.64,
+                    "weight": 0.93
                 },
                 {
                     "issueId": 41,
@@ -2213,7 +2215,7 @@
             "id": 326,
             "name": "Utah",
             "abbr": "UT",
-            "electoralVotes": 4,
+            "electoralVotes": 0,
             "popularVotes": 374709,
             "baseIssueScores": [
                 {
@@ -2261,7 +2263,7 @@
             "id": 327,
             "name": "Vermont",
             "abbr": "VT",
-            "electoralVotes": 3,
+            "electoralVotes": 0,
             "popularVotes": 167324,
             "baseIssueScores": [
                 {
@@ -2309,7 +2311,7 @@
             "id": 328,
             "name": "Virginia",
             "abbr": "VA",
-            "electoralVotes": 12,
+            "electoralVotes": 0,
             "popularVotes": 771449,
             "baseIssueScores": [
                 {
@@ -2357,7 +2359,7 @@
             "id": 329,
             "name": "Washington",
             "abbr": "WA",
-            "electoralVotes": 9,
+            "electoralVotes": 0,
             "popularVotes": 1241572,
             "baseIssueScores": [
                 {
@@ -2377,7 +2379,7 @@
                 },
                 {
                     "issueId": 40,
-                    "issueScore": -0.060889338,
+                    "issueScore": -1,
                     "weight": 1
                 },
                 {
@@ -2393,7 +2395,7 @@
                 },
                 {
                     "candidateId": 106,
-                    "amount": 0.9853
+                    "amount": 1.4
                 },
                 {
                     "candidateId": 107,
@@ -2405,7 +2407,7 @@
             "id": 330,
             "name": "West Virginia",
             "abbr": "WV",
-            "electoralVotes": 8,
+            "electoralVotes": 0,
             "popularVotes": 837781,
             "baseIssueScores": [
                 {
@@ -2453,7 +2455,7 @@
             "id": 331,
             "name": "Wisconsin",
             "abbr": "WI",
-            "electoralVotes": 12,
+            "electoralVotes": 0,
             "popularVotes": 1729082,
             "baseIssueScores": [
                 {
@@ -2501,7 +2503,7 @@
             "id": 332,
             "name": "Wyoming",
             "abbr": "WY",
-            "electoralVotes": 3,
+            "electoralVotes": 0,
             "popularVotes": 140782,
             "baseIssueScores": [
                 {
@@ -2542,54 +2544,6 @@
                 {
                     "candidateId": 107,
                     "amount": 0
-                }
-            ]
-        },
-        {
-            "id": 333,
-            "name": "Alabama - Unpledged",
-            "abbr": "AA",
-            "electoralVotes": 6,
-            "popularVotes": 1,
-            "baseIssueScores": [
-                {
-                    "issueId": 37,
-                    "issueScore": -0.6,
-                    "weight": 1.5
-                },
-                {
-                    "issueId": 38,
-                    "issueScore": 0,
-                    "weight": 1
-                },
-                {
-                    "issueId": 39,
-                    "issueScore": -0.6,
-                    "weight": 1
-                },
-                {
-                    "issueId": 40,
-                    "issueScore": -0.6,
-                    "weight": 1
-                },
-                {
-                    "issueId": 41,
-                    "issueScore": -0.6,
-                    "weight": 1
-                }
-            ],
-            "baseCandidateStateModifiers": [
-                {
-                    "candidateId": 105,
-                    "amount": 1
-                },
-                {
-                    "candidateId": 106,
-                    "amount": 1
-                },
-                {
-                    "candidateId": 107,
-                    "amount": 1
                 }
             ]
         }
@@ -4643,22 +4597,22 @@
         }
     ],
     "theme": {
-        "backgroundImageUrl": "",
+        "backgroundImageUrl": "https://i.imgur.com/uOlVrkM.jpeg",
         "backgroundColor": "",
-        "headerImageUrl": "",
-        "primaryGameWindowColor": "",
-        "secondaryGameWindowColor": "",
-        "primaryGameWindowTextColor": "",
-        "secondaryGameWindowTextColor": "",
-        "bottomBannerBackgroundColor": "",
-        "bottomBannerTextColor": "",
-        "advisorImage": "",
-        "quote": ""
+        "headerImageUrl": "https://jetsimon.com/cts-media/public/1964Beatles_init_1.png",
+        "primaryGameWindowColor": "#242424",
+        "secondaryGameWindowColor": "#000000",
+        "primaryGameWindowTextColor": "#efefef",
+        "secondaryGameWindowTextColor": "#f9f9f9",
+        "bottomBannerBackgroundColor": "#000000",
+        "bottomBannerTextColor": "#ffffff",
+        "advisorImage": "https://jetsimon.com/cts-media/public/0000Random_Mod_init_0.png",
+        "quote": "Ladies and gentlemen, The Beatles!"
     },
-    "hasStateVisits": false,
-    "scenarioName": "",
-    "scenarioDescription": "",
-    "scenarioImageUrl": "",
-    "credits": "",
+    "hasStateVisits": true,
+    "scenarioName": "1964 - The Beatles",
+    "scenarioDescription": "<p>The year is 1964 and the British Invasion has just began. Dozens of bands from across the pond are  starting to break through into the American market.</p><p>Chief among these bands are a scrappy group of youngsters from Liverpool named The Beatles. They are now embarking on their first American tour.</p><p>Can you take these fab four to the toppermost of the poppermost, or will they be just another footnote in musical history?</p>",
+    "scenarioImageUrl": "https://jetsimon.com/cts-media/public/1964Beatles_init_2.png",
+    "credits": "by Jet",
     "music": []
 }
