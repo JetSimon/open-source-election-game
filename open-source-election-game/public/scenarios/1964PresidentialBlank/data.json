@@ -151,7 +151,7 @@
             "id": 283,
             "name": "Alabama",
             "abbr": "AL",
-            "electoralVotes": 0,
+            "electoralVotes": 5,
             "popularVotes": 564473,
             "baseIssueScores": [
                 {
@@ -199,7 +199,7 @@
             "id": 284,
             "name": "Alaska",
             "abbr": "AK",
-            "electoralVotes": 0,
+            "electoralVotes": 3,
             "popularVotes": 60762,
             "baseIssueScores": [
                 {
@@ -247,7 +247,7 @@
             "id": 285,
             "name": "Arizona",
             "abbr": "AZ",
-            "electoralVotes": 0,
+            "electoralVotes": 4,
             "popularVotes": 398491,
             "baseIssueScores": [
                 {
@@ -295,7 +295,7 @@
             "id": 286,
             "name": "Arkansas",
             "abbr": "AR",
-            "electoralVotes": 0,
+            "electoralVotes": 8,
             "popularVotes": 428509,
             "baseIssueScores": [
                 {
@@ -343,7 +343,7 @@
             "id": 287,
             "name": "California",
             "abbr": "CA",
-            "electoralVotes": 0,
+            "electoralVotes": 32,
             "popularVotes": 6506578,
             "baseIssueScores": [
                 {
@@ -391,7 +391,7 @@
             "id": 288,
             "name": "Colorado",
             "abbr": "CO",
-            "electoralVotes": 0,
+            "electoralVotes": 6,
             "popularVotes": 736246,
             "baseIssueScores": [
                 {
@@ -439,7 +439,7 @@
             "id": 289,
             "name": "Connecticut",
             "abbr": "CT",
-            "electoralVotes": 0,
+            "electoralVotes": 8,
             "popularVotes": 1222883,
             "baseIssueScores": [
                 {
@@ -487,7 +487,7 @@
             "id": 290,
             "name": "Delaware",
             "abbr": "DE",
-            "electoralVotes": 0,
+            "electoralVotes": 3,
             "popularVotes": 196683,
             "baseIssueScores": [
                 {
@@ -535,7 +535,7 @@
             "id": 291,
             "name": "Florida",
             "abbr": "FL",
-            "electoralVotes": 0,
+            "electoralVotes": 10,
             "popularVotes": 1544176,
             "baseIssueScores": [
                 {
@@ -583,7 +583,7 @@
             "id": 292,
             "name": "Georgia",
             "abbr": "GA",
-            "electoralVotes": 0,
+            "electoralVotes": 12,
             "popularVotes": 733349,
             "baseIssueScores": [
                 {
@@ -631,7 +631,7 @@
             "id": 293,
             "name": "Hawaii",
             "abbr": "HI",
-            "electoralVotes": 0,
+            "electoralVotes": 3,
             "popularVotes": 184705,
             "baseIssueScores": [
                 {
@@ -679,7 +679,7 @@
             "id": 294,
             "name": "Idaho",
             "abbr": "ID",
-            "electoralVotes": 0,
+            "electoralVotes": 4,
             "popularVotes": 300450,
             "baseIssueScores": [
                 {
@@ -727,7 +727,7 @@
             "id": 295,
             "name": "Illinois",
             "abbr": "IL",
-            "electoralVotes": 0,
+            "electoralVotes": 27,
             "popularVotes": 2757409,
             "baseIssueScores": [
                 {
@@ -775,7 +775,7 @@
             "id": 296,
             "name": "Indiana",
             "abbr": "IN",
-            "electoralVotes": 0,
+            "electoralVotes": 13,
             "popularVotes": 2135360,
             "baseIssueScores": [
                 {
@@ -823,7 +823,7 @@
             "id": 297,
             "name": "Iowa",
             "abbr": "IA",
-            "electoralVotes": 0,
+            "electoralVotes": 10,
             "popularVotes": 1273810,
             "baseIssueScores": [
                 {
@@ -871,7 +871,7 @@
             "id": 298,
             "name": "Kansas",
             "abbr": "KS",
-            "electoralVotes": 0,
+            "electoralVotes": 8,
             "popularVotes": 928825,
             "baseIssueScores": [
                 {
@@ -919,7 +919,7 @@
             "id": 299,
             "name": "Kentucky",
             "abbr": "KY",
-            "electoralVotes": 0,
+            "electoralVotes": 10,
             "popularVotes": 1124462,
             "baseIssueScores": [
                 {
@@ -967,7 +967,7 @@
             "id": 300,
             "name": "Louisiana",
             "abbr": "LA",
-            "electoralVotes": 0,
+            "electoralVotes": 10,
             "popularVotes": 807891,
             "baseIssueScores": [
                 {
@@ -1015,7 +1015,7 @@
             "id": 301,
             "name": "Maine",
             "abbr": "ME",
-            "electoralVotes": 0,
+            "electoralVotes": 5,
             "popularVotes": 421773,
             "baseIssueScores": [
                 {
@@ -1063,7 +1063,7 @@
             "id": 302,
             "name": "Maryland",
             "abbr": "MD",
-            "electoralVotes": 0,
+            "electoralVotes": 9,
             "popularVotes": 1055349,
             "baseIssueScores": [
                 {
@@ -1111,7 +1111,7 @@
             "id": 303,
             "name": "Massachusetts",
             "abbr": "MA",
-            "electoralVotes": 0,
+            "electoralVotes": 16,
             "popularVotes": 2469480,
             "baseIssueScores": [
                 {
@@ -1159,7 +1159,7 @@
             "id": 304,
             "name": "Michigan",
             "abbr": "MI",
-            "electoralVotes": 0,
+            "electoralVotes": 20,
             "popularVotes": 3318097,
             "baseIssueScores": [
                 {
@@ -1207,7 +1207,7 @@
             "id": 305,
             "name": "Minnesota",
             "abbr": "MN",
-            "electoralVotes": 0,
+            "electoralVotes": 11,
             "popularVotes": 1541887,
             "baseIssueScores": [
                 {
@@ -1255,7 +1255,7 @@
             "id": 306,
             "name": "Mississippi",
             "abbr": "MS",
-            "electoralVotes": 0,
+            "electoralVotes": 8,
             "popularVotes": 298171,
             "baseIssueScores": [
                 {
@@ -1303,7 +1303,7 @@
             "id": 307,
             "name": "Missouri",
             "abbr": "MO",
-            "electoralVotes": 0,
+            "electoralVotes": 13,
             "popularVotes": 1934422,
             "baseIssueScores": [
                 {
@@ -1351,7 +1351,7 @@
             "id": 308,
             "name": "Montana",
             "abbr": "MT",
-            "electoralVotes": 0,
+            "electoralVotes": 4,
             "popularVotes": 277579,
             "baseIssueScores": [
                 {
@@ -1399,7 +1399,7 @@
             "id": 309,
             "name": "Nebraska",
             "abbr": "NE",
-            "electoralVotes": 0,
+            "electoralVotes": 6,
             "popularVotes": 613095,
             "baseIssueScores": [
                 {
@@ -1447,7 +1447,7 @@
             "id": 310,
             "name": "Nevada",
             "abbr": "NV",
-            "electoralVotes": 0,
+            "electoralVotes": 3,
             "popularVotes": 107267,
             "baseIssueScores": [
                 {
@@ -1495,7 +1495,7 @@
             "id": 311,
             "name": "New Hampshire",
             "abbr": "NH",
-            "electoralVotes": 0,
+            "electoralVotes": 4,
             "popularVotes": 295761,
             "baseIssueScores": [
                 {
@@ -1543,7 +1543,7 @@
             "id": 312,
             "name": "New Jersey",
             "abbr": "NJ",
-            "electoralVotes": 0,
+            "electoralVotes": 16,
             "popularVotes": 2773111,
             "baseIssueScores": [
                 {
@@ -1591,7 +1591,7 @@
             "id": 313,
             "name": "New Mexico",
             "abbr": "NM",
-            "electoralVotes": 0,
+            "electoralVotes": 4,
             "popularVotes": 311107,
             "baseIssueScores": [
                 {
@@ -1639,7 +1639,7 @@
             "id": 314,
             "name": "New York",
             "abbr": "NY",
-            "electoralVotes": 0,
+            "electoralVotes": 45,
             "popularVotes": 7291079,
             "baseIssueScores": [
                 {
@@ -1687,7 +1687,7 @@
             "id": 315,
             "name": "North Carolina",
             "abbr": "NC",
-            "electoralVotes": 0,
+            "electoralVotes": 14,
             "popularVotes": 1368556,
             "baseIssueScores": [
                 {
@@ -1735,7 +1735,7 @@
             "id": 316,
             "name": "North Dakota",
             "abbr": "ND",
-            "electoralVotes": 0,
+            "electoralVotes": 4,
             "popularVotes": 278431,
             "baseIssueScores": [
                 {
@@ -1783,7 +1783,7 @@
             "id": 317,
             "name": "Ohio",
             "abbr": "OH",
-            "electoralVotes": 0,
+            "electoralVotes": 25,
             "popularVotes": 4161859,
             "baseIssueScores": [
                 {
@@ -1831,7 +1831,7 @@
             "id": 318,
             "name": "Oklahoma",
             "abbr": "OK",
-            "electoralVotes": 0,
+            "electoralVotes": 8,
             "popularVotes": 903150,
             "baseIssueScores": [
                 {
@@ -1879,7 +1879,7 @@
             "id": 319,
             "name": "Oregon",
             "abbr": "OR",
-            "electoralVotes": 0,
+            "electoralVotes": 6,
             "popularVotes": 776421,
             "baseIssueScores": [
                 {
@@ -1927,7 +1927,7 @@
             "id": 320,
             "name": "Pennsylvania",
             "abbr": "PA",
-            "electoralVotes": 0,
+            "electoralVotes": 32,
             "popularVotes": 5006541,
             "baseIssueScores": [
                 {
@@ -1975,7 +1975,7 @@
             "id": 321,
             "name": "Rhode Island",
             "abbr": "RI",
-            "electoralVotes": 0,
+            "electoralVotes": 4,
             "popularVotes": 405535,
             "baseIssueScores": [
                 {
@@ -2023,7 +2023,7 @@
             "id": 322,
             "name": "South Carolina",
             "abbr": "SC",
-            "electoralVotes": 0,
+            "electoralVotes": 8,
             "popularVotes": 386688,
             "baseIssueScores": [
                 {
@@ -2071,7 +2071,7 @@
             "id": 323,
             "name": "South Dakota",
             "abbr": "SD",
-            "electoralVotes": 0,
+            "electoralVotes": 4,
             "popularVotes": 306487,
             "baseIssueScores": [
                 {
@@ -2119,7 +2119,7 @@
             "id": 324,
             "name": "Tennessee",
             "abbr": "TN",
-            "electoralVotes": 0,
+            "electoralVotes": 11,
             "popularVotes": 1051792,
             "baseIssueScores": [
                 {
@@ -2167,7 +2167,7 @@
             "id": 325,
             "name": "Texas",
             "abbr": "TX",
-            "electoralVotes": 0,
+            "electoralVotes": 24,
             "popularVotes": 2311084,
             "baseIssueScores": [
                 {
@@ -2215,7 +2215,7 @@
             "id": 326,
             "name": "Utah",
             "abbr": "UT",
-            "electoralVotes": 0,
+            "electoralVotes": 4,
             "popularVotes": 374709,
             "baseIssueScores": [
                 {
@@ -2263,7 +2263,7 @@
             "id": 327,
             "name": "Vermont",
             "abbr": "VT",
-            "electoralVotes": 0,
+            "electoralVotes": 3,
             "popularVotes": 167324,
             "baseIssueScores": [
                 {
@@ -2311,7 +2311,7 @@
             "id": 328,
             "name": "Virginia",
             "abbr": "VA",
-            "electoralVotes": 0,
+            "electoralVotes": 12,
             "popularVotes": 771449,
             "baseIssueScores": [
                 {
@@ -2359,7 +2359,7 @@
             "id": 329,
             "name": "Washington",
             "abbr": "WA",
-            "electoralVotes": 0,
+            "electoralVotes": 9,
             "popularVotes": 1241572,
             "baseIssueScores": [
                 {
@@ -2407,7 +2407,7 @@
             "id": 330,
             "name": "West Virginia",
             "abbr": "WV",
-            "electoralVotes": 0,
+            "electoralVotes": 8,
             "popularVotes": 837781,
             "baseIssueScores": [
                 {
@@ -2455,7 +2455,7 @@
             "id": 331,
             "name": "Wisconsin",
             "abbr": "WI",
-            "electoralVotes": 0,
+            "electoralVotes": 12,
             "popularVotes": 1729082,
             "baseIssueScores": [
                 {
@@ -2503,7 +2503,7 @@
             "id": 332,
             "name": "Wyoming",
             "abbr": "WY",
-            "electoralVotes": 0,
+            "electoralVotes": 3,
             "popularVotes": 140782,
             "baseIssueScores": [
                 {

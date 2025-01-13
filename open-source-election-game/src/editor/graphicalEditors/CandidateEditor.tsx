@@ -16,13 +16,16 @@ interface CandidateEditorProps {
 function CandidateEditor(props: CandidateEditorProps) {
     const { data, setData } = props;
 
-    const [candidateId, setCandidateId] = useState(data.candidates[0].id);
+    const [candidateId, setCandidateId] = useState(data.candidates.length == 0 ? -1 : data.candidates[0].id);
 
     const candidate = data.candidates.filter((x) => x.id == candidateId)[0];
 
-    const isMissingIssueScores = candidate.issueScores.length < data.issues.length;
+    const isMissingIssueScores = candidate == undefined ? false : candidate.issueScores.length < data.issues.length;
 
     function updateFieldAndUpdateData<T>(field: string, newValue: T) {
+        if(candidate == undefined) {
+            return;
+        }
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const dynamicCandidate = candidate as { [k: string]: any; };
         dynamicCandidate[field] = newValue;
@@ -118,9 +121,10 @@ function CandidateEditor(props: CandidateEditorProps) {
         data.scenarioSides = data.scenarioSides.filter((x) => x.playerId != candidateId);
 
         setData(JSON.parse(JSON.stringify(data)));
+        setCandidateId(data.candidates.length == 0 ? -1 : data.candidates[0].id);
     }
 
-    const runningMateSet = new Set(candidate.runningMateIds);
+    const runningMateSet = candidate == undefined ? new Set() : new Set(candidate.runningMateIds);
 
     function toggleRunningMate(mateId : number) {
         if(runningMateSet.has(mateId)) {
@@ -132,6 +136,20 @@ function CandidateEditor(props: CandidateEditorProps) {
         setData(JSON.parse(JSON.stringify(data)));
     }
     
+    if(candidate == undefined) {
+        return (<div style={{ textAlign: "left" }}>
+        <h2>Candidate Editor</h2>
+        <label htmlFor="candidateSelector">Select a Candidate: </label>
+        <select value={candidateId} id="candidateSelector" onChange={(e) => setCandidateId(Number(e.target.value))}>
+            {data.candidates.map((c) => <option key={c.id} value={c.id}>{c.firstName} {c.lastName}</option>)}
+        </select>
+
+        <button className="GreenButton" onClick={addCandidate}>Add Candidate</button>
+
+        <p>No valid candidate is selected</p>
+        </div>)
+    }
+
     return (
         <div style={{ textAlign: "left" }}>
             <h2>Candidate Editor</h2>

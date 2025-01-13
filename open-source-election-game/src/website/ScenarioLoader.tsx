@@ -4,7 +4,7 @@ import Game from "../oseg/game/Game";
 import "./ScenarioLoader.css";
 import ScenarioBox from "./ScenarioBox";
 
-const scenarioNames = ["1980 For Common Sense"];
+const scenarioNames = ["1980 For Common Sense", "1964TheBeatles"];
 
 function ScenarioLoader() {
 

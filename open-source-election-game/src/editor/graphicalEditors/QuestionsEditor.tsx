@@ -83,7 +83,10 @@ function QuestionsEditor(props : QuestionsEditorProps) {
 
             {
                 side.questions.length == 0 ?
-                <p>This Scenario Side has no questions yet!</p>
+                <div>
+                    <button className="GreenButton" onClick={addQuestion}>Add Question</button>
+                    <p>This Scenario Side has no questions yet!</p>
+                </div>
                 :
                 <div>
                 <label>Select a Question: </label>

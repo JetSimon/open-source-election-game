@@ -93,7 +93,8 @@ class ScenarioController {
         }
 
         this.stateControllers = this.model.states.map((stateModel) => new StateController(this, stateModel));
-        this.questions = this.model.scenarioSides[sideIndex].questions;
+
+        this.questions = this.model.scenarioSides.length == 0 ? [] : this.model.scenarioSides[sideIndex].questions;
 
         for (let i = 0; i < this.questions.length; i++) {
             shuffleArray(this.questions[i].answers);

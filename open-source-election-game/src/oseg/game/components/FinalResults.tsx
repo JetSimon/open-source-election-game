@@ -23,13 +23,15 @@ function FinalResults(props: FinalResultsProps) {
     return pv == undefined ? -1 : pv;
   }
 
+  const hasEv = results.totalElectoralVotes > 0;
+
   return (<div style={{ backgroundColor: theme.primaryGameWindowColor, color: theme.primaryGameWindowTextColor }} className="FinalResults">
     <h2>Final Numbers</h2>
     <table className="ResultsTable">
       <thead style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}}>
         <tr>
           <th>Candidate</th>
-          <th>Electoral Votes</th>
+          {hasEv && <th>Electoral Votes</th>}
           <th>Popular Votes</th>
           <th>Popular Vote %</th>
         </tr>
@@ -42,7 +44,7 @@ function FinalResults(props: FinalResultsProps) {
             return (
               <tr key={candidate.model.id}>
                 <td><span style={{ backgroundColor: color }} className="PollDot"></span> {candidate.getFullName()}</td>
-                <td>{numberFormatter.format(getEv(candidate))}</td>
+                {hasEv && <td>{numberFormatter.format(getEv(candidate))}</td>}
                 <td>{numberFormatter.format(getPv(candidate))}</td>
                 <td>{(getPv(candidate) / results.totalPopularVotes * 100).toFixed(2)}%</td>
               </tr>

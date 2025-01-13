@@ -60,7 +60,8 @@ function setBulkStateFunction(f : BulkStateFunction) {
 const templateNames = [
     "1848b",
     "1980 For Common Sense",
-    "1964TheBeatles"
+    "1964TheBeatles",
+    "1964PresidentialBlank"
 ];
 
 function OsegEditor() {

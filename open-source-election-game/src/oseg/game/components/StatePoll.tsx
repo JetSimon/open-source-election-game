@@ -71,6 +71,17 @@ function StatePoll(props: StatePollProps) {
       {stateController.model.electoralVotes > 0 && <div>Electoral Votes: {numberFormatter.format(stateController.model.electoralVotes)}</div>}
       {stateController.model.popularVotes > 0 && <div>Popular Votes: {numberFormatter.format(stateController.model.popularVotes)}</div>}
       </div>
+      {
+        engine.counters.size > 0 &&
+        <div className="Counters">
+        <h3>Counters</h3>
+          {Array.from(engine.counters).map((e) => {
+            const key = e[0];
+            const value = e[1];
+            return <div>{engine.counterDisplayNames.get(key) ?? key + " - " + value}</div>
+          })}
+        </div>
+      }
     </div>
   );
 }

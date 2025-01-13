@@ -10,6 +10,7 @@ import CandidateModel from "./models/CandidateModel";
 import ThemeModel from "./models/ThemeModel";
 import SongModel from "./models/SongModel";
 import { makeSeed, Seed, seededRandom } from "../utils/MathUtils";
+import ScenarioSideModel from "./models/ScenarioSideModel";
 
 // Just used when debugging/trying to see if more extreme answers help more
 const tuningMultiplier = (x: number) => 4 * x;//Math.pow(x, 3);
@@ -56,6 +57,11 @@ class Engine {
      * Use setCounter, setCounter methods
      */
     counters : Map<string, number> = new Map();
+
+    /**
+     * Holds the display names for counters, if a display name is not defined it defaults to the counter's key + value
+     */
+    counterDisplayNames : Map<string, string> = new Map();
 
     /**
      * Is the player currently waiting to pick a state before moving on to the next question?
@@ -127,6 +133,7 @@ class Engine {
         this.gameState = GameState.CandidateSelection;
         this.runningMateId = -1;
         this.counters = new Map<string, number>();
+        this.counterDisplayNames = new Map<string, string>();
 
         if(asObserver) {
             this.updateStates();
@@ -170,7 +177,12 @@ class Engine {
      * @category Utility
      * @returns 
      */
-    getCurrentSide() {
+    getCurrentSide() : ScenarioSideModel | null {
+
+        if(this.scenarioController.model.scenarioSides.length == 0) {
+            return null;
+        }
+
         return this.scenarioController.model.scenarioSides[this.sideIndex];
     }
     
@@ -199,10 +211,14 @@ class Engine {
      * @returns 
      */
     getPlayerCandidateController(): CandidateController {
-        const playerCans = this.scenarioController.getCandidates().filter((x) => x.getId() == this.getCurrentSide().playerId);
-        if (playerCans.length > 0) {
-            return playerCans[0];
+        const currentSide = this.getCurrentSide();
+        if(currentSide != null) {
+            const playerCans = this.scenarioController.getCandidates().filter((x) => x.getId() == currentSide.playerId);
+            if (playerCans.length > 0) {
+                return playerCans[0];
+            }
         }
+       
         console.error("Could not get player candidate!");
         return new CandidateController(this.makeEmptyCandidateModel());
     }
@@ -517,6 +533,21 @@ class Engine {
     }
 
     /**
+     * Sets the display name for a counter (a counter's display name defaults to its key)
+     * Useful if you want to provide special context to a counter
+     * @param key 
+     * @param displayName 
+     */
+    setCounterDisplayName(key : string, displayName : string) {
+        if(!this.counters.has(key)) {
+            console.error("Counters does not have key " + key + " to set display name for");
+            return;
+        }
+
+        this.counterDisplayNames.set(key, displayName);
+    }
+
+    /**
      * Sets counter value with key 'key' to 'amount'
      * @category CYOA Utility Functions
      * @param key 
@@ -631,6 +662,21 @@ class Engine {
     }
 
     /**
+     * @category CYOA Utility Functions
+     * @param answerIds array of answer id numbers to check if answered
+     * @returns true if all answers have been answers
+     */
+    hasAnswered(answerIds : number[]) {
+        const answered = new Set(this.answers);
+        for(const answerId of answerIds) {
+            if(!answered.has(answerId)) {
+                return false;
+            }
+        } 
+        return true;
+    }
+
+    /**
      * 
      * @param question The question to insert
      * @param index The index before the question you want to insert. For example if you are on index 3 and you want to insert a question at index 6, put index 5
@@ -656,6 +702,15 @@ class Engine {
      */
     removeQuestionById(questionId : number) {
         this.scenarioController.questions = this.scenarioController.questions.filter((x) => x.id != questionId);
+    }
+
+    /**
+     * Adds amount to candidate global multiplier with id 'id'
+     * @param id 
+     * @param amount 
+     */
+    addCandidateGlobalMultiplier(id : number, amount : number) {
+        this.scenarioController.changeCandidateGlobalModifier(id, amount);
     }
 
     // UTILS FOR ENDINGS
