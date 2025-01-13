@@ -52,8 +52,8 @@ class Engine {
     runningMateId : number = -1;
 
     /**
-     * TODO: Any variable in counters will be shown on screen. Only supports number variables.
-     * https://github.com/JetSimon/open-source-election-game/issues/38
+     * Any variable in counters will be shown on screen. Only supports number variables.
+     * Use setCounter, setCounter methods
      */
     counters : Map<string, number> = new Map();
 
@@ -61,6 +61,11 @@ class Engine {
      * Is the player currently waiting to pick a state before moving on to the next question?
      */
     waitingToPickState : boolean = false;
+
+    /**
+     * Called when the scenario side is first set (played has chose their running mate and pressed start game)
+     */
+    onScenarioStarted : null | ((engine : Engine) => void) = null;
 
     /**
      * Called when the game ends and ending slides/results are calculated. Is set from the method of the same name in a scenario's logic.js
@@ -121,6 +126,7 @@ class Engine {
         this.currentScenario = newScenario;
         this.gameState = GameState.CandidateSelection;
         this.runningMateId = -1;
+        this.counters = new Map<string, number>();
 
         if(asObserver) {
             this.updateStates();
@@ -154,6 +160,10 @@ class Engine {
         this.scenarioController.loadScenario(this, this.currentScenario, this.sideIndex);
         this.gameState = GameState.Election;
         this.updateStates();
+
+        if(this.onScenarioStarted != null) {
+            this.onScenarioStarted(this);
+        }
     }
 
     /**
@@ -504,6 +514,40 @@ class Engine {
      */
     setQuote(quote : string) {
         this.scenarioController.theme.quote = quote;
+    }
+
+    /**
+     * Sets counter value with key 'key' to 'amount'
+     * @category CYOA Utility Functions
+     * @param key 
+     * @param amount 
+     */
+    setCounter(key : string, amount : number) {
+        this.counters.set(key, amount);
+    }
+
+    /**
+     * @category CYOA Utility Functions
+     * @param key 
+     * @returns Value in counters with key 'key' or -1 if that key does not exist
+     */
+    getCounter(key : string) : number {
+        return this.counters.get(key) ?? -1;
+    }
+
+    /**
+     * Adds amount to counter with key 'key'. Does nothing and logs an error if this counter hasn't been defined using setCounter yet.
+     * @param key 
+     * @param amount 
+     * @category CYOA Utility Functions
+     */
+    addCounter(key : string, amount : number) {
+        if(!this.counters.has(key)) {
+            console.error("Tried to add to counter with key " + key + " that does not exist. Doing nothing.");
+            return;
+        }
+
+        this.setCounter(key, this.getCounter(key) + amount);
     }
 
     /**

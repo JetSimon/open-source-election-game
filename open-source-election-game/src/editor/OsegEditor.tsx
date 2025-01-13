@@ -59,7 +59,8 @@ function setBulkStateFunction(f : BulkStateFunction) {
 
 const templateNames = [
     "1848b",
-    "1980 For Common Sense"
+    "1980 For Common Sense",
+    "1964TheBeatles"
 ];
 
 function OsegEditor() {
@@ -165,6 +166,7 @@ function OsegEditor() {
     function exportFiles() {
         downloadString(dataString, "data.json");
         downloadString(logic, "logic.js");
+        downloadString(customCss, "style.css");
     }
 
     if (data == null) {

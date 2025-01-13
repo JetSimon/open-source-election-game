@@ -35,9 +35,10 @@ function Game(props : GameProps) {
         async function loadInjectedData() {
             const encodedLogic = encodeURIComponent(injectedLogic);
             const logicDataUri = 'data:text/javascript;charset=utf-8,' + encodedLogic;
-            const {createEnding, onAnswerPicked} = await import(/* @vite-ignore */logicDataUri);
+            const {createEnding, onAnswerPicked, onScenarioStarted} = await import(/* @vite-ignore */logicDataUri);
             engine.createEnding = createEnding;
             engine.onAnswerPicked = onAnswerPicked;
+            engine.onScenarioStarted = onScenarioStarted;
             engine.loadScenario(injectedData);
             setGameState(engine.gameState);
             setTheme(engine.scenarioController.theme);

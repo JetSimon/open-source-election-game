@@ -1,3 +1,5 @@
+let testVar = 0;
+
 function createEnding(engine, results) {
     if(engine.playerWonEv(results)) {
         return {
@@ -43,7 +45,7 @@ function createEnding(engine, results) {
 }
 
 function onAnswerPicked(engine, answerPicked) {
-   
+    
 }
 
 function onScenarioStarted(engine) {

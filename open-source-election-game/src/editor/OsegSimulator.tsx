@@ -110,9 +110,10 @@ function OsegSimulator(props: OsegSimulatorProps) {
         for (let i = 0; i < numberOfSimulations; i++) {
             const tempEngine = new Engine();
 
-            const {createEnding, onAnswerPicked} = await import(/* @vite-ignore */logicDataUri);
+            const {createEnding, onAnswerPicked, onScenarioStarted} = await import(/* @vite-ignore */logicDataUri);
             tempEngine.createEnding = createEnding;
             tempEngine.onAnswerPicked = onAnswerPicked;
+            tempEngine.onScenarioStarted = onScenarioStarted;
 
             tempEngine.setSeed((Math.random() * 10000000).toString());
             tempEngine.loadScenario(data);
