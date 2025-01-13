@@ -61,4 +61,9 @@ function onAnswerPicked(engine, answerPicked) {
     })*/
 }
 
-export {createEnding, onAnswerPicked}
+
+function onScenarioStarted(engine) {
+    
+}
+
+export {createEnding, onAnswerPicked, onScenarioStarted}
