@@ -178,7 +178,7 @@ function OsegEditor() {
         return (
             <div>
                 <button className="RedButton" onClick={() => setIsPlaying(false)}>Stop Playing</button>
-                <Game onGameOver={(score) => console.log(JSON.stringify(score))} onStartButtonPressed={null} injectedCss={customCss} injectedData={data} injectedLogic={logic} injectedMapSvg={mapSvg}></Game>
+                <Game onAchievementUnlocked={null} onGameOver={(score) => console.log(JSON.stringify(score))} onStartButtonPressed={null} injectedCss={customCss} injectedData={data} injectedLogic={logic} injectedMapSvg={mapSvg}></Game>
             </div>
         )
     }

@@ -86,7 +86,7 @@ class Engine {
     /**
      * To be hooked into from a host site to know when an achievement is unlocked.
      */
-    onAchievementUnlocked : null | ((scenarioController : ScenarioController, achievementName : string) => void) = null;
+    onAchievementUnlocked : null | ((engine : Engine, achievementName : string) => void) = null;
 
     /**
      * Range of RNG.
@@ -505,7 +505,7 @@ class Engine {
      */
     unlockAchievement(achievementName : string) {
         if(this.onAchievementUnlocked != null) {
-            this.onAchievementUnlocked(this.scenarioController, achievementName);
+            this.onAchievementUnlocked(this, achievementName);
         }
         else {
             if(this.logToConsole) {

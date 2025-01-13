@@ -21,11 +21,12 @@ interface GameProps {
     injectedCss : string;
     onStartButtonPressed : (() => void) | null;
     onGameOver : ((m : HighscoreSubmissionModel) => void) | null;
+    onAchievementUnlocked : ((e : Engine, s : string) => void) | null;
 }
 
 function Game(props : GameProps) {
 
-    const {injectedData, injectedLogic, injectedMapSvg, injectedCss, onStartButtonPressed, onGameOver} = props;
+    const {injectedData, injectedLogic, injectedMapSvg, injectedCss, onStartButtonPressed, onGameOver, onAchievementUnlocked} = props;
     const [gameState, setGameState] = useState(engine.gameState);
     const [theme, setTheme] = useState(engine.scenarioController.makeEmptyTheme());
     const [stylePath, setStylePath] = useState("");
@@ -40,6 +41,11 @@ function Game(props : GameProps) {
             engine.onAnswerPicked = onAnswerPicked;
             engine.onScenarioStarted = onScenarioStarted;
             engine.loadScenario(injectedData);
+
+            if(onAchievementUnlocked != null) {
+                engine.onAchievementUnlocked = onAchievementUnlocked;
+            }
+           
             setGameState(engine.gameState);
             setTheme(engine.scenarioController.theme);
 
