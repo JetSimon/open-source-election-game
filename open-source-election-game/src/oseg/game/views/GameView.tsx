@@ -10,6 +10,7 @@ import AnswerModel from "../../engine/models/AnswerModel";
 import StateController from "../../engine/controllers/StateController";
 import ThemeModel from "../../engine/models/ThemeModel";
 import HighscoreSubmissionModel from "../../engine/models/HighscoreSubmissionModel";
+import { useEffect } from "react";
 
 interface GameViewProps {
   engine: Engine;
@@ -38,6 +39,22 @@ function GameView(props: GameViewProps) {
 
   const [feedbackText, setFeedbackText] = useState("");
   const [showingFeedbackBox, setShowingFeedbackBox] = useState(false);
+
+  const [showAutoplay, setShowAutoplay] = useState(0);
+
+  useEffect(() => {
+    function checkForAutoplay(e : KeyboardEvent) {
+      if(e.key == "@") {
+        setShowAutoplay(a => a + 1);
+      }
+    }
+
+    window.addEventListener("keydown", checkForAutoplay);
+
+    return () => {
+      window.removeEventListener("keydown", checkForAutoplay);
+    }
+  }, [])
 
   function showFeedbackPopup(body : string) {
     setFeedbackText(body);
@@ -170,7 +187,7 @@ function GameView(props: GameViewProps) {
       )}
       <div className="BottomButtons">
       {!engine.isGameOver() && !engine.waitingToPickState && <button style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}} onClick={() => setShowMap(!showMap)}>{showMap ? "Hide Map" : "Show Map"}</button>}
-      {!engine.isGameOver() && !engine.waitingToPickState && !showMap && <button onClick={startAutoplay}>Autoplay</button>}
+      {showAutoplay >= 3 && !engine.isGameOver() && !engine.waitingToPickState && !showMap && <button onClick={startAutoplay}>Autoplay</button>}
       </div>
       {!engine.isGameOver() && engine.waitingToPickState && <p className="ChooseState" style={{color:theme.primaryGameWindowTextColor}}>Click on a state to visit</p>}
       <h3 style={{color:theme.primaryGameWindowTextColor}}>{questionString}</h3>
