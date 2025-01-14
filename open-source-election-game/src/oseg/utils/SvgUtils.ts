@@ -1,10 +1,11 @@
 function getAllPathIdsInSvg(svg : string) : string[] {
 
     const ids : string[] = [];
-    const pathsRegex = /<path((.|\n)*?)(\/|<\/path)>/g;
+    const pathsRegex = /<path((.|\n|\r)*?)(\/|<\/path)>/g;
     const idRegex = / id[ \t]*=[ \t]*"(.*)"/g;
 
     const paths = svg.match(pathsRegex);
+
     if(paths == null) {
         return ids;
     }
