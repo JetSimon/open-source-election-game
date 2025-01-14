@@ -15,15 +15,6 @@
         width: 96%!important;
         padding: 10px!important;
     }
-
-    .Map {
-        transform: scale(0.35);
-        width: 270%!important;
-        background-color: #c1ecf5;
-        border-style: double;
-        border-color: black;
-    }
-    
 }
 
 .Map {

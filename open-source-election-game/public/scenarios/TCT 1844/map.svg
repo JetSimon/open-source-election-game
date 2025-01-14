@@ -2,8 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
 <svg
-   width="577.47998"
-   height="593"
+   preserveAspectRatio="xMinYMin meet"
    viewBox="442.5 0 577.47998 593"
    preserveAspectRatio="xMidYMid"
    version="1.1"

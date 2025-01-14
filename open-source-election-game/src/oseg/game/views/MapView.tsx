@@ -88,6 +88,7 @@ function MapView(props: MapViewProps) {
   return (
     <div className="MapView">
       <svg
+        height="auto"
         className="Map"
         ref={mapRef}
         data-src={mapUri}
