@@ -2779,7 +2779,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 449,
@@ -3507,7 +3507,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 458,
@@ -3577,7 +3577,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 455,
@@ -3731,7 +3731,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 457,
@@ -3892,7 +3892,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 454,
@@ -4507,7 +4507,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 495,
@@ -4591,7 +4591,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 }
             ]
         }

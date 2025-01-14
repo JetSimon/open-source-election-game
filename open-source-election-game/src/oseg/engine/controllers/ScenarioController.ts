@@ -3,7 +3,7 @@ import StateController from "./StateController";
 import CandidateController from "./CandidateController";
 import IssueScores from "../IssueScores";
 import QuestionModel from "../models/QuestionModel";
-import { shuffleArray } from "../../utils/ArrayUtils";
+import { seededShuffleArray, shuffleArray } from "../../utils/ArrayUtils";
 import ThemeModel from "../models/ThemeModel";
 import { Engine } from "../Engine";
 
@@ -70,7 +70,7 @@ class ScenarioController {
         return false;
     }
 
-    loadScenario(engine : Engine, model: ScenarioModel, sideIndex: number) {
+    loadScenario(engine : Engine, model: ScenarioModel, sideIndex: number, isShuffled : boolean) {
         this.model = model;
         this.theme = this.model.theme;
 
@@ -95,6 +95,25 @@ class ScenarioController {
         this.stateControllers = this.model.states.map((stateModel) => new StateController(this, stateModel));
 
         this.questions = this.model.scenarioSides.length == 0 ? [] : this.model.scenarioSides[sideIndex].questions;
+
+        if(isShuffled) {
+            const unpinnedIndices : number[] = [];
+            for(let i = 0; i < this.questions.length; i++) {
+                if(!this.questions[i].keepInPlaceIfQuestionsShuffled) {
+                    unpinnedIndices.push(i);
+                }
+            }
+
+            const newIndices = unpinnedIndices.slice()
+            seededShuffleArray(newIndices, engine.random);
+            const prev = JSON.parse(JSON.stringify(this.questions));
+
+            for(let i = 0; i < unpinnedIndices.length; i++) {
+                const prevIndex = unpinnedIndices[i];
+                const newIndex = newIndices[i];
+                this.questions[newIndex] = prev[prevIndex];
+            }
+        }
 
         for (let i = 0; i < this.questions.length; i++) {
             shuffleArray(this.questions[i].answers);

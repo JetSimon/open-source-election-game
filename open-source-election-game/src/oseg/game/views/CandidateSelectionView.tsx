@@ -11,10 +11,12 @@ interface CandidateSelectionViewProps {
   setSelectingCandidate: (value: boolean) => void;
   theme : ThemeModel;
   onStartButtonPressed : (() => void) | null;
+  isShuffled : boolean;
+  setIsShuffled : (b : boolean) => void;
 }
 
 function CandidateSelectionView(props: CandidateSelectionViewProps) {
-  const { engine, setGameState, setSelectingCandidate, theme, onStartButtonPressed } = props;
+  const { engine, setGameState, setSelectingCandidate, theme, onStartButtonPressed, isShuffled, setIsShuffled } = props;
 
   const [selectedCandidate, setSelectedCandidate] = useState<number>(
     firstCandidateWithSideId()
@@ -85,7 +87,7 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
 
     const sides = engine.currentScenario.scenarioSides;
     const sideIndex = sides.map((x) => x.playerId).indexOf(selectedCandidate);
-    engine.setScenarioSide(sideIndex, selectedRunningMate);
+    engine.setScenarioSide(sideIndex, selectedRunningMate, isShuffled);
     setGameState(engine.gameState);
     if(onStartButtonPressed != null) onStartButtonPressed()
   }
@@ -97,6 +99,8 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
   }
 
   const runningMateModel: CandidateModel = engine.getCandidateModelById(selectedRunningMate);
+
+  const canBeShuffled = engine.scenarioController.questions.filter((x) => !x.keepInPlaceIfQuestionsShuffled).length > 0;
 
   return (
     <div className="CandidateSelection">
@@ -127,6 +131,9 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
         }
         <CandidateInfoArea candidate={runningMateModel}></CandidateInfoArea>
       </div>
+      {canBeShuffled && <label htmlFor="shuffled" style={{color:theme.primaryGameWindowTextColor}} >Shuffle Questions? </label>}
+      {canBeShuffled && <input id="shuffled" type="checkbox" checked={isShuffled} onChange={(e) => setIsShuffled(e.target.checked)}></input>}
+      {canBeShuffled && <br></br>}
       <button style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} onClick={() => setSelectingCandidate(false)}>Prev</button>
       <button style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} onClick={startGame}>Start</button>
     </div>

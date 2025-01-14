@@ -1,11 +1,15 @@
-function createEnding(engine, results) {
-
+function createEnding(engine, results) {    
     const playerPvPercentage = engine.getPlayerPvPercentage(results); 
     const playerWonPv = engine.playerWonPv(results);
+
+    if(engine.hasAnswered([4173, 4171, 16433]) && playerWonPv) {
+        engine.unlockAchievement("fGvFtb3mzghu9qo1yS0R");
+    }
 
     // Player did not win, but got between 39 and 40 percent
     // The ! before playerWonPv means not. Read it as "the player did not win pv"
     if (!playerWonPv && playerPvPercentage >= 0.39 && playerPvPercentage < 0.40) {
+        engine.unlockAchievement("u7nydWLKSh694WAkY87h");
         return {
             slides: [
                 {
@@ -313,7 +317,7 @@ function onAnswerPicked(engine, answerPicked) {
 }
 
 function onScenarioStarted(engine) {
-    
+
 }
 
-export { createEnding, onAnswerPicked, onScenarioStarted }
+export { onScenarioStarted, createEnding, onAnswerPicked }

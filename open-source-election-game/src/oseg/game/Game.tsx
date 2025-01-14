@@ -31,6 +31,7 @@ function Game(props : GameProps) {
     const [theme, setTheme] = useState(engine.scenarioController.makeEmptyTheme());
     const [stylePath, setStylePath] = useState("");
     const [music, setMusic] = useState<SongModel[]>([]);
+    const [isShuffled, setIsShuffled] = useState(false);
 
     useEffect(() => {
         async function loadInjectedData() {
@@ -40,7 +41,7 @@ function Game(props : GameProps) {
             engine.createEnding = createEnding;
             engine.onAnswerPicked = onAnswerPicked;
             engine.onScenarioStarted = onScenarioStarted;
-            engine.loadScenario(injectedData);
+            engine.loadScenario(injectedData, false);
 
             if(onAchievementUnlocked != null) {
                 engine.onAchievementUnlocked = onAchievementUnlocked;
@@ -82,7 +83,7 @@ function Game(props : GameProps) {
 
         if (gameState == GameState.CandidateSelection) {
             return (
-                <StartGameView onStartButtonPressed={onStartButtonPressed} theme={theme} engine={engine} setGameState={setGameState}></StartGameView>
+                <StartGameView isShuffled={isShuffled} setIsShuffled={setIsShuffled} onStartButtonPressed={onStartButtonPressed} theme={theme} engine={engine} setGameState={setGameState}></StartGameView>
             );
         }
 

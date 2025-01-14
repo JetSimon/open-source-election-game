@@ -103,7 +103,8 @@ function GameView(props: GameViewProps) {
           runningMate: engine.getPlayerRunningMateModel().id,
           answers: engine.getAnswers(),
           visits: engine.getVisits(),
-          seed: engine.getSeed()
+          seed: engine.getSeed(),
+          isShuffled: engine.isShuffled
         }
         onGameOver(highscoreModel);
       }

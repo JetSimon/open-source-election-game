@@ -97,6 +97,8 @@ class Engine {
     randomState : Seed = makeSeed(this.seed);
     random = seededRandom(this.randomState);
 
+    isShuffled = false;
+
     answers : number[] = [];
     visits : number[] = [];
 
@@ -125,17 +127,17 @@ class Engine {
      * @param newScenario The ScenarioModel to load
      * @param asObserver If this is true, then the margins are also loaded and the GameState is set to Election. Used for when you want to view the map without actually playing the game
      */
-    loadScenario(newScenario: ScenarioModel, asObserver = false) {
+    loadScenario(newScenario: ScenarioModel, asObserver : boolean) {
         newScenario = JSON.parse(JSON.stringify(newScenario));
         this.currentQuestionIndex = 0;
-        this.scenarioController.loadScenario(this, newScenario, 0);
+        this.scenarioController.loadScenario(this, newScenario, 0, false);
         this.currentScenario = newScenario;
         this.gameState = GameState.CandidateSelection;
         this.runningMateId = -1;
         this.counters = new Map<string, number>();
         this.counterDisplayNames = new Map<string, string>();
 
-        if(asObserver) {
+        if(asObserver == true) {
             this.updateStates();
             this.gameState = GameState.Election;
         }
@@ -148,7 +150,7 @@ class Engine {
      * @param runningMateId The id of the running mate of the player.
      * @returns 
      */
-    setScenarioSide(newSideIndex: number, runningMateId : number) {
+    setScenarioSide(newSideIndex: number, runningMateId : number, isShuffled : boolean) {
         if (this.currentScenario == null) {
             console.error("Cannot side current scenario side, current scenario is null");
             return;
@@ -159,12 +161,14 @@ class Engine {
             return;
         }
 
+        this.isShuffled = isShuffled;
+
         this.answers = [];
         this.visits = [];
 
         this.runningMateId = runningMateId;
         this.sideIndex = newSideIndex;
-        this.scenarioController.loadScenario(this, this.currentScenario, this.sideIndex);
+        this.scenarioController.loadScenario(this, this.currentScenario, this.sideIndex, this.isShuffled);
         this.gameState = GameState.Election;
         this.updateStates();
 

@@ -19,6 +19,7 @@ const numberOfSimulations = 500;
 function OsegSimulator(props: OsegSimulatorProps) {
 
     const [isSimulating, setIsSimulating] = useState(false);
+    const [isShuffled, setIsShuffled] = useState(false);
 
     const [ allResults, setAllResults ] = useState<FinalResultsModel[]>([]);
     const [ allResultsIndex, setAllResultsIndex ] = useState(0);
@@ -116,8 +117,8 @@ function OsegSimulator(props: OsegSimulatorProps) {
             tempEngine.onScenarioStarted = onScenarioStarted;
 
             tempEngine.setSeed((Math.random() * 10000000).toString());
-            tempEngine.loadScenario(data);
-            tempEngine.setScenarioSide(sideIndex, selectedRunningMate);
+            tempEngine.loadScenario(data, false);
+            tempEngine.setScenarioSide(sideIndex, selectedRunningMate, isShuffled);
             const candidateId = tempEngine.getPlayerCandidateController().getId();
 
             while(!tempEngine.isGameOver()) {
@@ -181,6 +182,10 @@ function OsegSimulator(props: OsegSimulatorProps) {
         return <p>Simulating...</p>
     }
 
+    const sides = data.scenarioSides;
+    const sideIndex = sides.map((x) => x.playerId).indexOf(selectedCandidate);
+    const shouldShowShuffle = data.scenarioSides[sideIndex].questions.filter((x) => !x.keepInPlaceIfQuestionsShuffled).length > 0;
+
     return (
         <div>
             <label className="LabelText" htmlFor="candidate">Candidate: </label>
@@ -202,6 +207,13 @@ function OsegSimulator(props: OsegSimulatorProps) {
                     }
                 </select>
             }
+
+            {shouldShowShuffle &&
+            <div>
+                <label>Shuffle Questions? </label>
+                <input type="checkbox" checked={isShuffled} onChange={(e) => setIsShuffled(e.target.checked)}></input>
+            </div>
+            }   
 
             <button onClick={() => simulateResults()}>Simulate {numberOfSimulations} Times</button>
 

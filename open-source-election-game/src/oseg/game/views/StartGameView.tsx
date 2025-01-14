@@ -10,25 +10,31 @@ interface StartGameProps {
     setGameState: (state: GameState) => void;
     theme : ThemeModel;
     onStartButtonPressed : (() => void) | null;
+    isShuffled : boolean;
+    setIsShuffled : (b : boolean) => void;
 }
 
 function StartGameView(props : StartGameProps) {
-    const {engine, setGameState, theme, onStartButtonPressed} = props;
+    const {engine, setGameState, theme, onStartButtonPressed, isShuffled, setIsShuffled} = props;
 
     const [selectingCandidate, setSelectingCandidate] = useState(false);
 
     return (
-        !selectingCandidate
-        ?
-        <ElectionDescriptionView theme={theme} setSelectingCandidate={setSelectingCandidate} engine={engine}></ElectionDescriptionView>
-        :
-        <CandidateSelectionView
-          theme={theme}
-          setSelectingCandidate={setSelectingCandidate}
-          setGameState={setGameState}
-          engine={engine}
-          onStartButtonPressed={onStartButtonPressed}
-        ></CandidateSelectionView>
+            
+                 !selectingCandidate
+                 ?
+                 <ElectionDescriptionView theme={theme} setSelectingCandidate={setSelectingCandidate} engine={engine}></ElectionDescriptionView>
+                 :
+                 <CandidateSelectionView
+                   theme={theme}
+                   setSelectingCandidate={setSelectingCandidate}
+                   setGameState={setGameState}
+                   engine={engine}
+                   onStartButtonPressed={onStartButtonPressed}
+                   isShuffled={isShuffled}
+                   setIsShuffled={setIsShuffled}
+                 ></CandidateSelectionView>
+            
     )
 }
 

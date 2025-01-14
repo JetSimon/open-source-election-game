@@ -27,4 +27,20 @@ function shuffleArray<T>(array : Array<T>) {
     }
   }
 
-export { normalizeNumberArray, sumNumberArray, shuffleArray };
+  function seededShuffleArray<T>(array : Array<T>, randomFunction : () => number) {
+    let currentIndex = array.length;
+  
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element...
+      const randomIndex = Math.floor(randomFunction() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  }
+
+export { normalizeNumberArray, sumNumberArray, shuffleArray, seededShuffleArray };

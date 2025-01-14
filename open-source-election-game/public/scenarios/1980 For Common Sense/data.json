@@ -3,16 +3,16 @@
     "credits": "by Komnothun",
     "candidates": [
         {
-            "startingGlobalMultiplier": 1.10,
-            "runningMateIds": [16064],
+            "startingGlobalMultiplier": 1.1,
+            "runningMateIds": [
+                16064
+            ],
             "id": 131,
             "firstName": "George",
             "lastName": "McGovern",
             "party": "Democratic",
             "homeState": "Mitchell, Davison County",
             "color": "#6f8faf",
-            
-            
             "issueScores": [
                 {
                     "issueId": 47,
@@ -52,8 +52,6 @@
             "party": "American Agricultural Movement",
             "homeState": "Whatever",
             "color": "#FFBF00",
-            
-            
             "issueScores": [
                 {
                     "issueId": 47,
@@ -93,8 +91,6 @@
             "party": "Republican",
             "homeState": "Kennebec, Lyman County",
             "color": "#b83d3d",
-            
-            
             "issueScores": [
                 {
                     "issueId": 47,
@@ -132,8 +128,6 @@
             "firstName": "The McGovern",
             "lastName": "Office",
             "color": "#0000ff",
-            
-            
             "issueScores": [],
             "description": "<div style='overflow-y:scroll;height:14em;font-size:1em;'><p style='margin-top:0em;'>\"<em>[A professional and organized office] may not matter in some places, but it's very important in a state like South Dakota where everybody knows everybody.</em>\"<br> - Loren Carlson, professor of political science at the University of South Dakota.</p><p>The Democratic Senatorial Campaign Committee, headed by Kentucky Senator Wendell Ford, faces what seems to be a nigh impossible challenge. Somewhat ironically, the Democratic Party is poised to suffer from their own electoral success. Flush with Democratic incumbents, DSCC leadership must ration what available resources at their disposal between its sitting members and what pick-ups seem possible to expand the majority. Georgia, North Carolina, Vermont, Pennsylvania, and New York-- the states where cash will rain like bombs and ads thunder as the sound of distant explosions. To many senior Democrats, these states will decide the fate of the Senate, and South Dakota certainly won't. Senator McGovern has not been left out to dry by any means, but its no secret that if any of his colleagues are to go down, he is expected to go first and hardest. In lieu of relying upon the assistance of the national apparatus, McGovern will turn to what he always has-- his community. Although ruby red as they come, the South Dakota Democratic Party has seen success at propelling discounted candidates to the federal government despite the odds. Keeping the prairie statesman in Washington will require the herculean effort of local organizers, party leaders, and McGovern himself to prove to the DSCC that this race is not only worth fighting for, but winnable.</p></div></div></div>",
             "imageUrl": "https://i.imgur.com/P88o71J.png",
@@ -149,8 +143,6 @@
             "party": "REMOVE THIS FOR THEM",
             "homeState": "REMOVE THIS FOR THEM ",
             "color": "#0000ff",
-            
-            
             "issueScores": [],
             "description": "<div style='overflow-y:scroll;height:14em;font-size:1em;'><p style='margin-top:0em;'>\"<em>There's no question about it, we are a negative organization that wants to get rid of bad votes in the Senate. We're interested in ideology. We're not interested in respectability.</em>\"<br>- John <q>Terry</q> Dolan, co-founder of the National Conservative Political Action Committee</p><p>The National Conservative Political Action Committee is a caged beast champing at the bit for blood. Unashamedly disinterested in politics as usual, NCPAC is unabashedly crude, graceless, and scarily effective. Innovative and cunning, NCPAC co-founder Terry Dolan was among the first to exploit the loopholes created in the landmark Buckley v. Valeo ruling, which held that PACs were limited to $10,000 per candidate, but placed no such restriction so long as the organization was not in direct coordination with the candidate. Such politicking created an impregnable barrier for NCPAC-aligned candidates to hide behind as bombastic and detestable ads and leaflets came at the hands of NCPAC, not the candidate. The effectiveness of such a method was proven as Dick Clark, the junior Democratic Senator from Iowa, was buried so deep under NCPAC mail and leaflets, not even his 30% poling lead could save him from defeat in 1978. So what hope then is there for George McGovern?</p><p>South Dakota is a state fundamentally opposed to the baby-murdering practice of abortion, unsympathetic to kowtowing to Moscow under the veneer of arms control, averse to efforts to amend the Constitution to put men and women in the same bathroom, and just about everything else George McGovern stands for. Dolan has taken a unique interest in the South Dakota Senate race, eager to unseat the champion of liberalism, even more so than the Republican nominee. Dolan's willingness to play dirty is antithetical to the timid and personable Abdnor, but the money spends all the same. There is no subject too taboo, no angle of attack too uncouth, no word too inflammatory if it brings about the defeat of George McGovern and the Senate liberals. </div></div></div>",
             "imageUrl": "https://i.imgur.com/c6yEoDo.png"
@@ -3515,7 +3507,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 624,
@@ -3641,7 +3633,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 625,
@@ -3718,7 +3710,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 639,
@@ -3844,7 +3836,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 638,
@@ -3921,7 +3913,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 626,
@@ -4040,7 +4032,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 636,
@@ -4173,7 +4165,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 637,
@@ -4285,7 +4277,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 635,
@@ -4313,7 +4305,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 628,
@@ -4446,7 +4438,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 634,
@@ -4523,7 +4515,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 632,
@@ -4635,7 +4627,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 631,
@@ -4712,7 +4704,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 633,
@@ -4803,7 +4795,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 629,
@@ -4915,7 +4907,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 630,
@@ -5181,7 +5173,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 644,
@@ -5286,7 +5278,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 649,
@@ -5313,7 +5305,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 645,
@@ -5362,7 +5354,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 648,
@@ -5488,7 +5480,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 646,
@@ -5642,7 +5634,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 643,
@@ -5761,7 +5753,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 650,
@@ -5880,7 +5872,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 651,
@@ -5978,7 +5970,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 15266,
@@ -6069,7 +6061,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 15267,
@@ -6160,7 +6152,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 15268,
@@ -6258,7 +6250,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 15269,
@@ -6342,7 +6334,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 15270,
@@ -6468,7 +6460,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 }
             ]
         }
@@ -6491,5 +6483,3 @@
     "scenarioDescription": "<p>A nation gripped by malaise beckons home the traditional ideals which brought her to greatness. The value of the dollar has plummeted such that everyday expenses threaten to bankrupt the working family. Gasoline shortages inspire such great panic that Americans shoot each other dead just for the chance at refueling their cars. Tehran's newly seated Islamic Republican government threatens to upend the tentatively held Middle Eastern order. America is a nation scarred by the tumultuous two decades previous, and by and large, blames the Democratic Party for its fall from grace.</p><p>As the Presidential Election of 1980 nears, Terry Dolan and the National Conservative Political Action Committee have marked five incumbent Democratic Senators for death. Vowing to do whatever necessary to upend the liberal order which brought America from the prosperity of the 50's and hope of the 60's to the despair of the 70's, a Republican revolution seems inevitable.</p>",
     "scenarioImageUrl": "https://i.imgur.com/Io0dZ5g.png"
 }
-
-

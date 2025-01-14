@@ -4,6 +4,7 @@ interface HighscoreSubmissionModel {
     answers : number[];
     visits : number[];
     seed : string; 
+    isShuffled : boolean;
 }
 
 export default HighscoreSubmissionModel;
