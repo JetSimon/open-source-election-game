@@ -61,6 +61,7 @@ const templateNames = [
     "1848b",
     "1980 For Common Sense",
     "1964TheBeatles",
+    "TCT 1844"
 ];
 
 function OsegEditor() {

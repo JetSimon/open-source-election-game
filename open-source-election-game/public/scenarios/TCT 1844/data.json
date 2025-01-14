@@ -1,41 +1,12 @@
 {
-    "music": [
-        {
-            "url": "https://jetsimon.com/groglow/beat.wav",
-            "displayName": "Test - Test",
-            "imageUrl": "https://placecats.com/500/500"
-        }
-    ],
-    "credits": "by Dan Bryan, adapted by Jet",
-    "theme": {
-        "backgroundImageUrl": "",
-        "headerImageUrl": "./img/genericBanner.png",
-        "backgroundColor": "#FFFFFF",
-        "primaryGameWindowColor": "#FFFFFF",
-        "secondaryGameWindowColor": "#F5F5F5",
-        "bottomBannerBackgroundColor": "#FFFFFF",
-        "bottomBannerTextColor": "#000000",
-        "primaryGameWindowTextColor": "#000000",
-        "secondaryGameWindowTextColor": "#000000",
-        "advisorImage": "https://i.imgur.com/Io0dZ5g.png",
-        "quote" : ""
-    },
-    "hasStateVisits": true,
-    "scenarioName": "TCT Rip Off",
-    "scenarioDescription": "<p>This is a straight up copy of the Dan Bryan scenario for testing purposes!</p><p>This is the election description. One day this won't all be on one screen but that day is not today!</p>",
-    "scenarioImageUrl": "https://placecats.com/210/240",
     "candidates": [
         {
-            "startingGlobalMultiplier": 1.0,
-            "runningMateIds": [],
             "id": 131,
             "firstName": "James K.",
             "lastName": "Polk",
             "party": "Democrat",
             "homeState": "Tennessee",
             "color": "#0000FF",
-            
-            
             "issueScores": [
                 {
                     "issueId": 47,
@@ -63,24 +34,18 @@
                     "weight": 1
                 }
             ],
-            "description": "<p>James K. Polk won the Democratic nomination as a dark horse candidate, after Martin Van Buren was rejected for being soft on the Texas issue. He is a former Speaker of the House, and also served as Governor of Tennessee. Polk's support is strongest in the South, but he must hold some Northern states to win. To do this, he could exploit the Oregon issue, fond memories of Andrew Jackson, and the emerging Catholic vote. Note that John Tyler has yet to formally renounce his independent bid.</p>",
-            "imageUrl": "https://www.jetsimon.com/public/static/images/james-k-polk-1844.jpg"
+            "description": "'",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/james-k-polk-1844.jpg",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [
-                137,
-                138,
-                139
-            ],
             "id": 132,
             "firstName": "Henry",
             "lastName": "Clay",
             "party": "Whig",
             "homeState": "Kentucky",
             "color": "#F0C862",
-            
-            
             "issueScores": [
                 {
                     "issueId": 47,
@@ -108,20 +73,22 @@
                     "weight": 1
                 }
             ],
-            "description": "<p>Henry Clay runs in a Presidential election for the third time, and begins as the favorite against Polk. He must quickly define a position on Texas. It will be difficult to do so without alienating some bloc of the Whigs.</p><p>Clay would prefer to keep slavery and expansion on the back-burner, and advance his own issues like tariffs, internal improvements, and a national currency. Can he find redemption from his political defeats to Andrew Jackson, and finally break into the White House?</p>",
-            "imageUrl": "https://www.jetsimon.com/public/static/images/henry-clay-1844.jpg"
+            "description": "'",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/henry-clay-1844.jpg",
+            "runningMateIds": [
+                137,
+                138,
+                139
+            ],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [],
             "id": 133,
             "firstName": "James",
             "lastName": "Birney",
             "party": "Liberty",
             "homeState": "Michigan",
             "color": "#FFFF00",
-            
-            
             "issueScores": [
                 {
                     "issueId": 47,
@@ -149,20 +116,18 @@
                     "weight": 1
                 }
             ],
-            "description": "",
-            "imageUrl": ""
+            "description": "'",
+            "imageUrl": "'",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [],
             "id": 134,
             "firstName": "John",
             "lastName": "Tyler",
             "party": "Independent",
             "homeState": "Virginia",
             "color": "#00C100",
-            
-            
             "issueScores": [
                 {
                     "issueId": 47,
@@ -190,113 +155,101 @@
                     "weight": 1
                 }
             ],
-            "description": "",
-            "imageUrl": ""
+            "description": "'",
+            "imageUrl": "'",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [],
             "id": 135,
             "firstName": "George",
             "lastName": "Dallas",
             "party": "Democrat",
             "homeState": "Pennsylvania",
             "color": "#0000FF",
-            
-            
             "issueScores": [],
-            "description": "",
-            "imageUrl": "https://www.jetsimon.com/public/static/images/george-dallas-1844.jpg"
+            "description": "<p>George Dallas has served as a Pennsylvania Senator, and as Mayor of Philadelphia. Pennsylvania is a crucial state to win if the Democrats are to return to the White House. Dallas would balance the ticket in two ways. First, he is a Northerner. Secondly, he is a moderate on the issues of tariffs and banking, compared to Polk, Jackson, and most other Southerners. He is not a moderate on the issue of expansion, and would help define that as the central Democratic issue in this election.</p>",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/george-dallas-1844.jpg",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [],
             "id": 136,
             "firstName": "Levi",
             "lastName": "Woodbury",
             "party": "Democrat",
             "homeState": "New Hampshire",
             "color": "#0000FF",
-            
-            
             "issueScores": [],
-            "description": "",
-            "imageUrl": "https://www.jetsimon.com/public/static/images/levi-woodbury-1844.jpg"
+            "description": "<p>Dallas is the preferred choice of the Convention, but Polk could intervene on behalf of Levi Woodbury. Woodbury's reputation is more national than Dallas's, but he also comes from a smaller state. Woodbury has served as Secretary of the Treasury and is much more orthodox on economic issues, favoring a limited view of the federal government's powers. This could galvanize Democrats in the closer states in the South and West, but could also be a hindrance in Pennsylvania and New York.</p>",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/levi-woodbury-1844.jpg",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [],
             "id": 137,
             "firstName": "Theodore",
             "lastName": "Frelinghuysen",
             "party": "Whig",
             "homeState": "New Jersey",
             "color": "#F0C862",
-            
-            
             "issueScores": [],
-            "description": "<p>This is a description</p>",
-            "imageUrl": "https://www.jetsimon.com/public/static/images/theodore-frelinghuysen-1844.jpg"
+            "description": "<p>Theodore Frelinghuysen has served as a Senator from New Jersey, and as Mayor of Newark. He is known as something of an evangelist, being involved in numerous bible societies and advocating for moral uplift. Associates of Frelinghuysen have voiced anti-Catholic sympathies, however. His selection would help with nativists, but exacerbate the Whigs' problems with the Catholic vote. Southerners with a long memory also recall his loud opposition to the Indian Removal Act.</p>",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/theodore-frelinghuysen-1844.jpg",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [],
             "id": 138,
             "firstName": "John",
             "lastName": "Sergeant",
             "party": "Whig",
             "homeState": "Pennsylvania",
             "color": "#F0C862",
-            
-            
             "issueScores": [],
-            "description": "<p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p>",
-            "imageUrl": "https://www.jetsimon.com/public/static/images/john-sergeant-1844.jpg"
+            "description": "<p>John Sergeant ran with Henry Clay in 1832, and has served in Congress on three occasions. He worked for the Second Bank of the United States, and strongly favors a revival of the national banking system. He is also known as an opponent of slavery, even voting against the Missouri Compromise in 1820. Obviously, this background could help Clay in certain regions, and hurt him in others. Sergeant has also been out of political office for over three years.</p>",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/john-sergeant-1844.jpg",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [],
             "id": 139,
             "firstName": "Millard",
             "lastName": "Fillmore",
             "party": "Whig",
             "homeState": "New York",
             "color": "#F0C862",
-            
-            
             "issueScores": [],
-            "description": "<p>This is a description</p>",
-            "imageUrl": "https://www.jetsimon.com/public/static/images/millard-fillmore-1844.jpg"
+            "description": "<p>Millard Fillmore was an influential Congressman before leaving that body in 1843. He has strongly supported Whig economic policies such as a tariff and national bank. He has taken stances against the expansion of slavery, without veering into the dangerous territory of abolitionism. He is well-connected to New York politics, and his selection would undoubtedly motivate the party in that crucial state.</p>",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/millard-fillmore-1844.jpg",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [],
             "id": 140,
             "firstName": "Thomas",
             "lastName": "Morris",
             "party": "Liberty",
             "homeState": "Ohio",
             "color": "#FFFF00",
-            
-            
             "issueScores": [],
-            "description": "",
-            "imageUrl": ""
+            "description": "'",
+            "imageUrl": "'",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [],
             "id": 141,
             "firstName": "John C.",
             "lastName": "Calhoun",
             "party": "Independent",
             "homeState": "South Carolina",
             "color": "#00C100",
-            
-            
             "issueScores": [],
-            "description": "",
-            "imageUrl": ""
+            "description": "'",
+            "imageUrl": "'",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         }
     ],
     "states": [
@@ -392,7 +345,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.0223
                 },
                 {
                     "candidateId": 133,
@@ -444,15 +397,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.0391
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.0439
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -496,7 +449,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.3375
                 },
                 {
                     "candidateId": 133,
@@ -548,7 +501,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.3218
                 },
                 {
                     "candidateId": 133,
@@ -600,15 +553,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.0712
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.0952
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -652,15 +605,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.2552
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.0363
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -704,7 +657,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.4521
                 },
                 {
                     "candidateId": 133,
@@ -756,7 +709,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.2336
                 },
                 {
                     "candidateId": 133,
@@ -808,15 +761,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 0.8405
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.0832
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -860,7 +813,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.3992
                 },
                 {
                     "candidateId": 133,
@@ -912,15 +865,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 0.9767
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.1274
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -964,15 +917,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.1207
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.1321
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -1016,7 +969,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.3039
                 },
                 {
                     "candidateId": 133,
@@ -1068,7 +1021,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.2228
                 },
                 {
                     "candidateId": 133,
@@ -1120,15 +1073,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 0.7357
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.1167
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -1172,15 +1125,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.2722
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.0037
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -1224,15 +1177,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.0817
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.0661
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -1276,7 +1229,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.5074
                 },
                 {
                     "candidateId": 133,
@@ -1328,15 +1281,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.1176
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.0505
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -1380,15 +1333,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.1191
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.0191
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -1432,15 +1385,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.3323
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.0161
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -1484,7 +1437,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 0
                 },
                 {
                     "candidateId": 133,
@@ -1492,7 +1445,7 @@
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0
                 }
             ]
         },
@@ -1536,7 +1489,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.279
                 },
                 {
                     "candidateId": 133,
@@ -1588,15 +1541,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.4948
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.1802
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -1640,7 +1593,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.3602
                 },
                 {
                     "candidateId": 133,
@@ -2236,7 +2189,7 @@
                         {
                             "id": 4199,
                             "description": "This is a necessary step against the overreach and abuse of power of the Executive branch.",
-                            "feedback": "This is in line with the opinion of many Whigs.",
+                            "feedback": "The problem is, this idea was clearly targeted at Andrew Jackson, and Democrats in general. You're really taking the Whig position here.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -2250,13 +2203,13 @@
                         {
                             "id": 4200,
                             "description": "I don't support an Amendment on this issue, but I will personally promise not to run for reelection.",
-                            "feedback": "This is in line with the opinion of many Whigs.",
+                            "feedback": "This is a good way to finesse this issue. It has the added advantage, since you were a dark horse candidate, of uniting the factions of your party.",
                             "answerEffects": []
                         },
                         {
                             "id": 4201,
                             "description": "I don't think that this is a necessary step, at this time.",
-                            "feedback": "The Whig Party supports a one-term limit for the President, with Jackson fresh in mind. Harrison pledged he would follow this guideline during his campaign....",
+                            "feedback": "This is the party line, but after a bitter nomination fight, some are disappointed that your success would preempt their 1848 campaigns.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -2284,7 +2237,7 @@
                         {
                             "id": 4195,
                             "description": "I stand for a national bank, broadly similar to the late Second Bank of the United States.",
-                            "feedback": "",
+                            "feedback": "Are you out of your mind? A national bank is anathema to the Democratic Party.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -2305,7 +2258,7 @@
                         {
                             "id": 4196,
                             "description": "I stand for a national bank or an independent Treasury -- whichever can gain the most support. I would require any national bank to maintain a branch in every state.",
-                            "feedback": "Many are surprised to hear you hedge your position on the bank issue.",
+                            "feedback": "Are you out of your mind? A national bank is anathema to the Democratic Party.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -2333,7 +2286,7 @@
                         {
                             "id": 4197,
                             "description": "I will never support a national bank, but I do advocate an independent Treasury, so that federal funds won't be tied up in local speculations.",
-                            "feedback": "This is a little out of step with Whig ideology.",
+                            "feedback": "The independent Treasury idea has broad support in the party, and also shows that Democrats are trying to do something after the 1837 crisis.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -2354,7 +2307,7 @@
                         {
                             "id": 4198,
                             "description": "I support our current free banking system, and I see no need for the Treasury to insulate its operations from the state-chartered banks.",
-                            "feedback": "This is a little out of step with Whig ideology.",
+                            "feedback": "There's nothing wrong with defending the current system, which is the Democratic system in large part.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -2599,7 +2552,7 @@
                         {
                             "id": 4188,
                             "description": "We stand steadfast in support of this tariff. It is one of the few positive accomplishments of Mr. Tyler's so-called Presidency.",
-                            "feedback": "",
+                            "feedback": "This puts you outside of the party mainstream, to say the least. Hopefully it will help in a couple of the Northern states.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -2669,7 +2622,7 @@
                         {
                             "id": 4189,
                             "description": "The primary purpose of our tariffs should be revenue. But should a small amount of protection <em>incidentally</em> occur from our tariff policy, that is acceptable.",
-                            "feedback": "This is a little out of step with Whig ideology.",
+                            "feedback": "This answer satisfies the Southern wing of the party while providing some concession to Northern Democrats in states like New York.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -2690,7 +2643,7 @@
                         {
                             "id": 4190,
                             "description": "We should avoid taking a strong position on this tariff. There are men in our party who stand on both sides of the issue.",
-                            "feedback": "This is a little out of step with Whig ideology.",
+                            "feedback": "While true, people are getting the idea that you are dancing around a hot issue.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -2711,7 +2664,7 @@
                         {
                             "id": 4191,
                             "description": "We must rescind this tariff and replace it with something much lower. I support free trade and low tariffs.",
-                            "feedback": "This is a little out of step with Whig ideology.",
+                            "feedback": "This is certainly the party line on the tariff issue.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -2802,7 +2755,7 @@
                         {
                             "id": 4192,
                             "description": "This is one of the key objectives of our current tariff policy, and I would support a strong infrastructure program as President.",
-                            "feedback": "",
+                            "feedback": "Support for a federal infrastructure program is quite limited within your party.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -2830,7 +2783,7 @@
                         {
                             "id": 4193,
                             "description": "Only a very limited amount, for the most compelling projects. Otherwise the tariff should be for revenue purposes only.",
-                            "feedback": "This is a little out of step with Whig ideology.",
+                            "feedback": "This answer satisfies the Southern wing of the party while providing some concession to Northern Democrats in states like New York.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -2851,7 +2804,7 @@
                         {
                             "id": 4194,
                             "description": "I don't believe that it is constitutional or advisable for the federal government to undertake an internal improvements program.",
-                            "feedback": "This is a little out of step with Whig ideology.",
+                            "feedback": "This is certainly the party line on the tariff issue.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -3515,7 +3468,7 @@
                         {
                             "id": 4213,
                             "description": "I support our current naturalization laws as they stand.",
-                            "feedback": "",
+                            "feedback": "This is probably the best stance to take, particularly if you care to win a state like New York or Pennsylvania.",
                             "answerEffects": []
                         },
                         {
@@ -3542,7 +3495,7 @@
                         {
                             "id": 4215,
                             "description": "Our current laws are in need of great revision, in light of the troubles we have had with recent immigrants.",
-                            "feedback": "Nativism appears to be on the rise, but you are probably better off, on the whole, taking a more moderate tack.",
+                            "feedback": "Immigration restriction is more of a Whig position, and it does you little good to advocate for it.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -3577,7 +3530,7 @@
                         {
                             "id": 4228,
                             "description": "We need to be just as aggressive on this issue as we are anywhere else. “Fifty-four Forty or Fight!”",
-                            "feedback": "This is a good way to rally Northern support.",
+                            "feedback": "This is a rallying cry that can certainly help your party in the North and West.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -3696,7 +3649,7 @@
                         {
                             "id": 4229,
                             "description": "We need to negotiate a permanent agreement with Great Britain that grants some of all of the Oregon Territory to the United States.",
-                            "feedback": "",
+                            "feedback": "There's no reason to equivocate on the Oregon issue. People want aggressive action there.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -3815,7 +3768,7 @@
                         {
                             "id": 4230,
                             "description": "I would support any agreement, as long as the United States keeps the land that is south and east of the Colombia River.",
-                            "feedback": "",
+                            "feedback": "There's no reason to equivocate on the Oregon issue. People want aggressive action there.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -3941,7 +3894,7 @@
                         {
                             "id": 4205,
                             "description": "I am against the annexation of Texas. And just to show that this does derive from sectional prejudice, I am also against expansion into Oregon or other regions.",
-                            "feedback": "",
+                            "feedback": "People are wondering if they are reading your words correctly. Annexation was supposed to be the primary issue of your campaign.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -4046,7 +3999,7 @@
                         {
                             "id": 4237,
                             "description": "Oregon is a different issue than that of Texas. In Oregon we have an existing, legitimate claim.",
-                            "feedback": "This is a good way to rally Northern support.",
+                            "feedback": "This is a strange aside to take, but one that is unlikely to make much of an impression.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "State",
@@ -4158,7 +4111,7 @@
                         {
                             "id": 4216,
                             "description": "I support a national bank, and one clear argument for the bank is the total chaos we've had with our currency since 1837.",
-                            "feedback": "",
+                            "feedback": "A national bank is anathema to most Democrats.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -4284,7 +4237,7 @@
                         {
                             "id": 4218,
                             "description": "I support an independent Treasury, but not one that would disseminate a national currency.",
-                            "feedback": "",
+                            "feedback": "There's nothing wrong with taking this position.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -4298,7 +4251,7 @@
                         {
                             "id": 4219,
                             "description": "Our current system is more democratic than any alternative that could be devised. Let the private banks issue currency in line with their own strength and prosperity.",
-                            "feedback": "Henry Clay takes the Democratic line?",
+                            "feedback": "There's nothing wrong with taking this position.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -4326,7 +4279,7 @@
                         {
                             "id": 4224,
                             "description": "The independent Treasury is a halfway measure, designed to cover for the disaster that was the war against the Second Bank of the United States.",
-                            "feedback": "",
+                            "feedback": "What is the idea behind this outburst? The Bank War was, perhaps, Andrew Jackson's central initiative as President.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -4347,7 +4300,7 @@
                         {
                             "id": 4225,
                             "description": "I would prefer a national bank, but I would be willing to sign a bill which created an independent Treasury.",
-                            "feedback": "",
+                            "feedback": "A national bank is anathema to most Democrats.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -4368,7 +4321,7 @@
                         {
                             "id": 4226,
                             "description": "The creation of an independent Treasury will be one of the key initiatives of my Presidency.",
-                            "feedback": "Supporters are surprised and upset to hear you take a new position on the bank issue.",
+                            "feedback": "This is a good position to run a campaign on.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -4382,7 +4335,7 @@
                         {
                             "id": 4227,
                             "description": "I support our current banking system, and would not support any ill-conceived attempts to centralize our finances.",
-                            "feedback": "Supporters are surprised and upset to hear you take a new position on the bank issue.",
+                            "feedback": "There's nothing wrong with taking this position.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -4410,7 +4363,7 @@
                         {
                             "id": 4220,
                             "description": "I believe this letter to be disingenuous at best. Further expansion will reopen the debate on slavery rather than suppress it.",
-                            "feedback": "Probably best to ignore this letter.",
+                            "feedback": "Better to just ignore this letter.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -4501,7 +4454,7 @@
                         {
                             "id": 4211,
                             "description": "We will frame Texas as an issue of national pride and national expansion. I rebuke the idea of Calhoun that this is purely a Southern enterprise.",
-                            "feedback": "This is probably your best choice. It's just unfortunate that the Democrats continue to demagogue the public on this issue, rather than address the failures of their banking policy.",
+                            "feedback": "This is probably the best stance to take.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Global",
@@ -4515,7 +4468,7 @@
                         {
                             "id": 4212,
                             "description": "I disagree with John Calhoun across the board, which leads to my opposition to the annexation of Texas.",
-                            "feedback": "",
+                            "feedback": "People are wondering if they are reading your words correctly. Annexation was supposed to be the primary issue of your campaign.",
                             "answerEffects": [
                                 {
                                     "answerEffectType": "Issue",
@@ -4852,5 +4805,24 @@
                 }
             ]
         }
-    ]
+    ],
+    "theme": {
+        "backgroundImageUrl": "",
+        "backgroundColor": "",
+        "headerImageUrl": "",
+        "primaryGameWindowColor": "",
+        "secondaryGameWindowColor": "",
+        "primaryGameWindowTextColor": "",
+        "secondaryGameWindowTextColor": "",
+        "bottomBannerBackgroundColor": "",
+        "bottomBannerTextColor": "",
+        "advisorImage": "https://www.jetsimon.com/public/static/images/kendall-weed-1844.jpg",
+        "quote": ""
+    },
+    "hasStateVisits": false,
+    "scenarioName": "1844",
+    "scenarioDescription": "<p>President Tyler has defined the key issue of this election with his proposed annexation of Texas. James K. Polk, the Democrat, gained his nomination by favoring the measure. Henry Clay, the Whig, has more latitude.</p><p>The Liberty Party lurks as an abolitionist third party, and will pressure the Whigs. Conversely, John Tyler hopes to use the Texas issue to energize an independent campaign, if Polk wavers. Other campaign issues are tariffs, internal improvements, and the banking system.</p>",
+    "scenarioImageUrl": "https://www.jetsimon.com/public/static/images/1844-election-photo.jpg",
+    "credits": "by Dan Bryan, converted by Jet",
+    "music": []
 }
