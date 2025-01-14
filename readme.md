@@ -8,12 +8,30 @@
 
 The ScenarioModel schema is very similar to a combined code 1 and 2 of the TCT engine.
 
+interface ScenarioModel {
+    theme : ThemeModel;
+    hasStateVisits: boolean;
+    scenarioName: string;
+    scenarioDescription: string;
+    scenarioImageUrl: string;
+    candidates: CandidateModel[];
+    states: StateModel[];
+    issues: Issue[];
+    scenarioSides: ScenarioSideModel[];
+    credits: string;
+    music : SongModel[];
+}
+
 ```
 interface ScenarioModel {
+    theme : ThemeModel; <- Defines the look of the scenario
+    hasStateVisits: boolean; <- Self explanatory
     candidates: CandidateModel[]; <- An array of information about candidates, what would be Code 1 in TCT
     states: StateModel[]; <- An array of information about each state <- In Code 2 in TCT
     issues: Issue[]; <- An array of information about each issue <- Code 2 in TCT
     scenarioSides: ScenarioSideModel[]; <- An array of "ScenarioSides", which right now just contains an array of questions. The design descision here is each playable candidate gets a ScenarioSide. Note that each Candidate-Running Mate pair DO NOT have unique ScenarioSides. That seems like something cumbersome we should not adapt from TCT.
+    credits: string; <- Just who to credit the scenario to (ex: "By John Doe")
+    music : SongModel[]; <- An array of SongModels to play music along with the scenario. Yes a "W style" music player is built in. But this needs to be populated for it to work.
 }
 ```
 
@@ -27,9 +45,11 @@ In total, you need 3 files to define a scenario:
 
 3. The map svg for each scenario is stored in a file called map.svg. Note that each state in data.json needs a corresponding path in the map.svg where the id of the path is the abbreviation of the staate.
 
+4. A file called style.css to optionally define any custom styling you need beyond the ThemeModel. Can be left blank.
+
 # Engine, View, Models
 
-I am trying to keep the engine stuff separate from the "view" (aka the frontend website). So technically the backend could be plugged into anything. All that/the game logic lives in the ```src/engine``` folder. The views for the game, that aren't needed to function technically but are needed to interact with it are in ```src/game```. The ```src/website``` folder contains frontend code for the website that isn't strictly needed to play the game. The ```src/editor``` folder contains the frontend code for the scenario editor page. Note that the editor folder depends on the engine and game folders.
+The engine is separate from the "view" (aka the frontend website). So technically the backend could be plugged into anything (and is!). All that/the game logic lives in the ```src/engine``` folder. The views for the game, that aren't needed to function technically but are needed to interact with it are in ```src/game```. The ```src/website``` folder contains frontend code for the website that isn't strictly needed to play the game. The ```src/editor``` folder contains the frontend code for the scenario editor page. Note that the editor folder depends on the engine and game folders.
 
 The ```src/engine/models``` folder contains the interfaces for the basic data structures of the game/scenarios.
 
