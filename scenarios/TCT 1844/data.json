@@ -1,41 +1,12 @@
 {
-    "music": [
-        {
-            "url": "https://jetsimon.com/groglow/beat.wav",
-            "displayName": "Test - Test",
-            "imageUrl": "https://placecats.com/500/500"
-        }
-    ],
-    "credits": "by Dan Bryan, adapted by Jet",
-    "theme": {
-        "backgroundImageUrl": "",
-        "headerImageUrl": "./img/genericBanner.png",
-        "backgroundColor": "#FFFFFF",
-        "primaryGameWindowColor": "#FFFFFF",
-        "secondaryGameWindowColor": "#F5F5F5",
-        "bottomBannerBackgroundColor": "#FFFFFF",
-        "bottomBannerTextColor": "#000000",
-        "primaryGameWindowTextColor": "#000000",
-        "secondaryGameWindowTextColor": "#000000",
-        "advisorImage": "https://i.imgur.com/Io0dZ5g.png",
-        "quote" : ""
-    },
-    "hasStateVisits": true,
-    "scenarioName": "TCT Rip Off",
-    "scenarioDescription": "<p>This is a straight up copy of the Dan Bryan scenario for testing purposes!</p><p>This is the election description. One day this won't all be on one screen but that day is not today!</p>",
-    "scenarioImageUrl": "https://placecats.com/210/240",
     "candidates": [
         {
-            "startingGlobalMultiplier": 1.0,
-            "runningMateIds": [],
             "id": 131,
             "firstName": "James K.",
             "lastName": "Polk",
             "party": "Democrat",
             "homeState": "Tennessee",
             "color": "#0000FF",
-            
-            
             "issueScores": [
                 {
                     "issueId": 47,
@@ -63,24 +34,18 @@
                     "weight": 1
                 }
             ],
-            "description": "<p>James K. Polk won the Democratic nomination as a dark horse candidate, after Martin Van Buren was rejected for being soft on the Texas issue. He is a former Speaker of the House, and also served as Governor of Tennessee. Polk's support is strongest in the South, but he must hold some Northern states to win. To do this, he could exploit the Oregon issue, fond memories of Andrew Jackson, and the emerging Catholic vote. Note that John Tyler has yet to formally renounce his independent bid.</p>",
-            "imageUrl": "https://www.jetsimon.com/public/static/images/james-k-polk-1844.jpg"
+            "description": "'",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/james-k-polk-1844.jpg",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [
-                137,
-                138,
-                139
-            ],
             "id": 132,
             "firstName": "Henry",
             "lastName": "Clay",
             "party": "Whig",
             "homeState": "Kentucky",
             "color": "#F0C862",
-            
-            
             "issueScores": [
                 {
                     "issueId": 47,
@@ -108,20 +73,22 @@
                     "weight": 1
                 }
             ],
-            "description": "<p>Henry Clay runs in a Presidential election for the third time, and begins as the favorite against Polk. He must quickly define a position on Texas. It will be difficult to do so without alienating some bloc of the Whigs.</p><p>Clay would prefer to keep slavery and expansion on the back-burner, and advance his own issues like tariffs, internal improvements, and a national currency. Can he find redemption from his political defeats to Andrew Jackson, and finally break into the White House?</p>",
-            "imageUrl": "https://www.jetsimon.com/public/static/images/henry-clay-1844.jpg"
+            "description": "'",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/henry-clay-1844.jpg",
+            "runningMateIds": [
+                137,
+                138,
+                139
+            ],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [],
             "id": 133,
             "firstName": "James",
             "lastName": "Birney",
             "party": "Liberty",
             "homeState": "Michigan",
             "color": "#FFFF00",
-            
-            
             "issueScores": [
                 {
                     "issueId": 47,
@@ -149,20 +116,18 @@
                     "weight": 1
                 }
             ],
-            "description": "",
-            "imageUrl": ""
+            "description": "'",
+            "imageUrl": "'",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [],
             "id": 134,
             "firstName": "John",
             "lastName": "Tyler",
             "party": "Independent",
             "homeState": "Virginia",
             "color": "#00C100",
-            
-            
             "issueScores": [
                 {
                     "issueId": 47,
@@ -190,113 +155,101 @@
                     "weight": 1
                 }
             ],
-            "description": "",
-            "imageUrl": ""
+            "description": "'",
+            "imageUrl": "'",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [],
             "id": 135,
             "firstName": "George",
             "lastName": "Dallas",
             "party": "Democrat",
             "homeState": "Pennsylvania",
             "color": "#0000FF",
-            
-            
             "issueScores": [],
-            "description": "",
-            "imageUrl": "https://www.jetsimon.com/public/static/images/george-dallas-1844.jpg"
+            "description": "<p>George Dallas has served as a Pennsylvania Senator, and as Mayor of Philadelphia. Pennsylvania is a crucial state to win if the Democrats are to return to the White House. Dallas would balance the ticket in two ways. First, he is a Northerner. Secondly, he is a moderate on the issues of tariffs and banking, compared to Polk, Jackson, and most other Southerners. He is not a moderate on the issue of expansion, and would help define that as the central Democratic issue in this election.</p>",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/george-dallas-1844.jpg",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [],
             "id": 136,
             "firstName": "Levi",
             "lastName": "Woodbury",
             "party": "Democrat",
             "homeState": "New Hampshire",
             "color": "#0000FF",
-            
-            
             "issueScores": [],
-            "description": "",
-            "imageUrl": "https://www.jetsimon.com/public/static/images/levi-woodbury-1844.jpg"
+            "description": "<p>Dallas is the preferred choice of the Convention, but Polk could intervene on behalf of Levi Woodbury. Woodbury's reputation is more national than Dallas's, but he also comes from a smaller state. Woodbury has served as Secretary of the Treasury and is much more orthodox on economic issues, favoring a limited view of the federal government's powers. This could galvanize Democrats in the closer states in the South and West, but could also be a hindrance in Pennsylvania and New York.</p>",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/levi-woodbury-1844.jpg",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [],
             "id": 137,
             "firstName": "Theodore",
             "lastName": "Frelinghuysen",
             "party": "Whig",
             "homeState": "New Jersey",
             "color": "#F0C862",
-            
-            
             "issueScores": [],
-            "description": "<p>This is a description</p>",
-            "imageUrl": "https://www.jetsimon.com/public/static/images/theodore-frelinghuysen-1844.jpg"
+            "description": "<p>Theodore Frelinghuysen has served as a Senator from New Jersey, and as Mayor of Newark. He is known as something of an evangelist, being involved in numerous bible societies and advocating for moral uplift. Associates of Frelinghuysen have voiced anti-Catholic sympathies, however. His selection would help with nativists, but exacerbate the Whigs' problems with the Catholic vote. Southerners with a long memory also recall his loud opposition to the Indian Removal Act.</p>",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/theodore-frelinghuysen-1844.jpg",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [],
             "id": 138,
             "firstName": "John",
             "lastName": "Sergeant",
             "party": "Whig",
             "homeState": "Pennsylvania",
             "color": "#F0C862",
-            
-            
             "issueScores": [],
-            "description": "<p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p><p>This is a description</p>",
-            "imageUrl": "https://www.jetsimon.com/public/static/images/john-sergeant-1844.jpg"
+            "description": "<p>John Sergeant ran with Henry Clay in 1832, and has served in Congress on three occasions. He worked for the Second Bank of the United States, and strongly favors a revival of the national banking system. He is also known as an opponent of slavery, even voting against the Missouri Compromise in 1820. Obviously, this background could help Clay in certain regions, and hurt him in others. Sergeant has also been out of political office for over three years.</p>",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/john-sergeant-1844.jpg",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [],
             "id": 139,
             "firstName": "Millard",
             "lastName": "Fillmore",
             "party": "Whig",
             "homeState": "New York",
             "color": "#F0C862",
-            
-            
             "issueScores": [],
-            "description": "<p>This is a description</p>",
-            "imageUrl": "https://www.jetsimon.com/public/static/images/millard-fillmore-1844.jpg"
+            "description": "<p>Millard Fillmore was an influential Congressman before leaving that body in 1843. He has strongly supported Whig economic policies such as a tariff and national bank. He has taken stances against the expansion of slavery, without veering into the dangerous territory of abolitionism. He is well-connected to New York politics, and his selection would undoubtedly motivate the party in that crucial state.</p>",
+            "imageUrl": "https://www.jetsimon.com/public/static/images/millard-fillmore-1844.jpg",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [],
             "id": 140,
             "firstName": "Thomas",
             "lastName": "Morris",
             "party": "Liberty",
             "homeState": "Ohio",
             "color": "#FFFF00",
-            
-            
             "issueScores": [],
-            "description": "",
-            "imageUrl": ""
+            "description": "'",
+            "imageUrl": "'",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         },
         {
-            "startingGlobalMultiplier": 1,
-            "runningMateIds": [],
             "id": 141,
             "firstName": "John C.",
             "lastName": "Calhoun",
             "party": "Independent",
             "homeState": "South Carolina",
             "color": "#00C100",
-            
-            
             "issueScores": [],
-            "description": "",
-            "imageUrl": ""
+            "description": "'",
+            "imageUrl": "'",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
         }
     ],
     "states": [
@@ -392,7 +345,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.0223
                 },
                 {
                     "candidateId": 133,
@@ -444,15 +397,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.0391
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.0439
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -496,7 +449,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.3375
                 },
                 {
                     "candidateId": 133,
@@ -548,7 +501,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.3218
                 },
                 {
                     "candidateId": 133,
@@ -600,15 +553,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.0712
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.0952
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -652,15 +605,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.2552
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.0363
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -704,7 +657,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.4521
                 },
                 {
                     "candidateId": 133,
@@ -756,7 +709,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.2336
                 },
                 {
                     "candidateId": 133,
@@ -808,15 +761,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 0.8405
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.0832
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -860,7 +813,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.3992
                 },
                 {
                     "candidateId": 133,
@@ -912,15 +865,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 0.9767
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.1274
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -964,15 +917,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.1207
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.1321
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -1016,7 +969,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.3039
                 },
                 {
                     "candidateId": 133,
@@ -1068,7 +1021,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.2228
                 },
                 {
                     "candidateId": 133,
@@ -1120,15 +1073,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 0.7357
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.1167
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -1172,15 +1125,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.2722
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.0037
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -1224,15 +1177,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.0817
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.0661
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -1276,7 +1229,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.5074
                 },
                 {
                     "candidateId": 133,
@@ -1328,15 +1281,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.1176
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.0505
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -1380,15 +1333,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.1191
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.0191
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -1432,15 +1385,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.3323
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.0161
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -1484,7 +1437,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 0
                 },
                 {
                     "candidateId": 133,
@@ -1492,7 +1445,7 @@
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0
                 }
             ]
         },
@@ -1536,7 +1489,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.279
                 },
                 {
                     "candidateId": 133,
@@ -1588,15 +1541,15 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.4948
                 },
                 {
                     "candidateId": 133,
-                    "amount": 0
+                    "amount": 0.1802
                 },
                 {
                     "candidateId": 134,
-                    "amount": 0.1
+                    "amount": 0.05
                 }
             ]
         },
@@ -1640,7 +1593,7 @@
                 },
                 {
                     "candidateId": 132,
-                    "amount": 1.2113
+                    "amount": 1.3602
                 },
                 {
                     "candidateId": 133,
@@ -1814,7 +1767,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 624,
@@ -2157,7 +2110,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 625,
@@ -2227,7 +2180,7 @@
                             ]
                         }
                     ],
-                    "keepInPlaceIfQuestionsShuffled": false
+                    "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
                     "id": 639,
@@ -4848,9 +4801,2436 @@
                             ]
                         }
                     ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                }
+            ]
+        },
+        {
+            "playerId": 131,
+            "questions": [
+                {
+                    "id": 610,
+                    "description": "You are known as a supporter of annexation on the Texas front. Do you have anything you would like to add, now that you have been nominated?",
+                    "answers": [
+                        {
+                            "id": 4124,
+                            "description": "We must annex Texas immediately.",
+                            "feedback": "There's nothing wrong with keeping the discussion focused on Texas.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 382,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 383,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 386,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 390,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 395,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 396,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 407,
+                                    "amount": -0.015
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4125,
+                            "description": "We must annex Texas as soon as practicable.",
+                            "feedback": "There's nothing wrong with keeping the discussion focused on Texas.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.015
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4126,
+                            "description": "I obtained my nomination based on the Texas issue, and people know that. We need to pivot now, and make the case for other parts of our platform.",
+                            "feedback": "There's nothing wrong with keeping the discussion focused on Texas.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.01
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 609,
+                    "description": "What points will emphasize in your acceptance letter, as you accept the Democratic nomination for President?",
+                    "answers": [
+                        {
+                            "id": 4120,
+                            "description": "I will open with a full-throated defense of the annexation of Texas. I will also express my support for our current banking system, and for large reductions to our tariff rate.",
+                            "feedback": "Texas is the issue that can reignite your chances this fall! But there a few whispers that your banking policy comes straight from 1832.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.1
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 133,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.22
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 382,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 383,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 386,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 387,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 390,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 391,
+                                    "amount": -0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 395,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 396,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 397,
+                                    "amount": -0.008
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 407,
+                                    "amount": -0.015
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4121,
+                            "description": "I will express my support for the annexation of Texas, and a favorable resolution to the Oregon situation. On other issues, we will continue Van Buren's efforts to establish an Independent Treasury, and will move to reduce tariffs.",
+                            "feedback": "Texas is the issue that can reignite your chances this fall! Especially with the equivocation of Henry Clay.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.12
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 133,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.2
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4122,
+                            "description": "I will open with a defense of the annexation of Texas, and then spend the rest of the letter attacking Henry Clay and his obfuscations on the issue.",
+                            "feedback": "Texas is the issue that can reignite your chances this fall! Clay is certainly prone to attack on that front.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.11
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 133,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.195
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 382,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 383,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 386,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 387,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 390,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 391,
+                                    "amount": -0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 395,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 396,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 397,
+                                    "amount": -0.008
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 407,
+                                    "amount": -0.015
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4123,
+                            "description": "My position on Texas is known. I will explain my own background more carefully, and emphasize that the Democrats are a national party that fights for the benefit of all sections.",
+                            "feedback": "Your acceptance is well-received across the sections, but it can never hurt to hammer on the issues where your advantage is greatest.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.105
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 133,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.18
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 384,
+                                    "amount": -0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 385,
+                                    "amount": -0.003
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 387,
+                                    "amount": -0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 388,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 391,
+                                    "amount": -0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 393,
+                                    "amount": -0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 394,
+                                    "amount": -0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 397,
+                                    "amount": -0.008
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 398,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 399,
+                                    "amount": -0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 401,
+                                    "amount": -0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 402,
+                                    "amount": -0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 403,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 406,
+                                    "amount": -0.02
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 611,
+                    "description": "John Tyler is pleased with your position on the Texas issue, and is prepared to withdraw his candidacy. Can you give him assurances that certain appointees of his will be safe in their positions, should you be elected?",
+                    "answers": [
+                        {
+                            "id": 4127,
+                            "description": "John Tyler lacks any broad base of support. It's more important to reserve these appointments for loyal Democrats.",
+                            "feedback": "Loyal Democrats need all the patronage jobs they can get, but will your handling of the situation cost you any in Tyler's home state of Virginia?",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.005
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 392,
+                                    "amount": 0.05
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 407,
+                                    "amount": 0.05
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4128,
+                            "description": "Getting Tyler out of the race is worth it. He can send us a reasonable list of people who will stay on when we're elected.",
+                            "feedback": "Tyler has officially declared his withdrawal from the race. There are some whispers in the party about the jobs which may have come with that bargain, however. ",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 134,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -50
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 639,
+                    "description": "Do you support an Amendment that would limit the President to a single term in office?",
+                    "answers": [
+                        {
+                            "id": 4199,
+                            "description": "This is a necessary step against the overreach and abuse of power of the Executive branch.",
+                            "feedback": "The problem is, this idea was clearly targeted at Andrew Jackson, and Democrats in general. You're really taking the Whig position here.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.01
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4200,
+                            "description": "I don't support an Amendment on this issue, but I will personally promise not to run for reelection.",
+                            "feedback": "This is a good way to finesse this issue. It has the added advantage, since you were a dark horse candidate, of uniting the factions of your party.",
+                            "answerEffects": []
+                        },
+                        {
+                            "id": 4201,
+                            "description": "I don't think that this is a necessary step, at this time.",
+                            "feedback": "This is the party line, but after a bitter nomination fight, some are disappointed that your success would preempt their 1848 campaigns.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.01
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.03
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 636,
+                    "description": "What should your party's position be on the Tariff of 1842, which increased tariffs?",
+                    "answers": [
+                        {
+                            "id": 4188,
+                            "description": "We stand steadfast in support of this tariff. It is one of the few positive accomplishments of Mr. Tyler's so-called Presidency.",
+                            "feedback": "This puts you outside of the party mainstream, to say the least. Hopefully it will help in a couple of the Northern states.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 48,
+                                    "stateId": -1,
+                                    "amount": 0.55
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.02
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 382,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 383,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 386,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 390,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 395,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 396,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 407,
+                                    "amount": 0.015
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4189,
+                            "description": "The primary purpose of our tariffs should be revenue. But should a small amount of protection <em>incidentally</em> occur from our tariff policy, that is acceptable.",
+                            "feedback": "This answer satisfies the Southern wing of the party while providing some concession to Northern Democrats in states like New York.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.02
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.005
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4190,
+                            "description": "We should avoid taking a strong position on this tariff. There are men in our party who stand on both sides of the issue.",
+                            "feedback": "While true, people are getting the idea that you are dancing around a hot issue.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.01
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.03
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4191,
+                            "description": "We must rescind this tariff and replace it with something much lower. I support free trade and low tariffs.",
+                            "feedback": "This is certainly the party line on the tariff issue.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 48,
+                                    "stateId": -1,
+                                    "amount": -0.55
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.045
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 384,
+                                    "amount": 0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 398,
+                                    "amount": 0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 399,
+                                    "amount": 0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 402,
+                                    "amount": 0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 403,
+                                    "amount": 0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 393,
+                                    "amount": 0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 391,
+                                    "amount": 0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 397,
+                                    "amount": 0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 406,
+                                    "amount": 0.01
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 638,
+                    "description": "What is your current position on the banking system?",
+                    "answers": [
+                        {
+                            "id": 4195,
+                            "description": "I stand for a national bank, broadly similar to the late Second Bank of the United States.",
+                            "feedback": "Are you out of your mind? A national bank is anathema to the Democratic Party.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 50,
+                                    "stateId": -1,
+                                    "amount": 0.6
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.045
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4196,
+                            "description": "I stand for a national bank or an independent Treasury -- whichever can gain the most support. I would require any national bank to maintain a branch in every state.",
+                            "feedback": "Are you out of your mind? A national bank is anathema to the Democratic Party.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 50,
+                                    "stateId": -1,
+                                    "amount": 0.3
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.03
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.005
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4197,
+                            "description": "I will never support a national bank, but I do advocate an independent Treasury, so that federal funds won't be tied up in local speculations.",
+                            "feedback": "The independent Treasury idea has broad support in the party, and also shows that Democrats are trying to do something after the 1837 crisis.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.025
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.005
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4198,
+                            "description": "I support our current free banking system, and I see no need for the Treasury to insulate its operations from the state-chartered banks.",
+                            "feedback": "There's nothing wrong with defending the current system, which is the Democratic system in large part.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 50,
+                                    "stateId": -1,
+                                    "amount": -0.55
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.05
+                                }
+                            ]
+                        }
+                    ],
                     "keepInPlaceIfQuestionsShuffled": false
+                },
+                {
+                    "id": 637,
+                    "description": "Do you believe that some revenue should be set aside from our tariffs to finance internal improvements, such as canals and roads?",
+                    "answers": [
+                        {
+                            "id": 4192,
+                            "description": "This is one of the key objectives of our current tariff policy, and I would support a strong infrastructure program as President.",
+                            "feedback": "Support for a federal infrastructure program is quite limited within your party.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 48,
+                                    "stateId": -1,
+                                    "amount": 0.55
+                                },
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 50,
+                                    "stateId": -1,
+                                    "amount": 0.55
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.035
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4193,
+                            "description": "Only a very limited amount, for the most compelling projects. Otherwise the tariff should be for revenue purposes only.",
+                            "feedback": "This answer satisfies the Southern wing of the party while providing some concession to Northern Democrats in states like New York.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.005
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4194,
+                            "description": "I don't believe that it is constitutional or advisable for the federal government to undertake an internal improvements program.",
+                            "feedback": "This is certainly the party line on the tariff issue.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.005
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.05
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 382,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 383,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 386,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 390,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 395,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 396,
+                                    "amount": -0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 407,
+                                    "amount": -0.015
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": false
+                },
+                {
+                    "id": 618,
+                    "description": "Should your party attack Henry Clay's personal conduct? His gambling, womanizing, dueling, and generally irreligious nature?",
+                    "answers": [
+                        {
+                            "id": 4142,
+                            "description": "We can emphasize in my own biography that I have led an upright life, without any taint to my personal conduct.",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.0025
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4143,
+                            "description": "The passions of these times seem to be towards someone who is more righteous in their behavior. We should attack Clay's conduct, and especially in the Northeast.",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 382,
+                                    "amount": 0.005
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 383,
+                                    "amount": 0.005
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 386,
+                                    "amount": 0.005
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 387,
+                                    "amount": 0.005
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 390,
+                                    "amount": 0.005
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 395,
+                                    "amount": 0.005
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 396,
+                                    "amount": 0.005
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 407,
+                                    "amount": 0.005
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 384,
+                                    "amount": -0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 391,
+                                    "amount": -0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 393,
+                                    "amount": -0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 397,
+                                    "amount": -0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 403,
+                                    "amount": -0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 406,
+                                    "amount": -0.01
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4144,
+                            "description": "I don't think that personal conduct is a good issue to bring into this campaign.",
+                            "feedback": "",
+                            "answerEffects": []
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": false
+                },
+                {
+                    "id": 617,
+                    "description": "Henry Clay supports the idea that the federal government should purchase the telegraph patent and manage the technology. To what extent should you attack him on this?",
+                    "answers": [
+                        {
+                            "id": 4140,
+                            "description": "This sounds like the most ridiculous idea yet from Mr. Clay's long public career. I trust that enterprising individuals and companies will develop this technology.",
+                            "feedback": "This isn't a central issue in this election, but you are definitely closer to the majority opinion here.",
+                            "answerEffects": []
+                        },
+                        {
+                            "id": 4141,
+                            "description": "We don't need to hammer on the internal improvements issue. We have other things to talk about which will better unite the party.",
+                            "feedback": "",
+                            "answerEffects": []
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": false
+                },
+                {
+                    "id": 620,
+                    "description": "There have recently been riots and armed clashes between nativists and Irish immigrants in Philadelphia and elsewhere. Do you have any plans to condemn the nativist violence in these episodes?",
+                    "answers": [
+                        {
+                            "id": 4147,
+                            "description": "The Whig Party attempts to stand apart from these nativist mobs, yet their own candidate for Vice President has associated with virulent anti-Catholics.",
+                            "feedback": "The Irish vote in the North has gone heavily in your favor recently. It's a good idea to keep it that way.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.0025
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4148,
+                            "description": "I don't want to address civil disorder directly, but we should be clear that we oppose any changes to our naturalization laws.",
+                            "feedback": "The Irish vote in the North has gone heavily in your favor recently. It's a good idea to keep it that way.",
+                            "answerEffects": []
+                        },
+                        {
+                            "id": 4149,
+                            "description": "Our national party should avoid addressing this issue.",
+                            "feedback": "The Irish vote in the North has gone heavily in your favor recently. It's a good idea to keep it that way.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 49,
+                                    "stateId": -1,
+                                    "amount": 0.1
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": false
+                },
+                {
+                    "id": 613,
+                    "description": "Cassius Clay, a cousin of Henry Clay, has published a letter stating Henry Clay is in accord with the abolitionist movement. Should your party disseminate copies of this letter as an attack?",
+                    "answers": [
+                        {
+                            "id": 4130,
+                            "description": "That seems like a pretty obvious move to me. The Whigs have always had trouble finessing this issue.",
+                            "feedback": "There's no reason to hold back here -- Cassius Clay has put his cousin in a very awkward position.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.005
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4131,
+                            "description": "Let's not appear too hasty here. We need to run as a national party and avoid alienating Northerners.",
+                            "feedback": "There's no reason to hold back here -- Cassius Clay has put his cousin in a very awkward position.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 51,
+                                    "stateId": -1,
+                                    "amount": -0.3
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": false
+                },
+                {
+                    "id": 619,
+                    "description": "Silas Wright, the protege and successor to Van Buren, has been mentioned as a candidate for Governor of New York. He seems hesitant. Will you write him a letter imploring him to enter the race?",
+                    "answers": [
+                        {
+                            "id": 4145,
+                            "description": "This is an issue of state politics that I will stay removed from.",
+                            "feedback": "Your national supporters admire the fact that you are a man of integrity and will remain above the fray of local politics.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.0025
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 399,
+                                    "amount": 0.015
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4146,
+                            "description": "I will put my word in as a supporter of Silas Wright.",
+                            "feedback": "This will certainly galvanize the vote in New York.",
+                            "answerEffects": []
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": false
+                },
+                {
+                    "id": 616,
+                    "description": "For better or worse, many view you as a protege of Andrew Jackson (some call you “Young Hickory”). Is it better to embrace this label, or to distance yourself from it?",
+                    "answers": [
+                        {
+                            "id": 4137,
+                            "description": "I am a personal friend of Andrew Jackson, and have repeatedly taken advice from him throughout my political career. I'm proud of this and I believe it to be an asset in this campaign.",
+                            "feedback": "This is a simple decision -- anything you can do to emphasize your close relationship with Andrew Jackson is a net positive.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.0075
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4138,
+                            "description": "There's no need to talk about Andrew Jackson at this point. Let's focus on Texas and other issues of our current time, rather than rehashing the battles of a decade ago.",
+                            "feedback": "This is a simple decision -- anything you can do to emphasize your close relationship with Andrew Jackson is a net positive.",
+                            "answerEffects": []
+                        },
+                        {
+                            "id": 4139,
+                            "description": "We don't need to do anything so crazy as to denounce Andrew Jackson, but I think on the banking issue or the tariff issue, my positions are significantly different than what he advocated for.",
+                            "feedback": "This is a simple decision -- anything you can do to emphasize your close relationship with Andrew Jackson is a net positive.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 51,
+                                    "stateId": -1,
+                                    "amount": 0
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.005
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": false
+                },
+                {
+                    "id": 615,
+                    "description": "Do you have any statement on the presence of Theodore Frelinghuysen on the Whig ticket, and his association with known anti-Catholic agitators?",
+                    "answers": [
+                        {
+                            "id": 4135,
+                            "description": "The Democratic Party is a friend of the working-class, and of immigrants from abroad. We denounce the vile bigotry of the Whig Party, as evidenced by Frelinghuysen.",
+                            "feedback": "The Irish vote in the North has gone heavily in your favor recently. It's a good idea to keep it that way.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 49,
+                                    "stateId": -1,
+                                    "amount": 0.6
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4136,
+                            "description": "We won't have much to say about Frelinghuysen. He seems to avoided the vices which have plagued Henry Clay throughout his life.",
+                            "feedback": "A nice aside aimed at Clay, but you should show more vigor in defense of your Irish supporters.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 49,
+                                    "stateId": -1,
+                                    "amount": 0
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": false
+                },
+                {
+                    "id": 614,
+                    "description": "Do you believe that any Southern Whig can call themselves a supporter of slavery, so long as Henry Clay equivocates on the Texas issue?",
+                    "answers": [
+                        {
+                            "id": 4132,
+                            "description": "We have the upper-hand here, and we need to hammer the Southern Whigs on their allegiance to a party that is drifting towards increasingly radical positions.",
+                            "feedback": "The slavery issue is increasingly becoming a problem for the Whigs of the South, and there's no reason to give them a pass on it.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 51,
+                                    "stateId": -1,
+                                    "amount": -0.75
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.01
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4133,
+                            "description": "Mr. Clay has certainly shown unusual reticence on the Texas issue, but many Southern Whigs are perfectly fine people.",
+                            "feedback": "The slavery issue is increasingly becoming a problem for the Whigs of the South, and there's no reason to give them a pass on it.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.005
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4134,
+                            "description": "We don't really need to address this question one way or the other. Let's just run our campaign and get our own views out.",
+                            "feedback": "The slavery issue is increasingly becoming a problem for the Whigs of the South, and there's no reason to give them a pass on it.",
+                            "answerEffects": []
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": false
+                },
+                {
+                    "id": 622,
+                    "description": "Would you support the annexation of Texas, even without an agreement with Mexico, and a possible war?",
+                    "answers": [
+                        {
+                            "id": 4152,
+                            "description": "The prospect of war with a backwards country such as Mexico should play no part in our calculations.",
+                            "feedback": "This is definitely the majority opinion among the public.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.005
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4153,
+                            "description": "I would hope that we could negotiate an annexation with Mexico before moving forward, to avoid any diplomatic incidents.",
+                            "feedback": "This puts you closer to Clay's position, and is a disappointment to the general public.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 47,
+                                    "stateId": -1,
+                                    "amount": -0.1
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.02
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 382,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 383,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 386,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 390,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 395,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 396,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 407,
+                                    "amount": 0.015
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": false
+                },
+                {
+                    "id": 621,
+                    "description": "What do you make of Martin Van Buren's 1842 visit to Henry Clay's estate? Is Clay too friendly with Northern interests?",
+                    "answers": [
+                        {
+                            "id": 4150,
+                            "description": "This incident was a source of insinuation against Van Buren during the nomination battle. In the main election, however, we shouldn't mention anything that could cause a rift in the party.",
+                            "feedback": "",
+                            "answerEffects": []
+                        },
+                        {
+                            "id": 4151,
+                            "description": "This episode shows that Mr. Clay is, at heart, an insider who is overly favorable to Northern politicians. It brings to mind the Corrupt Bargain of a prior election.",
+                            "feedback": "There's no reason to say anything that will make life awkward for Van Buren. You need a united party.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.0025
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 384,
+                                    "amount": 0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 398,
+                                    "amount": 0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 399,
+                                    "amount": 0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 394,
+                                    "amount": 0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 402,
+                                    "amount": 0.01
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": false
+                },
+                {
+                    "id": 640,
+                    "description": "Do you support the lifting of the Gag Rule in Congress?",
+                    "answers": [
+                        {
+                            "id": 4202,
+                            "description": "Congress must function in an orderly fashion, without taking time out from its business to receive ill-conceived petitions. I support the Gag Rule.",
+                            "feedback": "Ending the Gag Rule is definitely a Whig prerogative.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 51,
+                                    "stateId": -1,
+                                    "amount": -0.6
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.005
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 133,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.1
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4203,
+                            "description": "Regardless of our feelings about the slavery issue, it is undemocratic for Congress to deny the people the right to petition the government. I believe the Gag Rule should be lifted.",
+                            "feedback": "Ending the Gag Rule is definitely a Whig prerogative.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 51,
+                                    "stateId": -1,
+                                    "amount": 0.25
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.01
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.005
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 133,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.1
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4204,
+                            "description": "We have no plans to address the Gag Rule during our campaign.",
+                            "feedback": "This is one time when it just might do to keep your mouth shut.",
+                            "answerEffects": []
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": false
+                },
+                {
+                    "id": 641,
+                    "description": "Aside from the issue of Texas, do you support the expansion of the United States in general? Into Oregon, other parts of Mexico, Cuba, etc.?",
+                    "answers": [
+                        {
+                            "id": 4205,
+                            "description": "I am against the annexation of Texas. And just to show that this does derive from sectional prejudice, I am also against expansion into Oregon or other regions.",
+                            "feedback": "People are wondering if they are reading your words correctly. Annexation was supposed to be the primary issue of your campaign.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 47,
+                                    "stateId": -1,
+                                    "amount": 0.5
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.05
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.001
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 133,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.1
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 382,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 383,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 386,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 390,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 395,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 396,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 407,
+                                    "amount": 0.015
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4206,
+                            "description": "I believe that the United States, in line with the “Manifest Destiny” ideal, should expand wherever feasible.",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.005
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 133,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.2
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4237,
+                            "description": "Oregon is a different issue than that of Texas. In Oregon we have an existing, legitimate claim.",
+                            "feedback": "This is a strange aside to take, but one that is unlikely to make much of an impression.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 384,
+                                    "amount": 0.004
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 385,
+                                    "amount": 0.004
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 387,
+                                    "amount": 0.004
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 388,
+                                    "amount": 0.004
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 391,
+                                    "amount": 0.004
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 393,
+                                    "amount": 0.004
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 394,
+                                    "amount": 0.004
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 397,
+                                    "amount": 0.004
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 398,
+                                    "amount": 0.004
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 399,
+                                    "amount": 0.004
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 401,
+                                    "amount": 0.004
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 402,
+                                    "amount": 0.004
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 403,
+                                    "amount": 0.004
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 406,
+                                    "amount": 0.004
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": false
+                },
+                {
+                    "id": 647,
+                    "description": "After the unfortunate death of Abel Upshur in the <em>Princeton</em> explosion, John Calhoun succeeded him as Secretary of State. Was this a wise appointment by President Tyler?",
+                    "answers": [
+                        {
+                            "id": 4222,
+                            "description": "This is one of the most ill-conceived decisions I have seen in my lifetime.",
+                            "feedback": "Calhoun may be past his heyday, but it serves little purpose to insult him.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 47,
+                                    "stateId": -1,
+                                    "amount": 0.5
+                                },
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 51,
+                                    "stateId": -1,
+                                    "amount": 0.4
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.01
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.005
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 133,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.1
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4223,
+                            "description": "We don't have any plans to comment upon the Cabinet appointments of President Tyler.",
+                            "feedback": "",
+                            "answerEffects": []
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": false
+                },
+                {
+                    "id": 646,
+                    "description": "Do you agree with Robert Walker's letter, arguing that that slavery issue will be diluted by national expansion?",
+                    "answers": [
+                        {
+                            "id": 4220,
+                            "description": "I believe this letter to be disingenuous at best. Further expansion will reopen the debate on slavery rather than suppress it.",
+                            "feedback": "Better to just ignore this letter.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 47,
+                                    "stateId": -1,
+                                    "amount": 0.5
+                                },
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 51,
+                                    "stateId": -1,
+                                    "amount": 0.2
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.01
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.002
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 133,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.15
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4221,
+                            "description": "We won't address Mr. Walker's letter directly, but we are in favor of annexation.",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 133,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.1
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": false
+                },
+                {
+                    "id": 645,
+                    "description": "Do you support any effort to establish a unified, national currency?",
+                    "answers": [
+                        {
+                            "id": 4216,
+                            "description": "I support a national bank, and one clear argument for the bank is the total chaos we've had with our currency since 1837.",
+                            "feedback": "A national bank is anathema to most Democrats.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 50,
+                                    "stateId": -1,
+                                    "amount": 0.6
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.035
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 382,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 383,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 386,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 390,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 395,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 396,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 407,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 387,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 388,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 394,
+                                    "amount": 0.015
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 401,
+                                    "amount": 0.015
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4217,
+                            "description": "Only if we could establish one without chartering a new national bank.",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 50,
+                                    "stateId": -1,
+                                    "amount": 0.2
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.005
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.015
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4218,
+                            "description": "I support an independent Treasury, but not one that would disseminate a national currency.",
+                            "feedback": "There's nothing wrong with taking this position.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.02
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4219,
+                            "description": "Our current system is more democratic than any alternative that could be devised. Let the private banks issue currency in line with their own strength and prosperity.",
+                            "feedback": "There's nothing wrong with taking this position.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 50,
+                                    "stateId": -1,
+                                    "amount": -0.55
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.05
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": false
+                },
+                {
+                    "id": 642,
+                    "description": "Would you sign a law that lowered tariffs below the level needed to protect American industry from foreign imports?",
+                    "answers": [
+                        {
+                            "id": 4207,
+                            "description": "I would be forced to veto such a measure as President.",
+                            "feedback": "This is a dissatisfying answer to many in your party.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 48,
+                                    "stateId": -1,
+                                    "amount": 0.55
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.03
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4208,
+                            "description": "Regardless of my personal feelings, it is not the place of the President to override the will of Congress, unless the law in question is unconstitutional.",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Issue",
+                                    "candidateId": -1,
+                                    "issueId": 48,
+                                    "stateId": -1,
+                                    "amount": 0.1
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.005
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.01
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4209,
+                            "description": "I would gladly sign such a bill into law.",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.05
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": false
+                },
+                {
+                    "id": 650,
+                    "description": "Do you have any criticism of the authorities in Illinois, regarding their failure to properly protect Joseph Smith before his assassination in June?",
+                    "answers": [
+                        {
+                            "id": 4231,
+                            "description": "Regardless of our personal feelings, it always concerning when a religious leader and Presidential candidate can simply be killed by a mob.",
+                            "feedback": "Are you trying to win the Mormon vote this year? This is one case where it's definitely best to keep your opinions private.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.033
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.05
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 387,
+                                    "amount": 0.05
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 388,
+                                    "amount": 0.05
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 396,
+                                    "amount": 0.05
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 399,
+                                    "amount": 0.05
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 401,
+                                    "amount": 0.05
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 387,
+                                    "amount": -0.04
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 388,
+                                    "amount": -0.04
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 396,
+                                    "amount": -0.04
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 399,
+                                    "amount": -0.04
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 401,
+                                    "amount": -0.04
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4232,
+                            "description": "This is not an issue that we plan to address in our campaign.",
+                            "feedback": "",
+                            "answerEffects": []
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": false
+                },
+                {
+                    "id": 651,
+                    "description": "Is there a particular state where your party should concentrate its resources and most talented speakers as the election draws near?",
+                    "answers": [
+                        {
+                            "id": 4233,
+                            "description": "New York",
+                            "feedback": "Good luck in this crucial state.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.002
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.002
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 399,
+                                    "amount": -0.007
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 399,
+                                    "amount": 0.007
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4234,
+                            "description": "Pennsylvania",
+                            "feedback": "Good luck in this crucial state.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.002
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.002
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 402,
+                                    "amount": -0.007
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 402,
+                                    "amount": 0.007
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4235,
+                            "description": "Ohio",
+                            "feedback": "Good luck in this crucial state.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.002
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.002
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 401,
+                                    "amount": -0.007
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 401,
+                                    "amount": 0.007
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4236,
+                            "description": "Virginia",
+                            "feedback": "Good luck in this crucial state.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.002
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.002
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 407,
+                                    "amount": -0.007
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": 407,
+                                    "amount": 0.007
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
                 }
             ]
         }
-    ]
+    ],
+    "theme": {
+        "backgroundImageUrl": "",
+        "backgroundColor": "",
+        "headerImageUrl": "",
+        "primaryGameWindowColor": "",
+        "secondaryGameWindowColor": "",
+        "primaryGameWindowTextColor": "",
+        "secondaryGameWindowTextColor": "",
+        "bottomBannerBackgroundColor": "",
+        "bottomBannerTextColor": "",
+        "advisorImage": "https://www.jetsimon.com/public/static/images/kendall-weed-1844.jpg",
+        "quote": ""
+    },
+    "hasStateVisits": false,
+    "scenarioName": "1844",
+    "scenarioDescription": "<p>President Tyler has defined the key issue of this election with his proposed annexation of Texas. James K. Polk, the Democrat, gained his nomination by favoring the measure. Henry Clay, the Whig, has more latitude.</p><p>The Liberty Party lurks as an abolitionist third party, and will pressure the Whigs. Conversely, John Tyler hopes to use the Texas issue to energize an independent campaign, if Polk wavers. Other campaign issues are tariffs, internal improvements, and the banking system.</p>",
+    "scenarioImageUrl": "https://www.jetsimon.com/public/static/images/1844-election-photo.jpg",
+    "credits": "by Dan Bryan, converted by Jet",
+    "music": []
 }
