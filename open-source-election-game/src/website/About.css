@@ -2,10 +2,13 @@
     width: 50%;
     margin: auto;
     text-align: left;
+    padding-bottom: 32px;
 }
 
 .About > h1, .About > h2 {
     text-align: center;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.562);
+    padding-bottom: 8px;
 }
 
 .About li {
@@ -39,6 +42,8 @@
 }
 
 .AboutImage > img {
-    width: 75%;
+    width: 50%;
     margin: auto;
+    border: 1px solid grey;
+    padding: 8px;
 }

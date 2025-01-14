@@ -2,7 +2,12 @@ import "./About.css"
 
 import aboutEditor from "../assets/about-editor.png";
 import gore from "../assets/gore.jpg";
-
+import mobile from "../assets/phoneImage.jpg"
+import com1 from "../assets/thecommunitytrail1.png"
+import com2 from "../assets/thecommunitytrail2.png"
+import simulator from "../assets/simulator.png";
+import issueSlider from "../assets/issuesliders-ezgif.com-video-to-gif-converter.gif";
+import marginPaint from "../assets/paintmargins-ezgif.com-video-to-gif-converter.gif";
 function About() {
     return (
         <div className="About">
@@ -22,6 +27,12 @@ function About() {
             <h2>Why Do I Care As a Player?</h2>
             <p>You will be able to play more complex election scenarios! OSEG allows creators direct access to the source code, which makes it much easier to add complex systems. OSEG was also built from the ground up with the idea of custom endings and CYOA in mind. The data is much more organized and easier to edit.</p>
             <p>Additionally, OSEG has been built with mobile in mind. This means the game plays/looks good on mobile!</p>
+            <p>On The Community Trail there is a platform for you to rate mods, leave reviews, and create an account to keep track of your highscores!</p>
+
+            <div   className="AboutImage">
+                <img style={{width:"auto",height:"500px"}} src={mobile}></img>
+                <p>How OSEG looks on mobile (on The Community Trail website)</p>
+            </div>
 
             <h2>Why Do I Care as a Modder?</h2>
             <p>
@@ -37,18 +48,39 @@ function About() {
                 </ul>
             </p>
 
+            <div className="AboutImage">
+                <img src={aboutEditor}></img>
+                <p>The browser based OSEG editor, complete with live coding integration and tools similar to Jets Mod Tool</p>
+            </div>
+
+            <div className="AboutImage">
+                <img src={simulator}></img>
+                <p>Simulate hundreds of games at once to speed up balancing your scenarios!</p>
+            </div>
+
+            <div className="AboutImage">
+                <img src={issueSlider}></img>
+                <p>Adjust issues using sliders and see results in real time!</p>
+            </div>
+
+            <div className="AboutImage">
+                <img src={marginPaint}></img>
+                <p>Paint margins directly on the map! No more guessing!</p>
+            </div>
+
             <h2>"This Site Doesn't Have As Many Features As CTS/NCT/etc!!!"</h2>
 
             <p>This is the demo site for OSEG. Where people can try it out and use our web-based editor to make their own scenarios. To play scenarios, save your highscore, and leave reviews try <a href="https://thecommunitytrail.com/">The Community Trail</a></p>
 
-            <h2>Some Images</h2>
+            <div className="AboutImage">
+                <img src={com1}></img>
+                <p>The homepage of The Community Trail</p>
+            </div>
 
             <div className="AboutImage">
-                <img src={aboutEditor}></img>
-                <p>A picture of the OSEG editor with integrated coding and live map view!</p>
+                <img src={com2}></img>
+                <p>Lots of extra features!</p>
             </div>
-            
-
         </div>
     )
 }

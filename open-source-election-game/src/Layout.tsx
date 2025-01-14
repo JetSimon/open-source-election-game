@@ -12,7 +12,7 @@ function Layout() {
         <Link to="/about">About</Link>
         </div>
         <div>
-        <Link to="/">Game</Link>
+        <Link to="/">Demo</Link>
         </div>
         <div>
         <Link to="/editor">Editor</Link>
@@ -24,7 +24,7 @@ function Layout() {
         <a href="https://github.com/JetSimon/open-source-election-game">Source Code</a>
         </div>
         <div>
-        <a href="https://thecommunitytrail.com/">The Community Trail</a>
+        <a href="https://thecommunitytrail.com/">Just want to play? Check out The Community Trail</a>
         </div>
     </div>
       <Outlet></Outlet>
