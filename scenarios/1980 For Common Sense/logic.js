@@ -1,5 +1,4 @@
-function createEnding(engine, results) {
-
+function createEnding(engine, results) {    
     const playerPvPercentage = engine.getPlayerPvPercentage(results); 
     const playerWonPv = engine.playerWonPv(results);
 
@@ -313,7 +312,7 @@ function onAnswerPicked(engine, answerPicked) {
 }
 
 function onScenarioStarted(engine) {
-    
+
 }
 
-export { createEnding, onAnswerPicked, onScenarioStarted }
+export { onScenarioStarted, createEnding, onAnswerPicked }

@@ -88,7 +88,8 @@ function onAnswerPicked(engine, answerPicked) {
         "Walrus Level: Just Four Guys",
         "Walrus Level: Sitting in an English Garden",
         "Walrus Level: Waiting For the Sun",
-        "Walrus Level: Eggmen"
+        "Walrus Level: Eggmen",
+        "Walrus Level: Walrus"
     ];
 
     const ans = answerPicked.id;
