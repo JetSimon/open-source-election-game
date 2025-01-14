@@ -1,7 +1,6 @@
 function createEnding(engine, results) {
 
     if(engine.getCounter("Walrus") >= 4) {
-        engine.unlockAchievement("RYIwuxANaAD6LJHbYlPQ");
         return {
             slides : [
                 {

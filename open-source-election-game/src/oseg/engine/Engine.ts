@@ -829,6 +829,29 @@ class Engine {
             this.currentScenario.music.push(song);
         }
     }
+
+    /**
+     * Returns true if the candidate with candidateId is polling highest in the state with id stateId. Can also be used midgame.
+     * @category Ending Utility Functions
+     * @param candidateId 
+     * @param stateId 
+     * @returns 
+     */
+    candidateWonState(candidateId : number, stateId : number) : boolean {
+        const state = this.scenarioController.getStateControllerByStateId(stateId);
+        if(state == null) {
+            console.error("No state found with id " + stateId + " when checking who won. Returning false.");
+            return false;
+        }
+
+        const highest = state.getHighestCandidate(this);
+        if(highest == null) {
+            console.error("Highest candidate was null while trying to tell who won state. Returning false.");
+            return false;
+        }
+
+        return highest.getId() == candidateId;
+    }
 }
 
 export { Engine, GameState };

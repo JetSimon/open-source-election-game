@@ -2,8 +2,24 @@ function createEnding(engine, results) {
     const playerPvPercentage = engine.getPlayerPvPercentage(results); 
     const playerWonPv = engine.playerWonPv(results);
 
-    if(engine.hasAnswered([4173, 4171, 16433]) && playerWonPv) {
+    // Peterson wins Hyde
+    if(engine.candidateWonState(133, 15968)) {
         engine.unlockAchievement("fGvFtb3mzghu9qo1yS0R");
+    }
+
+    // Win the collage counties of Brown, Brookings, Pennington, Minnehaha, Davison, Clay, Yankton
+    if (engine.candidateWonState(131, 16040) &&
+        engine.candidateWonState(131, 15944) &&
+        engine.candidateWonState(131, 15848) &&
+        engine.candidateWonState(131, 15812) &&
+        engine.candidateWonState(131, 15740) &&
+        engine.candidateWonState(131, 15794) &&
+        engine.candidateWonState(131, 15764)) {
+        engine.unlockAchievement("8XfbX8WLlNzaSoeyPiwW");
+    }
+
+    if(engine.hasAnswered([4173, 4171, 16433]) && playerWonPv) {
+        engine.unlockAchievement("78UWASNMfys2WnSWCCDi");
     }
 
     // Player did not win, but got between 39 and 40 percent
