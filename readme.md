@@ -8,19 +8,7 @@
 
 The ScenarioModel schema is very similar to a combined code 1 and 2 of the TCT engine.
 
-interface ScenarioModel {
-    theme : ThemeModel;
-    hasStateVisits: boolean;
-    scenarioName: string;
-    scenarioDescription: string;
-    scenarioImageUrl: string;
-    candidates: CandidateModel[];
-    states: StateModel[];
-    issues: Issue[];
-    scenarioSides: ScenarioSideModel[];
-    credits: string;
-    music : SongModel[];
-}
+This interface and more can be checked out in src/oseg/engine/models.
 
 ```
 interface ScenarioModel {
