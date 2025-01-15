@@ -111,12 +111,6 @@ function onAnswerPicked(engine, answerPicked) {
 
         engine.setQuote("\"The problem with trying to leave politics is that once it gets in your blood, it can be like a narcotic.\"");
         engine.setScenarioName("The Devil Went Down to Georgia");
-        /*
-        nct_stuff.themes[nct_stuff.selectedTheme].coloring_window = "#A52A2A" 
-        nct_stuff.themes[nct_stuff.selectedTheme].coloring_title = "#A9A9A9" 
-        $(".container")[0].style.backgroundColor = "#FFBF00" 
-        $("#game_window")[0].style.borderColor = "#FFBF00" 
-        */
     }
 
     // If you answer the this, then start the lawsuit sequence
