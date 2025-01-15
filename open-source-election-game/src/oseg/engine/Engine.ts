@@ -173,7 +173,13 @@ class Engine {
         this.updateStates();
 
         if(this.onScenarioStarted != null) {
-            this.onScenarioStarted(this);
+            try {
+                this.onScenarioStarted(this);
+            }
+            catch(e) {
+                alert("Error while running onScenarioStarted from logic.js, see console for more details");
+                console.error("onScenarioStarted error:", e)
+            }
         }
     }
 
@@ -388,7 +394,14 @@ class Engine {
         this.updateStates();
 
         if(this.onAnswerPicked != null) {
-            this.onAnswerPicked(this, selectedAnswer);
+            try {
+                this.onAnswerPicked(this, selectedAnswer);
+            }
+            catch(e){
+                alert("Error while running onAnswerPicked, see console for details");
+                console.error("onAnswerPicked error:", e)
+            }
+            
         }
     }
 
@@ -479,7 +492,32 @@ class Engine {
                 }]
             }
         }
-        return this.createEnding(this, this.getFinalResults());
+
+        try {
+            const ending = this.createEnding(this, this.getFinalResults());
+            return ending;
+        }
+        catch(e : unknown) {
+            alert("Error while running createEnding, please check your logic.js code and the console for more details");
+            console.error("createEnding error:", e)
+
+            let message : string = "Error";
+
+            if(typeof e === "string") {
+                message = e;
+            }
+            else if(e instanceof Error) {
+                message = e.message;
+            }
+
+            return {
+                slides: [{
+                    imageUrl: "",
+                    endingText: message,
+                    endingHeader: "Error!"
+                }]
+            }
+        }
     }
 
     /**
