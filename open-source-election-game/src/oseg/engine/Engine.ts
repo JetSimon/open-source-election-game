@@ -719,6 +719,21 @@ class Engine {
     }
 
     /**
+     * @category CYOA Utility Functions
+     * @param answerIds array of answer id numbers to check if any answered
+     * @returns true if any answers have been answers
+     */
+    hasAnsweredAny(answerIds : number[]) {
+        const answered = new Set(this.answers);
+        for(const answerId of answerIds) {
+            if(answered.has(answerId)) {
+                return true;
+            }
+        } 
+        return false;
+    }
+
+    /**
      * 
      * @param question The question to insert
      * @param index The index before the question you want to insert. For example if you are on index 3 and you want to insert a question at index 6, put index 5
