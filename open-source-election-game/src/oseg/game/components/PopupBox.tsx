@@ -9,10 +9,11 @@ interface PopupBoxProps {
     image: string;
     setIsShowing: (isShowing : boolean) => void;
     theme : ThemeModel;
+    onClosed : () => void;
 }
 
 function PopupBox(props : PopupBoxProps) {
-    const {title, body, buttonText, isShowing, setIsShowing, image, theme} = props;
+    const {title, body, buttonText, isShowing, setIsShowing, image, theme, onClosed} = props;
     return (
         <>
         <div className="PopupBoxBackground" style={isShowing ? {} : {display : "none"}}></div>
@@ -20,7 +21,7 @@ function PopupBox(props : PopupBoxProps) {
             <h2>{title}</h2>
             {image != "" && <img src={image} className="PopupImage"></img>}
             <div className="PopupBoxDesc" dangerouslySetInnerHTML={{__html: body}}></div>
-            <button onClick={() => setIsShowing(false)}>{buttonText}</button>
+            <button onClick={() => {setIsShowing(false); onClosed()}}>{buttonText}</button>
         </div>
         </>
     );

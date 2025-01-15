@@ -105,41 +105,46 @@ function GameView(props: GameViewProps) {
     if (showFeedback && selectedAnswer.feedback != "") {
       showFeedbackPopup(selectedAnswer.feedback);
     }
+    else {
+      onFeedbackPopupClosed();
+    }
+  }
 
-    engine.applyAnswer(selectedAnswer);
-    setSelectedAnswer(null);
-    engine.nextQuestion();
-    setCurrentQuestionIndex(engine.currentQuestionIndex);
+  function onFeedbackPopupClosed() {
+      engine.applyAnswer(selectedAnswer);
+      setSelectedAnswer(null);
+      engine.nextQuestion();
+      setCurrentQuestionIndex(engine.currentQuestionIndex);
 
-    if (engine.isGameOver()) {
-      engine.getEnding();
+      if (engine.isGameOver()) {
+        engine.getEnding();
 
-      if(onGameOver != null) {
-        const highscoreModel : HighscoreSubmissionModel = {
-          candidate: engine.getPlayerCandidateController().getId(),
-          runningMate: engine.getPlayerRunningMateModel().id,
-          answers: engine.getAnswers(),
-          visits: engine.getVisits(),
-          seed: engine.getSeed(),
-          isShuffled: engine.isShuffled
+        if(onGameOver != null) {
+          const highscoreModel : HighscoreSubmissionModel = {
+            candidate: engine.getPlayerCandidateController().getId(),
+            runningMate: engine.getPlayerRunningMateModel().id,
+            answers: engine.getAnswers(),
+            visits: engine.getVisits(),
+            seed: engine.getSeed(),
+            isShuffled: engine.isShuffled
+          }
+          onGameOver(highscoreModel);
         }
-        onGameOver(highscoreModel);
+
+        refreshThemeAndMusic();
+        alert("Game over!");
+        return;
+      }
+      else {
+        refreshThemeAndMusic();
       }
 
-      refreshThemeAndMusic();
-      alert("Game over!");
-      return;
-    }
-    else {
-      refreshThemeAndMusic();
-    }
-
-    if(engine.currentScenario != null && engine.currentScenario.hasStateVisits) {
-      setShowMap(true);
-      engine.waitingToPickState = true;
-    }
-    
-    setCurrentQuestion(engine.getCurrentQuestion());
+      if(engine.currentScenario != null && engine.currentScenario.hasStateVisits) {
+        setShowMap(true);
+        engine.waitingToPickState = true;
+      }
+      
+      setCurrentQuestion(engine.getCurrentQuestion());
   }
 
   function onStateClicked(state : StateController) {
@@ -200,6 +205,7 @@ function GameView(props: GameViewProps) {
         isShowing={showingFeedbackBox}
         setIsShowing={setShowingFeedbackBox}
         image={theme.advisorImage}
+        onClosed={onFeedbackPopupClosed}
       ></PopupBox>
     </div>
   );
