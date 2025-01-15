@@ -1,6 +1,6 @@
 function createEnding(engine, results) {
 
-    const playerId = getPlayerCandidateController().getId();
+    const playerId = engine.getPlayerCandidateController().getId();
 
     // I am defining some endings below. Note I have to check who the player played as first in this scenario.
     // You could also add more slides to have endings with pages
