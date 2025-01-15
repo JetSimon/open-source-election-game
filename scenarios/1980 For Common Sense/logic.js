@@ -309,4 +309,8 @@ function onScenarioStarted(engine) {
 
 }
 
-export { onScenarioStarted, createEnding, onAnswerPicked }
+function onCandidateSelectionStarted(engine) {
+    alert("Test!");
+}
+
+export { onScenarioStarted, createEnding, onAnswerPicked, onCandidateSelectionStarted }
