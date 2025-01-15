@@ -57,9 +57,9 @@ function AdjustStateIssueScore(props : BulkStateFunctionProps) {
         return <p>Issue is undefined</p>
     }
 
-    const remappedIssueScore = Math.floor(
-        ((issueScore + 1) / 2) * (issue.stances.length - 1)
-      );
+    const remappedIssueScore = Math.min(Math.floor(
+        ((issueScore + 1) / 2) * (issue.stances.length)
+      ), issue.stances.length - 1);
     const stance = issue.stances[remappedIssueScore];
 
     return (

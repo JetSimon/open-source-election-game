@@ -19,9 +19,9 @@ function IssueScoreEditor(props : IssueScoreEditorProps) {
         return <p>Linked issue is undefined</p>
     }
 
-    const remappedIssueScore = Math.floor(
-        ((issueScore.issueScore + 1) / 2) * (linkedIssue.stances.length - 1)
-    );
+    const remappedIssueScore = Math.min(Math.floor(
+        ((issueScore.issueScore + 1) / 2) * (linkedIssue.stances.length)
+    ), linkedIssue.stances.length - 1);
 
     function setIssueScore(newValue : number) {
         issueScore.issueScore = newValue;
