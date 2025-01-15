@@ -98,10 +98,12 @@ function Game(props : GameProps) {
         <>
         <link rel="stylesheet" type="text/css" href={stylePath} />
         <div style={{backgroundColor:theme.backgroundColor, backgroundImage:backgroundUrl}} className="Game">
-            <img className="TopBanner" src={theme.headerImageUrl}></img>
-            <QuoteHeader engine={engine} theme={theme}></QuoteHeader>
-            {getViewFromGameState()}
-            <MusicPlayer songs={music}></MusicPlayer>
+            <div style={{backgroundColor:theme.primaryGameWindowColor}} className="GameWindow">
+                <img className="TopBanner" src={theme.headerImageUrl}></img>
+                <QuoteHeader engine={engine} theme={theme}></QuoteHeader>
+                {getViewFromGameState()}
+                <MusicPlayer songs={music}></MusicPlayer>
+            </div>
         </div>
         </>
     );

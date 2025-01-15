@@ -5,8 +5,8 @@
     overflow-y: auto;
     place-items: top;
     justify-content: center;
-    border-style: double;
     margin-bottom: 16px;
+    border-bottom: 1px white solid;
 }
 
 .QuestionDescription {
@@ -20,7 +20,7 @@
 
 @media only screen and (max-width: 600px) {
     .QuestionView {
-        font-size: small;
+        font-size: x-small;
     }
     
 }

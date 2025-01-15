@@ -1,12 +1,13 @@
 .ElectionSelection {
-    max-width: 75%;
+    width: 95%;
+    border: solid 2px white;
+    font-size: small;
 }
 
 .ElectionSelectionBox {
-    border-style: double;
+
     padding: 16px;
     margin: auto;
-    width: 75%;
 }
 
 .ElectionInfoArea {
@@ -18,7 +19,7 @@
 @media only screen and (max-width: 600px) {
 
     .ElectionSelection {
-        font-size: small;
+        font-size: x-small;
         max-width: auto!important;
     }
 

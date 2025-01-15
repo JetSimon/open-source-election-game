@@ -1,9 +1,10 @@
 .MapView {
-    display: flex;
-    gap: 5%;
+    display: inline-flex;
+    width:100%;
+    max-height: 512px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     .MapView {
       flex-direction: column;
       place-items: center;
@@ -12,8 +13,13 @@
 
     .StatePoll {
         margin: 8px;
-        width: 96%!important;
+        width: 90%!important;
         padding: 10px!important;
+        font-size: x-small;
+    }
+
+    .StateIssue {
+        font-size: x-small!important;
     }
 }
 
@@ -32,12 +38,13 @@
 
 .StatePoll {
     border-style: double;
-    border-color: black;
     padding: 1%;
     display:flex;
     flex-direction: column;
     place-items: top;
-    width: 25%;
+    width: 33%;
+    overflow-y: scroll;
+    font-size: x-small;
 }
 
 .StatePollValueList {
@@ -61,10 +68,6 @@
     margin: auto;
     margin-right: 4px;
     border: solid 1px rgba(0,0,0,0.25);
-}
-
-.StateIssue {
-    font-size: small;
 }
 
 .EvPvInfo {

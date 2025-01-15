@@ -1,13 +1,13 @@
 .CandidateSelection {
-    min-height: 100vh;
-    max-width: 75%;
+    width: 95%;
+    border: solid 2px white;
+    font-size: small;
 }
 
 .CandidateSelectionBox {
-    border-style: double;
+
     padding: 16px;
     margin: auto;
-    width: 75%;
 }
 
 .CandidateInfoArea {
@@ -19,8 +19,7 @@
 @media only screen and (max-width: 600px) {
 
     .CandidateSelection {
-        font-size: small;
-        max-width: auto!important;
+        font-size: x-small;
     }
 
     .CandidateSelectionBox {

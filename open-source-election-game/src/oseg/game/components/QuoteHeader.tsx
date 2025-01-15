@@ -16,7 +16,7 @@ function QuoteHeader(props : QuoteHeaderProps) {
     }
 
     return (
-        <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="QuoteHeader">
+        <div style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}} className="QuoteHeader">
             <h2>{engine.currentScenario.scenarioName}</h2>
             {theme.quote != "" && <p>{theme.quote}</p>}
         </div>

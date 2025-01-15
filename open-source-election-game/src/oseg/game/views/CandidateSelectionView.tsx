@@ -116,6 +116,7 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
         </select>
         <CandidateInfoArea candidate={selectedCandidateController.model}></CandidateInfoArea>
       </div>
+      <hr></hr>
       <h2 style={{color:theme.primaryGameWindowTextColor}}>Choose your Running Mate</h2>
       <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="CandidateSelectionBox">
         <label className="LabelText" htmlFor="runningMate">Running Mate: </label>
@@ -134,8 +135,8 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
       {canBeShuffled && <label htmlFor="shuffled" style={{color:theme.primaryGameWindowTextColor}} >Shuffle Questions? </label>}
       {canBeShuffled && <input id="shuffled" type="checkbox" checked={isShuffled} onChange={(e) => setIsShuffled(e.target.checked)}></input>}
       {canBeShuffled && <br></br>}
-      <button style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} onClick={() => setSelectingCandidate(false)}>Prev</button>
-      <button style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} onClick={startGame}>Start</button>
+      <button style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}} onClick={() => setSelectingCandidate(false)}>Prev</button>
+      <button style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}} onClick={startGame}>Start</button>
     </div>
   );
 }

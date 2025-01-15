@@ -50,9 +50,9 @@ function QuestionView(props: QuestionViewProps) {
   }, [setSelectedAnswer, currentQuestion.answers, selectedAnswer, submitAnswer])
 
   return (
-    <div style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}}  className="QuestionView">
+    <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}}  className="QuestionView">
       <div>
-        <p style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="QuestionDescription" dangerouslySetInnerHTML={{__html:currentQuestion.description}}></p>
+        <p style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}} className="QuestionDescription" dangerouslySetInnerHTML={{__html:currentQuestion.description}}></p>
         <div className="AnswerHolder">
           {currentQuestion.answers.map((answerModel) => (
             <Answer
@@ -63,7 +63,7 @@ function QuestionView(props: QuestionViewProps) {
               setSelectedAnswer={setSelectedAnswer}
             ></Answer>
           ))}
-            <button style={{backgroundColor:theme.primaryGameWindowColor, color:theme.secondaryGameWindowTextColor}}
+            <button style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}}
           disabled={selectedAnswer == null}
           className="ConfirmAnswerButton"
           onClick={submitAnswer}

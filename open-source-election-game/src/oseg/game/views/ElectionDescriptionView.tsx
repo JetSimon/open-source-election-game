@@ -23,7 +23,7 @@ function ElectionDescriptionView(props: ElectionDescriptionViewProps) {
         </div>
       </div>
     </div>
-    <button style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} onClick={() => setSelectingCandidate(true)}>Next</button>
+    <button style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}} onClick={() => setSelectingCandidate(true)}>Next</button>
     </div>
   );
 }

@@ -11,11 +11,11 @@
 }
 
 .QuoteHeader {
-    border-style: double;
-    padding: 8px;
-    margin: 8px;
-    max-width: 75%;
-    width: 50%;
+    margin-top: 8px;
+    border: solid 2px white;
+    border-bottom-style: none;
+    width: 95%;
+    margin-bottom: 0px;
 }
 
 
@@ -29,6 +29,6 @@
     }
 
     .QuoteHeader {
-        width: auto;
+        padding-bottom: 1%;
     }
 }
