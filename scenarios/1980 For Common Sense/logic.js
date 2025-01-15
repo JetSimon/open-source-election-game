@@ -309,4 +309,4 @@ function onScenarioStarted(engine) {
 
 }
 
-export { onScenarioStarted, createEnding, onAnswerPicked, onCandidateSelectionStarted }
+export { onScenarioStarted, createEnding, onAnswerPicked }
