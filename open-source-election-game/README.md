@@ -107,19 +107,12 @@ function onAnswerPicked(engine, answerPicked) {
                     ]
                 },
                 {
-                    "id": 16571,
-                    "description": "The General Counsel has recently indicated, with no further explanation, his own view that this language may require confidential treatment of a complaint prior to any \"reason to believe\" finding. See MUR 1161. Yet there is no evidence that Congress has intended to broaden the scope of §437g(a) (12) (A) beyond its original and limited reference to \"notification or investigation.\" The 1979 amendments to the Act certainly provide no such evidence. ",
-                    "feedback": "RECOMMENDATION<br>\n1. Table discussion for a period exceeding no more than four calendar weeks from the date of September 17, 1980.<br>\n2. Call for direct questioning General Counsel Steel for Clarification.<br>\n3. Call for direct questioning of respondent parties.<br>\n\n",
+                    "id": 16570,
+                    "description": "Answer two",
+                    "feedback": "That did nothing",
                     "answerEffects": [
-                        {
-                            "answerEffectType": "Issue",
-                            "candidateId": -1,
-                            "issueId": 51,
-                            "stateId": -1,
-                            "amount": -0.2
-                        }
                     ]
-                }
+                },
             ],
             "keepInPlaceIfQuestionsShuffled": true
         }
