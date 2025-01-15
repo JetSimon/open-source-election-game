@@ -69,6 +69,11 @@ class Engine {
     waitingToPickState : boolean = false;
 
     /**
+     * Called when the user presses "next"
+     */
+    onCandidateSelectionStarted : null | ((engine : Engine) => void) = null;
+
+    /**
      * Called when the scenario side is first set (played has chose their running mate and pressed start game)
      */
     onScenarioStarted : null | ((engine : Engine) => void) = null;

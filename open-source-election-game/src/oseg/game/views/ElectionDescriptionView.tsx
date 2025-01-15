@@ -14,6 +14,13 @@ function ElectionDescriptionView(props: ElectionDescriptionViewProps) {
     return <p>Error: Current scenario is null!</p>
   }
 
+  function next() {
+    setSelectingCandidate(true);
+    if(engine.onCandidateSelectionStarted != null) {
+      engine.onCandidateSelectionStarted(engine);
+    }
+  }
+
   return (
     <div className="ElectionSelection">
     <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="ElectionSelectionBox">
@@ -23,7 +30,7 @@ function ElectionDescriptionView(props: ElectionDescriptionViewProps) {
         </div>
       </div>
     </div>
-    <button style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}} onClick={() => setSelectingCandidate(true)}>Next</button>
+    <button style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}} onClick={next}>Next</button>
     </div>
   );
 }
