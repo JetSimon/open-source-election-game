@@ -24,7 +24,10 @@ function Layout() {
         <a href="https://github.com/JetSimon/open-source-election-game">Source Code</a>
         </div>
         <div>
-        <a href="https://thecommunitytrail.com/">Just want to play? Check out The Community Trail</a>
+        <a href="http://jetsimon.com/tct2oseg/">tct2oseg Convertor</a>
+        </div>
+        <div>
+        <a href="https://thecommunitytrail.com/">The Community Trail</a>
         </div>
     </div>
       <Outlet></Outlet>
