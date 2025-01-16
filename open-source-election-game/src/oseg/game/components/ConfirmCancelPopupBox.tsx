@@ -1,19 +1,18 @@
 import ThemeModel from "../../engine/models/ThemeModel";
-import StateController from "../../engine/controllers/StateController";
 import "./PopupBox.css"
 
-interface VisitPopupProps {
+interface ConfirmCancelPopupBoxProps {
     title : string;
-    state : StateController;
+    description : string;
     isShowing : boolean;
     image : string;
     theme : ThemeModel;
-    onConfirm : (state: StateController) => void;
+    onConfirm : () => void;
     onCancel : () => void;
 }
 
-function VisitPopupBox(props : VisitPopupProps) {
-    const { title, state, isShowing, image, theme, onConfirm, onCancel } = props;
+function ConfirmCancelPopupBox(props : ConfirmCancelPopupBoxProps) {
+    const { title, description, isShowing, image, theme, onConfirm, onCancel } = props;
 
     return ( 
         <>
@@ -21,12 +20,12 @@ function VisitPopupBox(props : VisitPopupProps) {
         <div className="PopupBox" style={isShowing ? {backgroundColor : theme.primaryGameWindowColor, color : theme.primaryGameWindowTextColor}  : {display : "none"}}>
             <h2>{title}</h2>
             {image != "" && <img src={image} className="PopupImage"></img>}
-            <p>Are you sure you want to visit {state.model.name}?</p>
-            <button onClick={() => onConfirm(state)}>Yes</button>
+            <p>{description}</p>
+            <button onClick={() => onConfirm()}>Yes</button>
             <button onClick={onCancel}>No</button>
         </div>
         </>
     )
 }
 
-export default VisitPopupBox;
+export default ConfirmCancelPopupBox;

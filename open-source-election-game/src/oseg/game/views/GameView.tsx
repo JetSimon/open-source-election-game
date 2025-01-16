@@ -3,7 +3,7 @@ import { useState } from "react";
 import QuestionView from "./QuestionView";
 import EndingView from "./EndingView";
 import PopupBox from "../components/PopupBox";
-import VisitPopupBox from "../components/VisitPopupBox";
+import ConfirmCancelPopupBox from "../components/ConfirmCancelPopupBox";
 import MapView from "./MapView";
 import BottomBanner from "../components/BottomBanner";
 import { Engine } from "../../engine/Engine";
@@ -221,10 +221,10 @@ function GameView(props: GameViewProps) {
         onClosed={onFeedbackPopupClosed}
       ></PopupBox>
       {selectedState && (
-        <VisitPopupBox
+        <ConfirmCancelPopupBox
           theme={theme}
           title="Feedback"
-          state={selectedState}
+          description={`Are you sure you want to visit ${selectedState?.model.name}?`}
           isShowing={showVisitPopup}
           onConfirm={confirmStateVisit}
           onCancel={cancelStateVisit}
