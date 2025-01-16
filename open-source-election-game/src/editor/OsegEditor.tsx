@@ -107,12 +107,12 @@ function OsegEditor() {
         loadTemplate(templateNames[0]);
     }
 
-    function save() {
-        console.log("Saved")
-        localStorage.setItem("editorLogic", logic);
-        localStorage.setItem("editorData", dataString);
-        localStorage.setItem("editorMapSvg", mapSvg);
-        localStorage.setItem("editorCss", customCss);
+    function save(fileIndex : number) {
+        console.log("Saved");
+        localStorage.setItem(`editorLogic${fileIndex}`, logic);
+        localStorage.setItem(`editorData${fileIndex}`, dataString);
+        localStorage.setItem(`editorMapSvg${fileIndex}`, mapSvg);
+        localStorage.setItem(`editorCss${fileIndex}`, customCss);
         setLastSaved(Date.now());
     }
 
@@ -128,12 +128,33 @@ function OsegEditor() {
         setDataString(newDataString);
     }
 
-    async function load() {
+    // Temporary function to not break saves
+    function transferSaveToSave1() {
+        const savedEditorLogic = localStorage.getItem("editorLogic") || "";
+        const savedEditorData = localStorage.getItem("editorData") || "";
+        const savedEditorMapSvg = localStorage.getItem("editorMapSvg") || "";
+        const savedEditorCss = localStorage.getItem("editorCss") || "";
+
+        // No css check because some templates don't have css + users might have not added css and already saved to localStorage
+        if (savedEditorLogic === "" || savedEditorData === "" || savedEditorMapSvg === "") return;
+
+        localStorage.setItem("editorLogic1", savedEditorLogic);
+        localStorage.setItem("editorData1", savedEditorData);
+        localStorage.setItem("editorMapSvg1", savedEditorMapSvg);
+        localStorage.setItem("editorCss1", savedEditorCss);
+
+        localStorage.removeItem("editorLogic");
+        localStorage.removeItem("editorData");
+        localStorage.removeItem("editorMapSvg");
+        localStorage.removeItem("editorCss");
+    }
+
+    async function load(fileIndex : number) {
         try {
-            const autosaveLogic = localStorage.getItem("editorLogic");
-            const autosaveData = localStorage.getItem("editorData");
-            const autosaveMapSvg = localStorage.getItem("editorMapSvg");
-            const autosaveCss = localStorage.getItem("editorCss");
+            const autosaveLogic = localStorage.getItem(`editorLogic${fileIndex}`);
+            const autosaveData = localStorage.getItem(`editorData${fileIndex}`);
+            const autosaveMapSvg = localStorage.getItem(`editorMapSvg${fileIndex}`);
+            const autosaveCss = localStorage.getItem(`editorCss${fileIndex}`);
     
             if(autosaveData == null || autosaveLogic == null || autosaveMapSvg == null || autosaveCss == null) {
                 throw new Error("Did not have autosave data to load!");
@@ -189,8 +210,13 @@ function OsegEditor() {
             <h2>OSEG Editor</h2>
             <div className="Toolbar">
                 <button onClick={() => exportFiles()}>Export</button>
-                <button onClick={() => save()}>Save</button>
-                <button onClick={() => load()}>Load</button>
+                <button onClick={transferSaveToSave1}>Transfer Original Save to Save 1</button>
+                <button onClick={() => save(1)}>Save 1</button>
+                <button onClick={() => save(2)}>Save 2</button>
+                <button onClick={() => save(3)}>Save 3</button>
+                <button onClick={() => load(1)}>Load 1</button>
+                <button onClick={() => load(2)}>Load 2</button>
+                <button onClick={() => load(3)}>Load 3</button>
                 <button className="GreenButton" onClick={() => setIsPlaying(true)}>Start Playing</button>
                 <label>Templates: </label>
                 <select value={currentTemplateName} onChange={(e) => setCurrentTemplateName(e.target.value)}>
