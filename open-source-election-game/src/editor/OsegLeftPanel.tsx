@@ -16,6 +16,7 @@ import EditorWarningBox from "./components/EditorWarningBox";
 import IssueScore from "../oseg/engine/models/IssueScore";
 import BaseCandidateStateModifier from "../oseg/engine/models/BaseCandidateStateModifier";
 import StateEditor from "./graphicalEditors/StateEditor";
+import OsegBulkTools from "./OsegBulkTools";
 
 enum LeftNavBar {
     DataJson,
@@ -27,7 +28,8 @@ enum LeftNavBar {
     Issues,
     Questions,
     ScenarioDetails,
-    States
+    States,
+    BulkTools
 }
 
 const leftNavBarValues = Object.keys(LeftNavBar).filter((item) => {
@@ -256,6 +258,9 @@ function OsegLeftPanel(props: OsegLeftPanelProps) {
         }
         else if(leftNavBar == LeftNavBar.States) {
             return <StateEditor data={data} setData={setData}></StateEditor>
+        }
+        else if(leftNavBar == LeftNavBar.BulkTools) {
+            return <OsegBulkTools data={data} setData={setData}></OsegBulkTools>
         }
     }
 
