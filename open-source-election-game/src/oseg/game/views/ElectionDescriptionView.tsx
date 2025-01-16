@@ -5,10 +5,11 @@ interface ElectionDescriptionViewProps {
   engine: Engine;
   setSelectingCandidate : (value : boolean) => void;
   theme: ThemeModel;
+  refreshThemeAndMusic : () => void;
 }
 
 function ElectionDescriptionView(props: ElectionDescriptionViewProps) {
-  const { engine, setSelectingCandidate, theme } = props;
+  const { engine, setSelectingCandidate, theme, refreshThemeAndMusic} = props;
 
   if(engine.currentScenario == null) {
     return <p>Error: Current scenario is null!</p>
@@ -18,6 +19,7 @@ function ElectionDescriptionView(props: ElectionDescriptionViewProps) {
     setSelectingCandidate(true);
     if(engine.onCandidateSelectionStarted != null) {
       engine.onCandidateSelectionStarted(engine);
+      refreshThemeAndMusic();
     }
   }
 

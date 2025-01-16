@@ -85,7 +85,7 @@ function Game(props : GameProps) {
 
         if (gameState == GameState.CandidateSelection) {
             return (
-                <StartGameView isShuffled={isShuffled} setIsShuffled={setIsShuffled} onStartButtonPressed={onStartButtonPressed} theme={theme} engine={engine} setGameState={setGameState}></StartGameView>
+                <StartGameView refreshThemeAndMusic={refreshThemeAndMusic} isShuffled={isShuffled} setIsShuffled={setIsShuffled} onStartButtonPressed={onStartButtonPressed} theme={theme} engine={engine} setGameState={setGameState}></StartGameView>
             );
         }
 
