@@ -69,6 +69,7 @@ function GameView(props: GameViewProps) {
 
   function autoplay() {
     if (engine.isGameOver()) {
+      showFeedback = true;
       clearInterval(autoplayHandle);
       return;
     }
