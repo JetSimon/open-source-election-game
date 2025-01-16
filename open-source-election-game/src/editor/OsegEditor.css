@@ -132,6 +132,7 @@
     text-align: center;
     margin: 8px auto;
     font-size: small;
+    word-wrap: anywhere;
 }
 
 .EditorStance {
