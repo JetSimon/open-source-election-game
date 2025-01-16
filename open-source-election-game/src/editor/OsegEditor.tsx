@@ -58,9 +58,9 @@ function setBulkStateFunction(f : BulkStateFunction) {
 }
 
 const templateNames = [
-    "1848b",
     "1980 For Common Sense",
-    "1964TheBeatles",
+    "1936 Every Man a King",
+    "1964 The Beatles",
     "TCT 1844",
     "TCT 2016"
 ];
