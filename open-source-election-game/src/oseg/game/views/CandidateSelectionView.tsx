@@ -104,9 +104,9 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
 
   return (
     <div className="CandidateSelection">
-      <h2 style={{color:theme.primaryGameWindowTextColor}}>Choose your Candidate</h2>
+      <h2 style={{color:theme.primaryGameWindowTextColor}}>{engine.getLocalization("Choose your Candidate")}</h2>
       <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="CandidateSelectionBox">
-        <label className="LabelText" htmlFor="candidate">Candidate: </label>
+        <label className="LabelText" htmlFor="candidate">{engine.getLocalization("Candidate")}: </label>
         <select id="candidate" onChange={(e) => setSelectedCandidate(Number.parseInt(e.target.value))}>
           {
             getCandidatesWithSides().map((candidate) => {
@@ -114,12 +114,12 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
             })
           }
         </select>
-        <CandidateInfoArea candidate={selectedCandidateController.model}></CandidateInfoArea>
+        <CandidateInfoArea engine={engine} candidate={selectedCandidateController.model}></CandidateInfoArea>
       </div>
       <hr></hr>
-      <h2 style={{color:theme.primaryGameWindowTextColor}}>Choose your Running Mate</h2>
+      <h2 style={{color:theme.primaryGameWindowTextColor}}>{engine.getLocalization("Choose your Running Mate")}</h2>
       <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="CandidateSelectionBox">
-        <label className="LabelText" htmlFor="runningMate">Running Mate: </label>
+        <label className="LabelText" htmlFor="runningMate">{engine.getLocalization("Running Mate")}: </label>
         {
           getRunningMatesForCandidate(selectedCandidate).length > 0 &&
           <select id="runningMate" onChange={(e) => setSelectedRunningMate(Number.parseInt(e.target.value))}>
@@ -130,9 +130,9 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
             }
           </select>
         }
-        <CandidateInfoArea candidate={runningMateModel}></CandidateInfoArea>
+        <CandidateInfoArea engine={engine} candidate={runningMateModel}></CandidateInfoArea>
       </div>
-      {canBeShuffled && <label htmlFor="shuffled" style={{color:theme.primaryGameWindowTextColor}} >Shuffle Questions? </label>}
+      {canBeShuffled && <label htmlFor="shuffled" style={{color:theme.primaryGameWindowTextColor}} >{engine.getLocalization("Shuffle Questions?")} </label>}
       {canBeShuffled && <input id="shuffled" type="checkbox" checked={isShuffled} onChange={(e) => setIsShuffled(e.target.checked)}></input>}
       {canBeShuffled && <br></br>}
       <button style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}} onClick={() => setSelectingCandidate(false)}>Prev</button>

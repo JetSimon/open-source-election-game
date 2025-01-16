@@ -52,9 +52,9 @@ function EndingView(props: EndingViewProps) {
     <div className="EndingView">
       {getTab()}
       <div>
-        <button disabled={currentTab == EndingTab.EndingSlides} onClick={() => setCurrentTab(EndingTab.EndingSlides)}>Slides</button>
-        <button disabled={currentTab == EndingTab.Map} onClick={() => setCurrentTab(EndingTab.Map)}>Map</button>
-        <button disabled={currentTab == EndingTab.Results} onClick={() => setCurrentTab(EndingTab.Results)}>Detailed Results</button>
+        <button disabled={currentTab == EndingTab.EndingSlides} onClick={() => setCurrentTab(EndingTab.EndingSlides)}>{engine.getLocalization("Slides")}</button>
+        <button disabled={currentTab == EndingTab.Map} onClick={() => setCurrentTab(EndingTab.Map)}>{engine.getLocalization("Map")}</button>
+        <button disabled={currentTab == EndingTab.Results} onClick={() => setCurrentTab(EndingTab.Results)}>{engine.getLocalization("Detailed Results")}</button>
       </div>
     </div>
   );

@@ -109,6 +109,8 @@ class Engine {
 
     logToConsole: boolean = true;
 
+    localizations = new Map<string, string>();
+
     setSeed(seed : string) {
         this.seed = seed;
         this.randomState = makeSeed(this.seed);
@@ -408,6 +410,28 @@ class Engine {
             }
             
         }
+    }
+
+    /**
+     * Get a string you've defined previously to be rendered as another string
+     * Returns the same string if a localization is not set yet
+     * @category Utility
+     * @param key 
+     * @returns The localization
+     */
+    getLocalization(key : string) : string {
+        return this.localizations.get(key) ?? key;
+    }
+
+    /**
+     * Set a string you want to be rendered in game as another string. May not work for all strings in game, but will be updated until it does.
+     * You probably want to call all these in onScenarioStarted or the optional "onCandidateSelectionStarted" function.
+     * @category Utility
+     * @param oldValue 
+     * @param newValue 
+     */
+    setLocalization(oldValue : string, newValue : string) {
+        this.localizations.set(oldValue, newValue);
     }
 
     /**

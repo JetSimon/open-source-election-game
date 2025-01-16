@@ -114,7 +114,7 @@ function StatePoll(props: StatePollProps) {
       <div className="StatePollValueList">
         {showingStateEstimate ? stateEstimate(stateController, engine) : pvEstimate(engine)}
       </div>
-      {showingStateEstimate && <h3>Issue Stances</h3>}
+      {showingStateEstimate && <h3>{engine.getLocalization("Issue Stances")}</h3>}
       
         {showingStateEstimate ? <div className="StateIssues StatePollValueList">{engine.scenarioController.getIssues().map((issue) => {
           const issueScore = stateController.issueScores.getIssueScoreForIssue(
@@ -141,7 +141,7 @@ function StatePoll(props: StatePollProps) {
       {
         engine.counters.size > 0 &&
         <div className="Counters">
-          <h3>Counters</h3>
+          <h3>{engine.getLocalization("Counters")}</h3>
           {Array.from(engine.counters).map((e) => {
             const key = e[0];
             const value = e[1];
