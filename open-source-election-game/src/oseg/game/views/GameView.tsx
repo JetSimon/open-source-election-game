@@ -21,7 +21,6 @@ interface GameViewProps {
   onGameOver : ((m : HighscoreSubmissionModel) => void) | null;
 }
 
-let showFeedback = true;
 let autoplayHandle: undefined | ReturnType<typeof setInterval> = undefined;
 
 function GameView(props: GameViewProps) {
@@ -48,6 +47,8 @@ function GameView(props: GameViewProps) {
   );
   const [showVisitPopup, setShowVisitPopup] = useState(false);
 
+  const [showFeedback, setShowFeedback] = useState(true);
+
   useEffect(() => {
     function checkForAutoplay(e : KeyboardEvent) {
       if(e.key == "@") {
@@ -70,6 +71,7 @@ function GameView(props: GameViewProps) {
   function autoplay() {
     if (engine.isGameOver()) {
       clearInterval(autoplayHandle);
+      setShowFeedback(true);
       return;
     }
 
@@ -95,7 +97,7 @@ function GameView(props: GameViewProps) {
       clearInterval(autoplayHandle);
     }
 
-    showFeedback = false;
+    setShowFeedback(false);
     autoplayHandle = setInterval(autoplay, 25);
     if(engine.currentScenario) {
       engine.currentScenario.hasStateVisits = false;
