@@ -27,9 +27,6 @@ let autoplayHandle: undefined | ReturnType<typeof setInterval> = undefined;
 function GameView(props: GameViewProps) {
   const { engine, mapSvg, theme, refreshThemeAndMusic, onGameOver } = props;
 
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(
-    engine.currentQuestionIndex
-  );
   const [currentQuestion, setCurrentQuestion] = useState(
     engine.getCurrentQuestion()
   );
@@ -121,7 +118,6 @@ function GameView(props: GameViewProps) {
       engine.applyAnswer(selectedAnswer);
       setSelectedAnswer(null);
       engine.nextQuestion();
-      setCurrentQuestionIndex(engine.currentQuestionIndex);
 
       if (engine.isGameOver()) {
         engine.getEnding();
