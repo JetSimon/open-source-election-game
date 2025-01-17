@@ -7,7 +7,7 @@ import { Engine } from "../Engine";
 import { hexToRgb, rgbToHex } from "../../utils/ColorUtils";
 import { lerp } from "../../utils/MathUtils";
 
-const RUNNING_MATE_WEIGHT = 3;
+const RUNNING_MATE_WEIGHT = 0.5;
 
 class StateController {
     model: StateModel;
