@@ -40,6 +40,11 @@ class Engine {
      */
     currentQuestionIndex = 0;
 
+    /**
+     * 
+     */
+    currentQuestionNumberVisualOnly = 1;
+
     scenarioController: ScenarioController = new ScenarioController();
 
     /**
@@ -142,10 +147,10 @@ class Engine {
     loadScenario(newScenario: ScenarioModel, asObserver : boolean) {
         newScenario = JSON.parse(JSON.stringify(newScenario));
         this.currentQuestionIndex = 0;
+        this.runningMateId = -1;
         this.scenarioController.loadScenario(this, newScenario, 0, false);
         this.currentScenario = newScenario;
         this.gameState = GameState.CandidateSelection;
-        this.runningMateId = -1;
         this.counters = new Map<string, number>();
         this.counterDisplayNames = new Map<string, string>();
 
@@ -181,6 +186,10 @@ class Engine {
         this.runningMateId = runningMateId;
         this.sideIndex = newSideIndex;
         this.scenarioController.loadScenario(this, this.currentScenario, this.sideIndex, this.isShuffled);
+        this.currentQuestionNumberVisualOnly = 1;
+        this.currentQuestionIndex = 0;
+        this.goToNextValidQuestion();
+
         this.gameState = GameState.Election;
         this.updateStates();
 
@@ -277,7 +286,7 @@ class Engine {
      * @returns Returns the QuestionModel of the current question, if the currentQuestionIndex is invalid, returns null
      */
     getCurrentQuestion() : QuestionModel | null {
-        if (this.currentQuestionIndex < 0 || this.currentQuestionIndex >= this.scenarioController.getNumberOfQuestions()) {
+        if (this.currentQuestionIndex < 0 || this.currentQuestionIndex >= this.scenarioController.questions.length) {
             return null;
         }
 
@@ -286,10 +295,10 @@ class Engine {
 
     /**
      * @category Utility
-     * @returns The number of questions in this scenario, includes questions added with CYOA
+     * @returns The number of ENABLED questions in this scenario, includes questions added with CYOA
      */
-    getNumberOfQuestions() {
-        return this.scenarioController.getNumberOfQuestions();
+    getNumberOfEnabledQuestions() {
+        return this.scenarioController.getNumberOfEnabledQuestions();
     }
 
     /**
@@ -393,6 +402,16 @@ class Engine {
                         console.error("When trying to apply effects, state not found with id", answerEffect.stateId);
                     }
                 }
+                else if (answerEffectType == AnswerEffectType.SetQuestionEnabled) {
+                    if(answerEffect.questionEnabled != undefined && answerEffect.questionId != undefined) {
+                        for(const question of this.scenarioController.questions.filter((x) => x.id == answerEffect.questionId)) {
+                            question.enabled = answerEffect.questionEnabled;
+                        }
+                    }
+                    else {
+                        console.error("Cannot enable question as questionEnabled or questionId is undefined")
+                    }
+                }
                 else {
                     console.error("Got unknown AnswerEffect type", answerEffectType)
                 }
@@ -439,12 +458,29 @@ class Engine {
         this.localizations.set(oldValue, newValue);
     }
 
+     /**
+     * Increments question index until an enabled question is found
+     * @category Utility
+     */
+    goToNextValidQuestion() {
+        function shouldSkipQuestion(question : QuestionModel) {
+            return question.enabled != undefined && !question.enabled;
+        }
+
+        while(this.currentQuestionIndex < this.scenarioController.questions.length && shouldSkipQuestion(this.scenarioController.questions[this.currentQuestionIndex]))
+        {
+            this.currentQuestionIndex++;
+        }
+    }
+
     /**
-     * Increments currentQuestionIndex by one
+     * Increments the current question index at least once, and keeps going if the current question is disabled
      * @category Utility
      */
     nextQuestion() {
         this.currentQuestionIndex++;
+        this.currentQuestionNumberVisualOnly++;
+        this.goToNextValidQuestion();
     }
 
     /**
@@ -452,7 +488,7 @@ class Engine {
      * @returns Returns true if the currentQuestionIndex >= number of questions in the scenario
      */
     isGameOver() {
-        return this.currentQuestionIndex >= this.scenarioController.getNumberOfQuestions();
+        return this.currentQuestionIndex >= this.scenarioController.questions.length;
     }
 
     /**

@@ -96,6 +96,17 @@ class ScenarioController {
 
         this.questions = this.model.scenarioSides.length == 0 ? [] : this.model.scenarioSides[sideIndex].questions;
 
+        for(const question of this.questions) {
+            if(question.enabled == undefined) {
+                question.enabled = true;
+            }
+
+            if(question.onlyEnableAtStartIfRunningMateId != undefined) {
+                const neededRunningMate = question.onlyEnableAtStartIfRunningMateId;
+                question.enabled = engine.runningMateId == neededRunningMate || neededRunningMate == -1;
+            }
+        }
+
         if(isShuffled) {
             const unpinnedIndices : number[] = [];
             for(let i = 0; i < this.questions.length; i++) {
@@ -157,8 +168,12 @@ class ScenarioController {
         return this.candidateControllers.filter((candidate) => candidate.getId() == candidateId)[0];
     }
 
-    getNumberOfQuestions() {
-        return this.questions.length;
+    /**
+     * 
+     * @returns The number of ENABLED questions in the scenario
+     */
+    getNumberOfEnabledQuestions() : number {
+        return this.questions.filter((question) => question.enabled).length;
     }
 
     getQuestions() {

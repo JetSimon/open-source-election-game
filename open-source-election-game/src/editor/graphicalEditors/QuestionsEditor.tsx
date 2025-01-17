@@ -64,7 +64,9 @@ function QuestionsEditor(props : QuestionsEditorProps) {
             id: id,
             description: "Description goes here",
             answers: [],
-            keepInPlaceIfQuestionsShuffled: false
+            keepInPlaceIfQuestionsShuffled: true,
+            enabled: true,
+            onlyEnableAtStartIfRunningMateId: -1
         })
         setData(JSON.parse(JSON.stringify(data)));
         setQuestionIndex(side.questions.length - 1);
@@ -97,7 +99,7 @@ function QuestionsEditor(props : QuestionsEditorProps) {
                 <button className="GreenButton" onClick={addQuestion}>Add Question</button>
                 <button className="RedButton" onClick={deleteQuestion}>Delete Question</button>
                 
-                <QuestionEditor questionIndex={questionIndex} question={side.questions[questionIndex]} data={data} setData={setData}></QuestionEditor>
+                <QuestionEditor sideIndex={sideIndex} questionIndex={questionIndex} question={side.questions[questionIndex]} data={data} setData={setData}></QuestionEditor>
                 
                 </div>
             }
