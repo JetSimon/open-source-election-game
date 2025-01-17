@@ -7,8 +7,6 @@ import { Engine } from "../Engine";
 import { hexToRgb, rgbToHex } from "../../utils/ColorUtils";
 import { lerp } from "../../utils/MathUtils";
 
-const RUNNING_MATE_WEIGHT = 0.5;
-
 class StateController {
     model: StateModel;
     opinions: Map<number, number>;
@@ -113,7 +111,7 @@ class StateController {
                     stateScore = stateScore * Math.abs(stateScore);
                     const stateWeight = this.issueScores.getWeightForIssue(issue.id);
                     
-                    opinion += this.getCandidateStateModifier(runningMateId) * RUNNING_MATE_WEIGHT * (1.225 - Math.abs((mateScore - stateScore) * stateWeight));
+                    opinion += this.getCandidateStateModifier(runningMateId) * engine.runningMateWegight * (1.225 - Math.abs((mateScore - stateScore) * stateWeight));
                 }
             }
 

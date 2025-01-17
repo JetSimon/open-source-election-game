@@ -111,6 +111,11 @@ class Engine {
 
     localizations = new Map<string, string>();
 
+    /**
+     * How much a running mate contributes to opinion (1 is the same as a normal candidate)
+     */
+    runningMateWegight = 0.5;
+
     setSeed(seed : string) {
         this.seed = seed;
         this.randomState = makeSeed(this.seed);
