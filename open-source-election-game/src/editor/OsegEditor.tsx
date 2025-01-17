@@ -79,6 +79,8 @@ function OsegEditor() {
 
     const [lastSaved, setLastSaved] = useState<number>(-1);
 
+    const [saveIndex, setSaveIndex] = useState<number>(1);
+
     const [currentTemplateName, setCurrentTemplateName] = useState(templateNames[0]);
 
     async function loadTemplate(templateName : string) {
@@ -107,12 +109,13 @@ function OsegEditor() {
         loadTemplate(templateNames[0]);
     }
 
-    function save() {
-        console.log("Saved")
-        localStorage.setItem("editorLogic", logic);
-        localStorage.setItem("editorData", dataString);
-        localStorage.setItem("editorMapSvg", mapSvg);
-        localStorage.setItem("editorCss", customCss);
+    function save(fileIndex : number) {
+        console.log("Saved");
+        const indexKey = fileIndex === 1 ? "" : fileIndex;
+        localStorage.setItem(`editorLogic${indexKey}`, logic);
+        localStorage.setItem(`editorData${indexKey}`, dataString);
+        localStorage.setItem(`editorMapSvg${indexKey}`, mapSvg);
+        localStorage.setItem(`editorCss${indexKey}`, customCss);
         setLastSaved(Date.now());
     }
 
@@ -128,12 +131,13 @@ function OsegEditor() {
         setDataString(newDataString);
     }
 
-    async function load() {
+    async function load(fileIndex : number) {
         try {
-            const autosaveLogic = localStorage.getItem("editorLogic");
-            const autosaveData = localStorage.getItem("editorData");
-            const autosaveMapSvg = localStorage.getItem("editorMapSvg");
-            const autosaveCss = localStorage.getItem("editorCss");
+            const indexKey = fileIndex === 1 ? "" : fileIndex;
+            const autosaveLogic = localStorage.getItem(`editorLogic${indexKey}`);
+            const autosaveData = localStorage.getItem(`editorData${indexKey}`);
+            const autosaveMapSvg = localStorage.getItem(`editorMapSvg${indexKey}`);
+            const autosaveCss = localStorage.getItem(`editorCss${indexKey}`);
     
             if(autosaveData == null || autosaveLogic == null || autosaveMapSvg == null || autosaveCss == null) {
                 throw new Error("Did not have autosave data to load!");
@@ -189,8 +193,13 @@ function OsegEditor() {
             <h2>OSEG Editor</h2>
             <div className="Toolbar">
                 <button onClick={() => exportFiles()}>Export</button>
-                <button onClick={() => save()}>Save</button>
-                <button onClick={() => load()}>Load</button>
+                <select value={saveIndex} onChange={(e) => setSaveIndex(Number(e.target.value))}>
+                    <option value={1}>Save 1</option>
+                    <option value={2}>Save 2</option>
+                    <option value={3}>Save 3</option>
+                </select>
+                <button onClick={() => save(saveIndex)}>Save</button>
+                <button onClick={() => load(saveIndex)}>Load</button>
                 <button className="GreenButton" onClick={() => setIsPlaying(true)}>Start Playing</button>
                 <label>Templates: </label>
                 <select value={currentTemplateName} onChange={(e) => setCurrentTemplateName(e.target.value)}>
