@@ -44,7 +44,7 @@
     place-items: top;
     width: 33%;
     overflow-y: scroll;
-    font-size: x-small;
+    font-size: small;
 }
 
 .StatePollValueList {
