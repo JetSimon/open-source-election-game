@@ -61,3 +61,7 @@ button {
 .Game button:disabled {
     opacity: 0.5;
 }
+
+.Game {
+    line-height: initial;
+}
