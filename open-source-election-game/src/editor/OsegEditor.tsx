@@ -79,6 +79,8 @@ function OsegEditor() {
 
     const [lastSaved, setLastSaved] = useState<number>(-1);
 
+    const [saveIndex, setSaveIndex] = useState<number>(1);
+
     const [currentTemplateName, setCurrentTemplateName] = useState(templateNames[0]);
 
     async function loadTemplate(templateName : string) {
@@ -191,12 +193,13 @@ function OsegEditor() {
             <h2>OSEG Editor</h2>
             <div className="Toolbar">
                 <button onClick={() => exportFiles()}>Export</button>
-                <button onClick={() => save(1)}>Save 1</button>
-                <button onClick={() => save(2)}>Save 2</button>
-                <button onClick={() => save(3)}>Save 3</button>
-                <button onClick={() => load(1)}>Load 1</button>
-                <button onClick={() => load(2)}>Load 2</button>
-                <button onClick={() => load(3)}>Load 3</button>
+                <select value={saveIndex} onChange={(e) => setSaveIndex(Number(e.target.value))}>
+                    <option value={1}>Save 1</option>
+                    <option value={2}>Save 2</option>
+                    <option value={3}>Save 3</option>
+                </select>
+                <button onClick={() => save(saveIndex)}>Save</button>
+                <button onClick={() => load(saveIndex)}>Load</button>
                 <button className="GreenButton" onClick={() => setIsPlaying(true)}>Start Playing</button>
                 <label>Templates: </label>
                 <select value={currentTemplateName} onChange={(e) => setCurrentTemplateName(e.target.value)}>
