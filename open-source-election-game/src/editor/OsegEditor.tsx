@@ -81,6 +81,9 @@ function OsegEditor() {
 
     const [saveIndex, setSaveIndex] = useState<number>(1);
 
+    const [saveNames, setSaveNames] = useState(["Save 1", "Save 2", "Save 3"]);
+    const [isEditingSaveName, setIsEditingSaveName] = useState(false);
+
     const [currentTemplateName, setCurrentTemplateName] = useState(templateNames[0]);
 
     async function loadTemplate(templateName : string) {
@@ -129,6 +132,18 @@ function OsegEditor() {
         const newDataString = JSON.stringify(data, null, 4);
         setData(JSON.parse(newDataString));
         setDataString(newDataString);
+    }
+
+    function startEditingSaveName() {
+        setIsEditingSaveName(true);
+    }
+
+    function saveEditedSaveName(newSaveName : string) {
+        const trimmedSaveName = newSaveName.trim();
+        const newNames = [...saveNames]; 
+        newNames[saveIndex - 1] = trimmedSaveName; 
+        setSaveNames(newNames); 
+        setIsEditingSaveName(false); 
     }
 
     async function load(fileIndex : number) {
@@ -194,10 +209,22 @@ function OsegEditor() {
             <div className="Toolbar">
                 <button onClick={() => exportFiles()}>Export</button>
                 <select value={saveIndex} onChange={(e) => setSaveIndex(Number(e.target.value))}>
-                    <option value={1}>Save 1</option>
-                    <option value={2}>Save 2</option>
-                    <option value={3}>Save 3</option>
+                    <option value={1}>{saveNames[0]}</option>
+                    <option value={2}>{saveNames[1]}</option>
+                    <option value={3}>{saveNames[2]}</option>
                 </select>
+                {isEditingSaveName ? (
+                    <>
+                    <input 
+                        type="text" 
+                        defaultValue={saveNames[saveIndex - 1]} 
+                        onBlur={(e) => saveEditedSaveName(e.target.value)} 
+                    />
+                    <button onClick={() => saveEditedSaveName(saveNames[saveIndex - 1])}>✅</button>
+                </>
+                ) : ( 
+                    <button onClick={startEditingSaveName}>✏️</button>
+                )}
                 <button onClick={() => save(saveIndex)}>Save</button>
                 <button onClick={() => load(saveIndex)}>Load</button>
                 <button className="GreenButton" onClick={() => setIsPlaying(true)}>Start Playing</button>
