@@ -4,11 +4,13 @@ import AnswerEffectModel from "../../oseg/engine/models/AnswerEffectModel";
 import AnswerEffectType from "../../oseg/engine/models/AnswerEffectType";
 import GenericEditorInput from "../components/GenericEditorInput";
 import AnswerModel from "../../oseg/engine/models/AnswerModel";
+import GenericEditorCheckbox from "../components/GenericEditorCheckbox";
 interface AnswerEffectEditorProps {
     data: ScenarioModel;
     setData: (data: ScenarioModel) => void;
     answerEffect: AnswerEffectModel;
     associatedAnswer : AnswerModel;
+    sideIndex : number;
 }
 
 const answerEffectTypes = Object.keys(AnswerEffectType).filter((item) => {
@@ -18,7 +20,7 @@ const answerEffectTypes = Object.keys(AnswerEffectType).filter((item) => {
 
 function AnswerEffectEditor(props: AnswerEffectEditorProps) {
 
-    const { data, setData, answerEffect, associatedAnswer } = props;
+    const { data, setData, answerEffect, associatedAnswer, sideIndex } = props;
 
     function updateFieldAndUpdateData<T>(field: string, newValue: T) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -59,7 +61,7 @@ function AnswerEffectEditor(props: AnswerEffectEditorProps) {
             </div>
            
 
-            {
+            { (typedAnswerEffectType != AnswerEffectType.SetQuestionEnabled) &&
                 <div>
                     <label>Affected Candidate: </label>
                     <select onChange={(e) => updateFieldAndUpdateData<number>("candidateId", Number(e.target.value))} value={answerEffect.candidateId}>
@@ -86,9 +88,27 @@ function AnswerEffectEditor(props: AnswerEffectEditorProps) {
                 </div>
             }
 
-            <div>
-            <GenericEditorInput label={"Amount: "} type={"number"} defaultValue={answerEffect.amount} onChange={(e) => updateFieldAndUpdateData("amount", Number(e.target.value))}></GenericEditorInput>
-            </div>
+            {(typedAnswerEffectType != AnswerEffectType.SetQuestionEnabled) &&
+                <div>
+                <GenericEditorInput label={"Amount: "} type={"number"} defaultValue={answerEffect.amount} onChange={(e) => updateFieldAndUpdateData("amount", Number(e.target.value))}></GenericEditorInput>
+                </div>
+            }
+
+            
+            { (typedAnswerEffectType == AnswerEffectType.SetQuestionEnabled) &&
+                <div>
+                    <label>Question: </label>
+                    <select onChange={(e) => updateFieldAndUpdateData<number>("questionId", Number(e.target.value))} value={answerEffect.questionId ?? data.scenarioSides[sideIndex].questions[0].id}>
+                        {data.scenarioSides[sideIndex].questions.map((question, index) => <option value={question.id}>{index + 1}. {question.description.slice(0, 30)}...</option>)}
+                    </select>
+                </div>
+            }
+
+            { (typedAnswerEffectType == AnswerEffectType.SetQuestionEnabled) &&
+                <div>
+                    <GenericEditorCheckbox defaultValue={answerEffect.questionEnabled ?? true} onChange={(e) => updateFieldAndUpdateData<boolean>("questionEnabled", e.target.checked)} label={"Enabled"} ></GenericEditorCheckbox>
+                </div>
+            }
 
             <button title="Delete answer effect" className="CircleButton RedButton" onClick={deleteAnswerEffect}>X</button>
             <button title="Clone answer effect" className="CircleButton BlueButton" onClick={cloneAnswerEffect}>📄</button>

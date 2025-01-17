@@ -181,7 +181,7 @@ function GameView(props: GameViewProps) {
     return <p>Current question is null</p>;
   }
 
-  const questionString = engine.isGameOver() ? "" : "Question " + (currentQuestionIndex + 1) + " of " + engine.getNumberOfQuestions();
+  const questionString = engine.isGameOver() ? "" : "Question " + (engine.currentQuestionNumberVisualOnly) + " of " + engine.getNumberOfEnabledQuestions();
 
   return (
     <div className="GameView">

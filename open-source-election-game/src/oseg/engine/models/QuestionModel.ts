@@ -5,6 +5,8 @@ interface QuestionModel {
     description: string,
     answers: AnswerModel[];
     keepInPlaceIfQuestionsShuffled: boolean;
+    enabled?: boolean;
+    onlyEnableAtStartIfRunningMateId?: number;
 }
 
 export default QuestionModel;

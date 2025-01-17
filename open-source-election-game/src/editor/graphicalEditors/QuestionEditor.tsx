@@ -9,11 +9,17 @@ interface QuestionEditorProps {
     setData : (data : ScenarioModel) => void;
     question : QuestionModel;
     questionIndex : number;
+    sideIndex : number;
 }
 
 function QuestionEditor(props : QuestionEditorProps) {
 
-    const {data, setData, question, questionIndex} = props;
+    const {data, setData, question, questionIndex, sideIndex} = props;
+
+    const candidateId = data.scenarioSides[sideIndex].playerId;
+    const candidate = data.candidates.filter((x) => x.id == candidateId)[0];
+    const runningMateIds = new Set(candidate.runningMateIds);
+    const runningMates = data.candidates.filter((x) => runningMateIds.has(x.id));
 
     function updateFieldAndUpdateData<T>(field: string, newValue: T) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -66,13 +72,22 @@ function QuestionEditor(props : QuestionEditorProps) {
                 label={"Description"}
             />
             
-            <GenericEditorCheckbox label={"Keep In Place if Questions Shuffled?"} defaultValue={question.keepInPlaceIfQuestionsShuffled} onChange={(e) => updateFieldAndUpdateData("keepInPlaceIfQuestionsShuffled", e.target.checked)}></GenericEditorCheckbox>
-            </div>
+            <GenericEditorCheckbox label={"Keep In Place if Questions Shuffled"} defaultValue={question.keepInPlaceIfQuestionsShuffled} onChange={(e) => updateFieldAndUpdateData<boolean>("keepInPlaceIfQuestionsShuffled", e.target.checked)}></GenericEditorCheckbox>
+
+            <GenericEditorCheckbox label={"Enabled at Start"} defaultValue={question.enabled ?? true} onChange={(e) => updateFieldAndUpdateData<boolean>("enabled", e.target.checked)}></GenericEditorCheckbox>
+            <p className="EditorNote">A disabled question will be skipped when the game is played unless you enable it using CYOA code.</p>
             
+            <label>Only show this question if your running mate is: </label>
+            <select value={question.onlyEnableAtStartIfRunningMateId ?? -1} onChange={(e) => updateFieldAndUpdateData<number>("onlyEnableAtStartIfRunningMateId", Number(e.target.value))}>
+                <option value={-1}>Always Show</option>
+                {runningMates.map((x) => <option value={x.id}>{x.firstName} {x.lastName}</option>)}
+            </select>
+            
+            </div>  
         
             <h3>Answers</h3>
             <div>
-                {question.answers.map((answer) => <AnswerEditor associatedQuestion={question} setData={setData} data={data} answer={answer}></AnswerEditor>)}
+                {question.answers.map((answer) => <AnswerEditor sideIndex={sideIndex} associatedQuestion={question} setData={setData} data={data} answer={answer}></AnswerEditor>)}
                 <button onClick={addAnswer} className="GreenButton">Add Answer</button>
             </div>
 

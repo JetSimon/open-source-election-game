@@ -10,11 +10,12 @@ interface AnswerEditorProps {
     setData : (data : ScenarioModel) => void;
     answer : AnswerModel;
     associatedQuestion: QuestionModel;
+    sideIndex : number;
 }
 
 function AnswerEditor(props : AnswerEditorProps) {
 
-    const {data, setData, answer, associatedQuestion} = props;
+    const {data, setData, answer, associatedQuestion, sideIndex} = props;
 
     function updateFieldAndUpdateData<T>(field: string, newValue: T) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -61,7 +62,7 @@ function AnswerEditor(props : AnswerEditorProps) {
             <details>
                 <summary>Answer Effects</summary>
                 <div className="AnswerEffectsHolder">
-                    {answer.answerEffects.map(answerEffect => <AnswerEffectEditor setData={setData} data={data} answerEffect={answerEffect} associatedAnswer={answer}></AnswerEffectEditor>)}
+                    {answer.answerEffects.map(answerEffect => <AnswerEffectEditor sideIndex={sideIndex} setData={setData} data={data} answerEffect={answerEffect} associatedAnswer={answer}></AnswerEffectEditor>)}
                     <button onClick={addAnswerEffect} title="Add answer effect" className="CircleButton GreenButton" style={{borderRadius:"100%", aspectRatio:"1/1"}}>+</button>
                 </div>
             </details>
