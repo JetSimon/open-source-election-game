@@ -1,22 +1,35 @@
 .BottomBanner {
     width: 100%;
     display: flex;
-    gap: 5%;
+    gap: 2%;
     max-width: 90%;
     margin: 16px auto;
+    max-height: 20vh;
 }
 
-.BottomBanner > img {
+.CandidateImageHolder, .RunningMateImageHolder {
+    width: 25%;
     max-height: 20vh;
+}
+
+.CandidateImageHolder > img, .RunningMateImageHolder > img {
+    height: 100%;
+    width: 87%;
     border-style: double;
+    border-color: black;
+    box-sizing: border-box;
 }
 
 .BannerNames {
     border-style: double;
-    margin: auto;
-    width: 100%;
+    width: 75%;
     font-weight: bolder;
     font-size: x-large;
+    max-height: 20vh;
+    place-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 @media only screen and (max-width: 600px) {

@@ -12,6 +12,7 @@ interface QuestionViewProps {
   selectedAnswer: AnswerModel | null;
   setSelectedAnswer: (answer: AnswerModel) => void;
   theme : ThemeModel;
+  setShowMap : (b : boolean) => void;
 }
 
 function QuestionView(props: QuestionViewProps) {
@@ -20,7 +21,8 @@ function QuestionView(props: QuestionViewProps) {
     submitAnswer,
     selectedAnswer,
     setSelectedAnswer,
-    theme
+    theme,
+    setShowMap
   } = props;
 
   useEffect(() => {
@@ -72,6 +74,7 @@ function QuestionView(props: QuestionViewProps) {
         >
           CONTINUE
         </button>
+        <button className="ToggleMapButton" onClick={() => setShowMap(true)}>Latest Polls/Electoral Map</button>
       </div>
     </div>
   );

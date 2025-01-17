@@ -15,12 +15,18 @@ function BottomBanner(props: BottomBannerProps) {
 
   return (
     <div className="BottomBanner">
-      <img src={playerCandidate.model.imageUrl}></img>
+      <div className="CandidateImageHolder">
+        <img src={playerCandidate.model.imageUrl}></img>
+      </div>
+      
       <div style={{color:theme.bottomBannerTextColor, backgroundColor:theme.bottomBannerBackgroundColor}} className="BannerNames">
         <p>{playerCandidate.model.lastName}</p>
         <p>{runningMateModel.lastName}</p>
       </div>
-      <img src={runningMateModel.imageUrl}></img>
+
+      <div className="RunningMateImageHolder">
+        <img src={runningMateModel.imageUrl}></img>
+      </div>
     </div>
   );
 }
