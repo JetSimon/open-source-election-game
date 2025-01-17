@@ -1,6 +1,6 @@
 .QuestionView {
     margin: auto;
-    padding: 16px;
+    padding: 8px;
     display: flex;
     overflow-y: auto;
     place-items: top;
@@ -12,6 +12,7 @@
 .QuestionDescription {
     border-style: double;
     padding: 8px;
+    margin-top: 0px;
 }
 
 .Answer {
