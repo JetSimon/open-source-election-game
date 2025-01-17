@@ -210,8 +210,7 @@ function GameView(props: GameViewProps) {
       {showAutoplay >= 3 && !engine.isGameOver() && !engine.waitingToPickState && !showMap && <button onClick={startAutoplay}>Autoplay</button>}
       </div>
       {!engine.isGameOver() && engine.waitingToPickState && <p className="ChooseState" style={{color:theme.primaryGameWindowTextColor}}>Click on a state to visit</p>}
-      <h3 className="QuestionOf" style={{color:theme.primaryGameWindowTextColor}}>{questionString}</h3>
-      <BottomBanner theme={theme} engine={engine}></BottomBanner>
+      <BottomBanner questionString={questionString} theme={theme} engine={engine}></BottomBanner>
       <PopupBox
         theme={theme}
         title="Feedback"

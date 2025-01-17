@@ -5,10 +5,11 @@ import "./BottomBanner.css";
 interface BottomBannerProps {
   engine: Engine;
   theme: ThemeModel;
+  questionString : string;
 }
 
 function BottomBanner(props: BottomBannerProps) {
-  const { engine, theme } = props;
+  const { engine, theme, questionString } = props;
 
   const playerCandidate = engine.getPlayerCandidateController();
   const runningMateModel = engine.getPlayerRunningMateModel();
@@ -19,9 +20,12 @@ function BottomBanner(props: BottomBannerProps) {
         <img src={playerCandidate.model.imageUrl}></img>
       </div>
       
-      <div style={{color:theme.bottomBannerTextColor, backgroundColor:theme.bottomBannerBackgroundColor}} className="BannerNames">
-        <p>{playerCandidate.model.lastName}</p>
-        <p>{runningMateModel.lastName}</p>
+      <div className="BannerNamesBacking">
+        <p className="QuestionOf" style={{color:theme.primaryGameWindowTextColor}}>{questionString}</p>
+        <div style={{color:theme.bottomBannerTextColor, backgroundColor:theme.bottomBannerBackgroundColor}} className="BannerNames">
+          <div>{playerCandidate.model.lastName}</div>
+          <div>{runningMateModel.lastName}</div>
+        </div>
       </div>
 
       <div className="RunningMateImageHolder">

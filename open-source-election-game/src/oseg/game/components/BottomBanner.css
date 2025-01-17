@@ -2,44 +2,66 @@
     width: 100%;
     display: flex;
     gap: 2%;
-    max-width: 90%;
-    margin: 16px auto;
-    max-height: 20vh;
+    margin: 0px auto;
+    height: 20vh;
 }
 
 .CandidateImageHolder, .RunningMateImageHolder {
-    width: 25%;
-    max-height: 20vh;
+    height: 100%;
+    width: 20%;
+    border: black double;
+    box-sizing: border-box;
 }
 
 .CandidateImageHolder > img, .RunningMateImageHolder > img {
+
     height: 100%;
-    width: 87%;
-    border-style: double;
-    border-color: black;
-    box-sizing: border-box;
+    width: 100%;
+    object-fit: cover;
+}
+
+.QuestionOf {
+    font-size:medium;
+    padding: 8px;
+}
+
+.BannerNamesBacking {
+    width: 100%;
+    height: 100%;
+    font-weight: bolder;
+    font-size: x-large;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    gap: 8px;
 }
 
 .BannerNames {
     border-style: double;
-    width: 75%;
-    font-weight: bolder;
-    font-size: x-large;
-    max-height: 20vh;
-    place-items: center;
-    justify-content: center;
+    width: 40%;
+    height: 50%;
     display: flex;
     flex-direction: column;
+    place-items: center;
+    justify-content: center;
 }
 
 @media only screen and (max-width: 600px) {
 
-    .BannerNames {
-        font-size: small!important;
-        height: 100%;
+    .QuestionOf {
+        font-size: x-small;
     }
 
-    .BottomBanner > img {
-        height: 10vh;
+    .BannerNamesBacking {
+        font-size: x-small!important;
+        gap: 8px;
+        width: 90%;
+        height: 50%;
+    }
+
+    .CandidateImageHolder, .RunningMateImageHolder {
+        width: 50%;
     }
 }
