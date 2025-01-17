@@ -68,8 +68,9 @@ function QuestionView(props: QuestionViewProps) {
           disabled={selectedAnswer == null}
           className="ConfirmAnswerButton"
           onClick={submitAnswer}
+          style={{fontWeight:"bold"}}
         >
-          Okay
+          CONTINUE
         </button>
       </div>
     </div>
