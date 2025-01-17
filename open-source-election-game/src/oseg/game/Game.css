@@ -53,3 +53,11 @@ button {
     font-style: italic;
 }
 
+.Game button {
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+.Game button:disabled {
+    opacity: 0.5;
+}

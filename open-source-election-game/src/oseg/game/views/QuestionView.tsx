@@ -63,15 +63,14 @@ function QuestionView(props: QuestionViewProps) {
               setSelectedAnswer={setSelectedAnswer}
             ></Answer>
           ))}
-            <button style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}}
+        </div>
+        <button
           disabled={selectedAnswer == null}
           className="ConfirmAnswerButton"
           onClick={submitAnswer}
         >
           Okay
         </button>
-        </div>
-
       </div>
     </div>
   );

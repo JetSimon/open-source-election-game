@@ -18,6 +18,10 @@
     margin-bottom: 8px;
 }
 
+.Answer label {
+    font-weight: normal;
+}
+
 @media only screen and (max-width: 600px) {
     .QuestionView {
         font-size: x-small;
@@ -28,4 +32,6 @@
 .AnswerHolder {
     padding: 8px;
     padding-top: 16px;
+    text-align: left;
+    font-weight: normal;
 }

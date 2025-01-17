@@ -32,7 +32,7 @@ function ElectionDescriptionView(props: ElectionDescriptionViewProps) {
         </div>
       </div>
     </div>
-    <button style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}} onClick={next}>{engine.getLocalization("Next")}</button>
+    <button onClick={next}>{engine.getLocalization("Next")}</button>
     </div>
   );
 }

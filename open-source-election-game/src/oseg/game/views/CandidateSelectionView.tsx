@@ -135,8 +135,8 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
       {canBeShuffled && <label htmlFor="shuffled" style={{color:theme.primaryGameWindowTextColor}} >{engine.getLocalization("Shuffle Questions?")} </label>}
       {canBeShuffled && <input id="shuffled" type="checkbox" checked={isShuffled} onChange={(e) => setIsShuffled(e.target.checked)}></input>}
       {canBeShuffled && <br></br>}
-      <button style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}} onClick={() => setSelectingCandidate(false)}>Prev</button>
-      <button style={{backgroundColor:theme.secondaryGameWindowColor, color:theme.secondaryGameWindowTextColor}} onClick={startGame}>Start</button>
+      <button onClick={() => setSelectingCandidate(false)}>Prev</button>
+      <button onClick={startGame}>Start</button>
     </div>
   );
 }
