@@ -81,10 +81,18 @@ function OsegEditor() {
 
     const [saveIndex, setSaveIndex] = useState<number>(1);
 
-    const [saveNames, setSaveNames] = useState(["Save 1", "Save 2", "Save 3"]);
     const [isEditingSaveName, setIsEditingSaveName] = useState(false);
 
     const [currentTemplateName, setCurrentTemplateName] = useState(templateNames[0]);
+
+    const [saveNames, setSaveNames] = useState(() => {
+        const savedNames = [
+            localStorage.getItem("savename1"),
+            localStorage.getItem("savename2"),
+            localStorage.getItem("savename3"),
+        ];
+        return savedNames.map((name, index) => name || `Save ${index + 1}`);
+    });
 
     async function loadTemplate(templateName : string) {
         const defaultData = await fetch("./scenarios/" + templateName + "/data.json");
@@ -133,16 +141,6 @@ function OsegEditor() {
         setData(JSON.parse(newDataString));
         setDataString(newDataString);
     }
-
-    useEffect(() => {
-        const savedNames = [
-            localStorage.getItem("savename1"),
-            localStorage.getItem("savename2"),
-            localStorage.getItem("savename3")
-        ];
-        
-        setSaveNames(savedNames.map((name, index) => name || `Save ${index + 1}`));
-    })
 
     function startEditingSaveName() {
         setIsEditingSaveName(true);
