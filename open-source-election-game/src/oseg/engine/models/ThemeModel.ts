@@ -5,6 +5,8 @@ interface ThemeModel {
     primaryGameWindowColor : string;
     secondaryGameWindowColor : string; 
     primaryGameWindowTextColor : string;
+    questionBackgroundColor? : string;
+    questionTextColor? : string;
     secondaryGameWindowTextColor : string;
     bottomBannerBackgroundColor : string;
     bottomBannerTextColor : string;
