@@ -840,6 +840,32 @@ class Engine {
         this.scenarioController.changeCandidateGlobalModifier(id, amount);
     }
 
+    /**
+     * Overrides both texts on the bottom banner
+     * @param line1 
+     * @param line2 
+     */
+    setBottomBannerOverrideText(line1 : string, line2 : string) {
+        this.setBottomBannerOverrideTextLine1(line1);
+        this.setBottomBannerOverrideTextLine2(line2);
+    }
+
+    /**
+     * Override line 1 of the banner at the bottom
+     * @param line1 
+     */
+    setBottomBannerOverrideTextLine1(line1 : string) {
+        this.scenarioController.bannerOverrideLine1 = line1;
+    }
+
+    /**
+     * Override line 2 of the banner at the bottom
+     * @param line2 
+     */
+    setBottomBannerOverrideTextLine2(line2 : string) {
+        this.scenarioController.bannerOverrideLine2 = line2;
+    }
+
     // UTILS FOR ENDINGS
 
     /**

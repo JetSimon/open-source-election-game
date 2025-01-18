@@ -26,8 +26,8 @@ function BottomBanner(props: BottomBannerProps) {
       <div className="BannerNamesBacking">
         <p className="QuestionOf" style={{color:theme.primaryGameWindowTextColor}}>{questionString}</p>
         <div style={{height: showBannerImage ? "auto" : "", color:theme.bottomBannerTextColor, backgroundColor:theme.bottomBannerBackgroundColor}} className="BannerNames">
-          {!showBannerImage && <div className="BannerName">{playerCandidate.model.lastName}</div>}
-          {!showBannerImage && <div className="BannerName">{runningMateModel.lastName}</div>}
+          {!showBannerImage && <div className="BannerName">{engine.scenarioController.bannerOverrideLine1 ?? playerCandidate.model.lastName}</div>}
+          {!showBannerImage && <div className="BannerName">{engine.scenarioController.bannerOverrideLine2 ?? runningMateModel.lastName}</div>}
           {showBannerImage && <img className="BannerImage" src={bannerImageUrl}></img>}
         </div>
       </div>

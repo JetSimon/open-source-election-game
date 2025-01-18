@@ -17,6 +17,9 @@ class ScenarioController {
     questions: QuestionModel[] = [];
     theme: ThemeModel = this.makeEmptyTheme();
 
+    bannerOverrideLine1 : string | undefined = undefined;
+    bannerOverrideLine2 : string | undefined = undefined;
+
     makeEmptyTheme(): ThemeModel {
         return {
             backgroundImageUrl: "",
