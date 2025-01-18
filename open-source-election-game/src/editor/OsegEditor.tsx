@@ -219,11 +219,13 @@ function OsegEditor() {
             <h2>OSEG Editor</h2>
             <div className="Toolbar">
                 <button onClick={() => exportFiles()}>Export</button>
-                <select value={saveIndex} onChange={(e) => setSaveIndex(Number(e.target.value))}>
-                    <option value={1}>{saveNames[0]}</option>
-                    <option value={2}>{saveNames[1]}</option>
-                    <option value={3}>{saveNames[2]}</option>
-                </select>
+                {!isEditingSaveName && (
+                    <select value={saveIndex} onChange={(e) => setSaveIndex(Number(e.target.value))}>
+                        <option value={1}>{saveNames[0]}</option>
+                        <option value={2}>{saveNames[1]}</option>
+                        <option value={3}>{saveNames[2]}</option>
+                    </select>
+                )}
                 {isEditingSaveName ? (
                     <>
                     <input 
