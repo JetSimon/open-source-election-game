@@ -23,7 +23,7 @@ function Answer(props: AnswerProps) {
     return (
         <div className="Answer">
             <input id={answerId} onChange={handleOnChange} checked={isSelected()} type="radio"></input>
-            <label style={{ "fontWeight": isSelected() ? "bold" : "" }} htmlFor={answerId} dangerouslySetInnerHTML={{__html:answerModel.description}}></label>
+            <label htmlFor={answerId} dangerouslySetInnerHTML={{__html:answerModel.description}}></label>
         </div>
     );
 }

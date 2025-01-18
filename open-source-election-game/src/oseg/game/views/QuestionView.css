@@ -23,6 +23,10 @@
     font-weight: normal;
 }
 
+.Answer label:hover {
+    font-weight: bold;
+}
+
 @media only screen and (max-width: 600px) {
     .QuestionView {
         font-size: x-small;
