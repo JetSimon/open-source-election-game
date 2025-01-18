@@ -218,6 +218,13 @@ function CandidateEditor(props: CandidateEditorProps) {
             />
 
             <GenericEditorInput
+                defaultValue={candidate.bannerImageUrl ?? ""}
+                onChange={(e) => updateFieldAndUpdateData<string>("bannerImageUrl", e.target.value)}
+                label={"Banner Image Url (Leave Blank For None)"}
+                type={"text"}
+            />
+
+            <GenericEditorInput
                 defaultValue={candidate.startingGlobalMultiplier}
                 onChange={(e) => updateFieldAndUpdateData<number>("startingGlobalMultiplier", Number(e.target.value))}
                 label={"Starting Global Multiplier"}

@@ -14,6 +14,9 @@ function BottomBanner(props: BottomBannerProps) {
   const playerCandidate = engine.getPlayerCandidateController();
   const runningMateModel = engine.getPlayerRunningMateModel();
 
+  const bannerImageUrl : undefined | string = playerCandidate.model.bannerImageUrl;
+  const showBannerImage = bannerImageUrl != undefined && bannerImageUrl.trim() != "";
+
   return (
     <div className="BottomBanner">
       <div className="CandidateImageHolder">
@@ -22,9 +25,10 @@ function BottomBanner(props: BottomBannerProps) {
       
       <div className="BannerNamesBacking">
         <p className="QuestionOf" style={{color:theme.primaryGameWindowTextColor}}>{questionString}</p>
-        <div style={{color:theme.bottomBannerTextColor, backgroundColor:theme.bottomBannerBackgroundColor}} className="BannerNames">
-          <div>{playerCandidate.model.lastName}</div>
-          <div>{runningMateModel.lastName}</div>
+        <div style={{height: showBannerImage ? "auto" : "", color:theme.bottomBannerTextColor, backgroundColor:theme.bottomBannerBackgroundColor}} className="BannerNames">
+          {!showBannerImage && <div className="BannerName">{playerCandidate.model.lastName}</div>}
+          {!showBannerImage && <div className="BannerName">{runningMateModel.lastName}</div>}
+          {showBannerImage && <img className="BannerImage" src={bannerImageUrl}></img>}
         </div>
       </div>
 
