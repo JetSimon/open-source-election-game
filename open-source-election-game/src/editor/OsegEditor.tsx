@@ -134,6 +134,16 @@ function OsegEditor() {
         setDataString(newDataString);
     }
 
+    useEffect(() => {
+        const savedNames = [
+            localStorage.getItem("savename1"),
+            localStorage.getItem("savename2"),
+            localStorage.getItem("savename3")
+        ];
+        
+        setSaveNames(savedNames.map((name, index) => name || `Save ${index + 1}`));
+    })
+
     function startEditingSaveName() {
         setIsEditingSaveName(true);
     }
@@ -143,6 +153,9 @@ function OsegEditor() {
         const newNames = [...saveNames]; 
         newNames[saveIndex - 1] = trimmedSaveName; 
         setSaveNames(newNames); 
+
+        localStorage.setItem(`savename${saveIndex}`, trimmedSaveName);
+
         setIsEditingSaveName(false); 
     }
 
