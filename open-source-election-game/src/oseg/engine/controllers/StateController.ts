@@ -111,7 +111,7 @@ class StateController {
                     stateScore = stateScore * Math.abs(stateScore);
                     const stateWeight = this.issueScores.getWeightForIssue(issue.id);
                     
-                    opinion += this.getCandidateStateModifier(runningMateId) * engine.runningMateWegight * (1.225 - Math.abs((mateScore - stateScore) * stateWeight));
+                    opinion += this.getCandidateStateModifier(runningMateId) * engine.runningMateWeight * (1.225 - Math.abs((mateScore - stateScore) * stateWeight));
                 }
             }
 

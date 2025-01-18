@@ -119,7 +119,7 @@ class Engine {
     /**
      * How much a running mate contributes to opinion (1 is the same as a normal candidate)
      */
-    runningMateWegight = 0.5;
+    runningMateWeight = 0.5;
 
     setSeed(seed : string) {
         this.seed = seed;
@@ -835,6 +835,7 @@ class Engine {
      * Adds amount to candidate global multiplier with id 'id'
      * @param id 
      * @param amount 
+     * @category CYOA Utility Functions
      */
     addCandidateGlobalMultiplier(id : number, amount : number) {
         this.scenarioController.changeCandidateGlobalModifier(id, amount);
@@ -844,6 +845,7 @@ class Engine {
      * Overrides both texts on the bottom banner
      * @param line1 
      * @param line2 
+     * @category CYOA Utility Functions
      */
     setBottomBannerOverrideText(line1 : string, line2 : string) {
         this.setBottomBannerOverrideTextLine1(line1);
@@ -853,6 +855,7 @@ class Engine {
     /**
      * Override line 1 of the banner at the bottom
      * @param line1 
+     * @category CYOA Utility Functions
      */
     setBottomBannerOverrideTextLine1(line1 : string) {
         this.scenarioController.bannerOverrideLine1 = line1;
@@ -861,9 +864,24 @@ class Engine {
     /**
      * Override line 2 of the banner at the bottom
      * @param line2 
+     * @category CYOA Utility Functions
      */
     setBottomBannerOverrideTextLine2(line2 : string) {
         this.scenarioController.bannerOverrideLine2 = line2;
+    }
+
+    /**
+     * Enables or disables a question by id
+     * @param id 
+     * @param isEnabled 
+     * @category CYOA Utility Functions
+     */
+    setQuestionEnabledById(id : number, isEnabled : boolean) {
+        for(const question of this.scenarioController.questions) {
+            if(question.id == id) {
+                question.enabled = isEnabled;
+            }
+        }
     }
 
     // UTILS FOR ENDINGS
