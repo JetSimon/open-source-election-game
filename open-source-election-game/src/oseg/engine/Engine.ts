@@ -553,11 +553,8 @@ class Engine {
             let totalPopularVotes = 0;
             let totalElectoralVotes = 0;
             for (const stateController of this.scenarioController.stateControllers) {
-                totalPopularVotes += stateController.getOpinionForCandidate(candidate.getId()) * stateController.model.popularVotes;
-
-                if (stateController.getHighestCandidate(this) == candidate) {
-                    totalElectoralVotes += stateController.model.electoralVotes;
-                }
+                totalPopularVotes += stateController.getPvsForCandidate(candidate);
+                totalElectoralVotes += stateController.getEvsForCandidate(this, candidate);
             }
             totalPopularVotes = Math.round(totalPopularVotes);
             popularVotes.set(candidate.getId(), totalPopularVotes);
