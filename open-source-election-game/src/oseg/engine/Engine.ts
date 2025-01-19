@@ -224,8 +224,8 @@ class Engine {
     makeEmptyCandidateModel() : CandidateModel {
         return {
             id: -1,
-            firstName: "missing",
-            lastName: "no",
+            firstName: "Candidate",
+            lastName: "Not Found",
             party: "error",
             homeState: "error",
             color: "#000000",

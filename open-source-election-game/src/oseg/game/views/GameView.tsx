@@ -12,6 +12,7 @@ import StateController from "../../engine/controllers/StateController";
 import ThemeModel from "../../engine/models/ThemeModel";
 import HighscoreSubmissionModel from "../../engine/models/HighscoreSubmissionModel";
 import { useEffect } from "react";
+import DebugMenuAnswer from "../components/debug/DebugMenuAnswer";
 
 interface GameViewProps {
   engine: Engine;
@@ -39,6 +40,7 @@ function GameView(props: GameViewProps) {
   const [showingFeedbackBox, setShowingFeedbackBox] = useState(false);
 
   const [showAutoplay, setShowAutoplay] = useState(0);
+  const [showDebugMenu, setShowDebugMenu] = useState(false);
 
   const [selectedState, setSelectedState] = useState<StateController | null>(
     null
@@ -49,6 +51,10 @@ function GameView(props: GameViewProps) {
     function checkForAutoplay(e : KeyboardEvent) {
       if(e.key == "@") {
         setShowAutoplay(a => a + 1);
+      }
+
+      if(e.key == "`") {
+        setShowDebugMenu(x => !x);
       }
     }
 
@@ -228,6 +234,9 @@ function GameView(props: GameViewProps) {
           image={theme.advisorImage}
         />
       )}
+      {showDebugMenu && <div className="DebugMenu">
+        {currentQuestion.answers.map((answer) => <DebugMenuAnswer answer={answer} engine={engine} ></DebugMenuAnswer>)}
+      </div>}
     </div>
   );
 }

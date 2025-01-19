@@ -1,0 +1,13 @@
+.DebugMenuAnswer {
+    background-color: white;
+    width: 90%;
+    margin: auto;
+}
+
+.DebugMenuAnswer > p {
+    font-weight: bold;
+}
+
+.DebugMenuAnswerEffect p {
+    margin: 0;
+}
