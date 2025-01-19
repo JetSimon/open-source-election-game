@@ -412,6 +412,20 @@ class Engine {
                         console.error("Cannot enable question as questionEnabled or questionId is undefined")
                     }
                 }
+                else if (answerEffectType == AnswerEffectType.TctIssue) {
+                    const amount = answerEffect.amount;
+                    const weight = answerEffect.weight ?? 1;
+                    const candidate = answerEffect.candidateId;
+                    const issue = answerEffect.issueId;
+
+                    for(const state of this.scenarioController.getStates()) {
+                        const stateIssueScore = state.issueScores.getIssueScoreForIssue(issue);
+                        const diff = Math.abs(amount - stateIssueScore);
+                        const dist = ((1 / (diff + 1)) - 0.75) * 4
+                        const opinionDelta = dist * weight;
+                        state.changeCandidateStateModifier(candidate, -opinionDelta);
+                    }
+                }
                 else {
                     console.error("Got unknown AnswerEffect type", answerEffectType)
                 }

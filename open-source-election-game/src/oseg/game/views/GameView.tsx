@@ -53,7 +53,7 @@ function GameView(props: GameViewProps) {
         setShowAutoplay(a => a + 1);
       }
 
-      if(e.key == "`") {
+      if(e.key == "!") {
         setShowDebugMenu(x => !x);
       }
     }

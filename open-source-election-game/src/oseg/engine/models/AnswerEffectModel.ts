@@ -6,6 +6,7 @@ interface AnswerEffect {
     amount: number;
     questionId?: number;
     questionEnabled?: boolean;
+    weight? : number;
 }
 
 export default AnswerEffect;

@@ -49,6 +49,16 @@ function AnswerEffectEditor(props: AnswerEffectEditorProps) {
         setData(JSON.parse(JSON.stringify(data)))
     }
 
+    const issues = data.issues.filter((x) => x.id == answerEffect.issueId);
+    let stance = "";
+    if(issues.length > 0) {
+        const issue = issues[0];
+        const remappedIssueScore = Math.min(Math.floor(
+            ((answerEffect.amount + 1) / 2) * (issue.stances.length)
+        ), issue.stances.length - 1);
+        stance = issue.stances[remappedIssueScore];
+    }
+ 
     return (
         <div className="AnswerEffectEditor">
 
@@ -79,7 +89,7 @@ function AnswerEffectEditor(props: AnswerEffectEditorProps) {
                 </div>
             }
 
-            { (typedAnswerEffectType == AnswerEffectType.Issue) &&
+            { (typedAnswerEffectType == AnswerEffectType.Issue || typedAnswerEffectType == AnswerEffectType.TctIssue) &&
                 <div>
                     <label>Affected Issue: </label>
                     <select onChange={(e) => updateFieldAndUpdateData<number>("issueId", Number(e.target.value))} value={answerEffect.issueId}>
@@ -88,12 +98,26 @@ function AnswerEffectEditor(props: AnswerEffectEditorProps) {
                 </div>
             }
 
-            {(typedAnswerEffectType != AnswerEffectType.SetQuestionEnabled) &&
+            {(typedAnswerEffectType != AnswerEffectType.SetQuestionEnabled && typedAnswerEffectType != AnswerEffectType.TctIssue) &&
                 <div>
-                <GenericEditorInput label={"Amount: "} type={"number"} defaultValue={answerEffect.amount} onChange={(e) => updateFieldAndUpdateData("amount", Number(e.target.value))}></GenericEditorInput>
+                <GenericEditorInput label={"Amount"} type={"number"} defaultValue={answerEffect.amount} onChange={(e) => updateFieldAndUpdateData("amount", Number(e.target.value))}></GenericEditorInput>
                 </div>
             }
 
+            {(typedAnswerEffectType == AnswerEffectType.TctIssue) &&
+                <div className="IssueScoreEditorSlider">
+                    <label>Score: </label>
+                    <span> ({answerEffect.amount}) ({stance})</span>
+                    <br></br>
+                    <input step="0.01" type="range" min="-1" max="1" value={answerEffect.amount} onChange={(e) => updateFieldAndUpdateData("amount", Number(e.target.value))}></input>
+                </div>
+            }
+            
+            {(typedAnswerEffectType == AnswerEffectType.TctIssue) &&
+                <div>
+                <GenericEditorInput label={"Weight"} type={"number"} defaultValue={answerEffect.weight ?? 1.0} onChange={(e) => updateFieldAndUpdateData("weight", Number(e.target.value))}></GenericEditorInput>
+                </div>
+            }
             
             { (typedAnswerEffectType == AnswerEffectType.SetQuestionEnabled) &&
                 <div>

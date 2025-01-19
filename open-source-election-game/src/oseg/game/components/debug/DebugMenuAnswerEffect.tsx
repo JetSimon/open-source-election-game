@@ -49,6 +49,9 @@ function DebugMenuAnswerEffect(props : DebugMenuAnswerEffectProps) {
         else if(answerEffectType == AnswerEffectType.State) {
             return <p>Change state multiplier for {engine.scenarioController.getStateControllerByStateId(answerEffect.stateId)?.model.name ?? "Error"} for {getCandidateName(answerEffect.candidateId)} by <span style={getAmountStyle()}>{answerEffect.amount}</span></p>
         }
+        else if(answerEffectType == AnswerEffectType.TctIssue) {
+            return <p>Apply TCT style issue score effect for issue {getIssueName(answerEffect.issueId)} with score of {answerEffect.amount} weight of {answerEffect.weight} for candidate {getCandidateName(answerEffect.candidateId)}</p>
+        }
         else {
             return <p>Error could not make string</p>;
         }
