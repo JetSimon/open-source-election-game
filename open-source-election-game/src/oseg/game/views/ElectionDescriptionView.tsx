@@ -1,6 +1,7 @@
 import { Engine } from "../../engine/Engine";
 import "./ElectionDescriptionView.css";
 import ThemeModel from "../../engine/models/ThemeModel";
+import { getAllDifficultyValues, getDisplayNameForDifficulty } from "../../engine/models/Difficulty";
 interface ElectionDescriptionViewProps {
   engine: Engine;
   setSelectingCandidate : (value : boolean) => void;
@@ -26,6 +27,10 @@ function ElectionDescriptionView(props: ElectionDescriptionViewProps) {
   return (
     <div className="ElectionSelection">
     <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="ElectionSelectionBox">
+      <label>Choose your Difficulty: </label>
+      <select value={engine.difficulty} onChange={(e) => {engine.difficulty = Number(e.target.value); refreshThemeAndMusic()}}>
+        {getAllDifficultyValues().map((d) => <option key={d} value={d}>{getDisplayNameForDifficulty(d)}</option>)}
+      </select>
       <div className="ElectionInfoArea">
         <img src={engine.currentScenario.scenarioImageUrl}></img>
         <div className="ElectionDescription" dangerouslySetInnerHTML={{__html:engine.currentScenario.scenarioDescription}}>

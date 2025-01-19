@@ -11,6 +11,7 @@ import ThemeModel from "./models/ThemeModel";
 import SongModel from "./models/SongModel";
 import { makeSeed, Seed, seededRandom } from "../utils/MathUtils";
 import ScenarioSideModel from "./models/ScenarioSideModel";
+import {Difficulty, getMultiplierFromDifficulty} from "./models/Difficulty";
 
 // Just used when debugging/trying to see if more extreme answers help more
 const tuningMultiplier = (x: number) => 4 * x;//Math.pow(x, 3);
@@ -28,6 +29,9 @@ enum GameState {
  * The main engine that runs the logic for the game. Should be entirely separate from the View and should have no knowledge of how the player is using it.
  */
 class Engine {
+
+    difficulty : Difficulty = Difficulty.Normal;
+
     gameState = GameState.Uninitialized;
 
     /**
@@ -185,7 +189,15 @@ class Engine {
 
         this.runningMateId = runningMateId;
         this.sideIndex = newSideIndex;
+
         this.scenarioController.loadScenario(this, this.currentScenario, this.sideIndex, this.isShuffled);
+
+        const playerId = this.getPlayerCandidateController().getId();
+        this.scenarioController.setCandidateGlobalModifier(
+            playerId,
+            this.scenarioController.getGlobalModifierForCandidate(playerId) * getMultiplierFromDifficulty(this.difficulty)
+        );
+
         this.currentQuestionNumberVisualOnly = 1;
         this.currentQuestionIndex = 0;
         this.goToNextValidQuestion();

@@ -5,6 +5,7 @@ interface HighscoreSubmissionModel {
     visits : number[];
     seed : string; 
     isShuffled : boolean;
+    difficulty : number;
 }
 
 export default HighscoreSubmissionModel;
