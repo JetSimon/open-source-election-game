@@ -155,6 +155,10 @@ class ScenarioController {
         return modifier;
     }
 
+    setCandidateGlobalModifier(candidateId: number, amount: number) {
+        this.globalModifiers.set(candidateId, Math.max(0, amount));
+    }
+
     changeCandidateGlobalModifier(candidateId: number, amount: number) {
         this.globalModifiers.set(candidateId, Math.max(0, this.getGlobalModifierForCandidate(candidateId) + amount));
     }
