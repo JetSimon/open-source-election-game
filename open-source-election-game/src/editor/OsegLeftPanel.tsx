@@ -119,6 +119,7 @@ function OsegLeftPanel(props: OsegLeftPanelProps) {
                         value={dataString}
                         onChange={onDataChanged}
                     ></Editor>
+                    <button onClick={() => navigator.clipboard.writeText(dataString)}>Copy to Clipboard</button>
                 </div>
             );
         }
@@ -133,6 +134,7 @@ function OsegLeftPanel(props: OsegLeftPanelProps) {
                         value={logic}
                         onChange={onLogicChanged}
                     ></Editor>
+                    <button onClick={() => navigator.clipboard.writeText(logic)}>Copy to Clipboard</button>
                 </div>
             );
         }
@@ -177,6 +179,8 @@ function OsegLeftPanel(props: OsegLeftPanelProps) {
                         onChange={onMapSvgChanged}
                     ></Editor>
                     <p>Note: Ensure all path ids correspond to a state abbreviation in Data</p>
+
+                    <button onClick={() => navigator.clipboard.writeText(mapSvg)}>Copy to Clipboard</button>
 
                     {anyPathsWithoutStates && <EditorWarningBox destructiveAction={false} onClick={() => {
                         for(const pathId of pathsWithoutStatesDefined) {
@@ -229,6 +233,7 @@ function OsegLeftPanel(props: OsegLeftPanelProps) {
                         value={customCss}
                         onChange={onCustomCssChanged}
                     ></Editor>
+                    <button onClick={() => navigator.clipboard.writeText(customCss)}>Copy to Clipboard</button>
                 </div>
             );
         }

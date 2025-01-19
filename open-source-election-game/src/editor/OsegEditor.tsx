@@ -204,6 +204,7 @@ function OsegEditor() {
         downloadString(dataString, "data.json");
         downloadString(logic, "logic.js");
         downloadString(customCss, "style.css");
+        downloadString(mapSvg, "map.svg");
     }
 
     if (data == null) {
