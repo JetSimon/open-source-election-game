@@ -47,6 +47,8 @@ function GameView(props: GameViewProps) {
   );
   const [showVisitPopup, setShowVisitPopup] = useState(false);
 
+  const [donePlayingMapAnimation, setDonePlayingMapAnimation] = useState(false);
+
   useEffect(() => {
     function checkForAutoplay(e : KeyboardEvent) {
       if(e.key == "@") {
@@ -188,11 +190,14 @@ function GameView(props: GameViewProps) {
 
   return (
     <div className="GameView">
-      {engine.isGameOver() ? (
-        <div className="EndingViewHolder">
-        <EndingView theme={theme} engine={engine} mapSvg={mapSvg}></EndingView>
-        </div>
-      ) :
+      {engine.isGameOver() ? 
+        ( donePlayingMapAnimation ?
+          <div className="EndingViewHolder">
+          <EndingView theme={theme} engine={engine} mapSvg={mapSvg}></EndingView>
+          </div>
+          :
+          <MapView playAnimationBeforeFinalResults={true} afterAnimationCompletes={() => setDonePlayingMapAnimation(true)} theme={theme} onStateClicked={onStateClicked} engine={engine} mapSvg={mapSvg}></MapView>
+        ) :
       (
         engine.waitingToPickState || showMap ?
         <MapView theme={theme} onStateClicked={onStateClicked} engine={engine} mapSvg={mapSvg}></MapView>
@@ -211,6 +216,7 @@ function GameView(props: GameViewProps) {
       <div className="BottomButtons">
       {showMap && !engine.waitingToPickState && <button className="ToggleMapButton" onClick={() => setShowMap(false)}>Back to the Game</button>}
       {showAutoplay >= 3 && !engine.isGameOver() && !engine.waitingToPickState && !showMap && <button onClick={startAutoplay}>Autoplay</button>}
+      {engine.isGameOver() && !donePlayingMapAnimation && <button className="ToggleMapButton" onClick={() => setDonePlayingMapAnimation(true)}>Skip to Results</button>}
       </div>
       {!engine.isGameOver() && engine.waitingToPickState && <p className="ChooseState" style={{color:theme.primaryGameWindowTextColor}}>Click on a state to visit</p>}
       <BottomBanner questionString={questionString} theme={theme} engine={engine}></BottomBanner>

@@ -157,6 +157,25 @@ class StateController {
         console.log(this.getOpinionString());
     }
 
+    getFinalStateColor(engine : Engine, lerpValue : number, isHovered : boolean) {
+        const highestCandidate = this.getHighestCandidate(engine);
+        if (highestCandidate == null) {
+            console.error("Could not get state colour. Highest candidate was null");
+            return "#000000";
+        }
+
+        const candidateColorRgb = hexToRgb(highestCandidate.model.color);
+
+        for (let i = 0; i < candidateColorRgb.length; i++) {
+            candidateColorRgb[i] = lerp(155, candidateColorRgb[i], lerpValue);
+            if (isHovered) {
+                candidateColorRgb[i] *= 0.85 + (Math.sin(Date.now() / 200) * 0.05);
+            }
+        }
+
+        return rgbToHex(candidateColorRgb[0], candidateColorRgb[1], candidateColorRgb[2]);
+    }
+
     getStateColor(engine: Engine, isHovered: boolean): string {
         const highestCandidate = this.getHighestCandidate(engine);
         if (highestCandidate == null) {
@@ -183,6 +202,17 @@ class StateController {
         }
         
         return rgbToHex(candidateColorRgb[0], candidateColorRgb[1], candidateColorRgb[2]);
+    }
+
+    getPvsForCandidate(candidate : CandidateController) {
+        return this.getOpinionForCandidate(candidate.getId()) * this.model.popularVotes;
+    }
+
+    getEvsForCandidate(engine : Engine, candidate : CandidateController) {
+        if (this.getHighestCandidate(engine) == candidate) {
+            return this.model.electoralVotes;
+        }
+        return 0;
     }
 }
 
