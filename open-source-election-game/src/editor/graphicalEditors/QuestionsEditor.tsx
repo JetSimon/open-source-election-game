@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
 import QuestionEditor from "./QuestionEditor";
 
 interface QuestionsEditorProps {
     data : ScenarioModel;
     setData : (data : ScenarioModel) => void;
+    sideIndex: number;
+    setSideIndex: (sideIndex : number) => void;
+    questionIndex: number;
+    setQuestionIndex: (questionIndex : number) => void;
 }
 
 function QuestionsEditor(props : QuestionsEditorProps) {
@@ -14,13 +18,9 @@ function QuestionsEditor(props : QuestionsEditorProps) {
         return can.firstName + " " + can.lastName;
     }
 
-    const {data, setData} = props;
-
-    const [sideIndex, setSideIndex] = useState(0);
+    const {data, setData, sideIndex, setSideIndex, questionIndex, setQuestionIndex} = props;
 
     const side = data.scenarioSides[sideIndex];
-
-    const [questionIndex, setQuestionIndex] = useState(0);
 
     useEffect(() => {
         if(side != undefined) {

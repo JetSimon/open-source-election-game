@@ -9,12 +9,14 @@ import OsegSimulator from "./OsegSimulator";
 import StateController from "../oseg/engine/controllers/StateController";
 import QuoteHeader from "../oseg/game/components/QuoteHeader";
 import MusicPlayer from "../oseg/game/components/MusicPlayer";
+import QuestionView from "../oseg/game/views/QuestionView";
 
 enum RightNavBar {
     Map,
     Election,
     Candidates,
-    Simulator
+    Simulator,
+    Question
 }   
 
 const rightNavBarValues = Object.keys(RightNavBar).filter((item) => {
@@ -26,13 +28,15 @@ interface OsegRightPanelProps {
     logic : string;
     data : ScenarioModel;
     onStateClicked : ((c : StateController) => void) | null;
+    sideIndex : number;
+    questionIndex : number;
 }
 
 const engine = new Engine();
 engine.useRng = false;
 
 function OsegRightPanel(props: OsegRightPanelProps) {
-    const { mapSvg, data, logic, onStateClicked } = props;
+    const { mapSvg, data, logic, onStateClicked, sideIndex, questionIndex } = props;
     const [rightNavBar, setRightNavBar] = useState<RightNavBar>(RightNavBar.Map);
 
     // Using this to make sure that the candidate information updates as you type in the editor
@@ -59,6 +63,9 @@ function OsegRightPanel(props: OsegRightPanelProps) {
     }, [data, mapSvg]);
 
     function getEditorArea() {
+
+        const side = data.scenarioSides[sideIndex];
+        const question = side.questions[questionIndex];
 
         if (rightNavBar == RightNavBar.Map) {
             return (
@@ -91,6 +98,15 @@ function OsegRightPanel(props: OsegRightPanelProps) {
             return (
                 <OsegSimulator theme={engine.scenarioController.theme} data={data} logic={logic} ></OsegSimulator>
             );
+        }
+        else if (rightNavBar == RightNavBar.Question) {
+            if (!question) {
+                return <div>No questions found for candidate!</div>
+            }
+
+            return (
+                <QuestionView currentQuestion={question} submitAnswer={() => {}} selectedAnswer={null} setSelectedAnswer={() => {}}theme={engine.scenarioController.theme} setShowMap={() => {}}></QuestionView>
+            )
         }
     }
 

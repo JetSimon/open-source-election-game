@@ -94,6 +94,9 @@ function OsegEditor() {
         return savedNames.map((name, index) => name || `Save ${index + 1}`);
     });
 
+    const [sideIndex, setSideIndex] = useState<number>(0);
+    const [questionIndex, setQuestionIndex] = useState<number>(0);
+
     async function loadTemplate(templateName : string) {
         const defaultData = await fetch("./scenarios/" + templateName + "/data.json");
         const defaultDataJson = await defaultData.json();
@@ -256,11 +259,11 @@ function OsegEditor() {
             {lastSaved != -1 && <p className="LastSaved">Last saved: {new Date(lastSaved).toTimeString()}</p>}
             <PanelGroup direction="horizontal" id="group">
             <Panel className="Panel" id="left-panel">
-                <OsegLeftPanel data={data} setBulkStateFunction={setBulkStateFunction} customCss={customCss} setCustomCss={setCustomCss} mapSvg={mapSvg} setMapSvg={setMapSvg} setData={setData} setLogic={setLogic} setDataString={setDataString} dataString={dataString} logic={logic}></OsegLeftPanel>
+                <OsegLeftPanel data={data} setBulkStateFunction={setBulkStateFunction} customCss={customCss} setCustomCss={setCustomCss} mapSvg={mapSvg} setMapSvg={setMapSvg} setData={setData} setLogic={setLogic} setDataString={setDataString} dataString={dataString} logic={logic} sideIndex={sideIndex} setSideIndex={setSideIndex} questionIndex={questionIndex} setQuestionIndex={setQuestionIndex}></OsegLeftPanel>
             </Panel>
             <PanelResizeHandle className="ResizeHandle" id="resize-handle" />
             <Panel className="Panel" id="right-panel">
-                <OsegRightPanel logic={logic} data={data} mapSvg={mapSvg} onStateClicked={onStateClicked}></OsegRightPanel>
+                <OsegRightPanel logic={logic} data={data} mapSvg={mapSvg} onStateClicked={onStateClicked} sideIndex={sideIndex} questionIndex={questionIndex}></OsegRightPanel>
             </Panel>
             </PanelGroup>
         </div>
