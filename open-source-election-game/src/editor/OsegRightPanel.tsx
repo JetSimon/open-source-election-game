@@ -100,6 +100,10 @@ function OsegRightPanel(props: OsegRightPanelProps) {
             );
         }
         else if (rightNavBar == RightNavBar.Question) {
+            if (!question) {
+                return <div>No questions found for candidate!</div>
+            }
+
             return (
                 <QuestionView currentQuestion={question} submitAnswer={() => {}} selectedAnswer={null} setSelectedAnswer={() => {}}theme={engine.scenarioController.theme} setShowMap={() => {}}></QuestionView>
             )
