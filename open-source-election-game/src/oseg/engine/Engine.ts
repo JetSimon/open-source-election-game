@@ -423,7 +423,7 @@ class Engine {
                         const diff = Math.abs(amount - stateIssueScore);
                         const dist = ((1 / (diff + 1)) - 0.75) * 4
                         const opinionDelta = dist * weight;
-                        state.changeCandidateStateModifier(candidate, -opinionDelta);
+                        state.changeCandidateStateModifier(candidate, opinionDelta);
                     }
                 }
                 else {
