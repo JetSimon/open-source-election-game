@@ -48,11 +48,15 @@ interface OsegLeftPanelProps {
     mapSvg: string;
     customCss: string;
     setBulkStateFunction : (f : BulkStateFunction) => void;
+    sideIndex: number;
+    setSideIndex: (sideIndex : number) => void;
+    questionIndex: number;
+    setQuestionIndex: (questionIndex : number) => void;
 }
 
 function OsegLeftPanel(props: OsegLeftPanelProps) {
 
-    const { data, setData, setLogic, setDataString, dataString, logic, mapSvg, setMapSvg, customCss, setCustomCss, setBulkStateFunction} = props;
+    const { data, setData, setLogic, setDataString, dataString, logic, mapSvg, setMapSvg, customCss, setCustomCss, setBulkStateFunction, sideIndex, setSideIndex, questionIndex, setQuestionIndex} = props;
 
     const [errorWithDataJson, setErrorWithDataJson] = useState<string>("");
     const [leftNavBar, setLeftNevBar] = useState<LeftNavBar>(LeftNavBar.DataJson);
@@ -256,7 +260,7 @@ function OsegLeftPanel(props: OsegLeftPanelProps) {
             return <IssuesEditor data={data} setData={setData}></IssuesEditor>
         }
         else if(leftNavBar == LeftNavBar.Questions) {
-            return <QuestionsEditor data={data} setData={setData}></QuestionsEditor>
+            return <QuestionsEditor data={data} setData={setData} sideIndex={sideIndex} setSideIndex={setSideIndex} questionIndex={questionIndex} setQuestionIndex={setQuestionIndex}></QuestionsEditor>
         }
         else if(leftNavBar == LeftNavBar.ScenarioDetails) {
             return <ScenarioDetailsEditor data={data} setData={setData}></ScenarioDetailsEditor>
