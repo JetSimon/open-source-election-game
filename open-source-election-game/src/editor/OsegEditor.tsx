@@ -158,6 +158,11 @@ function OsegEditor() {
     }
 
     async function load(fileIndex : number) {
+
+        if(!window.confirm("Are you sure you want to load? This will override existing data")) {
+            return;
+        }
+
         try {
             const indexKey = fileIndex === 1 ? "" : fileIndex;
             const autosaveLogic = localStorage.getItem(`editorLogic${indexKey}`);
