@@ -104,9 +104,9 @@ class ScenarioController {
                 question.enabled = true;
             }
 
-            if(question.onlyEnableAtStartIfRunningMateId != undefined) {
+            if(question.onlyEnableAtStartIfRunningMateId != undefined && question.onlyEnableAtStartIfRunningMateId != -1) {
                 const neededRunningMate = question.onlyEnableAtStartIfRunningMateId;
-                question.enabled = engine.runningMateId == neededRunningMate || neededRunningMate == -1;
+                question.enabled = engine.runningMateId == neededRunningMate;
             }
         }
 
