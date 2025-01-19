@@ -135,7 +135,8 @@ function GameView(props: GameViewProps) {
             answers: engine.getAnswers(),
             visits: engine.getVisits(),
             seed: engine.getSeed(),
-            isShuffled: engine.isShuffled
+            isShuffled: engine.isShuffled,
+            difficulty: engine.difficulty
           }
           onGameOver(highscoreModel);
         }
