@@ -27,7 +27,7 @@ function ElectionDescriptionView(props: ElectionDescriptionViewProps) {
   return (
     <div className="ElectionSelection">
     <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="ElectionSelectionBox">
-      <label>Choose your Difficulty: </label>
+      <label style={{fontWeight:"bold"}}>Choose your Difficulty: </label>
       <select value={engine.difficulty} onChange={(e) => {engine.difficulty = Number(e.target.value); refreshThemeAndMusic()}}>
         {getAllDifficultyValues().map((d) => <option key={d} value={d}>{getDisplayNameForDifficulty(d)}</option>)}
       </select>
