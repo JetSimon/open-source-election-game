@@ -3,7 +3,6 @@
     padding: 8px;
     padding-top: 6px;
     display: flex;
-    overflow-y: auto;
     place-items: top;
     justify-content: center;
     border-bottom: 1px white solid;
@@ -38,4 +37,5 @@
     padding: 4px;
     text-align: left;
     font-weight: normal;
+    min-height: 33vh;
 }
