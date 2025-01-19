@@ -18,22 +18,24 @@ function BottomBanner(props: BottomBannerProps) {
   const showBannerImage = bannerImageUrl != undefined && bannerImageUrl.trim() != "";
 
   return (
-    <div className="BottomBanner">
-      <div className="CandidateImageHolder">
-        <img src={playerCandidate.model.imageUrl}></img>
-      </div>
-      
-      <div className="BannerNamesBacking">
-        <p className="QuestionOf" style={{color:theme.primaryGameWindowTextColor}}>{questionString}</p>
-        <div style={{height: showBannerImage ? "auto" : "", color:theme.bottomBannerTextColor, backgroundColor:theme.bottomBannerBackgroundColor}} className="BannerNames">
-          {!showBannerImage && <div className="BannerName">{engine.scenarioController.bannerOverrideLine1 ?? playerCandidate.model.lastName}</div>}
-          {!showBannerImage && <div className="BannerName">{engine.scenarioController.bannerOverrideLine2 ?? runningMateModel.lastName}</div>}
-          {showBannerImage && <img className="BannerImage" src={bannerImageUrl}></img>}
+    <div className="BottomBannerHolder">
+      <div className="BottomBanner">
+        <div className="CandidateImageHolder">
+          <img src={playerCandidate.model.imageUrl}></img>
         </div>
-      </div>
+        
+        <div className="BannerNamesBacking">
+          <p className="QuestionOf" style={{color:theme.primaryGameWindowTextColor}}>{questionString}</p>
+          <div style={{height: showBannerImage ? "auto" : "", color:theme.bottomBannerTextColor, backgroundColor:theme.bottomBannerBackgroundColor}} className="BannerNames">
+            {!showBannerImage && <div className="BannerName">{engine.scenarioController.bannerOverrideLine1 ?? playerCandidate.model.lastName}</div>}
+            {!showBannerImage && <div className="BannerName">{engine.scenarioController.bannerOverrideLine2 ?? runningMateModel.lastName}</div>}
+            {showBannerImage && <img className="BannerImage" src={bannerImageUrl}></img>}
+          </div>
+        </div>
 
-      <div className="RunningMateImageHolder">
-        <img src={runningMateModel.imageUrl}></img>
+        <div className="RunningMateImageHolder">
+          <img src={runningMateModel.imageUrl}></img>
+        </div>
       </div>
     </div>
   );
