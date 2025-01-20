@@ -990,6 +990,7 @@ class Engine {
      * 
      * @param results 
      * @returns true if no one got >= total EV / 2
+     * @category Ending Utility Functions
      */
     isDeadlock(results: FinalResultsModel) {
         for (const ev of results.electoralVotes.values()) {
