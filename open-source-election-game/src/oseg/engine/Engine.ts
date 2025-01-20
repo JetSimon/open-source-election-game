@@ -11,7 +11,7 @@ import ThemeModel from "./models/ThemeModel";
 import SongModel from "./models/SongModel";
 import { makeSeed, Seed, seededRandom } from "../utils/MathUtils";
 import ScenarioSideModel from "./models/ScenarioSideModel";
-import {Difficulty, getMultiplierFromDifficulty} from "./models/Difficulty";
+import { Difficulty, getMultiplierFromDifficulty } from "./models/Difficulty";
 
 // Just used when debugging/trying to see if more extreme answers help more
 const tuningMultiplier = (x: number) => 4 * x;//Math.pow(x, 3);
@@ -30,7 +30,7 @@ enum GameState {
  */
 class Engine {
 
-    difficulty : Difficulty = Difficulty.Normal;
+    difficulty: Difficulty = Difficulty.Normal;
 
     gameState = GameState.Uninitialized;
 
@@ -59,62 +59,62 @@ class Engine {
     /**
      * Id of the player's running mate. -1 if unset.
      */
-    runningMateId : number = -1;
+    runningMateId: number = -1;
 
     /**
      * Any variable in counters will be shown on screen. Only supports number variables.
      * Use setCounter, setCounter methods
      */
-    counters : Map<string, number> = new Map();
+    counters: Map<string, number> = new Map();
 
     /**
      * Holds the display names for counters, if a display name is not defined it defaults to the counter's key + value
      */
-    counterDisplayNames : Map<string, string> = new Map();
+    counterDisplayNames: Map<string, string> = new Map();
 
     /**
      * Is the player currently waiting to pick a state before moving on to the next question?
      */
-    waitingToPickState : boolean = false;
+    waitingToPickState: boolean = false;
 
     /**
      * Called when the user presses "next"
      */
-    onCandidateSelectionStarted : null | ((engine : Engine) => void) = null;
+    onCandidateSelectionStarted: null | ((engine: Engine) => void) = null;
 
     /**
      * Called when the scenario side is first set (played has chose their running mate and pressed start game)
      */
-    onScenarioStarted : null | ((engine : Engine) => void) = null;
+    onScenarioStarted: null | ((engine: Engine) => void) = null;
 
     /**
      * Called when the game ends and ending slides/results are calculated. Is set from the method of the same name in a scenario's logic.js
      */
-    createEnding : null | ((engine : Engine, results : FinalResultsModel) => EndingModel) = null;
+    createEnding: null | ((engine: Engine, results: FinalResultsModel) => EndingModel) = null;
 
     /**
      * Called when the an answer is chosen. Is set from the method of the same name in a scenario's logic.js. Used for CYOA purposes.
      */
-    onAnswerPicked : null | ((engine : Engine, answerPicked : AnswerModel) => void) = null;
+    onAnswerPicked: null | ((engine: Engine, answerPicked: AnswerModel) => void) = null;
 
     /**
      * To be hooked into from a host site to know when an achievement is unlocked.
      */
-    onAchievementUnlocked : null | ((engine : Engine, achievementName : string) => void) = null;
+    onAchievementUnlocked: null | ((engine: Engine, achievementName: string) => void) = null;
 
     /**
      * Range of RNG.
      */
-    rng : number = 0.025;
-    useRng : boolean = true;
+    rng: number = 0.025;
+    useRng: boolean = true;
     seed = Date.now().toString();
-    randomState : Seed = makeSeed(this.seed);
+    randomState: Seed = makeSeed(this.seed);
     random = seededRandom(this.randomState);
 
     isShuffled = false;
 
-    answers : number[] = [];
-    visits : number[] = [];
+    answers: number[] = [];
+    visits: number[] = [];
 
     logToConsole: boolean = true;
 
@@ -125,7 +125,7 @@ class Engine {
      */
     runningMateWeight = 0.5;
 
-    setSeed(seed : string) {
+    setSeed(seed: string) {
         this.seed = seed;
         this.randomState = makeSeed(this.seed);
         this.random = seededRandom(this.randomState);
@@ -148,7 +148,7 @@ class Engine {
      * @param newScenario The ScenarioModel to load
      * @param asObserver If this is true, then the margins are also loaded and the GameState is set to Election. Used for when you want to view the map without actually playing the game
      */
-    loadScenario(newScenario: ScenarioModel, asObserver : boolean) {
+    loadScenario(newScenario: ScenarioModel, asObserver: boolean) {
         newScenario = JSON.parse(JSON.stringify(newScenario));
         this.currentQuestionIndex = 0;
         this.runningMateId = -1;
@@ -158,7 +158,7 @@ class Engine {
         this.counters = new Map<string, number>();
         this.counterDisplayNames = new Map<string, string>();
 
-        if(asObserver == true) {
+        if (asObserver == true) {
             this.updateStates();
             this.gameState = GameState.Election;
         }
@@ -171,7 +171,7 @@ class Engine {
      * @param runningMateId The id of the running mate of the player.
      * @returns 
      */
-    setScenarioSide(newSideIndex: number, runningMateId : number, isShuffled : boolean) {
+    setScenarioSide(newSideIndex: number, runningMateId: number, isShuffled: boolean) {
         if (this.currentScenario == null) {
             console.error("Cannot side current scenario side, current scenario is null");
             return;
@@ -205,13 +205,13 @@ class Engine {
         this.gameState = GameState.Election;
         this.updateStates();
 
-        if(this.onScenarioStarted != null) {
+        if (this.onScenarioStarted != null) {
             try {
                 this.onScenarioStarted(this);
             }
-            catch(e) {
+            catch (e) {
                 alert("Error while running onScenarioStarted from logic.js, see console for more details");
-                console.error("onScenarioStarted error:", e)
+                console.error("onScenarioStarted error:", e);
             }
         }
     }
@@ -220,20 +220,20 @@ class Engine {
      * @category Utility
      * @returns 
      */
-    getCurrentSide() : ScenarioSideModel | null {
+    getCurrentSide(): ScenarioSideModel | null {
 
-        if(this.scenarioController.model.scenarioSides.length == 0) {
+        if (this.scenarioController.model.scenarioSides.length == 0) {
             return null;
         }
 
         return this.scenarioController.model.scenarioSides[this.sideIndex];
     }
-    
+
     /**
      * @category Utility
      * @returns 
      */
-    makeEmptyCandidateModel() : CandidateModel {
+    makeEmptyCandidateModel(): CandidateModel {
         return {
             id: -1,
             firstName: "Candidate",
@@ -246,7 +246,7 @@ class Engine {
             imageUrl: "",
             runningMateIds: [],
             startingGlobalMultiplier: 0,
-        }
+        };
     }
 
     /**
@@ -255,13 +255,13 @@ class Engine {
      */
     getPlayerCandidateController(): CandidateController {
         const currentSide = this.getCurrentSide();
-        if(currentSide != null) {
+        if (currentSide != null) {
             const playerCans = this.scenarioController.getCandidates().filter((x) => x.getId() == currentSide.playerId);
             if (playerCans.length > 0) {
                 return playerCans[0];
             }
         }
-       
+
         console.error("Could not get player candidate!");
         return new CandidateController(this.makeEmptyCandidateModel());
     }
@@ -279,8 +279,8 @@ class Engine {
      * @param candidateId 
      * @returns 
      */
-    getCandidateModelById(candidateId : number): CandidateModel {
-        if(this.currentScenario == null) {
+    getCandidateModelById(candidateId: number): CandidateModel {
+        if (this.currentScenario == null) {
             console.error("Current scenario is null, cannot get running mate!");
             return this.makeEmptyCandidateModel();
         }
@@ -297,7 +297,7 @@ class Engine {
      * @category Utility
      * @returns Returns the QuestionModel of the current question, if the currentQuestionIndex is invalid, returns null
      */
-    getCurrentQuestion() : QuestionModel | null {
+    getCurrentQuestion(): QuestionModel | null {
         if (this.currentQuestionIndex < 0 || this.currentQuestionIndex >= this.scenarioController.questions.length) {
             return null;
         }
@@ -324,9 +324,9 @@ class Engine {
 
             const playerController = this.getPlayerCandidateController();
             runningMateMap.set(playerController.getId(), this.runningMateId);
-            for(const candidate of this.scenarioController.getCandidates()) {
-                if(candidate != playerController) {
-                    if(candidate.model.runningMateIds.length > 0) {
+            for (const candidate of this.scenarioController.getCandidates()) {
+                if (candidate != playerController) {
+                    if (candidate.model.runningMateIds.length > 0) {
                         runningMateMap.set(candidate.getId(), candidate.model.runningMateIds[0]);
                     }
                 }
@@ -397,17 +397,17 @@ class Engine {
                 }
                 else if (answerEffectType == AnswerEffectType.Issue) {
                     const candidate = this.scenarioController.getCandidateByCandidateId(answerEffect.candidateId);
-                    if(candidate != undefined && candidate != null) {
+                    if (candidate != undefined && candidate != null) {
                         candidate.changeIssueScore(answerEffect.issueId, answerAmount);
                     }
                     else {
                         this.getPlayerCandidateController().changeIssueScore(answerEffect.issueId, answerAmount);
                     }
-                    
+
                 }
                 else if (answerEffectType == AnswerEffectType.State) {
                     const state = this.scenarioController.getStateControllerByStateId(answerEffect.stateId);
-                    if(state != null) {
+                    if (state != null) {
                         state.changeCandidateStateModifier(answerEffect.candidateId, answerAmount);
                     }
                     else {
@@ -415,13 +415,13 @@ class Engine {
                     }
                 }
                 else if (answerEffectType == AnswerEffectType.SetQuestionEnabled) {
-                    if(answerEffect.questionEnabled != undefined && answerEffect.questionId != undefined) {
-                        for(const question of this.scenarioController.questions.filter((x) => x.id == answerEffect.questionId)) {
+                    if (answerEffect.questionEnabled != undefined && answerEffect.questionId != undefined) {
+                        for (const question of this.scenarioController.questions.filter((x) => x.id == answerEffect.questionId)) {
                             question.enabled = answerEffect.questionEnabled;
                         }
                     }
                     else {
-                        console.error("Cannot enable question as questionEnabled or questionId is undefined")
+                        console.error("Cannot enable question as questionEnabled or questionId is undefined");
                     }
                 }
                 else if (answerEffectType == AnswerEffectType.TctIssue) {
@@ -430,16 +430,16 @@ class Engine {
                     const candidate = answerEffect.candidateId;
                     const issue = answerEffect.issueId;
 
-                    for(const state of this.scenarioController.getStates()) {
+                    for (const state of this.scenarioController.getStates()) {
                         const stateIssueScore = state.issueScores.getIssueScoreForIssue(issue);
                         const diff = Math.abs(amount - stateIssueScore);
-                        const dist = ((1 / (diff + 1)) - 0.75) * 4
+                        const dist = ((1 / (diff + 1)) - 0.75) * 4;
                         const opinionDelta = dist * weight;
                         state.changeCandidateStateModifier(candidate, opinionDelta);
                     }
                 }
                 else {
-                    console.error("Got unknown AnswerEffect type", answerEffectType)
+                    console.error("Got unknown AnswerEffect type", answerEffectType);
                 }
             }
             catch (e) {
@@ -450,15 +450,15 @@ class Engine {
 
         this.updateStates();
 
-        if(this.onAnswerPicked != null) {
+        if (this.onAnswerPicked != null) {
             try {
                 this.onAnswerPicked(this, selectedAnswer);
             }
-            catch(e){
+            catch (e) {
                 alert("Error while running onAnswerPicked, see console for details");
-                console.error("onAnswerPicked error:", e)
+                console.error("onAnswerPicked error:", e);
             }
-            
+
         }
     }
 
@@ -469,7 +469,7 @@ class Engine {
      * @param key 
      * @returns The localization
      */
-    getLocalization(key : string) : string {
+    getLocalization(key: string): string {
         return this.localizations.get(key) ?? key;
     }
 
@@ -480,21 +480,20 @@ class Engine {
      * @param oldValue 
      * @param newValue 
      */
-    setLocalization(oldValue : string, newValue : string) {
+    setLocalization(oldValue: string, newValue: string) {
         this.localizations.set(oldValue, newValue);
     }
 
-     /**
-     * Increments question index until an enabled question is found
-     * @category Utility
-     */
+    /**
+    * Increments question index until an enabled question is found
+    * @category Utility
+    */
     goToNextValidQuestion() {
-        function shouldSkipQuestion(question : QuestionModel) {
+        function shouldSkipQuestion(question: QuestionModel) {
             return question.enabled != undefined && !question.enabled;
         }
 
-        while(this.currentQuestionIndex < this.scenarioController.questions.length && shouldSkipQuestion(this.scenarioController.questions[this.currentQuestionIndex]))
-        {
+        while (this.currentQuestionIndex < this.scenarioController.questions.length && shouldSkipQuestion(this.scenarioController.questions[this.currentQuestionIndex])) {
             this.currentQuestionIndex++;
         }
     }
@@ -564,7 +563,7 @@ class Engine {
         return {
             "popularVotes": popularVotes,
             "electoralVotes": electoralVotes,
-            "candidates":this.scenarioController.getCandidates(),
+            "candidates": this.scenarioController.getCandidates(),
             "totalElectoralVotes": this.getTotalElectoralVotes(),
             "totalPopularVotes": this.getTotalPopularVotes()
         };
@@ -576,30 +575,30 @@ class Engine {
      * @returns 
      */
     getEnding(): EndingModel {
-        if(this.createEnding == null) {
+        if (this.createEnding == null) {
             return {
                 slides: [{
                     imageUrl: "",
                     endingText: "createEnding is null. Make sure to override createEnding in logic.tsx",
                     endingHeader: "Error!"
                 }]
-            }
+            };
         }
 
         try {
             const ending = this.createEnding(this, this.getFinalResults());
             return ending;
         }
-        catch(e : unknown) {
+        catch (e: unknown) {
             alert("Error while running createEnding, please check your logic.js code and the console for more details");
-            console.error("createEnding error:", e)
+            console.error("createEnding error:", e);
 
-            let message : string = "Error";
+            let message: string = "Error";
 
-            if(typeof e === "string") {
+            if (typeof e === "string") {
                 message = e;
             }
-            else if(e instanceof Error) {
+            else if (e instanceof Error) {
                 message = e.message;
             }
 
@@ -609,7 +608,7 @@ class Engine {
                     endingText: message,
                     endingHeader: "Error!"
                 }]
-            }
+            };
         }
     }
 
@@ -617,7 +616,7 @@ class Engine {
      * @category Utility
      * @returns Returns a Set of ids for candidates who have valid sides in the current ScenarioModel
      */
-    getSetOfIdsOfCandidatesWithSides() : Set<number> {
+    getSetOfIdsOfCandidatesWithSides(): Set<number> {
         if (this.currentScenario == null) {
             return new Set<number>();;
         }
@@ -638,12 +637,12 @@ class Engine {
      * @category Core
      * @param achievementName 
      */
-    unlockAchievement(achievementName : string) {
-        if(this.onAchievementUnlocked != null) {
+    unlockAchievement(achievementName: string) {
+        if (this.onAchievementUnlocked != null) {
             this.onAchievementUnlocked(this, achievementName);
         }
         else {
-            if(this.logToConsole) {
+            if (this.logToConsole) {
                 console.warn("Did not unlock achievement with name '" + achievementName + "' because onAchievementUnlocked is null");
             }
         }
@@ -655,7 +654,7 @@ class Engine {
      * @category CYOA Utility Functions
      * @param scenarioName 
      */
-    setScenarioName(scenarioName : string) {
+    setScenarioName(scenarioName: string) {
         this.scenarioController.model.scenarioName = scenarioName;
     }
 
@@ -663,7 +662,7 @@ class Engine {
      * @category CYOA Utility Functions
      * @param quote 
      */
-    setQuote(quote : string) {
+    setQuote(quote: string) {
         this.scenarioController.theme.quote = quote;
     }
 
@@ -673,8 +672,8 @@ class Engine {
      * @param key 
      * @param displayName 
      */
-    setCounterDisplayName(key : string, displayName : string) {
-        if(!this.counters.has(key)) {
+    setCounterDisplayName(key: string, displayName: string) {
+        if (!this.counters.has(key)) {
             console.error("Counters does not have key " + key + " to set display name for");
             return;
         }
@@ -688,7 +687,7 @@ class Engine {
      * @param key 
      * @param amount 
      */
-    setCounter(key : string, amount : number) {
+    setCounter(key: string, amount: number) {
         this.counters.set(key, amount);
     }
 
@@ -697,7 +696,7 @@ class Engine {
      * @param key 
      * @returns Value in counters with key 'key' or -1 if that key does not exist
      */
-    getCounter(key : string) : number {
+    getCounter(key: string): number {
         return this.counters.get(key) ?? -1;
     }
 
@@ -707,8 +706,8 @@ class Engine {
      * @param amount 
      * @category CYOA Utility Functions
      */
-    addCounter(key : string, amount : number) {
-        if(!this.counters.has(key)) {
+    addCounter(key: string, amount: number) {
+        if (!this.counters.has(key)) {
             console.error("Tried to add to counter with key " + key + " that does not exist. Doing nothing.");
             return;
         }
@@ -720,7 +719,7 @@ class Engine {
      * @category CYOA Utility Functions
      * @param url 
      */
-    setNewBackgroundImage(url : string) {
+    setNewBackgroundImage(url: string) {
         this.scenarioController.theme.backgroundImageUrl = url;
     }
 
@@ -728,7 +727,7 @@ class Engine {
      * @category CYOA Utility Functions
      * @param url 
      */
-    setNewHeaderImage(url : string) {
+    setNewHeaderImage(url: string) {
         this.scenarioController.theme.headerImageUrl = url;
     }
 
@@ -738,11 +737,11 @@ class Engine {
      * @param url 
      * @returns 
      */
-    setNewPlayerCandidateImage(url : string) {
+    setNewPlayerCandidateImage(url: string) {
         const playerIndex = this.scenarioController.candidateControllers.indexOf(this.getPlayerCandidateController());
-        
-        if(playerIndex == -1) {
-            console.error("While trying to set new candidate image, could not get player candidate index")
+
+        if (playerIndex == -1) {
+            console.error("While trying to set new candidate image, could not get player candidate index");
             return;
         }
 
@@ -756,11 +755,11 @@ class Engine {
      * @returns 
      * @category CYOA Utility Functions
      */
-    setNewPlayerCandidateName(firstName : string, lastName : string) {
+    setNewPlayerCandidateName(firstName: string, lastName: string) {
         const playerIndex = this.scenarioController.candidateControllers.indexOf(this.getPlayerCandidateController());
-        
-        if(playerIndex == -1) {
-            console.error("While trying to set new candidate name, could not get player candidate index")
+
+        if (playerIndex == -1) {
+            console.error("While trying to set new candidate name, could not get player candidate index");
             return;
         }
 
@@ -773,7 +772,7 @@ class Engine {
      * @category CYOA Utility Functions
      * @param url
      */
-    setNewRunningMateImage(url : string) {
+    setNewRunningMateImage(url: string) {
         this.getPlayerRunningMateModel().imageUrl = url;
     }
 
@@ -783,7 +782,7 @@ class Engine {
      * @param lastName 
      * @category CYOA Utility Functions
      */
-    setNewRunningMateName(firstName : string, lastName : string) {
+    setNewRunningMateName(firstName: string, lastName: string) {
         this.getPlayerRunningMateModel().firstName = firstName;
         this.getPlayerRunningMateModel().lastName = lastName;
     }
@@ -792,7 +791,7 @@ class Engine {
      * @category CYOA Utility Functions
      * @param newTheme 
      */
-    setNewTheme(newTheme : ThemeModel) {
+    setNewTheme(newTheme: ThemeModel) {
         this.scenarioController.theme = newTheme;
     }
 
@@ -801,13 +800,13 @@ class Engine {
      * @param answerIds array of answer id numbers to check if answered
      * @returns true if all answers have been answers
      */
-    hasAnswered(answerIds : number[]) {
+    hasAnswered(answerIds: number[]) {
         const answered = new Set(this.answers);
-        for(const answerId of answerIds) {
-            if(!answered.has(answerId)) {
+        for (const answerId of answerIds) {
+            if (!answered.has(answerId)) {
                 return false;
             }
-        } 
+        }
         return true;
     }
 
@@ -816,13 +815,13 @@ class Engine {
      * @param answerIds array of answer id numbers to check if any answered
      * @returns true if any answers have been answers
      */
-    hasAnsweredAny(answerIds : number[]) {
+    hasAnsweredAny(answerIds: number[]) {
         const answered = new Set(this.answers);
-        for(const answerId of answerIds) {
-            if(answered.has(answerId)) {
+        for (const answerId of answerIds) {
+            if (answered.has(answerId)) {
                 return true;
             }
-        } 
+        }
         return false;
     }
 
@@ -832,7 +831,7 @@ class Engine {
      * @param index The index before the question you want to insert. For example if you are on index 3 and you want to insert a question at index 6, put index 5
      * @category CYOA Utility Functions
      */
-    insertNewQuestionAfterIndex(question : QuestionModel, index : number) {
+    insertNewQuestionAfterIndex(question: QuestionModel, index: number) {
         this.scenarioController.questions.splice(index + 1, 0, question);
     }
 
@@ -841,7 +840,7 @@ class Engine {
      * @param question The question to insert
      * @category CYOA Utility Functions
      */
-    insertNewQuestionNext(question : QuestionModel) {
+    insertNewQuestionNext(question: QuestionModel) {
         this.insertNewQuestionAfterIndex(question, this.currentQuestionIndex);
     }
 
@@ -850,7 +849,7 @@ class Engine {
      * @param questionId The id of the question to remove
      * @category CYOA Utility Functions
      */
-    removeQuestionById(questionId : number) {
+    removeQuestionById(questionId: number) {
         this.scenarioController.questions = this.scenarioController.questions.filter((x) => x.id != questionId);
     }
 
@@ -860,7 +859,7 @@ class Engine {
      * @param amount 
      * @category CYOA Utility Functions
      */
-    addCandidateGlobalMultiplier(id : number, amount : number) {
+    addCandidateGlobalMultiplier(id: number, amount: number) {
         this.scenarioController.changeCandidateGlobalModifier(id, amount);
     }
 
@@ -870,7 +869,7 @@ class Engine {
      * @param line2 
      * @category CYOA Utility Functions
      */
-    setBottomBannerOverrideText(line1 : string, line2 : string) {
+    setBottomBannerOverrideText(line1: string, line2: string) {
         this.setBottomBannerOverrideTextLine1(line1);
         this.setBottomBannerOverrideTextLine2(line2);
     }
@@ -880,7 +879,7 @@ class Engine {
      * @param line1 
      * @category CYOA Utility Functions
      */
-    setBottomBannerOverrideTextLine1(line1 : string) {
+    setBottomBannerOverrideTextLine1(line1: string) {
         this.scenarioController.bannerOverrideLine1 = line1;
     }
 
@@ -889,7 +888,7 @@ class Engine {
      * @param line2 
      * @category CYOA Utility Functions
      */
-    setBottomBannerOverrideTextLine2(line2 : string) {
+    setBottomBannerOverrideTextLine2(line2: string) {
         this.scenarioController.bannerOverrideLine2 = line2;
     }
 
@@ -899,9 +898,9 @@ class Engine {
      * @param isEnabled 
      * @category CYOA Utility Functions
      */
-    setQuestionEnabledById(id : number, isEnabled : boolean) {
-        for(const question of this.scenarioController.questions) {
-            if(question.id == id) {
+    setQuestionEnabledById(id: number, isEnabled: boolean) {
+        for (const question of this.scenarioController.questions) {
+            if (question.id == id) {
                 question.enabled = isEnabled;
             }
         }
@@ -941,7 +940,7 @@ class Engine {
      * @returns The player candidate's number of popular votes, if player candidate is undefined then returns 0
      * @category Ending Utility Functions
      */
-    getPlayerPv(results : FinalResultsModel) {
+    getPlayerPv(results: FinalResultsModel) {
         return results.popularVotes.get(this.getPlayerCandidateController().getId()) ?? 0;
     }
 
@@ -951,18 +950,18 @@ class Engine {
      * @returns The player candidate's number of electoral votes, if player candidate is undefined then returns 0
      * @category Ending Utility Functions
      */
-    getPlayerEv(results : FinalResultsModel) {
+    getPlayerEv(results: FinalResultsModel) {
         return results.electoralVotes.get(this.getPlayerCandidateController().getId()) ?? 0;
     }
 
-    
+
     /**
      * 
      * @param results The results of the election
      * @returns Did the player have the most PV (note not > 50%, just the most)
      * @category Ending Utility Functions
      */
-    playerWonPv(results : FinalResultsModel) {
+    playerWonPv(results: FinalResultsModel) {
         const mostPv = Math.max(...Array.from(results.popularVotes.values()));
         return this.getPlayerPv(results) == mostPv;
     }
@@ -973,18 +972,33 @@ class Engine {
      * @returns Is player EV > total EV / 2
      * @category Ending Utility Functions
      */
-    playerWonEv(results : FinalResultsModel) {
+    playerWonEv(results: FinalResultsModel) {
         return this.getPlayerEv(results) > this.getTotalElectoralVotes() / 2;
     }
-    
+
     /**
      * 
      * @param results The results of the election
      * @returns Was the player's # of electoral votes >= amount?
      * @category Ending Utility Functions
      */
-    playerEvAtLeast(results : FinalResultsModel, amount : number) {
+    playerEvAtLeast(results: FinalResultsModel, amount: number) {
         return this.getPlayerEv(results) >= amount;
+    }
+
+    /**
+     * 
+     * @param results 
+     * @returns true if no one got >= total EV / 2
+     */
+    isDeadlock(results: FinalResultsModel) {
+        for (const ev of results.electoralVotes.values()) {
+            if (ev > this.getTotalElectoralVotes() / 2) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**
@@ -993,7 +1007,7 @@ class Engine {
      * @returns The ratio of PV the player got (range [0, 1])
      * @category Ending Utility Functions
      */
-    getPlayerPvPercentage(results : FinalResultsModel) {
+    getPlayerPvPercentage(results: FinalResultsModel) {
         const pv = results.popularVotes.get(this.getPlayerCandidateController().getId()) ?? 0;
         return pv / this.getTotalPopularVotes();
     }
@@ -1003,8 +1017,8 @@ class Engine {
      * @param music 
      * @category Ending Utility Functions
      */
-    setNewMusic(music : SongModel[]) {
-        if(this.currentScenario != null) {
+    setNewMusic(music: SongModel[]) {
+        if (this.currentScenario != null) {
             this.currentScenario.music = music;
         }
     }
@@ -1014,8 +1028,8 @@ class Engine {
      * @param song 
      * @category Ending Utility Functions
      */
-    addNewSong(song : SongModel) {
-        if(this.currentScenario != null) {
+    addNewSong(song: SongModel) {
+        if (this.currentScenario != null) {
             this.currentScenario.music.push(song);
         }
     }
@@ -1027,15 +1041,15 @@ class Engine {
      * @param stateId 
      * @returns 
      */
-    candidateWonState(candidateId : number, stateId : number) : boolean {
+    candidateWonState(candidateId: number, stateId: number): boolean {
         const state = this.scenarioController.getStateControllerByStateId(stateId);
-        if(state == null) {
+        if (state == null) {
             console.error("No state found with id " + stateId + " when checking who won. Returning false.");
             return false;
         }
 
         const highest = state.getHighestCandidate(this);
-        if(highest == null) {
+        if (highest == null) {
             console.error("Highest candidate was null while trying to tell who won state. Returning false.");
             return false;
         }
