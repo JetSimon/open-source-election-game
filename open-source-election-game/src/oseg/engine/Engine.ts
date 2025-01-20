@@ -578,7 +578,6 @@ class Engine {
      * @returns 
      */
     getEnding(): EndingModel {
-        console.log("visits", this.visits);
         if (this.createEnding == null) {
             return {
                 slides: [{
