@@ -140,11 +140,11 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
       {canBeShuffled && <input id="shuffled" type="checkbox" checked={isShuffled} onChange={(e) => setIsShuffled(e.target.checked)}></input>}
       {canBeShuffled && <br></br>}
 
-      {!choosingRunningMate && <button onClick={() => setSelectingCandidate(false)}>Prev</button>}
-      {!choosingRunningMate && <button onClick={() => setChoosingRunningMate(true)}>Next</button>}
+      {!choosingRunningMate && <button onClick={() => setSelectingCandidate(false)}>{engine.getLocalization("Prev")}</button>}
+      {!choosingRunningMate && <button autoFocus onClick={() => setChoosingRunningMate(true)}>{engine.getLocalization("Next")}</button>}
 
-      {choosingRunningMate && <button onClick={() => setChoosingRunningMate(false)}>Prev</button>}
-      {choosingRunningMate && <button onClick={startGame}>Start</button>}
+      {choosingRunningMate && <button onClick={() => setChoosingRunningMate(false)}>{engine.getLocalization("Prev")}</button>}
+      {choosingRunningMate && <button autoFocus onClick={startGame}>{engine.getLocalization("Start")}</button>}
     </div>
   );
 }

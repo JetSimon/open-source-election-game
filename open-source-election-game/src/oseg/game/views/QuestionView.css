@@ -22,6 +22,10 @@
     font-weight: normal;
 }
 
+.Answer input:focus {
+    outline:none;
+}
+
 .Answer label:hover {
     font-weight: bold;
 }

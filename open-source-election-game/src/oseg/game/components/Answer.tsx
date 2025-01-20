@@ -5,10 +5,12 @@ interface AnswerProps {
     answerModel: AnswerModel;
     selectedAnswer: AnswerModel | null;
     setSelectedAnswer: (answerModel: AnswerModel) => void;
+    showingFeedbackBox : boolean;
+    index : number;
 }
 
 function Answer(props: AnswerProps) {
-    const { answerId, answerModel, selectedAnswer, setSelectedAnswer } = props;
+    const { answerId, answerModel, selectedAnswer, setSelectedAnswer, showingFeedbackBox, index } = props;
 
     function isSelected() {
         return answerModel == selectedAnswer;
@@ -22,7 +24,7 @@ function Answer(props: AnswerProps) {
 
     return (
         <div className="Answer">
-            <input id={answerId} onChange={handleOnChange} checked={isSelected()} type="radio"></input>
+            <input autoFocus={!showingFeedbackBox && index == 0} id={answerId} onChange={handleOnChange} checked={isSelected()} type="radio"></input>
             <label htmlFor={answerId} dangerouslySetInnerHTML={{__html:answerModel.description}}></label>
         </div>
     );

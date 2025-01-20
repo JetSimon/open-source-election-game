@@ -58,6 +58,13 @@ function GameView(props: GameViewProps) {
       if(e.key == "!") {
         setShowDebugMenu(x => !x);
       }
+
+      if(engine.waitingToPickState) {
+        if(e.key == "Enter") {
+          const states = engine.scenarioController.getStates();
+          onStateClicked(states[Math.floor(Math.random() * states.length)]);
+        }
+      }
     }
 
     window.addEventListener("keydown", checkForAutoplay);
@@ -210,6 +217,7 @@ function GameView(props: GameViewProps) {
           selectedAnswer={selectedAnswer}
           setSelectedAnswer={setSelectedAnswer}
           theme={theme}
+          showingFeedbackBox={showingFeedbackBox}
         ></QuestionView>
         )
       )}

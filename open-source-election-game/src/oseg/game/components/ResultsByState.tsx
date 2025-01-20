@@ -16,7 +16,7 @@ interface ResultSorter {
     sorter : (a : StateController, b : StateController) => number;
 }
 
-function createCandidateSorter(engine : Engine, candidate : CandidateController) : ResultSorter {
+function createCandidateSorter(candidate : CandidateController) : ResultSorter {
     const candidateName = candidate.getFullName();
     const id = candidate.getId();
     const name = "Highest " + candidateName + " %";
@@ -52,7 +52,7 @@ function ResultsByState(props : ResultsByStateProps) {
     })
 
     for(const candidate of engine.scenarioController.getCandidates()) {
-        sorters.push(createCandidateSorter(engine, candidate))
+        sorters.push(createCandidateSorter(candidate))
     }
 
     const states = engine.scenarioController.getStates().sort(selectedSorter.sorter);

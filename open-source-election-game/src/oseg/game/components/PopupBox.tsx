@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import ThemeModel from "../../engine/models/ThemeModel";
 import "./PopupBox.css"
 
@@ -13,7 +14,28 @@ interface PopupBoxProps {
 }
 
 function PopupBox(props : PopupBoxProps) {
+
+    const buttonRef = useRef<HTMLButtonElement>(null);
+
+    function clickClose() {
+        setIsShowing(false);
+        onClosed();
+    }
+
     const {title, body, buttonText, isShowing, setIsShowing, image, theme, onClosed} = props;
+
+    useEffect(() => {
+        const handle = setTimeout(() => {
+            if(buttonRef.current && isShowing) {
+                buttonRef.current.focus();
+            }
+        }, 100);
+
+        return () => {
+            clearTimeout(handle);
+        }
+    }, [isShowing])
+
     return (
         <>
         <div className="PopupBoxBackground" style={isShowing ? {} : {display : "none"}}></div>
@@ -21,7 +43,7 @@ function PopupBox(props : PopupBoxProps) {
             <h2>{title}</h2>
             {image != "" && <img src={image} className="PopupImage"></img>}
             <div className="PopupBoxDesc" dangerouslySetInnerHTML={{__html: body}}></div>
-            <button onClick={() => {setIsShowing(false); onClosed()}}>{buttonText}</button>
+            <button ref={buttonRef} autoFocus={isShowing} onClick={() => clickClose()}>{buttonText}</button>
         </div>
         </>
     );

@@ -37,7 +37,7 @@ function ElectionDescriptionView(props: ElectionDescriptionViewProps) {
         </div>
       </div>
     </div>
-    <button onClick={next}>{engine.getLocalization("Next")}</button>
+    <button autoFocus onClick={next}>{engine.getLocalization("Next")}</button>
     </div>
   );
 }
