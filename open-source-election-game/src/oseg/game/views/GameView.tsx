@@ -193,8 +193,6 @@ function GameView(props: GameViewProps) {
     return <p>Current question is null</p>;
   }
 
-  const questionString = engine.isGameOver() ? "" : "Question " + (engine.currentQuestionNumberVisualOnly) + " of " + engine.getNumberOfEnabledQuestions();
-
   return (
     <div className="GameView">
       {engine.isGameOver() ? 
@@ -227,7 +225,7 @@ function GameView(props: GameViewProps) {
       {engine.isGameOver() && !donePlayingMapAnimation && <button className="ToggleMapButton" onClick={() => setDonePlayingMapAnimation(true)}>Skip to Results</button>}
       </div>
       {!engine.isGameOver() && engine.waitingToPickState && <p className="ChooseState" style={{color:theme.primaryGameWindowTextColor}}>Click on a state to visit</p>}
-      <BottomBanner questionString={questionString} theme={theme} engine={engine}></BottomBanner>
+      <BottomBanner theme={theme} engine={engine}></BottomBanner>
       <PopupBox
         theme={theme}
         title="Feedback"

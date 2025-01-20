@@ -5,11 +5,12 @@ import "./BottomBanner.css";
 interface BottomBannerProps {
   engine: Engine;
   theme: ThemeModel;
-  questionString : string;
 }
 
 function BottomBanner(props: BottomBannerProps) {
-  const { engine, theme, questionString } = props;
+  const { engine, theme } = props;
+
+  const questionString = engine.isGameOver() ? "" : "Question " + (engine.currentQuestionNumberVisualOnly) + " of " + engine.getNumberOfEnabledQuestions();
 
   const playerCandidate = engine.getPlayerCandidateController();
   const runningMateModel = engine.getPlayerRunningMateModel();
