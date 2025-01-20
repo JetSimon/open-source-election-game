@@ -182,6 +182,9 @@ class Engine {
             return;
         }
 
+        // Make sure seed is consistent
+        this.setSeed(this.seed);
+
         this.isShuffled = isShuffled;
 
         this.answers = [];
@@ -575,6 +578,7 @@ class Engine {
      * @returns 
      */
     getEnding(): EndingModel {
+        console.log("visits", this.visits);
         if (this.createEnding == null) {
             return {
                 slides: [{
