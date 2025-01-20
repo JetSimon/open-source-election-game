@@ -73,7 +73,7 @@ function ResultsByState(props : ResultsByStateProps) {
     const candidates = engine.scenarioController.getCandidates();
 
     for(const candidate of candidates) {
-        popularVotes.set(candidate.getId(), selectedState.getPvsForCandidate(candidate));
+        popularVotes.set(candidate.getId(), Math.round(selectedState.getPvsForCandidate(candidate)));
         electoralVotes.set(candidate.getId(), selectedState.getEvsForCandidate(engine, candidate))
     }
 
