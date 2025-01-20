@@ -69,6 +69,8 @@ function GameView(props: GameViewProps) {
 
     window.addEventListener("keydown", checkForAutoplay);
 
+    refreshThemeAndMusic();
+
     return () => {
       window.removeEventListener("keydown", checkForAutoplay);
     }
