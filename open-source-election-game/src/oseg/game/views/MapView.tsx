@@ -14,12 +14,13 @@ interface MapViewProps {
   mapSvg : string;
   playAnimationBeforeFinalResults? : boolean;
   afterAnimationCompletes? : () => void;
+  fullyColored? : boolean;
 }
 
 const stateLerpValues = new Map<string, number>();
 
 function MapView(props: MapViewProps) {
-  const { engine, onStateClicked, theme, mapSvg, playAnimationBeforeFinalResults, afterAnimationCompletes } = props;
+  const { engine, onStateClicked, theme, mapSvg, playAnimationBeforeFinalResults, afterAnimationCompletes, fullyColored } = props;
   const mapRef = useRef<SVGSVGElement>(null);
   const [currentState, setCurrentState] = useState<StateController | null>(
     null
@@ -134,11 +135,14 @@ function MapView(props: MapViewProps) {
             statePath.style.fill = stateController.getFinalStateColor(engine, 1, isHovered) 
           }
         }
-        else {
+        else if(fullyColored == undefined || !fullyColored){
           statePath.style.fill = stateController.getStateColor(
             engine,
             isHovered
           );
+        }
+        else {
+          statePath.style.fill = stateController.getFinalStateColor(engine, 1, isHovered) 
         }
       }
     }

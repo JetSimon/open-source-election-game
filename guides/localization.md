@@ -17,8 +17,12 @@ If you want to add another key, look at how those functions are used in OSEG cur
 - Next
 - Slides
 - Map
-- Detailed Results
-
+- Overall Results Detailed
+- Results By State
+- Select a state
+- Closest States
+- Election Results and Data by State
+- View states by
 
 ## Example
 
