@@ -65,6 +65,11 @@ function OsegRightPanel(props: OsegRightPanelProps) {
     function getEditorArea() {
 
         const side = data.scenarioSides[sideIndex];
+
+        if(side == undefined) {
+            return <p>Side is undefined. Go out of and then go back into this tab (or maybe you have no defined ScenarioSides! Make sure one exists).</p>
+        }
+
         const question = side.questions[questionIndex];
 
         if (rightNavBar == RightNavBar.Map) {
