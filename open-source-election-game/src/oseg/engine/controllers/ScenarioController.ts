@@ -3,7 +3,7 @@ import StateController from "./StateController";
 import CandidateController from "./CandidateController";
 import IssueScores from "../IssueScores";
 import QuestionModel from "../models/QuestionModel";
-import { seededShuffleArray, shuffleArray } from "../../utils/ArrayUtils";
+import { seededShuffleArray } from "../../utils/ArrayUtils";
 import ThemeModel from "../models/ThemeModel";
 import { Engine } from "../Engine";
 
@@ -11,14 +11,14 @@ class ScenarioController {
     model: ScenarioModel = this.makeEmptyScenarioModel();
     stateControllers: StateController[] = [];
     candidateControllers: CandidateController[] = [];
-    runningMateControllers : CandidateController[] = [];
+    runningMateControllers: CandidateController[] = [];
     issueScores: IssueScores = new IssueScores([]);
     globalModifiers: Map<number, number> = new Map<number, number>();
     questions: QuestionModel[] = [];
     theme: ThemeModel = this.makeEmptyTheme();
 
-    bannerOverrideLine1 : string | undefined = undefined;
-    bannerOverrideLine2 : string | undefined = undefined;
+    bannerOverrideLine1: string | undefined = undefined;
+    bannerOverrideLine2: string | undefined = undefined;
 
     makeEmptyTheme(): ThemeModel {
         return {
@@ -48,38 +48,38 @@ class ScenarioController {
             scenarioName: "",
             scenarioImageUrl: "",
             credits: "",
-            music : []
+            music: []
         };
     }
 
-    isCandidateRunningMate(engine : Engine, candidateId : number) {
+    isCandidateRunningMate(engine: Engine, candidateId: number) {
 
-        if(engine.getPlayerCandidateController().getId() == candidateId) {
+        if (engine.getPlayerCandidateController().getId() == candidateId) {
             return false;
         }
 
-        if(engine.getPlayerRunningMateModel().id == candidateId) {
+        if (engine.getPlayerRunningMateModel().id == candidateId) {
             return true;
         }
-       
-        for(const candidate of engine.scenarioController.model.candidates) {
-            for(const mateId of candidate.runningMateIds) {
-                if(mateId == candidateId) {
+
+        for (const candidate of engine.scenarioController.model.candidates) {
+            for (const mateId of candidate.runningMateIds) {
+                if (mateId == candidateId) {
                     return true;
                 }
             }
         }
-        
+
         return false;
     }
 
-    loadScenario(engine : Engine, model: ScenarioModel, sideIndex: number, isShuffled : boolean) {
+    loadScenario(engine: Engine, model: ScenarioModel, sideIndex: number, isShuffled: boolean) {
         this.model = model;
         this.theme = this.model.theme;
 
         this.candidateControllers = this.model.candidates.filter((candidateModel) => !this.isCandidateRunningMate(engine, candidateModel.id)).map((candidateModel) => new CandidateController(candidateModel));
         this.runningMateControllers = this.model.candidates.filter((candidateModel) => this.isCandidateRunningMate(engine, candidateModel.id)).map((candidateModel) => new CandidateController(candidateModel));
-        
+
         const toRemove = new Set();
         for (const candidateController of this.getCandidates()) {
             for (const issue of this.model.issues) {
@@ -99,30 +99,30 @@ class ScenarioController {
 
         this.questions = this.model.scenarioSides.length == 0 ? [] : this.model.scenarioSides[sideIndex].questions;
 
-        for(const question of this.questions) {
-            if(question.enabled == undefined) {
+        for (const question of this.questions) {
+            if (question.enabled == undefined) {
                 question.enabled = true;
             }
 
-            if(question.onlyEnableAtStartIfRunningMateId != undefined && question.onlyEnableAtStartIfRunningMateId != -1) {
+            if (question.onlyEnableAtStartIfRunningMateId != undefined && question.onlyEnableAtStartIfRunningMateId != -1) {
                 const neededRunningMate = question.onlyEnableAtStartIfRunningMateId;
                 question.enabled = engine.runningMateId == neededRunningMate;
             }
         }
 
-        if(isShuffled) {
-            const unpinnedIndices : number[] = [];
-            for(let i = 0; i < this.questions.length; i++) {
-                if(!this.questions[i].keepInPlaceIfQuestionsShuffled) {
+        if (isShuffled) {
+            const unpinnedIndices: number[] = [];
+            for (let i = 0; i < this.questions.length; i++) {
+                if (!this.questions[i].keepInPlaceIfQuestionsShuffled) {
                     unpinnedIndices.push(i);
                 }
             }
 
-            const newIndices = unpinnedIndices.slice()
+            const newIndices = unpinnedIndices.slice();
             seededShuffleArray(newIndices, engine.random);
             const prev = JSON.parse(JSON.stringify(this.questions));
 
-            for(let i = 0; i < unpinnedIndices.length; i++) {
+            for (let i = 0; i < unpinnedIndices.length; i++) {
                 const prevIndex = unpinnedIndices[i];
                 const newIndex = newIndices[i];
                 this.questions[newIndex] = prev[prevIndex];
@@ -130,7 +130,7 @@ class ScenarioController {
         }
 
         for (let i = 0; i < this.questions.length; i++) {
-            shuffleArray(this.questions[i].answers);
+            seededShuffleArray(this.questions[i].answers, engine.random);
         }
     }
 
@@ -179,7 +179,7 @@ class ScenarioController {
      * 
      * @returns The number of ENABLED questions in the scenario
      */
-    getNumberOfEnabledQuestions() : number {
+    getNumberOfEnabledQuestions(): number {
         return this.questions.filter((question) => question.enabled).length;
     }
 
@@ -187,7 +187,7 @@ class ScenarioController {
         return this.questions;
     }
 
-    getRunningMateControllerById(id : number) : CandidateController | undefined {
+    getRunningMateControllerById(id: number): CandidateController | undefined {
         return this.runningMateControllers.filter((mate) => mate.getId() == id)[0];
     }
 }
