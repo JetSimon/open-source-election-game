@@ -190,6 +190,11 @@ function OsegSimulator(props: OsegSimulatorProps) {
 
     const sides = data.scenarioSides;
     const sideIndex = sides.map((x) => x.playerId).indexOf(selectedCandidate);
+
+    if(sides[sideIndex] == undefined) {
+        return <p>Got into a weird state, go to another tab and come back</p>
+    }
+
     const shouldShowShuffle = data.scenarioSides[sideIndex].questions.filter((x) => !x.keepInPlaceIfQuestionsShuffled).length > 0;
 
     return (
