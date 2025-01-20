@@ -1,0 +1,45 @@
+{
+    "candidates": [ {
+        "startingGlobalMultiplier": 1.00,
+        "runningMateIds": [
+            
+        ],
+        "id": 1,
+        "firstName": "",
+        "lastName": "",
+        "party": "",
+        "homeState": "",
+        "color": "#ffffff",
+        "issueScores": [
+        ],
+        "description": "",
+        "imageUrl": ""
+    }],
+    "states": [],
+    "issues": [],
+    "scenarioSides": [
+        {
+            "playerId": 1,
+            "questions" : []
+        }
+    ],
+    "theme": {
+        "backgroundImageUrl": "",
+        "backgroundColor": "",
+        "headerImageUrl": "",
+        "primaryGameWindowColor": "",
+        "secondaryGameWindowColor": "",
+        "primaryGameWindowTextColor": "",
+        "secondaryGameWindowTextColor": "",
+        "bottomBannerBackgroundColor": "",
+        "bottomBannerTextColor": "",
+        "advisorImage": "",
+        "quote": ""
+    },
+    "hasStateVisits": false,
+    "scenarioName": "",
+    "scenarioDescription": "",
+    "scenarioImageUrl": "",
+    "credits": "",
+    "music": []
+}

@@ -62,7 +62,8 @@ const templateNames = [
     "1936 Every Man a King",
     "1964 The Beatles",
     "TCT 1844",
-    "TCT 2016"
+    "TCT 2016",
+    "Blank"
 ];
 
 function OsegEditor() {
