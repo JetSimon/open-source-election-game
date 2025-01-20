@@ -18,6 +18,8 @@ interface CandidateSelectionViewProps {
 function CandidateSelectionView(props: CandidateSelectionViewProps) {
   const { engine, setGameState, setSelectingCandidate, theme, onStartButtonPressed, isShuffled, setIsShuffled } = props;
 
+  const [choosingRunningMate, setChoosingRunningMate] = useState(false);
+
   const [selectedCandidate, setSelectedCandidate] = useState<number>(
     firstCandidateWithSideId()
   );
@@ -104,8 +106,10 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
 
   return (
     <div className="CandidateSelection">
-      <h2 style={{color:theme.primaryGameWindowTextColor}}>{engine.getLocalization("Choose your Candidate")}</h2>
-      <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="CandidateSelectionBox">
+
+      <h2 style={{color:theme.primaryGameWindowTextColor}}>{!choosingRunningMate ? engine.getLocalization("Choose your Candidate") : engine.getLocalization("Choose your Running Mate")}</h2>
+      
+      {!choosingRunningMate && <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="CandidateSelectionBox">
         <label className="LabelText" htmlFor="candidate">{engine.getLocalization("Candidate")}: </label>
         <select id="candidate" onChange={(e) => setSelectedCandidate(Number.parseInt(e.target.value))}>
           {
@@ -115,10 +119,9 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
           }
         </select>
         <CandidateInfoArea engine={engine} candidate={selectedCandidateController.model}></CandidateInfoArea>
-      </div>
-      <hr></hr>
-      <h2 style={{color:theme.primaryGameWindowTextColor}}>{engine.getLocalization("Choose your Running Mate")}</h2>
-      <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="CandidateSelectionBox">
+      </div>}
+
+      {choosingRunningMate && <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="CandidateSelectionBox">
         <label className="LabelText" htmlFor="runningMate">{engine.getLocalization("Running Mate")}: </label>
         {
           getRunningMatesForCandidate(selectedCandidate).length > 0 &&
@@ -131,12 +134,17 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
           </select>
         }
         <CandidateInfoArea engine={engine} candidate={runningMateModel}></CandidateInfoArea>
-      </div>
+      </div>}
+      
       {canBeShuffled && <label htmlFor="shuffled" style={{color:theme.primaryGameWindowTextColor}} >{engine.getLocalization("Shuffle Questions?")} </label>}
       {canBeShuffled && <input id="shuffled" type="checkbox" checked={isShuffled} onChange={(e) => setIsShuffled(e.target.checked)}></input>}
       {canBeShuffled && <br></br>}
-      <button onClick={() => setSelectingCandidate(false)}>Prev</button>
-      <button onClick={startGame}>Start</button>
+
+      {!choosingRunningMate && <button onClick={() => setSelectingCandidate(false)}>Prev</button>}
+      {!choosingRunningMate && <button onClick={() => setChoosingRunningMate(true)}>Next</button>}
+
+      {choosingRunningMate && <button onClick={() => setChoosingRunningMate(false)}>Prev</button>}
+      {choosingRunningMate && <button onClick={startGame}>Start</button>}
     </div>
   );
 }

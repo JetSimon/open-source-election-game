@@ -48,6 +48,9 @@ function QuestionsEditor(props : QuestionsEditorProps) {
     function deleteQuestion() {
         side.questions.splice(questionIndex, 1);
         setData(JSON.parse(JSON.stringify(data)));
+        if(side.questions[questionIndex] == undefined && side.questions.length > 0) {
+            setQuestionIndex(side.questions.length - 1);
+        }
     }
 
     function highestQuestionId() {

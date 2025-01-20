@@ -57,6 +57,10 @@ function QuestionEditor(props : QuestionEditorProps) {
         setData(JSON.parse(JSON.stringify(data)));
     }
 
+    if(question == undefined) {
+        return <p>Question is undefined</p>
+    }
+
     return (
         <div>
             <h2>Question Editor</h2>
