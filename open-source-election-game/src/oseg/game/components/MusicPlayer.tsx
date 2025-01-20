@@ -9,9 +9,26 @@ interface MusicPlayerProps {
 function MusicPlayer(props : MusicPlayerProps) {
 
     const audioRef = useRef<HTMLAudioElement>(null);
+    const scrubberRef = useRef<HTMLInputElement>(null);
     const [currentSongIndex, setCurrentSongIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
     const { songs } = props;
+    const [volume, setVolume] = useState(1);
+    const [scrub, setScrub] = useState(0);
+
+    useEffect(() => {
+        if(audioRef == null || audioRef.current == null) {
+            return;
+        }
+    }, [scrub])
+
+    useEffect(() => {
+        if(audioRef == null || audioRef.current == null) {
+            return;
+        }
+
+        audioRef.current.volume = volume;
+    }, [volume])
 
     useEffect(() => {
         if(audioRef == null || audioRef.current == null) {
@@ -46,11 +63,37 @@ function MusicPlayer(props : MusicPlayerProps) {
         changeSongIndex(+1);
     }
 
+    function scrubTo(t : number) {
+        if(audioRef == null || audioRef.current == null) {
+            return;
+        }
+
+        setScrub(t);
+        audioRef.current.currentTime = audioRef.current.duration * t;
+    }
+
+    function onTimeUpdated() {
+        if(audioRef == null || audioRef.current == null) {
+            return;
+        }
+
+        if(document.activeElement == scrubberRef.current) {
+            return;
+        }
+
+        setScrub(audioRef.current.currentTime / audioRef.current.duration);
+    }
+
     return (
         <div className="MusicPlayer">
-            <audio onEnded={onEnded} loop={songs.length < 2} autoPlay={!isPaused} ref={audioRef} preload="auto" src={currentSong.url}></audio>
+            <audio onTimeUpdate={onTimeUpdated} onEnded={onEnded} loop={songs.length < 2} autoPlay={!isPaused} ref={audioRef} preload="auto" src={currentSong.url}></audio>
             <img className="MusicPlayerImage" src={currentSong.imageUrl}>
             </img>
+            <div className="MusicVolumeSliderHolder">
+                <input step="0.05" value={volume} onChange={(e) => setVolume(Number(e.target.value))} min="0" max="1" className="MusicVolumeSlider" type="range"></input>
+                🔊
+            </div>
+            
             <div className="MusicPlayerMenu">
                 {currentSong.displayName}
                 <div className="MusicPlayerButtons">
@@ -58,6 +101,7 @@ function MusicPlayer(props : MusicPlayerProps) {
                     <button onClick={() => setIsPaused(!isPaused)}>{isPaused ? "⏵" : "⏸"}</button>
                     <button disabled={songs.length < 2} onClick={() => changeSongIndex(+1)}>⏭</button>
                 </div>
+                <input step="0.01" ref={scrubberRef} value={scrub} onChange={(e) => scrubTo(Number(e.target.value))} className="MusicPlayerScrubber" type="range" min="0" max="1"></input>
             </div>
         </div>
     );

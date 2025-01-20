@@ -3,19 +3,44 @@
     border: 1px solid black;
     height: 25%;
     margin: 32px;
+    min-width: 33%;
 }
 
 .MusicPlayerImage {
     height: 125px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
 }
 
 .MusicPlayerMenu {
     display: flex;
     flex-direction: column;
     margin: auto;
+    width: 100%;
+    place-items: center;
 }
 
 .MusicPlayerButtons {
     display: flex;
     justify-items: end;
+}
+
+.MusicVolumeSliderHolder {
+    display: flex;
+    flex-direction: column;
+    height: 125px;
+    margin:auto;
+    margin-left: 8px;
+}
+
+.MusicVolumeSlider {
+    writing-mode: vertical-lr;
+    direction: rtl;
+    height: 90px;
+    margin:auto
+}
+
+.MusicPlayerScrubber {
+    margin: auto;
+    width: 80%;
 }
