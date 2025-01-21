@@ -163,6 +163,7 @@ function QuestionsEditor(props: QuestionsEditorProps) {
           <button className="RedButton" onClick={deleteQuestion}>
             Delete
           </button>
+          
           <button disabled={questionIndex <= 0} onClick={moveQuestionUp}>
             ⬆️
           </button>
