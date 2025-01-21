@@ -14,7 +14,7 @@ import ScenarioSideModel from "./models/ScenarioSideModel";
 import { Difficulty, getMultiplierFromDifficulty } from "./models/Difficulty";
 
 // Just used when debugging/trying to see if more extreme answers help more
-const tuningMultiplier = (x: number) => 4 * x;//Math.pow(x, 3);
+const tuningMultiplier = (x: number) => 3 * x;//Math.pow(x, 3);
 
 /**
  * Controls which part of the game the player is in
