@@ -5,8 +5,6 @@ import EnumNavBar from "./components/EnumNavBar";
 import ScenarioModel from "../oseg/engine/models/ScenarioModel";
 import StateModel from "../oseg/engine/models/StateModel";
 import { BulkStateFunction } from "./bulkMapComponents/BulkStateFunction";
-import AdjustCandidateStateModifier from "./bulkMapComponents/AdjustCandidateStateModifier";
-import AdjustStateIssueScore from "./bulkMapComponents/AdjustStateIssueScore";
 import CandidateEditor from "./graphicalEditors/CandidateEditor";
 import IssuesEditor from "./graphicalEditors/IssuesEditor";
 import QuestionsEditor from "./graphicalEditors/QuestionsEditor";
@@ -17,6 +15,8 @@ import IssueScore from "../oseg/engine/models/IssueScore";
 import BaseCandidateStateModifier from "../oseg/engine/models/BaseCandidateStateModifier";
 import StateEditor from "./graphicalEditors/StateEditor";
 import OsegBulkTools from "./OsegBulkTools";
+import "./OsegEditorStyle.css"
+import MarginTools from "./graphicalEditors/MarginTools";
 
 enum LeftNavBar {
     DataJson,
@@ -242,16 +242,7 @@ function OsegLeftPanel(props: OsegLeftPanelProps) {
             );
         }
         else if(leftNavBar == LeftNavBar.MarginTools) {
-            return (
-                <div>
-                    <p>Select a bulk tool to use by pressing Use, and then click on the Map on the states you want to apply this change to.</p>
-                    <button style={{backgroundColor:"lightgrey", width:"95%"}} onClick={() => setBulkStateFunction(doNothing)}>Select No Tool</button>
-                    <div className="BulkToolHolder">
-                        <AdjustCandidateStateModifier data={data} setBulkStateFunction={setBulkStateFunction}></AdjustCandidateStateModifier>
-                        <AdjustStateIssueScore data={data} setBulkStateFunction={setBulkStateFunction}></AdjustStateIssueScore>
-                    </div>
-                </div>
-            )
+            return <MarginTools data={data} setBulkStateFunction={setBulkStateFunction}></MarginTools>
         }
         else if(leftNavBar == LeftNavBar.Candidates) {
             return <CandidateEditor data={data} setData={setData}></CandidateEditor>
@@ -273,11 +264,8 @@ function OsegLeftPanel(props: OsegLeftPanelProps) {
         }
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    function doNothing(_s : StateModel) {}
-
     return (
-        <div className="OsegLeftPanel OsegPanel">
+        <div className="OsegEditorStyle OsegLeftPanel OsegPanel">
             <EnumNavBar description="Edit" enumValueAsString={LeftNavBar[leftNavBar].toString()} setEnumFromString={setLeftNavBarFromString} enumKeys={leftNavBarValues} ></EnumNavBar>
             {getEditorArea()}
         </div>

@@ -60,7 +60,7 @@ function AnswerEffectEditor(props: AnswerEffectEditorProps) {
     }
  
     return (
-        <div className="AnswerEffectEditor">
+        <div className="EditorBox AnswerEffectEditor">
 
 
             <div>

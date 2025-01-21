@@ -11,6 +11,7 @@
 }
 
 .QuoteHeader {
+    margin:auto;
     margin-top: 8px;
     border: solid 2px white;
     border-bottom-style: none;

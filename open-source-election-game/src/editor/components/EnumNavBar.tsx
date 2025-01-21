@@ -14,7 +14,7 @@ function EnumNavBar(props: EnumNavBarProps) {
  
     return (
 
-        <div id="navbar" className="EnumNavBar">
+        <div id="navbar" className="OsegEditorStyle EnumNavBar">
             <label htmlFor="navbar">{description}</label>
             {
                 enumKeys.map((key: string) => {

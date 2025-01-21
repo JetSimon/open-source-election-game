@@ -26,9 +26,9 @@ function StateEditor(props: StateEditorProps) {
     }
 
     return (
-        <div style={{ textAlign: "left" }}>
+        <div className="EditorForm">
             <h2>State Editor</h2>
-            <p className="EditorNote">Note: to adjust state margins (opinions of candidates, issue scores), use the Margin Tools tab instead. This is for adjusting state details</p>
+            <div className="EditorNote">Note: to adjust state margins (opinions of candidates, issue scores), use the Margin Tools tab instead. This is for adjusting state details</div>
 
             <label>Select a State: </label>
             <select value={stateId} onChange={(e) => setStateId(Number(e.target.value))}>
@@ -39,8 +39,8 @@ function StateEditor(props: StateEditorProps) {
                 state == undefined ?
                     <p>State with id {stateId} is undefined</p>
                     :
-                    <div>
-                        <p style={{ fontWeight: "bold" }}>Id: {state.id}</p>
+                    <div className="EditorBox EditorForm">
+                        <div style={{ fontWeight: "bold" }}>Id: {state.id}</div>
 
                         <GenericEditorInput
                             defaultValue={state.name}
