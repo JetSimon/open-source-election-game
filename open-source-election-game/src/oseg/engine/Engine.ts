@@ -326,10 +326,15 @@ class Engine {
             const runningMateMap = new Map();
 
             const playerController = this.getPlayerCandidateController();
-            runningMateMap.set(playerController.getId(), this.runningMateId);
+            const playerId = playerController.getId();
+            if (playerId != -1 && this.runningMateId != -1) {
+                runningMateMap.set(playerId, this.runningMateId);
+            }
+
             for (const candidate of this.scenarioController.getCandidates()) {
-                if (candidate != playerController) {
+                if (!runningMateMap.has(candidate.getId())) {
                     if (candidate.model.runningMateIds.length > 0) {
+                        console.log(candidate.model.runningMateIds);
                         runningMateMap.set(candidate.getId(), candidate.model.runningMateIds[0]);
                     }
                 }
