@@ -41,9 +41,9 @@ function AnswerEditor(props : AnswerEditorProps) {
     }
 
     return (
-        <div className="AnswerEditor">
+        <div className="EditorBox AnswerEditor">
 
-            <p style={{fontWeight:"bold"}}>Id: {answer.id}</p>
+            <div style={{fontWeight:"bold"}}>Id: {answer.id}</div>
             
             <button className="RedButton" onClick={deleteAnswer}>Delete</button>
 

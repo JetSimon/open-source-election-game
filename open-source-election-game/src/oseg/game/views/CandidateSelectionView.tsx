@@ -105,7 +105,7 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
   const canBeShuffled = engine.scenarioController.questions.filter((x) => !x.keepInPlaceIfQuestionsShuffled).length > 0;
 
   return (
-    <div className="CandidateSelection">
+    <div style={{backgroundColor:theme.primaryGameWindowColor}} className="CandidateSelection">
 
       <h2 style={{color:theme.primaryGameWindowTextColor}}>{!choosingRunningMate ? engine.getLocalization("Choose your Candidate") : engine.getLocalization("Choose your Running Mate")}</h2>
       

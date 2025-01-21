@@ -138,7 +138,7 @@ function QuestionsEditor(props: QuestionsEditorProps) {
       {side.questions.length == 0 ? (
         <div>
           <button className="GreenButton" onClick={addQuestion}>
-            Add Question
+            Add
           </button>
           <p>This Scenario Side has no questions yet!</p>
         </div>
@@ -158,11 +158,12 @@ function QuestionsEditor(props: QuestionsEditorProps) {
           </select>
 
           <button className="GreenButton" onClick={addQuestion}>
-            Add Question
+            Add
           </button>
           <button className="RedButton" onClick={deleteQuestion}>
-            Delete Question
+            Delete
           </button>
+          
           <button disabled={questionIndex <= 0} onClick={moveQuestionUp}>
             ⬆️
           </button>

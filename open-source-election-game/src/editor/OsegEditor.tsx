@@ -227,8 +227,8 @@ function OsegEditor() {
     return (
         <div>
             <h2>OSEG Editor</h2>
-            <div className="Toolbar">
-                <button onClick={() => exportFiles()}>Export</button>
+            <div className="OsegEditorStyle Toolbar">
+                <label>Save Slots: </label>
                 {!isEditingSaveName && (
                     <select value={saveIndex} onChange={(e) => setSaveIndex(Number(e.target.value))}>
                         <option value={1}>{saveNames[0]}</option>
@@ -250,6 +250,7 @@ function OsegEditor() {
                 )}
                 <button onClick={() => save(saveIndex)}>Save</button>
                 <button onClick={() => load(saveIndex)}>Load</button>
+                <button className="BlueButton" onClick={() => exportFiles()}>Export</button>
                 <button className="GreenButton" onClick={() => setIsPlaying(true)}>Start Playing</button>
                 <label>Templates: </label>
                 <select value={currentTemplateName} onChange={(e) => setCurrentTemplateName(e.target.value)}>

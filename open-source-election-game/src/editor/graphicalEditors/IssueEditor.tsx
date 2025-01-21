@@ -27,9 +27,9 @@ function IssueEditor(props : IssueEditorProps) {
     }
 
     return (
-        <div className="IssueEditor" style={{ textAlign: "left" }}>
+        <div className="EditorForm EditorBox" style={{ textAlign: "left" }}>
             <h2>{issue.name}</h2>
-             <div style={{fontWeight:"bold"}}>Issue Id: {issue.id}</div>
+            <div style={{fontWeight:"bold"}}>Issue Id: {issue.id}</div>
             <GenericEditorInput
                 defaultValue={issue.name}
                 onChange={(e) => updateFieldAndUpdateData<string>("name", e.target.value)}
@@ -41,10 +41,10 @@ function IssueEditor(props : IssueEditorProps) {
                 onChange={(e) => updateFieldAndUpdateData<string>("description", e.target.value)}
                 label={"Issue Description"}
             />
-            <h3>Stances</h3>
+            <div style={{fontWeight:"bold"}}>Stances</div>
             {issue.stances.map((stance, index) => {
                 return (
-                    <div className="EditorStance">
+                    <div className="EditorBox">
                         <GenericEditorInput
                             defaultValue={stance}
                             onChange={(e) => updateStanceFieldAndUpdateData<string>(index, "stances", e.target.value)}

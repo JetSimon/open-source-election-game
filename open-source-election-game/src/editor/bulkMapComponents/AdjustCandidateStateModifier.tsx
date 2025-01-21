@@ -8,7 +8,7 @@ let selectedCandidateIdUsedInFunction = -1;
 
 function AdjustCandidateStateModifier(props : BulkStateFunctionProps) {
 
-    const {setBulkStateFunction, data} = props;
+    const {setBulkStateFunction, data, inUse} = props;
     const [magnitude, setMagnitude] = useState(magnitudeUsedInFunction);
     const [selectedCandidateId, setSelectedCandidateId] = useState(data.candidates[0].id);
 
@@ -42,7 +42,7 @@ function AdjustCandidateStateModifier(props : BulkStateFunctionProps) {
     }
 
     return (
-        <div className="BulkStateFunction">
+        <div className="BulkStateFunction EditorBox EditorForm">
             <h4>Adjust State Candidate Modifier</h4>
             <div className="BulkStateFunctionDesc">Select a candidate</div>
             <select onChange={(e) => setSelectedCandidateId(Number(e.target.value))}>
@@ -54,7 +54,7 @@ function AdjustCandidateStateModifier(props : BulkStateFunctionProps) {
             <div>{magnitude.toFixed(2)}</div>
             <div className="BulkStateFunctionDesc">How much this state likes this candidate outside of issues</div>
             <input step="0.01" type="range" min="0" max="5" value={magnitude} onChange={(e) => setMagnitude(Number(e.target.value))}></input>
-            <button className="GreenButton" onClick={() => setBulkStateFunction((adjust))}>Use</button>
+            <button disabled={inUse} className="GreenButton" onClick={() => setBulkStateFunction((adjust))}>Use</button>
         </div>
     );
 }

@@ -41,11 +41,10 @@ function MusicEditor(props : MusicEditorProps) {
     }
 
     return (
-        <div>
-            <p>Warning: Please only use songs you have permission to use in a scenario.</p>
+        <div className="EditorBox">
             {data.music.map((song, index) => {
                 return (
-                    <div className="SongEditor">
+                    <div className="EditorBox SongEditor">
                         <label>{index + 1}.</label>
                         <GenericEditorInput label="Url" type="text" onChange={(e) => updateFieldAtIndexAndUpdateData<string>(index, "url", e.target.value)} defaultValue={song.url}></GenericEditorInput>
                         <GenericEditorInput label="Display Name" type="text" onChange={(e) => updateFieldAtIndexAndUpdateData<string>(index, "displayName", e.target.value)} defaultValue={song.displayName}></GenericEditorInput>

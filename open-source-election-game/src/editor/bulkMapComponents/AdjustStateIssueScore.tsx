@@ -9,7 +9,7 @@ let issueWeightUsedInFunction = 0;
 
 function AdjustStateIssueScore(props : BulkStateFunctionProps) {
 
-    const {setBulkStateFunction, data} = props;
+    const {setBulkStateFunction, data, inUse} = props;
 
     const [issueScore, setIssueScore] = useState(issueScoreUsedInFunction);
     const [issueWeight, setIssueWeight] = useState(issueScoreUsedInFunction);
@@ -63,7 +63,7 @@ function AdjustStateIssueScore(props : BulkStateFunctionProps) {
     const stance = issue.stances[remappedIssueScore];
 
     return (
-        <div className="BulkStateFunction">
+        <div className="EditorBox EditorForm BulkStateFunction">
             <h4>Adjust State Issue Score</h4>
 
             <div className="BulkStateFunctionDesc">Select an issue</div>
@@ -81,7 +81,7 @@ function AdjustStateIssueScore(props : BulkStateFunctionProps) {
             <div className="BulkStateFunctionDesc">How important the issue is to them</div>
             <input step="0.01" type="range" min="0" max="1" value={issueWeight} onChange={(e) => setIssueWeight(Number(e.target.value))}></input>
 
-            <button className="GreenButton" onClick={() => setBulkStateFunction((adjust))}>Use</button>
+            <button disabled={inUse} className="GreenButton" onClick={() => setBulkStateFunction((adjust))}>Use</button>
         </div>
     );
 }

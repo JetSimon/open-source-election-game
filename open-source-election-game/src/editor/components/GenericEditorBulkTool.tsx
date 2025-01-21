@@ -14,7 +14,7 @@ function GenericEditorBulkTool(props : GenericEditorBulkToolProps) {
     const id = label.replace(" ", "");
 
     return (
-        <div className="GenericEditorComponent">
+        <div className="EditorForm EditorBox GenericEditorComponent">
             <label htmlFor={id}>{label}:</label>
             <input step={0.01} type="number" onChange={(e) => setInput(Number(e.target.value))} value={input} id={id}></input>
             <button onClick={() => onClick(input)} className="GreenButton">Go</button>
