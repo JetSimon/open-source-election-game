@@ -181,3 +181,8 @@ label {
     margin: 8px;
     padding: 0px;
 }
+
+
+.OsegLeftPanel button:disabled {
+    opacity: 0.5;
+}
