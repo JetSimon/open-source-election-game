@@ -93,6 +93,7 @@ function MusicPlayer(props: MusicPlayerProps) {
   return (
     <div className="MusicPlayer">
       <audio
+        key={currentSong.url}
         onTimeUpdate={onTimeUpdated}
         onEnded={onEnded}
         loop={songs.length < 2}
