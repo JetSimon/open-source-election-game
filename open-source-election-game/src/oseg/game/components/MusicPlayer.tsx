@@ -48,7 +48,7 @@ function MusicPlayer(props: MusicPlayerProps) {
   const currentSong = songs[currentSongIndex];
 
   if (currentSong == null || currentSong.url == null) {
-    return <></>;
+    return <>Current song or song url is null</>;
   }
 
   function changeSongIndex(delta: number) {
