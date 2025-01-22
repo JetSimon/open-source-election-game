@@ -164,16 +164,15 @@ function OsegSimulator(props: OsegSimulatorProps) {
       tempEngine.setScenarioSide(sideIndex, selectedRunningMate, isShuffled);
       const candidateId = tempEngine.getPlayerCandidateController().getId();
 
-      let answerIndex = 0;
       while (!tempEngine.isGameOver()) {
         const question = tempEngine.getCurrentQuestion();
         if (question == null) break;
 
-        const answerId = selectedAnswerIds[answerIndex];
+        const answerSet = new Set(selectedAnswerIds);
         let answer = null;
 
         for (const currentAnswer of question.answers) {
-          if (currentAnswer.id === answerId) {
+          if (answerSet.has(currentAnswer.id)) {
             answer = currentAnswer;
             break;
           }
@@ -193,7 +192,6 @@ function OsegSimulator(props: OsegSimulatorProps) {
         );
 
         tempEngine.nextQuestion();
-        answerIndex++;
       }
 
       const result = tempEngine.getFinalResults();

@@ -20,6 +20,8 @@ function SimulatorAnswerPicker(props: SimulatorAnswerPickerProps) {
 
     const [showBasic, setShowBasic] = useState<boolean>(true);
 
+    const [logicIsOpen, setLogicIsOpen] = useState<boolean>(false);
+ 
     const [advancedText, setAdvancedText] = useState<string>('');
 
     const trackSelectedAnswer = (answerId: number, questionIndex: number) => {
@@ -73,13 +75,23 @@ function SimulatorAnswerPicker(props: SimulatorAnswerPickerProps) {
     };
 
     const clickDetails = () => {
-        setShowBasic(!showBasic);
-        unlockAllAnswers();
+        // Open/Close Logic textarea
+        const detailIsOpen = !logicIsOpen;
+        setLogicIsOpen(!logicIsOpen);
+
+        if (detailIsOpen) {
+            setShowBasic(false);
+            unlockAllAnswers();
+        } else {
+            setShowBasic(true);
+            setSelectedAnswersId(Array(questions.length).fill(null));
+        }
     }
 
     const getSimulatorInputAnswers = () => {
-        const newAdvancedText = advancedText.replace(/\s/g, "");
-        console.log(newAdvancedText);
+        // Converts into numbers array
+        const splitAnswerIds = advancedText.replace(/\s/g, "").split(",").map(id => parseInt(id)).filter(id => !isNaN(id));
+        setSelectedAnswersId(splitAnswerIds);
     }
 
     return (
