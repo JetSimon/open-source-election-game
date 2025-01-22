@@ -25,7 +25,7 @@ class StateController {
         return this.model.id;
     }
 
-    visit(candidateId : number, engine : Engine) {
+    visit(candidateId: number, engine: Engine) {
         this.changeCandidateStateModifier(candidateId, 0.02);
         engine.visits.push(this.model.id);
     }
@@ -66,11 +66,11 @@ class StateController {
         this.stateModifiers.set(candidateId, Math.max(0, this.getCandidateStateModifier(candidateId) + amount));
     }
 
-    update(engine : Engine, rng : number, runningMateMap : Map<number, number>) {
+    update(engine: Engine, rng: number, runningMateMap: Map<number, number>) {
 
         const scenario = engine.scenarioController;
 
-        function getRngMultiplier(rng : number) {
+        function getRngMultiplier(rng: number) {
             return 1.0 + ((engine.random() - 0.5) * 2) * rng;
         }
 
@@ -88,19 +88,19 @@ class StateController {
                 let stateScore = this.issueScores.getIssueScoreForIssue(issue.id);
                 stateScore = stateScore * Math.abs(stateScore);
                 const stateWeight = this.issueScores.getWeightForIssue(issue.id);
-                
+
                 opinion += 1.225 - Math.abs((candidateScore - stateScore) * stateWeight);
 
                 const candidateId = candidate.getId();
                 const runningMateId = runningMateMap.get(candidateId);
-                if(runningMateId != undefined) {
+                if (runningMateId != undefined) {
                     const runningMate = scenario.getRunningMateControllerById(runningMateId);
 
-                    if(runningMate == undefined) {
+                    if (runningMate == undefined) {
                         continue;
                     }
 
-                    if(!runningMate.issueScores.hasIssue(issue.id)) {
+                    if (!runningMate.issueScores.hasIssue(issue.id)) {
                         continue;
                     }
 
@@ -110,7 +110,7 @@ class StateController {
                     let stateScore = this.issueScores.getIssueScoreForIssue(issue.id);
                     stateScore = stateScore * Math.abs(stateScore);
                     const stateWeight = this.issueScores.getWeightForIssue(issue.id);
-                    
+
                     opinion += this.getCandidateStateModifier(runningMateId) * engine.runningMateWeight * (1.225 - Math.abs((mateScore - stateScore) * stateWeight));
                 }
             }
@@ -157,7 +157,7 @@ class StateController {
         console.log(this.getOpinionString());
     }
 
-    getFinalStateColor(engine : Engine, lerpValue : number, isHovered : boolean) {
+    getFinalStateColor(engine: Engine, lerpValue: number, isHovered: boolean) {
         const highestCandidate = this.getHighestCandidate(engine);
         if (highestCandidate == null) {
             console.error("Could not get state colour. Highest candidate was null");
@@ -188,7 +188,7 @@ class StateController {
         const secondHighestOpinion = allOpinions[allOpinions.length - 2];
 
         const candidateColorRgb = hexToRgb(highestCandidate.model.color);
-        
+
         let majorityAmount = highestCandidateOpinion - secondHighestOpinion;
         majorityAmount = Math.max(0.015, majorityAmount);
         majorityAmount /= 0.1;
@@ -200,15 +200,15 @@ class StateController {
                 candidateColorRgb[i] *= 0.85 + (Math.sin(Date.now() / 200) * 0.05);
             }
         }
-        
+
         return rgbToHex(candidateColorRgb[0], candidateColorRgb[1], candidateColorRgb[2]);
     }
 
-    getPvsForCandidate(candidate : CandidateController) {
+    getPvsForCandidate(candidate: CandidateController) {
         return this.getOpinionForCandidate(candidate.getId()) * this.model.popularVotes;
     }
 
-    getEvsForCandidate(engine : Engine, candidate : CandidateController) {
+    getEvsForCandidate(engine: Engine, candidate: CandidateController) {
         if (this.getHighestCandidate(engine) == candidate) {
             return this.model.electoralVotes;
         }

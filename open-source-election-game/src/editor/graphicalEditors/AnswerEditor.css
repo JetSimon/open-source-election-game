@@ -1,9 +1,4 @@
-.AnswerEditor {
-    border: 1px solid rgba(0, 0, 0, 0.24);
-    margin: 4px;
-    padding: 8px;
-    border-radius: 2px;
-}
+
 
 .AnswerEditor summary {
     font-size: x-large;

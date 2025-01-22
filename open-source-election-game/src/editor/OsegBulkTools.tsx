@@ -58,12 +58,10 @@ function OsegBulkTools(props : OsegBulkToolsProps) {
 
 
     return (
-        <div style={{textAlign:"left"}}>
+        <div className="EditorForm">
             <GenericEditorBulkTool defaultValue={1} label="Multiply ALL AnswerEffects by" onClick={multiplyAllAnswerEffects}></GenericEditorBulkTool>
-
-            <hr></hr>
-
-            <div style={{display:"flex", flexDirection:"column", gap:"8px"}}>
+            
+            <div className="EditorForm EditorBox">
             <label>Multiply AnswerEffects for Candidate by: </label>
             <input type="number" step="0.1" value={amount} onChange={(e) => setAmount(Number(e.target.value))}></input>
 

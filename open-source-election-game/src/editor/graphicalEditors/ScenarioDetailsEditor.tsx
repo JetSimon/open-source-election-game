@@ -22,18 +22,21 @@ function ScenarioDetailsEditor(props : ScenarioDetailsEditorProps) {
     }
 
     return (
-        <div style={{textAlign:"left"}}>
+        <div className="EditorForm">
             <h2>Scenario Details Editor</h2>
-            <GenericEditorInput label="Scenario Name" type="text" defaultValue={data.scenarioName} onChange={(e) => updateFieldAndUpdateData<string>("scenarioName", e.target.value)}></GenericEditorInput>
-            <GenericEditorInput label="Scenario Image Url" type="text" defaultValue={data.scenarioImageUrl} onChange={(e) => updateFieldAndUpdateData<string>("scenarioImageUrl", e.target.value)}></GenericEditorInput>
-            <GenericEditorTextArea label="Scenario Description" defaultValue={data.scenarioDescription} onChange={(e) => updateFieldAndUpdateData<string>("scenarioDescription", e.target.value)}></GenericEditorTextArea>
-            <GenericEditorInput label="Credits" type="text" defaultValue={data.credits} onChange={(e) => updateFieldAndUpdateData<string>("credits", e.target.value)}></GenericEditorInput>
-            <GenericEditorCheckbox label={"Has State Visits?"} defaultValue={data.hasStateVisits} onChange={(e) => updateFieldAndUpdateData<boolean>("hasStateVisits", e.target.checked)} ></GenericEditorCheckbox>
+            <div className="EditorBox">
+                <GenericEditorInput label="Scenario Name" type="text" defaultValue={data.scenarioName} onChange={(e) => updateFieldAndUpdateData<string>("scenarioName", e.target.value)}></GenericEditorInput>
+                <GenericEditorInput label="Scenario Image Url" type="text" defaultValue={data.scenarioImageUrl} onChange={(e) => updateFieldAndUpdateData<string>("scenarioImageUrl", e.target.value)}></GenericEditorInput>
+                <GenericEditorTextArea label="Scenario Description" defaultValue={data.scenarioDescription} onChange={(e) => updateFieldAndUpdateData<string>("scenarioDescription", e.target.value)}></GenericEditorTextArea>
+                <GenericEditorInput label="Credits" type="text" defaultValue={data.credits} onChange={(e) => updateFieldAndUpdateData<string>("credits", e.target.value)}></GenericEditorInput>
+                <GenericEditorCheckbox label={"Has State Visits?"} defaultValue={data.hasStateVisits} onChange={(e) => updateFieldAndUpdateData<boolean>("hasStateVisits", e.target.checked)} ></GenericEditorCheckbox>
+            </div>
         
             <h2>Theme Editor</h2>
             <ScenarioThemeEditor data={data} setData={setData} theme={data.theme}></ScenarioThemeEditor>
 
             <h2>Music Editor</h2>
+            <div className="EditorNote">Warning: Please only use songs you have permission to use in a scenario.</div>
             <MusicEditor data={data} setData={setData}></MusicEditor>
         </div>
     )

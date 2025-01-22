@@ -67,7 +67,7 @@ function QuestionEditor(props : QuestionEditorProps) {
 
             <h3>Question {questionIndex + 1}.</h3>
 
-            <div className="QuestionArea">
+            <div className="EditorBox">
             <p style={{fontWeight:"bold"}}>Id: {question.id}</p>
             
             <GenericEditorTextArea

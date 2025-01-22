@@ -14,7 +14,7 @@ import ScenarioSideModel from "./models/ScenarioSideModel";
 import { Difficulty, getMultiplierFromDifficulty } from "./models/Difficulty";
 
 // Just used when debugging/trying to see if more extreme answers help more
-const tuningMultiplier = (x: number) => 4 * x;//Math.pow(x, 3);
+const tuningMultiplier = (x: number) => 3 * x;//Math.pow(x, 3);
 
 /**
  * Controls which part of the game the player is in
@@ -326,10 +326,15 @@ class Engine {
             const runningMateMap = new Map();
 
             const playerController = this.getPlayerCandidateController();
-            runningMateMap.set(playerController.getId(), this.runningMateId);
+            const playerId = playerController.getId();
+            if (playerId != -1 && this.runningMateId != -1) {
+                runningMateMap.set(playerId, this.runningMateId);
+            }
+
             for (const candidate of this.scenarioController.getCandidates()) {
-                if (candidate != playerController) {
+                if (!runningMateMap.has(candidate.getId())) {
                     if (candidate.model.runningMateIds.length > 0) {
+                        console.log(candidate.model.runningMateIds);
                         runningMateMap.set(candidate.getId(), candidate.model.runningMateIds[0]);
                     }
                 }

@@ -10,6 +10,7 @@ import StateController from "../oseg/engine/controllers/StateController";
 import QuoteHeader from "../oseg/game/components/QuoteHeader";
 import MusicPlayer from "../oseg/game/components/MusicPlayer";
 import QuestionView from "../oseg/game/views/QuestionView";
+import BottomBanner from "../oseg/game/components/BottomBanner";
 
 enum RightNavBar {
     Map,
@@ -71,6 +72,8 @@ function OsegRightPanel(props: OsegRightPanelProps) {
         }
 
         const question = side.questions[questionIndex];
+        const theme = engine.scenarioController.theme;
+        const backgroundImage = "url('" + theme.backgroundImageUrl +  "')" 
 
         if (rightNavBar == RightNavBar.Map) {
             return (
@@ -82,8 +85,6 @@ function OsegRightPanel(props: OsegRightPanelProps) {
             );
         }
         else if (rightNavBar == RightNavBar.Election || rightNavBar == RightNavBar.Candidates) {
-            const theme = engine.scenarioController.theme;
-            const backgroundImage = "url('" + theme.backgroundImageUrl +  "')" 
             return (
                 <div style={{backgroundColor:theme.backgroundColor, backgroundImage:backgroundImage}} className="Game">
                 <img className="TopBanner" src={theme.headerImageUrl}></img>
@@ -110,7 +111,10 @@ function OsegRightPanel(props: OsegRightPanelProps) {
             }
 
             return (
-                <QuestionView showingFeedbackBox={false} currentQuestion={question} submitAnswer={() => {}} selectedAnswer={null} setSelectedAnswer={() => {}}theme={engine.scenarioController.theme} setShowMap={() => {}}></QuestionView>
+                <div style={{backgroundColor:theme.primaryGameWindowColor}} className="Game">
+                    <QuestionView showingFeedbackBox={false} currentQuestion={question} submitAnswer={() => {}} selectedAnswer={null} setSelectedAnswer={() => {}}theme={engine.scenarioController.theme} setShowMap={() => {}}></QuestionView>
+                    <BottomBanner engine={engine} theme={engine.scenarioController.theme}></BottomBanner>
+                </div>
             )
         }
     }

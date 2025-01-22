@@ -4,11 +4,10 @@
 }
 
 .ResizeHandle {
-    width: 4px;
-    background-color: grey;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.338);
     margin-left: 2px;
     margin-right: 2px;
-    border: 1px solid black;
 }
 
 .Panel {
@@ -42,11 +41,14 @@
     background-color: #f5dddd;;
 }
 
+button:disabled {
+    opacity: 0.5;
+}
+
 .GreenButton {
-    background-color: green;
-    color: white;
+    background-color: green!important;
+    color: white!important;
     font-weight: bold;
-    border: solid 1px darkgreen;
 }
 
 .GreenButton:hover {
@@ -54,8 +56,8 @@
 }
 
 .BlueButton {
-    background-color: rgb(47, 47, 255);
-    color: white;
+    background-color: rgb(47, 47, 255)!important;
+    color: white!important;
     font-weight: bold;
     border: solid 1px darkblue;
 }
@@ -65,8 +67,8 @@
 }
 
 .RedButton {
-    background-color: red;
-    color: white;
+    background-color: rgb(255, 47, 47)!important;
+    color: white!important;
     font-weight: bold;
     border: solid 1px darkred;
 }
@@ -76,12 +78,12 @@
 }
 
 .CircleButton {
-    border-radius: 100%;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    place-items: center;
-    justify-content: center;
+    border-radius: 100%!important;
+    width: 32px!important;
+    height: 32px!important;
+    display: flex!important;
+    place-items: center!important;
+    justify-content: center!important;
     font-size: small!important;
 }
 
@@ -110,10 +112,6 @@
     font-size: x-small;
     margin: -5px 0px;
     margin-bottom: 5px;
-}
-
-.GenericEditorComponent {
-
 }
 
 .GenericEditorComponent label {
@@ -160,10 +158,6 @@ label {
     font-weight: bold;
 }
 
-.OsegLeftPanel select, .Toolbar select {
-    padding: 0.6em 1.2em;
-}
-
 .SongEditor {
     border: 1px solid rgba(0,0,0,0.24);
     padding: 8px;
@@ -172,6 +166,11 @@ label {
     flex-wrap: wrap;
     place-items: center;
     gap: 4px;
+    font-size: small!important;
+}
+
+.SongEditor > input {
+    width: auto!important;
 }
 
 .EditorNote {
@@ -180,4 +179,18 @@ label {
     font-weight: italic;
     margin: 8px;
     padding: 0px;
+}
+
+.EditorForm {
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: left;
+    padding: 8px 0px;
+}
+
+.EditorForm h2, .EditorBox h2 {
+    margin: 0;
+    margin-bottom: 8px;
 }

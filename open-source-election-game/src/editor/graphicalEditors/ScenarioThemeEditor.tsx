@@ -20,7 +20,7 @@ function ScenarioThemeEditor(props : ScenarioThemeEditorProps) {
     }
 
     return (
-        <div>
+        <div className="EditorBox">
             <GenericEditorInput label="Background Image Url" type="text" defaultValue={theme.backgroundImageUrl} onChange={(e) => updateFieldAndUpdateData<string>("backgroundImageUrl", e.target.value)}></GenericEditorInput>
             <GenericEditorInput label="Background Color" type="color" defaultValue={theme.backgroundColor} onChange={(e) => updateFieldAndUpdateData<string>("backgroundColor", e.target.value)}></GenericEditorInput>
             <GenericEditorInput label="Header Image Url" type="text" defaultValue={theme.headerImageUrl} onChange={(e) => updateFieldAndUpdateData<string>("headerImageUrl", e.target.value)}></GenericEditorInput>
