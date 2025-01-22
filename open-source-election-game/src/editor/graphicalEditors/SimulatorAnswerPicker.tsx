@@ -18,6 +18,10 @@ function SimulatorAnswerPicker(props: SimulatorAnswerPickerProps) {
     const [tempSelectedAnswers, setTempSelectedAnswers] = useState<number[]>(Array(questions.length).fill(null));
     const [lockedInStatus, setLockedInStatus] = useState<boolean[]>(Array(questions.length).fill(false));
 
+    const [showBasic, setShowBasic] = useState<boolean>(true);
+
+    const [advancedText, setAdvancedText] = useState<string>('');
+
     const trackSelectedAnswer = (answerId: number, questionIndex: number) => {
         const updatedTempAnswers = [...tempSelectedAnswers];
         updatedTempAnswers[questionIndex] = answerId;
@@ -68,35 +72,50 @@ function SimulatorAnswerPicker(props: SimulatorAnswerPickerProps) {
         setTempSelectedAnswers(Array(questions.length).fill(null));
     };
 
+    const clickDetails = () => {
+        setShowBasic(!showBasic);
+        unlockAllAnswers();
+    }
+
+    const getSimulatorInputAnswers = () => {
+        const newAdvancedText = advancedText.replace(/\s/g, "");
+        console.log(newAdvancedText);
+    }
+
     return (
         <div>
             <details>
-                <summary>Logic code answers</summary>
+                <summary onClick={clickDetails}>Logic code answers</summary>
                 <p>For logic code questions and answers - input complete list of answer ids separated by commas:</p>
-                <textarea className="SimulatorAnswerTextarea"></textarea>
+                <textarea className="SimulatorAnswerTextarea" value={advancedText} onChange={(e) => setAdvancedText(e.target.value)}></textarea>
+                <button onClick={getSimulatorInputAnswers}>Lock In Logic Answers</button>
             </details>
-            <button onClick={lockInAllAnswers}>Lock All Answers</button>
-            <button onClick={unlockAllAnswers}>Unlock All Answers</button>
-            <ol>
-                {questions.map((question, questionIndex) => (
-                    <div key={questionIndex}>
-                        <li>{question.description}</li>
-                        <select 
-                            className="SimulatorAnswerSelect" 
-                            value={tempSelectedAnswers[questionIndex] || ""} 
-                            onChange={(e) => trackSelectedAnswer(parseInt(e.target.value), questionIndex)}
-                        >
-                            {question.answers.map((answer, answerIndex) => (
-                                <option key={answerIndex} value={answer.id}>
-                                    {answer.description}
-                                </option>
-                            ))}
-                        </select>
-                        <label>Lock in:</label>
-                        <input type="checkbox" checked={lockedInStatus[questionIndex]} onChange={(e) => lockInAnswers(questionIndex, e.target.checked)}></input>
-                    </div>
-                ))}
-            </ol>
+            {showBasic && (
+                <div>
+                    <button onClick={lockInAllAnswers}>Lock All Answers</button>
+                    <button onClick={unlockAllAnswers}>Unlock All Answers</button>
+                    <ol>
+                        {questions.map((question, questionIndex) => (
+                            <div key={questionIndex}>
+                                <li>{question.description}</li>
+                                <select 
+                                    className="SimulatorAnswerSelect" 
+                                    value={tempSelectedAnswers[questionIndex] || ""} 
+                                    onChange={(e) => trackSelectedAnswer(parseInt(e.target.value), questionIndex)}
+                                >
+                                    {question.answers.map((answer, answerIndex) => (
+                                        <option key={answerIndex} value={answer.id}>
+                                            {answer.description}
+                                        </option>
+                                    ))}
+                                </select>
+                                <label>Lock in:</label>
+                                <input type="checkbox" checked={lockedInStatus[questionIndex]} onChange={(e) => lockInAnswers(questionIndex, e.target.checked)}></input>
+                            </div>
+                        ))}
+                    </ol>
+                </div>
+            )}
         </div>
     )
 }
