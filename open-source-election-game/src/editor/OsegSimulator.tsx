@@ -51,7 +51,7 @@ function OsegSimulator(props: OsegSimulatorProps) {
   // Initial list of answer ids with default answer id
   const [selectedAnswerIds, setSelectedAnswerIds] = useState<number[]>(() => {
     const questions = data.scenarioSides[sideIndex].questions;
-    return questions.map(question => question.answers[0].id);
+    return new Array(questions.length).fill(null);
   });
 
   function getCandidatesWithSides(): CandidateModel[] {
@@ -112,7 +112,7 @@ function OsegSimulator(props: OsegSimulatorProps) {
     return data.candidates.filter((x) => runningMates.has(x.id));
   }
 
-  async function simulateResults(lockedIn : boolean) {
+  async function simulateResults() {
     setIsSimulating(true);
     const sides = data.scenarioSides;
     const sideIndex = sides.map((x) => x.playerId).indexOf(selectedCandidate);
@@ -134,7 +134,7 @@ function OsegSimulator(props: OsegSimulatorProps) {
 
     const encodedLogic = encodeURIComponent(logic);
     const logicDataUri = "data:text/javascript;charset=utf-8," + encodedLogic;
-
+    
     const tempHistogram: number[] = [];
     for (let i = 0; i < 20; i++) {
       tempHistogram.push(0);
@@ -169,25 +169,23 @@ function OsegSimulator(props: OsegSimulatorProps) {
         const question = tempEngine.getCurrentQuestion();
         if (question == null) break;
 
-        let answer;
-        if (lockedIn) {
-          const answerId = selectedAnswerIds[answerIndex];
-          for(const currentAnswer of question.answers) {
-            if (currentAnswer.id === answerId) {
-              answer = currentAnswer;
-              break;
-            }
-          }
+        const answerId = selectedAnswerIds[answerIndex];
+        let answer = null;
 
-          if (answer == null) {
-            answer = question.answers[0];
+        for (const currentAnswer of question.answers) {
+          if (currentAnswer.id === answerId) {
+            answer = currentAnswer;
+            break;
           }
-        } else {
-          const randomIndex = Math.floor(question.answers.length * tempEngine.random());
-          answer = question.answers[randomIndex];
         }
 
+        if (answer == null) {
+          const randomIndex = Math.floor(question.answers.length * tempEngine.random());
+          answer = question.answers[randomIndex];
+        } 
+        
         tempEngine.applyAnswer(answer);
+
         const states = tempEngine.scenarioController.getStates();
         states[Math.floor(tempEngine.random() * states.length)].visit(
           candidateId,
@@ -195,7 +193,7 @@ function OsegSimulator(props: OsegSimulatorProps) {
         );
 
         tempEngine.nextQuestion();
-        if (lockedIn) answerIndex++;
+        answerIndex++;
       }
 
       const result = tempEngine.getFinalResults();
@@ -309,11 +307,7 @@ function OsegSimulator(props: OsegSimulatorProps) {
         </div>
       )}
 
-      <button onClick={() => simulateResults(false)}>
-        Simulate Random {numberOfSimulations} Times
-      </button>
-
-      <button onClick={() => simulateResults(true)}>
+      <button onClick={() => simulateResults()}>
         Simulate {numberOfSimulations} Times
       </button>
 
