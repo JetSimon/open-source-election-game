@@ -16,6 +16,11 @@ function MusicPlayer(props: MusicPlayerProps) {
   const [scrub, setScrub] = useState(0);
 
   useEffect(() => {
+    setScrub(0);
+    setCurrentSongIndex(0);
+  }, [songs]);
+
+  useEffect(() => {
     if (audioRef == null || audioRef.current == null) {
       return;
     }

@@ -73,6 +73,7 @@ function Game(props : GameProps) {
             const newMusic = JSON.stringify(engine.currentScenario.music);
 
             if(oldMusic != newMusic) {
+                console.log("setting new music")
                 setMusic(JSON.parse(newMusic));
             }
         }
