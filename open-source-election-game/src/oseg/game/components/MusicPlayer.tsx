@@ -136,7 +136,7 @@ function MusicPlayer(props: MusicPlayerProps) {
         <input
           step="0.01"
           ref={scrubberRef}
-          value={scrub}
+          value={isNaN(scrub) ? 0 : scrub}
           onChange={(e) => scrubTo(Number(e.target.value))}
           className="MusicPlayerScrubber"
           type="range"
