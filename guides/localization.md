@@ -23,6 +23,7 @@ If you want to add another key, look at how those functions are used in OSEG cur
 - Closest States
 - Election Results and Data by State
 - View states by
+- Latest Polls/Electoral Map
 
 ## Example
 

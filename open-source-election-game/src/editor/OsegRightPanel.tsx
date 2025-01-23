@@ -112,7 +112,7 @@ function OsegRightPanel(props: OsegRightPanelProps) {
 
             return (
                 <div style={{backgroundColor:theme.primaryGameWindowColor}} className="Game">
-                    <QuestionView showingFeedbackBox={false} currentQuestion={question} submitAnswer={() => {}} selectedAnswer={null} setSelectedAnswer={() => {}}theme={engine.scenarioController.theme} setShowMap={() => {}}></QuestionView>
+                    <QuestionView engine={engine} showingFeedbackBox={false} currentQuestion={question} submitAnswer={() => {}} selectedAnswer={null} setSelectedAnswer={() => {}}theme={engine.scenarioController.theme} setShowMap={() => {}}></QuestionView>
                     <BottomBanner engine={engine} theme={engine.scenarioController.theme}></BottomBanner>
                 </div>
             )

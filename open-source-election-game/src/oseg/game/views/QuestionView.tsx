@@ -3,6 +3,7 @@ import Answer from "../components/Answer";
 import AnswerModel from "../../engine/models/AnswerModel";
 import "./QuestionView.css";
 import ThemeModel from "../../engine/models/ThemeModel";
+import { Engine } from "../../engine/Engine";
 
 interface QuestionViewProps {
   currentQuestion: QuestionModel;
@@ -12,6 +13,7 @@ interface QuestionViewProps {
   theme : ThemeModel;
   setShowMap : (b : boolean) => void;
   showingFeedbackBox : boolean;
+  engine : Engine;
 }
 
 function QuestionView(props: QuestionViewProps) {
@@ -24,7 +26,8 @@ function QuestionView(props: QuestionViewProps) {
     setSelectedAnswer,
     theme,
     setShowMap,
-    showingFeedbackBox
+    showingFeedbackBox,
+    engine
   } = props;
 
   function answerKeyPress(e : React.KeyboardEvent<HTMLDivElement>) {
@@ -94,7 +97,7 @@ function QuestionView(props: QuestionViewProps) {
         >
           CONTINUE
         </button>
-        <button className="ToggleMapButton" onClick={() => setShowMap(true)}>Latest Polls/Electoral Map</button>
+        <button className="ToggleMapButton" onClick={() => setShowMap(true)}>{engine.getLocalization("Latest Polls/Electoral Map")}</button>
       </div>
     </div>
   );

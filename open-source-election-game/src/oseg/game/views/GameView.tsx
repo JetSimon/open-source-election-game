@@ -211,6 +211,7 @@ function GameView(props: GameViewProps) {
         :
         (
         <QuestionView
+          engine={engine}
           setShowMap={setShowMap}
           currentQuestion={currentQuestion}
           submitAnswer={submitAnswer}
