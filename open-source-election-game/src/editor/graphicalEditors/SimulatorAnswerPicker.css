@@ -1,0 +1,10 @@
+.SimulatorAnswerSelect {
+    padding: 0.6em 1.2em;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0.5em 0 1em 0;
+}
+
+.SimulatorAnswerTextarea {
+    width: 40em;
+}

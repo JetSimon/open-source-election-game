@@ -7,6 +7,7 @@ import ThemeModel from "../oseg/engine/models/ThemeModel";
 import { Engine } from "../oseg/engine/Engine";
 import CandidateModel from "../oseg/engine/models/CandidateModel";
 import Histogram from "./components/Histogram";
+import SimulatorAnswerPicker from "./graphicalEditors/SimulatorAnswerPicker";
 
 interface OsegSimulatorProps {
   data: ScenarioModel;
@@ -43,6 +44,12 @@ function OsegSimulator(props: OsegSimulatorProps) {
     const mates = getRunningMatesForCandidate(selectedCandidate);
     return mates.length > 0 ? mates[0].id : -1;
   });
+
+  const sides = data.scenarioSides;
+  const sideIndex = sides.map((x) => x.playerId).indexOf(selectedCandidate);
+
+  // Initial set of answer ids with default answer id
+  const [selectedAnswerIds, setSelectedAnswerIds] = useState<Set<number>>(() => new Set());
 
   function getCandidatesWithSides(): CandidateModel[] {
     const candidates: CandidateModel[] = [];
@@ -124,7 +131,7 @@ function OsegSimulator(props: OsegSimulatorProps) {
 
     const encodedLogic = encodeURIComponent(logic);
     const logicDataUri = "data:text/javascript;charset=utf-8," + encodedLogic;
-
+    
     const tempHistogram: number[] = [];
     for (let i = 0; i < 20; i++) {
       tempHistogram.push(0);
@@ -153,20 +160,35 @@ function OsegSimulator(props: OsegSimulatorProps) {
 
       tempEngine.setScenarioSide(sideIndex, selectedRunningMate, isShuffled);
       const candidateId = tempEngine.getPlayerCandidateController().getId();
-
+      const answerSet = new Set(selectedAnswerIds);
+      
       while (!tempEngine.isGameOver()) {
         const question = tempEngine.getCurrentQuestion();
         if (question == null) break;
-        const answer =
-          question.answers[
-            Math.floor(question.answers.length * tempEngine.random())
-          ];
+
+        
+        let answer = null;
+
+        for (const currentAnswer of question.answers) {
+          if (answerSet.has(currentAnswer.id)) {
+            answer = currentAnswer;
+            break;
+          }
+        }
+
+        if (answer == null) {
+          const randomIndex = Math.floor(question.answers.length * tempEngine.random());
+          answer = question.answers[randomIndex];
+        } 
+        
         tempEngine.applyAnswer(answer);
+
         const states = tempEngine.scenarioController.getStates();
         states[Math.floor(tempEngine.random() * states.length)].visit(
           candidateId,
           tempEngine
         );
+
         tempEngine.nextQuestion();
       }
 
@@ -223,9 +245,6 @@ function OsegSimulator(props: OsegSimulatorProps) {
   if (isSimulating) {
     return <p>Simulating...</p>;
   }
-
-  const sides = data.scenarioSides;
-  const sideIndex = sides.map((x) => x.playerId).indexOf(selectedCandidate);
 
   if (sides[sideIndex] == undefined) {
     return <p>Got into a weird state, go to another tab and come back</p>;
@@ -287,6 +306,10 @@ function OsegSimulator(props: OsegSimulatorProps) {
       <button onClick={() => simulateResults()}>
         Simulate {numberOfSimulations} Times
       </button>
+
+      {!averageResult && (
+        <SimulatorAnswerPicker data={data} sideIndex={sideIndex} selectedAnswerIds={selectedAnswerIds} setSelectedAnswersId={setSelectedAnswerIds}></SimulatorAnswerPicker>
+      )}
 
       {histogram.length > 0 && (
         <div>
