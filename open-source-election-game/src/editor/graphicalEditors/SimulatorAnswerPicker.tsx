@@ -86,8 +86,9 @@ function SimulatorAnswerPicker(props: SimulatorAnswerPickerProps) {
         <div>
             <details>
                 <summary onClick={clickDetails}>Manually enter ids</summary>
-                <p>For logic code questions and answers - input complete list of answer ids separated by commas:</p>
+                <p>For situations where you the answer id may not be in data.json, or for quick copy + paste testing - input COMPLETE list of answer ids separated by commas:</p>
                 <textarea className="SimulatorAnswerTextarea" value={advancedText} onChange={(e) => setAdvancedText(e.target.value)}></textarea>
+                <p>Make sure to Lock In Logic Answers before simulating</p>
                 <button onClick={getSimulatorInputAnswers}>Lock In Logic Answers</button>
             </details>
             {showBasic && (
