@@ -97,10 +97,11 @@ function SimulatorAnswerPicker(props: SimulatorAnswerPickerProps) {
     return (
         <div>
             <details>
-                <summary onClick={clickDetails}>Logic code answers</summary>
-                <p>For logic code questions and answers - input complete list of answer ids separated by commas:</p>
+                <summary onClick={clickDetails}>Manual Mode</summary>
+                <p>For situations where answer ids may not be in the default data.json - input COMPLETE list of answer ids separated by commas:</p>
                 <textarea className="SimulatorAnswerTextarea" value={advancedText} onChange={(e) => setAdvancedText(e.target.value)}></textarea>
-                <button onClick={getSimulatorInputAnswers}>Lock In Logic Answers</button>
+                <p>Hit Lock In Answers before you press Simulate</p>
+                <button onClick={getSimulatorInputAnswers}>Lock In Answers</button>
             </details>
             {showBasic && (
                 <div>

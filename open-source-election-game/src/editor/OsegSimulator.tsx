@@ -163,12 +163,13 @@ function OsegSimulator(props: OsegSimulatorProps) {
 
       tempEngine.setScenarioSide(sideIndex, selectedRunningMate, isShuffled);
       const candidateId = tempEngine.getPlayerCandidateController().getId();
-
+      const answerSet = new Set(selectedAnswerIds);
+      
       while (!tempEngine.isGameOver()) {
         const question = tempEngine.getCurrentQuestion();
         if (question == null) break;
 
-        const answerSet = new Set(selectedAnswerIds);
+        
         let answer = null;
 
         for (const currentAnswer of question.answers) {
