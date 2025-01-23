@@ -120,6 +120,8 @@ class Engine {
 
     localizations = new Map<string, string>();
 
+    tooltips = new Map<string, string>();
+
     /**
      * How much a running mate contributes to opinion (1 is the same as a normal candidate)
      */
@@ -157,6 +159,13 @@ class Engine {
         this.gameState = GameState.CandidateSelection;
         this.counters = new Map<string, number>();
         this.counterDisplayNames = new Map<string, string>();
+        this.tooltips = new Map<string, string>();
+        
+        if(newScenario.tooltips != undefined) {
+            for(const tooltip of newScenario.tooltips) {
+                this.tooltips.set(tooltip.key, tooltip.value);
+            }
+        }
 
         if (asObserver == true) {
             this.updateStates();
@@ -230,6 +239,20 @@ class Engine {
         }
 
         return this.scenarioController.model.scenarioSides[this.sideIndex];
+    }
+
+    /**
+     * Adds tooltips to any string
+     * @param s 
+     */
+    addTooltips(s : string) : string {
+        const sortedKeys = Array.from(this.tooltips.keys()).sort((a, b) => a.length - b.length);
+        let finalString = s;
+        for(const key of sortedKeys) {
+            const tooltip = `<span class="InGameTooltip">${key}<span class="InGameTooltipText">${this.tooltips.get(key)}</span></span>`
+            finalString = finalString.replace(key, tooltip);
+        }
+        return finalString;
     }
 
     /**
@@ -334,6 +357,7 @@ class Engine {
             for (const candidate of this.scenarioController.getCandidates()) {
                 if (!runningMateMap.has(candidate.getId())) {
                     if (candidate.model.runningMateIds.length > 0) {
+                        console.log(candidate.model.runningMateIds);
                         runningMateMap.set(candidate.getId(), candidate.model.runningMateIds[0]);
                     }
                 }

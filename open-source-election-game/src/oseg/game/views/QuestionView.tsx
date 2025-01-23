@@ -4,6 +4,7 @@ import AnswerModel from "../../engine/models/AnswerModel";
 import "./QuestionView.css";
 import ThemeModel from "../../engine/models/ThemeModel";
 import { Engine } from "../../engine/Engine";
+import "./InGameTooltip.css";
 
 interface QuestionViewProps {
   currentQuestion: QuestionModel;
@@ -75,10 +76,11 @@ function QuestionView(props: QuestionViewProps) {
   return (
     <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}}  className="QuestionView">
       <div>
-        <p style={{backgroundColor:theme.questionBackgroundColor ?? theme.secondaryGameWindowColor, color:theme.questionTextColor ?? theme.secondaryGameWindowTextColor}} className="QuestionDescription" dangerouslySetInnerHTML={{__html:currentQuestion.description}}></p>
+        <p style={{backgroundColor:theme.questionBackgroundColor ?? theme.secondaryGameWindowColor, color:theme.questionTextColor ?? theme.secondaryGameWindowTextColor}} className="QuestionDescription" dangerouslySetInnerHTML={{__html:engine.addTooltips(currentQuestion.description)}}></p>
         <div onKeyDown={answerKeyPress} className="AnswerHolder">
           {currentQuestion.answers.map((answerModel, idx) => (
             <Answer
+              engine={engine}
               index={idx}
               showingFeedbackBox={showingFeedbackBox}
               answerId={currentQuestion.answers.indexOf(answerModel).toString()}
