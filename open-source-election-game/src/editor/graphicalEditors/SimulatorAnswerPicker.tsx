@@ -6,8 +6,8 @@ import "./SimulatorAnswerPicker.css";
 interface SimulatorAnswerPickerProps {
     data: ScenarioModel;
     sideIndex: number;
-    selectedAnswerIds: number[];
-    setSelectedAnswersId: (selectedAnswerIds: number[]) => void;
+    selectedAnswerIds: Set<number>;
+    setSelectedAnswersId: (selectedAnswerIds: Set<number>) => void;
 }
 
 function SimulatorAnswerPicker(props: SimulatorAnswerPickerProps) {
@@ -15,89 +15,77 @@ function SimulatorAnswerPicker(props: SimulatorAnswerPickerProps) {
 
     const questions = data.scenarioSides[sideIndex].questions;
 
-    const [tempSelectedAnswers, setTempSelectedAnswers] = useState<number[]>(Array(questions.length).fill(null));
     const [lockedInStatus, setLockedInStatus] = useState<boolean[]>(Array(questions.length).fill(false));
-
+    const [tempAnswerIds, setTempAnswerIds] = useState<number[]>(Array(questions.length).fill(null));
     const [showBasic, setShowBasic] = useState<boolean>(true);
-
-    const [logicIsOpen, setLogicIsOpen] = useState<boolean>(false);
- 
     const [advancedText, setAdvancedText] = useState<string>('');
 
     const trackSelectedAnswer = (answerId: number, questionIndex: number) => {
-        const updatedTempAnswers = [...tempSelectedAnswers];
+        const updatedTempAnswers = [...tempAnswerIds];
         updatedTempAnswers[questionIndex] = answerId;
-        setTempSelectedAnswers(updatedTempAnswers);
+        setTempAnswerIds(updatedTempAnswers);
 
         // If answer is locked in, update selectedAnswerIds automatically
         if (lockedInStatus[questionIndex]) {
-            const updatedAnswers = [...selectedAnswerIds];
-            updatedAnswers[questionIndex] = answerId;
-            setSelectedAnswersId(updatedAnswers);
+            const updatedSelectedAnswerIds = new Set(selectedAnswerIds);
+            updatedSelectedAnswerIds.add(answerId);
+            setSelectedAnswersId(updatedSelectedAnswerIds);
         }
     }
 
-    // Update answer ids when user checks lock in checkbox
-    const lockInAnswers = (questionIndex: number, checked: boolean) => {
-        let answerId = tempSelectedAnswers[questionIndex];
+    const lockInAnswer = (questionIndex: number, checked: boolean) => {
+        const updatedLockedInStatus = [...lockedInStatus];
+        updatedLockedInStatus[questionIndex] = checked;
+        setLockedInStatus(updatedLockedInStatus);
+        
+        let answerId = tempAnswerIds[questionIndex];
 
-        // Use default options in dropdown 
         if (answerId == null) {
             answerId = questions[questionIndex].answers[0].id;
         }
 
-        if (checked && answerId != null) {
-            const updatedAnswers = [...selectedAnswerIds];
-            updatedAnswers[questionIndex] = answerId;
-            setSelectedAnswersId(updatedAnswers);
+        const updatedSelectedAnswerIds = new Set(selectedAnswerIds);
+        
+        if (checked) {
+            updatedSelectedAnswerIds.add(answerId);
+        } else {
+            updatedSelectedAnswerIds.delete(answerId);
         }
-
-        const updatedLockedQuestions = [...lockedInStatus];
-        updatedLockedQuestions[questionIndex] = checked;
-        setLockedInStatus(updatedLockedQuestions);
+        setSelectedAnswersId(updatedSelectedAnswerIds);
     }
 
     const lockInAllAnswers = () => {
-        const updatedAnswers = questions.map((question, index) => {
-            const selectedAnswerId = tempSelectedAnswers[index];
+        const answerIds = questions.map((question, index) => {
+            const selectedAnswerId = tempAnswerIds[index];
             const defaultAnswerId = question.answers[0].id;
             return selectedAnswerId !== null ? selectedAnswerId : defaultAnswerId;
         });
 
+        const updatedAnswers = new Set<number>(answerIds);
         setSelectedAnswersId(updatedAnswers);
         setLockedInStatus(Array(questions.length).fill(true));
     };
 
     const unlockAllAnswers = () => {
-        setSelectedAnswersId(Array(questions.length).fill(null));
+        setSelectedAnswersId(new Set());
+        setTempAnswerIds(Array(questions.length).fill(null));
         setLockedInStatus(Array(questions.length).fill(false));
-        setTempSelectedAnswers(Array(questions.length).fill(null));
     };
 
     const clickDetails = () => {
-        // Open/Close Logic textarea
-        const detailIsOpen = !logicIsOpen;
-        setLogicIsOpen(!logicIsOpen);
-
-        if (detailIsOpen) {
-            setShowBasic(false);
-            unlockAllAnswers();
-        } else {
-            setShowBasic(true);
-            setSelectedAnswersId(Array(questions.length).fill(null));
-        }
+        setShowBasic(!showBasic);
     }
 
     const getSimulatorInputAnswers = () => {
-        // Converts into numbers array
-        const splitAnswerIds = advancedText.replace(/\s/g, "").split(",").map(id => parseInt(id)).filter(id => !isNaN(id));
-        setSelectedAnswersId(splitAnswerIds);
+        const splitAnswerIds = advancedText.replace(/\s/g, "").split(",");
+        const simulatorInputAnswers = splitAnswerIds.map(id => parseInt(id)).filter(id => !isNaN(id));
+        setSelectedAnswersId(new Set(simulatorInputAnswers));
     }
 
     return (
         <div>
             <details>
-                <summary onClick={clickDetails}>Logic code answers</summary>
+                <summary onClick={clickDetails}>Manually enter ids</summary>
                 <p>For logic code questions and answers - input complete list of answer ids separated by commas:</p>
                 <textarea className="SimulatorAnswerTextarea" value={advancedText} onChange={(e) => setAdvancedText(e.target.value)}></textarea>
                 <button onClick={getSimulatorInputAnswers}>Lock In Logic Answers</button>
@@ -112,7 +100,7 @@ function SimulatorAnswerPicker(props: SimulatorAnswerPickerProps) {
                                 <li>{question.description}</li>
                                 <select 
                                     className="SimulatorAnswerSelect" 
-                                    value={tempSelectedAnswers[questionIndex] || ""} 
+                                    value={tempAnswerIds[questionIndex] || ""} 
                                     onChange={(e) => trackSelectedAnswer(parseInt(e.target.value), questionIndex)}
                                 >
                                     {question.answers.map((answer, answerIndex) => (
@@ -122,7 +110,7 @@ function SimulatorAnswerPicker(props: SimulatorAnswerPickerProps) {
                                     ))}
                                 </select>
                                 <label>Lock in:</label>
-                                <input type="checkbox" checked={lockedInStatus[questionIndex]} onChange={(e) => lockInAnswers(questionIndex, e.target.checked)}></input>
+                                <input type="checkbox" checked={lockedInStatus[questionIndex]} onChange={(e) => lockInAnswer(questionIndex, e.target.checked)}></input>
                             </div>
                         ))}
                     </ol>

@@ -48,11 +48,8 @@ function OsegSimulator(props: OsegSimulatorProps) {
   const sides = data.scenarioSides;
   const sideIndex = sides.map((x) => x.playerId).indexOf(selectedCandidate);
 
-  // Initial list of answer ids with default answer id
-  const [selectedAnswerIds, setSelectedAnswerIds] = useState<number[]>(() => {
-    const questions = data.scenarioSides[sideIndex].questions;
-    return new Array(questions.length).fill(null);
-  });
+  // Initial set of answer ids with default answer id
+  const [selectedAnswerIds, setSelectedAnswerIds] = useState<Set<number>>(() => new Set());
 
   function getCandidatesWithSides(): CandidateModel[] {
     const candidates: CandidateModel[] = [];
