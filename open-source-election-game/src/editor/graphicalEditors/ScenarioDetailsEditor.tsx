@@ -4,6 +4,7 @@ import GenericEditorInput from "../components/GenericEditorInput";
 import GenericEditorTextArea from "../components/GenericEditorTextArea";
 import MusicEditor from "./MusicEditor";
 import ScenarioThemeEditor from "./ScenarioThemeEditor";
+import TooltipEditor from "./TooltipEditor";
 
 interface ScenarioDetailsEditorProps {
     data : ScenarioModel;
@@ -38,6 +39,9 @@ function ScenarioDetailsEditor(props : ScenarioDetailsEditorProps) {
             <h2>Music Editor</h2>
             <div className="EditorNote">Warning: Please only use songs you have permission to use in a scenario.</div>
             <MusicEditor data={data} setData={setData}></MusicEditor>
+
+            <h2>Tooltips</h2>
+            <TooltipEditor data={data} setData={setData}></TooltipEditor>
         </div>
     )
 }
