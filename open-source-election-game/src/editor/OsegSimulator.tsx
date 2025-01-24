@@ -20,6 +20,7 @@ const numberOfSimulations = 500;
 function OsegSimulator(props: OsegSimulatorProps) {
   const [isSimulating, setIsSimulating] = useState(false);
   const [isShuffled, setIsShuffled] = useState(false);
+  const [showSimulatedResults, setShowSimulatedResults] = useState(false);
 
   const [allResults, setAllResults] = useState<FinalResultsModel[]>([]);
   const [allResultsIndex, setAllResultsIndex] = useState(0);
@@ -227,6 +228,7 @@ function OsegSimulator(props: OsegSimulatorProps) {
     setAllResults(allResultsRun);
     setAverageResult(averageResult);
     setHistogram(tempHistogram);
+    setShowSimulatedResults(true);
 
     const sortedResults = allResultsRun.sort((a, b) => {
       const apv = a.popularVotes.get(selectedCandidate) ?? 0;
@@ -240,6 +242,16 @@ function OsegSimulator(props: OsegSimulatorProps) {
     setBestResult(sortedResults[sortedResults.length - 1]);
     setWorstResult(sortedResults[0]);
     setIsSimulating(false);
+  }
+
+  const resetSimulation = () => {
+    setShowSimulatedResults(false);
+    setAllResults([]);
+    setAverageResult(null);
+    setBestResult(null);
+    setWorstResult(null);
+    setHistogram([]);
+    setAllResultsIndex(0);
   }
 
   if (isSimulating) {
@@ -257,89 +269,100 @@ function OsegSimulator(props: OsegSimulatorProps) {
 
   return (
     <div>
-      <label className="LabelText" htmlFor="candidate">
-        Candidate:{" "}
-      </label>
-      <select
-        id="candidate"
-        onChange={(e) => setSelectedCandidate(Number.parseInt(e.target.value))}
-      >
-        {getCandidatesWithSides().map((candidate) => {
-          return (
-            <option value={candidate.id} key={candidate.id}>
-              {candidate.firstName} {candidate.lastName}
-            </option>
-          );
-        })}
-      </select>
-      <label className="LabelText" htmlFor="runningMate">
-        Running Mate:{" "}
-      </label>
-      {getRunningMatesForCandidate(selectedCandidate).length > 0 && (
-        <select
-          id="runningMate"
-          onChange={(e) =>
-            setSelectedRunningMate(Number.parseInt(e.target.value))
-          }
-        >
-          {getRunningMatesForCandidate(selectedCandidate).map((candidate) => {
-            return (
-              <option value={candidate.id} key={candidate.id}>
-                {candidate.firstName + " " + candidate.lastName}
-              </option>
-            );
-          })}
-        </select>
-      )}
+      {!showSimulatedResults ? (
+        <>
+          <label className="LabelText" htmlFor="candidate">
+            Candidate:{" "}
+          </label>
+          <select
+            id="candidate"
+            onChange={(e) => setSelectedCandidate(Number.parseInt(e.target.value))}
+          >
+            {getCandidatesWithSides().map((candidate) => {
+              return (
+                <option value={candidate.id} key={candidate.id}>
+                  {candidate.firstName} {candidate.lastName}
+                </option>
+              );
+            })}
+          </select>
+          <label className="LabelText" htmlFor="runningMate">
+            Running Mate:{" "}
+          </label>
+          {getRunningMatesForCandidate(selectedCandidate).length > 0 && (
+            <select
+              id="runningMate"
+              onChange={(e) =>
+                setSelectedRunningMate(Number.parseInt(e.target.value))
+              }
+            >
+              {getRunningMatesForCandidate(selectedCandidate).map((candidate) => {
+                return (
+                  <option value={candidate.id} key={candidate.id}>
+                    {candidate.firstName + " " + candidate.lastName}
+                  </option>
+                );
+              })}
+            </select>
+          )}
 
-      {shouldShowShuffle && (
+          {shouldShowShuffle && (
+            <div>
+              <label>Shuffle Questions? </label>
+              <input
+                type="checkbox"
+                checked={isShuffled}
+                onChange={(e) => setIsShuffled(e.target.checked)}
+              ></input>
+            </div>
+          )}
+
+          <button onClick={() => simulateResults()}>
+            Simulate {numberOfSimulations} Times
+          </button>
+
+          <SimulatorAnswerPicker 
+            data={data} 
+            sideIndex={sideIndex} 
+            selectedAnswerIds={selectedAnswerIds} 
+            setSelectedAnswersId={setSelectedAnswerIds}
+          ></SimulatorAnswerPicker>
+        </>
+      ) : (
         <div>
-          <label>Shuffle Questions? </label>
-          <input
-            type="checkbox"
-            checked={isShuffled}
-            onChange={(e) => setIsShuffled(e.target.checked)}
-          ></input>
+          <button onClick={resetSimulation}>Back to Answer Picker</button>
+
+          {histogram.length > 0 && (
+            <div>
+              <h2>Histogram</h2>
+              <Histogram counts={histogram}></Histogram>
+            </div>
+          )}
+
+          {averageResult != null && (
+            <div>
+              <h2>Average Result</h2>
+              <FinalResults results={averageResult} theme={theme}></FinalResults>
+            </div>
+          )}
+
+          {bestResult != null && (
+            <div>
+              <h2>Best Result</h2>
+              <FinalResults results={bestResult} theme={theme}></FinalResults>
+            </div>
+          )}
+
+          {worstResult != null && (
+            <div>
+              <h2>Worst Result</h2>
+              <FinalResults results={worstResult} theme={theme}></FinalResults>
+            </div>
+          )}
+
+          {allResults.length > 0 && getAllResults()}
         </div>
       )}
-
-      <button onClick={() => simulateResults()}>
-        Simulate {numberOfSimulations} Times
-      </button>
-
-      {!averageResult && (
-        <SimulatorAnswerPicker data={data} sideIndex={sideIndex} selectedAnswerIds={selectedAnswerIds} setSelectedAnswersId={setSelectedAnswerIds}></SimulatorAnswerPicker>
-      )}
-
-      {histogram.length > 0 && (
-        <div>
-          <h2>Histogram</h2>
-          <Histogram counts={histogram}></Histogram>
-        </div>
-      )}
-
-      {averageResult != null && (
-        <div>
-          <h2>Average Result</h2>
-          <FinalResults results={averageResult} theme={theme}></FinalResults>
-        </div>
-      )}
-
-      {bestResult != null && (
-        <div>
-          <h2>Best Result</h2>
-          <FinalResults results={bestResult} theme={theme}></FinalResults>
-        </div>
-      )}
-
-      {worstResult != null && (
-        <div>
-          <h2>Worst Result</h2>
-          <FinalResults results={worstResult} theme={theme}></FinalResults>
-        </div>
-      )}
-
-      {allResults.length > 0 && getAllResults()}
     </div>
   );
 }
