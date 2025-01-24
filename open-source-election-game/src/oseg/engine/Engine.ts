@@ -357,7 +357,6 @@ class Engine {
             for (const candidate of this.scenarioController.getCandidates()) {
                 if (!runningMateMap.has(candidate.getId())) {
                     if (candidate.model.runningMateIds.length > 0) {
-                        console.log(candidate.model.runningMateIds);
                         runningMateMap.set(candidate.getId(), candidate.model.runningMateIds[0]);
                     }
                 }
