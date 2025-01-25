@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
 import QuestionEditor from "./QuestionEditor";
+import QuestionModel from "../../oseg/engine/models/QuestionModel";
 
 interface QuestionsEditorProps {
   data: ScenarioModel;
@@ -91,6 +92,44 @@ function QuestionsEditor(props: QuestionsEditorProps) {
     setQuestionIndex(side.questions.length - 1);
   }
 
+  function getHighestAnswerId() {
+    if (
+      data.scenarioSides.length == 0 ||
+      data.scenarioSides[0].questions.length == 0
+    ) {
+      return Math.round(Math.random() * 565464);
+    }
+
+    let highest = 0;
+
+    for (const side of data.scenarioSides) {
+      for (const question of side.questions) {
+        for (const answer of question.answers) {
+          highest = Math.max(highest, answer.id);
+        }
+      }
+    }
+
+    return highest;
+  }
+
+  function cloneQuestion() {
+    const currentQuestion = side.questions[questionIndex];
+    const newQuestion: QuestionModel = JSON.parse(
+      JSON.stringify(currentQuestion)
+    );
+    newQuestion.id = highestQuestionId() + 1;
+
+    let answerId = getHighestAnswerId() + 1;
+    for (const answer of newQuestion.answers) {
+      answer.id = answerId;
+      answerId++;
+    }
+
+    side.questions.push(newQuestion);
+    setData(JSON.parse(JSON.stringify(data)));
+  }
+
   function moveQuestionDown() {
     if (questionIndex == side.questions.length - 1) {
       return;
@@ -138,13 +177,13 @@ function QuestionsEditor(props: QuestionsEditorProps) {
       {side.questions.length == 0 ? (
         <div>
           <button className="GreenButton" onClick={addQuestion}>
-            Add
+            Add Question
           </button>
           <p>This Scenario Side has no questions yet!</p>
         </div>
       ) : (
         <div>
-          <label>Select a Question: </label>
+          <label>Select a Question ({side.questions.length}): </label>
           <select
             value={questionIndex}
             onChange={(e) => setQuestionIndex(Number(e.target.value))}
@@ -158,12 +197,15 @@ function QuestionsEditor(props: QuestionsEditorProps) {
           </select>
 
           <button className="GreenButton" onClick={addQuestion}>
-            Add
+            +
           </button>
           <button className="RedButton" onClick={deleteQuestion}>
-            Delete
+            -
           </button>
-          
+          <button className="BlueButton" onClick={cloneQuestion}>
+            Clone
+          </button>
+
           <button disabled={questionIndex <= 0} onClick={moveQuestionUp}>
             ⬆️
           </button>
