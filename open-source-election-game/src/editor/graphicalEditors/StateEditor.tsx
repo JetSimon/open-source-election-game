@@ -2,6 +2,7 @@ import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
 import { useState } from "react";
 import StateModel from "../../oseg/engine/models/StateModel";
 import GenericEditorInput from "../components/GenericEditorInput";
+import IssueScoreEditor from "../components/IssueScoreEditor";
 
 interface StateEditorProps {
     data: ScenarioModel;
@@ -28,7 +29,6 @@ function StateEditor(props: StateEditorProps) {
     return (
         <div className="EditorForm">
             <h2>State Editor</h2>
-            <div className="EditorNote">Note: to adjust state margins (opinions of candidates, issue scores), use the Margin Tools tab instead. This is for adjusting state details</div>
 
             <label>Select a State: </label>
             <select value={stateId} onChange={(e) => setStateId(Number(e.target.value))}>
@@ -71,6 +71,12 @@ function StateEditor(props: StateEditorProps) {
                             label={"Popular Votes"}
                             type={"number"}
                         />
+
+                        <h3>Issue Scores</h3>
+                        <div>
+                            {state.baseIssueScores.sort().map((x) => <IssueScoreEditor data={data} setData={setData} issueScore={x}></IssueScoreEditor>)}
+                        </div>
+                        <div className="EditorNote">Note: Most of the time the you want the weight to be between 0 - 1, but some scenarios go higher</div>
                     </div>
             }
 

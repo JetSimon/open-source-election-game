@@ -53,7 +53,7 @@ function IssueScoreEditor(props : IssueScoreEditorProps) {
             <label>Issue Weight</label>
             <span> ({issueScore.weight})</span>
             <br></br>
-            <input step="0.01" type="range" min="0" max="1" value={issueScore.weight} onChange={(e) => setIssueWeight(Number(e.target.value))}></input>
+            <input step="0.01" type="range" min="0" max="3" value={issueScore.weight} onChange={(e) => setIssueWeight(Number(e.target.value))}></input>
         </div>
     </div>
     )
