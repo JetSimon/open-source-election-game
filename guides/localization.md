@@ -24,6 +24,13 @@ If you want to add another key, look at how those functions are used in OSEG cur
 - Election Results and Data by State
 - View states by
 - Latest Polls/Electoral Map
+- Popular Vote %
+- Popular Votes
+- Electoral Votes
+- EVs
+- Hover over a state see polling
+- Switch to Overall PV/EV Estimate
+- Switch to State Estimate
 
 ## Example
 
@@ -33,6 +40,6 @@ It also uses the optional onCandidateSelectionStarted function, which would have
 
 ```js
 function onCandidateSelectionStarted(engine) {
-    engine.setLocalization("Choose your Candidate", "Choose your Guy")
+  engine.setLocalization("Choose your Candidate", "Choose your Guy");
 }
 ```

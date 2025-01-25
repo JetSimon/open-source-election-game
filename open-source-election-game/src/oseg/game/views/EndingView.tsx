@@ -17,12 +17,13 @@ enum EndingTab {
   EndingSlides,
   ResultsByState,
   OverallResultsDetailed,
-  Map
+  Map,
 }
 
 function EndingView(props: EndingViewProps) {
-
-  const [currentTab, setCurrentTab] = useState<EndingTab>(EndingTab.EndingSlides);
+  const [currentTab, setCurrentTab] = useState<EndingTab>(
+    EndingTab.EndingSlides
+  );
   const { engine, theme, mapSvg } = props;
 
   const [finalResults] = useState(() => {
@@ -38,20 +39,33 @@ function EndingView(props: EndingViewProps) {
       return (
         <>
           <EndingSlides theme={theme} engine={engine}></EndingSlides>
-          <FinalResults theme={theme} results={finalResults}></FinalResults>
+          <FinalResults
+            engine={engine}
+            theme={theme}
+            results={finalResults}
+          ></FinalResults>
         </>
       );
-    }
-    else if (currentTab == EndingTab.Map) {
-      return <MapView fullyColored={true} theme={theme} onStateClicked={null} engine={engine} mapSvg={mapSvg}></MapView>;
-    }
-    else if (currentTab == EndingTab.OverallResultsDetailed) {
-      return <FinalResults theme={theme} results={finalResults}></FinalResults>;
-    }
-    else if (currentTab == EndingTab.ResultsByState) {
+    } else if (currentTab == EndingTab.Map) {
       return (
-        <ResultsByState engine={engine} theme={theme}></ResultsByState>
-      )
+        <MapView
+          fullyColored={true}
+          theme={theme}
+          onStateClicked={null}
+          engine={engine}
+          mapSvg={mapSvg}
+        ></MapView>
+      );
+    } else if (currentTab == EndingTab.OverallResultsDetailed) {
+      return (
+        <FinalResults
+          engine={engine}
+          theme={theme}
+          results={finalResults}
+        ></FinalResults>
+      );
+    } else if (currentTab == EndingTab.ResultsByState) {
+      return <ResultsByState engine={engine} theme={theme}></ResultsByState>;
     }
   }
 
@@ -59,10 +73,30 @@ function EndingView(props: EndingViewProps) {
     <div className="EndingView">
       {getTab()}
       <div>
-        <button disabled={currentTab == EndingTab.EndingSlides} onClick={() => setCurrentTab(EndingTab.EndingSlides)}>{engine.getLocalization("Slides")}</button>
-        <button disabled={currentTab == EndingTab.Map} onClick={() => setCurrentTab(EndingTab.Map)}>{engine.getLocalization("Map")}</button>
-        <button disabled={currentTab == EndingTab.ResultsByState} onClick={() => setCurrentTab(EndingTab.ResultsByState)}>{engine.getLocalization("Results By State")}</button>
-        <button disabled={currentTab == EndingTab.OverallResultsDetailed} onClick={() => setCurrentTab(EndingTab.OverallResultsDetailed)}>{engine.getLocalization("Overall Results Detailed")}</button>
+        <button
+          disabled={currentTab == EndingTab.EndingSlides}
+          onClick={() => setCurrentTab(EndingTab.EndingSlides)}
+        >
+          {engine.getLocalization("Slides")}
+        </button>
+        <button
+          disabled={currentTab == EndingTab.Map}
+          onClick={() => setCurrentTab(EndingTab.Map)}
+        >
+          {engine.getLocalization("Map")}
+        </button>
+        <button
+          disabled={currentTab == EndingTab.ResultsByState}
+          onClick={() => setCurrentTab(EndingTab.ResultsByState)}
+        >
+          {engine.getLocalization("Results By State")}
+        </button>
+        <button
+          disabled={currentTab == EndingTab.OverallResultsDetailed}
+          onClick={() => setCurrentTab(EndingTab.OverallResultsDetailed)}
+        >
+          {engine.getLocalization("Overall Results Detailed")}
+        </button>
       </div>
     </div>
   );

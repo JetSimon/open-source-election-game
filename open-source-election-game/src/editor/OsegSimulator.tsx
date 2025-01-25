@@ -13,6 +13,7 @@ interface OsegSimulatorProps {
   data: ScenarioModel;
   logic: string;
   theme: ThemeModel;
+  engine: Engine;
 }
 
 const numberOfSimulations = 500;
@@ -34,7 +35,7 @@ function OsegSimulator(props: OsegSimulatorProps) {
   );
   const [histogram, setHistogram] = useState<number[]>([]);
 
-  const { data, logic, theme } = props;
+  const { data, logic, theme, engine } = props;
 
   const [selectedCandidate, setSelectedCandidate] = useState<number>(() => {
     const cans = getCandidatesWithSides();
@@ -50,7 +51,9 @@ function OsegSimulator(props: OsegSimulatorProps) {
   const sideIndex = sides.map((x) => x.playerId).indexOf(selectedCandidate);
 
   // Initial set of answer ids with default answer id
-  const [selectedAnswerIds, setSelectedAnswerIds] = useState<Set<number>>(() => new Set());
+  const [selectedAnswerIds, setSelectedAnswerIds] = useState<Set<number>>(
+    () => new Set()
+  );
 
   function getCandidatesWithSides(): CandidateModel[] {
     const candidates: CandidateModel[] = [];
@@ -75,6 +78,7 @@ function OsegSimulator(props: OsegSimulatorProps) {
           Result {allResultsIndex + 1}/{allResults.length}
         </h2>
         <FinalResults
+          engine={engine}
           results={allResults[allResultsIndex]}
           theme={theme}
         ></FinalResults>
@@ -132,7 +136,7 @@ function OsegSimulator(props: OsegSimulatorProps) {
 
     const encodedLogic = encodeURIComponent(logic);
     const logicDataUri = "data:text/javascript;charset=utf-8," + encodedLogic;
-    
+
     const tempHistogram: number[] = [];
     for (let i = 0; i < 20; i++) {
       tempHistogram.push(0);
@@ -162,12 +166,11 @@ function OsegSimulator(props: OsegSimulatorProps) {
       tempEngine.setScenarioSide(sideIndex, selectedRunningMate, isShuffled);
       const candidateId = tempEngine.getPlayerCandidateController().getId();
       const answerSet = new Set(selectedAnswerIds);
-      
+
       while (!tempEngine.isGameOver()) {
         const question = tempEngine.getCurrentQuestion();
         if (question == null) break;
 
-        
         let answer = null;
 
         for (const currentAnswer of question.answers) {
@@ -178,10 +181,12 @@ function OsegSimulator(props: OsegSimulatorProps) {
         }
 
         if (answer == null) {
-          const randomIndex = Math.floor(question.answers.length * tempEngine.random());
+          const randomIndex = Math.floor(
+            question.answers.length * tempEngine.random()
+          );
           answer = question.answers[randomIndex];
-        } 
-        
+        }
+
         tempEngine.applyAnswer(answer);
 
         const states = tempEngine.scenarioController.getStates();
@@ -252,7 +257,7 @@ function OsegSimulator(props: OsegSimulatorProps) {
     setWorstResult(null);
     setHistogram([]);
     setAllResultsIndex(0);
-  }
+  };
 
   if (isSimulating) {
     return <p>Simulating...</p>;
@@ -276,7 +281,9 @@ function OsegSimulator(props: OsegSimulatorProps) {
           </label>
           <select
             id="candidate"
-            onChange={(e) => setSelectedCandidate(Number.parseInt(e.target.value))}
+            onChange={(e) =>
+              setSelectedCandidate(Number.parseInt(e.target.value))
+            }
           >
             {getCandidatesWithSides().map((candidate) => {
               return (
@@ -296,13 +303,15 @@ function OsegSimulator(props: OsegSimulatorProps) {
                 setSelectedRunningMate(Number.parseInt(e.target.value))
               }
             >
-              {getRunningMatesForCandidate(selectedCandidate).map((candidate) => {
-                return (
-                  <option value={candidate.id} key={candidate.id}>
-                    {candidate.firstName + " " + candidate.lastName}
-                  </option>
-                );
-              })}
+              {getRunningMatesForCandidate(selectedCandidate).map(
+                (candidate) => {
+                  return (
+                    <option value={candidate.id} key={candidate.id}>
+                      {candidate.firstName + " " + candidate.lastName}
+                    </option>
+                  );
+                }
+              )}
             </select>
           )}
 
@@ -321,10 +330,10 @@ function OsegSimulator(props: OsegSimulatorProps) {
             Simulate {numberOfSimulations} Times
           </button>
 
-          <SimulatorAnswerPicker 
-            data={data} 
-            sideIndex={sideIndex} 
-            selectedAnswerIds={selectedAnswerIds} 
+          <SimulatorAnswerPicker
+            data={data}
+            sideIndex={sideIndex}
+            selectedAnswerIds={selectedAnswerIds}
             setSelectedAnswersId={setSelectedAnswerIds}
           ></SimulatorAnswerPicker>
         </>
@@ -342,21 +351,33 @@ function OsegSimulator(props: OsegSimulatorProps) {
           {averageResult != null && (
             <div>
               <h2>Average Result</h2>
-              <FinalResults results={averageResult} theme={theme}></FinalResults>
+              <FinalResults
+                engine={engine}
+                results={averageResult}
+                theme={theme}
+              ></FinalResults>
             </div>
           )}
 
           {bestResult != null && (
             <div>
               <h2>Best Result</h2>
-              <FinalResults results={bestResult} theme={theme}></FinalResults>
+              <FinalResults
+                engine={engine}
+                results={bestResult}
+                theme={theme}
+              ></FinalResults>
             </div>
           )}
 
           {worstResult != null && (
             <div>
               <h2>Worst Result</h2>
-              <FinalResults results={worstResult} theme={theme}></FinalResults>
+              <FinalResults
+                engine={engine}
+                results={worstResult}
+                theme={theme}
+              ></FinalResults>
             </div>
           )}
 
