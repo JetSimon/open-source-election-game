@@ -61,6 +61,7 @@ const templateNames = [
     "1980 For Common Sense",
     "1936 Every Man a King",
     "1964 The Beatles",
+    "1960m",
     "TCT 1844",
     "TCT 2016",
     "Blank"
