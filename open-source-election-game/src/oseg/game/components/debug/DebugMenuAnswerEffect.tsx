@@ -1,9 +1,9 @@
 import { Engine } from "../../../engine/Engine";
-import AnswerEffect from "../../../engine/models/AnswerEffectModel";
-import AnswerEffectType from "../../../engine/models/AnswerEffectType";
+import { AnswerEffectModel } from "../../../engine/models/AnswerEffectModel";
+import { AnswerEffectType } from "../../../engine/models/AnswerEffectType";
 
 interface DebugMenuAnswerEffectProps {
-    answerEffect : AnswerEffect;
+    answerEffect : AnswerEffectModel;
     engine : Engine;
 }
 

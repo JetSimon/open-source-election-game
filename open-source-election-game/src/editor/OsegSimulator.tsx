@@ -1,13 +1,13 @@
 import { useState } from "react";
-import ScenarioModel from "../oseg/engine/models/ScenarioModel";
-import "./OsegSimulator.css";
-import FinalResultsModel from "../oseg/engine/models/FinalResultsModel";
-import FinalResults from "../oseg/game/components/FinalResults";
-import ThemeModel from "../oseg/engine/models/ThemeModel";
 import { Engine } from "../oseg/engine/Engine";
-import CandidateModel from "../oseg/engine/models/CandidateModel";
+import { CandidateModel } from "../oseg/engine/models/CandidateModel";
+import { FinalResultsModel } from "../oseg/engine/models/FinalResultsModel";
+import { ScenarioModel } from "../oseg/engine/models/ScenarioModel";
+import { ThemeModel } from "../oseg/engine/models/ThemeModel";
+import FinalResults from "../oseg/game/components/FinalResults";
 import Histogram from "./components/Histogram";
 import SimulatorAnswerPicker from "./graphicalEditors/SimulatorAnswerPicker";
+import "./OsegSimulator.css";
 
 interface OsegSimulatorProps {
   data: ScenarioModel;
@@ -150,7 +150,7 @@ function OsegSimulator(props: OsegSimulatorProps) {
         onAnswerPicked,
         onScenarioStarted,
         onCandidateSelectionStarted,
-      } = await import(/* @vite-ignore */ logicDataUri);
+      } = await import  (/* @vite-ignore */ logicDataUri);
       tempEngine.createEnding = createEnding;
       tempEngine.onAnswerPicked = onAnswerPicked;
       tempEngine.onScenarioStarted = onScenarioStarted;

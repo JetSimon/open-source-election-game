@@ -1,5 +1,5 @@
 import { Engine } from "../../engine/Engine";
-import AnswerModel from "../../engine/models/AnswerModel";
+import { AnswerModel } from "../../engine/models/AnswerModel";
 
 interface AnswerProps {
     answerId: string;

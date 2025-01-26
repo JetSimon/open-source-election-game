@@ -1,22 +1,22 @@
-import { useEffect, useState } from "react";
 import { Editor } from "@monaco-editor/react";
 import { editor } from 'monaco-editor';
-import EnumNavBar from "./components/EnumNavBar";
-import ScenarioModel from "../oseg/engine/models/ScenarioModel";
-import StateModel from "../oseg/engine/models/StateModel";
+import { useEffect, useState } from "react";
+import { BaseCandidateStateModifier } from "../oseg/engine/models/BaseCandidateStateModifier";
+import { IssueScore } from "../oseg/engine/models/IssueScore";
+import { ScenarioModel } from "../oseg/engine/models/ScenarioModel";
+import { StateModel } from "../oseg/engine/models/StateModel";
+import { getAllPathIdsInSvg } from "../oseg/utils/SvgUtils";
 import { BulkStateFunction } from "./bulkMapComponents/BulkStateFunction";
+import EditorWarningBox from "./components/EditorWarningBox";
+import EnumNavBar from "./components/EnumNavBar";
 import CandidateEditor from "./graphicalEditors/CandidateEditor";
 import IssuesEditor from "./graphicalEditors/IssuesEditor";
+import MarginTools from "./graphicalEditors/MarginTools";
 import QuestionsEditor from "./graphicalEditors/QuestionsEditor";
 import ScenarioDetailsEditor from "./graphicalEditors/ScenarioDetailsEditor";
-import { getAllPathIdsInSvg } from "../oseg/utils/SvgUtils";
-import EditorWarningBox from "./components/EditorWarningBox";
-import IssueScore from "../oseg/engine/models/IssueScore";
-import BaseCandidateStateModifier from "../oseg/engine/models/BaseCandidateStateModifier";
 import StateEditor from "./graphicalEditors/StateEditor";
 import OsegBulkTools from "./OsegBulkTools";
-import "./OsegEditorStyle.css"
-import MarginTools from "./graphicalEditors/MarginTools";
+import "./OsegEditorStyle.css";
 
 enum LeftNavBar {
     DataJson,

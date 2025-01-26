@@ -1,9 +1,9 @@
-import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
+import { AnswerModel } from "../../oseg/engine/models/AnswerModel";
+import { QuestionModel } from "../../oseg/engine/models/QuestionModel";
+import { ScenarioModel } from "../../oseg/engine/models/ScenarioModel";
 import GenericEditorTextArea from "../components/GenericEditorTextArea";
-import AnswerModel from "../../oseg/engine/models/AnswerModel";
-import AnswerEffectEditor from "./AnswerEffectEditor";
-import QuestionModel from "../../oseg/engine/models/QuestionModel";
 import "./AnswerEditor.css";
+import AnswerEffectEditor from "./AnswerEffectEditor";
 
 interface AnswerEditorProps {
   data: ScenarioModel;

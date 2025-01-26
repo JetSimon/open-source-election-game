@@ -1,4 +1,4 @@
-import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
+import { ScenarioModel } from "../../oseg/engine/models/ScenarioModel";
 import GenericEditorCheckbox from "../components/GenericEditorCheckbox";
 import GenericEditorInput from "../components/GenericEditorInput";
 import GenericEditorTextArea from "../components/GenericEditorTextArea";

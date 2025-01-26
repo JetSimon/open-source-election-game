@@ -1,5 +1,5 @@
-import Issue from "../../oseg/engine/models/Issue";
-import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
+import { Issue } from "../../oseg/engine/models/Issue";
+import { ScenarioModel } from "../../oseg/engine/models/ScenarioModel";
 import GenericEditorInput from "../components/GenericEditorInput";
 import GenericEditorTextArea from "../components/GenericEditorTextArea";
 

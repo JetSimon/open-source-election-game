@@ -1,6 +1,6 @@
-import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
 import { useState } from "react";
-import StateModel from "../../oseg/engine/models/StateModel";
+import { ScenarioModel } from "../../oseg/engine/models/ScenarioModel";
+import { StateModel } from "../../oseg/engine/models/StateModel";
 import GenericEditorInput from "../components/GenericEditorInput";
 import IssueScoreEditor from "../components/IssueScoreEditor";
 

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import BulkStateFunctionProps from "./BulkStateFunctionProps";
-import StateModel from "../../oseg/engine/models/StateModel";
-import IssueScore from "../../oseg/engine/models/IssueScore";
+import { IssueScore } from "../../oseg/engine/models/IssueScore";
+import { StateModel } from "../../oseg/engine/models/StateModel";
 import "./BulkStateFunction.css";
+import BulkStateFunctionProps from "./BulkStateFunctionProps";
 let issueScoreUsedInFunction = 0;
 let selectedIssueIdUsedInFunction = -1;
 let issueWeightUsedInFunction = 0;
@@ -78,7 +78,7 @@ function AdjustStateIssueScore(props : BulkStateFunctionProps) {
             <input step="0.01" type="range" min="-1" max="1" value={issueScore} onChange={(e) => setIssueScore(Number(e.target.value))}></input>
 
             <label>State Issue Weight ({issueWeight})</label>
-            <div className="BulkStateFunctionDesc">How important the issue is to them</div>
+            <div className="BulkStateFunctionDesc">How import  ant the issue is to them</div>
             <input step="0.01" type="range" min="0" max="1" value={issueWeight} onChange={(e) => setIssueWeight(Number(e.target.value))}></input>
 
             <button disabled={inUse} className="GreenButton" onClick={() => setBulkStateFunction((adjust))}>Use</button>

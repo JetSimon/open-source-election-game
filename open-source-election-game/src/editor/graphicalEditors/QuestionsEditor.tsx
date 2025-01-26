@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
+import { QuestionModel } from "../../oseg/engine/models/QuestionModel";
+import { ScenarioModel } from "../../oseg/engine/models/ScenarioModel";
 import QuestionEditor from "./QuestionEditor";
-import QuestionModel from "../../oseg/engine/models/QuestionModel";
 
 interface QuestionsEditorProps {
   data: ScenarioModel;

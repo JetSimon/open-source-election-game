@@ -1,6 +1,6 @@
-import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
+import { ScenarioModel } from "../../oseg/engine/models/ScenarioModel";
+import { ThemeModel } from "../../oseg/engine/models/ThemeModel";
 import GenericEditorInput from "../components/GenericEditorInput";
-import ThemeModel from "../../oseg/engine/models/ThemeModel";
 
 interface ScenarioThemeEditorProps {
     theme : ThemeModel;

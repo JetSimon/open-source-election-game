@@ -4,4 +4,4 @@ interface EndingSlide {
     endingText : string;
 }
 
-export default EndingSlide;
+export type { EndingSlide };

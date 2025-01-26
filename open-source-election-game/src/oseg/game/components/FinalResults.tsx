@@ -1,8 +1,8 @@
-import CandidateController from "../../engine/controllers/CandidateController";
-import "./FinalResults.css";
-import ThemeModel from "../../engine/models/ThemeModel";
-import FinalResultsModel from "../../engine/models/FinalResultsModel";
+import { CandidateController } from "../../engine/controllers/CandidateController";
 import { Engine } from "../../engine/Engine";
+import { FinalResultsModel } from "../../engine/models/FinalResultsModel";
+import { ThemeModel } from "../../engine/models/ThemeModel";
+import "./FinalResults.css";
 
 interface FinalResultsProps {
   results: FinalResultsModel;

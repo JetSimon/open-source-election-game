@@ -1,8 +1,8 @@
-import QuestionModel from "./QuestionModel";
+import { QuestionModel } from "./QuestionModel";
 
 interface ScenarioSideModel {
     playerId: number;
     questions: QuestionModel[];
 }
 
-export default ScenarioSideModel;
+export type { ScenarioSideModel };

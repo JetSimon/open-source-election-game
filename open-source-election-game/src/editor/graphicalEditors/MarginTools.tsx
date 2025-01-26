@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
-import StateModel from "../../oseg/engine/models/StateModel";
+import { ScenarioModel } from "../../oseg/engine/models/ScenarioModel";
+import { StateModel } from "../../oseg/engine/models/StateModel";
 import AdjustCandidateStateModifier from "../bulkMapComponents/AdjustCandidateStateModifier";
 import AdjustStateIssueScore from "../bulkMapComponents/AdjustStateIssueScore";
 import { BulkStateFunction } from "../bulkMapComponents/BulkStateFunction";

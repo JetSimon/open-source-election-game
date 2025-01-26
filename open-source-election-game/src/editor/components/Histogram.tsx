@@ -1,4 +1,4 @@
-import "./Histogram.css"
+import "./Histogram.css";
 
 interface HistogramProps {
     counts : number[]

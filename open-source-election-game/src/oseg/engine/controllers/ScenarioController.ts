@@ -1,11 +1,11 @@
-import ScenarioModel from "../models/ScenarioModel";
-import StateController from "./StateController";
-import CandidateController from "./CandidateController";
-import IssueScores from "../IssueScores";
-import QuestionModel from "../models/QuestionModel";
 import { seededShuffleArray } from "../../utils/ArrayUtils";
-import ThemeModel from "../models/ThemeModel";
 import { Engine } from "../Engine";
+import { IssueScores } from "../IssueScores";
+import { QuestionModel } from "../models/QuestionModel";
+import { ScenarioModel } from "../models/ScenarioModel";
+import { ThemeModel } from "../models/ThemeModel";
+import { CandidateController } from "./CandidateController";
+import { StateController } from "./StateController";
 
 class ScenarioController {
     model: ScenarioModel = this.makeEmptyScenarioModel();
@@ -192,4 +192,4 @@ class ScenarioController {
     }
 }
 
-export default ScenarioController;
+export { ScenarioController };

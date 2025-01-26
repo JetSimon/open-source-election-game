@@ -1,5 +1,5 @@
-import Tooltip from "../../oseg/engine/models/Tooltip";
-import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
+import { ScenarioModel } from "../../oseg/engine/models/ScenarioModel";
+import { Tooltip } from "../../oseg/engine/models/Tooltip";
 import GenericEditorInput from "../components/GenericEditorInput";
 
 interface TooltipEditorProps {
@@ -56,7 +56,7 @@ function TooltipEditor(props : TooltipEditorProps) {
                 )
             })}
             <div className="EditorNote">A tooltip value can include HTML like an img tag to include an image. You can also customize tooltip appearance using custom css.</div>
-            <div className="EditorNote">Important: the text a tooltip triggers on IS case sensitive!</div>
+            <div className="EditorNote">import  ant: the text a tooltip triggers on IS case sensitive!</div>
             <button onClick={addTooltip} className="GreenButton CircleButton">+</button>
         </div>
     )

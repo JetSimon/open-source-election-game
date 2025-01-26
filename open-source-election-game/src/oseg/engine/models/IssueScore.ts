@@ -4,4 +4,4 @@ interface IssueScore {
     weight: number;
 }
 
-export default IssueScore;
+export type { IssueScore };

@@ -1,8 +1,8 @@
-import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
-import IssueEditor from "./IssueEditor";
 import { useState } from "react";
-import Issue from "../../oseg/engine/models/Issue";
-import IssueScore from "../../oseg/engine/models/IssueScore";
+import { Issue } from "../../oseg/engine/models/Issue";
+import { IssueScore } from "../../oseg/engine/models/IssueScore";
+import { ScenarioModel } from "../../oseg/engine/models/ScenarioModel";
+import IssueEditor from "./IssueEditor";
 
 interface IssuesEditorProps {
     data : ScenarioModel;

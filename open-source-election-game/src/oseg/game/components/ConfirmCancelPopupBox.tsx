@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import ThemeModel from "../../engine/models/ThemeModel";
-import "./PopupBox.css"
+import { ThemeModel } from "../../engine/models/ThemeModel";
+import "./PopupBox.css";
 
 interface ConfirmCancelPopupBoxProps {
     title : string;

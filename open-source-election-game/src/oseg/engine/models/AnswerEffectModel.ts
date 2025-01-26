@@ -1,4 +1,4 @@
-interface AnswerEffect {
+interface AnswerEffectModel {
     answerEffectType: string,
     candidateId: number,
     issueId: number,
@@ -9,4 +9,5 @@ interface AnswerEffect {
     weight? : number;
 }
 
-export default AnswerEffect;
+export type { AnswerEffectModel };
+

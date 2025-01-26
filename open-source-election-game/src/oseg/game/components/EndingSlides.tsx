@@ -1,7 +1,7 @@
 import { useState } from "react";
-import EndingModel from "../../engine/models/EndingModel";
-import ThemeModel from "../../engine/models/ThemeModel";
 import { Engine } from "../../engine/Engine";
+import { EndingModel } from "../../engine/models/EndingModel";
+import { ThemeModel } from "../../engine/models/ThemeModel";
 
 interface EndingSlidesProps {
     theme: ThemeModel;

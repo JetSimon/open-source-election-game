@@ -1,5 +1,5 @@
-import IssueScore from "./IssueScore";
-import BaseCandidateStateModifier from "./BaseCandidateStateModifier";
+import { BaseCandidateStateModifier } from "./BaseCandidateStateModifier";
+import { IssueScore } from "./IssueScore";
 
 interface StateModel {
     id: number,
@@ -11,4 +11,4 @@ interface StateModel {
     baseCandidateStateModifiers: BaseCandidateStateModifier[];
 }
 
-export default StateModel;
+export type { StateModel };

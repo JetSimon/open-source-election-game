@@ -1,4 +1,4 @@
-import CandidateController from "../controllers/CandidateController";
+import { CandidateController } from "../controllers/CandidateController";
 
 interface FinalResultsModel {
     popularVotes : Map<number, number>;
@@ -8,4 +8,4 @@ interface FinalResultsModel {
     totalElectoralVotes : number;
 }
 
-export default FinalResultsModel;
+export type { FinalResultsModel };

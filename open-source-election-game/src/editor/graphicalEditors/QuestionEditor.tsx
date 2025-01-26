@@ -1,6 +1,6 @@
-import AnswerModel from "../../oseg/engine/models/AnswerModel";
-import QuestionModel from "../../oseg/engine/models/QuestionModel";
-import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
+import { AnswerModel } from "../../oseg/engine/models/AnswerModel";
+import { QuestionModel } from "../../oseg/engine/models/QuestionModel";
+import { ScenarioModel } from "../../oseg/engine/models/ScenarioModel";
 import GenericEditorCheckbox from "../components/GenericEditorCheckbox";
 import GenericEditorTextArea from "../components/GenericEditorTextArea";
 import AnswerEditor from "./AnswerEditor";

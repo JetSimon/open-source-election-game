@@ -1,10 +1,11 @@
-import AnswerEffect from "./AnswerEffectModel";
+import { AnswerEffectModel } from "./AnswerEffectModel";
 
 interface AnswerModel {
     id: number,
     description: string;
     feedback: string;
-    answerEffects: AnswerEffect[];
+    answerEffects: AnswerEffectModel[];
 }
 
-export default AnswerModel;
+export type { AnswerModel };
+

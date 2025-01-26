@@ -1,5 +1,5 @@
-import CandidateModel from "../../engine/models/CandidateModel";
 import { Engine } from "../../engine/Engine";
+import { CandidateModel } from "../../engine/models/CandidateModel";
 
 interface CandidateInfoAreaProps {
     candidate : CandidateModel;

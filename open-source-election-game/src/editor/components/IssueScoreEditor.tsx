@@ -1,5 +1,5 @@
-import IssueScore from "../../oseg/engine/models/IssueScore";
-import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
+import { IssueScore } from "../../oseg/engine/models/IssueScore";
+import { ScenarioModel } from "../../oseg/engine/models/ScenarioModel";
 
 import "./IssueScoreEditor.css";
 

@@ -4,4 +4,4 @@ interface SongModel {
     imageUrl : string;
 }
 
-export default SongModel;
+export type { SongModel };

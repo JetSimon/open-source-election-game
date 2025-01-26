@@ -1,4 +1,4 @@
-import AnswerModel from "./AnswerModel";
+import { AnswerModel } from "./AnswerModel";
 
 interface QuestionModel {
     id: number,
@@ -9,4 +9,4 @@ interface QuestionModel {
     onlyEnableAtStartIfRunningMateId?: number;
 }
 
-export default QuestionModel;
+export type { QuestionModel };

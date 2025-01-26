@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import BulkStateFunctionProps from "./BulkStateFunctionProps";
-import BaseCandidateStateModifier from "../../oseg/engine/models/BaseCandidateStateModifier";
-import StateModel from "../../oseg/engine/models/StateModel";
+import { BaseCandidateStateModifier } from "../../oseg/engine/models/BaseCandidateStateModifier";
+import { StateModel } from "../../oseg/engine/models/StateModel";
 import "./BulkStateFunction.css";
+import BulkStateFunctionProps from "./BulkStateFunctionProps";
 let magnitudeUsedInFunction = 1;
 let selectedCandidateIdUsedInFunction = -1;
 

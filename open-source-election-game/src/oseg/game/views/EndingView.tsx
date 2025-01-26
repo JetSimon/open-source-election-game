@@ -1,11 +1,11 @@
+import { useState } from "react";
 import { Engine } from "../../engine/Engine";
-import FinalResults from "../components/FinalResults";
+import { ThemeModel } from "../../engine/models/ThemeModel";
 import EndingSlides from "../components/EndingSlides";
-import ThemeModel from "../../engine/models/ThemeModel";
+import FinalResults from "../components/FinalResults";
+import ResultsByState from "../components/ResultsByState";
 import "./EndingView.css";
 import MapView from "./MapView";
-import { useState } from "react";
-import ResultsByState from "../components/ResultsByState";
 
 interface EndingViewProps {
   engine: Engine;

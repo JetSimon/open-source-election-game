@@ -3,4 +3,4 @@ interface Tooltip {
     value : string;
 }
 
-export default Tooltip;
+export type { Tooltip };

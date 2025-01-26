@@ -1,8 +1,8 @@
-import ScenarioModel from "../oseg/engine/models/ScenarioModel";
 import { useEffect, useState } from "react";
+import { ScenarioModel } from "../oseg/engine/models/ScenarioModel";
 import Game from "../oseg/game/Game";
-import "./ScenarioLoader.css";
 import ScenarioBox from "./ScenarioBox";
+import "./ScenarioLoader.css";
 
 const scenarioNames = ["1980 For Common Sense", "1964 The Beatles", "1960m"];
 

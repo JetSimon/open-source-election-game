@@ -3,4 +3,4 @@ interface BaseCandidateStateModifier {
     amount : number;
 }
 
-export default BaseCandidateStateModifier;
+export type { BaseCandidateStateModifier };

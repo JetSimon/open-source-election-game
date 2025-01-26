@@ -1,10 +1,10 @@
-import { Engine, GameState } from "../../engine/Engine";
 import { useEffect, useState } from "react";
-import "./CandidateSelectionView.css";
-import CandidateController from "../../engine/controllers/CandidateController";
-import CandidateModel from "../../engine/models/CandidateModel";
+import { CandidateController } from "../../engine/controllers/CandidateController";
+import { Engine, GameState } from "../../engine/Engine";
+import { CandidateModel } from "../../engine/models/CandidateModel";
+import { ThemeModel } from "../../engine/models/ThemeModel";
 import CandidateInfoArea from "../components/CandidateInfoArea";
-import ThemeModel from "../../engine/models/ThemeModel";
+import "./CandidateSelectionView.css";
 interface CandidateSelectionViewProps {
   engine: Engine;
   setGameState: (state: GameState) => void;

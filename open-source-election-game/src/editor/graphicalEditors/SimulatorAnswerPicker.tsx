@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
+import { ScenarioModel } from "../../oseg/engine/models/ScenarioModel";
 
 import "./SimulatorAnswerPicker.css";
 

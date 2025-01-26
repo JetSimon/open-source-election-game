@@ -1,5 +1,5 @@
-import SongModel from "../../oseg/engine/models/SongModel";
-import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
+import { ScenarioModel } from "../../oseg/engine/models/ScenarioModel";
+import { SongModel } from "../../oseg/engine/models/SongModel";
 import GenericEditorInput from "../components/GenericEditorInput";
 
 interface MusicEditorProps {

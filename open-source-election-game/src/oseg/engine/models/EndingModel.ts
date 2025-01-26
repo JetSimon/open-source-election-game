@@ -1,7 +1,7 @@
-import EndingSlide from "./EndingSlide";
+import { EndingSlide } from "./EndingSlide";
 
 interface EndingModel {
     slides : EndingSlide[];
 }
 
-export default EndingModel;
+export type { EndingModel };

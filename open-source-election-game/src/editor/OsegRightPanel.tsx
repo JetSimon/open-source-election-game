@@ -1,16 +1,16 @@
-import MapView from "../oseg/game/views/MapView";
+import { useEffect, useState } from "react";
+import { StateController } from "../oseg/engine/controllers/StateController";
 import { Engine } from "../oseg/engine/Engine";
-import EnumNavBar from "./components/EnumNavBar";
-import { useState, useEffect } from "react";
-import ElectionDescriptionView from "../oseg/game/views/ElectionDescriptionView";
-import CandidateSelectionView from "../oseg/game/views/CandidateSelectionView";
-import ScenarioModel from "../oseg/engine/models/ScenarioModel";
-import OsegSimulator from "./OsegSimulator";
-import StateController from "../oseg/engine/controllers/StateController";
-import QuoteHeader from "../oseg/game/components/QuoteHeader";
-import MusicPlayer from "../oseg/game/components/MusicPlayer";
-import QuestionView from "../oseg/game/views/QuestionView";
+import { ScenarioModel } from "../oseg/engine/models/ScenarioModel";
 import BottomBanner from "../oseg/game/components/BottomBanner";
+import MusicPlayer from "../oseg/game/components/MusicPlayer";
+import QuoteHeader from "../oseg/game/components/QuoteHeader";
+import CandidateSelectionView from "../oseg/game/views/CandidateSelectionView";
+import ElectionDescriptionView from "../oseg/game/views/ElectionDescriptionView";
+import MapView from "../oseg/game/views/MapView";
+import QuestionView from "../oseg/game/views/QuestionView";
+import EnumNavBar from "./components/EnumNavBar";
+import OsegSimulator from "./OsegSimulator";
 
 enum RightNavBar {
   Map,

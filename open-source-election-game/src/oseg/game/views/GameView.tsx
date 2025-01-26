@@ -1,18 +1,18 @@
 import { useState } from "react";
 
-import QuestionView from "./QuestionView";
-import EndingView from "./EndingView";
-import PopupBox from "../components/PopupBox";
-import ConfirmCancelPopupBox from "../components/ConfirmCancelPopupBox";
-import MapView from "./MapView";
-import BottomBanner from "../components/BottomBanner";
-import { Engine } from "../../engine/Engine";
-import AnswerModel from "../../engine/models/AnswerModel";
-import StateController from "../../engine/controllers/StateController";
-import ThemeModel from "../../engine/models/ThemeModel";
-import HighscoreSubmissionModel from "../../engine/models/HighscoreSubmissionModel";
 import { useEffect } from "react";
+import { StateController } from "../../engine/controllers/StateController";
+import { Engine } from "../../engine/Engine";
+import { AnswerModel } from "../../engine/models/AnswerModel";
+import { HighscoreSubmissionModel } from "../../engine/models/HighscoreSubmissionModel";
+import { ThemeModel } from "../../engine/models/ThemeModel";
+import BottomBanner from "../components/BottomBanner";
+import ConfirmCancelPopupBox from "../components/ConfirmCancelPopupBox";
 import DebugMenuAnswer from "../components/debug/DebugMenuAnswer";
+import PopupBox from "../components/PopupBox";
+import EndingView from "./EndingView";
+import MapView from "./MapView";
+import QuestionView from "./QuestionView";
 
 interface GameViewProps {
   engine: Engine;

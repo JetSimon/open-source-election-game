@@ -1,10 +1,10 @@
-import QuestionModel from "../../engine/models/QuestionModel";
-import Answer from "../components/Answer";
-import AnswerModel from "../../engine/models/AnswerModel";
-import "./QuestionView.css";
-import ThemeModel from "../../engine/models/ThemeModel";
 import { Engine } from "../../engine/Engine";
+import { AnswerModel } from "../../engine/models/AnswerModel";
+import { QuestionModel } from "../../engine/models/QuestionModel";
+import { ThemeModel } from "../../engine/models/ThemeModel";
+import Answer from "../components/Answer";
 import "./InGameTooltip.css";
+import "./QuestionView.css";
 
 interface QuestionViewProps {
   currentQuestion: QuestionModel;

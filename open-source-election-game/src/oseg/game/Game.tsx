@@ -1,18 +1,17 @@
 import { Engine, GameState } from "../engine/Engine";
 
-import { useState, useEffect } from "react";
-import StartGameView from "./views/StartGameView";
+import { useEffect, useState } from "react";
 import GameView from "./views/GameView";
+import StartGameView from "./views/StartGameView";
 
 const engine = new Engine();
 
-import ScenarioModel from "../engine/models/ScenarioModel";
-
-import "./Game.css"
-import QuoteHeader from "./components/QuoteHeader";
+import { HighscoreSubmissionModel } from "../engine/models/HighscoreSubmissionModel";
+import { ScenarioModel } from "../engine/models/ScenarioModel";
+import { SongModel } from "../engine/models/SongModel";
+import "./Game.css";
 import MusicPlayer from "./components/MusicPlayer";
-import SongModel from "../engine/models/SongModel";
-import HighscoreSubmissionModel from "../engine/models/HighscoreSubmissionModel";
+import QuoteHeader from "./components/QuoteHeader";
 
 interface GameProps {
     injectedData : ScenarioModel;
@@ -37,7 +36,7 @@ function Game(props : GameProps) {
         async function loadInjectedData() {
             const encodedLogic = encodeURIComponent(injectedLogic);
             const logicDataUri = 'data:text/javascript;charset=utf-8,' + encodedLogic;
-            const {createEnding, onAnswerPicked, onScenarioStarted, onCandidateSelectionStarted} = await import(/* @vite-ignore */logicDataUri);
+            const {createEnding, onAnswerPicked, onScenarioStarted, onCandidateSelectionStarted} = await import  (/* @vite-ignore */logicDataUri);
             
             engine.onCandidateSelectionStarted = onCandidateSelectionStarted;
             engine.createEnding = createEnding;

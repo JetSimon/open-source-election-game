@@ -1,11 +1,11 @@
-import StateModel from "../models/StateModel";
 import { sumNumberArray } from "../../utils/ArrayUtils";
-import IssueScores from "../IssueScores";
-import ScenarioController from "./ScenarioController";
-import CandidateController from "./CandidateController";
-import { Engine } from "../Engine";
 import { hexToRgb, rgbToHex } from "../../utils/ColorUtils";
 import { lerp } from "../../utils/MathUtils";
+import { Engine } from "../Engine";
+import { IssueScores } from "../IssueScores";
+import { StateModel } from "../models/StateModel";
+import { CandidateController } from "./CandidateController";
+import { ScenarioController } from "./ScenarioController";
 
 class StateController {
     model: StateModel;
@@ -216,4 +216,4 @@ class StateController {
     }
 }
 
-export default StateController;
+export { StateController };

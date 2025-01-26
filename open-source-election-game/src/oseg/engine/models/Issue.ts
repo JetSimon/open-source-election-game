@@ -6,4 +6,4 @@ interface Issue {
     stanceDescriptions : string[];
 }
 
-export default Issue;
+export type { Issue };

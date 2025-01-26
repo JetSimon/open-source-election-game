@@ -8,4 +8,4 @@ interface HighscoreSubmissionModel {
     difficulty : number;
 }
 
-export default HighscoreSubmissionModel;
+export type { HighscoreSubmissionModel };

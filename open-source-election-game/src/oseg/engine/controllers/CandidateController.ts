@@ -1,6 +1,6 @@
-import CandidateModel from "../models/CandidateModel";
-import IssueScores from "../IssueScores";
 import { Engine } from "../Engine";
+import { IssueScores } from "../IssueScores";
+import { CandidateModel } from "../models/CandidateModel";
 
 class CandidateController {
     model: CandidateModel;
@@ -34,4 +34,4 @@ class CandidateController {
     }
 }
 
-export default CandidateController;
+export { CandidateController };

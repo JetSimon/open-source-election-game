@@ -14,4 +14,4 @@ interface ThemeModel {
     quote : string;
 }
 
-export default ThemeModel;
+export type { ThemeModel };

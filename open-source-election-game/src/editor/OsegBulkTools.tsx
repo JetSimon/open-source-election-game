@@ -1,6 +1,7 @@
-import ScenarioModel from "../oseg/engine/models/ScenarioModel";
-import GenericEditorBulkTool from "./components/GenericEditorBulkTool";
 import { useState } from "react";
+import { CandidateModel } from "../oseg/engine/models/CandidateModel";
+import { ScenarioModel } from "../oseg/engine/models/ScenarioModel";
+import GenericEditorBulkTool from "./components/GenericEditorBulkTool";
 
 interface OsegBulkToolsProps {
     setData : (d : ScenarioModel) => void;
@@ -67,7 +68,7 @@ function OsegBulkTools(props : OsegBulkToolsProps) {
 
             <label>Affected Candidate: </label>
             <select onChange={(e) => setSelectedCandidate(Number(e.target.value))} value={selectedCandidate}>
-                {data.candidates.map((candidate) => <option key={candidate.id} value={candidate.id}>{candidate.firstName} {candidate.lastName}</option>)}
+                {data.candidates.map((candidate : CandidateModel) => <option key={candidate.id} value={candidate.id}>{candidate.firstName} {candidate.lastName}</option>)}
             </select>
 
             <label>Kinds of Effect: </label>

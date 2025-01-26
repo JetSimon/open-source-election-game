@@ -6,4 +6,4 @@ enum AnswerEffectType {
     TctIssue
 }
 
-export default AnswerEffectType;
+export { AnswerEffectType };

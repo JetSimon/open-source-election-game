@@ -1,10 +1,10 @@
-import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
-import "./AnswerEffectEditor.css";
-import AnswerEffectModel from "../../oseg/engine/models/AnswerEffectModel";
-import AnswerEffectType from "../../oseg/engine/models/AnswerEffectType";
-import GenericEditorInput from "../components/GenericEditorInput";
-import AnswerModel from "../../oseg/engine/models/AnswerModel";
+import { AnswerEffectModel } from "../../oseg/engine/models/AnswerEffectModel";
+import { AnswerEffectType } from "../../oseg/engine/models/AnswerEffectType";
+import { AnswerModel } from "../../oseg/engine/models/AnswerModel";
+import { ScenarioModel } from "../../oseg/engine/models/ScenarioModel";
 import GenericEditorCheckbox from "../components/GenericEditorCheckbox";
+import GenericEditorInput from "../components/GenericEditorInput";
+import "./AnswerEffectEditor.css";
 interface AnswerEffectEditorProps {
     data: ScenarioModel;
     setData: (data: ScenarioModel) => void;

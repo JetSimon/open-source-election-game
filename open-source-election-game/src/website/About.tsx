@@ -1,13 +1,13 @@
-import "./About.css"
+import "./About.css";
 
 import aboutEditor from "../assets/about-editor.png";
 import gore from "../assets/gore.jpg";
-import mobile from "../assets/phoneImage.jpg"
-import com1 from "../assets/thecommunitytrail1.png"
-import com2 from "../assets/thecommunitytrail2.png"
-import simulator from "../assets/simulator.png";
 import issueSlider from "../assets/issuesliders-ezgif.com-video-to-gif-converter.gif";
 import marginPaint from "../assets/paintmargins-ezgif.com-video-to-gif-converter.gif";
+import mobile from "../assets/phoneImage.jpg";
+import simulator from "../assets/simulator.png";
+import com1 from "../assets/thecommunitytrail1.png";
+import com2 from "../assets/thecommunitytrail2.png";
 function About() {
     return (
         <div className="About">

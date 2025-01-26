@@ -1,17 +1,18 @@
-import AnswerEffectType from "./models/AnswerEffectType";
-import AnswerModel from "./models/AnswerModel";
-import ScenarioModel from "./models/ScenarioModel";
-import CandidateController from "./controllers/CandidateController";
-import ScenarioController from "./controllers/ScenarioController";
-import FinalResultsModel from "./models/FinalResultsModel";
-import EndingModel from "./models/EndingModel";
-import QuestionModel from "./models/QuestionModel";
-import CandidateModel from "./models/CandidateModel";
-import ThemeModel from "./models/ThemeModel";
-import SongModel from "./models/SongModel";
 import { makeSeed, Seed, seededRandom } from "../utils/MathUtils";
-import ScenarioSideModel from "./models/ScenarioSideModel";
+import { CandidateController } from "./controllers/CandidateController";
+import { ScenarioController } from "./controllers/ScenarioController";
+import { AnswerEffectType } from "./models/AnswerEffectType";
+import { AnswerModel } from "./models/AnswerModel";
+import { CandidateModel } from "./models/CandidateModel";
 import { Difficulty, getMultiplierFromDifficulty } from "./models/Difficulty";
+import { EndingModel } from "./models/EndingModel";
+import { FinalResultsModel } from "./models/FinalResultsModel";
+import { QuestionModel } from "./models/QuestionModel";
+import { ScenarioModel } from "./models/ScenarioModel";
+import { ScenarioSideModel } from "./models/ScenarioSideModel";
+import { SongModel } from "./models/SongModel";
+import { StateModel } from "./models/StateModel";
+import { ThemeModel } from "./models/ThemeModel";
 
 // Just used when debugging/trying to see if more extreme answers help more
 const tuningMultiplier = (x: number) => 3 * x;//Math.pow(x, 3);
@@ -552,7 +553,7 @@ class Engine {
      * @returns The id of the state as defined in data.json
      */
     getStateIdFromAbbr(abbr: string): number {
-        const arr = this.scenarioController.model.states.filter((x) => x.abbr == abbr);
+        const arr = this.scenarioController.model.states.filter((x : StateModel) => x.abbr == abbr);
         if (arr.length == 0) {
             return -1;
         }

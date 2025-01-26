@@ -1,4 +1,4 @@
-import IssueScore from "./IssueScore";
+import { IssueScore } from "./IssueScore";
 
 interface CandidateModel {
     id: number;
@@ -15,4 +15,4 @@ interface CandidateModel {
     bannerImageUrl?: string;
 }
 
-export default CandidateModel;
+export type { CandidateModel };

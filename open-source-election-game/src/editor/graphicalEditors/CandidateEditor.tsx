@@ -1,12 +1,12 @@
 import { useState } from "react";
-import ScenarioModel from "../../oseg/engine/models/ScenarioModel";
-import IssueScoreEditor from "../components/IssueScoreEditor";
-import IssueScore from "../../oseg/engine/models/IssueScore";
+import { CandidateModel } from "../../oseg/engine/models/CandidateModel";
+import { IssueScore } from "../../oseg/engine/models/IssueScore";
+import { ScenarioModel } from "../../oseg/engine/models/ScenarioModel";
+import { ScenarioSideModel } from "../../oseg/engine/models/ScenarioSideModel";
+import EditorWarningBox from "../components/EditorWarningBox";
 import GenericEditorInput from "../components/GenericEditorInput";
 import GenericEditorTextArea from "../components/GenericEditorTextArea";
-import ScenarioSideModel from "../../oseg/engine/models/ScenarioSideModel";
-import EditorWarningBox from "../components/EditorWarningBox";
-import CandidateModel from "../../oseg/engine/models/CandidateModel";
+import IssueScoreEditor from "../components/IssueScoreEditor";
 
 interface CandidateEditorProps {
     data: ScenarioModel;

@@ -1,7 +1,8 @@
-import AnswerModel from "../../../engine/models/AnswerModel";
 import { Engine } from "../../../engine/Engine";
-import DebugMenuAnswerEffect from "./DebugMenuAnswerEffect";
+import { AnswerEffectModel } from "../../../engine/models/AnswerEffectModel";
+import { AnswerModel } from "../../../engine/models/AnswerModel";
 import "./Debug.css";
+import DebugMenuAnswerEffect from "./DebugMenuAnswerEffect";
 
 interface DebugMenuAnswerProps {
     engine : Engine;
@@ -16,7 +17,7 @@ function DebugMenuAnswer(props : DebugMenuAnswerProps) {
         <div className="DebugMenuAnswer">
             <p>{answer.description}</p>
             <ul>
-                {answer.answerEffects.map((x) => <DebugMenuAnswerEffect answerEffect={x} engine={engine}></DebugMenuAnswerEffect>)}
+                {answer.answerEffects.map((x : AnswerEffectModel) => <DebugMenuAnswerEffect answerEffect={x} engine={engine}></DebugMenuAnswerEffect>)}
             </ul>
         </div>
     )

@@ -1,13 +1,13 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import OsegEditor from "./editor/OsegEditor";
+import './index.css';
 import About from "./website/About";
 import ScenarioLoader from "./website/ScenarioLoader";
-import OsegEditor from "./editor/OsegEditor";
 
 import {
-  createHashRouter,
-  RouterProvider
+    createHashRouter,
+    RouterProvider
 } from 'react-router-dom';
 import Layout from './Layout.tsx';
 

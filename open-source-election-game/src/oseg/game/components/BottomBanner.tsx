@@ -1,5 +1,5 @@
 import { Engine } from "../../engine/Engine";
-import ThemeModel from "../../engine/models/ThemeModel";
+import { ThemeModel } from "../../engine/models/ThemeModel";
 import "./BottomBanner.css";
 
 interface BottomBannerProps {

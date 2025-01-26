@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from "react";
-import SongModel from "../../engine/models/SongModel";
+import { useEffect, useRef, useState } from "react";
+import { SongModel } from "../../engine/models/SongModel";
 import "./MusicPlayer.css";
 
 interface MusicPlayerProps {

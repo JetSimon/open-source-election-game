@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
-import ScenarioModel from "../oseg/engine/models/ScenarioModel";
+import { useEffect, useState } from "react";
+import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
+import { StateController } from "../oseg/engine/controllers/StateController";
+import { ScenarioModel } from "../oseg/engine/models/ScenarioModel";
+import { StateModel } from "../oseg/engine/models/StateModel";
+import Game from "../oseg/game/Game";
+import { BulkStateFunction } from "./bulkMapComponents/BulkStateFunction";
 import "./OsegEditor.css";
 import OsegLeftPanel from "./OsegLeftPanel";
 import OsegRightPanel from "./OsegRightPanel";
-import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
-import Game from "../oseg/game/Game";
-import StateModel from "../oseg/engine/models/StateModel";
-import StateController from "../oseg/engine/controllers/StateController";
-import { BulkStateFunction } from "./bulkMapComponents/BulkStateFunction";
 
 const errorScenario : ScenarioModel = {
     theme: {
@@ -140,7 +140,7 @@ function OsegEditor() {
             return;
         }
 
-        const stateModel = data.states.filter((x) => x.id == stateController.getId())[0];
+        const stateModel = data.states.filter((x : StateModel) => x.id == stateController.getId())[0];
         bulkStateFunction(stateModel);
         const newDataString = JSON.stringify(data, null, 4);
         setData(JSON.parse(newDataString));

@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { CandidateController } from "../../engine/controllers/CandidateController";
+import { StateController } from "../../engine/controllers/StateController";
 import { Engine } from "../../engine/Engine";
-import ThemeModel from "../../engine/models/ThemeModel";
+import { FinalResultsModel } from "../../engine/models/FinalResultsModel";
+import { ThemeModel } from "../../engine/models/ThemeModel";
 import FinalResults from "./FinalResults";
-import StateController from "../../engine/controllers/StateController";
-import CandidateController from "../../engine/controllers/CandidateController";
-import FinalResultsModel from "../../engine/models/FinalResultsModel";
 
 interface ResultsByStateProps {
   engine: Engine;

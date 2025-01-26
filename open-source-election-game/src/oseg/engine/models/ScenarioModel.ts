@@ -1,10 +1,10 @@
-import CandidateModel from "./CandidateModel";
-import StateModel from "./StateModel";
-import Issue from "./Issue";
-import ScenarioSideModel from "./ScenarioSideModel";
-import ThemeModel from "./ThemeModel";
-import SongModel from "./SongModel";
-import Tooltip from "./Tooltip";
+import { CandidateModel } from "./CandidateModel";
+import { Issue } from "./Issue";
+import { ScenarioSideModel } from "./ScenarioSideModel";
+import { SongModel } from "./SongModel";
+import { StateModel } from "./StateModel";
+import { ThemeModel } from "./ThemeModel";
+import { Tooltip } from "./Tooltip";
 
 interface ScenarioModel {
     theme : ThemeModel;
@@ -21,4 +21,4 @@ interface ScenarioModel {
     tooltips? : Tooltip[];
 }
 
-export default ScenarioModel;
+export type { ScenarioModel };
