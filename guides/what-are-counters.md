@@ -6,7 +6,7 @@ You can add or subtract from counters depending on what the player answers. And 
 
 Here is a picture:
 
-![../counters.png](An image of counters in 1964 The Beatles)
+![An image of counters in 1964 The Beatles](https://raw.githubusercontent.com/JetSimon/open-source-election-game/refs/heads/main/guides/img/counters.png)
 
 ## Where Do I Define Counters?
 
