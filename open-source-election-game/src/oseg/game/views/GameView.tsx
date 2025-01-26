@@ -18,8 +18,8 @@ interface GameViewProps {
   engine: Engine;
   mapSvg: string;
   theme: ThemeModel;
-  refreshThemeAndMusic : () => void;
-  onGameOver : ((m : HighscoreSubmissionModel) => void) | null;
+  refreshThemeAndMusic: () => void;
+  onGameOver: ((m: HighscoreSubmissionModel) => void) | null;
 }
 
 let showFeedback = true;
@@ -50,17 +50,17 @@ function GameView(props: GameViewProps) {
   const [donePlayingMapAnimation, setDonePlayingMapAnimation] = useState(false);
 
   useEffect(() => {
-    function checkForAutoplay(e : KeyboardEvent) {
-      if(e.key == "@") {
-        setShowAutoplay(a => a + 1);
+    function checkForAutoplay(e: KeyboardEvent) {
+      if (e.key == "@") {
+        setShowAutoplay((a) => a + 1);
       }
 
-      if(e.key == "!") {
-        setShowDebugMenu(x => !x);
+      if (e.key == "!") {
+        setShowDebugMenu((x) => !x);
       }
 
-      if(engine.waitingToPickState) {
-        if(e.key == "Enter") {
+      if (engine.waitingToPickState) {
+        if (e.key == "Enter") {
           const states = engine.scenarioController.getStates();
           onStateClicked(states[Math.floor(Math.random() * states.length)]);
         }
@@ -73,10 +73,10 @@ function GameView(props: GameViewProps) {
 
     return () => {
       window.removeEventListener("keydown", checkForAutoplay);
-    }
-  }, [])
+    };
+  }, []);
 
-  function showFeedbackPopup(body : string) {
+  function showFeedbackPopup(body: string) {
     setFeedbackText(body);
     setShowingFeedbackBox(true);
   }
@@ -89,17 +89,18 @@ function GameView(props: GameViewProps) {
     }
 
     const answer = document.getElementsByClassName("Answer")[0];
-    if(!answer) {
+    if (!answer) {
       return;
     }
 
-    if(answer.firstChild)
-    {
+    if (answer.firstChild) {
       const radioButton = answer.firstChild as HTMLInputElement;
       radioButton.click();
 
-      const confirmButton = document.getElementsByClassName("ConfirmAnswerButton")[0] as HTMLButtonElement;
-      if(confirmButton) {
+      const confirmButton = document.getElementsByClassName(
+        "ConfirmAnswerButton"
+      )[0] as HTMLButtonElement;
+      if (confirmButton) {
         confirmButton.click();
       }
     }
@@ -112,7 +113,7 @@ function GameView(props: GameViewProps) {
 
     showFeedback = false;
     autoplayHandle = setInterval(autoplay, 25);
-    if(engine.currentScenario) {
+    if (engine.currentScenario) {
       engine.currentScenario.hasStateVisits = false;
     }
   }
@@ -125,52 +126,52 @@ function GameView(props: GameViewProps) {
 
     if (showFeedback && selectedAnswer.feedback != "") {
       showFeedbackPopup(selectedAnswer.feedback);
-    }
-    else {
+    } else {
       onFeedbackPopupClosed();
     }
   }
 
   function onFeedbackPopupClosed() {
-      engine.applyAnswer(selectedAnswer);
-      setSelectedAnswer(null);
-      engine.nextQuestion();
+    engine.applyAnswer(selectedAnswer);
+    setSelectedAnswer(null);
+    engine.nextQuestion();
 
-      if (engine.isGameOver()) {
-        engine.getEnding();
+    if (engine.isGameOver()) {
+      engine.getEnding();
 
-        if(onGameOver != null) {
-          const highscoreModel : HighscoreSubmissionModel = {
-            candidate: engine.getPlayerCandidateController().getId(),
-            runningMate: engine.getPlayerRunningMateModel().id,
-            answers: engine.getAnswers(),
-            visits: engine.getVisits(),
-            seed: engine.getSeed(),
-            isShuffled: engine.isShuffled,
-            difficulty: engine.difficulty
-          }
-          onGameOver(highscoreModel);
-        }
-
-        refreshThemeAndMusic();
-        alert("Game over!");
-        return;
-      }
-      else {
-        refreshThemeAndMusic();
+      if (onGameOver != null) {
+        const highscoreModel: HighscoreSubmissionModel = {
+          candidate: engine.getPlayerCandidateController().getId(),
+          runningMate: engine.getPlayerRunningMateModel().id,
+          answers: engine.getAnswers(),
+          visits: engine.getVisits(),
+          seed: engine.getSeed(),
+          isShuffled: engine.isShuffled,
+          difficulty: engine.difficulty,
+        };
+        onGameOver(highscoreModel);
       }
 
-      if(engine.currentScenario != null && engine.currentScenario.hasStateVisits) {
-        setShowMap(true);
-        engine.waitingToPickState = true;
-      }
-      
-      setCurrentQuestion(engine.getCurrentQuestion());
+      refreshThemeAndMusic();
+      alert("Game over!");
+      return;
+    } else {
+      refreshThemeAndMusic();
+    }
+
+    if (
+      engine.currentScenario != null &&
+      engine.currentScenario.hasStateVisits
+    ) {
+      setShowMap(true);
+      engine.waitingToPickState = true;
+    }
+
+    setCurrentQuestion(engine.getCurrentQuestion());
   }
 
-  function onStateClicked(state : StateController) {
-
-    if(!engine.waitingToPickState) {
+  function onStateClicked(state: StateController) {
+    if (!engine.waitingToPickState) {
       return;
     }
 
@@ -197,19 +198,33 @@ function GameView(props: GameViewProps) {
 
   return (
     <div className="GameView">
-      {engine.isGameOver() ? 
-        ( donePlayingMapAnimation ?
+      {engine.isGameOver() ? (
+        donePlayingMapAnimation ? (
           <div className="EndingViewHolder">
-          <EndingView theme={theme} engine={engine} mapSvg={mapSvg}></EndingView>
+            <EndingView
+              theme={theme}
+              engine={engine}
+              mapSvg={mapSvg}
+            ></EndingView>
           </div>
-          :
-          <MapView playAnimationBeforeFinalResults={true} afterAnimationCompletes={() => setDonePlayingMapAnimation(true)} theme={theme} onStateClicked={onStateClicked} engine={engine} mapSvg={mapSvg}></MapView>
-        ) :
-      (
-        engine.waitingToPickState || showMap ?
-        <MapView theme={theme} onStateClicked={onStateClicked} engine={engine} mapSvg={mapSvg}></MapView>
-        :
-        (
+        ) : (
+          <MapView
+            playAnimationBeforeFinalResults={true}
+            afterAnimationCompletes={() => setDonePlayingMapAnimation(true)}
+            theme={theme}
+            onStateClicked={onStateClicked}
+            engine={engine}
+            mapSvg={mapSvg}
+          ></MapView>
+        )
+      ) : engine.waitingToPickState || showMap ? (
+        <MapView
+          theme={theme}
+          onStateClicked={onStateClicked}
+          engine={engine}
+          mapSvg={mapSvg}
+        ></MapView>
+      ) : (
         <QuestionView
           engine={engine}
           setShowMap={setShowMap}
@@ -220,20 +235,40 @@ function GameView(props: GameViewProps) {
           theme={theme}
           showingFeedbackBox={showingFeedbackBox}
         ></QuestionView>
-        )
       )}
       <div className="BottomButtons">
-      {showMap && !engine.waitingToPickState && <button className="ToggleMapButton" onClick={() => setShowMap(false)}>Back to the Game</button>}
-      {showAutoplay >= 3 && !engine.isGameOver() && !engine.waitingToPickState && !showMap && <button onClick={startAutoplay}>Autoplay</button>}
-      {engine.isGameOver() && !donePlayingMapAnimation && <button className="ToggleMapButton" onClick={() => setDonePlayingMapAnimation(true)}>Skip to Results</button>}
+        {showMap && !engine.waitingToPickState && (
+          <button className="ToggleMapButton" onClick={() => setShowMap(false)}>
+            Back to the Game
+          </button>
+        )}
+        {showAutoplay >= 3 &&
+          !engine.isGameOver() &&
+          !engine.waitingToPickState &&
+          !showMap && <button onClick={startAutoplay}>Autoplay</button>}
+        {engine.isGameOver() && !donePlayingMapAnimation && (
+          <button
+            className="ToggleMapButton"
+            onClick={() => setDonePlayingMapAnimation(true)}
+          >
+            Skip to Results
+          </button>
+        )}
       </div>
-      {!engine.isGameOver() && engine.waitingToPickState && <p className="ChooseState" style={{color:theme.primaryGameWindowTextColor}}>Click on a state to visit</p>}
+      {!engine.isGameOver() && engine.waitingToPickState && (
+        <p
+          className="ChooseState"
+          style={{ color: theme.primaryGameWindowTextColor }}
+        >
+          Click on a state to visit
+        </p>
+      )}
       <BottomBanner theme={theme} engine={engine}></BottomBanner>
       <PopupBox
         theme={theme}
-        title="Feedback"
+        title={engine.getLocalization("Feedback")}
         body={feedbackText}
-        buttonText="Okay"
+        buttonText={engine.getLocalization("Okay")}
         isShowing={showingFeedbackBox}
         setIsShowing={setShowingFeedbackBox}
         image={theme.advisorImage}
@@ -242,17 +277,23 @@ function GameView(props: GameViewProps) {
       {selectedState && (
         <ConfirmCancelPopupBox
           theme={theme}
-          title="Feedback"
-          description={`Are you sure you want to visit ${selectedState?.model.name}?`}
+          title={engine.getLocalization("Feedback")}
+          description={`${engine.getLocalization(
+            "Are you sure you want to visit"
+          )} ${selectedState?.model.name}?`}
           isShowing={showVisitPopup}
           onConfirm={confirmStateVisit}
           onCancel={cancelStateVisit}
           image={theme.advisorImage}
         />
       )}
-      {showDebugMenu && <div className="DebugMenu">
-        {currentQuestion.answers.map((answer) => <DebugMenuAnswer answer={answer} engine={engine} ></DebugMenuAnswer>)}
-      </div>}
+      {showDebugMenu && (
+        <div className="DebugMenu">
+          {currentQuestion.answers.map((answer) => (
+            <DebugMenuAnswer answer={answer} engine={engine}></DebugMenuAnswer>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

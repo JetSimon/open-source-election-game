@@ -31,6 +31,9 @@ If you want to add another key, look at how those functions are used in OSEG cur
 - Hover over a state see polling
 - Switch to Overall PV/EV Estimate
 - Switch to State Estimate
+- Are you sure you want to visit
+- Feedback
+- Okay
 
 ## Example
 
