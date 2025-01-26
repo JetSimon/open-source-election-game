@@ -14,6 +14,7 @@ interface ResultsByStateProps {
 interface ResultSorter {
   name: string;
   sorter: (a: StateController, b: StateController) => number;
+  filter?: (a : StateController) => boolean;
 }
 
 function createCandidateSorter(candidate: CandidateController): ResultSorter {
@@ -25,6 +26,28 @@ function createCandidateSorter(candidate: CandidateController): ResultSorter {
     name: name,
     sorter: (a: StateController, b: StateController) =>
       b.getOpinionForCandidate(id) - a.getOpinionForCandidate(id),
+  };
+}
+
+function createClosestCandidateSorter(candidate: CandidateController, engine : Engine): ResultSorter {
+  const candidateName = candidate.getFullName();
+  const id = candidate.getId();
+  const name = "Closest " + candidateName + " Wins";
+
+  function getMarginOfVictory(stateController : StateController)
+  {
+    const opinion = stateController.getOpinionForCandidate(id);
+    const vals = Array.from(stateController.opinions.values()).sort();
+    const secondOpinion = vals[vals.length - 2];
+    return opinion -  secondOpinion;
+  }
+
+  return {
+    name: name,
+    sorter: (a: StateController, b: StateController) => {
+      return getMarginOfVictory(a) - getMarginOfVictory(b);
+    },
+    filter: (a : StateController) => a.getHighestCandidate(engine) == candidate
   };
 }
 
@@ -59,11 +82,16 @@ function ResultsByState(props: ResultsByStateProps) {
   });
 
   for (const candidate of engine.scenarioController.getCandidates()) {
+    sorters.push(createClosestCandidateSorter(candidate, engine));
+  }
+
+  for (const candidate of engine.scenarioController.getCandidates()) {
     sorters.push(createCandidateSorter(candidate));
   }
 
   const states = engine.scenarioController
     .getStates()
+    .filter(selectedSorter.filter ?? (() => true))
     .sort(selectedSorter.sorter);
 
   const [selectedState, setSelectedState] = useState(states[0]);
@@ -71,36 +99,41 @@ function ResultsByState(props: ResultsByStateProps) {
   useEffect(() => {
     const states = engine.scenarioController
       .getStates()
+      .filter(selectedSorter.filter ?? (() => true))
       .sort(selectedSorter.sorter);
-    setSelectedState(states[0]);
+
+      setSelectedState(states[0]);
   }, [selectedSorter, engine]);
 
   function setSort(e: React.ChangeEvent<HTMLSelectElement>) {
     setSelectedSorted(sorters.filter((x) => x.name == e.target.value)[0]);
   }
 
+  let results : FinalResultsModel | null = null;
   const popularVotes = new Map<number, number>();
   const electoralVotes = new Map<number, number>();
   const candidates = engine.scenarioController.getCandidates();
 
-  for (const candidate of candidates) {
-    popularVotes.set(
-      candidate.getId(),
-      Math.round(selectedState.getPvsForCandidate(candidate))
-    );
-    electoralVotes.set(
-      candidate.getId(),
-      selectedState.getEvsForCandidate(engine, candidate)
-    );
+  if(selectedState != undefined) {
+    for (const candidate of candidates) {
+      popularVotes.set(
+        candidate.getId(),
+        Math.round(selectedState.getPvsForCandidate(candidate))
+      );
+      electoralVotes.set(
+        candidate.getId(),
+        selectedState.getEvsForCandidate(engine, candidate)
+      );
+    }
+  
+    results = {
+      popularVotes: popularVotes,
+      electoralVotes: electoralVotes,
+      candidates: candidates,
+      totalPopularVotes: selectedState.model.popularVotes,
+      totalElectoralVotes: selectedState.model.electoralVotes,
+    };
   }
-
-  const results: FinalResultsModel = {
-    popularVotes: popularVotes,
-    electoralVotes: electoralVotes,
-    candidates: candidates,
-    totalPopularVotes: selectedState.model.popularVotes,
-    totalElectoralVotes: selectedState.model.electoralVotes,
-  };
 
   return (
     <div style={{ color: theme.primaryGameWindowTextColor }}>
@@ -116,8 +149,8 @@ function ResultsByState(props: ResultsByStateProps) {
         ))}
       </select>
       <br></br>
-      <label>{engine.getLocalization("Select a state")}: </label>
-      <select
+      {states.length > 0 && selectedState != null && <label>{engine.getLocalization("Select a state")}: </label>}
+      {states.length > 0 && selectedState != null && <select
         style={{ marginBottom: "16px" }}
         value={selectedState.getId()}
         onChange={(e) =>
@@ -127,14 +160,15 @@ function ResultsByState(props: ResultsByStateProps) {
         }
       >
         {states.map((x) => (
-          <option value={x.getId()}>{x.model.name}</option>
+          <option key={x.getId() + JSON.stringify(selectedSorter)} value={x.getId()}>{x.model.name}</option>
         ))}
-      </select>
-      <FinalResults
+      </select>}
+      {states.length > 0 && selectedState != null && <h4>{selectedState.model.name}</h4>}
+      {states.length > 0 && selectedState != null && results != null ? <FinalResults
         engine={engine}
         results={results}
         theme={theme}
-      ></FinalResults>
+      ></FinalResults> : <h4>No states match this filter</h4>}
     </div>
   );
 }
