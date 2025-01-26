@@ -32,7 +32,7 @@ function StateEditor(props: StateEditorProps) {
 
             <label>Select a State: </label>
             <select value={stateId} onChange={(e) => setStateId(Number(e.target.value))}>
-                {data.states.map((state) => <option key={state.id} value={state.id}>{state.name}</option>)}
+                {data.states.sort((a, b) => a.name.localeCompare(b.name)).map((state) => <option key={state.id} value={state.id}>{state.name}</option>)}
             </select>
 
             {

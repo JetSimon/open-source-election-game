@@ -84,7 +84,7 @@ function AnswerEffectEditor(props: AnswerEffectEditorProps) {
                 <div>
                     <label>Affected State: </label>
                     <select onChange={(e) => updateFieldAndUpdateData<number>("stateId", Number(e.target.value))} value={answerEffect.stateId}>
-                        {data.states.map((state) => <option value={state.id}>{state.name}</option>)}
+                        {data.states.sort((a,b) => a.name.localeCompare(b.name)).map((state) => <option value={state.id}>{state.name}</option>)}
                     </select>
                 </div>
             }
