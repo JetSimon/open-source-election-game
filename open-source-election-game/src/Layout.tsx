@@ -1,5 +1,5 @@
-import { Link, Outlet } from 'react-router-dom'
-import './App.css'
+import { Link, Outlet } from 'react-router-dom';
+import './App.css';
 
 function Layout() {
   return (
@@ -19,6 +19,9 @@ function Layout() {
         </div>
         <div>
         <a href="/open-source-election-game/doc">Doc</a>
+        </div>
+        <div>
+          <a href="https://github.com/JetSimon/open-source-election-game/tree/main/guides">Guides</a>
         </div>
         <div>
         <a href="https://github.com/JetSimon/open-source-election-game">Source Code</a>
