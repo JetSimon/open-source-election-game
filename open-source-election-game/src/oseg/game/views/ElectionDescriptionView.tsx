@@ -7,10 +7,12 @@ interface ElectionDescriptionViewProps {
   setSelectingCandidate : (value : boolean) => void;
   theme: ThemeModel;
   refreshThemeAndMusic : () => void;
+  isShuffled : boolean;
+  setIsShuffled : (b : boolean) => void;
 }
 
 function ElectionDescriptionView(props: ElectionDescriptionViewProps) {
-  const { engine, setSelectingCandidate, theme, refreshThemeAndMusic} = props;
+  const { engine, setSelectingCandidate, theme, refreshThemeAndMusic, isShuffled, setIsShuffled} = props;
 
   if(engine.currentScenario == null) {
     return <p>Error: Current scenario is null!</p>
@@ -23,6 +25,8 @@ function ElectionDescriptionView(props: ElectionDescriptionViewProps) {
       refreshThemeAndMusic();
     }
   }
+
+  const canBeShuffled = engine.scenarioController.questions.filter((x) => !x.keepInPlaceIfQuestionsShuffled).length > 0;
 
   return (
     <div style={{backgroundColor:theme.primaryGameWindowColor}}  className="ElectionSelection">
@@ -37,6 +41,11 @@ function ElectionDescriptionView(props: ElectionDescriptionViewProps) {
         </div>
       </div>
     </div>
+
+    {canBeShuffled && <label htmlFor="shuffled" style={{color:theme.primaryGameWindowTextColor}} >{engine.getLocalization("Shuffle Questions?")} </label>}
+    {canBeShuffled && <input id="shuffled" type="checkbox" checked={isShuffled} onChange={(e) => {setIsShuffled(e.target.checked); engine.isShuffled = e.target.checked}}></input>}
+    {canBeShuffled && <br></br>}
+
     <button autoFocus onClick={next}>{engine.getLocalization("Next")}</button>
     </div>
   );

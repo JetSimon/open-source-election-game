@@ -1,35 +1,44 @@
 import { useEffect, useState } from "react";
 import { CandidateController } from "../../engine/controllers/CandidateController";
-import { Engine, GameState } from "../../engine/Engine";
+import { Engine } from "../../engine/Engine";
 import { CandidateModel } from "../../engine/models/CandidateModel";
 import { ThemeModel } from "../../engine/models/ThemeModel";
 import CandidateInfoArea from "../components/CandidateInfoArea";
 import "./CandidateSelectionView.css";
 interface CandidateSelectionViewProps {
   engine: Engine;
-  setGameState: (state: GameState) => void;
   setSelectingCandidate: (value: boolean) => void;
   theme : ThemeModel;
-  onStartButtonPressed : (() => void) | null;
-  isShuffled : boolean;
-  setIsShuffled : (b : boolean) => void;
+  onStartButtonPressed : (() => void) | null; // For logic js
+  afterChooseCandidateAndRunningMate : (sideIndex : number, runningMateId : number) => void;
+  canChooseCandidate : boolean;
+  canChooseRunningMate : boolean;
 }
 
 function CandidateSelectionView(props: CandidateSelectionViewProps) {
-  const { engine, setGameState, setSelectingCandidate, theme, onStartButtonPressed, isShuffled, setIsShuffled } = props;
+  const { engine, setSelectingCandidate, theme, onStartButtonPressed, afterChooseCandidateAndRunningMate, canChooseCandidate, canChooseRunningMate } = props;
 
-  const [choosingRunningMate, setChoosingRunningMate] = useState(false);
+  const [choosingRunningMate, setChoosingRunningMate] = useState(!canChooseCandidate);
 
   const [selectedCandidate, setSelectedCandidate] = useState<number>(
     firstCandidateWithSideId()
   );
 
-  const [selectedRunningMate, setSelectedRunningMate] = useState<number>(
-    firstRunningMateWithSideId()
+  const [selectedRunningMate, setSelectedRunningMate] = useState<number>( () => {
+      if(engine.runningMateId != -1) {
+        return engine.runningMateId;
+      }
+      return firstRunningMateWithSideId()
+    }
   );
 
   useEffect(() => {
     const candidate = engine.getCandidateControllerByCandidateId(selectedCandidate);
+
+    if(candidate == undefined) {
+      return;
+    }
+
     setSelectedRunningMate(candidate.model.runningMateIds[0]);
   }, [selectedCandidate, engine]);
 
@@ -89,8 +98,10 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
 
     const sides = engine.currentScenario.scenarioSides;
     const sideIndex = sides.map((x) => x.playerId).indexOf(selectedCandidate);
-    engine.setScenarioSide(sideIndex, selectedRunningMate, isShuffled);
-    setGameState(engine.gameState);
+
+    if(afterChooseCandidateAndRunningMate != undefined) {
+      afterChooseCandidateAndRunningMate(sideIndex, selectedRunningMate);
+    }
     if(onStartButtonPressed != null) onStartButtonPressed()
   }
 
@@ -102,8 +113,6 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
 
   const runningMateModel: CandidateModel = engine.getCandidateModelById(selectedRunningMate);
 
-  const canBeShuffled = engine.scenarioController.questions.filter((x) => !x.keepInPlaceIfQuestionsShuffled).length > 0;
-
   return (
     <div style={{backgroundColor:theme.primaryGameWindowColor}} className="CandidateSelection">
 
@@ -111,7 +120,7 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
       
       {!choosingRunningMate && <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="CandidateSelectionBox">
         <label className="LabelText" htmlFor="candidate">{engine.getLocalization("Candidate")}: </label>
-        <select id="candidate" onChange={(e) => setSelectedCandidate(Number.parseInt(e.target.value))}>
+        <select value={selectedCandidate} id="candidate" onChange={(e) => setSelectedCandidate(Number.parseInt(e.target.value))}>
           {
             getCandidatesWithSides().map((candidate) => {
               return <option value={candidate.getId()} key={candidate.getId()}>{candidate.getFullName()}</option>;
@@ -125,7 +134,7 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
         <label className="LabelText" htmlFor="runningMate">{engine.getLocalization("Running Mate")}: </label>
         {
           getRunningMatesForCandidate(selectedCandidate).length > 0 &&
-          <select id="runningMate" onChange={(e) => setSelectedRunningMate(Number.parseInt(e.target.value))}>
+          <select value={selectedRunningMate} id="runningMate" onChange={(e) => setSelectedRunningMate(Number.parseInt(e.target.value))}>
             {
               getRunningMatesForCandidate(selectedCandidate).map((candidate) => {
                 return <option value={candidate.id} key={candidate.id}>{candidate.firstName + " " + candidate.lastName}</option>;
@@ -135,15 +144,11 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
         }
         <CandidateInfoArea engine={engine} candidate={runningMateModel}></CandidateInfoArea>
       </div>}
-      
-      {canBeShuffled && <label htmlFor="shuffled" style={{color:theme.primaryGameWindowTextColor}} >{engine.getLocalization("Shuffle Questions?")} </label>}
-      {canBeShuffled && <input id="shuffled" type="checkbox" checked={isShuffled} onChange={(e) => setIsShuffled(e.target.checked)}></input>}
-      {canBeShuffled && <br></br>}
 
       {!choosingRunningMate && <button onClick={() => setSelectingCandidate(false)}>{engine.getLocalization("Prev")}</button>}
-      {!choosingRunningMate && <button autoFocus onClick={() => setChoosingRunningMate(true)}>{engine.getLocalization("Next")}</button>}
+      {!choosingRunningMate && <button autoFocus onClick={canChooseRunningMate ? () => setChoosingRunningMate(true) : startGame}>{canChooseRunningMate ? engine.getLocalization("Next") : engine.getLocalization("Start")}</button>}
 
-      {choosingRunningMate && <button onClick={() => setChoosingRunningMate(false)}>{engine.getLocalization("Prev")}</button>}
+      {canChooseCandidate && choosingRunningMate && <button onClick={() => setChoosingRunningMate(false)}>{engine.getLocalization("Prev")}</button>}
       {choosingRunningMate && <button autoFocus onClick={startGame}>{engine.getLocalization("Start")}</button>}
     </div>
   );

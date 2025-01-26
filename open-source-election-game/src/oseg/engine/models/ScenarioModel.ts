@@ -20,6 +20,7 @@ interface ScenarioModel {
     music : SongModel[];
     tooltips? : Tooltip[];
     questionsPerVisit? : number;
+    skipRunningMateSelection? : boolean;
 }
 
 export type { ScenarioModel };

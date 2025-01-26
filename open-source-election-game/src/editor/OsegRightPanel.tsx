@@ -111,6 +111,8 @@ function OsegRightPanel(props: OsegRightPanelProps) {
           <QuoteHeader engine={engine} theme={theme}></QuoteHeader>
           {rightNavBar == RightNavBar.Election ? (
             <ElectionDescriptionView
+              setIsShuffled={() => {}}
+              isShuffled={false}
               refreshThemeAndMusic={() => {}}
               theme={engine.scenarioController.theme}
               setSelectingCandidate={() => {}}
@@ -118,13 +120,13 @@ function OsegRightPanel(props: OsegRightPanelProps) {
             ></ElectionDescriptionView>
           ) : (
             <CandidateSelectionView
-              setIsShuffled={() => {}}
-              isShuffled={false}
               onStartButtonPressed={null}
               theme={engine.scenarioController.theme}
-              setGameState={() => {}}
               setSelectingCandidate={() => {}}
               engine={engine}
+              afterChooseCandidateAndRunningMate={() => {}}
+              canChooseCandidate={true}
+              canChooseRunningMate={true}
             ></CandidateSelectionView>
           )}
 
