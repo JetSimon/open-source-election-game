@@ -10,6 +10,7 @@ import BottomBanner from "../components/BottomBanner";
 import ConfirmCancelPopupBox from "../components/ConfirmCancelPopupBox";
 import DebugMenuAnswer from "../components/debug/DebugMenuAnswer";
 import PopupBox from "../components/PopupBox";
+import CandidateSelectionView from "./CandidateSelectionView";
 import EndingView from "./EndingView";
 import MapView from "./MapView";
 import QuestionView from "./QuestionView";
@@ -194,6 +195,26 @@ function GameView(props: GameViewProps) {
 
   if (currentQuestion == null) {
     return <p>Current question is null</p>;
+  }
+
+  function afterMidGameRunningMateSelection(_sideIndex : number, runningMateId : number) {
+    engine.runningMateId = runningMateId;
+    engine.waitingToSelectNewRunningMate = false;
+    refreshThemeAndMusic();
+  }
+
+  if(engine.waitingToSelectNewRunningMate) {
+    return (
+      <CandidateSelectionView
+        theme={theme}
+        setSelectingCandidate={() => {}}
+        afterChooseCandidateAndRunningMate={afterMidGameRunningMateSelection}
+        engine={engine}
+        onStartButtonPressed={() => {}}
+        canChooseCandidate={false}
+        canChooseRunningMate={true}
+      ></CandidateSelectionView>
+    )
   }
 
   return (

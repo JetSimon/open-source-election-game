@@ -133,6 +133,8 @@ class Engine {
      */
     runningMateWeight = 0.5;
 
+    waitingToSelectNewRunningMate = false;
+
     setSeed(seed: string) {
         this.seed = seed;
         this.randomState = makeSeed(this.seed);
@@ -158,6 +160,8 @@ class Engine {
      */
     loadScenario(newScenario: ScenarioModel, asObserver: boolean) {
         newScenario = JSON.parse(JSON.stringify(newScenario));
+        this.waitingToPickState = false;
+        this.waitingToSelectNewRunningMate = false;
         this.currentQuestionIndex = 0;
         this.runningMateId = -1;
         this.scenarioController.loadScenario(this, newScenario, 0, false);
@@ -700,6 +704,14 @@ class Engine {
      */
     setQuote(quote: string) {
         this.scenarioController.theme.quote = quote;
+    }
+
+    /**
+     * Triggers a midgame VP switch
+     * @category CYOA Utility Functions
+     */
+    showRunningMateSelectionScreen() {
+        this.waitingToSelectNewRunningMate = true;
     }
 
     /**

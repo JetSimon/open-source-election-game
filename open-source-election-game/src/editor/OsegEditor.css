@@ -140,8 +140,8 @@ button:disabled {
 }
 
 .EditorToggleChecked {
-    background-color: green;
-    color: white;
+    background-color: green!important;
+    color: white!important;
     opacity: 0.9;
     transition: all 0.1s ease-in-out;
 }
