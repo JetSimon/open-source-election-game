@@ -26,7 +26,7 @@ class StateController {
     }
 
     visit(candidateId: number, engine: Engine) {
-        this.changeCandidateStateModifier(candidateId, 0.02);
+        this.changeCandidateStateModifier(candidateId, engine.visitBonus);
         engine.visits.push(this.model.id);
     }
 
@@ -217,3 +217,4 @@ class StateController {
 }
 
 export { StateController };
+

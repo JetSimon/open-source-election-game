@@ -31,6 +31,11 @@ enum GameState {
  */
 class Engine {
 
+    /**
+     * How much visiting a state boosts that state's opinion of you
+     */
+    visitBonus: number = 0.02;
+
     difficulty: Difficulty = Difficulty.Normal;
 
     gameState = GameState.Uninitialized;
