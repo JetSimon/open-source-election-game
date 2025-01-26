@@ -19,6 +19,8 @@ interface ScenarioModel {
     credits: string;
     music : SongModel[];
     tooltips? : Tooltip[];
+    questionsPerVisit? : number;
 }
 
 export type { ScenarioModel };
+

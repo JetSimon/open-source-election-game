@@ -46,9 +46,9 @@ class Engine {
     currentQuestionIndex = 0;
 
     /**
-     * 
+     * Display number of current question, also how many questions the player has actually answered
      */
-    currentQuestionNumberVisualOnly = 1;
+    currentQuestionNumber = 1;
 
     scenarioController: ScenarioController = new ScenarioController();
 
@@ -211,7 +211,7 @@ class Engine {
             this.scenarioController.getGlobalModifierForCandidate(playerId) * getMultiplierFromDifficulty(this.difficulty)
         );
 
-        this.currentQuestionNumberVisualOnly = 1;
+        this.currentQuestionNumber = 1;
         this.currentQuestionIndex = 0;
         this.goToNextValidQuestion();
 
@@ -535,7 +535,7 @@ class Engine {
      */
     nextQuestion() {
         this.currentQuestionIndex++;
-        this.currentQuestionNumberVisualOnly++;
+        this.currentQuestionNumber++;
         this.goToNextValidQuestion();
     }
 
@@ -1091,3 +1091,4 @@ class Engine {
 }
 
 export { Engine, GameState };
+

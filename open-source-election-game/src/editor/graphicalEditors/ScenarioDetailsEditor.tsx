@@ -31,6 +31,7 @@ function ScenarioDetailsEditor(props : ScenarioDetailsEditorProps) {
                 <GenericEditorTextArea label="Scenario Description" defaultValue={data.scenarioDescription} onChange={(e) => updateFieldAndUpdateData<string>("scenarioDescription", e.target.value)}></GenericEditorTextArea>
                 <GenericEditorInput label="Credits" type="text" defaultValue={data.credits} onChange={(e) => updateFieldAndUpdateData<string>("credits", e.target.value)}></GenericEditorInput>
                 <GenericEditorCheckbox label={"Has State Visits?"} defaultValue={data.hasStateVisits} onChange={(e) => updateFieldAndUpdateData<boolean>("hasStateVisits", e.target.checked)} ></GenericEditorCheckbox>
+                <GenericEditorInput label="Questions per Visit" type="number" defaultValue={data.questionsPerVisit ?? 1} onChange={(e) => updateFieldAndUpdateData<number>("questionsPerVisit", Number(e.target.value))}></GenericEditorInput>
             </div>
         
             <h2>Theme Editor</h2>

@@ -10,7 +10,7 @@ interface BottomBannerProps {
 function BottomBanner(props: BottomBannerProps) {
   const { engine, theme } = props;
 
-  const questionString = engine.isGameOver() ? "" : "Question " + (engine.currentQuestionNumberVisualOnly) + " of " + engine.getNumberOfEnabledQuestions();
+  const questionString = engine.isGameOver() ? "" : "Question " + (engine.currentQuestionNumber) + " of " + engine.getNumberOfEnabledQuestions();
 
   const playerCandidate = engine.getPlayerCandidateController();
   const runningMateModel = engine.getPlayerRunningMateModel();

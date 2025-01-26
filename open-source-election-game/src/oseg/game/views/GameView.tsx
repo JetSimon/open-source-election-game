@@ -159,10 +159,10 @@ function GameView(props: GameViewProps) {
       refreshThemeAndMusic();
     }
 
-    if (
-      engine.currentScenario != null &&
-      engine.currentScenario.hasStateVisits
-    ) {
+    const questionsBetweenVisits = engine.scenarioController.model.questionsPerVisit ?? 1;
+    const timeToVisitState = engine.currentScenario != null && engine.currentScenario.hasStateVisits && ((engine.currentQuestionNumber - 1) % questionsBetweenVisits == 0)
+
+    if (timeToVisitState) {
       setShowMap(true);
       engine.waitingToPickState = true;
     }
