@@ -12,6 +12,13 @@ jobs:
         node-version: [20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
+    token:
+      description: >
+        Auth token used to fetch the repository. The token is stored in the local
+        git config, which enables your scripts to run authenticated git commands.
+        The post-job step removes the token from the git config.
+      default: ${{ github.token }}
+
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
