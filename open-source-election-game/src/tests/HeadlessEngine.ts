@@ -1,6 +1,9 @@
 import { Engine } from "../oseg/engine/Engine";
 import { ScenarioModel } from "../oseg/engine/models/ScenarioModel";
 
+import { data as blankData } from "./blankData/data.ts";
+import blankLogic from "./blankData/logic.js?raw";
+
 async function runHeadlessEngine(data: ScenarioModel, rawLogic: string, seed: string, candidateId: number, runningMateId: number, isShuffled: boolean, visits: boolean) {
     const engine = await getHeadlessEngine(data, rawLogic, candidateId, runningMateId, seed, isShuffled)
 
@@ -61,5 +64,19 @@ async function getHeadlessEngine(data: ScenarioModel, rawLogic: string, candidat
     return engine;
 }
 
-export { getHeadlessEngine, runHeadlessEngine };
+async function getBlankHeadlessEngine() {
+    const seed = Date.now().toString();
+    const candidateId = 2;
+    const engine = await getHeadlessEngine(
+        blankData,
+        blankLogic,
+        candidateId,
+        -1,
+        seed,
+        false
+    )
+    return {engine: engine, candidateId: candidateId};
+}
+
+export { getBlankHeadlessEngine, getHeadlessEngine, runHeadlessEngine };
 

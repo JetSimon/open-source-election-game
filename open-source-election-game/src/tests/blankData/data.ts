@@ -1,6 +1,6 @@
 import { ScenarioModel } from "../../oseg/engine/models/ScenarioModel";
 
-const data : ScenarioModel = {
+const data : ScenarioModel ={
     "candidates": [
         {
             "id": 2,
@@ -95,7 +95,32 @@ const data : ScenarioModel = {
     "scenarioSides": [
         {
             "playerId": 2,
-            "questions": []
+            "questions": [
+                {
+                    "id": 171260,
+                    "description": "Description goes here",
+                    "answers": [],
+                    "keepInPlaceIfQuestionsShuffled": true,
+                    "enabled": true,
+                    "onlyEnableAtStartIfRunningMateId": -1
+                },
+                {
+                    "id": 171261,
+                    "description": "Description goes here",
+                    "answers": [],
+                    "keepInPlaceIfQuestionsShuffled": true,
+                    "enabled": true,
+                    "onlyEnableAtStartIfRunningMateId": -1
+                },
+                {
+                    "id": 171262,
+                    "description": "Description goes here",
+                    "answers": [],
+                    "keepInPlaceIfQuestionsShuffled": true,
+                    "enabled": true,
+                    "onlyEnableAtStartIfRunningMateId": -1
+                }
+            ]
         }
     ],
     "theme": {

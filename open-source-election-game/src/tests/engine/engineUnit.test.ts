@@ -1,21 +1,9 @@
 import { assert, expect, test } from "vitest";
 import { AnswerModel } from "../../oseg/engine/models/AnswerModel";
-import { getHeadlessEngine } from "../HeadlessEngine";
-import { data } from "../blankData/data";
-import rawLogic from "../blankData/logic.js?raw";
+import { getBlankHeadlessEngine } from "../HeadlessEngine";
 
 async function testGlobalAnswerEffect() {
-    const seed = Date.now().toString();
-    const candidateId = 2;
-
-    const engine = await getHeadlessEngine(
-        data,
-        rawLogic,
-        candidateId,
-        -1,
-        seed,
-        false
-    )
+    const {engine, candidateId} = await getBlankHeadlessEngine();
 
     const amount = 1;
     const opinionBefore = engine.scenarioController.getGlobalModifierForCandidate(candidateId);
@@ -43,18 +31,8 @@ async function testGlobalAnswerEffect() {
 }
 
 async function testStateAnswerEffect() {
-    const seed = Date.now().toString();
-    const candidateId = 2;
     const stateId = 30644;
-
-    const engine = await getHeadlessEngine(
-        data,
-        rawLogic,
-        candidateId,
-        -1,
-        seed,
-        false
-    )
+    const {engine, candidateId} = await getBlankHeadlessEngine();
 
     const amount = 1;
     const opinionBefore = engine.scenarioController.getStateControllerByStateId(stateId)?.getOpinionForCandidate(candidateId);
@@ -85,18 +63,10 @@ async function testStateAnswerEffect() {
 
 
 async function testIssueAnswerEffect() {
-    const seed = Date.now().toString();
-    const candidateId = 2;
-    const issueId = 19490;
+   
+    const {engine, candidateId} = await getBlankHeadlessEngine();
 
-    const engine = await getHeadlessEngine(
-        data,
-        rawLogic,
-        candidateId,
-        -1,
-        seed,
-        false
-    )
+    const issueId = 19490;
 
     const amount = 1;
     const opinionBefore = engine.scenarioController.getCandidateByCandidateId(candidateId).issueScores.getIssueScoreForIssue(issueId);
