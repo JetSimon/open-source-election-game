@@ -60,7 +60,7 @@ class ScenarioController {
             return false;
         }
 
-        if (engine.getPlayerRunningMateModel().id == candidateId) {
+        if (engine.runningMateId != -1 && engine.getPlayerRunningMateModel().id == candidateId) {
             return true;
         }
 
@@ -86,7 +86,10 @@ class ScenarioController {
         for (const candidateController of this.getCandidates()) {
             for (const issue of this.model.issues) {
                 if (!candidateController.issueScores.hasIssue(issue.id)) {
-                    console.warn("Candidate with id", candidateController.getId(), "doesn't have an issue score for issue with id", issue.id, "going to remove them for now");
+                    if(engine.logToConsole) {
+                        console.warn("Candidate with id", candidateController.getId(), "doesn't have an issue score for issue with id", issue.id, "going to remove them for now");
+                    }
+                    
                     toRemove.add(candidateController.getId());
                     break;
                 }
@@ -225,3 +228,4 @@ class ScenarioController {
 }
 
 export { ScenarioController };
+
