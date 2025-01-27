@@ -188,11 +188,14 @@ function OsegRightPanel(props: OsegRightPanelProps) {
     // WIP: for easy view of historical results
     } else if (rightNavBar == RightNavBar.Ending) {
       return (
-        <EndingView
-          engine={engine}
-          theme={theme}
-          mapSvg={mapSvg}
-        ></EndingView>
+        <>
+          <h2>Ending Preview is currently a work in progress!</h2>
+          <EndingView
+            engine={engine}
+            theme={theme}
+            mapSvg={mapSvg}
+          ></EndingView>
+        </>
       );
     }
   }

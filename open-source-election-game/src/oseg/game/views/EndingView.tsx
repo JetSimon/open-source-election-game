@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Engine } from "../../engine/Engine";
 import { ThemeModel } from "../../engine/models/ThemeModel";
 import EndingSlides from "../components/EndingSlides";
@@ -26,13 +26,14 @@ function EndingView(props: EndingViewProps) {
   );
   const { engine, theme, mapSvg } = props;
 
-  const [finalResults] = useState(() => {
-    return engine.getFinalResults();
-  });
+  const [finalResults, setFinalResults] = useState(() => engine.getFinalResults());
+  const [historicalResults, setHistoricalResults] = useState(() => engine.getHistoricalResults());
 
-  const [historicalResults] = useState(() => {
-    return engine.getHistoricalResults();
-  });
+  // Update results when scenario changes
+  useEffect(() => {
+    setFinalResults(engine.getFinalResults());
+    setHistoricalResults(engine.getHistoricalResults());
+  }, [engine, engine.scenarioController.model]);
 
   if (engine == null) {
     return <div>ERROR ENGINE NULL</div>;
@@ -71,7 +72,7 @@ function EndingView(props: EndingViewProps) {
               <FinalResults engine={engine} theme={theme} results={historicalResults} />
             </>
           )}
-        </>
+        </> 
       );
     } else if (currentTab == EndingTab.ResultsByState) {
       return <ResultsByState engine={engine} theme={theme}></ResultsByState>;

@@ -78,6 +78,8 @@ class ScenarioController {
     loadScenario(engine: Engine, model: ScenarioModel, sideIndex: number, isShuffled: boolean) {
         this.model = model;
         this.theme = this.model.theme;
+        
+        this.historicalResults = undefined;
 
         this.candidateControllers = this.model.candidates.filter((candidateModel) => !this.isCandidateRunningMate(engine, candidateModel.id)).map((candidateModel) => new CandidateController(candidateModel));
         this.runningMateControllers = this.model.candidates.filter((candidateModel) => this.isCandidateRunningMate(engine, candidateModel.id)).map((candidateModel) => new CandidateController(candidateModel));
