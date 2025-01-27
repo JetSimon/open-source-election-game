@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Engine } from "../../engine/Engine";
 import { ThemeModel } from "../../engine/models/ThemeModel";
+import { convertHistoricalResultsToFinalResults } from "../../utils/FinalResultsAdapter";
 import EndingSlides from "../components/EndingSlides";
 import FinalResults from "../components/FinalResults";
 import ResultsByState from "../components/ResultsByState";
@@ -69,7 +70,7 @@ function EndingView(props: EndingViewProps) {
           {historicalResults && (
             <>
               <h2>Results - Historical</h2>
-              <FinalResults engine={engine} theme={theme} results={historicalResults} />
+              <FinalResults engine={engine} theme={theme} results={convertHistoricalResultsToFinalResults(historicalResults)} />
             </>
           )}
         </> 

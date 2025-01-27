@@ -119,24 +119,9 @@ class ScenarioController {
 
         // Check if data.json contains historical results
         if (model.historicalResults) {
-            const popularVotes = new Map<number, number>();
-            const electoralVotes = new Map<number, number>();
-
-            if (model.historicalResults.popularVotes) {
-                Object.entries(model.historicalResults.popularVotes).forEach(([key, value]) => {
-                    popularVotes.set(parseInt(key), value);
-                });
-            }
-
-            if (model.historicalResults.electoralVotes) {
-                Object.entries(model.historicalResults.electoralVotes).forEach(([key, value]) => {
-                    electoralVotes.set(parseInt(key), value);
-                });
-            }
-
             this.historicalResults = {
-                popularVotes,
-                electoralVotes,
+                popularVotes: model.historicalResults.popularVotes,
+                electoralVotes: model.historicalResults.electoralVotes,
                 candidates: this.candidateControllers,
                 totalPopularVotes: model.historicalResults.totalPopularVotes,
                 totalElectoralVotes: model.historicalResults.totalElectoralVotes

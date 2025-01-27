@@ -1,12 +1,11 @@
 import { CandidateController } from "../../engine/controllers/CandidateController";
 import { Engine } from "../../engine/Engine";
 import { FinalResultsModel } from "../../engine/models/FinalResultsModel";
-import { HistoricalResultsModel } from "../../engine/models/HistoricalResultsModel";
 import { ThemeModel } from "../../engine/models/ThemeModel";
 import "./FinalResults.css";
 
 interface FinalResultsProps {
-  results: FinalResultsModel | HistoricalResultsModel;
+  results: FinalResultsModel;
   engine: Engine;
   theme: ThemeModel;
 }
