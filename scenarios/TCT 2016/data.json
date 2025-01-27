@@ -3110,28 +3110,28 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.3
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": -0.35
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": -0.1
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -3145,28 +3145,28 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.25
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": -0.375
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": -0.125
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -3180,42 +3180,42 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.6
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.4
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": -0.15
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": 0.15
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": 0.475
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -3250,28 +3250,28 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.35
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": -0.333
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": 0
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -3299,7 +3299,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -3327,7 +3327,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -3376,14 +3376,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": -0.1
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -3411,14 +3411,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.4
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -3439,7 +3439,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
@@ -3479,35 +3479,35 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.55
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": 0.55
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": 0.55
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": 0.55
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -3548,7 +3548,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
@@ -3576,35 +3576,35 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.25
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": -0.25
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": 0
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": 0.4
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -3632,35 +3632,35 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.4
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": -0.3
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": 0.1
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": 0.55
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -3674,35 +3674,35 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.35
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": -0.3
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": 0
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": 0.55
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -3716,35 +3716,35 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.35
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": -0.3
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": -0.125
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": 0.55
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -3765,14 +3765,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.6
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -3786,7 +3786,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
@@ -3814,7 +3814,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
@@ -3890,7 +3890,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -3904,7 +3904,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -3925,14 +3925,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": -0.25
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -3959,21 +3959,21 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.3
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": 0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -4001,7 +4001,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
@@ -4036,7 +4036,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
@@ -4050,7 +4050,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
@@ -4071,7 +4071,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
@@ -4099,21 +4099,21 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.45
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": 0.25
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -4463,21 +4463,21 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.45
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": 0.25
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -4827,21 +4827,21 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": -0.1
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.2
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -4862,21 +4862,21 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.65
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": 0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -4918,7 +4918,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
@@ -4946,7 +4946,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
@@ -4960,14 +4960,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.1
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -5044,14 +5044,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.45
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -5072,14 +5072,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.333
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -5107,35 +5107,35 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.65
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": 0.65
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": 0.65
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": 0.65
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -5170,14 +5170,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -5225,21 +5225,21 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0.1
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": -0.2
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -5274,7 +5274,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -5288,7 +5288,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -5302,7 +5302,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -5672,14 +5672,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": 0.75
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -5700,14 +5700,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": -0.05
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -5735,14 +5735,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": 0
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -5798,7 +5798,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -5812,7 +5812,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -5826,14 +5826,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": -0.1
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -5889,7 +5889,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -6559,14 +6559,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": -0.3
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -6594,14 +6594,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": -0.275
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -6663,7 +6663,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -6677,14 +6677,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": -0.45
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -6712,7 +6712,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -6733,7 +6733,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -6754,7 +6754,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -6796,28 +6796,28 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": -0.6
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": -0.6
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": -0.65
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -6838,14 +6838,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": -0.35
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -6908,35 +6908,35 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": -0.4
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": -0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": -0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": -0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -6964,35 +6964,35 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": -0.55
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": 0.3
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": -0.2
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": -0.6
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -7020,21 +7020,21 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": -0.333
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": 0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -7055,21 +7055,21 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": -0.45
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": -0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -7083,21 +7083,21 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": -0.2
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": 0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -7181,7 +7181,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -7251,35 +7251,35 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": -0.44
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": -0.2
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": -0.3
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": -0.55
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -7370,7 +7370,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -7412,35 +7412,35 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": -0.45
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": -0.45
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": -0.45
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": -0.45
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -7461,35 +7461,35 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": -0.55
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": -0.55
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": -0.55
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": -0.55
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -7510,35 +7510,35 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": -0.45
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": -0.45
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": -0.45
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": -0.45
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -7559,35 +7559,35 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": 0
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": 0.3
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": 0.3
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": 0
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -7615,7 +7615,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -7629,7 +7629,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -7643,7 +7643,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -7664,7 +7664,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -7746,14 +7746,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": -0.333
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -7781,7 +7781,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
@@ -7795,7 +7795,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
@@ -7934,21 +7934,21 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": -0.45
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": 0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -7969,7 +7969,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
@@ -7990,7 +7990,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
@@ -8011,7 +8011,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
@@ -8032,7 +8032,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
@@ -8060,7 +8060,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -8081,7 +8081,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -8095,7 +8095,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -8116,14 +8116,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": 0.1
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -8158,7 +8158,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -8172,14 +8172,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": 0.2
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -8193,7 +8193,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -8207,7 +8207,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -8249,7 +8249,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -8305,35 +8305,35 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": -0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": 0.3
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": -0.2
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
                                     "amount": -0.6
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -8514,21 +8514,21 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 100,
                                     "stateId": -1,
                                     "amount": -0.25
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": 0.1
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -8549,7 +8549,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -8619,7 +8619,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
