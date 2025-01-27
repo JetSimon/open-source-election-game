@@ -26,8 +26,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: "./open-source-election-game/package-lock.json"
     - name: Install dependencies
-      cache-dependency-path: "./open-source-election-game/package-lock.json"
       working-directory: ./open-source-election-game
       run: npm install
     - name: Build
