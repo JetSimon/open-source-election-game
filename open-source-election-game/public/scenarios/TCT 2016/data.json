@@ -8835,6 +8835,20 @@
         "advisorImage": "https://www.jetsimon.com/public/static/images/kendall-weed-1844.jpg",
         "quote": "This is a quote!"
     },
+    "historicalResults": {
+        "popularVotes": {
+            "200": 62984828,
+            "201": 65853514,
+            "202": 4489341,
+            "203": 1457218
+        },
+        "electoralVotes": {
+            "200": 306,
+            "201": 232,
+            "202": 0,
+            "203": 0
+        }
+    },
     "hasStateVisits": false,
     "scenarioName": "2016",
     "scenarioDescription": "<p>Donald Trump and Hillary Clinton face off in the 2016 election. While he is well-known among the American public, Trump has never served in elected office. Clinton has served as First Lady, Senator, and Secretary of State. Clinton was the presumptive nominee from start to finish, while Trump has shocked the political world.</p><p>How will their campaign play out? Can Trump pull off an upset? Can Clinton continue the legacy of Obama?</p>",

@@ -70,7 +70,7 @@ function EndingView(props: EndingViewProps) {
           {historicalResults && (
             <>
               <h2>Results - Historical</h2>
-              <FinalResults engine={engine} theme={theme} results={convertHistoricalResultsToFinalResults(historicalResults)} />
+              <FinalResults engine={engine} theme={theme} results={convertHistoricalResultsToFinalResults(historicalResults, engine.scenarioController.getCandidates())} />
             </>
           )}
         </> 

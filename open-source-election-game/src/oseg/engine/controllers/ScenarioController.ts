@@ -121,10 +121,7 @@ class ScenarioController {
         if (model.historicalResults) {
             this.historicalResults = {
                 popularVotes: model.historicalResults.popularVotes,
-                electoralVotes: model.historicalResults.electoralVotes,
-                candidates: this.candidateControllers,
-                totalPopularVotes: model.historicalResults.totalPopularVotes,
-                totalElectoralVotes: model.historicalResults.totalElectoralVotes
+                electoralVotes: model.historicalResults.electoralVotes
             };
         }
 
