@@ -21,7 +21,7 @@ function Layout() {
         <a href="/open-source-election-game/doc">Doc</a>
         </div>
         <div>
-          <a href="https://github.com/JetSimon/open-source-election-game/tree/main/guides">Guides</a>
+          <a href="https://github.com/JetSimon/open-source-election-game/wiki">Guides</a>
         </div>
         <div>
         <a href="https://github.com/JetSimon/open-source-election-game">Source Code</a>

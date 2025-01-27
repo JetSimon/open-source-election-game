@@ -1,0 +1,1 @@
+All guides can now be found in the Wiki section of the repo!
