@@ -30,6 +30,10 @@ function EndingView(props: EndingViewProps) {
     return engine.getFinalResults();
   });
 
+  const [historicalResults] = useState(() => {
+    return engine.getHistoricalResults();
+  });
+
   if (engine == null) {
     return <div>ERROR ENGINE NULL</div>;
   }
@@ -58,11 +62,16 @@ function EndingView(props: EndingViewProps) {
       );
     } else if (currentTab == EndingTab.OverallResultsDetailed) {
       return (
-        <FinalResults
-          engine={engine}
-          theme={theme}
-          results={finalResults}
-        ></FinalResults>
+        <>
+          <h2>Results - This Game</h2>
+          <FinalResults engine={engine} theme={theme} results={finalResults} />
+          {historicalResults && (
+            <>
+              <h2>Results - Historical</h2>
+              <FinalResults engine={engine} theme={theme} results={historicalResults} />
+            </>
+          )}
+        </>
       );
     } else if (currentTab == EndingTab.ResultsByState) {
       return <ResultsByState engine={engine} theme={theme}></ResultsByState>;

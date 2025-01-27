@@ -25,6 +25,27 @@ function FinalResults(props: FinalResultsProps) {
     return pv == undefined ? -1 : pv;
   }
 
+  function getPvPercent(candidate: CandidateController): string {
+    const pv = getPv(candidate);
+
+    // Calculate total votes if not already given
+    let totalVotes = results.totalPopularVotes;
+    if (!totalVotes) {
+      totalVotes = 0;
+      for (const votesForCandidate of results.popularVotes.values()) {
+        totalVotes += votesForCandidate;
+      }
+    }
+    
+    if (pv === -1 || totalVotes === 0) {
+      return "0.00";
+    }
+    
+    const votePercentage = (pv / totalVotes) * 100;
+
+    return votePercentage.toFixed(2);
+  }
+
   const hasEv = results.totalElectoralVotes > 0;
 
   return (
@@ -66,13 +87,7 @@ function FinalResults(props: FinalResultsProps) {
                   </td>
                   {hasEv && <td>{numberFormatter.format(getEv(candidate))}</td>}
                   <td>{numberFormatter.format(getPv(candidate))}</td>
-                  <td>
-                    {(
-                      (getPv(candidate) / results.totalPopularVotes) *
-                      100
-                    ).toFixed(2)}
-                    %
-                  </td>
+                  <td>{getPvPercent(candidate)}%</td>
                 </tr>
               );
             })}

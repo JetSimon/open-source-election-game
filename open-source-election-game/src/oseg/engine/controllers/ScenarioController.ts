@@ -1,6 +1,7 @@
 import { seededShuffleArray } from "../../utils/ArrayUtils";
 import { Engine } from "../Engine";
 import { IssueScores } from "../IssueScores";
+import { FinalResultsModel } from "../models/FinalResultsModel";
 import { QuestionModel } from "../models/QuestionModel";
 import { ScenarioModel } from "../models/ScenarioModel";
 import { ThemeModel } from "../models/ThemeModel";
@@ -16,6 +17,7 @@ class ScenarioController {
     globalModifiers: Map<number, number> = new Map<number, number>();
     questions: QuestionModel[] = [];
     theme: ThemeModel = this.makeEmptyTheme();
+    historicalResults? : FinalResultsModel | null = null;
 
     bannerOverrideLine1: string | undefined = undefined;
     bannerOverrideLine2: string | undefined = undefined;
@@ -110,6 +112,32 @@ class ScenarioController {
             }
         }
 
+        // Check if data.json contains historical results
+        if (model.historicalResults) {
+            const popularVotes = new Map<number, number>();
+            const electoralVotes = new Map<number, number>();
+
+            if (model.historicalResults.popularVotes) {
+                Object.entries(model.historicalResults.popularVotes).forEach(([key, value]) => {
+                    popularVotes.set(parseInt(key), value);
+                });
+            }
+
+            if (model.historicalResults.electoralVotes) {
+                Object.entries(model.historicalResults.electoralVotes).forEach(([key, value]) => {
+                    electoralVotes.set(parseInt(key), value);
+                });
+            }
+
+            this.historicalResults = {
+                popularVotes,
+                electoralVotes,
+                candidates: this.candidateControllers,
+                totalPopularVotes: model.historicalResults.totalPopularVotes,
+                totalElectoralVotes: model.historicalResults.totalElectoralVotes
+            };
+        }
+
         if (isShuffled) {
             const unpinnedIndices: number[] = [];
             for (let i = 0; i < this.questions.length; i++) {
@@ -189,6 +217,10 @@ class ScenarioController {
 
     getRunningMateControllerById(id: number): CandidateController | undefined {
         return this.runningMateControllers.filter((mate) => mate.getId() == id)[0];
+    }
+
+    getHistoricalResults() {
+        return this.historicalResults;
     }
 }
 

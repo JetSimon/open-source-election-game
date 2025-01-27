@@ -610,6 +610,14 @@ class Engine {
     }
 
     /**
+     * @category Utility?
+     * @returns Returns a FinalResultsModel for the defined historical results 
+     */
+    getHistoricalResults(): FinalResultsModel | null | undefined {
+        return this.scenarioController.getHistoricalResults();
+    }
+
+    /**
      * Called when calculating the results of a game, returns an EndingModel to create slides out of
      * @category Core
      * @returns 
