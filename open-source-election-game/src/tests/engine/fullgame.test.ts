@@ -29,7 +29,7 @@ async function engineTestVisitsInfluenceResults() {
         false
     )
 
-    expect(!resultsAreSame(resultA, resultB));
+    expect(resultsAreSame(resultA, resultB)).toEqual(false);
 }
 
 async function engineTestDifferentSeedsDifferent() {
@@ -57,7 +57,7 @@ async function engineTestDifferentSeedsDifferent() {
         true
     )
 
-    expect(!resultsAreSame(resultA, resultB));
+    expect(resultsAreSame(resultA, resultB)).toEqual(false);
 }
 
 async function engineTestSeededRunsSame() {
