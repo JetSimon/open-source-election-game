@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Engine } from "../../engine/Engine";
 import { ThemeModel } from "../../engine/models/ThemeModel";
+import { convertHistoricalResultsToFinalResults } from "../../utils/FinalResultsAdapter";
 import EndingSlides from "../components/EndingSlides";
 import FinalResults from "../components/FinalResults";
 import ResultsByState from "../components/ResultsByState";
@@ -26,9 +27,14 @@ function EndingView(props: EndingViewProps) {
   );
   const { engine, theme, mapSvg } = props;
 
-  const [finalResults] = useState(() => {
-    return engine.getFinalResults();
-  });
+  const [finalResults, setFinalResults] = useState(() => engine.getFinalResults());
+  const [historicalResults, setHistoricalResults] = useState(() => engine.getHistoricalResults());
+
+  // Update results when scenario changes
+  useEffect(() => {
+    setFinalResults(engine.getFinalResults());
+    setHistoricalResults(engine.getHistoricalResults());
+  }, [engine, engine.scenarioController.model]);
 
   if (engine == null) {
     return <div>ERROR ENGINE NULL</div>;
@@ -58,11 +64,16 @@ function EndingView(props: EndingViewProps) {
       );
     } else if (currentTab == EndingTab.OverallResultsDetailed) {
       return (
-        <FinalResults
-          engine={engine}
-          theme={theme}
-          results={finalResults}
-        ></FinalResults>
+        <div style={{color:theme.primaryGameWindowTextColor}}>
+          <h2>Results - This Game</h2>
+          <FinalResults engine={engine} theme={theme} results={finalResults} />
+          {historicalResults && (
+            <>
+              <h2>Results - Historical</h2>
+              <FinalResults engine={engine} theme={theme} results={convertHistoricalResultsToFinalResults(historicalResults, engine.scenarioController.getCandidates())} />
+            </>
+          )}
+        </div> 
       );
     } else if (currentTab == EndingTab.ResultsByState) {
       return <ResultsByState engine={engine} theme={theme}></ResultsByState>;

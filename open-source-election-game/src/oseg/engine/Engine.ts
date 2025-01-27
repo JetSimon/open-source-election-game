@@ -7,6 +7,7 @@ import { CandidateModel } from "./models/CandidateModel";
 import { Difficulty, getMultiplierFromDifficulty } from "./models/Difficulty";
 import { EndingModel } from "./models/EndingModel";
 import { FinalResultsModel } from "./models/FinalResultsModel";
+import { HistoricalResultsModel } from "./models/HistoricalResultsModel";
 import { QuestionModel } from "./models/QuestionModel";
 import { ScenarioModel } from "./models/ScenarioModel";
 import { ScenarioSideModel } from "./models/ScenarioSideModel";
@@ -609,6 +610,14 @@ class Engine {
             "totalElectoralVotes": this.getTotalElectoralVotes(),
             "totalPopularVotes": this.getTotalPopularVotes()
         };
+    }
+
+    /**
+     * @category Utility?
+     * @returns Returns a FinalResultsModel for the defined historical results 
+     */
+    getHistoricalResults(): HistoricalResultsModel | undefined {
+        return this.scenarioController.getHistoricalResults();
     }
 
     /**

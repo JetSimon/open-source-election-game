@@ -1,6 +1,7 @@
 import { seededShuffleArray } from "../../utils/ArrayUtils";
 import { Engine } from "../Engine";
 import { IssueScores } from "../IssueScores";
+import { HistoricalResultsModel } from "../models/HistoricalResultsModel";
 import { QuestionModel } from "../models/QuestionModel";
 import { ScenarioModel } from "../models/ScenarioModel";
 import { ThemeModel } from "../models/ThemeModel";
@@ -16,6 +17,7 @@ class ScenarioController {
     globalModifiers: Map<number, number> = new Map<number, number>();
     questions: QuestionModel[] = [];
     theme: ThemeModel = this.makeEmptyTheme();
+    historicalResults? : HistoricalResultsModel;
 
     bannerOverrideLine1: string | undefined = undefined;
     bannerOverrideLine2: string | undefined = undefined;
@@ -76,6 +78,8 @@ class ScenarioController {
     loadScenario(engine: Engine, model: ScenarioModel, sideIndex: number, isShuffled: boolean) {
         this.model = model;
         this.theme = this.model.theme;
+        
+        this.historicalResults = undefined;
 
         this.candidateControllers = this.model.candidates.filter((candidateModel) => !this.isCandidateRunningMate(engine, candidateModel.id)).map((candidateModel) => new CandidateController(candidateModel));
         this.runningMateControllers = this.model.candidates.filter((candidateModel) => this.isCandidateRunningMate(engine, candidateModel.id)).map((candidateModel) => new CandidateController(candidateModel));
@@ -111,6 +115,14 @@ class ScenarioController {
                 const neededRunningMate = question.onlyEnableAtStartIfRunningMateId;
                 question.enabled = engine.runningMateId == neededRunningMate;
             }
+        }
+
+        // Check if data.json contains historical results
+        if (model.historicalResults) {
+            this.historicalResults = {
+                popularVotes: model.historicalResults.popularVotes,
+                electoralVotes: model.historicalResults.electoralVotes
+            };
         }
 
         if (isShuffled) {
@@ -196,6 +208,10 @@ class ScenarioController {
 
     getRunningMateControllerById(id: number): CandidateController | undefined {
         return this.runningMateControllers.filter((mate) => mate.getId() == id)[0];
+    }
+
+    getHistoricalResults() {
+        return this.historicalResults;
     }
 }
 

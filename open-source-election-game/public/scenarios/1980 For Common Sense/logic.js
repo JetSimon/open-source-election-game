@@ -295,7 +295,7 @@ function onAnswerPicked(engine, answerPicked) {
         engine.setNewRunningMateImage("https://i.imgur.com/P88o71J.png");
         engine.setNewRunningMateName("", "For Senate");
 
-        engine.setScenarioName("1980: For Common Senese");
+        engine.setScenarioName("1980: For Common Sense");
         engine.setQuote("\"Even friends will admit McGovern commands the support of a majority of his constituents for only one day every six years.\"")
     }
 
