@@ -2240,7 +2240,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -2261,7 +2261,7 @@
                             "feedback": "Many are surprised to hear you hedge your position on the bank issue.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -2310,7 +2310,7 @@
                             "feedback": "This is a little out of step with Whig ideology.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -2338,7 +2338,7 @@
                             "feedback": "At the national level, this is probably your best position. In certain locales the nativist sentiment does appear to be rising, however.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -2478,7 +2478,7 @@
                             "feedback": "Nativism appears to be on the rise, but you are probably better off, on the whole, taking a more moderate tack.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -2555,7 +2555,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 48,
                                     "stateId": -1,
@@ -2667,7 +2667,7 @@
                             "feedback": "This is a little out of step with Whig ideology.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 48,
                                     "stateId": -1,
@@ -2758,14 +2758,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 48,
                                     "stateId": -1,
                                     "amount": 0.55
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -2884,14 +2884,14 @@
                             "feedback": "This position is broadly popular, but will it cost you in some regions?",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
                                     "amount": -0.45
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -2988,7 +2988,7 @@
                             "feedback": "This invigorates a certain wing of the party, but it could also cost you in certain states.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -3028,14 +3028,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
                                     "amount": 0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -3076,7 +3076,7 @@
                             "feedback": "This seems like a bit of an eccentric position to many people.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -3097,7 +3097,7 @@
                             "feedback": "There's nothing wrong with this response.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -3136,14 +3136,14 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
                                     "amount": 0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -3199,7 +3199,7 @@
                             "feedback": "This will obviously be a more popular position in certain regions.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -3477,7 +3477,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -3498,7 +3498,7 @@
                             "feedback": "Nativism appears to be on the rise, but you are probably better off, on the whole, taking a more moderate tack.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -3897,7 +3897,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
@@ -4114,7 +4114,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -4212,7 +4212,7 @@
                             "feedback": "What's wrong with a national bank? Your supporters are concerned by this statement.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -4254,7 +4254,7 @@
                             "feedback": "Henry Clay takes the Democratic line?",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -4282,7 +4282,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -4303,7 +4303,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -4338,7 +4338,7 @@
                             "feedback": "Supporters are surprised and upset to hear you take a new position on the bank issue.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -4366,14 +4366,14 @@
                             "feedback": "Probably best to ignore this letter.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
                                     "amount": 0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -4429,7 +4429,7 @@
                             "feedback": "It's a difficult issue to address, but putting yourself in sympathy with John Calhoun is certainly not the right way to do it.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -4471,7 +4471,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
@@ -5349,7 +5349,7 @@
                             "feedback": "This puts you outside of the party mainstream, to say the least. Hopefully it will help in a couple of the Northern states.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 48,
                                     "stateId": -1,
@@ -5461,7 +5461,7 @@
                             "feedback": "This is certainly the party line on the tariff issue.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 48,
                                     "stateId": -1,
@@ -5552,7 +5552,7 @@
                             "feedback": "Are you out of your mind? A national bank is anathema to the Democratic Party.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -5573,7 +5573,7 @@
                             "feedback": "Are you out of your mind? A national bank is anathema to the Democratic Party.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -5622,7 +5622,7 @@
                             "feedback": "There's nothing wrong with defending the current system, which is the Democratic system in large part.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -5650,14 +5650,14 @@
                             "feedback": "Support for a federal infrastructure program is quite limited within your party.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 48,
                                     "stateId": -1,
                                     "amount": 0.55
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -5947,7 +5947,7 @@
                             "feedback": "The Irish vote in the North has gone heavily in your favor recently. It's a good idea to keep it that way.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -5982,7 +5982,7 @@
                             "feedback": "There's no reason to hold back here -- Cassius Clay has put his cousin in a very awkward position.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -6057,7 +6057,7 @@
                             "feedback": "This is a simple decision -- anything you can do to emphasize your close relationship with Andrew Jackson is a net positive.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -6085,7 +6085,7 @@
                             "feedback": "The Irish vote in the North has gone heavily in your favor recently. It's a good idea to keep it that way.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -6099,7 +6099,7 @@
                             "feedback": "A nice aside aimed at Clay, but you should show more vigor in defense of your Irish supporters.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -6120,7 +6120,7 @@
                             "feedback": "The slavery issue is increasingly becoming a problem for the Whigs of the South, and there's no reason to give them a pass on it.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -6182,7 +6182,7 @@
                             "feedback": "This puts you closer to Clay's position, and is a disappointment to the general public.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
@@ -6321,7 +6321,7 @@
                             "feedback": "Ending the Gag Rule is definitely a Whig prerogative.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -6349,7 +6349,7 @@
                             "feedback": "Ending the Gag Rule is definitely a Whig prerogative.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -6397,7 +6397,7 @@
                             "feedback": "People are wondering if they are reading your words correctly. Annexation was supposed to be the primary issue of your campaign.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
@@ -6614,14 +6614,14 @@
                             "feedback": "Calhoun may be past his heyday, but it serves little purpose to insult him.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
                                     "amount": 0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -6669,14 +6669,14 @@
                             "feedback": "Better to just ignore this letter.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
                                     "amount": 0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -6732,7 +6732,7 @@
                             "feedback": "A national bank is anathema to most Democrats.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -6830,7 +6830,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -6872,7 +6872,7 @@
                             "feedback": "There's nothing wrong with taking this position.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -6900,7 +6900,7 @@
                             "feedback": "This is a dissatisfying answer to many in your party.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 48,
                                     "stateId": -1,
@@ -6921,7 +6921,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 48,
                                     "stateId": -1,
