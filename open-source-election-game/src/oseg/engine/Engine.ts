@@ -164,8 +164,8 @@ class Engine {
         this.waitingToSelectNewRunningMate = false;
         this.currentQuestionIndex = 0;
         this.runningMateId = -1;
-        this.scenarioController.loadScenario(this, newScenario, 0, false);
         this.currentScenario = newScenario;
+        this.scenarioController.loadScenario(this, newScenario, 0, false);
         this.gameState = GameState.CandidateSelection;
         this.counters = new Map<string, number>();
         this.counterDisplayNames = new Map<string, string>();
@@ -298,7 +298,6 @@ class Engine {
             }
         }
 
-        console.error("Could not get player candidate!");
         return new CandidateController(this.makeEmptyCandidateModel());
     }
 
