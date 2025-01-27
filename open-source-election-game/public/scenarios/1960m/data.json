@@ -2458,7 +2458,7 @@
                                     "amount": 0.004
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 40,
                                     "stateId": 283,
@@ -2479,7 +2479,7 @@
                                     "amount": -0.002
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 39,
                                     "stateId": 283,
@@ -2529,7 +2529,7 @@
                                     "amount": -0.008
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 40,
                                     "stateId": 283,
@@ -2550,21 +2550,21 @@
                                     "amount": 0.004
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 37,
                                     "stateId": 283,
                                     "amount": -0.2
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 40,
                                     "stateId": 283,
                                     "amount": 0.2
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
@@ -2641,14 +2641,14 @@
                                     "amount": 0.004
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 40,
                                     "stateId": 283,
                                     "amount": 0.3
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
@@ -2746,7 +2746,7 @@
                                     "amount": -0.004
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
@@ -2781,7 +2781,7 @@
                                     "amount": 0.02
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
@@ -2816,7 +2816,7 @@
                                     "amount": -0.012
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 40,
                                     "stateId": 283,
@@ -2858,7 +2858,7 @@
                                     "amount": 0.004
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 40,
                                     "stateId": 283,
@@ -2893,14 +2893,14 @@
                                     "amount": -0.004
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 40,
                                     "stateId": 283,
                                     "amount": 0.1
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
@@ -2956,7 +2956,7 @@
                                     "amount": 0.008
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
@@ -3019,7 +3019,7 @@
                             "feedback": "This is a reasonable step to take. The Oregon headquarters make an admirable effort at a write-in campaign, but Morse wins 60-40. Questions are raised as to why Jack didn’t make an appearance however… '\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 39,
                                     "stateId": 283,
@@ -3082,7 +3082,7 @@
                                     "amount": 0.01
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 39,
                                     "stateId": 283,
@@ -3110,14 +3110,14 @@
                                     "amount": 0.004
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 37,
                                     "stateId": 283,
                                     "amount": -0.3
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
@@ -3138,7 +3138,7 @@
                                     "amount": -0.004
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 39,
                                     "stateId": 283,
@@ -3243,14 +3243,14 @@
                                     "amount": 0.01
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 39,
                                     "stateId": 283,
                                     "amount": 0.4
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
@@ -3278,7 +3278,7 @@
                                     "amount": 0.004
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 39,
                                     "stateId": 283,
@@ -3320,7 +3320,7 @@
                                     "amount": 0.004
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 40,
                                     "stateId": 283,
@@ -3478,7 +3478,7 @@
                                     "amount": 0.001
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 39,
                                     "stateId": 283,
@@ -3621,14 +3621,14 @@
                                     "amount": -10000
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
                                     "amount": -0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 39,
                                     "stateId": 283,
@@ -3733,14 +3733,14 @@
                                     "amount": 0.01
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 37,
                                     "stateId": 283,
                                     "amount": -0.3
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
@@ -3880,14 +3880,14 @@
                                     "amount": -10000
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
                                     "amount": -0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 39,
                                     "stateId": 283,
@@ -4041,14 +4041,14 @@
                                     "amount": -10000
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
                                     "amount": -0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 39,
                                     "stateId": 283,
@@ -4146,7 +4146,7 @@
                                     "amount": 0.006
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 39,
                                     "stateId": 283,
@@ -4209,7 +4209,7 @@
                                     "amount": -0.02
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
@@ -4237,14 +4237,14 @@
                                     "amount": -0.002
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 37,
                                     "stateId": 283,
                                     "amount": -0.25
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 40,
                                     "stateId": 283,
@@ -4272,7 +4272,7 @@
                                     "amount": 0.005
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 37,
                                     "stateId": 283,
@@ -4286,14 +4286,14 @@
                             "feedback": "America is an example to every nation. It simply must advocate for a liveable wage, equal civil rights and liberal fiscal policy! It’s an effective pitch, but Nixon is doing the same thing, mitigating the effect somewhat.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 37,
                                     "stateId": 283,
                                     "amount": 0.1
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 39,
                                     "stateId": 283,
@@ -4328,7 +4328,7 @@
                                     "amount": 0.004
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 37,
                                     "stateId": 283,
@@ -4391,7 +4391,7 @@
                                     "amount": 0.006
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 40,
                                     "stateId": 283,
@@ -4447,7 +4447,7 @@
                                     "amount": 0.004
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 39,
                                     "stateId": 283,
@@ -4482,7 +4482,7 @@
                                     "amount": -0.01
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
@@ -4552,7 +4552,7 @@
                                     "amount": -0.004
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
@@ -4636,7 +4636,7 @@
                                     "amount": 0.004
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 39,
                                     "stateId": 283,
@@ -4657,14 +4657,14 @@
                                     "amount": 0.004
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 40,
                                     "stateId": 283,
                                     "amount": 0.15
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 37,
                                     "stateId": 283,
@@ -4713,7 +4713,7 @@
                                     "amount": -0.005
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 37,
                                     "stateId": 283,
@@ -4783,14 +4783,14 @@
                                     "amount": 0.002
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 40,
                                     "stateId": 283,
                                     "amount": 0.2
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
@@ -4839,7 +4839,7 @@
                                     "amount": 0.0065
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 40,
                                     "stateId": 283,
@@ -4874,7 +4874,7 @@
                                     "amount": 0.001
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 39,
                                     "stateId": 283,
@@ -4895,7 +4895,7 @@
                                     "amount": 0.008
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 39,
                                     "stateId": 283,
@@ -4951,14 +4951,14 @@
                                     "amount": 0.007
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 39,
                                     "stateId": 283,
                                     "amount": 0.3
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 37,
                                     "stateId": 283,
@@ -5133,7 +5133,7 @@
                             "feedback": "Jack, despite your advice, calls Coretta anyway. In a simple 90 second call, he tells her he’s sorry for what’s happening and he’ll help her however he can. It makes front page news, and when King is released, he all but directly endorses Jack. Hopefully that’s worth the backlash…",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
@@ -5161,7 +5161,7 @@
                             "feedback": "Wofford and Shriver pressure Jack as best they can, but at your insistence, Jack doesn’t budge. King is released early thanks to your influence and thanks Jack for his efforts.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
@@ -5209,7 +5209,7 @@
                                     "amount": 0.04
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 40,
                                     "stateId": 283,
@@ -5230,7 +5230,7 @@
                                     "amount": -0.004
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 40,
                                     "stateId": 283,
@@ -5293,7 +5293,7 @@
                                     "amount": 0.003
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 39,
                                     "stateId": 283,
@@ -5314,7 +5314,7 @@
                                     "amount": 0.005
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 37,
                                     "stateId": 283,
@@ -5442,7 +5442,7 @@
                                     "amount": -0.045
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
@@ -5498,7 +5498,7 @@
                                     "amount": 0.006
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 39,
                                     "stateId": 283,
@@ -5563,7 +5563,7 @@
                                     "amount": 0.001
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": 105,
                                     "issueId": 38,
                                     "stateId": 283,
