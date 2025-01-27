@@ -440,6 +440,9 @@ class Engine {
                         candidate.changeIssueScore(answerEffect.issueId, answerAmount);
                     }
                     else {
+                        if(this.logToConsole) {
+                            console.warn("Id " + answerEffect.candidateId + " could not find a valid candidate, applying to player");
+                        }
                         this.getPlayerCandidateController().changeIssueScore(answerEffect.issueId, answerAmount);
                     }
 
