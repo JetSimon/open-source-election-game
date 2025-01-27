@@ -2,15 +2,6 @@ on:
   push:
     branches: [ "main" ]
 
-inputs:
-  token:
-  description: >
-    Auth token used to fetch the repository. The token is stored in the local
-    git config, which enables your scripts to run authenticated git commands.
-    The post-job step removes the token from the git config.
-  default: ${{ github.token }}
-
-
 jobs:
   build:
 
@@ -42,6 +33,6 @@ jobs:
       working-directory: ./open-source-election-game
       run: |
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
+        npx gh-pages -d dist -u "github-actions-bot <support+actions@github.com>"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
