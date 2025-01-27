@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Engine } from "../../engine/Engine";
 import { ThemeModel } from "../../engine/models/ThemeModel";
 import { convertHistoricalResultsToFinalResults } from "../../utils/FinalResultsAdapter";
@@ -64,7 +64,7 @@ function EndingView(props: EndingViewProps) {
       );
     } else if (currentTab == EndingTab.OverallResultsDetailed) {
       return (
-        <>
+        <div style={{color:theme.primaryGameWindowTextColor}}>
           <h2>Results - This Game</h2>
           <FinalResults engine={engine} theme={theme} results={finalResults} />
           {historicalResults && (
@@ -73,7 +73,7 @@ function EndingView(props: EndingViewProps) {
               <FinalResults engine={engine} theme={theme} results={convertHistoricalResultsToFinalResults(historicalResults, engine.scenarioController.getCandidates())} />
             </>
           )}
-        </> 
+        </div> 
       );
     } else if (currentTab == EndingTab.ResultsByState) {
       return <ResultsByState engine={engine} theme={theme}></ResultsByState>;
