@@ -1,7 +1,7 @@
 import { seededShuffleArray } from "../../utils/ArrayUtils";
 import { Engine } from "../Engine";
 import { IssueScores } from "../IssueScores";
-import { FinalResultsModel } from "../models/FinalResultsModel";
+import { HistoricalResultsModel } from "../models/HistoricalResultsModel";
 import { QuestionModel } from "../models/QuestionModel";
 import { ScenarioModel } from "../models/ScenarioModel";
 import { ThemeModel } from "../models/ThemeModel";
@@ -17,7 +17,7 @@ class ScenarioController {
     globalModifiers: Map<number, number> = new Map<number, number>();
     questions: QuestionModel[] = [];
     theme: ThemeModel = this.makeEmptyTheme();
-    historicalResults? : FinalResultsModel | null = null;
+    historicalResults? : HistoricalResultsModel;
 
     bannerOverrideLine1: string | undefined = undefined;
     bannerOverrideLine2: string | undefined = undefined;

@@ -1,5 +1,5 @@
 import { CandidateModel } from "./CandidateModel";
-import { FinalResultsModel } from "./FinalResultsModel";
+import { HistoricalResultsModel } from "./HistoricalResultsModel";
 import { Issue } from "./Issue";
 import { ScenarioSideModel } from "./ScenarioSideModel";
 import { SongModel } from "./SongModel";
@@ -22,7 +22,7 @@ interface ScenarioModel {
     tooltips? : Tooltip[];
     questionsPerVisit? : number;
     skipRunningMateSelection? : boolean;
-    historicalResults? : FinalResultsModel;
+    historicalResults? : HistoricalResultsModel;
 }
 
 export type { ScenarioModel };
