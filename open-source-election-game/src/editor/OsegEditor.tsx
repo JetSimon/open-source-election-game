@@ -63,6 +63,7 @@ const templateNames = [
     "1964 The Beatles",
     "1960m",
     "TCT 1844",
+    "TCT 2000",
     "TCT 2016",
     "Blank"
 ];
