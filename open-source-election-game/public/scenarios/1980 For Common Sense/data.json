@@ -3,7 +3,7 @@
     "credits": "by Komnothun",
     "candidates": [
         {
-            "startingGlobalMultiplier": 1.04,
+            "startingGlobalMultiplier": 1.00,
             "runningMateIds": [
                 16064
             ],
@@ -3449,7 +3449,7 @@
                             "feedback": "Grab control of the narrative and don't let go. Your track record with farmers is unimpeachable, and it would never hurt you to remind voters of the fact. Nonetheless, taking these allegations head-on has brought the discussion to the limelight, and farmers are starting to wonder who has their interests in mind.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -3470,7 +3470,7 @@
                             "feedback": "Decorum is an endangered practice in this day and age. Dignifying these outlandish attacks on another state's Senator would be beneath you, and your confidence is praiseworthy. Still, those who have endured the barrage of anti-McGovern advertisements are looking at you from a new perspective. ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -3491,7 +3491,7 @@
                             "feedback": "Wry humor has never failed you thus far. Over the course of the next week, the fine points of the attack ad begin to recede into memory, but voters can't help but experience an inexplicable sour taste in their mouths when thinking of you.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -3519,7 +3519,7 @@
                             "feedback": "<q>It's too late when the polls are closed to say, 'I wish I had.' Don't put me in the hot seat! Give me back brains, common sense, and guts! Give me back George McGovern!</q> Senator Byrd roars to the 1,800 supporters amassed in Mitchell, often being interrupted by elated cheers and applause.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -3568,14 +3568,14 @@
                             "feedback": "<q>[This is] probably the most important job I'll ever have,</q>says Wollman, serving as emcee for the rally. <q>McGovern is a man of vision who has guts. South Dakota has benefited tenfold in what he's brought back,</q> praises Daschle. Byrd offers muted compliments to you in the press.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
                                     "amount": -0.6
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -3603,14 +3603,14 @@
                             "feedback": "Senator Byrd's stirring defense of your record, character, and promise of your future inspires great enthusiasm within the crowd. The case you've presented for yourself is solid, but measure your temper. Constant indignant rebuttals paint you as angry and on the backfoot. ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
                                     "amount": -0.6
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -3645,14 +3645,14 @@
                             "feedback": "Your grievances are valid, yet are easily refuted by Schumaker and his legions of supporters cropping up across the state. To a pro-life individual, you are asking them to ignore the murder of a baby because you have fought for higher farm subsidies. ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
                                     "amount": -0.8
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -3673,7 +3673,7 @@
                             "feedback": "Against any other candidate, this would put the issue largely to bed. Schumaker, though, is an unrepentant carpetbagger who is more than happy to boast of his time in Texas and all it taught him on the sanctity of life. <q>He's from South Dakota,</q> he charges, <q>but votes like he's from Massachusetts.</q>",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -3694,7 +3694,7 @@
                             "feedback": "It's hardly a secret that Schumaker's arrival and meteoric rise in the polls is fueled by a conglomeration of national pro-life groups, but the victory is in the money. While voters may agree with his stance on abortion, the volume of outside funding is quick to turn many off. ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
@@ -3722,7 +3722,7 @@
                             "feedback": "Since time immemorial, pro-lifers have deplored the practice of baby killing and abortion activists have questioned where the regard is for the life of the mother. When we are dead and buried, and our grandchildren are dead and buried, the same battle will rage with the same talking points. ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
@@ -3757,14 +3757,14 @@
                             "feedback": "The abortion argument is one that just can't be won, but this is a great way to stay in contention. The zealots are unmoved by this rhetoric, but mainstreamers and libertarians alike share your views almost one to one. It's unfortunate, then, that pro-lifers are much greater in number. ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
                                     "amount": -0.6
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -3785,21 +3785,21 @@
                             "feedback": "<q>I don't get it,</q> wonders one woman interviewed by the Argus Leader, <q>Mr. McGovern is pro-life in Africa and Asia, we should protect those kids, right? But when it comes to fetuses- babies- in our state, it's an entirely different story. I think it's sad.</q>",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
                                     "amount": -0.8
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
                                     "amount": -0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -3820,7 +3820,7 @@
                             "feedback": "Pro-lifers sneer at this kind of attempt at co-opting their position. To them, you can hem and haw and handwring and moralize about how abortion is an unfortunate necessity, but Schumaker supports an amendment banning it and you don't-- and that's all that'll ever matter.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
@@ -3848,7 +3848,7 @@
                             "feedback": "When confronted with your remarks, Schumaker sputters out a winding story of his childhood home being adjacent to farmland and how his best friends in his youth were farm boys, all to conclude by referencing your opposition to outlawing abortion. An eternity of silence passes. <q>Just to get back to Senator McGovern's comments,</q> nudges one reporter. ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -3869,7 +3869,7 @@
                             "feedback": "Accusing George McGovern of all people of being a remnant of the politics of yesteryear is an avenue of attack very few people would subscribe to. Schumaker doesn't need to be right, though, he just needs to be loud enough long enough to make you slip.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -3890,14 +3890,14 @@
                             "feedback": "Translating an idea to print takes time. While you commission a local cartoonist, wait for their draft, and shop around for newspapers to publish in, Schumaker's remarks in specific have largely faded from the public consciousness. For what it's worth, the humorous ad is effective in pressing the Texas issue.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
                                     "amount": -0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -3925,7 +3925,7 @@
                             "feedback": "Schumaker's campaign, having seen the tactics used by other opponents of yours throughout your career, put out advertisements portraying you as a <em>chicken</em>-hawk in record time. It's hard not to smirk, are old Scoop Jackson talking points and cartoons the best those rich men in their boardrooms can think up?",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -3953,7 +3953,7 @@
                             "feedback": "To an irrigator in Newell, the difference between where his produce goes couldn't matter less-- its the fact he's paid to grow it that matters. Keeping this election centered on farm issues is a winning strategy, one which Schumaker knows he can't begin to compete against.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -4002,14 +4002,14 @@
                             "feedback": "Opposition to the draft and support for SALT are core tenets of your political philosophy, yet are antithetical to the state which you represent. Eight years ago, one might say such an argument may inspire collage students to take interest in your candidacy, but it's hard to imagine a politically active collage-aged Democrat who wasn't already behind you. ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
                                     "amount": -0.6
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -4065,7 +4065,7 @@
                             "feedback": "To the politically informed, that George McGovern supports the Equal Rights Amendment is to run up alarmed and proclaimed the sky is blue. Yet, to those in attendance or who read of the event in the paper, your words are humble but resolute. It's unlikely to bring you any voters from the other camp, but you're drawing out the previously apathetic.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -4142,14 +4142,14 @@
                             "feedback": "Eleanor is hardly one for the spotlight, but on the issue of women's rights, she is more than ready to go to the mat. Lambasting the ignorance of the Republican-leaning state Senate in its decision, many women feel she just gets it. ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
                                     "amount": -0.1
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 48,
                                     "stateId": -1,
@@ -4177,14 +4177,14 @@
                             "feedback": "Clinical explanations of Senatorial duties and obligations pale in the face of flashy and memorable advertisements like produced here. Images of you sharing a vehicle with Fidel Castro, grinning and looking all buddy-buddy are what will be remembered, and they'll think you a traitor at worst and communist sympathizer at best for it.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
                                     "amount": -0.7
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -4205,14 +4205,14 @@
                             "feedback": "Boldy, you embrace the thrust of the ad-- only to your detriment. These are ideas you have professed since Batista was deposed, and ones you earnestly believe would be most beneficial to all men. Cuban immigrants condemn your comments as supporting a brutal dictator and conservative media is quick to amplify their message.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
                                     "amount": -0.8
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -4233,7 +4233,7 @@
                             "feedback": "The legitimacy of your residency aside, the McGovern office is well renowned for its diligence in addressing constituent needs. An appeal to their efforts is sure to remind the most politically active that the ad is a bunch of hogwash, but the vast majority of South Dakotans have never bothered to interact with your office and take the ad at face value.\n\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -4254,14 +4254,14 @@
                             "feedback": "Pointing the finger at Schumaker or Abdnor is a dangerous game in a post-Buckely v. Valeo world. Schumaker plays the part of the innocent, protesting that neither he nor anyone on his team created, influenced, or approved the ad, and it shows. His name is completely absent. The director and check-cutter is Terry Dolan, Chairman of NCPAC.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
                                     "amount": -0.7
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -4289,7 +4289,7 @@
                             "feedback": "Target McGovern, a local organization backed by NCPAC and 17 other national conservative organizations, will have printed out more than 200,000 copies of the image, enough to reach a third of the state's population. ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
@@ -4366,7 +4366,7 @@
                             "feedback": "Your appraisal is largely correct. Numerous town halls, rallies, and voter drives in Sioux Falls and the outlying communities propel Kennedy to a three point victory, and he's got you to thank for it. <q>McGovern has based his public life,</q> Ted remarks after his victory to reporters, <q>on the politics of hope and the challenge of doing better.</q>\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
@@ -4408,7 +4408,7 @@
                             "feedback": "Indeed, such a strategy does make for wonderful TV. Yet, unlike Jack, Ted's reputation as a playboy spotlight-hog who'd fit better in Hollywood than Washington is far from benefited by this decision. Rural voters have affirmed their loyalty to someone more in tune with them, delivering President Carter the state by a margin of a few thousand votes.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -4429,7 +4429,7 @@
                             "feedback": "Your indifference between the candidates is uncharacteristic for such an outspoken ally of Kennedy. President Carter captures South Dakota, and is not shy to boast that he has done so on his own, with many state officials against him. What you did for Carter, he certainly did not do for you eight years ago.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -4492,7 +4492,7 @@
                             "feedback": "Highlighting an occasion where you missed a vote in the Senate is rarely a wise decision and your rationale puzzles your supporters and detractors alike. If you support gun control, why not vote for it? If you support it but know that your constituents do not, why not vote against it? The grueling primary ends with Schumaker taking 44% of the vote.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -4527,7 +4527,7 @@
                             "feedback": "Senate senority can be difficult for the layman to follow, but those who were even considering a vote for the American Agricultural Movement are likely politically active and receptive to this pitch. Peterson may be the farmer's choice, but if by some freak circumstance he were elected, he'd enter with words and only words, with no seniority to back him up.\n\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -4555,7 +4555,7 @@
                             "feedback": "The American Agricultural Movement is not a traditional third party. Card carrying members- if there were cards to carry- come from both parties, and contest a fraction of races. Still, tacitly bucking the Carter Administration tempts voters who think you're in lockstep with the party. One AAM button reads, \"Pick the Corn Palace over the (pea)Nut House!\"\n\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -4583,7 +4583,7 @@
                             "feedback": "If a man could kill inflation, no jury would convict him. True enough, inflation alleviation measures are often disproportionately targeted towards and tailored to the industrial regions of this nation. You've touched on the very basis of Peterson's candidacy, time will tell if it satiates or emboldens him.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 48,
                                     "stateId": -1,
@@ -4639,7 +4639,7 @@
                             "feedback": "On a Thursday morning, you make the fifteen minute commute by car to SoDak Sports, serving Mitchell's game and sport needs for just over a decade now. After some discussion with the clerk, you ask to renew your resident hunting license. <q>Sure,</q> the man says, <q> I'll just need to see an in-state driver's license,</q> something you can't present.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -4667,7 +4667,7 @@
                             "feedback": "The contention was never about who has the most homes in the most cities-- it's about values. Abdnor and his allies don't allege that if you have more properties you are endowed with true South Dakotan-ness. They wish to paint you as tainted by Washington, irreparably so. ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -4688,7 +4688,7 @@
                             "feedback": "Accusations of being corrupted by Washington uttered on the lips of a four term Representative certainly lose some of the luster. Ultimately though, it's not about where you live-- it's about values. This prong of attack, however, befits a candidate like Schumaker far better than Abdnor.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -4716,7 +4716,7 @@
                             "feedback": "A decade ago, you gave a similar sobering speech on the human impact of the Vietnam War. <q>This chamber reeks of blood,</q> you said. They didn't listen to you then and they won't hear you now. Papers commit your words to print with indifference.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -4737,14 +4737,14 @@
                             "feedback": "Few have shaken the image last year's uncovering of a Soviet combat brigade in Cuba from memory. Uttering the very word SALT in any context outside of a condemnation runs the risk of yourself being labeled a Soviet apparatchik in the pocket of Brezhnev. Returning to the drawing boards may be the only hope of a ratifiable arms control agreement.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 48,
                                     "stateId": -1,
                                     "amount": -0.4
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -4758,7 +4758,7 @@
                             "feedback": "Somewhat incongruent with your previous statements and running counter to the very nature of why you're speaking on the floor of the Senate? Perhaps. If the intention was to turn heads, then you've accomplished that goal, at least. Maybe you've perked the ears of defense-minded South Dakotans?",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -4779,14 +4779,14 @@
                             "feedback": "In order to focus the attention of the Senate and the nation on this most crucial imperative, you submit a resolution setting forth the urgency of ratification of SALT II. As you shop around for a sponsor, you invite colleagues on both sides to co-sponsor a resolution of, <q>hope and common sense.</q> It will never be brought for debate or vote.\n\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
                                     "amount": 0
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -4807,7 +4807,7 @@
                             "feedback": "Georgians on main street don't find the finance allegations to be all that consequential, but Miller and the other clowns rushing into the primary just won't drop it. Still, you're poised to win the nomination by a safe margin, though some wonder if the damage to your reputation will prove too dramatic to win in November. ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -4835,7 +4835,7 @@
                             "feedback": "Your decision to bow out sends the race into a frenzy, with all manner of men coming out of the woodwork to announce their candidacy. Robert Byrd asks you to brief your successor on the duties and responsibilities of the Agriculture Committee before he inherits the chairmanship in January, but who cares about George McGovern?",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -4856,7 +4856,7 @@
                             "feedback": "The Governor's Mansion quickly morphs into a Papal Conclave. Governor Busbee harbors a preference for Representative Dawson Mathis, but, fearing backlash from the Miller camp, opts for Judge Underwood as a neutral party. He will be appointed to fill the remainder of your term, and will inherit your seniority as well.\n\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -4884,7 +4884,7 @@
                             "feedback": "Breaking bread with your enemies is always commendable, but, in the bloodsport of politics, rarely effective. Miller is embolden by what see senses is fear, and campaigns to his fullest extent: 38% in the first round. He will continue to contest the runoff, electability to the wind.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -5185,7 +5185,7 @@
                             "feedback": "Steering the conversation back to agricultural concerns is a strategy which will never fail you. Flexing the advantages of incumbency, the Subcommittee reconvenes to discuss the matter of alcohol fuel policy and rural energy self-sufficiency again after wrapping up in the spring. CSPAN and local news follow the testimony with tepid interest. ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -5213,7 +5213,7 @@
                             "feedback": "NCPAC has left you with many wounds, but letting the gasoline tax question fester would be an absolute mistake. An unequivocal denial is the best treatment for what could be a fatal condition. Associating with Senator Church, another target of NCPAC, runs the risk of furthering your liberal establishmentarian persona, but what's wrong with that?\n\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 48,
                                     "stateId": -1,
@@ -5241,21 +5241,21 @@
                             "feedback": "Allies, staff, and supporters wince at the idea of having to support your tempered embrace of Khomeini's government. Such a suggestion would be sound policy for a Senator of your ideology to pitch in a closed door meeting, but as a candidate for re-election? Few in South Dakota are rushing to polls to support any sort of agreements with Tehran.\n\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
                                     "amount": -0.4
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
                                     "amount": -0.65
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -5366,7 +5366,7 @@
                             "feedback": "Who would be bold enough to look a father in the eye and assert he holds his children with bloody hands? Whether it be from fatigue from incessant messaging or your stirring oration, voters are beginning to think this whole Stop the Baby Killers thing is a bridge too far. Even Abdnor is compelled to issue a condemnation of the organization.\n\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
@@ -5394,7 +5394,7 @@
                             "feedback": "No man has done more to vanquish the plague of hunger more than George McGovern. No man of the Senate has defied wanton war and senseless death than George McGovern. South Dakotans can buy you support abortion, but murder? The change is public opinion is immediate and quite dramatic. Even Abdnor is singing your praises.\n\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -5422,14 +5422,14 @@
                             "feedback": "People seem to hold a certain perception of you that you are too naïve to navigate a difficult race. Shrewd as it may be, borrowing a page from Abdnor's aw-shucks handbook and making yourself the voice of reason who just wants to focus on the issues perfectly captures the opinion of many voters, and even Abdnor himself.\n\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 48,
                                     "stateId": -1,
                                     "amount": -0.5
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -5457,14 +5457,14 @@
                             "feedback": "J. Terry Dolan has been laughing his way to November 4th watching you squirm under the weight of his multi-million dollar war chest. No trick is too dirty for him, but even the Republican candidate has had to disavow Stop the Baby Killers. The fact their organization cooperated with NCPAC has made Dolan persona non grata across the state.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
                                     "amount": 0
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -5492,7 +5492,7 @@
                             "feedback": "Three columns ride parallel to one another, each labeled at the top with a name; McGovern, Ford, Abdnor. Along the side run varying issues, and alongside them in the row are checks and X's indicating support or disapproval. McGovern and Ford agree 4/5, while Abdnor only 2/5. The pair are dogged by hostile questions all along their cross-state tour.\n\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -5555,7 +5555,7 @@
                             "feedback": "Humphrey is dead. Johnson is dead. Carter is soon to be dead, politically. Who can a liberal Democrat turn to at these times beyond Ted Kennedy? Although dwindling in popularity, and too glamorous to appeal to the people in the way Ford and Abdnor's folksy demeanors do, no one can stay silent or seated when Ted starts talking.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -5597,7 +5597,7 @@
                             "feedback": "A valley separates the invisible force of NCPAC and the distinctly human presence of Gerald Ford. Ford is, in many ways, a perfect embodiment of the average South Dakotan, and it shows in his warm reception. Boasting the support of elected state Democrats hardly hurts you, but can't beat the wow-factor of having a former President in your small state.\n\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -5646,7 +5646,7 @@
                             "feedback": "Few things are as toxic in South Dakota as a concurrence with President Carter, but speaking out against the B1 might be one of them. Hedging with an appeal to cost and inadequacy and throwing your support behind a hypothetical B1-B might be all you can do. The response is certainly awkward, but positional evolutions happen all the time.\n\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -5681,14 +5681,14 @@
                             "feedback": "All that's missing from your lecture is a chalkboard, yet your professorial cadance and grandfatherly demeanor curiously makes this an easier argument for the everyman to follow. After all, it's not that hard to follow; 200 missiles due to be wiped out in an hour of nuclear war in exchange for higher prices at the pump and corner store? Hardly a tough call.\n\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
                                     "amount": -0.35
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 48,
                                     "stateId": -1,
@@ -5723,7 +5723,7 @@
                             "feedback": "Cynical as such an approach may be to sleight-of-hand away the issue of the B1 and MX in favor of dangling increased benefits and finical rewards over the heads of servicemen, this may be the best way to be ideologically consistent. By and large, few appreciate your reasoning, but at least you're offering another solution.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -5765,7 +5765,7 @@
                             "feedback": "Spontaneous as his announcement was, its hardly beyond the realm of plausibility to imagine that Abdnor simply made the call himself, but it is curious how NCPAC came out so quick and so prepared in support right after jumping into the race. It's nothing, retorts Abdnor, compared to the money raised from lectures and from Hollywood liberals like Fonda.\n\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -5793,7 +5793,7 @@
                             "feedback": "Recognized as more professional and better organized, the McGovern office has constituent service branches in multiple counties across the state. Abdnor has one, closed most days, and only open from 10 A.M. to 4 P.M with a hour break from 11 to 12 for lunch. Abdnor invites his supporters to call or write your office and ask why you don't support a Constitutional amendment to outlaw abortion.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 47,
                                     "stateId": -1,
@@ -5821,7 +5821,7 @@
                             "feedback": "Veering as close as possible to saying it without saying it, those attentive to politics know what you're highlighting here; Abdnor suffers from a speech impediment that leads him to slur his words together, a subject deeply embarrassing for him. Sure, Abdnor admits, he likes to campaign one-on-one, but you spend free time one-on-one with Fidel Castro.\n\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -5849,7 +5849,7 @@
                             "feedback": "In the eyes of agriculturists, the only thing defining the candidates on farm and ranch issues is Seniority; you and Abdnor agree nearly word for word on price parity and full federal loan guarantees. Devoid of contrast on that front, Abdnor redoubles his messaging on an amendment to outlaw abortion, and that has their attention.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 49,
                                     "stateId": -1,
@@ -5884,7 +5884,7 @@
                             "feedback": "Spectators speculate that its a begrudging respect among voters that enables you to speak with the voice of an activist in a state of plainsmen, but their patience wears increasingly thin by the day. Your words evoke memories of the globetrotter ad, only to your detriment. But what is the alternative? Lie?",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -5912,7 +5912,7 @@
                             "feedback": "Conservative South Dakotans will always harbor a grudge against Carter for his weakness, but it's harder to direct that criticism at Eisenhower and Kennedy who supported similar moves. Still, they bat away your explanations by saying their support was before the 1964 riots, but you've got them explaining now, and that can only be good for you.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -5933,7 +5933,7 @@
                             "feedback": "Conceal it in any rhetorical wrapping you'd like, the reality is that once the United States owned and administered the canal and in the future it will not. The bluntness of your remarks is such to inspire laudatory op-eds from South Dakota's few liberal journalists, but it exudes a confrontational air lacking your customary eloquence. ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 50,
                                     "stateId": -1,
@@ -5982,7 +5982,7 @@
                             "feedback": "Dolan wires an apology, which Abdnor accepts but maintains will not bring him to drop the charges. \"I guess I'm surprised,\" comments Hal Wick, State Senator and head of NCPAC's South Dakota branch,\" I'll put it this way: it surprises me because I didn't think they'd make a mistake like that.\" ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -6010,7 +6010,7 @@
                             "feedback": "Police responded to two separate calls from a resident near the agency as well owner of the firm. No signs of burglary were found and no paperwork was filed. Abdnor rejects the Sightgate theory, \"It's the most ridiculous statement I've ever seen. I'm certainly not in a position where we'd have to resort to that.\" Then again, neither was Nixon.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -6038,7 +6038,7 @@
                             "feedback": "Gone is the timid and reserved Mr. Smith; an unusually animated Abdnor is simply beside himself at your accusation, \"When it comes right down to it, Jim Abdnor has been the real victim of this NCPAC issue, not George McGovern. I'm the one being accused of benefiting from fringe groups, not George McGovern.\" ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -6129,7 +6129,7 @@
                             "feedback": "It can be frustrating to be accused of something minor as if it's a hanging offense after enduring NCPAC's slew of hate, but campaigns- despite the name- are marathons, not races. Unloading your grievances with NCPAC and the unfairness of the situation in general onto the man who disavowed NCPAC damages your reputation of class and respect.\n\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -6185,7 +6185,7 @@
                             "feedback": "The Argus Leader runs with your quote, nestled between a condemnation from Abdnor's camp as well as clarification from the Klan's second in command that the KKK does not officially endorse Abdnor. Though the headline is grabbing and your quote is cute, the story just doesn't catch fire.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -6213,7 +6213,7 @@
                             "feedback": "An eye for an eye makes the whole world blind. It's incredibly unfair and frustrating to no end that the Republicans have launched into all manner of horrible attacks on you, but shatter their pearls in their grip when those accusations are flipped back on them. For many, this is simply desperation. For you, it's an act of uncharacteristic retribution. ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -6276,14 +6276,14 @@
                             "feedback": "Retreading New York City is clearly more comfortable for you; you were actively involved in the national discussion of federal loans and your knowledge clearly shows. Still, it was the better half of a decade ago-- Chrysler is the headline. Nonetheless, you're argument appeals to those who choose to follow it.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 48,
                                     "stateId": -1,
                                     "amount": -0.35
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 51,
                                     "stateId": -1,
@@ -6311,7 +6311,7 @@
                             "feedback": "Abdnor's effort to paint the extension of loans as rewarding mismanagement is an easy argument for common folk to follow, but nobody wins when the third biggest car company in the country is at risk of bankruptcy. Chrysler's agreement is far more stringent than New York's, making it an easier sell as a necessity. ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 48,
                                     "stateId": -1,

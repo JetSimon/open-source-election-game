@@ -22,7 +22,7 @@ class CandidateController {
     }
 
     changeIssueScore(issueScoreId: number, amount: number) {
-        this.issueScores.changeWeightForIssue(issueScoreId, amount);
+        this.issueScores.changeIssueScoreForIssue(issueScoreId, amount);
     }
 
     isRunningMate(engine : Engine) {
@@ -35,3 +35,4 @@ class CandidateController {
 }
 
 export { CandidateController };
+

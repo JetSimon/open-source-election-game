@@ -1,4 +1,5 @@
 import { assert, expect, test } from "vitest";
+import { tuningMultiplier } from "../../oseg/engine/Engine";
 import { AnswerModel } from "../../oseg/engine/models/AnswerModel";
 import { getBlankHeadlessEngine } from "../HeadlessEngine";
 
@@ -24,10 +25,8 @@ async function testGlobalAnswerEffect() {
     }
 
     engine.applyAnswer(answer);
-
     const opinionAfter = engine.scenarioController.getGlobalModifierForCandidate(candidateId);
-
-    expect(opinionAfter == (opinionBefore + amount), `before: ${opinionBefore}, after: ${opinionAfter}`);
+    expect(opinionAfter).toBe(opinionBefore + tuningMultiplier(amount));
 }
 
 async function testStateAnswerEffect() {
@@ -35,7 +34,7 @@ async function testStateAnswerEffect() {
     const {engine, candidateId} = await getBlankHeadlessEngine();
 
     const amount = 1;
-    const opinionBefore = engine.scenarioController.getStateControllerByStateId(stateId)?.getOpinionForCandidate(candidateId);
+    const opinionBefore = engine.scenarioController.getStateControllerByStateId(stateId)?.getCandidateStateModifier(candidateId);
     assert(opinionBefore != undefined);
 
     const answer : AnswerModel = {
@@ -55,10 +54,10 @@ async function testStateAnswerEffect() {
 
     engine.applyAnswer(answer);
 
-    const opinionAfter = engine.scenarioController.getStateControllerByStateId(stateId)?.getOpinionForCandidate(candidateId);
-    assert(opinionAfter != undefined);
+    const opinionAfter = engine.scenarioController.getStateControllerByStateId(stateId)?.getCandidateStateModifier(candidateId);
 
-    expect(opinionAfter == (opinionBefore + amount), `before: ${opinionBefore}, after: ${opinionAfter}`);
+    assert(opinionAfter != undefined);
+    expect(opinionAfter).toBe(opinionBefore + tuningMultiplier(amount));
 }
 
 
@@ -90,9 +89,10 @@ async function testIssueAnswerEffect() {
     engine.applyAnswer(answer);
 
     const opinionAfter = engine.scenarioController.getCandidateByCandidateId(candidateId).issueScores.getIssueScoreForIssue(issueId);
-    assert(opinionAfter != undefined);
 
-    expect(opinionAfter == (opinionBefore + amount), `before: ${opinionBefore}, after: ${opinionAfter}`);
+    console.log(opinionBefore,opinionAfter)
+
+    expect(opinionAfter).toBe(opinionBefore + tuningMultiplier(amount));
 }
 
 test('test global answer effect', testGlobalAnswerEffect);

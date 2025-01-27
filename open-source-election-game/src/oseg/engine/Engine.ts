@@ -15,7 +15,7 @@ import { StateModel } from "./models/StateModel";
 import { ThemeModel } from "./models/ThemeModel";
 
 // Just used when debugging/trying to see if more extreme answers help more
-const tuningMultiplier = (x: number) => 3 * x;//Math.pow(x, 3);
+const tuningMultiplier = (x: number) => 1 * x;//Math.pow(x, 3);
 
 /**
  * Controls which part of the game the player is in
@@ -1020,7 +1020,7 @@ class Engine {
      * @category Ending Utility Functions
      */
     playerWonEv(results: FinalResultsModel) {
-        return this.getPlayerEv(results) > this.getTotalElectoralVotes() / 2;
+        return this.getPlayerEv(results) > results.totalElectoralVotes / 2;
     }
 
     /**
@@ -1041,7 +1041,7 @@ class Engine {
      */
     isDeadlock(results: FinalResultsModel) {
         for (const ev of results.electoralVotes.values()) {
-            if (ev > this.getTotalElectoralVotes() / 2) {
+            if (ev > results.totalElectoralVotes / 2) {
                 return false;
             }
         }
@@ -1106,5 +1106,5 @@ class Engine {
     }
 }
 
-export { Engine, GameState };
+export { Engine, GameState, tuningMultiplier };
 

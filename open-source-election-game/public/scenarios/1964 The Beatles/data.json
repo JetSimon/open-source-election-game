@@ -2679,28 +2679,28 @@
                             "feedback": "You open with the upbeat classic, I Want To Hold Your Hand. It goes quite well and the audience seems thrilled. After the show you hear some members of the audience arguing if the chorus to the song was “I can’t hide” or “I get high”. Hopefully this doesn’t get you into any trouble.\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 37,
                                     "stateId": -1,
                                     "amount": -0.51
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 39,
                                     "stateId": -1,
                                     "amount": 0.45
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 40,
                                     "stateId": -1,
                                     "amount": -0.2
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 41,
                                     "stateId": -1,
@@ -2721,7 +2721,7 @@
                             "feedback": "All My Loving is the perfect introduction to The Beatles for America. It isn’t your strongest song but it leaves the audience wanting more. America has met The Beatles!\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 41,
                                     "stateId": -1,
@@ -2742,7 +2742,7 @@
                             "feedback": "Well boys, I’m not sure if starting off your set with a slow tune literally titled Misery was the best choice. Let’s see if we can salvage this during the second set, yeah?",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 41,
                                     "stateId": -1,
@@ -2763,14 +2763,14 @@
                             "feedback": "Debuting in America with a cover of The Shirelles that Ringo sings is an interesting choice. Daringly you’ve opted NOT to reverse the genders of the song, leaving conservative America outraged by the homosexual undertones.\n",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 38,
                                     "stateId": -1,
                                     "amount": 0.525
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 41,
                                     "stateId": -1,
@@ -2973,7 +2973,7 @@
                             "feedback": "This answer is sure to help fears that The Beatles are corrupting America’s youth.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 38,
                                     "stateId": -1,
@@ -3169,21 +3169,21 @@
                             "feedback": "John, what are you talking about? Beatniks may like this but this isn’t doing us any favours with the general public.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 39,
                                     "stateId": -1,
                                     "amount": 0.65
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 37,
                                     "stateId": -1,
                                     "amount": -0.7
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 38,
                                     "stateId": -1,
@@ -3211,7 +3211,7 @@
                             "feedback": "This is a solid answer that is sure to boost your popularity in regions where Buddy Holly is still popular.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 41,
                                     "stateId": -1,
@@ -3239,14 +3239,14 @@
                             "feedback": "George, America doesn’t need to know about your past popping pills in Hamburg nightclubs! We’re going to have to do some damage control.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 40,
                                     "stateId": -1,
                                     "amount": -0.1
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 0,
                                     "stateId": -1,
@@ -3288,7 +3288,7 @@
                             "feedback": "Not a good look disparaging your bandmates. People will think The Beatles lack unity.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 39,
                                     "stateId": -1,
@@ -3302,7 +3302,7 @@
                             "feedback": "This is the humorous kind of answer that the press expects from a Beatle.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 37,
                                     "stateId": -1,
@@ -3337,7 +3337,7 @@
                             "feedback": "Good job putting the rumours to rest. Faith in The Beatles should increase.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 39,
                                     "stateId": -1,
@@ -3358,7 +3358,7 @@
                             "feedback": "Not everyone gets your sense of humour, Paul. Some people seem to think The Beatles are disbanding.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 39,
                                     "stateId": -1,
@@ -3379,7 +3379,7 @@
                             "feedback": "Even though George intended it as a joke, the public isn’t widely aware that John is married yet. This hurts The Beatles image as available young men.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 39,
                                     "stateId": -1,
@@ -3407,7 +3407,7 @@
                             "feedback": "A succinct answer. The kind that fuels the legend of The Beatles.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 39,
                                     "stateId": -1,
@@ -3428,7 +3428,7 @@
                             "feedback": "This is a funny answer that appeals to the youth of America.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 41,
                                     "stateId": -1,
@@ -3442,14 +3442,14 @@
                             "feedback": "Although intended as a joke, it seems the conservative population has taken it at face value. They approve of this straight laced reference to “real music”. ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 41,
                                     "stateId": -1,
                                     "amount": -0.75
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 38,
                                     "stateId": -1,
@@ -3477,7 +3477,7 @@
                             "feedback": "John! This is America we’re talking about. You can’t go around saying things like this, people are going to be very upset.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 37,
                                     "stateId": -1,
@@ -3519,7 +3519,7 @@
                             "feedback": "Although this Chuck Berry cover wins you points with the younger audience, it upsets older conservatives. But who cares about them, right?",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 38,
                                     "stateId": -1,
@@ -3547,7 +3547,7 @@
                             "feedback": "A raucous original like Can’t Buy Me Love is the perfect choice to add to your set.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 41,
                                     "stateId": -1,
@@ -3589,7 +3589,7 @@
                             "feedback": "A sensible answer that offends no one.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 41,
                                     "stateId": -1,
@@ -3610,7 +3610,7 @@
                             "feedback": "That answer is a little extreme. But it will definitely win you points with older conservatives. But they’re not exactly The Beatles’ audience.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 38,
                                     "stateId": -1,
@@ -3631,7 +3631,7 @@
                             "feedback": "What are you talking about Paul? An answer like this is sure to damage The Beatles’ reputation.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 40,
                                     "stateId": -1,
@@ -3659,7 +3659,7 @@
                             "feedback": "Any awkwardness in the room vanishes as you four and Bob spend the next hour pranking reception and trying to find some food.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 39,
                                     "stateId": -1,
@@ -3673,7 +3673,7 @@
                             "feedback": "Bob gives you a strange look and makes an excuse to leave shortly after. It seems like your reputation has preceded you. This isn’t going to score you any points with the hip New York crowd.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 40,
                                     "stateId": -1,
@@ -3701,7 +3701,7 @@
                             "feedback": "Shortly after John finishes smoking, he starts to get paranoid. He gets very quiet for a while, only muttering something about “The Walrus” to himself for the next few hours. After it wears off he still seems a little…different.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 38,
                                     "stateId": -1,
@@ -3743,7 +3743,7 @@
                             "feedback": "This is a good liberal answer that will motivate sales of your albums.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 38,
                                     "stateId": -1,
@@ -3771,7 +3771,7 @@
                             "feedback": "This is an answer that will appeal to far right conservatives and not many else.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 38,
                                     "stateId": -1,
@@ -3855,7 +3855,7 @@
                             "feedback": "It’s always fun to play a song named after the city you’re in. In this case the classic cover is the perfect song to add to your setlist.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 40,
                                     "stateId": -1,
@@ -3904,7 +3904,7 @@
                             "feedback": "Good job taking a stand on this issue. Segregation is a hot topic issue but it’s important to be on the right side of history.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 38,
                                     "stateId": -1,
@@ -3925,7 +3925,7 @@
                             "feedback": "Trying to please everyone on an important issue like segregation isn’t going to do The Beatles any favours.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 38,
                                     "stateId": -1,
@@ -3953,7 +3953,7 @@
                             "feedback": "Boosting your chief rivals isn’t going to help you keep your position as top dog in the American market.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 37,
                                     "stateId": -1,
@@ -4008,7 +4008,7 @@
                             "feedback": "This is a humble answer that makes The Beatles look good to the public.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 37,
                                     "stateId": -1,
@@ -4071,7 +4071,7 @@
                             "feedback": "This is the kind of answer that destroys the public’s trust in The Beatles' staying power.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 39,
                                     "stateId": -1,
@@ -4092,7 +4092,7 @@
                             "feedback": "This is a good answer that disarms a loaded question with a joke.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 41,
                                     "stateId": -1,
@@ -4218,7 +4218,7 @@
                             "feedback": "A non-committal answer like this won’t win you points with anyone.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 38,
                                     "stateId": -1,
@@ -4239,7 +4239,7 @@
                             "feedback": "Very specific Ringo. Though maybe keep this kind of thing to yourself. People tend to be put off by people like you.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 37,
                                     "stateId": -1,
@@ -4295,7 +4295,7 @@
                             "feedback": "Appealing to America’s patriotic side is a great idea. Even the beatniks love America.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 37,
                                     "stateId": -1,
@@ -4428,7 +4428,7 @@
                             "feedback": "Although clearly a joke, it seems some of the more religious members of America now want to boycott The Beatles.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 38,
                                     "stateId": -1,
@@ -4449,7 +4449,7 @@
                             "feedback": "This is an answer that will upset some Americans.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 40,
                                     "stateId": -1,
@@ -4519,7 +4519,7 @@
                             "feedback": "After the run in with Dylan, you have all started smoking marijuana more. Hopefully this doesn’t lead to anything too crazy.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 40,
                                     "stateId": -1,
@@ -4568,7 +4568,7 @@
                             "feedback": "Making sure to thank the crew and the people that got you here is a good call, and one that makes sure you can tour again in the future.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 39,
                                     "stateId": -1,

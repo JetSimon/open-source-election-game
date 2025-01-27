@@ -2869,14 +2869,14 @@
                             "feedback": "Many see your behavior in this regard as odd.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": -0.6
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -2918,7 +2918,7 @@
                             "feedback": "This will help you with farmers and southerners who want more federal action to combat the Depression. Just remember that many Democrats in the east, especially key states like New York, are a bit more conservative.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -2932,7 +2932,7 @@
                             "feedback": "This is a good speech, but there was probably more to be said.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -2946,7 +2946,7 @@
                             "feedback": "Huh?",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -2974,14 +2974,14 @@
                             "feedback": "This is a great way to unite the party while going against the Republicans’ unpopular policies.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": -0.55
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -3009,7 +3009,7 @@
                             "feedback": "You are missing a big opportunity to point to your successes in Louisiana.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -3030,7 +3030,7 @@
                             "feedback": "Pointing to your successes in Louisiana is not a bad idea. But be careful here.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -3057,7 +3057,7 @@
                             "feedback": "Your greatest strength, and perhaps your only one is your desire for change. You aren’t really helping yourself.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -3190,7 +3190,7 @@
                             "feedback": "This is a good answer that strikes a balance between non-intervention and disavowing these nations.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -3225,7 +3225,7 @@
                             "feedback": "Some of your supporters indeed look up to these new despots as a source of stability in a rapidly changing world. But people are concerned about their aggressive nature.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -3259,7 +3259,7 @@
                             "feedback": "You got the right mindset, but as expected, the Southern Democrats are mad. They splinter into a third party and nominate Harry F. Byrd, vowing to keep the racist policies you wish to repeal. Hopefully you can win without those states.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -3447,7 +3447,7 @@
                             "feedback": "This is not a surprising answer from a Democrat. However, there are many black and progressive voters in the north who don’t like this answer.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -3468,7 +3468,7 @@
                             "feedback": "High tariffs are not popular within the Democratic party. In addition, foreign nations retaliated against these tariffs with counter-tariffs of their own. Most voters are not happy with the economic situation caused by these tariffs.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -3489,7 +3489,7 @@
                             "feedback": "Although promising to cut tariffs is a good idea, many Democrats raise their eyebrows when you say that protectionism is important.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -3510,7 +3510,7 @@
                             "feedback": "This statement brings cheers from all corners of the party. Foreign nations retaliated against these tariffs with counter-tariffs of their own, and most voters are not happy with the economic situation caused by these tariffs.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -3531,7 +3531,7 @@
                             "feedback": "A response that will help you in some areas but hurt you in others.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -3552,7 +3552,7 @@
                             "feedback": "While not all of your programs have total public support, quite a few see some conservatism in this answer.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -3573,7 +3573,7 @@
                             "feedback": "This may be a good option, still keeping to the general idea, but adjusting it to improve support.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -3594,7 +3594,7 @@
                             "feedback": "Pledging to raise taxes farther is not a good idea.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -3615,7 +3615,7 @@
                             "feedback": "Although some progressives are happy, the idea of these taxes are widely unpopular.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -3739,7 +3739,7 @@
                             "feedback": "This will help you a bit among the Progressives in the party.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -3753,7 +3753,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -3836,7 +3836,7 @@
                             "feedback": "Americans at large are more isolationist right now.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -3857,7 +3857,7 @@
                             "feedback": "This seems a touch too globalist for most voters, but it could help in some areas.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -3878,7 +3878,7 @@
                             "feedback": "This is probably the majority view right now. Americans want to focus on America First and aren’t interested in occupying nations in Central America.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -4004,7 +4004,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -4025,7 +4025,7 @@
                             "feedback": "Americans generally support letting the Philippines determine their own - as of late.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -4046,7 +4046,7 @@
                             "feedback": "A fair point is to be made here.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -4123,7 +4123,7 @@
                             "feedback": "Farmers are not really happy about this statement.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -4179,7 +4179,7 @@
                             "feedback": "This is the kind of answer that many in the west want to hear.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -4269,7 +4269,7 @@
                             "feedback": "Perfect response.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -4290,7 +4290,7 @@
                             "feedback": "This answer is safely moderate.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -4304,7 +4304,7 @@
                             "feedback": "Landon retaliates these attacks as the race seems to be escalating.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -4338,7 +4338,7 @@
                             "feedback": "This is an expected topic for a final speech. ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -4552,14 +4552,14 @@
                             "feedback": "A solid response.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
                                     "amount": -0.6
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -4601,7 +4601,7 @@
                             "feedback": "This will help you with farmers who want more federal action to combat the Depression. ",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -4615,7 +4615,7 @@
                             "feedback": "This is a good speech, but there was probably more to be said.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -4629,7 +4629,7 @@
                             "feedback": "A very strong attack here, and one that you should hammer on.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -4657,14 +4657,14 @@
                             "feedback": "This is a great way to unite the party, and perhaps the nation.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
                                     "amount": -0.55
                                 },
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -4692,7 +4692,7 @@
                             "feedback": "An interesting route of attack here.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -4713,7 +4713,7 @@
                             "feedback": "It's good to hit hard on this.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -4839,7 +4839,7 @@
                             "feedback": "This is a good answer that strikes a balance between non-intervention and disavowing these nations.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -4874,7 +4874,7 @@
                             "feedback": "Some of your supporters indeed look up to these new despots as a source of stability in a rapidly changing world. But people are concerned about their aggressive nature.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -4908,7 +4908,7 @@
                             "feedback": "This is the expected response from a Republican.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -4935,7 +4935,7 @@
                             "feedback": "The era of Lily Whites are thought to be over. What you lose nationwide is not worth what you could gain in the south from this answer.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 103,
                                     "stateId": -1,
@@ -4963,7 +4963,7 @@
                             "feedback": "A standard answer for a Republican. Tariffs are not exactly nationally popular, however.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -4984,7 +4984,7 @@
                             "feedback": "Promising to cut tariffs is a good idea, but many Republicans raise their eyebrows at this proposal.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -5005,7 +5005,7 @@
                             "feedback": "Most voters were not happy with the economic situation caused by those tariffs.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -5026,7 +5026,7 @@
                             "feedback": "A response that will help you in some areas but hurt you in others.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -5047,7 +5047,7 @@
                             "feedback": "An expected attack.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -5068,7 +5068,7 @@
                             "feedback": "This may be a good route to take.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -5103,7 +5103,7 @@
                             "feedback": "Although some progressives are happy, the idea of these taxes are widely unpopular.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -5235,7 +5235,7 @@
                             "feedback": "This will help you a bit among the Progressives in the party.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -5249,7 +5249,7 @@
                             "feedback": "",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -5318,7 +5318,7 @@
                             "feedback": "This position is booed across the Republican spectrum. Americans at large are more isolationist right now.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -5339,7 +5339,7 @@
                             "feedback": "This seems a touch too globalist for most voters, but it could help in some areas.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -5360,7 +5360,7 @@
                             "feedback": "This is probably the majority view right now. Americans want to focus on America First and aren’t interested in occupying nations in Central America.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 104,
                                     "stateId": -1,
@@ -5486,7 +5486,7 @@
                             "feedback": "Interesting response, although many voters think that independence should be granted after the global stage calms down.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -5507,7 +5507,7 @@
                             "feedback": "Americans generally support letting the Philippines determine their own - as of late.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -5528,7 +5528,7 @@
                             "feedback": "A fair point is to be made here.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,
@@ -5612,7 +5612,7 @@
                             "feedback": "Farmers are not really happy about this statement.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -5668,7 +5668,7 @@
                             "feedback": "This is the kind of answer that many in the west want to hear.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -5758,7 +5758,7 @@
                             "feedback": "A perfect response.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -5779,7 +5779,7 @@
                             "feedback": "This answer is safely moderate.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -5793,7 +5793,7 @@
                             "feedback": "Long retaliates these attacks as the race seems to be escalating.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 102,
                                     "stateId": -1,
@@ -5827,7 +5827,7 @@
                             "feedback": "This is an expected topic for a final speech.",
                             "answerEffects": [
                                 {
-                                    "answerEffectType": "Issue",
+                                    "answerEffectType": "TctIssue",
                                     "candidateId": -1,
                                     "issueId": 101,
                                     "stateId": -1,

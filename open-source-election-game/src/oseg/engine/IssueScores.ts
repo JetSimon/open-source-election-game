@@ -40,6 +40,18 @@ class IssueScores {
         return issueScore;
     }
 
+    changeIssueScoreForIssue(issueId: number, amount: number) {
+        const issueScore = this.issueScores.get(issueId);
+
+        if (issueScore == undefined) {
+            console.error("No issue score found with id: ", issueId);
+            return;
+        }
+
+        issueScore.issueScore += amount;
+        issueScore.issueScore = Math.min(Math.max(-1, issueScore.issueScore), 1);
+    }
+
     changeWeightForIssue(issueId: number, amount: number) {
         const issueScore = this.issueScores.get(issueId);
 
@@ -53,3 +65,4 @@ class IssueScores {
 }
 
 export { IssueScores };
+

@@ -175,7 +175,11 @@ class ScenarioController {
     }
 
     getCandidateByCandidateId(candidateId: number) {
-        return this.candidateControllers.filter((candidate) => candidate.getId() == candidateId)[0];
+        let candidate = this.candidateControllers.filter((candidate) => candidate.getId() == candidateId)[0];
+        if(candidate == undefined) {
+            candidate = this.runningMateControllers.filter((x) => x.getId() == candidateId)[0];
+        }
+        return candidate;
     }
 
     /**
