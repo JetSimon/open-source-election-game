@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { useEffect } from "react";
 import { StateController } from "../../engine/controllers/StateController";
+import { CustomViewCreator } from "../../engine/CustomView";
 import { Engine } from "../../engine/Engine";
 import { AnswerModel } from "../../engine/models/AnswerModel";
 import { HighscoreSubmissionModel } from "../../engine/models/HighscoreSubmissionModel";
@@ -11,6 +12,7 @@ import ConfirmCancelPopupBox from "../components/ConfirmCancelPopupBox";
 import DebugMenuAnswer from "../components/debug/DebugMenuAnswer";
 import PopupBox from "../components/PopupBox";
 import CandidateSelectionView from "./CandidateSelectionView";
+import CustomView from "./CustomView";
 import EndingView from "./EndingView";
 import MapView from "./MapView";
 import QuestionView from "./QuestionView";
@@ -49,6 +51,8 @@ function GameView(props: GameViewProps) {
   const [showVisitPopup, setShowVisitPopup] = useState(false);
 
   const [donePlayingMapAnimation, setDonePlayingMapAnimation] = useState(false);
+
+  const [customViewName, setCustomViewName] = useState("");
 
   useEffect(() => {
     function checkForAutoplay(e: KeyboardEvent) {
@@ -217,10 +221,13 @@ function GameView(props: GameViewProps) {
     )
   }
 
-  return (
-    <div className="GameView">
-      {engine.isGameOver() ? (
-        donePlayingMapAnimation ? (
+  function getGameView() {
+
+    const customViewCreator : CustomViewCreator | undefined = engine.customViews.get(customViewName);
+
+    if(engine.isGameOver()) {
+      if(donePlayingMapAnimation) {
+        return (
           <div className="EndingViewHolder">
             <EndingView
               theme={theme}
@@ -228,7 +235,10 @@ function GameView(props: GameViewProps) {
               mapSvg={mapSvg}
             ></EndingView>
           </div>
-        ) : (
+        )
+      }
+      else {
+        (
           <MapView
             playAnimationBeforeFinalResults={true}
             afterAnimationCompletes={() => setDonePlayingMapAnimation(true)}
@@ -238,25 +248,55 @@ function GameView(props: GameViewProps) {
             mapSvg={mapSvg}
           ></MapView>
         )
-      ) : engine.waitingToPickState || showMap ? (
-        <MapView
+      }
+    }
+    else {
+      if(engine.waitingToPickState || showMap ) {
+        return (<MapView
           theme={theme}
           onStateClicked={onStateClicked}
           engine={engine}
           mapSvg={mapSvg}
-        ></MapView>
-      ) : (
-        <QuestionView
-          engine={engine}
-          setShowMap={setShowMap}
-          currentQuestion={currentQuestion}
-          submitAnswer={submitAnswer}
-          selectedAnswer={selectedAnswer}
-          setSelectedAnswer={setSelectedAnswer}
-          theme={theme}
-          showingFeedbackBox={showingFeedbackBox}
-        ></QuestionView>
-      )}
+        ></MapView>)
+      }
+      else if(customViewCreator != undefined && customViewName != ""){
+        console.log(engine.customViews)
+        console.log("output "+ customViewCreator(engine))
+        return (
+          <CustomView theme={theme} innerHtml={customViewCreator(engine)}>
+          </CustomView>
+        )
+      }
+      else {
+        return (
+          <QuestionView
+            engine={engine}
+            setShowMap={setShowMap}
+            currentQuestion={currentQuestion!}
+            submitAnswer={submitAnswer}
+            selectedAnswer={selectedAnswer}
+            setSelectedAnswer={setSelectedAnswer}
+            theme={theme}
+            showingFeedbackBox={showingFeedbackBox}
+          ></QuestionView>
+        )
+      }
+    }
+  }
+
+  function makeCustomButtons() {
+    if(engine == null) {
+      return <></>;
+    }
+
+    return Array.from(engine.customViews.keys()).map((viewName) => 
+      <button disabled={customViewName == viewName} onClick={() => setCustomViewName(viewName)}>{viewName}</button>
+    )
+  }
+
+  return (
+    <div className="GameView">
+      {getGameView()}
       <div className="BottomButtons">
         {showMap && !engine.waitingToPickState && (
           <button className="ToggleMapButton" onClick={() => setShowMap(false)}>
@@ -275,6 +315,8 @@ function GameView(props: GameViewProps) {
             Skip to Results
           </button>
         )}
+        {!showMap && engine.customViews.size > 0 && <button onClick={() => setCustomViewName("")}>Questions</button>}
+        {!showMap && !engine.isGameOver() && makeCustomButtons()}
       </div>
       {!engine.isGameOver() && engine.waitingToPickState && (
         <p

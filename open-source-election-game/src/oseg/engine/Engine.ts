@@ -1,6 +1,7 @@
 import { makeSeed, Seed, seededRandom } from "../utils/MathUtils";
 import { CandidateController } from "./controllers/CandidateController";
 import { ScenarioController } from "./controllers/ScenarioController";
+import { CustomViewCreator } from "./CustomView";
 import { AnswerEffectType } from "./models/AnswerEffectType";
 import { AnswerModel } from "./models/AnswerModel";
 import { CandidateModel } from "./models/CandidateModel";
@@ -152,6 +153,8 @@ class Engine {
     getAnswers(): number[] {
         return this.answers;
     }
+
+    customViews : Map<string, CustomViewCreator> = new Map();
 
     /**
      * Loads a ScenarioModel into the engine
@@ -1115,6 +1118,25 @@ class Engine {
         }
 
         return highest.getId() == candidateId;
+    }
+
+    // Advanced Modding Functions - For when you don't want to make a fork of OSEG but you wanna do something advanced
+
+    /**
+     * Adds a custom view (button to game bottom bar tab) with inner html set to innerHtml
+     * @param viewName  
+     * @param customViewCreator 
+     */
+    addCustomView(viewName : string, customViewCreator : CustomViewCreator) {
+        this.customViews.set(viewName, customViewCreator);
+    }
+
+    /**
+     * Removes custom view with name viewName
+     * @param viewName 
+     */
+    removeCustomView(viewName : string) {
+        this.customViews.delete(viewName);
     }
 }
 
