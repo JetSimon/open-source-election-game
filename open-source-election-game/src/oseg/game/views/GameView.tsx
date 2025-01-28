@@ -238,7 +238,7 @@ function GameView(props: GameViewProps) {
         )
       }
       else {
-        (
+        return (
           <MapView
             playAnimationBeforeFinalResults={true}
             afterAnimationCompletes={() => setDonePlayingMapAnimation(true)}
@@ -260,8 +260,6 @@ function GameView(props: GameViewProps) {
         ></MapView>)
       }
       else if(customViewCreator != undefined && customViewName != ""){
-        console.log(engine.customViews)
-        console.log("output "+ customViewCreator(engine))
         return (
           <CustomView theme={theme} innerHtml={customViewCreator(engine)}>
           </CustomView>
