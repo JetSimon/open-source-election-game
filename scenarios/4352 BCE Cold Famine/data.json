@@ -1076,6 +1076,63 @@
                     "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
+                    "id": 14667,
+                    "description": "There is a small death ceremony for your thieving friend. Will you be attending?\n",
+                    "answers": [
+                        {
+                            "id": 14668,
+                            "description": "I will watch from afar as my friend goes back to the Earth Mother.\n",
+                            "feedback": "As they lower his body into the ground you almost want to go over and console his friends and family. Though given your recent history, you doubt they would even welcome you. You walk back home and sit in silence.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.001
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14669,
+                            "description": "I will attend and tell stories about Eḱwos with his grieving family.",
+                            "feedback": "His family appreciates your company. Although you all agree Eḱwos was not innocent, you do agree that you will miss him. You feel his spirit with you as you dance and share stories about him. Goodbye friend.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.001
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14670,
+                            "description": "I will not attend. Why would one attend the funeral of scum like him?\n",
+                            "feedback": "",
+                            "answerEffects": []
+                        },
+                        {
+                            "id": 14721,
+                            "description": "I will attend and bury my cow sculpture with him.",
+                            "feedback": "As you lower the cow sculpture into his grave, you feel something inside you. It tells you that Eḱwos is thankful. And that Dʰéǵʰōm is grateful for his body and the new life that shall spring from his demise. It brings you peace.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.001
+                                }
+                            ],
+                            "enabled": false
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true,
+                    "enabled": false
+                },
+                {
                     "id": 14683,
                     "description": "Winter is around the corner. The time of year where food is more scarce and the spirits of ancestors roam the Earth. People want to sacrifice a holy cow to ensure a safe Winter. But to which god?\n",
                     "answers": [
@@ -1224,6 +1281,76 @@
                     "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
+                    "id": 14695,
+                    "description": "What terrible timing, your wife is beginning to look pregnant. What is your response?",
+                    "answers": [
+                        {
+                            "id": 14696,
+                            "description": "I will do everything I can for our child. We will make it through this.\n",
+                            "feedback": "Your wife is reassured by your words.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.001
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14697,
+                            "description": "Why has Dʰéǵʰōm played such a cruel trick?!",
+                            "feedback": "",
+                            "answerEffects": []
+                        },
+                        {
+                            "id": 14698,
+                            "description": "We cannot afford another mouth to feed. I’m sorry my wife.\n",
+                            "feedback": "Your wife is given a salve an herbalist. The baby will not survive.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.001
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true,
+                    "enabled": false
+                },
+                {
+                    "id": 14703,
+                    "enabled": false,
+                    "description": "Your wife is going hungry. But the people need food. Will you feed her? It could be dangerous for her pregnancy.\n",
+                    "answers": [
+                        {
+                            "id": 14704,
+                            "description": "She must bear our child. She is what is important.\n",
+                            "feedback": "At least she is healthy.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.01
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14705,
+                            "description": "We cannot spare the food.",
+                            "feedback": "Sacrifices must be made in times like these. Unfortunately it was too much of a sacrifice in this case. Your wife is no longer pregnant.",
+                            "answerEffects": []
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
                     "id": 14699,
                     "description": "Folks have suggested eating cattle after sacrifice. This could help curb the famine, but would be a great dishonour to the gods. What do you think?\n",
                     "answers": [
@@ -1300,158 +1427,6 @@
                     "keepInPlaceIfQuestionsShuffled": true
                 },
                 {
-                    "id": 14715,
-                    "description": "Many years later: it is time now. You are close to death. As you lay reflecting on your life, what are your last words to those who can hear?",
-                    "answers": [
-                        {
-                            "id": 14716,
-                            "description": "Please know that I will always be with you all.\n",
-                            "feedback": "Everything goes dark.",
-                            "answerEffects": []
-                        },
-                        {
-                            "id": 14717,
-                            "description": "So many regrets…",
-                            "feedback": "Everything goes dark.",
-                            "answerEffects": []
-                        },
-                        {
-                            "id": 14718,
-                            "description": "It is my time to return to Dʰéǵʰōm.",
-                            "feedback": "Everything goes dark.",
-                            "answerEffects": []
-                        }
-                    ],
-                    "keepInPlaceIfQuestionsShuffled": true
-                },
-                {
-                    "id": 14667,
-                    "description": "There is a small death ceremony for your thieving friend. Will you be attending?\n",
-                    "answers": [
-                        {
-                            "id": 14668,
-                            "description": "I will watch from afar as my friend goes back to the Earth Mother.\n",
-                            "feedback": "As they lower his body into the ground you almost want to go over and console his friends and family. Though given your recent history, you doubt they would even welcome you. You walk back home and sit in silence.\n",
-                            "answerEffects": [
-                                {
-                                    "answerEffectType": "Global",
-                                    "candidateId": 131,
-                                    "issueId": -1,
-                                    "stateId": -1,
-                                    "amount": -0.001
-                                }
-                            ]
-                        },
-                        {
-                            "id": 14669,
-                            "description": "I will attend and tell stories about Eḱwos with his grieving family.",
-                            "feedback": "His family appreciates your company. Although you all agree Eḱwos was not innocent, you do agree that you will miss him. You feel his spirit with you as you dance and share stories about him. Goodbye friend.\n",
-                            "answerEffects": [
-                                {
-                                    "answerEffectType": "Global",
-                                    "candidateId": 131,
-                                    "issueId": -1,
-                                    "stateId": -1,
-                                    "amount": 0.001
-                                }
-                            ]
-                        },
-                        {
-                            "id": 14670,
-                            "description": "I will not attend. Why would one attend the funeral of scum like him?\n",
-                            "feedback": "",
-                            "answerEffects": []
-                        },
-                        {
-                            "id": 14721,
-                            "description": "I will attend and bury my cow sculpture with him.",
-                            "feedback": "As you lower the cow sculpture into his grave, you feel something inside you. It tells you that Eḱwos is thankful. And that Dʰéǵʰōm is grateful for his body and the new life that shall spring from his demise. It brings you peace.\n",
-                            "answerEffects": [
-                                {
-                                    "answerEffectType": "Global",
-                                    "candidateId": 131,
-                                    "issueId": -1,
-                                    "stateId": -1,
-                                    "amount": 0.001
-                                }
-                            ],
-                            "enabled": false
-                        }
-                    ],
-                    "keepInPlaceIfQuestionsShuffled": true,
-                    "enabled": false
-                },
-                {
-                    "id": 14703,
-                    "enabled": false,
-                    "description": "Your wife is going hungry. But the people need food. Will you feed her? It could be dangerous for her pregnancy.\n",
-                    "answers": [
-                        {
-                            "id": 14704,
-                            "description": "She must bear our child. She is what is important.\n",
-                            "feedback": "At least she is healthy.\n",
-                            "answerEffects": [
-                                {
-                                    "answerEffectType": "Global",
-                                    "candidateId": 131,
-                                    "issueId": -1,
-                                    "stateId": -1,
-                                    "amount": -0.01
-                                }
-                            ]
-                        },
-                        {
-                            "id": 14705,
-                            "description": "We cannot spare the food.",
-                            "feedback": "Sacrifices must be made in times like these. Unfortunately it was too much of a sacrifice in this case. Your wife is no longer pregnant.",
-                            "answerEffects": []
-                        }
-                    ],
-                    "keepInPlaceIfQuestionsShuffled": true
-                },
-                {
-                    "id": 14695,
-                    "description": "What terrible timing, your wife is beginning to look pregnant. What is your response?",
-                    "answers": [
-                        {
-                            "id": 14696,
-                            "description": "I will do everything I can for our child. We will make it through this.\n",
-                            "feedback": "Your wife is reassured by your words.\n",
-                            "answerEffects": [
-                                {
-                                    "answerEffectType": "Global",
-                                    "candidateId": 131,
-                                    "issueId": -1,
-                                    "stateId": -1,
-                                    "amount": -0.001
-                                }
-                            ]
-                        },
-                        {
-                            "id": 14697,
-                            "description": "Why has Dʰéǵʰōm played such a cruel trick?!",
-                            "feedback": "",
-                            "answerEffects": []
-                        },
-                        {
-                            "id": 14698,
-                            "description": "We cannot afford another mouth to feed. I’m sorry my wife.\n",
-                            "feedback": "Your wife is given a salve an herbalist. The baby will not survive.\n",
-                            "answerEffects": [
-                                {
-                                    "answerEffectType": "Global",
-                                    "candidateId": 131,
-                                    "issueId": -1,
-                                    "stateId": -1,
-                                    "amount": 0.001
-                                }
-                            ]
-                        }
-                    ],
-                    "keepInPlaceIfQuestionsShuffled": true,
-                    "enabled": false
-                },
-                {
                     "id": 14711,
                     "enabled": false,
                     "description": "As the famine ends, finally your baby is born. He is a boy. What will you name him?\n",
@@ -1472,6 +1447,31 @@
                             "id": 14714,
                             "description": "I will name him after my father.",
                             "feedback": "",
+                            "answerEffects": []
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 14715,
+                    "description": "Many years later: it is time now. You are close to death. As you lay reflecting on your life, what are your last words to those who can hear?",
+                    "answers": [
+                        {
+                            "id": 14716,
+                            "description": "Please know that I will always be with you all.\n",
+                            "feedback": "Everything goes dark.",
+                            "answerEffects": []
+                        },
+                        {
+                            "id": 14717,
+                            "description": "So many regrets…",
+                            "feedback": "Everything goes dark.",
+                            "answerEffects": []
+                        },
+                        {
+                            "id": 14718,
+                            "description": "It is my time to return to Dʰéǵʰōm.",
+                            "feedback": "Everything goes dark.",
                             "answerEffects": []
                         }
                     ],
