@@ -267,7 +267,7 @@ function OsegEditor() {
             </Panel>
             <PanelResizeHandle className="ResizeHandle" id="resize-handle" />
             <Panel className="Panel" id="right-panel">
-                <OsegRightPanel logic={logic} data={data} mapSvg={mapSvg} onStateClicked={onStateClicked} sideIndex={sideIndex} questionIndex={questionIndex}></OsegRightPanel>
+                <OsegRightPanel css={customCss} logic={logic} data={data} mapSvg={mapSvg} onStateClicked={onStateClicked} sideIndex={sideIndex} questionIndex={questionIndex}></OsegRightPanel>
             </Panel>
             </PanelGroup>
         </div>

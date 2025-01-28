@@ -7,11 +7,11 @@ import MusicPlayer from "../oseg/game/components/MusicPlayer";
 import QuoteHeader from "../oseg/game/components/QuoteHeader";
 import CandidateSelectionView from "../oseg/game/views/CandidateSelectionView";
 import ElectionDescriptionView from "../oseg/game/views/ElectionDescriptionView";
+import EndingView from "../oseg/game/views/EndingView";
 import MapView from "../oseg/game/views/MapView";
 import QuestionView from "../oseg/game/views/QuestionView";
 import EnumNavBar from "./components/EnumNavBar";
 import OsegSimulator from "./OsegSimulator";
-import EndingView from "../oseg/game/views/EndingView";
 
 enum RightNavBar {
   Map,
@@ -30,6 +30,7 @@ interface OsegRightPanelProps {
   mapSvg: string;
   logic: string;
   data: ScenarioModel;
+  css : string;
   onStateClicked: ((c: StateController) => void) | null;
   sideIndex: number;
   questionIndex: number;
@@ -39,7 +40,7 @@ const engine = new Engine();
 engine.useRng = false;
 
 function OsegRightPanel(props: OsegRightPanelProps) {
-  const { mapSvg, data, logic, onStateClicked, sideIndex, questionIndex } =
+  const { mapSvg, data, logic, onStateClicked, sideIndex, questionIndex, css } =
     props;
   const [rightNavBar, setRightNavBar] = useState<RightNavBar>(RightNavBar.Map);
 
@@ -200,8 +201,12 @@ function OsegRightPanel(props: OsegRightPanelProps) {
     }
   }
 
+  const encodedStyle = encodeURIComponent(css);
+  const stylePath = 'data:text/css;charset=utf-8,' + encodedStyle;
+
   return (
     <div className="OsegPanel">
+      <link rel="stylesheet" type="text/css" href={stylePath} />
       <EnumNavBar
         description="Preview"
         enumValueAsString={RightNavBar[rightNavBar].toString()}
