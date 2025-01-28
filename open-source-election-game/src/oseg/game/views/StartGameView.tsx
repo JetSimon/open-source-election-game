@@ -44,7 +44,7 @@ function StartGameView(props: StartGameProps) {
         engine={engine}
         onStartButtonPressed={onStartButtonPressed}
         canChooseCandidate={true}
-        canChooseRunningMate={engine.scenarioController.model.skipRunningMateSelection == undefined || engine.scenarioController.model.skipRunningMateSelection}
+        canChooseRunningMate={engine.scenarioController.model.skipRunningMateSelection == undefined || !engine.scenarioController.model.skipRunningMateSelection}
       ></CandidateSelectionView>
 
   );
