@@ -9,6 +9,8 @@ interface StateModel {
     popularVotes: number;
     baseIssueScores: IssueScore[];
     baseCandidateStateModifiers: BaseCandidateStateModifier[];
+    pollClosingTime? : number;
 }
 
 export type { StateModel };
+

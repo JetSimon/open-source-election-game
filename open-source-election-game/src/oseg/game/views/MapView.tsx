@@ -40,21 +40,18 @@ function MapView(props: MapViewProps) {
 
     let timePlayed = 0;
 
-    // Sort them in closest marigns last
+    // Sort them in ascending closing time order and closest marigns last
     const statesToUpdate = engine.scenarioController.getStates().sort((a, b) => {
-      const aHighest = a.getHighestCandidate(engine);
+      const aHighestCandidate = a.getHighestCandidate(engine);
+      const aHighest = aHighestCandidate == undefined ? 0 : a.getOpinionForCandidate(aHighestCandidate.getId());
 
-      if(aHighest == undefined) {
-        return 0;
-      }
+      const bHighestCandidate = b.getHighestCandidate(engine);
+      const bHighest = bHighestCandidate == undefined ? 0 : b.getOpinionForCandidate(bHighestCandidate.getId());
 
-      const bHighest = b.getHighestCandidate(engine);
+      const aClose = a.model.pollClosingTime ?? 0;
+      const bClose = b.model.pollClosingTime ?? 0;
 
-      if(bHighest == undefined) {
-        return 0;
-      }
-
-      return b.getOpinionForCandidate(bHighest.getId()) - a.getOpinionForCandidate(aHighest.getId());
+      return aClose - bClose || bHighest - aHighest;
     });
 
     const FPS = 1;

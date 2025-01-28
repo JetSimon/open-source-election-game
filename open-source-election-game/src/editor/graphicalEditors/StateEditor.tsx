@@ -72,6 +72,14 @@ function StateEditor(props: StateEditorProps) {
                             type={"number"}
                         />
 
+                        <GenericEditorInput
+                            defaultValue={state.pollClosingTime ?? 0}
+                            onChange={(e) => updateFieldAndUpdateData<number>("pollClosingTime", Number(e.target.value))}
+                            label={"Poll Closing Time"}
+                            type={"number"}
+                        />
+                        <div className="EditorNote">A higher closing time means the state results will be counted later</div>
+
                         <h3>Issue Scores</h3>
                         <div>
                             {state.baseIssueScores.sort().map((x) => <IssueScoreEditor data={data} setData={setData} issueScore={x}></IssueScoreEditor>)}
