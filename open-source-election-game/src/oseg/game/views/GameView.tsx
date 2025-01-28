@@ -313,7 +313,7 @@ function GameView(props: GameViewProps) {
             Skip to Results
           </button>
         )}
-        {!showMap && engine.customViews.size > 0 && <button onClick={() => setCustomViewName("")}>Questions</button>}
+        {!engine.isGameOver() && !showMap && engine.customViews.size > 0 && <button disabled={customViewName == ""} onClick={() => setCustomViewName("")}>Questions</button>}
         {!showMap && !engine.isGameOver() && makeCustomButtons()}
       </div>
       {!engine.isGameOver() && engine.waitingToPickState && (

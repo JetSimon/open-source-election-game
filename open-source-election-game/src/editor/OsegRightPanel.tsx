@@ -11,6 +11,7 @@ import EndingView from "../oseg/game/views/EndingView";
 import MapView from "../oseg/game/views/MapView";
 import QuestionView from "../oseg/game/views/QuestionView";
 import EnumNavBar from "./components/EnumNavBar";
+import CustomViewPreview from "./CustomViewPreview";
 import OsegSimulator from "./OsegSimulator";
 
 enum RightNavBar {
@@ -19,7 +20,8 @@ enum RightNavBar {
   Candidates,
   Simulator,
   Question,
-  Ending
+  Ending,
+  CustomView
 }
 
 const rightNavBarValues = Object.keys(RightNavBar).filter((item) => {
@@ -69,15 +71,25 @@ function OsegRightPanel(props: OsegRightPanelProps) {
 
   // Loads ending for preview
   useEffect(() => {
-    const loadEnding = async () => {
+    const loadInLogicCode = async () => {
       const encodedLogic = encodeURIComponent(logic);
       const logicDataUri = "data:text/javascript;charset=utf-8," + encodedLogic;
 
-      const { createEnding } = await import  (/* @vite-ignore */ logicDataUri);
+      const { createEnding, onScenarioStarted } = await import  (/* @vite-ignore */ logicDataUri);
 
+      engine.onScenarioStarted = onScenarioStarted;
       engine.createEnding = createEnding;
+
+      if(engine.onScenarioStarted != null) {
+        try {
+          engine.onScenarioStarted(engine);
+        }
+        catch(e) {
+          console.error(e);
+        }
+      }
     }
-    loadEnding();
+    loadInLogicCode();
   }, [logic]);
 
   function getEditorArea() {
@@ -198,6 +210,11 @@ function OsegRightPanel(props: OsegRightPanelProps) {
           ></EndingView>
         </>
       );
+    } else if(rightNavBar == RightNavBar.CustomView) {
+      return (
+        <CustomViewPreview engine={engine} theme={theme}>
+        </CustomViewPreview>
+      )
     }
   }
 

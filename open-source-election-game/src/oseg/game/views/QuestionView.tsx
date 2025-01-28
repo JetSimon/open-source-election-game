@@ -75,7 +75,7 @@ function QuestionView(props: QuestionViewProps) {
 
   return (
     <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}}  className="QuestionView">
-      <div>
+      <div className="QuestionArea">
         <p style={{backgroundColor:theme.questionBackgroundColor ?? theme.secondaryGameWindowColor, color:theme.questionTextColor ?? theme.secondaryGameWindowTextColor}} className="QuestionDescription" dangerouslySetInnerHTML={{__html:engine.addTooltips(currentQuestion.description)}}></p>
         <div onKeyDown={answerKeyPress} className="AnswerHolder">
           {currentQuestion.answers.map((answerModel, idx) => (

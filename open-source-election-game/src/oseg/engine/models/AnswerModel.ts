@@ -5,6 +5,7 @@ interface AnswerModel {
     description: string;
     feedback: string;
     answerEffects: AnswerEffectModel[];
+    enabled?: boolean;
 }
 
 export type { AnswerModel };

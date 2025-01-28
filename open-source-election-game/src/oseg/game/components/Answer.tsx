@@ -24,10 +24,12 @@ function Answer(props: AnswerProps) {
         }
     }
 
+    const answerDisabled = answerModel.enabled != undefined && !answerModel.enabled;
+
     return (
         <div className="Answer">
-            <input autoFocus={!showingFeedbackBox && index == 0} id={answerId} onChange={handleOnChange} checked={isSelected()} type="radio"></input>
-            <label htmlFor={answerId} dangerouslySetInnerHTML={{__html:engine.addTooltips(answerModel.description)}}></label>
+            <input disabled={answerDisabled} autoFocus={!showingFeedbackBox && index == 0} id={answerId} onChange={handleOnChange} checked={isSelected()} type="radio"></input>
+            <label style={{opacity: answerDisabled ? 0.66 : 1.0}} htmlFor={answerId} dangerouslySetInnerHTML={{__html:engine.addTooltips(answerModel.description)}}></label>
         </div>
     );
 }

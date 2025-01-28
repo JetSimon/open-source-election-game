@@ -204,7 +204,7 @@ function OsegEditor() {
 
     useEffect(() =>{
         loadDefaultData();
-    }, [])
+    }, []);
 
     function exportFiles() {
         downloadString(dataString, "data.json");

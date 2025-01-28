@@ -968,6 +968,21 @@ class Engine {
         }
     }
 
+    /**
+     * Enables or disables an answer by id
+     * @param id 
+     * @param isEnabled 
+     */
+    setAnswerEnabledById(id: number, isEnabled: boolean) {
+        for (const question of this.scenarioController.questions) {
+            for (const answer of question.answers) {
+                if(answer.id == id) {
+                    answer.enabled = isEnabled;
+                }
+            }
+        }
+    }
+
     // UTILS FOR ENDINGS
 
     /**

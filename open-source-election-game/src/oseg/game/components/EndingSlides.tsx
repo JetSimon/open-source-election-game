@@ -15,6 +15,11 @@ function EndingSlides(props: EndingSlidesProps) {
     const { theme, engine } = props;
 
     const ending: EndingModel = engine.getEnding();
+
+    if(ending == undefined) {
+        return <p>Ending undefined</p>
+    }
+
     const endingSlides = ending.slides;
     const endingSlide = endingSlides[endingSlideIndex];
 
