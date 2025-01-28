@@ -62,6 +62,7 @@ const templateNames = [
     "1936 Every Man a King",
     "1964 The Beatles",
     "1960m",
+    "4352 BCE Cold Famine",
     "TCT 1844",
     "TCT 2000",
     "TCT 2016",

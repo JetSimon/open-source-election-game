@@ -1,0 +1,1502 @@
+{
+    "candidates": [
+        {
+            "id": 131,
+            "firstName": "The",
+            "lastName": "Leader",
+            "party": "The Community",
+            "homeState": "Farmers",
+            "color": "#009A17",
+            "issueScores": [
+                {
+                    "issueId": 47,
+                    "issueScore": -0.3,
+                    "weight": 1
+                },
+                {
+                    "issueId": 48,
+                    "issueScore": -0.25,
+                    "weight": 1
+                },
+                {
+                    "issueId": 49,
+                    "issueScore": 0,
+                    "weight": 1
+                },
+                {
+                    "issueId": 50,
+                    "issueScore": -0.3,
+                    "weight": 1
+                },
+                {
+                    "issueId": 51,
+                    "issueScore": 0,
+                    "weight": 1
+                }
+            ],
+            "description": "<p>Born in in 4371 BCE, The Leader's life began humbly, steeped in the traditions of their people. As a child, they showed exceptional curiosity and a natural gift for problem-solving, traits that would prove invaluable in the years to come.</p><p>Growing up, The Leader witnessed the hardships endured by their tribe. These early experiences fostered a deep sense of responsibility and a desire to protect their community.</p><p>By adulthood, The Leader's exceptional leadership qualities became evident to their tribe, and they were chosen to take the helm. Don't let your people down.</p>",
+            "imageUrl": "https://github.com/JetSimon/tct-4352BCE/blob/main/rawimages/player.png?raw=true",
+            "runningMateIds": [
+                1002,
+                1003,
+                1004
+            ],
+            "startingGlobalMultiplier": 0.7
+        },
+        {
+            "id": 1002,
+            "firstName": " ",
+            "lastName": "Dyēus",
+            "party": "The Sky",
+            "homeState": "The Cosmos",
+            "color": "#8484f5",
+            "issueScores": [],
+            "description": "<div style='overflow-y:scroll;height:200px;'><p>Dyēus, the god of the daylight sky, reigns as a deity of profound importance.</p><p>As the all-seeing guardian of the heavens, he holds the power to bestow fertile rains upon the drought-stricken earth, a divine benefactor whose benevolence can determine the fate of civilizations.<p></p></div>",
+            "imageUrl": "https://github.com/JetSimon/tct-4352BCE/blob/main/rawimages/sky.png?raw=true",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
+        },
+        {
+            "id": 1003,
+            "firstName": " ",
+            "lastName": "H₂éwsōs",
+            "party": "The Dawn",
+            "homeState": "The Cosmos",
+            "color": "#ec734b",
+            "issueScores": [],
+            "description": "<div style='overflow-y:scroll;height:200px;'><p>H₂éwsōs, the goddess of a new dawn. She is said to be the daughter of Dyēus, though no one knows for sure.</p><p>She is associated with rebirth and new ways of thinking. Every morning she is born in a dance of red and orange flames. Although not as powerful as her father, many forward thinking minds have adopted her as their patron.</p></div>",
+            "imageUrl": "https://github.com/JetSimon/tct-4352BCE/blob/main/rawimages/dawn.png?raw=true",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
+        },
+        {
+            "id": 1004,
+            "firstName": " ",
+            "lastName": "Dʰéǵʰōm",
+            "party": "The Ground",
+            "homeState": "The Cosmos",
+            "color": "#4ca462",
+            "issueScores": [],
+            "description": "<div style='overflow-y:scroll;height:200px;'><p>Dʰéǵʰōm, the Earth Mother and sometimes seen as the counterpart to Dyēus. She is the goddess of fertility and growth, but also death.</p><p>For everything that grows from the Earth must return to it. In times of famine she is feverishly worshipped, though in times of prosperity some hold her in a cautious reverence. For it is never known when one must return to Dʰéǵʰōm.</p></div>",
+            "imageUrl": "https://github.com/JetSimon/tct-4352BCE/blob/main/rawimages/ground.png?raw=true",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
+        },
+        {
+            "id": 133,
+            "firstName": "",
+            "lastName": "Chaos",
+            "party": "Natural Force",
+            "homeState": "The COsmos",
+            "color": "#301934",
+            "issueScores": [
+                {
+                    "issueId": 47,
+                    "issueScore": 0,
+                    "weight": 1
+                },
+                {
+                    "issueId": 48,
+                    "issueScore": 0,
+                    "weight": 1
+                },
+                {
+                    "issueId": 49,
+                    "issueScore": 0.5,
+                    "weight": 1
+                },
+                {
+                    "issueId": 50,
+                    "issueScore": 0.8,
+                    "weight": 1
+                },
+                {
+                    "issueId": 51,
+                    "issueScore": 0,
+                    "weight": 1
+                }
+            ],
+            "description": null,
+            "imageUrl": "https://github.com/JetSimon/tct-4352BCE/blob/main/rawimages/hunger.png?raw=true",
+            "runningMateIds": [],
+            "startingGlobalMultiplier": 1
+        }
+    ],
+    "states": [
+        {
+            "id": 14501,
+            "name": "Craftsmen",
+            "abbr": "CFT",
+            "electoralVotes": 0,
+            "popularVotes": 60,
+            "baseIssueScores": [
+                {
+                    "issueId": 47,
+                    "issueScore": -0.1,
+                    "weight": 1.5
+                },
+                {
+                    "issueId": 48,
+                    "issueScore": 0,
+                    "weight": 1.5
+                },
+                {
+                    "issueId": 49,
+                    "issueScore": 0,
+                    "weight": 0.5
+                },
+                {
+                    "issueId": 50,
+                    "issueScore": 0.3,
+                    "weight": 2
+                },
+                {
+                    "issueId": 51,
+                    "issueScore": -0.5,
+                    "weight": 1.5
+                }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1.1
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 1.5
+                }
+            ]
+        },
+        {
+            "id": 14474,
+            "name": "Farmers",
+            "abbr": "FMR",
+            "electoralVotes": 0,
+            "popularVotes": 50,
+            "baseIssueScores": [
+                {
+                    "issueId": 47,
+                    "issueScore": -0.7,
+                    "weight": 1.5
+                },
+                {
+                    "issueId": 48,
+                    "issueScore": 0.1,
+                    "weight": 1.5
+                },
+                {
+                    "issueId": 49,
+                    "issueScore": 0,
+                    "weight": 0.5
+                },
+                {
+                    "issueId": 50,
+                    "issueScore": -0.3,
+                    "weight": 1.5
+                },
+                {
+                    "issueId": 51,
+                    "issueScore": 0.4,
+                    "weight": 0.5
+                }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0.6
+                }
+            ]
+        },
+        {
+            "id": 14483,
+            "name": "Shepards",
+            "abbr": "SHP",
+            "electoralVotes": 0,
+            "popularVotes": 30,
+            "baseIssueScores": [
+                {
+                    "issueId": 47,
+                    "issueScore": -0.7,
+                    "weight": 1.5
+                },
+                {
+                    "issueId": 48,
+                    "issueScore": -0.3,
+                    "weight": 1.5
+                },
+                {
+                    "issueId": 49,
+                    "issueScore": -0.7,
+                    "weight": 2
+                },
+                {
+                    "issueId": 50,
+                    "issueScore": 0.3,
+                    "weight": 2
+                },
+                {
+                    "issueId": 51,
+                    "issueScore": 0.3,
+                    "weight": 0.5
+                }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 0.8
+                }
+            ]
+        },
+        {
+            "id": 14492,
+            "name": "Spiritualists",
+            "abbr": "SPT",
+            "electoralVotes": 0,
+            "popularVotes": 20,
+            "baseIssueScores": [
+                {
+                    "issueId": 47,
+                    "issueScore": 0.2,
+                    "weight": 1.5
+                },
+                {
+                    "issueId": 48,
+                    "issueScore": -0.8,
+                    "weight": 1.5
+                },
+                {
+                    "issueId": 49,
+                    "issueScore": -0.7,
+                    "weight": 1
+                },
+                {
+                    "issueId": 50,
+                    "issueScore": 0.3,
+                    "weight": 2
+                },
+                {
+                    "issueId": 51,
+                    "issueScore": -0.1,
+                    "weight": 1
+                }
+            ],
+            "baseCandidateStateModifiers": [
+                {
+                    "candidateId": 131,
+                    "amount": 1
+                },
+                {
+                    "candidateId": 133,
+                    "amount": 1.4
+                }
+            ]
+        }
+    ],
+    "issues": [
+        {
+            "id": 47,
+            "name": "Justice",
+            "description": "How should matters of justice be sorted out? Should it be an eye for an eye or a fail impartial hearing for all?",
+            "stances": [
+                "Vigilante Justice",
+                "Vigilante Justice",
+                "Eye for an Eye",
+                "Eye for an Eye",
+                "Eye for an Eye",
+                "Impartial Hearing",
+                "Impartial Hearing"
+            ],
+            "stanceDescriptions": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        {
+            "id": 48,
+            "name": "Spirituality",
+            "description": "How important a role should spirits and deities play in our lives? ",
+            "stances": [
+                "Zealots",
+                "Zealots",
+                "Zealots",
+                "Spiritual",
+                "Spiritual",
+                "Impartial",
+                "Impartial"
+            ],
+            "stanceDescriptions": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        {
+            "id": 49,
+            "name": "Sacred Creatures",
+            "description": "Should cows and sheep be considered sacred?",
+            "stances": [
+                "Holy Beasts",
+                "Holy Beasts",
+                "Holy Beasts",
+                "Indifferent",
+                "Indifferent",
+                "Only Beasts",
+                "Only Beasts"
+            ],
+            "stanceDescriptions": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        {
+            "id": 50,
+            "name": "Famine",
+            "description": "How will you react in times of famine?",
+            "stances": [
+                "Hold Strong",
+                "Hold Strong",
+                "Hold Strong",
+                "Weary",
+                "Weary",
+                "Panic",
+                "Panic"
+            ],
+            "stanceDescriptions": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        {
+            "id": 51,
+            "name": "Trade",
+            "description": "Should we trade with neighbouring communities?",
+            "stances": [
+                "Supports",
+                "Supports",
+                "Supports",
+                "Moderate",
+                "Moderate",
+                "Isolationist",
+                "Isolationist"
+            ],
+            "stanceDescriptions": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        }
+    ],
+    "scenarioSides": [
+        {
+            "playerId": 131,
+            "questions": [
+                {
+                    "id": 14633,
+                    "description": "There is an item you have held dear since childhood. What is it?\n",
+                    "answers": [
+                        {
+                            "id": 14636,
+                            "description": "A necklace your late Father made from the skull of a small animal, complete with copper eyes.",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14474,
+                                    "amount": 0.3
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14637,
+                            "description": "A valuable shell passed down from your Mother. A symbol of status.",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "TctIssue",
+                                    "candidateId": 131,
+                                    "issueId": 51,
+                                    "stateId": -1,
+                                    "amount": 0.1,
+                                    "weight": 0.5
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14474,
+                                    "amount": 0.1
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14501,
+                                    "amount": -0.1
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14638,
+                            "description": "A sculpture of a sacred cow carved by your friend Eḱwos from an ancient tree.",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14483,
+                                    "amount": 0.1
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14492,
+                                    "amount": 0.1
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 14639,
+                    "description": "What has your role been so far? Farmer? Spiritual leader? Shepard?",
+                    "answers": [
+                        {
+                            "id": 14640,
+                            "description": "Farmer. A position of wealth and power.",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14474,
+                                    "amount": 0.5
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14641,
+                            "description": "Spiritual leader. A position of wisdom and esteem.",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "TctIssue",
+                                    "candidateId": 131,
+                                    "issueId": 48,
+                                    "stateId": -1,
+                                    "amount": -0.3,
+                                    "weight": 1.3
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14492,
+                                    "amount": 0.4
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14642,
+                            "description": "Shepard. A humble position that builds character and admiration for sacred animals.",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "TctIssue",
+                                    "candidateId": 131,
+                                    "issueId": 49,
+                                    "stateId": -1,
+                                    "amount": -0.4,
+                                    "weight": 0.5
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14501,
+                                    "amount": 0.1
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14483,
+                                    "amount": 0.2
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14474,
+                                    "amount": 0.01
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 14643,
+                    "description": "Congratulations. It is your first night as leader. Cause for celebration, but what kind of celebration?",
+                    "answers": [
+                        {
+                            "id": 14644,
+                            "description": "A communal ritual at an ancient stone circle, where we invoke the blessings of the celestial deities through song and dance, connecting with our ancestral spirits.",
+                            "feedback": "The communal ritual brings the community closer together. This could prove key in the future.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.8
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14645,
+                            "description": "A sacred fire ceremony, symbolising the passing of leadership, with the tribe gathered around to witness the transition and offer blessings.",
+                            "feedback": "A fire ceremony strengthens your claim as leader. The people will trust you.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 1.2
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14646,
+                            "description": "An offering feast to honour the Earth Mother and the bountiful harvest, sharing our gratitude for her gifts in the form of a communal meal.",
+                            "feedback": "Dʰéǵʰōm is pleased by your offering.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 133,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.8
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 14647,
+                    "description": "Eḱwos, your childhood friend, asks you to settle a dispute with a farmer. The farmer is accusing him of stealing his crops. He even has a shred of cloth found in his fields that seems to be torn from Eḱwos’ clothing. What is your verdict?\n",
+                    "answers": [
+                        {
+                            "id": 14648,
+                            "description": "That cloth could be from anywhere. Eḱwos is innocent!\n",
+                            "feedback": "The farmer looks at you with disgust. He calls you corrupt for choosing friendship over justice. This will not be a popular decision with the farmers.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14474,
+                                    "amount": -0.2
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14501,
+                                    "amount": 0.1
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14649,
+                            "description": "The evidence is damning. Eḱwos must pay the farmer back.\n",
+                            "feedback": "This verdict is just enough to keep the favour of the farmers. Though it is clear he wanted blood.\n",
+                            "answerEffects": []
+                        },
+                        {
+                            "id": 14650,
+                            "description": "The evidence is damning. I’m sorry Eḱwos but you must pay with your blood (Eḱwos will be injured).",
+                            "feedback": "The farmer is overjoyed. Eḱwos is scurried away and you hear a nightmarish scream. Next time you see him you notice his hand is bandaged in cloth. He refuses to make eye contact.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 132,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 1.1
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14474,
+                                    "amount": 0.2
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 14651,
+                    "description": "Wealthier farmer families have started to decorate their ancestors' graves with copper. Copper that could be used for more productive items like tools or for trade. What do you think about this practice?",
+                    "answers": [
+                        {
+                            "id": 14652,
+                            "description": "They shouldn’t be wasting copper on their ancestors.\n",
+                            "feedback": "This stance is not popular with farmers, though by discouraging the practice you are able to gain more resources trading excess copper with neighbouring communities.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14474,
+                                    "amount": -0.02
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14653,
+                            "description": "It is important to pay tribute to ancestral spirits. They have more effect on our lives than we can comprehend.\n",
+                            "feedback": "The spirits are satisfied with this answer.\n",
+                            "answerEffects": []
+                        },
+                        {
+                            "id": 14654,
+                            "description": "The farmers may do what they wish, it is their copper.",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14474,
+                                    "amount": 0.01
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 14655,
+                    "description": "A comet is spotted in the night sky. What could it mean?\n",
+                    "answers": [
+                        {
+                            "id": 14656,
+                            "description": "It is a bad omen, we must prepare for hardship.\n",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.01
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14657,
+                            "description": "It is an ancestor travelling across the realm of the dead. A bad sign for certain.\n",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.01
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14658,
+                            "description": "We are doomed!\n",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.01
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14720,
+                            "description": "It is just H₂éwsōs beginning her rebirth.\n",
+                            "feedback": "",
+                            "answerEffects": [],
+                            "enabled": false
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 14659,
+                    "description": "There are reports of a thief at the gravesites. It seems someone has been taking the copper from the wealthy farmers’ graves for themselves. What should be done?",
+                    "answers": [
+                        {
+                            "id": 14660,
+                            "description": "Farmers need our help. Send a few men to keep watch of the gravesites.",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14474,
+                                    "amount": 0.1
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14661,
+                            "description": "The farmers deserve it. Let’s just hope the thief doesn’t get caught!\n",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14474,
+                                    "amount": -0.3
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14501,
+                                    "amount": 0.1
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 14663,
+                    "description": "The graveyard thief has been caught: it is Eḱwos! Everyone is waiting to hear what his punishment will be. What do you think?\n",
+                    "answers": [
+                        {
+                            "id": 14664,
+                            "description": "I’m sorry Eḱwos, this is unforgivable. You must be made an example of and executed.\n",
+                            "feedback": "It is a swift execution. You can’t bear to look but you hear the crunch of bone on copper as Eḱwos’ head is cleanly chopped off. When you open your eyes you see his lifeless head staring back at you from the ground. \n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "TctIssue",
+                                    "candidateId": 131,
+                                    "issueId": 47,
+                                    "stateId": -1,
+                                    "amount": -0.5,
+                                    "weight": 0.1
+                                },
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.001
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14474,
+                                    "amount": 0.2
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14665,
+                            "description": "I’m sorry Eḱwos, this is unforgivable. You will be banished.\n",
+                            "feedback": "Eḱwos is swiftly escorted away from the tribe. He is never heard from again, though you do hear whispers of his name from travellers in the years to follow.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14474,
+                                    "amount": 0.1
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14666,
+                            "description": "Those farmers deserved it for wasting precious copper. Eḱwos was just in his actions.\n",
+                            "feedback": "This is an outrage! The farmers are out for blood. Although you may have bought Eḱwos more time, it is clear that fate will come for him one way or another.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.01
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14474,
+                                    "amount": -0.1
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 14671,
+                    "description": "A strong leader needs a bride, and a local farmer who has a beautiful daughter is willing to let you marry her…for the right bride price. What are you willing to pay?",
+                    "answers": [
+                        {
+                            "id": 14672,
+                            "description": "I do not need a bride.",
+                            "feedback": "",
+                            "answerEffects": []
+                        },
+                        {
+                            "id": 14673,
+                            "description": "I will give two cows and a fine copper bracelet.",
+                            "feedback": "A fine price for a bride!",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "TctIssue",
+                                    "candidateId": 131,
+                                    "issueId": 51,
+                                    "stateId": -1,
+                                    "amount": -0.2,
+                                    "weight": 1
+                                },
+                                {
+                                    "answerEffectType": "TctIssue",
+                                    "candidateId": 131,
+                                    "issueId": 49,
+                                    "stateId": -1,
+                                    "amount": -0.2,
+                                    "weight": 1
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14674,
+                            "description": "I will give 3 months of our food stores and one cow.",
+                            "feedback": "A fine price for a bride!",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.001
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14722,
+                            "description": "A leader does not need to pay a bride price! Give me your daughter or you will be banished.",
+                            "feedback": "The farmer is not happy about this. He gives you his daughter under your threats but he tells you that you will rue this day and vows revenge.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14474,
+                                    "amount": -0.2
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 14675,
+                    "description": "There is a smaller than usual crop yield this year, which people should get the most food?",
+                    "answers": [
+                        {
+                            "id": 14676,
+                            "description": "The farmers deserve the most food, they are ones responsible for producing it after all.",
+                            "feedback": "This is a popular choice with farmers, though not with many others.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14474,
+                                    "amount": 0.5
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14483,
+                                    "amount": -0.2
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14492,
+                                    "amount": -0.2
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14501,
+                                    "amount": -0.2
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14677,
+                            "description": "Let us feed our spiritual leaders. They need the energy to consult Dʰéǵʰōm on how to grow more food.",
+                            "feedback": "Hopefully the Earth Mother can save us.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14492,
+                                    "amount": 0.4
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14678,
+                            "description": "We should feed our children. They must grow strong for our future.",
+                            "feedback": "This is seen as compassionate and forward-thinking, but many believe you are ignoring their immediate needs.\n",
+                            "answerEffects": []
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 14679,
+                    "description": "The farmers come to you asking for advice on their low crop yield. What do you tell them?",
+                    "answers": [
+                        {
+                            "id": 14680,
+                            "description": "You must make a sacrifice to Dʰéǵʰōm. Only the Earth Mother can help us.\n",
+                            "feedback": "A small sacrifice is made to Dʰéǵʰōm. Hopefully it isn’t too late.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.1
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14681,
+                            "description": "When I was a farmer, I would make sure to plant my crops in only a certain order to ensure a bountiful harvest.\n",
+                            "feedback": "This is excellent advice that only a farmer could give!\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.1
+                                }
+                            ],
+                            "enabled": false
+                        },
+                        {
+                            "id": 14682,
+                            "description": "If you cannot produce a large enough harvest, you will be punished harshly!\n",
+                            "feedback": "Although this may help in the short term, you may regret the ire of the farmers.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.05
+                                },
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14474,
+                                    "amount": -0.5
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 14683,
+                    "description": "Winter is around the corner. The time of year where food is more scarce and the spirits of ancestors roam the Earth. People want to sacrifice a holy cow to ensure a safe Winter. But to which god?\n",
+                    "answers": [
+                        {
+                            "id": 14684,
+                            "description": "Offer a holy cow to Dʰéǵʰōm. Only she will keep our hunger at bay.\n",
+                            "feedback": "The holy cow is slain.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14492,
+                                    "amount": 0.01
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14685,
+                            "description": "Offer a holy cow to H₂éwsōs. Even if some of us perish, we will be reborn stronger.",
+                            "feedback": "The holy cow is slain.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.01
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14686,
+                            "description": "Offer a holy cow to Dyēus. So that he might make a fertile rain.",
+                            "feedback": "The holy cow is slain.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.001
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 14687,
+                    "description": "After too many moons of low crop yields, you quickly realise a famine is around the corner. This will be a tough Winter. The people need a strong leader. What do you tell them?\n",
+                    "answers": [
+                        {
+                            "id": 14688,
+                            "description": "We will only be able to make it through this together!",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.1
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14689,
+                            "description": "It is every man for themselves. Only the strong will survive!",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.2
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14690,
+                            "description": "With faith in H₂éwsōs, we will get through this dark night and make it to a powerful sunrise.",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.01
+                                }
+                            ],
+                            "enabled": false
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 14691,
+                    "description": "What should be done with our remaining food stores?",
+                    "answers": [
+                        {
+                            "id": 14692,
+                            "description": "They must go to me, so I can remain strong for us all!",
+                            "feedback": "This is a selfish, foolish answer that will demoralize your people.",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.2
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14693,
+                            "description": "They will be rationed to each person according to their needs. We will make it through the Winter.\n",
+                            "feedback": "A pragmatic choice. Hopefully it is enough to get us through the Winter.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.01
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14694,
+                            "description": "We must leave some of our food out for our ancestral spirits. They will favour us and help us in our time of need.\n",
+                            "feedback": "Winter is when the ancestral spirits are strongest. Hopefully they hear our plea.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.03
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 14699,
+                    "description": "Folks have suggested eating cattle after sacrifice. This could help curb the famine, but would be a great dishonour to the gods. What do you think?\n",
+                    "answers": [
+                        {
+                            "id": 14700,
+                            "description": "We cannot eat such sacred creatures! People who propose such an idea will be banished. More food for us.\n",
+                            "feedback": "Food is more plentiful for a short time after the dissenters are banished. But will it be enough to make it through the Winter?\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.02
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14702,
+                            "description": "In times like these, we do what we must to survive.",
+                            "feedback": "",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "State",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": 14492,
+                                    "amount": -0.3
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 14707,
+                    "description": "After many months, finally the crops seem to be growing again. Finally you are able to build up a small surplus of food. What do you do with it?\n",
+                    "answers": [
+                        {
+                            "id": 14708,
+                            "description": "We must gorge ourselves to give us the strength to rebuild.\n",
+                            "feedback": "This is a popular choice, if not short sighted.\n",
+                            "answerEffects": []
+                        },
+                        {
+                            "id": 14709,
+                            "description": "We will dry and store what we can, to prepare for a future famine.",
+                            "feedback": "Hopefully the food will last.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.005
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14710,
+                            "description": "We must still ration it. We might not be through the worst of it yet.\n",
+                            "feedback": "This will not make you popular with the people, but it may prove needed.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.01
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 14715,
+                    "description": "Many years later: it is time now. You are close to death. As you lay reflecting on your life, what are your last words to those who can hear?",
+                    "answers": [
+                        {
+                            "id": 14716,
+                            "description": "Please know that I will always be with you all.\n",
+                            "feedback": "Everything goes dark.",
+                            "answerEffects": []
+                        },
+                        {
+                            "id": 14717,
+                            "description": "So many regrets…",
+                            "feedback": "Everything goes dark.",
+                            "answerEffects": []
+                        },
+                        {
+                            "id": 14718,
+                            "description": "It is my time to return to Dʰéǵʰōm.",
+                            "feedback": "Everything goes dark.",
+                            "answerEffects": []
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 14667,
+                    "description": "There is a small death ceremony for your thieving friend. Will you be attending?\n",
+                    "answers": [
+                        {
+                            "id": 14668,
+                            "description": "I will watch from afar as my friend goes back to the Earth Mother.\n",
+                            "feedback": "As they lower his body into the ground you almost want to go over and console his friends and family. Though given your recent history, you doubt they would even welcome you. You walk back home and sit in silence.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.001
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14669,
+                            "description": "I will attend and tell stories about Eḱwos with his grieving family.",
+                            "feedback": "His family appreciates your company. Although you all agree Eḱwos was not innocent, you do agree that you will miss him. You feel his spirit with you as you dance and share stories about him. Goodbye friend.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.001
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14670,
+                            "description": "I will not attend. Why would one attend the funeral of scum like him?\n",
+                            "feedback": "",
+                            "answerEffects": []
+                        },
+                        {
+                            "id": 14721,
+                            "description": "I will attend and bury my cow sculpture with him.",
+                            "feedback": "As you lower the cow sculpture into his grave, you feel something inside you. It tells you that Eḱwos is thankful. And that Dʰéǵʰōm is grateful for his body and the new life that shall spring from his demise. It brings you peace.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.001
+                                }
+                            ],
+                            "enabled": false
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true,
+                    "enabled": false
+                },
+                {
+                    "id": 14703,
+                    "enabled": false,
+                    "description": "Your wife is going hungry. But the people need food. Will you feed her? It could be dangerous for her pregnancy.\n",
+                    "answers": [
+                        {
+                            "id": 14704,
+                            "description": "She must bear our child. She is what is important.\n",
+                            "feedback": "At least she is healthy.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.01
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14705,
+                            "description": "We cannot spare the food.",
+                            "feedback": "Sacrifices must be made in times like these. Unfortunately it was too much of a sacrifice in this case. Your wife is no longer pregnant.",
+                            "answerEffects": []
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                },
+                {
+                    "id": 14695,
+                    "description": "What terrible timing, your wife is beginning to look pregnant. What is your response?",
+                    "answers": [
+                        {
+                            "id": 14696,
+                            "description": "I will do everything I can for our child. We will make it through this.\n",
+                            "feedback": "Your wife is reassured by your words.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": -0.001
+                                }
+                            ]
+                        },
+                        {
+                            "id": 14697,
+                            "description": "Why has Dʰéǵʰōm played such a cruel trick?!",
+                            "feedback": "",
+                            "answerEffects": []
+                        },
+                        {
+                            "id": 14698,
+                            "description": "We cannot afford another mouth to feed. I’m sorry my wife.\n",
+                            "feedback": "Your wife is given a salve an herbalist. The baby will not survive.\n",
+                            "answerEffects": [
+                                {
+                                    "answerEffectType": "Global",
+                                    "candidateId": 131,
+                                    "issueId": -1,
+                                    "stateId": -1,
+                                    "amount": 0.001
+                                }
+                            ]
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true,
+                    "enabled": false
+                },
+                {
+                    "id": 14711,
+                    "enabled": false,
+                    "description": "As the famine ends, finally your baby is born. He is a boy. What will you name him?\n",
+                    "answers": [
+                        {
+                            "id": 14712,
+                            "description": "I will name him Eḱwos.\n",
+                            "feedback": "",
+                            "answerEffects": []
+                        },
+                        {
+                            "id": 14713,
+                            "description": "I will name him after Dyēus",
+                            "feedback": "",
+                            "answerEffects": []
+                        },
+                        {
+                            "id": 14714,
+                            "description": "I will name him after my father.",
+                            "feedback": "",
+                            "answerEffects": []
+                        }
+                    ],
+                    "keepInPlaceIfQuestionsShuffled": true
+                }
+            ]
+        }
+    ],
+    "theme": {
+        "backgroundImageUrl": "https://github.com/JetSimon/tct-4352BCE/blob/main/rawimages/forest.jpeg?raw=true",
+        "backgroundColor": "#372d1f",
+        "headerImageUrl": "https://github.com/JetSimon/tct-4352BCE/blob/main/rawimages/banner.png?raw=true",
+        "primaryGameWindowColor": "#1e7330",
+        "secondaryGameWindowColor": "#165423",
+        "primaryGameWindowTextColor": "#ffffff",
+        "secondaryGameWindowTextColor": "#ffffff",
+        "bottomBannerBackgroundColor": "#54644d",
+        "bottomBannerTextColor": "#ffffff",
+        "advisorImage": "https://github.com/JetSimon/tct-4352BCE/blob/main/rawimages/advisor.png?raw=true",
+        "quote": ""
+    },
+    "hasStateVisits": false,
+    "scenarioDescription": "<p>The year is 4352BCE. You are the newly appointed leader of a small group of ~200 people who live in what is now the Danube Valley, near modern day Ukraine.</p><p>Your choices as leader will determine the fate of your people and perhaps echo out to shape civilizations for millenia to come.</p><p>Will you be able to guide your people out of famine, or will your culture vanish into dust?</p><p>It is recommended that you play on a harder difficulty for this mod.</p><br><p style='font-size:sm'><span style='font-weight:bolder'>DISCLAIMER:</span> What we know of Proto Indo European people is mostly from educated guesses. We have no physical evidence of their culture and infer mainly based on their influence on many languages and cultures of the modern day. As such this mod takes a lot artistic liberties depicting their culture and values. I have based as much as I can off of my research, but I am in no way claiming this to be the most accurate representation of PIE people.</p>",
+    "scenarioImageUrl": "https://github.com/JetSimon/tct-4352BCE/blob/main/rawimages/electionimage.png?raw=true",
+    "credits": "by Jet",
+    "music": [],
+    "scenarioName": "4352 BCE: Cold Famine"
+}
