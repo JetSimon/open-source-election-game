@@ -190,9 +190,9 @@ function onAnswerPicked(engine, answerPicked) {
     handleAllVariableUpdates(engine, a);
 
     if (a == 14721) {
-        // Would unlock The Gift
+        // Would unlock gift
     } else if (a == 14681) {
-        // Would unlock Green Thumb
+        // Would unlock green thumb
     }
 
     const q = engine.getCurrentQuestion().id;
@@ -200,7 +200,15 @@ function onAnswerPicked(engine, answerPicked) {
     if (q == 14683) {
         // change theme to winter
 
-        document.head.innerHTML += "<style>.Map {background-color:white!important;}</style>";
+        try {
+            if(document != null) {
+                document.head.innerHTML += "<style>.Map {background-color:white!important;}</style>";
+            }
+        }
+        catch(e) {
+            console.warn("Document was not defined");
+        }
+        
         engine.setNewBackgroundImage("https://github.com/JetSimon/tct-4352BCE/blob/main/rawimages/winter.jpeg?raw=true");
         engine.scenarioController.theme.primaryGameWindowColor = "#38a2bc";
         engine.scenarioController.theme.secondaryGameWindowColor = "rgb(34, 112, 132)";
