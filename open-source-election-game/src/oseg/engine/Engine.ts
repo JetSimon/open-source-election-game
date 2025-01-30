@@ -1091,6 +1091,40 @@ class Engine {
     }
 
     /**
+     * Get the id of the candidate with the most pv
+     * @param results 
+     */
+    getIdOfHighestPv(results : FinalResultsModel) {
+        let highestCandidate = -1;
+        let highestPv = 0;
+        for(const candidate of results.candidates) {
+            const pv = results.popularVotes.get(candidate.getId())!;
+            if(pv > highestPv) {
+                highestCandidate = candidate.getId();
+                highestPv = pv;
+            }
+        }
+        return highestCandidate;
+    }
+
+    /**
+     * Get the id of the candidate with the most ev
+     * @param results 
+     */
+    getIdOfHighestEv(results: FinalResultsModel) {
+        let highestCandidate = -1;
+        let highestEv = 0;
+        for(const candidate of results.candidates) {
+            const ev = results.electoralVotes.get(candidate.getId())!;
+            if(ev > highestEv) {
+                highestCandidate = candidate.getId();
+                highestEv = ev;
+            }
+        }
+        return highestCandidate;
+    }
+
+    /**
      * Set a new music playlist. Good to use for song switches for endings.
      * @param music 
      * @category Ending Utility Functions
