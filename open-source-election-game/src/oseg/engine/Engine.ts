@@ -1093,6 +1093,7 @@ class Engine {
     /**
      * Get the id of the candidate with the most pv
      * @param results 
+     * @category Ending Utility Functions
      */
     getIdOfHighestPv(results : FinalResultsModel) {
         let highestCandidate = -1;
@@ -1110,6 +1111,7 @@ class Engine {
     /**
      * Get the id of the candidate with the most ev
      * @param results 
+     * @category Ending Utility Functions
      */
     getIdOfHighestEv(results: FinalResultsModel) {
         let highestCandidate = -1;
