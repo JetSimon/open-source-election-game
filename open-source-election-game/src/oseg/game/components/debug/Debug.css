@@ -1,7 +1,9 @@
 .DebugMenuAnswer {
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.664);
     width: 90%;
     margin: auto;
+    color: rgb(255, 255, 255);
+    border-radius: 3px;
 }
 
 .DebugMenuAnswer > p {
