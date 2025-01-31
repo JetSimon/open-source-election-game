@@ -1232,6 +1232,7 @@ class Engine {
         try {
             const res = localStorage.getItem(this.initialScenarioName + "/" + flag);
             if(res == null) {
+                console.error("Flag with name " + flag + " does not exist. Returning false.")
                 return false;
             }
 
