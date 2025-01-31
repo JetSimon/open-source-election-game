@@ -17,7 +17,11 @@ function EndingSlides(props: EndingSlidesProps) {
     const ending: EndingModel = engine.getEnding();
 
     if(ending == undefined) {
-        return <p>Ending undefined</p>
+        return <p>ending is undefined</p>
+    }
+
+    if(ending.slides == undefined) {
+        return <p>ending.slides is undefined. Did you forget to return an object with a slides property?</p>
     }
 
     const endingSlides = ending.slides;
