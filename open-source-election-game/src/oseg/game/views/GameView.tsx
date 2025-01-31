@@ -9,7 +9,7 @@ import { HighscoreSubmissionModel } from "../../engine/models/HighscoreSubmissio
 import { ThemeModel } from "../../engine/models/ThemeModel";
 import BottomBanner from "../components/BottomBanner";
 import ConfirmCancelPopupBox from "../components/ConfirmCancelPopupBox";
-import DebugMenuAnswer from "../components/debug/DebugMenuAnswer";
+import DebugMenu from "../components/debug/DebugMenu";
 import PopupBox from "../components/PopupBox";
 import CandidateSelectionView from "./CandidateSelectionView";
 import CustomView from "./CustomView";
@@ -54,6 +54,8 @@ function GameView(props: GameViewProps) {
 
   const [customViewName, setCustomViewName] = useState("");
 
+  const [usedCheatMenu, setUsedCheatMenu] = useState(false);
+
   useEffect(() => {
     function checkForAutoplay(e: KeyboardEvent) {
       if (e.key == "@") {
@@ -62,6 +64,7 @@ function GameView(props: GameViewProps) {
 
       if (e.key == "!") {
         setShowDebugMenu((x) => !x);
+        setUsedCheatMenu(true);
       }
 
       if (engine.waitingToPickState) {
@@ -154,7 +157,10 @@ function GameView(props: GameViewProps) {
           isShuffled: engine.isShuffled,
           difficulty: engine.difficulty,
         };
-        onGameOver(highscoreModel);
+
+        if(!usedCheatMenu) {
+          onGameOver(highscoreModel);
+        }
       }
 
       refreshThemeAndMusic();
@@ -348,12 +354,8 @@ function GameView(props: GameViewProps) {
           image={theme.advisorImage}
         />
       )}
-      {showDebugMenu && (
-        <div className="DebugMenu">
-          {currentQuestion.answers.map((answer) => (
-            <DebugMenuAnswer answer={answer} engine={engine}></DebugMenuAnswer>
-          ))}
-        </div>
+      {showDebugMenu && !engine.isGameOver() && (
+        <DebugMenu setCurrentQuestion={setCurrentQuestion} currentQuestion={currentQuestion} engine={engine}></DebugMenu>
       )}
     </div>
   );
