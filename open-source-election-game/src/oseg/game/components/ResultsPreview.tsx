@@ -53,7 +53,7 @@ function ResultsPreview(props: StatePollProps) {
       
       <div className="EvPvInfo">
         <div>{(completionAmount * 100).toFixed(2)}% Complete</div>
-        <div>{engine.getTotalElectoralVotes() > 0 ? Math.round(engine.getTotalElectoralVotes() / 2) : "50%"} to win!</div>
+        <div>{engine.getTotalElectoralVotes() > 0 ? Math.ceil(engine.getTotalElectoralVotes() / 2) + 1 : "50%"} to win!</div>
       </div>
     </div>
   );
