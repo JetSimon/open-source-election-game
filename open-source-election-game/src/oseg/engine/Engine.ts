@@ -16,9 +16,6 @@ import { SongModel } from "./models/SongModel";
 import { StateModel } from "./models/StateModel";
 import { ThemeModel } from "./models/ThemeModel";
 
-// Just used when debugging/trying to see if more extreme answers help more
-const tuningMultiplier = (x: number) => 1 * x;//Math.pow(x, 3);
-
 /**
  * Controls which part of the game the player is in
  */
@@ -137,6 +134,8 @@ class Engine {
 
     waitingToSelectNewRunningMate = false;
 
+    initialScenarioName : null | string = null;
+
     setSeed(seed: string) {
         this.seed = seed;
         this.randomState = makeSeed(this.seed);
@@ -169,6 +168,7 @@ class Engine {
         this.currentQuestionIndex = 0;
         this.runningMateId = -1;
         this.currentScenario = newScenario;
+        this.initialScenarioName = newScenario.scenarioName;
         this.scenarioController.loadScenario(this, newScenario, 0, false);
         this.gameState = GameState.CandidateSelection;
         this.counters = new Map<string, number>();
@@ -430,8 +430,7 @@ class Engine {
 
         for (const answerEffect of selectedAnswer.answerEffects) {
 
-            let answerAmount = answerEffect.amount;
-            answerAmount = tuningMultiplier(answerAmount);
+            const answerAmount = answerEffect.amount;
 
             try {
                 const answerEffectType: AnswerEffectType = AnswerEffectType[answerEffect.answerEffectType as keyof typeof AnswerEffectType];
@@ -1177,6 +1176,7 @@ class Engine {
      * Adds a custom view (button to game bottom bar tab) with inner html set to innerHtml
      * @param viewName  
      * @param customViewCreator 
+     * @category Advanced Modding Functions
      */
     addCustomView(viewName : string, customViewCreator : CustomViewCreator) {
         this.customViews.set(viewName, customViewCreator);
@@ -1185,11 +1185,64 @@ class Engine {
     /**
      * Removes custom view with name viewName
      * @param viewName 
+     * @category Advanced Modding Functions
      */
     removeCustomView(viewName : string) {
         this.customViews.delete(viewName);
     }
+
+    /**
+     * Sets a flag in the user's local storage. Can be used for unlockables in mods, persisting data. Does not save between accounts.
+     * Only works if the scenario has already been loaded in (should always work)
+     * Safer than accessing localStorage yourself (handles edgecases, makes sure the flag name is unique to your scenario)
+     * @param flag 
+     * @param value 
+     * @category Advanced Modding Functions
+     * @returns 
+     */
+    setLocalStorageFlag(flag : string, value : boolean) {
+        if(this.initialScenarioName == null) {
+            console.error("Cannot set local storage flag, scenario name is null");
+            return;
+        }
+
+        try {
+            localStorage.setItem(this.initialScenarioName + "/" + flag, value ? "1" : "0");
+        }
+        catch(e) {
+            console.error("Could not set local storage flag:", e);
+        }
+    }
+
+    /**
+     * Gets a flag in the user's local storage. Can be used for unlockables in mods, persisting data. Does not save between accounts.
+     * Only works if the scenario has already been loaded in (should always work)
+     * Safer than accessing localStorage yourself (handles edgecases, makes sure the flag name is unique to your scenario)
+     * @param flag 
+     * @param value 
+     * @category Advanced Modding Functions
+     * @returns 
+     */
+    getLocalStorageFlag(flag : string) : boolean {
+        if(this.initialScenarioName == null) {
+            console.error("Cannot get local storage flag" + flag + ", scenario name is null");
+            return false;
+        }
+
+        try {
+            const res = localStorage.getItem(this.initialScenarioName + "/" + flag);
+            if(res == null) {
+                return false;
+            }
+
+            return res == "1";
+        }
+        catch(e) {
+            console.error("Could not get local storage flag:", e);
+            return false;
+        }
+    }
 }
 
-export { Engine, GameState, tuningMultiplier };
+export { Engine, GameState };
 

@@ -1,5 +1,4 @@
 import { assert, expect, test } from "vitest";
-import { tuningMultiplier } from "../../oseg/engine/Engine";
 import { AnswerModel } from "../../oseg/engine/models/AnswerModel";
 import { getBlankHeadlessEngine } from "../HeadlessEngine";
 
@@ -26,7 +25,7 @@ async function testGlobalAnswerEffect() {
 
     engine.applyAnswer(answer);
     const opinionAfter = engine.scenarioController.getGlobalModifierForCandidate(candidateId);
-    expect(opinionAfter).toBe(opinionBefore + tuningMultiplier(amount));
+    expect(opinionAfter).toBe(opinionBefore + amount);
 }
 
 async function testStateAnswerEffect() {
@@ -57,7 +56,7 @@ async function testStateAnswerEffect() {
     const opinionAfter = engine.scenarioController.getStateControllerByStateId(stateId)?.getCandidateStateModifier(candidateId);
 
     assert(opinionAfter != undefined);
-    expect(opinionAfter).toBe(opinionBefore + tuningMultiplier(amount));
+    expect(opinionAfter).toBe(opinionBefore + amount);
 }
 
 
@@ -92,7 +91,7 @@ async function testIssueAnswerEffect() {
 
     console.log(opinionBefore,opinionAfter)
 
-    expect(opinionAfter).toBe(opinionBefore + tuningMultiplier(amount));
+    expect(opinionAfter).toBe(opinionBefore + amount);
 }
 
 test('test global answer effect', testGlobalAnswerEffect);
