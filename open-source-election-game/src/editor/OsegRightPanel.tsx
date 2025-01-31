@@ -42,7 +42,7 @@ const engine = new Engine();
 engine.useRng = false;
 
 function OsegRightPanel(props: OsegRightPanelProps) {
-  const { mapSvg, data, logic, onStateClicked, sideIndex, questionIndex, css } =
+  const { mapSvg, data, logic, onStateClicked, sideIndex, questionIndex } =
     props;
   const [rightNavBar, setRightNavBar] = useState<RightNavBar>(RightNavBar.Map);
 
@@ -218,12 +218,8 @@ function OsegRightPanel(props: OsegRightPanelProps) {
     }
   }
 
-  const encodedStyle = encodeURIComponent(css);
-  const stylePath = 'data:text/css;charset=utf-8,' + encodedStyle;
-
   return (
     <div className="OsegPanel">
-      <link rel="stylesheet" type="text/css" href={stylePath} />
       <EnumNavBar
         description="Preview"
         enumValueAsString={RightNavBar[rightNavBar].toString()}
