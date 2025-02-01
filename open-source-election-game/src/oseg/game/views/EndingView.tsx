@@ -12,6 +12,7 @@ interface EndingViewProps {
   engine: Engine;
   theme: ThemeModel;
   mapSvg: string;
+  preview?: boolean;
 }
 
 enum EndingTab {
@@ -25,7 +26,7 @@ function EndingView(props: EndingViewProps) {
   const [currentTab, setCurrentTab] = useState<EndingTab>(
     EndingTab.EndingSlides
   );
-  const { engine, theme, mapSvg } = props;
+  const { engine, theme, mapSvg, preview } = props;
 
   const [finalResults, setFinalResults] = useState(() => engine.getFinalResults());
   const [historicalResults, setHistoricalResults] = useState(() => engine.getHistoricalResults());
@@ -44,12 +45,45 @@ function EndingView(props: EndingViewProps) {
     if (currentTab == EndingTab.EndingSlides) {
       return (
         <>
-          <EndingSlides theme={theme} engine={engine}></EndingSlides>
-          <FinalResults
-            engine={engine}
-            theme={theme}
-            results={finalResults}
-          ></FinalResults>
+          {preview ? (
+            <>
+              <h2>preview</h2>
+              {finalResults.candidates.map((candidate) => (
+                <div className="EndingAdjustVotesContainer">
+                  <h4>{candidate.getFullName()}</h4>
+                  <div>
+                    <label htmlFor={`${candidate.getFullName()} EV`}>EV:</label>
+                    <input
+                      type="number"
+                      id={`${candidate.getFullName()} EV`}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor={`${candidate.getFullName()} PV`}>PV:</label>
+                    <input
+                      type="number"
+                      id={`${candidate.getFullName()} PV`}
+                    />
+                  </div>
+                </div>
+              ))}
+              <EndingSlides theme={theme} engine={engine}></EndingSlides>
+              <FinalResults
+                engine={engine}
+                theme={theme}
+                results={finalResults}
+              ></FinalResults>
+            </>
+          ) : (
+            <>
+              <EndingSlides theme={theme} engine={engine}></EndingSlides>
+              <FinalResults
+                engine={engine}
+                theme={theme}
+                results={finalResults}
+              ></FinalResults>
+            </>
+          )}
         </>
       );
     } else if (currentTab == EndingTab.Map) {

@@ -207,6 +207,7 @@ function OsegRightPanel(props: OsegRightPanelProps) {
             engine={engine}
             theme={theme}
             mapSvg={mapSvg}
+            preview={true}
           ></EndingView>
         </>
       );

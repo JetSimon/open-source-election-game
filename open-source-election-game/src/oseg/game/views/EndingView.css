@@ -59,3 +59,13 @@
     opacity: 0.25;
     background-color: black;
 }
+
+.EndingAdjustVotesContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.EndingAdjustVotesContainer h4 {
+    padding: 0;
+    margin: 0;
+}
