@@ -8,24 +8,29 @@ interface FinalResultsProps {
   results: FinalResultsModel;
   engine: Engine;
   theme: ThemeModel;
+  changedEV?: Map<number, number>; 
+  changedPV?: Map<number, number>; 
 }
 
 const numberFormatter = Intl.NumberFormat();
 
 function FinalResults(props: FinalResultsProps) {
-  const { results, theme, engine } = props;
+  const { results, theme, engine, changedPV, changedEV } = props;
 
-  function getEv(candidate: CandidateController): number {
-    const ev = results.electoralVotes.get(candidate.getId());
+  // Use custom PV/EVs if given
+  const getEv = (candidate: CandidateController): number => {
+    const candidateId = candidate.getId();
+    const ev = changedEV?.get(candidateId) ?? results.electoralVotes.get(candidateId);
     return ev == undefined ? -1 : ev;
-  }
+  };
 
-  function getPv(candidate: CandidateController): number {
-    const pv = results.popularVotes.get(candidate.getId());
+  const getPv = (candidate: CandidateController): number => {
+    const candidateId = candidate.getId();
+    const pv = changedPV?.get(candidateId) ?? results.popularVotes.get(candidateId);
     return pv == undefined ? -1 : pv;
-  }
+  };
 
-  function getPvPercent(candidate: CandidateController): string {
+  const getPvPercent = (candidate: CandidateController): string => {
     const pv = getPv(candidate);
 
     // Calculate total votes if not already given
@@ -36,15 +41,14 @@ function FinalResults(props: FinalResultsProps) {
         totalVotes += votesForCandidate;
       }
     }
-    
+
     if (pv === -1 || totalVotes === 0) {
       return "0.00";
     }
-    
-    const votePercentage = (pv / totalVotes) * 100;
 
+    const votePercentage = (pv / totalVotes) * 100;
     return votePercentage.toFixed(2);
-  }
+  };
 
   const hasEv = results.totalElectoralVotes > 0;
 

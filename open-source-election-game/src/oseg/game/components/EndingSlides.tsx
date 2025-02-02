@@ -6,15 +6,17 @@ import { ThemeModel } from "../../engine/models/ThemeModel";
 interface EndingSlidesProps {
     theme: ThemeModel;
     engine: Engine;
+    changedEV?: Map<number, number>;
+    changedPV?: Map<number, number>;
 }
 
 function EndingSlides(props: EndingSlidesProps) {
 
     const [endingSlideIndex, setEndingSlideIndex] = useState(0);
 
-    const { theme, engine } = props;
+    const { theme, engine, changedEV, changedPV } = props;
 
-    const ending: EndingModel = engine.getEnding();
+    const ending: EndingModel = engine.getEnding(changedEV, changedPV);
 
     if(ending == undefined) {
         return <p>ending is undefined</p>

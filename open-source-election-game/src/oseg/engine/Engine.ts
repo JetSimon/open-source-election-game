@@ -627,7 +627,7 @@ class Engine {
      * @category Core
      * @returns 
      */
-    getEnding(): EndingModel {
+    getEnding(changedEV?: Map<number, number>, changedPV?: Map<number, number>): EndingModel {
         if (this.createEnding == null) {
             return {
                 slides: [{
@@ -639,7 +639,21 @@ class Engine {
         }
 
         try {
-            const ending = this.createEnding(this, this.getFinalResults());
+            const results = this.getFinalResults();
+            
+            if (changedEV) {
+                for (const [candidateId, ev] of changedEV.entries()) {
+                    results.electoralVotes.set(candidateId, ev);
+                }
+            }
+            
+            if (changedPV) {
+                for (const [candidateId, pv] of changedPV.entries()) {
+                    results.popularVotes.set(candidateId, pv);
+                }
+            }
+            
+            const ending = this.createEnding(this, results);
             return ending;
         }
         catch (e: unknown) {

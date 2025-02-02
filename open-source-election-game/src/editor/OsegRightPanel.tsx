@@ -202,7 +202,6 @@ function OsegRightPanel(props: OsegRightPanelProps) {
     } else if (rightNavBar == RightNavBar.Ending) {
       return (
         <>
-          <h2>Ending Preview is currently a work in progress!</h2>
           <EndingView
             engine={engine}
             theme={theme}

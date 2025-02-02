@@ -194,6 +194,11 @@ class ScenarioController {
         return candidate;
     }
 
+    setPlayerByCandidateId(candidateId: number) {
+        const currentSide = this.model.scenarioSides[0];
+        currentSide.playerId = candidateId;
+    }
+
     /**
      * 
      * @returns The number of ENABLED questions in the scenario
