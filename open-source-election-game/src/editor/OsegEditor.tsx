@@ -128,6 +128,11 @@ function OsegEditor() {
     }
 
     function save(fileIndex : number) {
+
+        if(!window.confirm("Are you sure you want to save?")) {
+            return;
+        }
+
         console.log("Saved");
         const indexKey = fileIndex === 1 ? "" : fileIndex;
         localStorage.setItem(`editorLogic${indexKey}`, logic);
