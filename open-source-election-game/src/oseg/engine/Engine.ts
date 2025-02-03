@@ -259,11 +259,11 @@ class Engine {
      * Adds tooltips to any string
      * @param s 
      */
-    addTooltips(s : string) : string {
+    addTooltips(s : string, positionRelative : boolean = true) : string {
         const sortedKeys = Array.from(this.tooltips.keys()).sort((a, b) => a.length - b.length);
         let finalString = s;
         for(const key of sortedKeys) {
-            const tooltip = `<span class="InGameTooltip">${key}<span class="InGameTooltipText">${this.tooltips.get(key)}</span></span>`
+            const tooltip = `<span ${positionRelative ? "style='position:relative'" : ""} class="InGameTooltip">${key}<span class="InGameTooltipText">${this.tooltips.get(key)}</span></span>`
             finalString = finalString.replace(key, tooltip);
         }
         return finalString;
