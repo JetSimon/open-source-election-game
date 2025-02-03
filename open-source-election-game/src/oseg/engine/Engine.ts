@@ -648,9 +648,12 @@ class Engine {
             }
             
             if (changedPV) {
+                let totalVote = 0;
                 for (const [candidateId, pv] of changedPV.entries()) {
                     results.popularVotes.set(candidateId, pv);
+                    totalVote += pv;
                 }
+                results.totalPopularVotes = totalVote;
             }
             
             const ending = this.createEnding(this, results);
@@ -1100,7 +1103,7 @@ class Engine {
      */
     getPlayerPvPercentage(results: FinalResultsModel) {
         const pv = results.popularVotes.get(this.getPlayerCandidateController().getId()) ?? 0;
-        return pv / this.getTotalPopularVotes();
+        return pv / results.totalPopularVotes;
     }
 
     /**

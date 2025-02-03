@@ -34,9 +34,15 @@ function FinalResults(props: FinalResultsProps) {
     const pv = getPv(candidate);
 
     // Calculate total votes if not already given
-    let totalVotes = results.totalPopularVotes;
-    if (!totalVotes) {
-      totalVotes = 0;
+    let totalVotes = 0;
+    if (changedPV) {
+      // Recalculate total votes based on the custom PV values
+      for (const votesForCandidate of changedPV.values()) {
+        totalVotes += votesForCandidate;
+      }
+    } else if (results.totalPopularVotes) {
+      totalVotes = results.totalPopularVotes;
+    } else {
       for (const votesForCandidate of results.popularVotes.values()) {
         totalVotes += votesForCandidate;
       }
