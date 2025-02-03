@@ -37,6 +37,7 @@ function EndingView(props: EndingViewProps) {
   const [tempEV, setTempEV] = useState<Map<number, number>>(new Map());
   const [tempPV, setTempPV] = useState<Map<number, number>>(new Map());
 
+  // Switches to candidate chosen
   const switchToCandidate = (candidateId: number) => {
     engine.scenarioController.setPlayerByCandidateId(candidateId);
     const newFinalResults = engine.getFinalResults();
@@ -48,7 +49,8 @@ function EndingView(props: EndingViewProps) {
     const newFinalResults = engine.getFinalResults();
     setHistoricalResults(engine.getHistoricalResults());
     setFinalResults(newFinalResults);
-
+    
+    // Sets initial PV and EV so changedEV and changedPV aren't empty from start
     const initialPv = new Map<number, number>();
     const initialEv = new Map<number, number>();
 
@@ -57,6 +59,7 @@ function EndingView(props: EndingViewProps) {
 
       const pv = newFinalResults.popularVotes.get(candidateId) ?? 0;
       const ev = newFinalResults.electoralVotes.get(candidateId) ?? 0;
+      
       initialPv.set(candidateId, pv);
       initialEv.set(candidateId, ev);
     }

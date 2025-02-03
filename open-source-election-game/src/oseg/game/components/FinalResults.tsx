@@ -18,13 +18,13 @@ function FinalResults(props: FinalResultsProps) {
   const { results, theme, engine, changedPV, changedEV } = props;
 
   // Use custom PV/EVs if given
-  const getEv = (candidate: CandidateController): number => {
+  function getEv(candidate: CandidateController): number {
     const candidateId = candidate.getId();
     const ev = changedEV?.get(candidateId) ?? results.electoralVotes.get(candidateId);
     return ev == undefined ? -1 : ev;
   };
 
-  const getPv = (candidate: CandidateController): number => {
+  function getPv(candidate: CandidateController): number {
     const candidateId = candidate.getId();
     const pv = changedPV?.get(candidateId) ?? results.popularVotes.get(candidateId);
     return pv == undefined ? -1 : pv;
