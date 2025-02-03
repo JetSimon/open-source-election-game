@@ -133,7 +133,7 @@ function GameView(props: GameViewProps) {
     }
 
     if (showFeedback && selectedAnswer.feedback != "") {
-      showFeedbackPopup(engine.addTooltips(selectedAnswer.feedback, false));
+      showFeedbackPopup(engine.addTooltips(selectedAnswer.feedback));
     } else {
       onFeedbackPopupClosed();
     }
