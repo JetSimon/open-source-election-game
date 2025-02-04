@@ -27,6 +27,9 @@ function EndingPreview(props: EndingPreviewProps) {
   const [ending, setEnding] = useState(() => engine.getEnding());
   const [totalPopularVote, setTotalPopularVote] = useState<number>(0);
 
+  // Get candidate IDs that have sides
+  const candidateIdsWithSides = new Set(data.scenarioSides.map(side => side.playerId));
+
   // Calculate total popular vote whenever changedPV changes
   useEffect(() => {
     let totalPV = 0;
@@ -120,9 +123,11 @@ function EndingPreview(props: EndingPreviewProps) {
             />
           </div>
           <p>{calculatePopularVotePercentage(candidate.getId())}%</p>
-          <button onClick={() => switchToCandidate(candidate.getId())}>
-            Switch to Candidate
-          </button>
+          {candidateIdsWithSides.has(candidate.getId()) && (
+            <button onClick={() => switchToCandidate(candidate.getId())}>
+              Switch to Candidate
+            </button>
+          )}
         </div>
       ))}
       <div>
