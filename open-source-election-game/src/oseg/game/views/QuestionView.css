@@ -16,6 +16,7 @@
 
 .Answer {
     margin-bottom: 8px;
+    position: relative;
 }
 
 .Answer label {

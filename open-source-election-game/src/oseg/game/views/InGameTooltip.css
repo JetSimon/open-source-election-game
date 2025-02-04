@@ -1,7 +1,6 @@
 .InGameTooltip {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.237);
-    position: relative;
 }
 
 .InGameTooltip .InGameTooltipText {
