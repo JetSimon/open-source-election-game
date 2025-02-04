@@ -625,9 +625,11 @@ class Engine {
     /**
      * Called when calculating the results of a game, returns an EndingModel to create slides out of
      * @category Core
+     * @param overrideEv for editor, when user changes electoral votes, changes the ending based on the ev
+     * @param overridePv for editor, when user changes popular votes, changes ending based on pv
      * @returns 
      */
-    getEnding(changedEV?: Map<number, number>, changedPV?: Map<number, number>): EndingModel {
+    getEnding(overrideEv: Map<number, number> | null = null, overridePv: Map<number, number> | null = null): EndingModel {
         if (this.createEnding == null) {
             return {
                 slides: [{
@@ -641,15 +643,15 @@ class Engine {
         try {
             const results = this.getFinalResults();
         
-            if (changedEV) {
-                for (const [candidateId, ev] of changedEV.entries()) {
+            if (overrideEv) {
+                for (const [candidateId, ev] of overrideEv.entries()) {
                     results.electoralVotes.set(candidateId, ev);
                 }
             }
             
-            if (changedPV) {
+            if (overridePv) {
                 let totalVote = 0;
-                for (const [candidateId, pv] of changedPV.entries()) {
+                for (const [candidateId, pv] of overridePv.entries()) {
                     results.popularVotes.set(candidateId, pv);
                     totalVote += pv;
                 }

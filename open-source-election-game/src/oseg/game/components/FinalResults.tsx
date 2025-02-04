@@ -28,7 +28,7 @@ function FinalResults(props: FinalResultsProps) {
     return pv == undefined ? -1 : pv;
   };
 
-  const getPvPercent = (candidate: CandidateController): string => {
+  function getPvPercent(candidate: CandidateController): string {
     const pv = getPv(candidate);
 
     // Calculate total votes if not already given

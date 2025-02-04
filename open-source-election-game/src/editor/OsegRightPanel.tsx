@@ -45,7 +45,6 @@ function OsegRightPanel(props: OsegRightPanelProps) {
   const { mapSvg, data, logic, onStateClicked, sideIndex, questionIndex } =
     props;
   const [rightNavBar, setRightNavBar] = useState<RightNavBar>(RightNavBar.Map);
-
   // Using this to make sure that the candidate information updates as you type in the editor
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_lastUpdatedTime, setLastUpdatedTime] = useState(Date.now());
@@ -202,10 +201,10 @@ function OsegRightPanel(props: OsegRightPanelProps) {
           ></BottomBanner>
         </div>
       );
-    // WIP: for easy view of historical results
     } else if (rightNavBar == RightNavBar.Ending) {
       return (
         <EndingPreview
+          data={data}
           engine={engine}
           theme={theme}
           initialResults={finalResults}

@@ -2,17 +2,19 @@ import { useEffect, useState } from "react";
 import { Engine } from "../../oseg/engine/Engine";
 import { FinalResultsModel } from "../../oseg/engine/models/FinalResultsModel";
 import { ThemeModel } from "../../oseg/engine/models/ThemeModel";
+import { ScenarioModel } from "../../oseg/engine/models/ScenarioModel";
 import EndingSlides from "../../oseg/game/components/EndingSlides";
 import './EndingPreview.css';
 
 interface EndingPreviewProps {
+  data: ScenarioModel;
   engine: Engine;
   theme: ThemeModel;
   initialResults: FinalResultsModel;
 }
 
 function EndingPreview(props: EndingPreviewProps) {
-  const { engine, theme, initialResults } = props;
+  const { data, engine, theme, initialResults } = props;
 
   const [changedEV, setChangedEV] = useState<Map<number, number>>(() => 
     new Map(initialResults.electoralVotes)
@@ -36,19 +38,46 @@ function EndingPreview(props: EndingPreviewProps) {
     setTotalPopularVote(totalPV);
   }, [changedPV, initialResults]);
 
-  function switchToCandidate(candidateId: number) {
-    engine.scenarioController.setPlayerByCandidateId(candidateId);
-    const newEnding = engine.getEnding(changedEV, changedPV);
-    setEnding(newEnding);
-  };
+  useEffect(() => {
+    setChangedEV(new Map(initialResults.electoralVotes));
+    setChangedPV(new Map(initialResults.popularVotes));
+    
+    let totalPV = 0;
+    for (const candidate of initialResults.candidates) {
+      totalPV += initialResults.popularVotes.get(candidate.getId()) ?? 0;
+    }
+    setTotalPopularVote(totalPV);
+    // Generate new ending when new template loaded
+    setEnding(engine.getEnding()); 
+  }, [initialResults]);
+  
 
-  const changeEV = (candidateId: number, ev: number) => {
+  function switchToCandidate(candidateId: number) {
+    const candidateIndex = data?.scenarioSides.map((side) => side.playerId).indexOf(candidateId);
+    const candidate = data?.candidates.find((can) => can.id === candidateId);
+
+    if (candidateIndex == null) { 
+      console.error("Candidate index null!");
+      return;
+    }
+    
+    if (candidate == null) { 
+      console.error("Candidate ID not found!");
+      return;
+    }
+    // Get ID of first running mate
+    const runningMateId = candidate.runningMateIds.length > 0 ? candidate.runningMateIds[0] : -1;
+
+    engine.setScenarioSide(candidateIndex, runningMateId, false);
+  }
+
+  function changeEV(candidateId: number, ev: number) {
     const newEv = new Map(changedEV);
     newEv.set(candidateId, ev);
     setChangedEV(newEv);
   };
 
-  const changePV = (candidateId: number, pv: number) => {
+  function changePV(candidateId: number, pv: number) {
     const newPv = new Map(changedPV);
     newPv.set(candidateId, pv);
     setChangedPV(newPv);
