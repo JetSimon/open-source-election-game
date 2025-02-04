@@ -7,12 +7,12 @@ import MusicPlayer from "../oseg/game/components/MusicPlayer";
 import QuoteHeader from "../oseg/game/components/QuoteHeader";
 import CandidateSelectionView from "../oseg/game/views/CandidateSelectionView";
 import ElectionDescriptionView from "../oseg/game/views/ElectionDescriptionView";
-import EndingView from "../oseg/game/views/EndingView";
 import MapView from "../oseg/game/views/MapView";
 import QuestionView from "../oseg/game/views/QuestionView";
 import EnumNavBar from "./components/EnumNavBar";
 import CustomViewPreview from "./CustomViewPreview";
 import OsegSimulator from "./OsegSimulator";
+import EndingPreview from "./graphicalEditors/EndingPreview";
 
 enum RightNavBar {
   Map,
@@ -50,6 +50,8 @@ function OsegRightPanel(props: OsegRightPanelProps) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_lastUpdatedTime, setLastUpdatedTime] = useState(Date.now());
 
+  const [finalResults, setFinalResults] = useState(() => engine.getFinalResults());
+
   function setRightNavBarFromString(s: string) {
     setRightNavBar(RightNavBar[s as keyof typeof RightNavBar]);
   }
@@ -58,6 +60,8 @@ function OsegRightPanel(props: OsegRightPanelProps) {
     if (data != null) {
       // Load scenario as observer (aka we don't assume the player is playing as anyone, just for previewing)
       engine.loadScenario(data, true);
+
+      setFinalResults(engine.getFinalResults());
 
       const handle = setTimeout(() => {
         setLastUpdatedTime(Date.now());
@@ -201,14 +205,11 @@ function OsegRightPanel(props: OsegRightPanelProps) {
     // WIP: for easy view of historical results
     } else if (rightNavBar == RightNavBar.Ending) {
       return (
-        <>
-          <EndingView
-            engine={engine}
-            theme={theme}
-            mapSvg={mapSvg}
-            preview={true}
-          ></EndingView>
-        </>
+        <EndingPreview
+          engine={engine}
+          theme={theme}
+          initialResults={finalResults}
+        ></EndingPreview>
       );
     } else if(rightNavBar == RightNavBar.CustomView) {
       return (

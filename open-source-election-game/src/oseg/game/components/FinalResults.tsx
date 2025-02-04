@@ -8,25 +8,23 @@ interface FinalResultsProps {
   results: FinalResultsModel;
   engine: Engine;
   theme: ThemeModel;
-  changedEV?: Map<number, number>; 
-  changedPV?: Map<number, number>; 
 }
 
 const numberFormatter = Intl.NumberFormat();
 
 function FinalResults(props: FinalResultsProps) {
-  const { results, theme, engine, changedPV, changedEV } = props;
+  const { results, theme, engine } = props;
 
   // Use custom PV/EVs if given
   function getEv(candidate: CandidateController): number {
     const candidateId = candidate.getId();
-    const ev = changedEV?.get(candidateId) ?? results.electoralVotes.get(candidateId);
+    const ev = results.electoralVotes.get(candidateId);
     return ev == undefined ? -1 : ev;
   };
 
   function getPv(candidate: CandidateController): number {
     const candidateId = candidate.getId();
-    const pv = changedPV?.get(candidateId) ?? results.popularVotes.get(candidateId);
+    const pv = results.popularVotes.get(candidateId);
     return pv == undefined ? -1 : pv;
   };
 
@@ -35,17 +33,8 @@ function FinalResults(props: FinalResultsProps) {
 
     // Calculate total votes if not already given
     let totalVotes = 0;
-    if (changedPV) {
-      // Recalculate total votes based on changed PV values
-      for (const votesForCandidate of changedPV.values()) {
-        totalVotes += votesForCandidate;
-      }
-    } else if (results.totalPopularVotes) { // If no changed PV values, use results
-      totalVotes = results.totalPopularVotes;
-    } else {
-      for (const votesForCandidate of results.popularVotes.values()) {
-        totalVotes += votesForCandidate;
-      }
+    for (const votesForCandidate of results.popularVotes.values()) {
+      totalVotes += votesForCandidate;
     }
 
     if (pv === -1 || totalVotes === 0) {

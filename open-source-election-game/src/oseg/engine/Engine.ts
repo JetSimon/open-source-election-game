@@ -640,7 +640,7 @@ class Engine {
 
         try {
             const results = this.getFinalResults();
-            
+        
             if (changedEV) {
                 for (const [candidateId, ev] of changedEV.entries()) {
                     results.electoralVotes.set(candidateId, ev);
@@ -655,7 +655,7 @@ class Engine {
                 }
                 results.totalPopularVotes = totalVote;
             }
-            
+
             const ending = this.createEnding(this, results);
             return ending;
         }
