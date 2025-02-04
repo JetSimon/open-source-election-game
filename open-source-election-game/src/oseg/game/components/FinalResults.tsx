@@ -15,36 +15,35 @@ const numberFormatter = Intl.NumberFormat();
 function FinalResults(props: FinalResultsProps) {
   const { results, theme, engine } = props;
 
+  // Use custom PV/EVs if given
   function getEv(candidate: CandidateController): number {
-    const ev = results.electoralVotes.get(candidate.getId());
+    const candidateId = candidate.getId();
+    const ev = results.electoralVotes.get(candidateId);
     return ev == undefined ? -1 : ev;
-  }
+  };
 
   function getPv(candidate: CandidateController): number {
-    const pv = results.popularVotes.get(candidate.getId());
+    const candidateId = candidate.getId();
+    const pv = results.popularVotes.get(candidateId);
     return pv == undefined ? -1 : pv;
-  }
+  };
 
   function getPvPercent(candidate: CandidateController): string {
     const pv = getPv(candidate);
 
     // Calculate total votes if not already given
-    let totalVotes = results.totalPopularVotes;
-    if (!totalVotes) {
-      totalVotes = 0;
-      for (const votesForCandidate of results.popularVotes.values()) {
-        totalVotes += votesForCandidate;
-      }
+    let totalVotes = 0;
+    for (const votesForCandidate of results.popularVotes.values()) {
+      totalVotes += votesForCandidate;
     }
-    
+
     if (pv === -1 || totalVotes === 0) {
       return "0.00";
     }
-    
-    const votePercentage = (pv / totalVotes) * 100;
 
+    const votePercentage = (pv / totalVotes) * 100;
     return votePercentage.toFixed(2);
-  }
+  };
 
   const hasEv = results.totalElectoralVotes > 0;
 

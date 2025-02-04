@@ -1,20 +1,17 @@
 import { useState } from "react";
-import { Engine } from "../../engine/Engine";
 import { EndingModel } from "../../engine/models/EndingModel";
 import { ThemeModel } from "../../engine/models/ThemeModel";
 
 interface EndingSlidesProps {
     theme: ThemeModel;
-    engine: Engine;
+    ending: EndingModel; 
 }
 
 function EndingSlides(props: EndingSlidesProps) {
 
     const [endingSlideIndex, setEndingSlideIndex] = useState(0);
 
-    const { theme, engine } = props;
-
-    const ending: EndingModel = engine.getEnding();
+    const { theme, ending } = props;
 
     if(ending == undefined) {
         return <p>ending is undefined</p>

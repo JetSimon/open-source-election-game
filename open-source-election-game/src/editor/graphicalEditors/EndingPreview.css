@@ -1,0 +1,10 @@
+.EndingPreviewInputContainer {
+    display: flex;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.EndingPreviewInputContainer h4 {
+    padding: 0;
+    margin: 0;
+}

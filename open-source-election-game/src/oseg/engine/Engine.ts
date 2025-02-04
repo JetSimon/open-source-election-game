@@ -625,9 +625,11 @@ class Engine {
     /**
      * Called when calculating the results of a game, returns an EndingModel to create slides out of
      * @category Core
+     * @param overrideEv for editor, when user changes electoral votes, changes the ending based on the ev
+     * @param overridePv for editor, when user changes popular votes, changes ending based on pv
      * @returns 
      */
-    getEnding(): EndingModel {
+    getEnding(overrideEv: Map<number, number> | null = null, overridePv: Map<number, number> | null = null): EndingModel {
         if (this.createEnding == null) {
             return {
                 slides: [{
@@ -639,7 +641,24 @@ class Engine {
         }
 
         try {
-            const ending = this.createEnding(this, this.getFinalResults());
+            const results = this.getFinalResults();
+        
+            if (overrideEv) {
+                for (const [candidateId, ev] of overrideEv.entries()) {
+                    results.electoralVotes.set(candidateId, ev);
+                }
+            }
+            
+            if (overridePv) {
+                let totalVote = 0;
+                for (const [candidateId, pv] of overridePv.entries()) {
+                    results.popularVotes.set(candidateId, pv);
+                    totalVote += pv;
+                }
+                results.totalPopularVotes = totalVote;
+            }
+
+            const ending = this.createEnding(this, results);
             return ending;
         }
         catch (e: unknown) {
@@ -1086,7 +1105,7 @@ class Engine {
      */
     getPlayerPvPercentage(results: FinalResultsModel) {
         const pv = results.popularVotes.get(this.getPlayerCandidateController().getId()) ?? 0;
-        return pv / this.getTotalPopularVotes();
+        return pv / results.totalPopularVotes;
     }
 
     /**

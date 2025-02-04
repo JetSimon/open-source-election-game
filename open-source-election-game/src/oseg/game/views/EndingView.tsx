@@ -22,9 +22,7 @@ enum EndingTab {
 }
 
 function EndingView(props: EndingViewProps) {
-  const [currentTab, setCurrentTab] = useState<EndingTab>(
-    EndingTab.EndingSlides
-  );
+  const [currentTab, setCurrentTab] = useState<EndingTab>(EndingTab.EndingSlides);
   const { engine, theme, mapSvg } = props;
 
   const [finalResults, setFinalResults] = useState(() => engine.getFinalResults());
@@ -32,7 +30,8 @@ function EndingView(props: EndingViewProps) {
 
   // Update results when scenario changes
   useEffect(() => {
-    setFinalResults(engine.getFinalResults());
+    const newFinalResults = engine.getFinalResults();
+    setFinalResults(newFinalResults);
     setHistoricalResults(engine.getHistoricalResults());
   }, [engine, engine.scenarioController.model]);
 
@@ -44,12 +43,8 @@ function EndingView(props: EndingViewProps) {
     if (currentTab == EndingTab.EndingSlides) {
       return (
         <>
-          <EndingSlides theme={theme} engine={engine}></EndingSlides>
-          <FinalResults
-            engine={engine}
-            theme={theme}
-            results={finalResults}
-          ></FinalResults>
+          <EndingSlides theme={theme} ending={engine.getEnding()} />
+          <FinalResults engine={engine} theme={theme} results={finalResults} />
         </>
       );
     } else if (currentTab == EndingTab.Map) {

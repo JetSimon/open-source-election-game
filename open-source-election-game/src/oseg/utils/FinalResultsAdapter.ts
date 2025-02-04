@@ -7,15 +7,15 @@ function convertHistoricalResultsToFinalResults(historical : HistoricalResultsMo
     const electoralVotes = new Map<number, number>();
 
     if (historical.popularVotes != null) {
-        Object.entries(historical.popularVotes).forEach(([candidate, pv]) => {
+        for (const [candidate, pv] of Object.entries(historical.popularVotes)) {
             popularVotes.set(Number(candidate), pv);
-        });
+        }
     }
 
     if (historical.electoralVotes != null) {
-        Object.entries(historical.electoralVotes).forEach(([candidate, ev]) => {
+        for (const [candidate, ev] of Object.entries(historical.electoralVotes)) {
             electoralVotes.set(Number(candidate), ev);
-        });
+        }
     }
     
     // Get total pv and ev for converting to FinalResultsModel
