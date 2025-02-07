@@ -477,9 +477,10 @@ class Engine {
 
                     for (const state of this.scenarioController.getStates()) {
                         const stateIssueScore = state.issueScores.getIssueScoreForIssue(issue);
+                        const stateWeight = state.issueScores.getWeightForIssue(issue);
                         const diff = Math.abs(amount - stateIssueScore);
-                        const dist = -diff + 1;
-                        const opinionDelta = dist * weight / 10;
+                        const dist = -diff + 1; // Between range -1 to 1
+                        const opinionDelta = dist * weight * stateWeight / 50; // Dividing by this much because TCT has weights that are like 3, which is pretty big (3 / 50 for example is 0.06 modifier which is more reasonable)
                         state.changeCandidateStateModifier(candidate, opinionDelta);
                     }
                 }
