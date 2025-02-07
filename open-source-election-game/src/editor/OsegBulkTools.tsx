@@ -55,6 +55,27 @@ function OsegBulkTools(props: OsegBulkToolsProps) {
     alert("All issue answer effects have been multiplied");
   }
 
+  
+  function multiplyAllTctIssueWeights(n: number) {
+    for (const scenarioSide of data.scenarioSides) {
+      for (const question of scenarioSide.questions) {
+        for (const answer of question.answers) {
+          for (const effect of answer.answerEffects) {
+            if (effect.answerEffectType == "TctIssue") {
+              if(effect.weight) {
+                effect.weight *= n;
+              }
+             
+            }
+          }
+        }
+      }
+    }
+
+    setData(JSON.parse(JSON.stringify(data)));
+    alert("All TctIssue weights have been multiplied");
+  }
+
   function multiplyAnswerEffectsForCandidate(n: number) {
     for (const scenarioSide of data.scenarioSides) {
       for (const question of scenarioSide.questions) {
@@ -138,6 +159,12 @@ function OsegBulkTools(props: OsegBulkToolsProps) {
         defaultValue={1}
         label="Multiply ALL Issue AnswerEffects by"
         onClick={multiplyAllIssueAnswerEffects}
+      ></GenericEditorBulkTool>
+
+    <GenericEditorBulkTool
+        defaultValue={1}
+        label="Multiply ALL TctIssue Weights by"
+        onClick={multiplyAllTctIssueWeights}
       ></GenericEditorBulkTool>
     </div>
   );

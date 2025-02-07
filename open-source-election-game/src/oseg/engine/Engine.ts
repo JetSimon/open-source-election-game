@@ -478,8 +478,8 @@ class Engine {
                     for (const state of this.scenarioController.getStates()) {
                         const stateIssueScore = state.issueScores.getIssueScoreForIssue(issue);
                         const diff = Math.abs(amount - stateIssueScore);
-                        const dist = ((1 / (diff + 1)) - 0.75) * 4;
-                        const opinionDelta = dist * weight;
+                        const dist = -diff + 1;
+                        const opinionDelta = dist * weight / 10;
                         state.changeCandidateStateModifier(candidate, opinionDelta);
                     }
                 }
