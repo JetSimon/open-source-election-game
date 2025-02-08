@@ -36,7 +36,10 @@
             ],
             "description": "'",
             "imageUrl": "https://www.jetsimon.com/public/static/images/james-k-polk-1844.jpg",
-            "runningMateIds": [],
+            "runningMateIds": [
+                135,
+                136
+            ],
             "startingGlobalMultiplier": 1
         },
         {
