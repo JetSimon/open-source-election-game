@@ -130,7 +130,7 @@ function StatePoll(props: StatePollProps) {
       }}
     >
       <h2>{stateController.model.name}</h2>
-      <h3>{showingStateEstimate ? "State Polls" : "Overall Polls"} </h3>
+      <h3>{showingStateEstimate ? engine.getLocalization("State Polls") : engine.getLocalization("Overall Polls")} </h3>
       <div className="StatePollValueList">
         {showingStateEstimate
           ? stateEstimate(stateController, engine)
