@@ -4,7 +4,6 @@ import { FinalResultsModel } from "../../oseg/engine/models/FinalResultsModel";
 import { ThemeModel } from "../../oseg/engine/models/ThemeModel";
 import { ScenarioModel } from "../../oseg/engine/models/ScenarioModel";
 import EndingSlides from "../../oseg/game/components/EndingSlides";
-import './EndingPreview.css';
 
 interface EndingPreviewProps {
   data: ScenarioModel;
@@ -22,6 +21,10 @@ function EndingPreview(props: EndingPreviewProps) {
   
   const [changedPV, setChangedPV] = useState<Map<number, number>>(() => 
     new Map(initialResults.popularVotes)
+  );
+
+  const [selectedRunningMates, setSelectedRunningMates] = useState<Map<number, number>>(
+    () => new Map()
   );
 
   const [ending, setEnding] = useState(() => engine.getEnding());
@@ -53,7 +56,20 @@ function EndingPreview(props: EndingPreviewProps) {
     // Generate new ending when new template loaded
     setEnding(engine.getEnding()); 
   }, [initialResults]);
-  
+
+  // Update scenario side when running mate changes (for dealing with changing running mate when same candidate)
+  useEffect(() => {
+    updateScenarioChangedRunningMate();
+  }, [selectedRunningMates, data?.scenarioSides, engine]);
+
+  function updateScenarioChangedRunningMate() {
+    for (const [candidateId, runningMateId] of selectedRunningMates.entries()) {
+      const candidateIndex = data?.scenarioSides.map((side) => side.playerId).indexOf(candidateId);
+      if (candidateIndex != -1 && candidateIndex != null) {
+        engine.setScenarioSide(candidateIndex, runningMateId, false);
+      }
+    }
+  }
 
   function switchToCandidate(candidateId: number) {
     const candidateIndex = data?.scenarioSides.map((side) => side.playerId).indexOf(candidateId);
@@ -68,8 +84,8 @@ function EndingPreview(props: EndingPreviewProps) {
       console.error("Candidate ID not found!");
       return;
     }
-    // Get ID of first running mate
-    const runningMateId = candidate.runningMateIds.length > 0 ? candidate.runningMateIds[0] : -1;
+    // Get ID of running mate
+    const runningMateId = selectedRunningMates.get(candidateId) ?? candidate.runningMateIds[0] ?? -1;
 
     engine.setScenarioSide(candidateIndex, runningMateId, false);
   }
@@ -100,6 +116,12 @@ function EndingPreview(props: EndingPreviewProps) {
     setEnding(engine.getEnding(changedEV, changedPV));
   }
 
+  function changeRunningMate(candidateId: number, runningMateId: number) {
+    const newSelectedRunningMate = new Map(selectedRunningMates);
+    newSelectedRunningMate.set(candidateId, runningMateId);
+    setSelectedRunningMates(newSelectedRunningMate);
+  }
+
   return (
     <div>
       <EndingSlides theme={theme} ending={ending} />
@@ -124,9 +146,22 @@ function EndingPreview(props: EndingPreviewProps) {
           </div>
           <p>{calculatePopularVotePercentage(candidate.getId())}%</p>
           {candidateIdsWithSides.has(candidate.getId()) && (
-            <button onClick={() => switchToCandidate(candidate.getId())}>
-              Switch to Candidate
-            </button>
+            <>
+              <label>Running Mate:</label>
+              <select
+                value={selectedRunningMates.get(candidate.getId()) ?? candidate.model.runningMateIds[0]}
+                onChange={(e) => changeRunningMate(candidate.getId(), parseInt(e.target.value))}
+              >
+                {candidate.model.runningMateIds.map((mateId) => (
+                  <option key={mateId} value={mateId}>
+                    {data.candidates.find((c) => c.id === mateId)?.firstName ?? "None"} {data.candidates.find((c) => c.id === mateId)?.lastName ?? "None"}
+                  </option>
+                ))}
+              </select>
+              <button onClick={() => switchToCandidate(candidate.getId())}>
+                Switch to Candidate
+              </button>
+            </>
           )}
         </div>
       ))}

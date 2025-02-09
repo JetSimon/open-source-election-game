@@ -32,7 +32,19 @@ function createEnding(engine, results) {
     }
     // If you played as Polk
     else if(playerId == 131) {
-        if(engine.playerWonEv(results)) {
+        // Running mate is George Dallas
+        if (engine.playerWonEv(results) && engine.runningMateId == 135) {
+            return {
+                slides: [
+                    {
+                        endingHeader: "Congratulations! You and Dallas have won the 1844 Election",
+                        imageUrl: "https://www.jetsimon.com/public/static/images/james-k-polk-1844.jpg",
+                        endingText: "<p>Your first order of business will be to confirm the annexation of Texas. More generally you can fight for the expansion of the United States in line with the ideals of \"Manifest Destiny\". With a Democratic majority in Congress, you will have wide latitude to implement your program, after four years of Tyler's paralysis. Best wishes for your term in office.</p>"
+                    }
+                ]
+            }
+        }
+        else if(engine.playerWonEv(results)) {
             return {
                 slides: [
                     {
