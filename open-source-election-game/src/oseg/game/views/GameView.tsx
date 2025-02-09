@@ -304,7 +304,7 @@ function GameView(props: GameViewProps) {
       <div className="BottomButtons">
         {showMap && !engine.waitingToPickState && (
           <button className="ToggleMapButton" onClick={() => setShowMap(false)}>
-            {engine.getLocalization("Back to the Game")}
+            Back to the Game
           </button>
         )}
         {showAutoplay >= 3 &&
@@ -316,10 +316,10 @@ function GameView(props: GameViewProps) {
             className="ToggleMapButton"
             onClick={() => setDonePlayingMapAnimation(true)}
           >
-            {engine.getLocalization("Skip to Results")}
+            Skip to Results
           </button>
         )}
-        {!engine.isGameOver() && !showMap && engine.customViews.size > 0 && <button disabled={customViewName == ""} onClick={() => setCustomViewName("")}>{engine.getLocalization("Questions")}</button>}
+        {!engine.isGameOver() && !showMap && engine.customViews.size > 0 && <button disabled={customViewName == ""} onClick={() => setCustomViewName("")}>Questions</button>}
         {!showMap && !engine.isGameOver() && makeCustomButtons()}
       </div>
       {!engine.isGameOver() && engine.waitingToPickState && (
@@ -327,7 +327,7 @@ function GameView(props: GameViewProps) {
           className="ChooseState"
           style={{ color: theme.primaryGameWindowTextColor }}
         >
-          {engine.getLocalization("Click on a state to visit")}
+          Click on a state to visit
         </p>
       )}
       <BottomBanner theme={theme} engine={engine}></BottomBanner>
