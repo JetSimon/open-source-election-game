@@ -257,6 +257,7 @@ function OsegSimulator(props: OsegSimulatorProps) {
     setWorstResult(null);
     setHistogram([]);
     setAllResultsIndex(0);
+    setSelectedAnswerIds(new Set());
   };
 
   if (isSimulating) {
@@ -284,6 +285,7 @@ function OsegSimulator(props: OsegSimulatorProps) {
             onChange={(e) =>
               setSelectedCandidate(Number.parseInt(e.target.value))
             }
+            defaultValue={selectedCandidate}
           >
             {getCandidatesWithSides().map((candidate) => {
               return (
