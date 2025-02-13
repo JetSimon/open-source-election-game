@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { StateController } from "../oseg/engine/controllers/StateController";
 import { Engine } from "../oseg/engine/Engine";
 import { ScenarioModel } from "../oseg/engine/models/ScenarioModel";
+import { convertHistoricalResultsToFinalResults } from "../oseg/utils/FinalResultsAdapter";
 import BottomBanner from "../oseg/game/components/BottomBanner";
 import MusicPlayer from "../oseg/game/components/MusicPlayer";
 import QuoteHeader from "../oseg/game/components/QuoteHeader";
+import FinalResults from "../oseg/game/components/FinalResults";
 import CandidateSelectionView from "../oseg/game/views/CandidateSelectionView";
 import ElectionDescriptionView from "../oseg/game/views/ElectionDescriptionView";
 import MapView from "../oseg/game/views/MapView";
@@ -21,6 +23,7 @@ enum RightNavBar {
   Simulator,
   Question,
   Ending,
+  Results,
   CustomView
 }
 
@@ -50,6 +53,7 @@ function OsegRightPanel(props: OsegRightPanelProps) {
   const [_lastUpdatedTime, setLastUpdatedTime] = useState(Date.now());
 
   const [finalResults, setFinalResults] = useState(() => engine.getFinalResults());
+  const [historicalResults, setHistoricalResults] = useState(() => engine.getHistoricalResults());
 
   function setRightNavBarFromString(s: string) {
     setRightNavBar(RightNavBar[s as keyof typeof RightNavBar]);
@@ -61,6 +65,7 @@ function OsegRightPanel(props: OsegRightPanelProps) {
       engine.loadScenario(data, true);
 
       setFinalResults(engine.getFinalResults());
+      setHistoricalResults(engine.getHistoricalResults());
 
       const handle = setTimeout(() => {
         setLastUpdatedTime(Date.now());
@@ -210,6 +215,19 @@ function OsegRightPanel(props: OsegRightPanelProps) {
           initialResults={finalResults}
         ></EndingPreview>
       );
+    } else if (rightNavBar == RightNavBar.Results) {
+      return (
+        <>
+          <h2>Results - This Game</h2>
+          <FinalResults engine={engine} theme={theme} results={finalResults} />
+          {historicalResults && (
+            <>
+              <h2>Results - Historical</h2>
+              <FinalResults engine={engine} theme={theme} results={convertHistoricalResultsToFinalResults(historicalResults, engine.scenarioController.getCandidates())} />
+            </>
+          )}
+        </>
+      )
     } else if(rightNavBar == RightNavBar.CustomView) {
       return (
         <CustomViewPreview engine={engine} theme={theme}>
