@@ -3,7 +3,7 @@
     margin:auto;
     width: 25%;
     left: 37%;
-    top: 25%;
+    top: 10%;
     background-color: white;
     border: black 1px solid;
     padding: 16px;
@@ -20,11 +20,6 @@
         overflow-y: scroll;
     }
 }
-
-.PopupBoxDesc {
-
-}
-
 
 .PopupBoxBackground {
     position: fixed;
