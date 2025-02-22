@@ -23,6 +23,7 @@ function ScenarioThemeEditor(props : ScenarioThemeEditorProps) {
         <div className="EditorBox">
             <GenericEditorInput label="Background Image Url" type="text" defaultValue={theme.backgroundImageUrl} onChange={(e) => updateFieldAndUpdateData<string>("backgroundImageUrl", e.target.value)}></GenericEditorInput>
             <GenericEditorInput label="Background Color" type="color" defaultValue={theme.backgroundColor} onChange={(e) => updateFieldAndUpdateData<string>("backgroundColor", e.target.value)}></GenericEditorInput>
+            <GenericEditorInput label="Description Window Background Color" type="color" defaultValue={theme.descriptionWindowBackgroundColor || "#000000"} onChange={(e) => updateFieldAndUpdateData<string>("descriptionWindowBackgroundColor", e.target.value)}></GenericEditorInput>
             <GenericEditorInput label="Header Image Url" type="text" defaultValue={theme.headerImageUrl} onChange={(e) => updateFieldAndUpdateData<string>("headerImageUrl", e.target.value)}></GenericEditorInput>
             <GenericEditorInput label="Primary Game Window Color" type="color" defaultValue={theme.primaryGameWindowColor} onChange={(e) => updateFieldAndUpdateData<string>("primaryGameWindowColor", e.target.value)}></GenericEditorInput>
             <GenericEditorInput label="Primary Game Window Text Color" type="color" defaultValue={theme.primaryGameWindowTextColor} onChange={(e) => updateFieldAndUpdateData<string>("primaryGameWindowTextColor", e.target.value)}></GenericEditorInput>
