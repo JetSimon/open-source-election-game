@@ -1,6 +1,7 @@
 interface ThemeModel {
     backgroundImageUrl : string;
     backgroundColor : string;
+    descriptionWindowBackgroundColor?: string;
     headerImageUrl : string;
     primaryGameWindowColor : string;
     secondaryGameWindowColor : string; 
