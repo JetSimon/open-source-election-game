@@ -127,7 +127,7 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
             })
           }
         </select>
-        <CandidateInfoArea engine={engine} candidate={selectedCandidateController.model}></CandidateInfoArea>
+        <CandidateInfoArea engine={engine} candidate={selectedCandidateController.model} theme={theme}></CandidateInfoArea>
       </div>}
 
       {choosingRunningMate && <div style={{backgroundColor:theme.primaryGameWindowColor, color:theme.primaryGameWindowTextColor}} className="CandidateSelectionBox">
@@ -142,7 +142,7 @@ function CandidateSelectionView(props: CandidateSelectionViewProps) {
             }
           </select>
         }
-        <CandidateInfoArea engine={engine} candidate={runningMateModel}></CandidateInfoArea>
+        <CandidateInfoArea engine={engine} candidate={runningMateModel} theme={theme}></CandidateInfoArea>
       </div>}
 
       {!choosingRunningMate && <button onClick={() => setSelectingCandidate(false)}>{engine.getLocalization("Prev")}</button>}

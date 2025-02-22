@@ -1,15 +1,17 @@
 import { Engine } from "../../engine/Engine";
 import { CandidateModel } from "../../engine/models/CandidateModel";
+import { ThemeModel } from "../../engine/models/ThemeModel";
 
 interface CandidateInfoAreaProps {
     candidate : CandidateModel;
     engine : Engine;
+    theme : ThemeModel
 }
 
 function CandidateInfoArea(props : CandidateInfoAreaProps) {
-    const {candidate, engine} = props;
+    const {candidate, engine, theme} = props;
     return (
-        <div className="CandidateInfoArea">
+        <div className="CandidateInfoArea" style={{backgroundColor:theme.descriptionWindowBackgroundColor}}>
           <img src={candidate.imageUrl}></img>
           <div className="CandidateDescription" >
             <div><span className="CandidateFact">{engine.getLocalization("Name")}: </span>{candidate.firstName} {candidate.lastName}</div>

@@ -6,7 +6,6 @@
 }
 
 .ElectionSelectionBox {
-
     padding: 16px;
     margin: auto;
 }
@@ -15,6 +14,9 @@
     display: flex;
     gap: 16px;
     padding: 16px;
+    margin-top: 10px;
+    border-style: double;
+    border-color: #c9c9c9;
 }
 
 @media only screen and (max-width: 600px) {

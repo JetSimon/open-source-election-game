@@ -35,7 +35,7 @@ function ElectionDescriptionView(props: ElectionDescriptionViewProps) {
       <select value={engine.difficulty} onChange={(e) => {engine.difficulty = Number(e.target.value); refreshThemeAndMusic()}}>
         {getAllDifficultyValues().map((d) => <option key={d} value={d}>{getDisplayNameForDifficulty(d)}</option>)}
       </select>
-      <div className="ElectionInfoArea">
+      <div className="ElectionInfoArea" style={{backgroundColor:theme.descriptionWindowBackgroundColor}}>
         <img src={engine.currentScenario.scenarioImageUrl}></img>
         <div className="ElectionDescription" dangerouslySetInnerHTML={{__html:engine.currentScenario.scenarioDescription}}>
         </div>
