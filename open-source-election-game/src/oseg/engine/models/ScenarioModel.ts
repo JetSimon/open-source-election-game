@@ -23,6 +23,7 @@ interface ScenarioModel {
     questionsPerVisit? : number;
     skipRunningMateSelection? : boolean;
     historicalResults? : HistoricalResultsModel;
+    furtherReading? : string;
 }
 
 export type { ScenarioModel };

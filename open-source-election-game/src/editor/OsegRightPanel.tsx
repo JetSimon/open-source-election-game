@@ -15,6 +15,7 @@ import EnumNavBar from "./components/EnumNavBar";
 import CustomViewPreview from "./CustomViewPreview";
 import OsegSimulator from "./OsegSimulator";
 import EndingPreview from "./graphicalEditors/EndingPreview";
+import FurtherReading from "../oseg/game/components/FurtherReading";
 
 enum RightNavBar {
   Map,
@@ -24,6 +25,7 @@ enum RightNavBar {
   Question,
   Ending,
   Results,
+  FurtherReading,
   CustomView
 }
 
@@ -228,6 +230,10 @@ function OsegRightPanel(props: OsegRightPanelProps) {
           )}
         </>
       )
+    } else if (rightNavBar == RightNavBar.FurtherReading) {
+      return (
+        <FurtherReading theme={theme} engine={engine} />
+      );
     } else if(rightNavBar == RightNavBar.CustomView) {
       return (
         <CustomViewPreview engine={engine} theme={theme}>
