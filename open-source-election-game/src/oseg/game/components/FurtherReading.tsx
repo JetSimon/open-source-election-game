@@ -1,5 +1,6 @@
 import { Engine } from "../../engine/Engine";
 import { ThemeModel } from "../../engine/models/ThemeModel";
+import "./FurtherReading.css";
 
 interface FurtherReadingProps {
   theme: ThemeModel;
@@ -22,7 +23,9 @@ function FurtherReading(props: FurtherReadingProps) {
       className="FurtherReading"
     >
       <h2>Further Reading</h2>
-      <div className="FurtherReadingDescription" dangerouslySetInnerHTML={{__html:engine.currentScenario.furtherReading || ""}} />
+      <div className="RecommendedReadingBox" style={{backgroundColor: theme.primaryGameWindowColor}}>
+        <div className="FurtherReadingDescription" dangerouslySetInnerHTML={{__html:engine.currentScenario.furtherReading || ""}} />
+      </div>
     </div>
   )
 }
