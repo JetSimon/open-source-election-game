@@ -7,6 +7,7 @@ import FinalResults from "../components/FinalResults";
 import ResultsByState from "../components/ResultsByState";
 import "./EndingView.css";
 import MapView from "./MapView";
+import FurtherReading from "../components/FurtherReading";
 
 interface EndingViewProps {
   engine: Engine;
@@ -19,6 +20,7 @@ enum EndingTab {
   ResultsByState,
   OverallResultsDetailed,
   Map,
+  FurtherReading
 }
 
 function EndingView(props: EndingViewProps) {
@@ -72,6 +74,8 @@ function EndingView(props: EndingViewProps) {
       );
     } else if (currentTab == EndingTab.ResultsByState) {
       return <ResultsByState engine={engine} theme={theme}></ResultsByState>;
+    } else if (currentTab == EndingTab.FurtherReading) {
+      return <FurtherReading engine={engine} theme={theme}></FurtherReading>;
     }
   }
 
@@ -96,6 +100,12 @@ function EndingView(props: EndingViewProps) {
           onClick={() => setCurrentTab(EndingTab.ResultsByState)}
         >
           {engine.getLocalization("Results By State")}
+        </button>
+        <button 
+          disabled={currentTab == EndingTab.FurtherReading} 
+          onClick={() => setCurrentTab(EndingTab.FurtherReading)}
+        >
+          {engine.getLocalization("Further Reading")}
         </button>
         <button
           disabled={currentTab == EndingTab.OverallResultsDetailed}

@@ -2,6 +2,7 @@ import { Engine } from "../../engine/Engine";
 import { getAllDifficultyValues, getDisplayNameForDifficulty } from "../../engine/models/Difficulty";
 import { ThemeModel } from "../../engine/models/ThemeModel";
 import "./ElectionDescriptionView.css";
+
 interface ElectionDescriptionViewProps {
   engine: Engine;
   setSelectingCandidate : (value : boolean) => void;
